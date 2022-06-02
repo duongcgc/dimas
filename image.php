@@ -42,10 +42,10 @@ while ( have_posts() ) {
 
 			wp_link_pages(
 				array(
-					'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'twentytwentyone' ) . '">',
+					'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'dimas' ) . '">',
 					'after'    => '</nav>',
 					/* translators: %: Page number. */
-					'pagelink' => esc_html__( 'Page %', 'twentytwentyone' ),
+					'pagelink' => esc_html__( 'Page %', 'dimas' ),
 				)
 			);
 			?>
@@ -58,7 +58,7 @@ while ( have_posts() ) {
 				echo '<span class="posted-on">';
 				printf(
 					/* translators: %s: Parent post. */
-					esc_html__( 'Published in %s', 'twentytwentyone' ),
+					esc_html__( 'Published in %s', 'dimas' ),
 					'<a href="' . esc_url( get_the_permalink( wp_get_post_parent_id( $post ) ) ) . '">' . esc_html( get_the_title( wp_get_post_parent_id( $post ) ) ) . '</a>'
 				);
 				echo '</span>';
@@ -67,7 +67,7 @@ while ( have_posts() ) {
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Post title. Only visible to screen readers. */
-						esc_html__( 'Edit %s', 'twentytwentyone' ),
+						esc_html__( 'Edit %s', 'dimas' ),
 						'<span class="screen-reader-text">' . get_the_title() . '</span>'
 					),
 					'<span class="edit-link">',
@@ -80,7 +80,7 @@ while ( have_posts() ) {
 			if ( $metadata ) {
 				printf(
 					'<span class="full-size-link"><span class="screen-reader-text">%1$s</span><a href="%2$s">%3$s &times; %4$s</a></span>',
-					esc_html_x( 'Full size', 'Used before full size attachment link.', 'twentytwentyone' ), // phpcs:ignore WordPress.Security.EscapeOutput
+					esc_html_x( 'Full size', 'Used before full size attachment link.', 'dimas' ), // phpcs:ignore WordPress.Security.EscapeOutput
 					esc_url( wp_get_attachment_url() ),
 					absint( $metadata['width'] ),
 					absint( $metadata['height'] )
@@ -92,7 +92,7 @@ while ( have_posts() ) {
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Post title. Only visible to screen readers. */
-						esc_html__( 'Edit %s', 'twentytwentyone' ),
+						esc_html__( 'Edit %s', 'dimas' ),
 						'<span class="screen-reader-text">' . get_the_title() . '</span>'
 					),
 					'<span class="edit-link">',

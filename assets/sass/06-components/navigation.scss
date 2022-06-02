@@ -56,7 +56,7 @@
 					display: flex;
 
 					.has-logo.has-title-and-tagline & {
-						animation-name: twentytwentyone-close-button-transition;
+						animation-name: dimas-close-button-transition;
 						animation-duration: 0.3s;
 					}
 				}
@@ -526,7 +526,7 @@
 }
 
 // Close button animation for when a custom logo is present.
-@keyframes twentytwentyone-close-button-transition {
+@keyframes dimas-close-button-transition {
 
 	from {
 		opacity: 0;

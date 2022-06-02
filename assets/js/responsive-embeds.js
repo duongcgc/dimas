@@ -11,7 +11,7 @@
  *
  * @return {void}
  */
-function twentytwentyoneResponsiveEmbeds() {
+function dimasResponsiveEmbeds() {
 	var proportion, parentWidth;
 
 	// Loop iframe elements.
@@ -30,7 +30,7 @@ function twentytwentyoneResponsiveEmbeds() {
 }
 
 // Run on initial load.
-twentytwentyoneResponsiveEmbeds();
+dimasResponsiveEmbeds();
 
 // Run on resize.
-window.onresize = twentytwentyoneResponsiveEmbeds;
+window.onresize = dimasResponsiveEmbeds;

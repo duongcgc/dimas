@@ -1,13 +1,13 @@
-/* global twentytwentyoneGetHexLum, jQuery */
+/* global dimasGetHexLum, jQuery */
 ( function() {
 	// Add listener for the "background_color" control.
 	wp.customize( 'background_color', function( value ) {
 		value.bind( function( to ) {
-			var lum = twentytwentyoneGetHexLum( to ),
+			var lum = dimasGetHexLum( to ),
 				isDark = 127 > lum,
 				textColor = ! isDark ? 'var(--global--color-dark-gray)' : 'var(--global--color-light-gray)',
 				tableColor = ! isDark ? 'var(--global--color-light-gray)' : 'var(--global--color-dark-gray)',
-				stylesheetID = 'twentytwentyone-customizer-inline-styles',
+				stylesheetID = 'dimas-customizer-inline-styles',
 				stylesheet,
 				styles;
 

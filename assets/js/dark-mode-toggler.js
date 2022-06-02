@@ -5,21 +5,21 @@ function toggleDarkMode() { // jshint ignore:line
 		toggler.setAttribute( 'aria-pressed', 'true' );
 		document.documentElement.classList.add( 'is-dark-theme' );
 		document.body.classList.add( 'is-dark-theme' );
-		window.localStorage.setItem( 'twentytwentyoneDarkMode', 'yes' );
+		window.localStorage.setItem( 'dimasDarkMode', 'yes' );
 	} else {
 		toggler.setAttribute( 'aria-pressed', 'false' );
 		document.documentElement.classList.remove( 'is-dark-theme' );
 		document.body.classList.remove( 'is-dark-theme' );
-		window.localStorage.setItem( 'twentytwentyoneDarkMode', 'no' );
+		window.localStorage.setItem( 'dimasDarkMode', 'no' );
 	}
 }
 
-function twentytwentyoneIsDarkMode() {
+function dimasIsDarkMode() {
 	var isDarkMode = window.matchMedia( '(prefers-color-scheme: dark)' ).matches;
 
-	if ( 'yes' === window.localStorage.getItem( 'twentytwentyoneDarkMode' ) ) {
+	if ( 'yes' === window.localStorage.getItem( 'dimasDarkMode' ) ) {
 		isDarkMode = true;
-	} else if ( 'no' === window.localStorage.getItem( 'twentytwentyoneDarkMode' ) ) {
+	} else if ( 'no' === window.localStorage.getItem( 'dimasDarkMode' ) ) {
 		isDarkMode = false;
 	}
 
@@ -28,7 +28,7 @@ function twentytwentyoneIsDarkMode() {
 
 function darkModeInitialLoad() {
 	var toggler = document.getElementById( 'dark-mode-toggler' ),
-		isDarkMode = twentytwentyoneIsDarkMode();
+		isDarkMode = dimasIsDarkMode();
 
 	if ( isDarkMode ) {
 		document.documentElement.classList.add( 'is-dark-theme' );
