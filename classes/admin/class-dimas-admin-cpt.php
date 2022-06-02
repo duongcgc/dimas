@@ -1,6 +1,6 @@
 <?php
 /**
- * Meta boxes functions
+ * Custom Post Type functions
  *
  * @package Dimas
  */
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Meta boxes initial
+ * Custom Post Type initial
  */
-class Meta_Boxes {
+class Dimas_CPT {
 	/**
 	 * Instance
 	 *
