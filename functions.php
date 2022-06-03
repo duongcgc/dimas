@@ -527,10 +527,10 @@ function dimas_non_latin_languages() {
 add_action( 'wp_enqueue_scripts', 'dimas_non_latin_languages' );
 
 // SVG Icons class.
-require get_template_directory() . '/classes/class-dimas-svg-icons.php';
+require get_template_directory() . '/inc/classes/class-dimas-svg-icons.php';
 
 // Custom color classes.
-require get_template_directory() . '/classes/class-dimas-custom-colors.php';
+require get_template_directory() . '/inc/classes/class-dimas-custom-colors.php';
 new Dimas_Custom_Colors();
 
 // Enhance the theme by hooking into WordPress.
@@ -543,7 +543,7 @@ require get_template_directory() . '/inc/menu-functions.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 // Customizer additions.
-require get_template_directory() . '/classes/class-dimas-customize.php';
+require get_template_directory() . '/inc/classes/class-dimas-customize.php';
 new Dimas_Customize();
 
 // Block Patterns.
@@ -553,7 +553,7 @@ require get_template_directory() . '/inc/block-patterns.php';
 require get_template_directory() . '/inc/block-styles.php';
 
 // Dark Mode.
-require_once get_template_directory() . '/classes/class-dimas-dark-mode.php';
+require_once get_template_directory() . '/inc/classes/class-dimas-dark-mode.php';
 new Dimas_Dark_Mode();
 
 /**

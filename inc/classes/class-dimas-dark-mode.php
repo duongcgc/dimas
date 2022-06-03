@@ -135,7 +135,7 @@ class Dimas_Dark_Mode {
 		}
 
 		// Custom notice control.
-		include_once get_theme_file_path( 'classes/class-dimas-customize-notice-control.php' ); // phpcs:ignore WPDimas_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+		include_once get_theme_file_path( 'inc/classes/class-dimas-customize-notice-control.php' ); // phpcs:ignore WPDimas_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 		$wp_customize->add_setting(
 			'respect_user_color_preference_notice',
