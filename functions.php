@@ -126,7 +126,7 @@ if ( ! function_exists( 'dimas_setup' ) ) {
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 		$background_color = get_theme_mod( 'background_color', 'D1E4DD' );
-		if ( 127 > Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
+		if ( 127 > \Dimas\Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
 			add_theme_support( 'dark-editor-style' );
 		}
 
@@ -531,7 +531,7 @@ require get_template_directory() . '/inc/classes/class-dimas-svg-icons.php';
 
 // Custom color classes.
 require get_template_directory() . '/inc/classes/class-dimas-custom-colors.php';
-new Custom_Colors();
+new \Dimas\Custom_Colors();
 
 // Enhance the theme by hooking into WordPress.
 require get_template_directory() . '/inc/template-functions.php';
@@ -544,7 +544,7 @@ require get_template_directory() . '/inc/template-tags.php';
 
 // Customizer additions.
 require get_template_directory() . '/inc/classes/class-dimas-customize.php';
-new Theme_Customize();
+new \Dimas\Theme_Customize();
 
 // Block Patterns.
 require get_template_directory() . '/inc/block-patterns.php';
@@ -554,7 +554,7 @@ require get_template_directory() . '/inc/block-styles.php';
 
 // Dark Mode.
 require_once get_template_directory() . '/inc/classes/class-dimas-dark-mode.php';
-new Dark_Mode();
+new \Dimas\Dark_Mode();
 
 /**
  * Enqueue scripts for the customizer preview.
