@@ -1,6 +1,6 @@
 <?php
 /**
- * Search functions and definitions.
+ * Dimas_Search functions and definitions.
  *
  * @package Dimas
  */
@@ -12,10 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Search initial
+ * Dimas_Search initial
  *
  */
-class Search {
+class Dimas_Search {
 	/**
 	 * Instance
 	 *

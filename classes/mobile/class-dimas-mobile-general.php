@@ -1,6 +1,6 @@
 <?php
 /**
- * Dimas_Topbar Mobile functions and definitions.
+ * Dimas General Mobile functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -11,7 +11,7 @@ namespace Dimas\Mobile;
 
 use Dimas\Dimas_Helper;
 
-class General {
+class Dimas_Mobile_General {
 	/**
 	 * Instance
 	 *

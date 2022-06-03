@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Mobile initial
  *
  */
-class Catalog {
+class Dimas_Mobile_Catalog {
 	/**
 	 * Instance
 	 *
@@ -104,7 +104,7 @@ class Catalog {
 	}
 
 	/**
-	 * Catalog layout
+	 * Dimas_Mobile_Catalog layout
 	 *
 	 * @since 1.0.0
 	 *
@@ -115,7 +115,7 @@ class Catalog {
 	}
 
 	/**
-	 * Catalog layout
+	 * Dimas_Mobile_Catalog layout
 	 *
 	 * @since 1.0.0
 	 *
@@ -139,7 +139,7 @@ class Catalog {
 	}
 
 	/**
-	 * Catalog products toolbar.
+	 * Dimas_Mobile_Catalog products toolbar.
 	 *
 	 * @since 1.0.0
 	 *
@@ -164,7 +164,7 @@ class Catalog {
 	}
 
 	/**
-	 * Catalog page header.
+	 * Dimas_Mobile_Catalog page header.
 	 *
 	 * @since 1.0.0
 	 *
@@ -187,7 +187,7 @@ class Catalog {
 	}
 
 	/**
-	 * Catalog products toolbar.
+	 * Dimas_Mobile_Catalog products toolbar.
 	 *
 	 * @since 1.0.0
 	 *

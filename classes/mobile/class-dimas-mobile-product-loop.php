@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Mobile initial
  *
  */
-class Product_Loop {
+class Dimas_Mobile_Product_Loop {
 	/**
 	 * Instance
 	 *

@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin functions and definitions.
+ * Dimas Admin functions and definitions.
  *
  * @package Dimas
  */
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Mobile initial
  */
-class Admin {
+class Dimas_Admin {
 	/**
 	 * Instance
 	 *

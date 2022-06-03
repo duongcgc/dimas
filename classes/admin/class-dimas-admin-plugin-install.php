@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since  1.0
  */
-class Plugin_Install {
+class Dimas_Plugin_Install {
 	/**
 	 * Instance
 	 *

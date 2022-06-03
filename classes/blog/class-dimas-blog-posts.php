@@ -1,6 +1,6 @@
 <?php
 /**
- * Posts functions and definitions.
+ * Dimas_Posts functions and definitions.
  *
  * @package Dimas
  */
@@ -14,10 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Posts initial
+ * Dimas_Posts initial
  *
  */
-class Posts {
+class Dimas_Posts {
 	/**
 	 * Instance
 	 *

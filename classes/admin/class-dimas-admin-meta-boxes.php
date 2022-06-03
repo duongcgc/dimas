@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Meta boxes initial
  */
-class Meta_Boxes {
+class Dimas_Meta_Boxes {
 	/**
 	 * Instance
 	 *

@@ -10,7 +10,7 @@
 namespace Dimas\Mobile;
 use Dimas\Dimas_Helper;
 
-class Dimas_Page_Header {
+class Dimas_Mobile_Page_Header {
 	/**
 	 * Instance
 	 *

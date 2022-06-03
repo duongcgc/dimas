@@ -11,7 +11,7 @@ namespace Dimas\Mobile;
 
 use Dimas\Dimas_Helper;
 
-class Dimas_Header {
+class Dimas_Mobile_Header {
 	/**
 	 * Instance
 	 *

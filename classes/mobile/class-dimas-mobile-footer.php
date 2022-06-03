@@ -10,7 +10,7 @@
 namespace Dimas\Mobile;
 use Dimas\Dimas_Helper;
 
-class Dimas_Footer {
+class Dimas_Mobile_Footer {
 	/**
 	 * Instance
 	 *

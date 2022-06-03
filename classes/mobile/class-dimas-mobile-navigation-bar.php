@@ -11,7 +11,7 @@ namespace Dimas\Mobile;
 use Dimas\Dimas_Helper;
 use WeDevs\WeMail\Rest\Help\Help;
 
-class Navigation_Bar {
+class Dimas_Mobile_Navigation_Bar {
 	/**
 	 * Instance
 	 *

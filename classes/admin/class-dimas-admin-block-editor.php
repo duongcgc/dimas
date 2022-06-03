@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Block Editor
  *
  */
-class Block_Editor {
+class Dimas_Block_Editor {
 	/**
 	 * Instance
 	 *

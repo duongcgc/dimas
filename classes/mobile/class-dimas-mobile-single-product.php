@@ -1,6 +1,6 @@
 <?php
 /**
- * Mobile functions and definitions.
+ * Mobile Single Product functions and definitions.
  *
  * @package Dimas
  */
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Mobile initial
  *
  */
-class Single_Product {
+class Dimas_Mobile_Single_Product {
 	/**
 	 * Instance
 	 *

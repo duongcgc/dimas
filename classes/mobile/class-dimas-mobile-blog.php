@@ -1,6 +1,6 @@
 <?php
 /**
- * Mobile functions and definitions.
+ * Mobile Blog functions and definitions.
  *
  * @package Dimas
  */
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Mobile initial
  *
  */
-class Dimas_Blog {
+class Dimas_Mobile_Blog {
 	/**
 	 * Instance
 	 *

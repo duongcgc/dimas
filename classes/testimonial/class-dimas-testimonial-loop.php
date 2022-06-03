@@ -1,6 +1,6 @@
 <?php
 /**
- * Single functions and definitions.
+ * Testimonial functions and definitions.
  *
  * @package Dimas
  */
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Single initial
  */
-class Dimas_Service_Loop {
+class Dimas_Testimonial_Loop {
 	/**
 	 * Instance
 	 *

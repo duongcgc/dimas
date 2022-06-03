@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Single initial
  */
-class Post_Loop {
+class Dimas_Post_Loop {
 	/**
 	 * Instance
 	 *
