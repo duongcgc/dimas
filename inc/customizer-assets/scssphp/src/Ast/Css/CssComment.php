@@ -17,7 +17,7 @@ namespace ScssPhp\ScssPhp\Ast\Css;
  *
  * This is always a multi-line comment.
  */
-interface CssComment extends CssNode
+interface CssDimas_Comments extends CssNode
 {
     /**
      * The contents of this comment, including `/*` and `* /`.

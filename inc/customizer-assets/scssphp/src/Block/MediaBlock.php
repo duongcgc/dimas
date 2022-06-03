@@ -18,7 +18,7 @@ use ScssPhp\ScssPhp\Type;
 /**
  * @internal
  */
-final class MediaBlock extends Block
+final class Dimas_MediaBlock extends Block
 {
     /**
      * @var string|array|null

@@ -7,7 +7,7 @@
 
 namespace Dimas\Mobile;
 
-use Dimas\Helper;
+use Dimas\Dimas_Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -58,7 +58,7 @@ class Catalog {
 	 * @return void
 	 */
 	public function hooks() {
-		if ( ! \Dimas\Helper::is_catalog() ) {
+		if ( ! \Dimas\Dimas_Helper::is_catalog() ) {
 			return;
 		}
 
@@ -77,7 +77,7 @@ class Catalog {
 		add_filter( 'dimas_get_sidebar', '__return_false' );
 
 		// Add products toolbar
-		add_action( 'woocommerce_before_shop_loop', array( \Dimas\Theme::instance()->get( 'breadcrumbs' ), 'breadcrumbs' ) );
+		add_action( 'woocommerce_before_shop_loop', array( \Dimas\Dimas_Theme::instance()->get( 'breadcrumbs' ), 'breadcrumbs' ) );
 		add_action( 'woocommerce_before_shop_loop', array( $this, 'products_toolbar' ) );
 
 		add_action( 'dimas_get_product_filters_modal_sidebar', array( $this, 'get_product_filters_modal_sidebar' ) );
@@ -85,19 +85,19 @@ class Catalog {
 
 		// remove banners
 		remove_action( 'woocommerce_before_shop_loop', array(
-			\Dimas\Theme::instance()->get( 'woocommerce' )->get_template( 'catalog' ),
+			\Dimas\Dimas_Theme::instance()->get( 'woocommerce' )->get_template( 'catalog' ),
 			'products_banners_top'
 		), 10 );
 
 		// remove top categories
 		remove_action( 'woocommerce_before_shop_loop', array(
-			\Dimas\Theme::instance()->get( 'woocommerce' )->get_template( 'catalog' ),
+			\Dimas\Dimas_Theme::instance()->get( 'woocommerce' )->get_template( 'catalog' ),
 			'products_top_categories'
 		), 20 );
 
 		// remove toolbar mobile
 		remove_action( 'woocommerce_before_shop_loop', array(
-			\Dimas\Theme::instance()->get( 'woocommerce' )->get_template( 'catalog' ),
+			\Dimas\Dimas_Theme::instance()->get( 'woocommerce' )->get_template( 'catalog' ),
 			'products_toolbar'
 		), 40 );
 
@@ -171,13 +171,13 @@ class Catalog {
 	 * @return void
 	 */
 	public function page_header() {
-		if ( ! intval(Helper::get_option( 'mobile_catalog_page_header' ) )) {
+		if ( ! intval(Dimas_Helper::get_option( 'mobile_catalog_page_header' ) )) {
 			return;
 		}
 
-		$items = (array) Helper::get_option( 'mobile_catalog_page_header_els' );
+		$items = (array) Dimas_Helper::get_option( 'mobile_catalog_page_header_els' );
 		if( in_array( 'breadcrumb', $items )) {
-			\Dimas\Theme::instance()->get( 'breadcrumbs' )->breadcrumbs();
+			\Dimas\Dimas_Theme::instance()->get( 'breadcrumbs' )->breadcrumbs();
 		}
 		if( in_array( 'title', $items )) {
 			the_archive_title('<h1 class="page-title">', '</h1>');
@@ -198,12 +198,12 @@ class Catalog {
 			return;
 		}
 
-		$navigation_bar = Helper::get_option( 'mobile_navigation_bar' );
+		$navigation_bar = Dimas_Helper::get_option( 'mobile_navigation_bar' );
 		if ( in_array( $navigation_bar, array( 'simple_adoptive', 'standard_adoptive' ) ) ) {
 		    return;
 		}
 
-		\Dimas\Theme::instance()->set_prop( 'modals', 'filter' );
+		\Dimas\Dimas_Theme::instance()->set_prop( 'modals', 'filter' );
 		?>
         <a href="#catalog-filters" class="toggle-filters catalog-toolbar-item__filter"
            data-toggle="modal"

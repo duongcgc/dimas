@@ -21,7 +21,7 @@ use ScssPhp\ScssPhp\Visitor\StatementVisitor;
  *
  * @internal
  */
-final class SilentComment implements Statement
+final class SilentDimas_Comments implements Statement
 {
     /**
      * @var string
@@ -53,6 +53,6 @@ final class SilentComment implements Statement
 
     public function accepts(StatementVisitor $visitor)
     {
-        return $visitor->visitSilentComment($this);
+        return $visitor->visitSilentDimas_Comments($this);
     }
 }

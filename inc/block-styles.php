@@ -1,6 +1,6 @@
 <?php
 /**
- * Block Styles
+ * Block Dimas_Styles
  *
  * @link https://developer.wordpress.org/reference/functions/register_block_style/
  *
@@ -81,7 +81,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			)
 		);
 
-		// Media & Text: Borders.
+		// Dimas_Media & Text: Borders.
 		register_block_style(
 			'core/media-text',
 			array(

@@ -1,6 +1,6 @@
 <?php
 /**
- * Preloader functions and definitions.
+ * Dimas_Preloader functions and definitions.
  *
  * @package Dimas
  */
@@ -14,10 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Preloader initial
+ * Dimas_Preloader initial
  *
  */
-class Preloader {
+class Dimas_Preloader {
 	/**
 	 * Instance
 	 *
@@ -52,14 +52,14 @@ class Preloader {
 
 
 	/**
-	 * Display Preloader
+	 * Display Dimas_Preloader
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return void
 	 */
 	public function display_preloader() {
-		if ( ! Helper::get_option( 'preloader_enable' ) || is_customize_preview() ) {
+		if ( ! Dimas_Helper::get_option( 'preloader_enable' ) || is_customize_preview() ) {
 			return;
 		}
 

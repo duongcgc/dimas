@@ -1,6 +1,6 @@
 <?php
 /**
- * Default Setting class
+ * Default Setting for Dimas_Theme
  *
  * @package WordPress
  * @subpackage Dimas

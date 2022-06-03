@@ -39,7 +39,7 @@ final class MixinRule extends CallableDeclaration implements SassDeclaration
     /**
      * @param Statement[] $children
      */
-    public function __construct(string $name, ArgumentDeclaration $arguments, FileSpan $span, array $children, ?SilentComment $comment = null)
+    public function __construct(string $name, ArgumentDeclaration $arguments, FileSpan $span, array $children, ?SilentDimas_Comments $comment = null)
     {
         parent::__construct($name, $arguments, $span, $children, $comment);
     }

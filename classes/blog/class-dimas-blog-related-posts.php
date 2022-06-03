@@ -5,9 +5,9 @@
  * @package Dimas
  */
 
-namespace Dimas\Blog;
+namespace Dimas\Dimas_Blog;
 
-use Dimas\Helper;
+use Dimas\Dimas_Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -64,7 +64,7 @@ class Related_Posts {
 	 * @return void
 	 */
 	public function related_heading() {
-		$title      = Helper::get_option( 'related_posts_title' );
+		$title      = Dimas_Helper::get_option( 'related_posts_title' );
 		$meta_title = get_post_meta( get_the_ID(), 'related_posts_title', true );
 
 		if ( empty( $meta_title ) ) {
@@ -88,7 +88,7 @@ class Related_Posts {
 		$posts_columns = get_post_meta( get_the_ID(), 'related_posts_columns', true );
 
 		if ( empty( $posts_columns ) ) {
-			$posts_columns = Helper::get_option( 'related_posts_columns' );
+			$posts_columns = Dimas_Helper::get_option( 'related_posts_columns' );
 		}
 
 		echo sprintf( '
@@ -150,7 +150,7 @@ class Related_Posts {
 		$posts_numbers = get_post_meta( get_the_ID(), 'related_posts_numbers', true );
 
 		if ( empty( $posts_numbers ) ) {
-			$posts_numbers = Helper::get_option( 'related_posts_numbers' );
+			$posts_numbers = Dimas_Helper::get_option( 'related_posts_numbers' );
 		}
 
 		global $post;

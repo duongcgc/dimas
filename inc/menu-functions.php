@@ -2,7 +2,7 @@
 /**
  * Functions and filters related to the menus.
  *
- * Makes the default WordPress navigation use an HTML structure similar
+ * Makes the default WordPress navigation use an Dimas_HTML structure similar
  * to the Navigation block.
  *
  * @link https://make.wordpress.org/themes/2020/07/06/printing-navigation-block-html-from-a-legacy-menu-in-themes/
@@ -28,7 +28,7 @@ function twenty_twenty_one_add_sub_menu_toggle( $output, $item, $depth, $args ) 
 	if ( 0 === $depth && in_array( 'menu-item-has-children', $item->classes, true ) ) {
 
 		// Add toggle button.
-		$output .= '<button class="sub-menu-toggle" aria-expanded="false" onClick="dimasExpandSubMenu(this)">';
+		$output .= '<button class="sub-menu-toggle" aria-expanded="false" onClick="dimasExpandSubDimas_Menu(this)">';
 		$output .= '<span class="icon-plus">' . twenty_twenty_one_get_icon_svg( 'ui', 'plus', 18 ) . '</span>';
 		$output .= '<span class="icon-minus">' . twenty_twenty_one_get_icon_svg( 'ui', 'minus', 18 ) . '</span>';
 		$output .= '<span class="screen-reader-text">' . esc_html__( 'Open menu', 'dimas' ) . '</span>';
@@ -56,8 +56,8 @@ function twenty_twenty_one_get_social_link_svg( $uri, $size = 24 ) {
  *
  * @since Dimas 1.0
  *
- * @param string   $item_output The menu item's starting HTML output.
- * @param WP_Post  $item        Menu item data object.
+ * @param string   $item_output The menu item's starting Dimas_HTML output.
+ * @param WP_Post  $item        Dimas_Menu item data object.
  * @param int      $depth       Depth of the menu. Used for padding.
  * @param stdClass $args        An object of wp_nav_menu() arguments.
  * @return string The menu item output with social icon.
@@ -82,7 +82,7 @@ add_filter( 'walker_nav_menu_start_el', 'twenty_twenty_one_nav_menu_social_icons
  * @since Dimas 1.0
  *
  * @param stdClass $args  An object of wp_nav_menu() arguments.
- * @param WP_Post  $item  Menu item data object.
+ * @param WP_Post  $item  Dimas_Menu item data object.
  * @param int      $depth Depth of menu item. Used for padding.
  * @return stdClass
  */

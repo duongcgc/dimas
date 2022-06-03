@@ -13,8 +13,8 @@
 namespace ScssPhp\ScssPhp\Parser;
 
 use ScssPhp\ScssPhp\Ast\Sass\Interpolation;
-use ScssPhp\ScssPhp\Ast\Sass\Statement\LoudComment;
-use ScssPhp\ScssPhp\Ast\Sass\Statement\SilentComment;
+use ScssPhp\ScssPhp\Ast\Sass\Statement\LoudDimas_Comments;
+use ScssPhp\ScssPhp\Ast\Sass\Statement\SilentDimas_Comments;
 use ScssPhp\ScssPhp\Util\Character;
 
 /**
@@ -22,7 +22,7 @@ use ScssPhp\ScssPhp\Util\Character;
  *
  * @internal
  */
-class ScssParser extends StylesheetParser
+class ScssParser extends Dimas_StylesheetParser
 {
     protected function isIndented(): bool
     {
@@ -41,7 +41,7 @@ class ScssParser extends StylesheetParser
 
     protected function expectStatementSeparator(?string $name = null): void
     {
-        $this->whitespaceWithoutComments();
+        $this->whitespaceWithoutDimas_Comments();
 
         if ($this->scanner->isDone()) {
             return;
@@ -108,7 +108,7 @@ class ScssParser extends StylesheetParser
     protected function children(callable $child): array
     {
         $this->scanner->expectChar('{');
-        $this->whitespaceWithoutComments();
+        $this->whitespaceWithoutDimas_Comments();
         $children = [];
 
         while (true) {
@@ -120,13 +120,13 @@ class ScssParser extends StylesheetParser
                 case '/':
                     switch ($this->scanner->peekChar(1)) {
                         case '/':
-                            $children[] = $this->silentCommentStatement();
-                            $this->whitespaceWithoutComments();
+                            $children[] = $this->silentDimas_CommentsStatement();
+                            $this->whitespaceWithoutDimas_Comments();
                             break;
 
                         case '*':
-                            $children[] = $this->loudCommentStatement();
-                            $this->whitespaceWithoutComments();
+                            $children[] = $this->loudDimas_CommentsStatement();
+                            $this->whitespaceWithoutDimas_Comments();
                             break;
 
                         default:
@@ -137,7 +137,7 @@ class ScssParser extends StylesheetParser
 
                 case ';':
                     $this->scanner->readChar();
-                    $this->whitespaceWithoutComments();
+                    $this->whitespaceWithoutDimas_Comments();
                     break;
 
                 case '}':
@@ -155,7 +155,7 @@ class ScssParser extends StylesheetParser
     protected function statements(callable $statement): array
     {
         $statements = [];
-        $this->whitespaceWithoutComments();
+        $this->whitespaceWithoutDimas_Comments();
 
         while (!$this->scanner->isDone()) {
             switch ($this->scanner->peekChar()) {
@@ -166,13 +166,13 @@ class ScssParser extends StylesheetParser
                 case '/':
                     switch ($this->scanner->peekChar(1)) {
                         case '/':
-                            $statements[] = $this->silentCommentStatement();
-                            $this->whitespaceWithoutComments();
+                            $statements[] = $this->silentDimas_CommentsStatement();
+                            $this->whitespaceWithoutDimas_Comments();
                             break;
 
                         case '*':
-                            $statements[] = $this->loudCommentStatement();
-                            $this->whitespaceWithoutComments();
+                            $statements[] = $this->loudDimas_CommentsStatement();
+                            $this->whitespaceWithoutDimas_Comments();
                             break;
 
                         default:
@@ -187,7 +187,7 @@ class ScssParser extends StylesheetParser
 
                 case ';':
                     $this->scanner->readChar();
-                    $this->whitespaceWithoutComments();
+                    $this->whitespaceWithoutDimas_Comments();
                     break;
 
                 default:
@@ -206,7 +206,7 @@ class ScssParser extends StylesheetParser
     /**
      * Consumes a statement-level silent comment block.
      */
-    private function silentCommentStatement(): SilentComment
+    private function silentDimas_CommentsStatement(): SilentDimas_Comments
     {
         $start = $this->scanner->getPosition();
 
@@ -221,22 +221,22 @@ class ScssParser extends StylesheetParser
                 break;
             }
 
-            $this->whitespaceWithoutComments();
+            $this->whitespaceWithoutDimas_Comments();
         } while ($this->scanner->scan('//'));
 
         if ($this->isPlainCss()) {
             $this->error('Silent comments aren\'t allowed in plain CSS.', $this->scanner->spanFrom($start));
         }
 
-        $this->lastSilentComment = new SilentComment($this->scanner->substring($start), $this->scanner->spanFrom($start));
+        $this->lastSilentDimas_Comments = new SilentDimas_Comments($this->scanner->substring($start), $this->scanner->spanFrom($start));
 
-        return $this->lastSilentComment;
+        return $this->lastSilentDimas_Comments;
     }
 
     /**
      * Consumes a statement-level loud comment block.
      */
-    private function loudCommentStatement(): LoudComment
+    private function loudDimas_CommentsStatement(): LoudDimas_Comments
     {
         $start = $this->scanner->getPosition();
 
@@ -264,7 +264,7 @@ class ScssParser extends StylesheetParser
 
                     $buffer->write($this->scanner->readChar());
 
-                    return new LoudComment($buffer->buildInterpolation($this->scanner->spanFrom($start)));
+                    return new LoudDimas_Comments($buffer->buildInterpolation($this->scanner->spanFrom($start)));
 
                 case "\r":
                     $this->scanner->readChar();

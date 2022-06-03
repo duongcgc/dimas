@@ -70,7 +70,7 @@ function twenty_twenty_one_customize() {
 add_action( 'load-customize.php', 'twenty_twenty_one_customize' );
 
 /**
- * Prevents the Theme Preview from being loaded on WordPress versions prior to 5.3.
+ * Prevents the Dimas_Theme Preview from being loaded on WordPress versions prior to 5.3.
  *
  * @since Dimas 1.0
  *

@@ -8,7 +8,7 @@ var ps_font_combinations_select='<div id="cs-font-combi"><h2>Font Combinations</
 // after updating fontpicker, you may wat to update this list
 // the real list of the font selection widget is still into jquery.fontpicker.js
 
-var __googleFonts = {
+var __googleDimas_Fonts = {
 	// This list was last updated on January 18, 2022
 	"ABeeZee": {
 		"category": "sans-serif",

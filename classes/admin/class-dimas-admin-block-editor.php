@@ -7,7 +7,7 @@
 
 namespace Dimas\Admin;
 
-use Dimas\Helper;
+use Dimas\Dimas_Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -60,7 +60,7 @@ class Block_Editor {
 	 */
 	public function block_editor_styles() {
 		wp_enqueue_style( 'dimas-block-editor-style', get_template_directory_uri() . '/assets/css/editor-blocks.css' );
-		wp_enqueue_style( 'dimas-block-editor-fonts', Helper::get_fonts_url(), array(), '20180831' );
+		wp_enqueue_style( 'dimas-block-editor-fonts', Dimas_Helper::get_fonts_url(), array(), '20180831' );
 	}
 }
 

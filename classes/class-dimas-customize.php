@@ -29,7 +29,7 @@ if ( ! class_exists( 'Dimas_Customize' ) ) {
 		 *
 		 * @since Dimas 1.0
 		 *
-		 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+		 * @param WP_Customize_Manager $wp_customize Dimas_Theme Customizer object.
 		 * @return void
 		 */
 		public function register( $wp_customize ) {
@@ -103,7 +103,7 @@ if ( ! class_exists( 'Dimas_Customize' ) ) {
 				array(
 					'type'    => 'radio',
 					'section' => 'excerpt_settings',
-					'label'   => esc_html__( 'On Archive Pages, posts show:', 'dimas' ),
+					'label'   => esc_html__( 'On Archive Dimas_Pages, posts show:', 'dimas' ),
 					'choices' => array(
 						'excerpt' => esc_html__( 'Summary', 'dimas' ),
 						'full'    => esc_html__( 'Full text', 'dimas' ),
@@ -113,7 +113,7 @@ if ( ! class_exists( 'Dimas_Customize' ) ) {
 
 			// Background color.
 			// Include the custom control class.
-			include_once get_theme_file_path( 'classes/class-dimas-customize-color-control.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+			include_once get_theme_file_path( 'classes/class-dimas-customize-color-control.php' ); // phpcs:ignore WPDimas_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 			// Register the custom control.
 			$wp_customize->register_control_type( 'Dimas_Customize_Color_Control' );

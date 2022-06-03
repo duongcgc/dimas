@@ -64,12 +64,12 @@ class Single_Product {
 		add_filter( 'dimas_single_get_product_layout', array( $this, 'get_mobile_product_layout' ) );
 		add_filter( 'dimas_product_add_to_cart_sticky', '__return_false' );
 
-		remove_action( 'woocommerce_single_product_summary', array( \Dimas\Theme::instance()->get( 'woocommerce' )->get_template( 'single_product' ), 'open_summary_top_wrapper' ), 2 );
-		remove_action( 'woocommerce_single_product_summary', array( \Dimas\Theme::instance()->get( 'woocommerce' )->get_template( 'single_product' ), 'single_product_taxonomy' ), 2 );
+		remove_action( 'woocommerce_single_product_summary', array( \Dimas\Dimas_Theme::instance()->get( 'woocommerce' )->get_template( 'single_product' ), 'open_summary_top_wrapper' ), 2 );
+		remove_action( 'woocommerce_single_product_summary', array( \Dimas\Dimas_Theme::instance()->get( 'woocommerce' )->get_template( 'single_product' ), 'single_product_taxonomy' ), 2 );
 
 		// Re-order the stars rating.
 		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 3 );
-		remove_action( 'woocommerce_single_product_summary', array( \Dimas\Theme::instance()->get( 'woocommerce' )->get_template( 'single_product' ), 'close_summary_top_wrapper' ), 4 );
+		remove_action( 'woocommerce_single_product_summary', array( \Dimas\Dimas_Theme::instance()->get( 'woocommerce' )->get_template( 'single_product' ), 'close_summary_top_wrapper' ), 4 );
 
 		add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 8 );
 

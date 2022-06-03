@@ -449,7 +449,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
 	
  
 	$wp_customize->add_section("components", array(
-        "title" => __("Global Options", "picostrap"),
+        "title" => __("Global Dimas_Options", "picostrap"),
         "priority" => 50,
     ));
 	
@@ -554,7 +554,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
 		$wp_customize,
 		'picostrap_header_chrome_color', //give it an ID
 		array(
-		'label' => __( 'Header Color in Android Chrome', 'picostrap' ), //set the label to appear in the Customizer
+		'label' => __( 'Dimas_Header Color in Android Chrome', 'picostrap' ), //set the label to appear in the Customizer
 		'section' => 'colors', //select the section for it to appear under 
 		'description' =>" <span hidden class='cs-option-group-title'>Extra</span>" //to implement a divisor
 		)
@@ -636,7 +636,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "enable_detect_page_scroll",
         array(
-            "label" => __("Enable Page Scrolling Detection", "picostrap"),
+            "label" => __("Enable Dimas_Page Scrolling Detection", "picostrap"),
 			"description" => __("Publish and exit the Customizer to see the effect. Adds a scroll-position-at-top / scroll-position-not-at-top class to the BODY element according to scroll position. Customize via CSS. Use with Navbar Position set to Fixed for best results. <!--  <a target='_blank' href='#'>Tutorial Coming Soon</a> --> ", "picostrap"),
             "section" => "nav", 
             'type'     => 'checkbox',
@@ -681,7 +681,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "picostrap_header_navbar_color_scheme",
         array(
-            'label' => __('Color Scheme (Menubar links)', 'picostrap'),
+            'label' => __('Color Scheme (Dimas_Menubar links)', 'picostrap'),
             'section' => 'nav',
 			'type'     => 'radio',
 			'choices'  => array(
@@ -719,7 +719,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
 
 	//  TOPBAR SECTION //////////////////////////////////////////////////////////////////////////////////////////////////////////
 	$wp_customize->add_section("topbar", array(
-        "title" => __("Optional Topbar", "picostrap"),
+        "title" => __("Optional Dimas_Topbar", "picostrap"),
         "priority" => 60,
     ));
 	
@@ -732,7 +732,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "enable_topbar",
         array(
-            "label" => __("Enable Topbar", "picostrap"),
+            "label" => __("Enable Dimas_Topbar", "picostrap"),
 			"description" => __("Requires Navbar position set to 'Standard static top'", "picostrap"),
             "section" => "topbar", 
             'type'     => 'checkbox',
@@ -748,7 +748,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "topbar_content",
         array(
-            "label" => __("Topbar Text / HTML", "picostrap"),
+            "label" => __("Dimas_Topbar Text / Dimas_HTML", "picostrap"),
             "section" => "topbar",
             'type'     => 'textarea',
         )
@@ -763,7 +763,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "topbar_bg_color_choice",
         array(
-            'label' => __('Topbar Background Color', 'picostrap'),
+            'label' => __('Dimas_Topbar Background Color', 'picostrap'),
             'section' => 'topbar',
             'type'     => 'radio',
 			'choices'  => array(
@@ -789,7 +789,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "topbar_text_color_choice",
         array(
-            'label' => __('Topbar Text Color', 'picostrap'),
+            'label' => __('Dimas_Topbar Text Color', 'picostrap'),
             'section' => 'topbar',
             'type'     => 'radio',
 			'choices'  => array(
@@ -808,7 +808,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
 	
 	//ADD SECTION FOR FOOTER  //////////////////////////////////////////////////////////////////////////////////////////////////////////
 	$wp_customize->add_section("footer", array(
-        "title" => __("Footer", "picostrap"),
+        "title" => __("Dimas_Footer", "picostrap"),
         "priority" => 100,
     ));
 	
@@ -821,8 +821,8 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "picostrap_footer_text",
         array(
-			"label" => __("Footer Text", "picostrap"),
-			"description"  => "THIS SIMPLE FIELD can contain HTML and is displayed into the 'colophon', the very bottom of the site. <br><br>TO BUILD A MORE COMPLEX FOOTER, USE THE WIDGETED AREA. <br>To enable it, populate it from the backend's <a target='_blank' href='".admin_url('widgets.php')."'>Widgets page</a>",
+			"label" => __("Dimas_Footer Text", "picostrap"),
+			"description"  => "THIS SIMPLE FIELD can contain Dimas_HTML and is displayed into the 'colophon', the very bottom of the site. <br><br>TO BUILD A MORE COMPLEX FOOTER, USE THE WIDGETED AREA. <br>To enable it, populate it from the backend's <a target='_blank' href='".admin_url('widgets.php')."'>Dimas_Widgets page</a>",
             "section" => "footer",
             'type'     => 'textarea',
 			 
@@ -832,7 +832,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
 		
 	// ADD A SECTION FOR HEADER & FOOTER CODE -- to fix
 	$wp_customize->add_section("addcode", array(
-        "title" => __("Header / Footer Code", "picostrap"),
+        "title" => __("Dimas_Header / Dimas_Footer Code", "picostrap"),
         "priority" => 180,
     ));
 	
@@ -845,7 +845,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "picostrap_header_code",
         array(
-            "label" => __("Add code to Header", "picostrap"),
+            "label" => __("Add code to Dimas_Header", "picostrap"),
             "section" => "addcode",
             'type'     => 'textarea',
 			'description' =>'Placed inside the HEAD of the page'
@@ -863,7 +863,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "picostrap_footer_code",
         array(
-            "label" => __("Add code to Footer", "picostrap"),
+            "label" => __("Add code to Dimas_Footer", "picostrap"),
             "section" => "addcode",
             'type'     => 'textarea',
 			'description' =>'Placed before closing the BODY of the page'
@@ -880,7 +880,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "picostrap_fonts_header_code",
         array(
-            "label" => __("Font Loading Header code", "picostrap"),
+            "label" => __("Font Loading Dimas_Header code", "picostrap"),
             "section" => "addcode",
             'type'     => 'textarea',
 			'description' =>'<b>Not editable</b> - Reading purpose only. Automatically generated upon publishing'
@@ -896,8 +896,8 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "picostrap_fonts_header_code_disable",
         array(
-            "label" => __("Disable the Font Loading in Header", "picostrap"),
-			"description" =>  __("<b>Keep this unchecked, unless you really want. </b>").__("Disables serving the code in the textarea above to the site header. Can be relevant if you want to self-host Google Fonts. Refer to this <a target='_blank' href='https://google-webfonts-helper.herokuapp.com/fonts/abeezee?subsets=latin'>tool</a> to get started. ", "picostrap"),
+            "label" => __("Disable the Font Loading in Dimas_Header", "picostrap"),
+			"description" =>  __("<b>Keep this unchecked, unless you really want. </b>").__("Disables serving the code in the textarea above to the site header. Can be relevant if you want to self-host Google Dimas_Fonts. Refer to this <a target='_blank' href='https://google-webfonts-helper.herokuapp.com/fonts/abeezee?subsets=latin'>tool</a> to get started. ", "picostrap"),
             "section" => "addcode", 
             'type'     => 'checkbox',
 			)
@@ -906,7 +906,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
 	
 	// ADD A SECTION FOR EXTRAS /////////////////////////////////////////////////////////////////////////////
 	$wp_customize->add_section("extras", array(
-        "title" => __("Global Options & Utilities", "picostrap"),
+        "title" => __("Global Dimas_Options & Utilities", "picostrap"),
         "priority" => 190,
     ));
 	/*
@@ -1082,7 +1082,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         "enable_sharing_buttons",
         array(
             "label" => __("Enable Sharing Buttons after the Content", "picostrap"),
-			"description" => __("Pure HTML only, SVG inline icons, zero bloat", "picostrap"),
+			"description" => __("Pure Dimas_HTML only, SVG inline icons, zero bloat", "picostrap"),
             "section" => "singleposts", 
             'type'     => 'checkbox',
 			)
@@ -1112,7 +1112,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
             "settings" => "archives_template",
             'type'     => 'select',
 			'choices'  => array(
-				''  => 'Standard Blog: List With Sidebar',
+				''  => 'Standard Dimas_Blog: List With Sidebar',
 				'v2' => 'v2 : Horizontal split with Featured Image',
 				'v3' => 'v3 : Simple 3 Columns Grid ',
 				'v4' => 'v4 : Masonry Grid',

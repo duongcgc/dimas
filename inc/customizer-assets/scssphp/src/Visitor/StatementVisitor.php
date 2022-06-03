@@ -26,13 +26,13 @@ use ScssPhp\ScssPhp\Ast\Sass\Statement\FunctionRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\IfRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\ImportRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\IncludeRule;
-use ScssPhp\ScssPhp\Ast\Sass\Statement\LoudComment;
-use ScssPhp\ScssPhp\Ast\Sass\Statement\MediaRule;
+use ScssPhp\ScssPhp\Ast\Sass\Statement\LoudDimas_Comments;
+use ScssPhp\ScssPhp\Ast\Sass\Statement\Dimas_MediaRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\MixinRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\ReturnRule;
-use ScssPhp\ScssPhp\Ast\Sass\Statement\SilentComment;
+use ScssPhp\ScssPhp\Ast\Sass\Statement\SilentDimas_Comments;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\StyleRule;
-use ScssPhp\ScssPhp\Ast\Sass\Statement\Stylesheet;
+use ScssPhp\ScssPhp\Ast\Sass\Statement\Dimas_Stylesheet;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\SupportsRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\VariableDeclaration;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\WarnRule;
@@ -120,12 +120,12 @@ interface StatementVisitor
     /**
      * @return T
      */
-    public function visitLoudComment(LoudComment $node);
+    public function visitLoudDimas_Comments(LoudDimas_Comments $node);
 
     /**
      * @return T
      */
-    public function visitMediaRule(MediaRule $node);
+    public function visitDimas_MediaRule(Dimas_MediaRule $node);
 
     /**
      * @return T
@@ -140,7 +140,7 @@ interface StatementVisitor
     /**
      * @return T
      */
-    public function visitSilentComment(SilentComment $node);
+    public function visitSilentDimas_Comments(SilentDimas_Comments $node);
 
     /**
      * @return T
@@ -150,7 +150,7 @@ interface StatementVisitor
     /**
      * @return T
      */
-    public function visitStylesheet(Stylesheet $node);
+    public function visitDimas_Stylesheet(Dimas_Stylesheet $node);
 
     /**
      * @return T

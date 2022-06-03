@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Woocommerce initial
  *
  */
-class WooCommerce {
+class Dimas_WooCommerce {
 	/**
 	 * Instance
 	 *
@@ -50,7 +50,7 @@ class WooCommerce {
 	}
 
 	/**
-	 * WooCommerce Init
+	 * Dimas_WooCommerce Init
 	 *
 	 * @since 1.0.0
 	 *
@@ -99,7 +99,7 @@ class WooCommerce {
 	}
 
 	/**
-	 * Get WooCommerce Class Init.
+	 * Get Dimas_WooCommerce Class Init.
 	 *
 	 * @since 1.0.0
 	 *
@@ -108,36 +108,36 @@ class WooCommerce {
 	public function get( $class ) {
 		switch ( $class ) {
 			case 'setup':
-				return \Dimas\WooCommerce\Setup::instance();
+				return \Dimas\Dimas_WooCommerce\Setup::instance();
 				break;
 			case 'sidebars':
-				return \Dimas\WooCommerce\Sidebars::instance();
+				return \Dimas\Dimas_WooCommerce\Sidebars::instance();
 				break;
 			case 'customizer':
-				return \Dimas\WooCommerce\Customizer::instance();
+				return \Dimas\Dimas_WooCommerce\Customizer::instance();
 				break;
 			case 'cache':
-				return \Dimas\WooCommerce\Cache::instance();
+				return \Dimas\Dimas_WooCommerce\Cache::instance();
 				break;
 			case 'dynamic_css':
-				return \Dimas\WooCommerce\Dynamic_CSS::instance();
+				return \Dimas\Dimas_WooCommerce\Dimas_Dynamic_CSS::instance();
 				break;
 			case 'cat_settings':
 				if ( is_admin() ) {
-					return \Dimas\WooCommerce\Settings\Category::instance();
+					return \Dimas\Dimas_WooCommerce\Settings\Category::instance();
 				}
 				break;
 
 			case 'product_settings':
 				if ( is_admin() ) {
-					return \Dimas\WooCommerce\Settings\Product::instance();
+					return \Dimas\Dimas_WooCommerce\Settings\Product::instance();
 				}
 				break;
 		}
 	}
 
 	/**
-	 * Get WooCommerce Template Class.
+	 * Get Dimas_WooCommerce Template Class.
 	 *
 	 * @since 1.0.0
 	 *
@@ -146,32 +146,32 @@ class WooCommerce {
 	public function get_template( $class ) {
 		switch ( $class ) {
 			case 'general':
-				return \Dimas\WooCommerce\Template\General::instance();
+				return \Dimas\Dimas_WooCommerce\Template\General::instance();
 				break;
 			case 'product_loop':
-				return \Dimas\WooCommerce\Template\Product_Loop::instance();
+				return \Dimas\Dimas_WooCommerce\Template\Product_Loop::instance();
 				break;
 			case 'catalog':
-				if ( \Dimas\Helper::is_catalog() ) {
-					return \Dimas\WooCommerce\Template\Catalog::instance();
+				if ( \Dimas\Dimas_Helper::is_catalog() ) {
+					return \Dimas\Dimas_WooCommerce\Template\Catalog::instance();
 				}
 				break;
 			case 'single_product':
 				if ( is_singular( 'product' ) ) {
-					return \Dimas\WooCommerce\Template\Single_Product::instance();
+					return \Dimas\Dimas_WooCommerce\Template\Single_Product::instance();
 				}
 				break;
 			case 'account':
-				return \Dimas\WooCommerce\Template\Account::instance();
+				return \Dimas\Dimas_WooCommerce\Template\Account::instance();
 				break;
 			case 'cart':
 				if ( function_exists('is_cart') && is_cart() ) {
-					return \Dimas\WooCommerce\Template\Cart::instance();
+					return \Dimas\Dimas_WooCommerce\Template\Cart::instance();
 				}
 				break;
 			case 'checkout':
 				if ( function_exists('is_checkout') && is_checkout() ) {
-					return \Dimas\WooCommerce\Template\Checkout::instance();
+					return \Dimas\Dimas_WooCommerce\Template\Checkout::instance();
 				}
 				break;
 			default :
@@ -180,7 +180,7 @@ class WooCommerce {
 	}
 
 	/**
-	 * Get WooCommerce Elements.
+	 * Get Dimas_WooCommerce Elements.
 	 *
 	 * @since 1.0.0
 	 *
@@ -189,19 +189,19 @@ class WooCommerce {
 	public function get_element( $class ) {
 		switch ( $class ) {
 			case 'deal':
-				return \Dimas\WooCommerce\Elements\Product_Deal::instance();
+				return \Dimas\Dimas_WooCommerce\Elements\Product_Deal::instance();
 				break;
 			case 'masonry':
-				return \Dimas\WooCommerce\Elements\Product_Masonry::instance();
+				return \Dimas\Dimas_WooCommerce\Elements\Product_Masonry::instance();
 				break;
 			case 'showcase':
-				return \Dimas\WooCommerce\Elements\Product_ShowCase::instance();
+				return \Dimas\Dimas_WooCommerce\Elements\Product_ShowCase::instance();
 				break;
 			case 'summary':
-				return \Dimas\WooCommerce\Elements\Product_Summary::instance();
+				return \Dimas\Dimas_WooCommerce\Elements\Product_Summary::instance();
 				break;
 			case 'product_with_thumbnails':
-				return \Dimas\WooCommerce\Elements\Product_With_Thumbnails::instance();
+				return \Dimas\Dimas_WooCommerce\Elements\Product_With_Thumbnails::instance();
 				break;
 		}
 	}
@@ -216,26 +216,26 @@ class WooCommerce {
 	public function get_module( $class ) {
 		switch ( $class ) {
 			case 'badges':
-				return \Dimas\WooCommerce\Modules\Badges::instance();
+				return \Dimas\Dimas_WooCommerce\Modules\Badges::instance();
 				break;
 			case 'quick_view':
-				return \Dimas\WooCommerce\Modules\Quick_View::instance();
+				return \Dimas\Dimas_WooCommerce\Modules\Quick_View::instance();
 				break;
 			case 'notices':
-				return \Dimas\WooCommerce\Modules\Notices::instance();
+				return \Dimas\Dimas_WooCommerce\Modules\Notices::instance();
 				break;
 			case 'recently_viewed':
-				return \Dimas\WooCommerce\Modules\Recently_Viewed::instance();
+				return \Dimas\Dimas_WooCommerce\Modules\Recently_Viewed::instance();
 				break;
 			case 'login_ajax':
-				return \Dimas\WooCommerce\Modules\Login_AJAX::instance();
+				return \Dimas\Dimas_WooCommerce\Modules\Login_AJAX::instance();
 				break;
 			case 'mini_cart':
-				return \Dimas\WooCommerce\Modules\Mini_Cart::instance();
+				return \Dimas\Dimas_WooCommerce\Modules\Mini_Cart::instance();
 				break;
 			case 'sticky_atc':
-				if ( is_singular( 'product' ) && intval( apply_filters( 'dimas_product_add_to_cart_sticky', Helper::get_option( 'product_add_to_cart_sticky' ) ) ) ) {
-					return \Dimas\WooCommerce\Modules\Sticky_ATC::instance();
+				if ( is_singular( 'product' ) && intval( apply_filters( 'dimas_product_add_to_cart_sticky', Dimas_Helper::get_option( 'product_add_to_cart_sticky' ) ) ) ) {
+					return \Dimas\Dimas_WooCommerce\Modules\Sticky_ATC::instance();
 				}
 				break;
 		}

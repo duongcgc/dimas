@@ -14,7 +14,7 @@ namespace ScssPhp\ScssPhp\Ast\Css;
 
 use ScssPhp\ScssPhp\SourceSpan\FileSpan;
 
-class ModifiableCssStylesheet extends ModifiableCssParentNode implements CssStylesheet
+class ModifiableCssDimas_Stylesheet extends ModifiableCssParentNode implements CssDimas_Stylesheet
 {
     /**
      * @var FileSpan
@@ -38,14 +38,14 @@ class ModifiableCssStylesheet extends ModifiableCssParentNode implements CssStyl
 
     public function accept($visitor)
     {
-        return $visitor->visitCssStylesheet($this);
+        return $visitor->visitCssDimas_Stylesheet($this);
     }
 
     /**
-     * @phpstan-return ModifiableCssStylesheet
+     * @phpstan-return ModifiableCssDimas_Stylesheet
      */
     public function copyWithoutChildren(): ModifiableCssParentNode
     {
-        return new ModifiableCssStylesheet($this->span);
+        return new ModifiableCssDimas_Stylesheet($this->span);
     }
 }

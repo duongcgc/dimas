@@ -1,6 +1,6 @@
 <?php
 /**
- * Dimas_Bootstrap functions and definitions.
+ * Bootstrap Framework functions and definitions.
  *
  * @package Dimas
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Styles functions and definitions.
+ * Dimas_Styles functions and definitions.
  *
  * @package Dimas
  */
@@ -12,10 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Styles initial
+ * Dimas_Styles initial
  *
  */
-class Styles {
+class Dimas_Styles {
 	/**
 	 * Instance
 	 *
@@ -85,7 +85,7 @@ class Styles {
 
 		echo '<h2 class="comments-title ' . esc_attr( $comments_class ) . '">';
 		printf( // WPCS: XSS OK.
-			esc_html( _nx( 'Styles (%1$s)', 'Styles (%1$s)', $comments_number, 'comments title', 'dimas' ) ),
+			esc_html( _nx( 'Dimas_Styles (%1$s)', 'Dimas_Styles (%1$s)', $comments_number, 'comments title', 'dimas' ) ),
 			number_format_i18n( $comments_number )
 		);
 
@@ -102,7 +102,7 @@ class Styles {
 	 */
 	public function comment_fields() {
 		if ( ! comments_open() ) {
-			echo '<p class="no-comments">' . esc_html__( 'Styles are closed.', 'dimas' ) . '</p>';
+			echo '<p class="no-comments">' . esc_html__( 'Dimas_Styles are closed.', 'dimas' ) . '</p>';
 		} else {
 			$comment_field = '<p class="comment-form-comment"><textarea required id="comment" placeholder="' . esc_attr__( 'Content', 'dimas' ) . '" name="comment" cols="45" rows="7" aria-required="true"></textarea></p>';
 			comment_form(
@@ -167,7 +167,7 @@ class Styles {
 	}
 
 	/**
-	 * Styles callback function
+	 * Dimas_Styles callback function
 	 *
 	 * @since 1.0.0
 	 *
@@ -214,7 +214,7 @@ class Styles {
 	}
 
 	/**
-	 * Styles Template function
+	 * Dimas_Styles Template function
 	 *
 	 * @since 1.0.0
 	 *

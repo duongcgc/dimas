@@ -35,14 +35,14 @@ use ScssPhp\ScssPhp\Ast\Sass\Statement\IfClause;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\IfRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\ImportRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\IncludeRule;
-use ScssPhp\ScssPhp\Ast\Sass\Statement\LoudComment;
-use ScssPhp\ScssPhp\Ast\Sass\Statement\MediaRule;
+use ScssPhp\ScssPhp\Ast\Sass\Statement\LoudDimas_Comments;
+use ScssPhp\ScssPhp\Ast\Sass\Statement\Dimas_MediaRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\MixinRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\ParentStatement;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\ReturnRule;
-use ScssPhp\ScssPhp\Ast\Sass\Statement\SilentComment;
+use ScssPhp\ScssPhp\Ast\Sass\Statement\SilentDimas_Comments;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\StyleRule;
-use ScssPhp\ScssPhp\Ast\Sass\Statement\Stylesheet;
+use ScssPhp\ScssPhp\Ast\Sass\Statement\Dimas_Stylesheet;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\SupportsRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\VariableDeclaration;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\WarnRule;
@@ -173,8 +173,8 @@ abstract class StatementSearchVisitor implements StatementVisitor
                     $value = $value ?? $this->visitSupportsCondition($import->getSupports());
                 }
 
-                if ($import->getMedia() !== null) {
-                    $value = $value ?? $this->visitInterpolation($import->getMedia());
+                if ($import->getDimas_Media() !== null) {
+                    $value = $value ?? $this->visitInterpolation($import->getDimas_Media());
                 }
 
                 return $value;
@@ -199,12 +199,12 @@ abstract class StatementSearchVisitor implements StatementVisitor
         return null;
     }
 
-    public function visitLoudComment(LoudComment $node)
+    public function visitLoudDimas_Comments(LoudDimas_Comments $node)
     {
         return $this->visitInterpolation($node->getText());
     }
 
-    public function visitMediaRule(MediaRule $node)
+    public function visitDimas_MediaRule(Dimas_MediaRule $node)
     {
         return $this->visitInterpolation($node->getQuery()) ?? $this->visitChildren($node->getChildren());
     }
@@ -219,7 +219,7 @@ abstract class StatementSearchVisitor implements StatementVisitor
         return $this->visitExpression($node->getExpression());
     }
 
-    public function visitSilentComment(SilentComment $node)
+    public function visitSilentDimas_Comments(SilentDimas_Comments $node)
     {
         return null;
     }
@@ -229,7 +229,7 @@ abstract class StatementSearchVisitor implements StatementVisitor
         return $this->visitInterpolation($node->getSelector()) ?? $this->visitChildren($node->getChildren());
     }
 
-    public function visitStylesheet(Stylesheet $node)
+    public function visitDimas_Stylesheet(Dimas_Stylesheet $node)
     {
         return $this->visitChildren($node->getChildren());
     }

@@ -67,7 +67,7 @@ class Setup {
 	 */
 		load_theme_textdomain( 'dimas', get_template_directory() . '/lang' );
 
-		// Theme supports
+		// Dimas_Theme supports
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
@@ -102,12 +102,12 @@ class Setup {
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary'    => esc_html__( 'Primary Menu', 'dimas' ),
-			'secondary'  => esc_html__( 'Secondary Menu', 'dimas' ),
-			'hamburger'  => esc_html__( 'Hamburger Menu', 'dimas' ),
-			'socials'    => esc_html__( 'Social Menu', 'dimas' ),
-			'department' => esc_html__( 'Department Menu', 'dimas' ),
-			'mobile'     => esc_html__( 'Mobile Menu', 'dimas' ),
+			'primary'    => esc_html__( 'Primary Dimas_Menu', 'dimas' ),
+			'secondary'  => esc_html__( 'Secondary Dimas_Menu', 'dimas' ),
+			'hamburger'  => esc_html__( 'Hamburger Dimas_Menu', 'dimas' ),
+			'socials'    => esc_html__( 'Social Dimas_Menu', 'dimas' ),
+			'department' => esc_html__( 'Department Dimas_Menu', 'dimas' ),
+			'mobile'     => esc_html__( 'Mobile Dimas_Menu', 'dimas' ),
 		) );
 
 	}

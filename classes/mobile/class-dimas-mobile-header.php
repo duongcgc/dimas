@@ -1,6 +1,6 @@
 <?php
 /**
- * Topbar Mobile functions and definitions.
+ * Dimas_Topbar Mobile functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -9,9 +9,9 @@
 
 namespace Dimas\Mobile;
 
-use Dimas\Helper;
+use Dimas\Dimas_Helper;
 
-class Header {
+class Dimas_Header {
 	/**
 	 * Instance
 	 *
@@ -43,7 +43,7 @@ class Header {
 	public function __construct() {
 		add_filter( 'dimas_topbar', array( $this, 'get_topbar' ) );
 		remove_action( 'dimas_before_open_site_header', array(
-			\Dimas\Theme::instance()->get( 'topbar' ),
+			\Dimas\Dimas_Theme::instance()->get( 'topbar' ),
 			'display_topbar'
 		), 10 );
 
@@ -55,20 +55,20 @@ class Header {
 		add_filter( 'dimas_get_style_directory_uri', array( $this, 'get_style_directory_uri' ) );
 
 		remove_action( 'dimas_after_open_site_header', array(
-			\Dimas\Theme::instance()->get( 'header' ),
+			\Dimas\Dimas_Theme::instance()->get( 'header' ),
 			'show_header'
 		) );
 	}
 
 	/**
-	 * Get Mobile Topbar
+	 * Get Mobile Dimas_Topbar
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return string
 	 */
 	public function get_topbar() {
-		return Helper::get_option( 'mobile_topbar' );
+		return Dimas_Helper::get_option( 'mobile_topbar' );
 	}
 
 	/**
@@ -79,7 +79,7 @@ class Header {
 	 * @return string
 	 */
 	public function get_campaign_bar() {
-		return Helper::get_option( 'mobile_campaign_bar' );
+		return Dimas_Helper::get_option( 'mobile_campaign_bar' );
 	}
 
 	/**
@@ -127,7 +127,7 @@ class Header {
 	 * @return string
 	 */
 	public function header_history_back() {
-		if ( Helper::get_option( 'mobile_header_history_back' ) == 'default' ) {
+		if ( Dimas_Helper::get_option( 'mobile_header_history_back' ) == 'default' ) {
 			return;
 		}
 

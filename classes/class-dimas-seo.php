@@ -2,7 +2,7 @@
 namespace Dimas;
 
 /**
- * SEO OnPage class
+ * SEO OnDimas_Page class
  */
 class Dimas_SEO {
 	/**

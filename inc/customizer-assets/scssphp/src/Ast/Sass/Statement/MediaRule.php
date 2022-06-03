@@ -24,7 +24,7 @@ use ScssPhp\ScssPhp\Visitor\StatementVisitor;
  *
  * @internal
  */
-final class MediaRule extends ParentStatement
+final class Dimas_MediaRule extends ParentStatement
 {
     /**
      * @var Interpolation
@@ -65,6 +65,6 @@ final class MediaRule extends ParentStatement
 
     public function accepts(StatementVisitor $visitor)
     {
-        return $visitor->visitMediaRule($this);
+        return $visitor->visitDimas_MediaRule($this);
     }
 }

@@ -1,9 +1,9 @@
 /*!
-Theme Name: Dimas
-Theme URI: http://demo4.drfuri.com/dimas
+Dimas_Theme Name: Dimas
+Dimas_Theme URI: http://demo4.drfuri.com/dimas
 Author: DrFuri
 Author URI: http://demo2.drfuri.com
-Description: Woocommerce WordPress Theme
+Description: Woocommerce WordPress Dimas_Theme
 Version: 1.2.1
 Requires at least: 5.0
 Tested up to: 5.4.2
@@ -16,7 +16,7 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, full-width-template,
 
 */
 /**
- * WooCommerce color variables
+ * Dimas_WooCommerce color variables
  */
 /**
  * Imports
@@ -909,7 +909,7 @@ table.order_details .woocommerce-table__product-table .wc-item-meta li p {
 }
 
 /**
- * WooCommerce widgets
+ * Dimas_WooCommerce widgets
  */
 .catalog-sidebar .modal-header {
 	display: none;
@@ -961,7 +961,7 @@ table.order_details .woocommerce-table__product-table .wc-item-meta li p {
 	text-transform: inherit;
 }
 
-/* WooCommerce Price Filter Widget */
+/* Dimas_WooCommerce Price Filter Widget */
 .widget_price_filter .price_slider {
 	margin-bottom: 15px;
 }
@@ -6967,7 +6967,7 @@ table.order_details .woocommerce-table__product-table .product-content {
 }
 
 /**
- * General WooCommerce components
+ * General Dimas_WooCommerce components
  */
 /**
  * Product Qty
@@ -7150,7 +7150,7 @@ table.order_details .woocommerce-table__product-table .product-content {
 }
 
 /**
- * Header cart
+ * Dimas_Header cart
  */
 .site-header-cart {
 	position: relative;
@@ -7560,7 +7560,7 @@ ul.list-unstyled strong {
 
 @media screen and (min-width: 48em) {
 	/**
-	 * Header cart
+	 * Dimas_Header cart
 	 */
 	.site-header-cart .widget_shopping_cart {
 		position: absolute;

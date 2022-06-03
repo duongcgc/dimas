@@ -5,9 +5,9 @@
  * @package Dimas
  */
 
-namespace Dimas\Blog;
+namespace Dimas\Dimas_Blog;
 
-use Dimas\Helper;
+use Dimas\Dimas_Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -54,8 +54,8 @@ class Posts {
 		add_action( 'dimas_after_open_posts_content', array( $this, 'open_post_list' ), 40 );
 		add_action( 'dimas_before_close_posts_content', array( $this, 'close_post_list' ), 10 );
 
-		add_action( 'dimas_before_close_posts_content', array( new \Dimas\Helper, 'posts_found' ), 20 );
-		add_action( 'dimas_before_close_posts_content', array( new \Dimas\Helper, 'load_pagination' ), 30 );
+		add_action( 'dimas_before_close_posts_content', array( new \Dimas\Dimas_Helper, 'posts_found' ), 20 );
+		add_action( 'dimas_before_close_posts_content', array( new \Dimas\Dimas_Helper, 'load_pagination' ), 30 );
 
 	}
 
@@ -67,11 +67,11 @@ class Posts {
 	 * @return void
 	 */
 	public function cats_filter() {
-		if ( ! \Dimas\Helper::is_blog() && ! is_singular( 'post' ) ) {
+		if ( ! \Dimas\Dimas_Helper::is_blog() && ! is_singular( 'post' ) ) {
 			return;
 		}
 
-		if ( ! intval( Helper::get_option( 'show_blog_cats' ) ) ) {
+		if ( ! intval( Dimas_Helper::get_option( 'show_blog_cats' ) ) ) {
 			return;
 		}
 
@@ -87,10 +87,10 @@ class Posts {
 	 * @return void
 	 */
 	public function open_post_list() {
-		$type    = apply_filters( 'dimas_get_blog_type', Helper::get_option( 'blog_type' ) );
+		$type    = apply_filters( 'dimas_get_blog_type', Dimas_Helper::get_option( 'blog_type' ) );
 		$classes = ' blog-wrapper--' . $type;
 
-		$classes .= $type == 'grid' ? ' blog-columns--' . Helper::get_option( 'blog_columns' ) : '';
+		$classes .= $type == 'grid' ? ' blog-columns--' . Dimas_Helper::get_option( 'blog_columns' ) : '';
 		echo '<div class="dimas-posts__list ' . esc_attr( $classes ) . ' ">';
 	}
 
@@ -113,10 +113,10 @@ class Posts {
 	 * @return void
 	 */
 	public function taxs_list( $taxonomy = 'category' ) {
-		$orderby  = Helper::get_option( 'blog_cats_orderby' );
-		$order    = Helper::get_option( 'blog_cats_order' );
-		$number   = Helper::get_option( 'blog_cats_number' );
-		$view_all = Helper::get_option( 'blog_cats_view_all' );
+		$orderby  = Dimas_Helper::get_option( 'blog_cats_orderby' );
+		$order    = Dimas_Helper::get_option( 'blog_cats_order' );
+		$number   = Dimas_Helper::get_option( 'blog_cats_number' );
+		$view_all = Dimas_Helper::get_option( 'blog_cats_view_all' );
 
 		$cats   = '';
 		$output = array();
@@ -139,9 +139,9 @@ class Posts {
 		}
 
 		$found       = false;
-		$custom_slug = intval( Helper::get_option( 'custom_blog_cats' ) );
+		$custom_slug = intval( Dimas_Helper::get_option( 'custom_blog_cats' ) );
 		if ( $custom_slug ) {
-			$cats_slug = (array) Helper::get_option( 'blog_cats_slug' );
+			$cats_slug = (array) Dimas_Helper::get_option( 'blog_cats_slug' );
 
 			foreach ( $cats_slug as $slug ) {
 				$cat = get_term_by( 'slug', $slug, $taxonomy );

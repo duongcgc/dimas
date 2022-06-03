@@ -1,12 +1,12 @@
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-1.  Header
-2.  Theme
+1.  Dimas_Header
+2.  Dimas_Theme
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-1. Header
+1. Dimas_Header
 --------------------------------------------------------------*/
 
 jQuery(function ($) {
@@ -48,7 +48,7 @@ jQuery(function ($) {
 }); // jQuery End
 
 /*--------------------------------------------------------------
-2. Theme
+2. Dimas_Theme
 --------------------------------------------------------------*/
 
 jQuery(function ($) {
@@ -102,7 +102,7 @@ jQuery(function ($) {
   $('.height-100').css('height', 1.0 * $(window).height());
 
   // Forms
-  $('select').addClass('form-select').removeClass('form-control'); // form-control is added to select by WooCommerce form filter
+  $('select').addClass('form-select').removeClass('form-control'); // form-control is added to select by Dimas_WooCommerce form filter
 
   // Alert links
   $('.alert a').addClass('alert-link');

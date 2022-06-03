@@ -1,6 +1,6 @@
 <?php
 /**
- * Topbar Mobile functions and definitions.
+ * Dimas_Topbar Mobile functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -8,9 +8,9 @@
  */
 
 namespace Dimas\Mobile;
-use Dimas\Helper;
+use Dimas\Dimas_Helper;
 
-class Footer {
+class Dimas_Footer {
 	/**
 	 * Instance
 	 *
@@ -50,28 +50,28 @@ class Footer {
 	 *
 	 */
 	function get_footer_sections($section) {
-		if( ! intval(Helper::get_option( 'mobile_footer_newsletter' )) ) {
+		if( ! intval(Dimas_Helper::get_option( 'mobile_footer_newsletter' )) ) {
 			$key = array_search( 'newsletter', $section);
 			if ( $key !== false ) {
 				unset($section[$key]);
 			}
 		}
 
-		if( ! intval(Helper::get_option( 'mobile_footer_widget' ))) {
+		if( ! intval(Dimas_Helper::get_option( 'mobile_footer_widget' ))) {
 			$key = array_search( 'widgets', $section );
 			if ( $key !== false ) {
 				unset($section[$key]);
 			}
 		}
 
-		if( ! intval(Helper::get_option( 'mobile_footer_main' ))) {
+		if( ! intval(Dimas_Helper::get_option( 'mobile_footer_main' ))) {
 			$key = array_search( 'main', $section );
 			if ( $key !== false ) {
 				unset($section[$key]);
 			}
 		}
 
-		if( ! intval(Helper::get_option( 'mobile_footer_extra' )) ) {
+		if( ! intval(Dimas_Helper::get_option( 'mobile_footer_extra' )) ) {
 			$key = array_search( 'extra', $section );
 			if ( $key !== false ) {
 				unset($section[$key]);
@@ -86,10 +86,10 @@ class Footer {
 	 *
 	 */
 	function get_footer_classes( $classes ) {
-		if ( ! intval( Helper::get_option( 'mobile_footer_newsletter' ) ) &&
-			! intval( Helper::get_option( 'mobile_footer_widget' ) ) &&
-			! intval( Helper::get_option( 'mobile_footer_main' ) ) &&
-			! intval( Helper::get_option( 'mobile_footer_extra' ) )
+		if ( ! intval( Dimas_Helper::get_option( 'mobile_footer_newsletter' ) ) &&
+			! intval( Dimas_Helper::get_option( 'mobile_footer_widget' ) ) &&
+			! intval( Dimas_Helper::get_option( 'mobile_footer_main' ) ) &&
+			! intval( Dimas_Helper::get_option( 'mobile_footer_extra' ) )
 		) {
 			$classes .= ' site-footer__no-padding-top';
 		}

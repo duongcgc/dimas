@@ -14,14 +14,14 @@ namespace ScssPhp\ScssPhp\Ast\Css;
 
 use ScssPhp\ScssPhp\Exception\SassFormatException;
 use ScssPhp\ScssPhp\Logger\LoggerInterface;
-use ScssPhp\ScssPhp\Parser\MediaQueryParser;
+use ScssPhp\ScssPhp\Parser\Dimas_MediaQueryParser;
 
 /**
  * A plain CSS media query, as used in `@media` and `@import`.
  *
  * @internal
  */
-final class CssMediaQuery
+final class CssDimas_MediaQuery
 {
     public const MERGE_RESULT_EMPTY = 'empty';
     public const MERGE_RESULT_UNREPRESENTABLE = 'unrepresentable';
@@ -59,13 +59,13 @@ final class CssMediaQuery
      *
      * If passed, $url is the name of the file from which $contents comes.
      *
-     * @return list<CssMediaQuery>
+     * @return list<CssDimas_MediaQuery>
      *
      * @throws SassFormatException if parsing fails
      */
     public static function parseList(string $contents, ?LoggerInterface $logger = null, ?string $url = null): array
     {
-        return (new MediaQueryParser($contents, $logger, $url))->parse();
+        return (new Dimas_MediaQueryParser($contents, $logger, $url))->parse();
     }
 
     /**
@@ -85,11 +85,11 @@ final class CssMediaQuery
      *
      * @param string[] $features
      *
-     * @return CssMediaQuery
+     * @return CssDimas_MediaQuery
      */
-    public static function condition(array $features): CssMediaQuery
+    public static function condition(array $features): CssDimas_MediaQuery
     {
-        return new CssMediaQuery(null, null, $features);
+        return new CssDimas_MediaQuery(null, null, $features);
     }
 
     public function getModifier(): ?string
@@ -130,10 +130,10 @@ final class CssMediaQuery
      * Merges this with $other to return a query that matches the intersection
      * of both inputs.
      *
-     * @return CssMediaQuery|string
-     * @phpstan-return CssMediaQuery|CssMediaQuery::*
+     * @return CssDimas_MediaQuery|string
+     * @phpstan-return CssDimas_MediaQuery|CssDimas_MediaQuery::*
      */
-    public function merge(CssMediaQuery $other)
+    public function merge(CssDimas_MediaQuery $other)
     {
         $ourModifier = $this->modifier !== null ? strtolower($this->modifier) : null;
         $ourType = $this->type !== null ? strtolower($this->type) : null;
@@ -213,7 +213,7 @@ final class CssMediaQuery
             $features = array_merge($this->features, $other->features);
         }
 
-        return new CssMediaQuery(
+        return new CssDimas_MediaQuery(
             $type === $ourType ? $this->type : $other->type,
             $modifier === $ourModifier ? $this->modifier : $other->modifier,
             $features

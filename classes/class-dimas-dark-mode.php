@@ -31,7 +31,7 @@ class Dimas_Dark_Mode {
 		// Add customizer controls.
 		add_action( 'customize_register', array( $this, 'customizer_controls' ) );
 
-		// Add HTML classes.
+		// Add Dimas_HTML classes.
 		add_filter( 'dimas_html_classes', array( $this, 'html_classes' ) );
 
 		// Add classes to <body> in the dashboard.
@@ -124,7 +124,7 @@ class Dimas_Dark_Mode {
 	 *
 	 * @since Dimas 1.0
 	 *
-	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+	 * @param WP_Customize_Manager $wp_customize Dimas_Theme Customizer object.
 	 * @return void
 	 */
 	public function customizer_controls( $wp_customize ) {
@@ -135,7 +135,7 @@ class Dimas_Dark_Mode {
 		}
 
 		// Custom notice control.
-		include_once get_theme_file_path( 'classes/class-dimas-customize-notice-control.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+		include_once get_theme_file_path( 'classes/class-dimas-customize-notice-control.php' ); // phpcs:ignore WPDimas_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 		$wp_customize->add_setting(
 			'respect_user_color_preference_notice',
@@ -292,7 +292,7 @@ class Dimas_Dark_Mode {
 	}
 
 	/**
-	 * Print the dark-mode switch HTML.
+	 * Print the dark-mode switch Dimas_HTML.
 	 *
 	 * Inspired from https://codepen.io/aaroniker/pen/KGpXZo (MIT-licensed)
 	 *
@@ -360,7 +360,7 @@ class Dimas_Dark_Mode {
 	 */
 	public function the_script() {
 		echo '<script>';
-		include get_template_directory() . '/assets/js/dark-mode-toggler.js'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude
+		include get_template_directory() . '/assets/js/dark-mode-toggler.js'; // phpcs:ignore WPDimas_ThemeReview.CoreFunctionality.FileInclude
 		echo '</script>';
 	}
 

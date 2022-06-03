@@ -1,6 +1,6 @@
 <?php
 /**
- * Service functions and definitions.
+ * Dimas_Service functions and definitions.
  *
  * @package Dimas
  */
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Woocommerce initial
  *
  */
-class Service {
+class Dimas_Service {
 	/**
 	 * Instance
 	 *
@@ -64,7 +64,7 @@ class Service {
 	}
 
 	/**
-	 * Get Dimas Page Template Class.
+	 * Get Dimas Dimas_Page Template Class.
 	 *
 	 * @since 1.0.0
 	 *
@@ -73,29 +73,29 @@ class Service {
 	public function get( $class ) {
 		switch ( $class ) {
 			case 'posts':
-				if ( \Dimas\Helper::is_blog() ) {
-					return \Dimas\Service\Posts::instance();
+				if ( \Dimas\Dimas_Helper::is_blog() ) {
+					return \Dimas\Dimas_Service\Posts::instance();
 				}
 				break;
 			case 'post_loop':
-				return \Dimas\Service\Post_Loop::instance();
+				return \Dimas\Dimas_Service\Post_Loop::instance();
 				break;
 
 			case 'post':
 				if ( is_singular( 'post' ) ) {
-					return \Dimas\Service\Post::instance();
+					return \Dimas\Dimas_Service\Post::instance();
 				}
 				break;
 
 			case 'related_posts':
-				if ( is_singular( 'post' ) && Helper::get_option('related_posts') ) {
-					return \Dimas\Service\Related_Posts::instance();
+				if ( is_singular( 'post' ) && Dimas_Helper::get_option('related_posts') ) {
+					return \Dimas\Dimas_Service\Related_Posts::instance();
 				}
 				break;
 
 			case 'search':
 				if ( is_search() ) {
-					return \Dimas\Service\Search::instance();
+					return \Dimas\Dimas_Service\Search::instance();
 				}
 				break;
 		}

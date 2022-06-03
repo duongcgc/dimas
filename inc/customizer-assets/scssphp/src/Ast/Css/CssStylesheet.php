@@ -19,6 +19,6 @@ namespace ScssPhp\ScssPhp\Ast\Css;
  *
  * @internal
  */
-interface CssStylesheet extends CssParentNode
+interface CssDimas_Stylesheet extends CssParentNode
 {
 }

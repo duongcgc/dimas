@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas theme init
  */
-final class Theme {
+final class Dimas_Theme {
 	/**
 	 * Instance
 	 *
@@ -76,24 +76,24 @@ final class Theme {
 
 		$this->get( 'maintenance' );
 
-		// Header
+		// Dimas_Header
 		$this->get( 'preloader' );
 		$this->get( 'topbar' );
 		$this->get( 'header' );
 		$this->get( 'campaigns' );
 
-		// Page Header
+		// Dimas_Page Dimas_Header
 		$this->get( 'page_header' );
 		$this->get( 'breadcrumbs' );
 
-		// Layout & Style
+		// Dimas_Layout & Style
 		$this->get( 'layout' );
 		$this->get( 'dynamic_css' );
 
-		// Comments
+		// Dimas_Comments
 		$this->get( 'comments' );
 
-		//Footer
+		//Dimas_Footer
 		$this->get( 'footer' );
 
 		// Modules
@@ -123,13 +123,13 @@ final class Theme {
 	public function get( $class ) {
 		switch ( $class ) {
 			case 'woocommerce':
-				if ( class_exists( 'WooCommerce' ) ) {
-					return WooCommerce::instance();
+				if ( class_exists( 'Dimas_WooCommerce' ) ) {
+					return Dimas_WooCommerce::instance();
 				}
 				break;
 
 			case 'options':
-				return Options::instance();
+				return Dimas_Options::instance();
 				break;
 
 			case 'search_ajax':
@@ -141,7 +141,7 @@ final class Theme {
 				break;
 
 			case 'mobile':
-				if ( Helper::is_mobile() ) {
+				if ( Dimas_Helper::is_mobile() ) {
 					return \Dimas\Mobile::instance();
 				}
 				break;

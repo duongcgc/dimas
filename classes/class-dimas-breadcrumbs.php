@@ -14,10 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Breadcrumbs
+ * Dimas_Breadcrumbs
  *
  */
-class Breadcrumbs {
+class Dimas_Breadcrumbs {
 	/**
 	 * Instance
 	 *
@@ -49,8 +49,8 @@ class Breadcrumbs {
 	 * @return string
 	 */
 	public function breadcrumbs( $args = array() ) {
-		if ( function_exists( 'yoast_breadcrumb' ) && class_exists( 'WPSEO_Options' ) ) {
-			if ( \WPSEO_Options::get( 'breadcrumbs-enable', false ) ) {
+		if ( function_exists( 'yoast_breadcrumb' ) && class_exists( 'WPSEO_Dimas_Options' ) ) {
+			if ( \WPSEO_Dimas_Options::get( 'breadcrumbs-enable', false ) ) {
 				$classes ='site-breadcrumb';
 				if ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
 					$classes .= ' woocommerce-breadcrumb';
@@ -68,7 +68,7 @@ class Breadcrumbs {
 	}
 
 	/**
-	 * Get breadcrumb HTML
+	 * Get breadcrumb Dimas_HTML
 	 *
 	 * @since 1.0.0
 	 *
@@ -90,7 +90,7 @@ class Breadcrumbs {
 				'labels'            => array(
 					'home'      => esc_html__( 'Home', 'dimas' ),
 					'archive'   => esc_html__( 'Archives', 'dimas' ),
-					'blog'      => esc_html__( 'Blog', 'dimas' ),
+					'blog'      => esc_html__( 'Dimas_Blog', 'dimas' ),
 					'search'    => esc_html__( 'Search results for', 'dimas' ),
 					'not_found' => esc_html__( 'Not Found', 'dimas' ),
 					'portfolio' => esc_html__( 'Portfolio', 'dimas' ),
@@ -110,7 +110,7 @@ class Breadcrumbs {
 
 		$items = array();
 
-		// HTML template for each item
+		// Dimas_HTML template for each item
 		$item_tpl = $args['before_item'] . '
 			<span itemscope itemtype="http://schema.org/ListItem">
 				<a href="%s"><span>%s</span></a>
@@ -143,7 +143,7 @@ class Breadcrumbs {
 		// Front page
 		if ( is_front_page() ) {
 			$items = array();
-		} // Blog
+		} // Dimas_Blog
 		elseif ( is_home() && ! is_front_page() ) {
 			$items[] = sprintf(
 				$item_text_tpl,
@@ -205,7 +205,7 @@ class Breadcrumbs {
 				$items[] = sprintf( $item_text_tpl, get_the_title() );
 			}
 
-		} // Page
+		} // Dimas_Page
 		elseif ( is_page() ) {
 			if ( ( function_exists( 'is_cart' ) && is_cart() ) || ( function_exists( 'is_checkout' ) && is_checkout() ) ) {
 				if ( $page_id = get_option( 'woocommerce_shop_page_id' ) ) {

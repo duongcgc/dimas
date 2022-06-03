@@ -2,9 +2,9 @@
 namespace Dimas;
 
 /**
- * HTML markup rendering class
+ * Dimas HTML markup rendering class
  */
-class HTML {
+class Dimas_HTML {
 	/**
 	 * The context data
 	 *

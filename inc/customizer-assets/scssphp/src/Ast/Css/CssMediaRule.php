@@ -17,14 +17,14 @@ namespace ScssPhp\ScssPhp\Ast\Css;
  *
  * @internal
  */
-interface CssMediaRule extends CssParentNode
+interface CssDimas_MediaRule extends CssParentNode
 {
     /**
      * The queries for this rule.
      *
      * This is never empty.
      *
-     * @return list<CssMediaQuery>
+     * @return list<CssDimas_MediaQuery>
      */
     public function getQueries(): array;
 }

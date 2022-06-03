@@ -12,7 +12,7 @@
 
 namespace ScssPhp\ScssPhp\Parser;
 
-use ScssPhp\ScssPhp\Ast\Css\CssMediaQuery;
+use ScssPhp\ScssPhp\Ast\Css\CssDimas_MediaQuery;
 use ScssPhp\ScssPhp\Exception\SassFormatException;
 
 /**
@@ -20,10 +20,10 @@ use ScssPhp\ScssPhp\Exception\SassFormatException;
  *
  * @internal
  */
-class MediaQueryParser extends Parser
+class Dimas_MediaQueryParser extends Parser
 {
     /**
-     * @return list<CssMediaQuery>
+     * @return list<CssDimas_MediaQuery>
      *
      * @throws SassFormatException when parsing fails
      */
@@ -47,7 +47,7 @@ class MediaQueryParser extends Parser
     /**
      * Consumes a single media query.
      */
-    private function mediaQuery(): CssMediaQuery
+    private function mediaQuery(): CssDimas_MediaQuery
     {
         $modifier = null;
         $type = null;
@@ -58,7 +58,7 @@ class MediaQueryParser extends Parser
 
             if (!$this->lookingAtIdentifier()) {
                 // For example, "@media screen {"
-                return new CssMediaQuery($identifier1);
+                return new CssDimas_MediaQuery($identifier1);
             }
 
             $identifier2 = $this->identifier();
@@ -76,7 +76,7 @@ class MediaQueryParser extends Parser
                     $this->whitespace();
                 } else {
                     // For example, "@media only screen {"
-                    return new CssMediaQuery($type, $modifier);
+                    return new CssDimas_MediaQuery($type, $modifier);
                 }
             }
         }
@@ -96,9 +96,9 @@ class MediaQueryParser extends Parser
         } while ($this->scanIdentifier('and'));
 
         if ($type === null) {
-            return CssMediaQuery::condition($features);
+            return CssDimas_MediaQuery::condition($features);
         }
 
-        return new CssMediaQuery($type, $modifier, $features);
+        return new CssDimas_MediaQuery($type, $modifier, $features);
     }
 }

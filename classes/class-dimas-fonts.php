@@ -12,10 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Fonts initial
+ * Dimas_Fonts initial
  *
  */
-class Fonts {
+class Dimas_Fonts {
 	/**
 	 * Instance
 	 *
@@ -85,7 +85,7 @@ class Fonts {
 
 		echo '<h2 class="comments-title ' . esc_attr( $comments_class ) . '">';
 		printf( // WPCS: XSS OK.
-			esc_html( _nx( 'Fonts (%1$s)', 'Fonts (%1$s)', $comments_number, 'comments title', 'dimas' ) ),
+			esc_html( _nx( 'Dimas_Fonts (%1$s)', 'Dimas_Fonts (%1$s)', $comments_number, 'comments title', 'dimas' ) ),
 			number_format_i18n( $comments_number )
 		);
 
@@ -102,7 +102,7 @@ class Fonts {
 	 */
 	public function comment_fields() {
 		if ( ! comments_open() ) {
-			echo '<p class="no-comments">' . esc_html__( 'Fonts are closed.', 'dimas' ) . '</p>';
+			echo '<p class="no-comments">' . esc_html__( 'Dimas_Fonts are closed.', 'dimas' ) . '</p>';
 		} else {
 			$comment_field = '<p class="comment-form-comment"><textarea required id="comment" placeholder="' . esc_attr__( 'Content', 'dimas' ) . '" name="comment" cols="45" rows="7" aria-required="true"></textarea></p>';
 			comment_form(
@@ -167,7 +167,7 @@ class Fonts {
 	}
 
 	/**
-	 * Fonts callback function
+	 * Dimas_Fonts callback function
 	 *
 	 * @since 1.0.0
 	 *
@@ -214,7 +214,7 @@ class Fonts {
 	}
 
 	/**
-	 * Fonts Template function
+	 * Dimas_Fonts Template function
 	 *
 	 * @since 1.0.0
 	 *

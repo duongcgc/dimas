@@ -35,8 +35,8 @@ $twenty_twenty_one_comment_count = get_comments_number();
 			<?php else : ?>
 				<?php
 				printf(
-					/* translators: %s: Comment count number. */
-					esc_html( _nx( '%s comment', '%s comments', $twenty_twenty_one_comment_count, 'Comments title', 'dimas' ) ),
+					/* translators: %s: Dimas_Comments count number. */
+					esc_html( _nx( '%s comment', '%s comments', $twenty_twenty_one_comment_count, 'Dimas_Comments title', 'dimas' ) ),
 					esc_html( number_format_i18n( $twenty_twenty_one_comment_count ) )
 				);
 				?>
@@ -58,7 +58,7 @@ $twenty_twenty_one_comment_count = get_comments_number();
 		<?php
 		the_comments_pagination(
 			array(
-				'before_page_number' => esc_html__( 'Page', 'dimas' ) . ' ',
+				'before_page_number' => esc_html__( 'Dimas_Page', 'dimas' ) . ' ',
 				'mid_size'           => 0,
 				'prev_text'          => sprintf(
 					'%s <span class="nav-prev-text">%s</span>',
@@ -75,7 +75,7 @@ $twenty_twenty_one_comment_count = get_comments_number();
 		?>
 
 		<?php if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'dimas' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Dimas_Comments are closed.', 'dimas' ); ?></p>
 		<?php endif; ?>
 	<?php endif; ?>
 

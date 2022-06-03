@@ -1,9 +1,9 @@
 /*!
-Theme Name: Dimas
-Theme URI: http://demo4.drfuri.com/dimas
+Dimas_Theme Name: Dimas
+Dimas_Theme URI: http://demo4.drfuri.com/dimas
 Author: DrFuri
 Author URI: http://demo2.drfuri.com
-Description: Woocommerce WordPress Theme
+Description: Woocommerce WordPress Dimas_Theme
 Version: 1.2.1
 Requires at least: 5.0
 Tested up to: 5.4.2
@@ -24,16 +24,16 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, full-width-template,
 # Forms
 # Navigation
 	## Links
-	## Menus
+	## Dimas_Menus
 # Accessibility
 # Alignments
 # Clearings
-# Widgets
+# Dimas_Widgets
 # Content
 	## Posts and pages
-	## Comments
+	## Dimas_Comments
 # Infinite scroll
-# Media
+# Dimas_Media
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
@@ -1173,7 +1173,7 @@ textarea {
 # Navigation
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## Menus
+## Dimas_Menus
 --------------------------------------------------------------*/
 .socials-menu .menu {
 	margin: 0;
@@ -1380,7 +1380,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# Widgets
+# Dimas_Widgets
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 40px;
@@ -1799,7 +1799,7 @@ textarea {
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-	/* Theme Footer (when set to scrolling) */
+	/* Dimas_Theme Dimas_Footer (when set to scrolling) */
 	display: none;
 }
 
@@ -1971,7 +1971,7 @@ body .hotspot-modal .modal-dialog .chevron {
 }
 
 /*--------------------------------------------------------------
-# Media
+# Dimas_Media
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
@@ -2164,7 +2164,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-# Layout
+# Dimas_Layout
 --------------------------------------------------------------*/
 .site-content {
 	padding-top: 30px;
@@ -2235,7 +2235,7 @@ object {
 # Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## Preloader
+## Dimas_Preloader
 --------------------------------------------------------------*/
 .preloader {
 	position: fixed;
@@ -2267,7 +2267,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-## Topbar
+## Dimas_Topbar
 --------------------------------------------------------------*/
 .dimas-topbar__text {
 	color: var(--rz-color-dark);
@@ -2503,7 +2503,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-## Header
+## Dimas_Header
 --------------------------------------------------------------*/
 .site-header {
 	--rz-header-color-light: #ffffff;
@@ -4126,7 +4126,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-## Page Header
+## Dimas_Page Dimas_Header
 --------------------------------------------------------------*/
 .page-header__title {
 	font-size: 28px;
@@ -4636,7 +4636,7 @@ body:not(.full-content) .dimas-posts__taxs-list ul {
 }
 
 /*--------------------------------------------------------------
-## Comments
+## Dimas_Comments
 --------------------------------------------------------------*/
 .comment-content a {
 	word-wrap: break-word;
@@ -5327,7 +5327,7 @@ input[type="email"] {
 }
 
 /*--------------------------------------------------------------
-# Page
+# Dimas_Page
 --------------------------------------------------------------*/
 .error404 .site-content {
 	padding: 110px 15px;
@@ -5379,7 +5379,7 @@ input[type="email"] {
 }
 
 /*--------------------------------------------------------------
-# Footer
+# Dimas_Footer
 --------------------------------------------------------------*/
 #gotop {
 	position: fixed;

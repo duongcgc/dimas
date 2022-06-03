@@ -21,7 +21,7 @@ use ScssPhp\ScssPhp\Block\ElseBlock;
 use ScssPhp\ScssPhp\Block\ElseifBlock;
 use ScssPhp\ScssPhp\Block\ForBlock;
 use ScssPhp\ScssPhp\Block\IfBlock;
-use ScssPhp\ScssPhp\Block\MediaBlock;
+use ScssPhp\ScssPhp\Block\Dimas_MediaBlock;
 use ScssPhp\ScssPhp\Block\NestedPropertyBlock;
 use ScssPhp\ScssPhp\Block\WhileBlock;
 use ScssPhp\ScssPhp\Exception\ParserException;
@@ -111,7 +111,7 @@ final class Parser
     /**
      * @var bool
      */
-    private $discardComments;
+    private $discardDimas_Comments;
     private $allowVars;
     /**
      * @var string
@@ -219,10 +219,10 @@ final class Parser
     {
         if ($this->cache) {
             $cacheKey = $this->sourceName . ':' . md5($buffer);
-            $parseOptions = [
+            $parseDimas_Options = [
                 'charset' => $this->charset,
             ];
-            $v = $this->cache->getCache('parse', $cacheKey, $parseOptions);
+            $v = $this->cache->getCache('parse', $cacheKey, $parseDimas_Options);
 
             if (! \is_null($v)) {
                 return $v;
@@ -267,7 +267,7 @@ final class Parser
         $this->restoreEncoding();
 
         if ($this->cache) {
-            $this->cache->setCache('parse', $cacheKey, $this->env, $parseOptions);
+            $this->cache->setCache('parse', $cacheKey, $this->env, $parseDimas_Options);
         }
 
         return $this->env;
@@ -320,9 +320,9 @@ final class Parser
         $this->extractLineNumbers($this->buffer);
 
         // discard space/comments at the start
-        $this->discardComments = true;
+        $this->discardDimas_Comments = true;
         $this->whitespace();
-        $this->discardComments = false;
+        $this->discardDimas_Comments = false;
 
         $selector = $this->selectors($out);
 
@@ -343,7 +343,7 @@ final class Parser
      *
      * @return bool
      */
-    public function parseMediaQueryList(string $buffer, &$out): bool
+    public function parseDimas_MediaQueryList(string $buffer, &$out): bool
     {
         $this->count           = 0;
         $this->env             = null;
@@ -354,11 +354,11 @@ final class Parser
         $this->saveEncoding();
         $this->extractLineNumbers($this->buffer);
 
-        $isMediaQuery = $this->mediaQueryList($out);
+        $isDimas_MediaQuery = $this->mediaQueryList($out);
 
         $this->restoreEncoding();
 
-        return $isMediaQuery;
+        return $isDimas_MediaQuery;
     }
 
     /**
@@ -432,7 +432,7 @@ final class Parser
                 $this->mediaQueryList($mediaQueryList) &&
                 $this->matchChar('{', false)
             ) {
-                $media = new MediaBlock();
+                $media = new Dimas_MediaBlock();
                 $this->registerPushedBlock($media, $s);
                 $media->queryList = $mediaQueryList[2];
 
@@ -811,7 +811,7 @@ final class Parser
                     $dirName = [Type::T_STRING, '', $dirName];
                 }
                 if ($dirName === 'media') {
-                    $directive = new MediaBlock();
+                    $directive = new Dimas_MediaBlock();
                 } else {
                     $directive = new DirectiveBlock();
                     $directive->name = $dirName;
@@ -1540,13 +1540,13 @@ final class Parser
             if (isset($m[1]) && empty($this->commentsSeen[$this->count])) {
                 // comment that are kept in the output CSS
                 $comment = [];
-                $startCommentCount = $this->count;
-                $endCommentCount = $this->count + \strlen($m[1]);
+                $startDimas_CommentsCount = $this->count;
+                $endDimas_CommentsCount = $this->count + \strlen($m[1]);
 
                 // find interpolations in comment
                 $p = strpos($this->buffer, '#{', $this->count);
 
-                while ($p !== false && $p < $endCommentCount) {
+                while ($p !== false && $p < $endDimas_CommentsCount) {
                     $c           = substr($this->buffer, $this->count, $p - $this->count);
                     $comment[]   = $c;
                     $this->count = $p;
@@ -1564,7 +1564,7 @@ final class Parser
 
                         $comment[] = [Type::T_COMMENT, substr($this->buffer, $p, $this->count - $p), $out];
                     } else {
-                        if (!$this->discardComments) {
+                        if (!$this->discardDimas_Comments) {
                             throw $this->parseError('Unterminated interpolation');
                         }
                         $comment[] = substr($this->buffer, $this->count, 2);
@@ -1576,26 +1576,26 @@ final class Parser
                 }
 
                 // remaining part
-                $c = substr($this->buffer, $this->count, $endCommentCount - $this->count);
+                $c = substr($this->buffer, $this->count, $endDimas_CommentsCount - $this->count);
 
                 if (! $comment) {
                     // single part static comment
-                    $this->appendComment([Type::T_COMMENT, $c]);
+                    $this->appendDimas_Comments([Type::T_COMMENT, $c]);
                 } else {
                     $comment[] = $c;
-                    $staticComment = substr($this->buffer, $startCommentCount, $endCommentCount - $startCommentCount);
-                    $commentStatement = [Type::T_COMMENT, $staticComment, [Type::T_STRING, '', $comment]];
+                    $staticDimas_Comments = substr($this->buffer, $startDimas_CommentsCount, $endDimas_CommentsCount - $startDimas_CommentsCount);
+                    $commentStatement = [Type::T_COMMENT, $staticDimas_Comments, [Type::T_STRING, '', $comment]];
 
-                    [$line, $column] = $this->getSourcePosition($startCommentCount);
+                    [$line, $column] = $this->getSourcePosition($startDimas_CommentsCount);
                     $commentStatement[self::SOURCE_LINE] = $line;
                     $commentStatement[self::SOURCE_COLUMN] = $column;
                     $commentStatement[self::SOURCE_INDEX] = $this->sourceIndex;
 
-                    $this->appendComment($commentStatement);
+                    $this->appendDimas_Comments($commentStatement);
                 }
 
-                $this->commentsSeen[$startCommentCount] = true;
-                $this->count = $endCommentCount;
+                $this->commentsSeen[$startDimas_CommentsCount] = true;
+                $this->count = $endDimas_CommentsCount;
             } else {
                 // comment that are ignored and not kept in the output css
                 $this->count += \strlen($m[0]);
@@ -1616,9 +1616,9 @@ final class Parser
      *
      * @param array $comment
      */
-    private function appendComment(array $comment): void
+    private function appendDimas_Comments(array $comment): void
     {
-        if (! $this->discardComments) {
+        if (! $this->discardDimas_Comments) {
             $this->env->comments[] = $comment;
         }
     }
@@ -1910,18 +1910,18 @@ final class Parser
      */
     private function argValues(&$out): bool
     {
-        $discardComments = $this->discardComments;
-        $this->discardComments = true;
+        $discardDimas_Comments = $this->discardDimas_Comments;
+        $this->discardDimas_Comments = true;
 
         if ($this->genericList($list, 'argValue', ',', false)) {
             $out = $list[2];
 
-            $this->discardComments = $discardComments;
+            $this->discardDimas_Comments = $discardDimas_Comments;
 
             return true;
         }
 
-        $this->discardComments = $discardComments;
+        $this->discardDimas_Comments = $discardDimas_Comments;
 
         return false;
     }
@@ -2079,10 +2079,10 @@ final class Parser
      */
     private function valueList(&$out): bool
     {
-        $discardComments = $this->discardComments;
-        $this->discardComments = true;
+        $discardDimas_Comments = $this->discardDimas_Comments;
+        $this->discardDimas_Comments = true;
         $res = $this->genericList($out, 'spaceList', ',');
-        $this->discardComments = $discardComments;
+        $this->discardDimas_Comments = $discardDimas_Comments;
 
         return $res;
     }
@@ -2252,19 +2252,19 @@ final class Parser
     private function expression(&$out, bool $listOnly = false, bool $lookForExp = true): bool
     {
         $s = $this->count;
-        $discard = $this->discardComments;
-        $this->discardComments = true;
+        $discard = $this->discardDimas_Comments;
+        $this->discardDimas_Comments = true;
         $allowedTypes = ($listOnly ? [Type::T_LIST] : [Type::T_LIST, Type::T_MAP]);
 
         if ($this->matchChar('(')) {
             if ($this->enclosedExpression($lhs, $s, ')', $allowedTypes)) {
                 if ($lookForExp) {
-                    $out = $this->expHelper($lhs, 0);
+                    $out = $this->expDimas_Helper($lhs, 0);
                 } else {
                     $out = $lhs;
                 }
 
-                $this->discardComments = $discard;
+                $this->discardDimas_Comments = $discard;
 
                 return true;
             }
@@ -2275,12 +2275,12 @@ final class Parser
         if (\in_array(Type::T_LIST, $allowedTypes) && $this->matchChar('[')) {
             if ($this->enclosedExpression($lhs, $s, ']', [Type::T_LIST])) {
                 if ($lookForExp) {
-                    $out = $this->expHelper($lhs, 0);
+                    $out = $this->expDimas_Helper($lhs, 0);
                 } else {
                     $out = $lhs;
                 }
 
-                $this->discardComments = $discard;
+                $this->discardDimas_Comments = $discard;
 
                 return true;
             }
@@ -2290,17 +2290,17 @@ final class Parser
 
         if (! $listOnly && $this->value($lhs)) {
             if ($lookForExp) {
-                $out = $this->expHelper($lhs, 0);
+                $out = $this->expDimas_Helper($lhs, 0);
             } else {
                 $out = $lhs;
             }
 
-            $this->discardComments = $discard;
+            $this->discardDimas_Comments = $discard;
 
             return true;
         }
 
-        $this->discardComments = $discard;
+        $this->discardDimas_Comments = $discard;
 
         return false;
     }
@@ -2373,7 +2373,7 @@ final class Parser
      *
      * @return array|Number
      */
-    private function expHelper($lhs, int $minP)
+    private function expDimas_Helper($lhs, int $minP)
     {
         $operators = self::$operatorPattern;
 
@@ -2405,7 +2405,7 @@ final class Parser
             }
 
             // consume higher-precedence operators on the right-hand side
-            $rhs = $this->expHelper($rhs, self::$precedence[$op] + 1);
+            $rhs = $this->expDimas_Helper($rhs, self::$precedence[$op] + 1);
 
             $lhs = [Type::T_EXPRESSION, $op, $lhs, $rhs, $this->inParens, $whiteBefore, $whiteAfter];
 
@@ -3433,8 +3433,8 @@ final class Parser
     {
         $selector = [];
 
-        $discardComments = $this->discardComments;
-        $this->discardComments = true;
+        $discardDimas_Comments = $this->discardDimas_Comments;
+        $this->discardDimas_Comments = true;
 
         for (;;) {
             $s = $this->count;
@@ -3460,7 +3460,7 @@ final class Parser
             break;
         }
 
-        $this->discardComments = $discardComments;
+        $this->discardDimas_Comments = $discardDimas_Comments;
 
         if (! $selector) {
             return false;

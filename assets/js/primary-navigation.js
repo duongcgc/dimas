@@ -17,17 +17,17 @@ function dimasToggleAriaExpanded( el, withListeners ) {
 		el.setAttribute( 'aria-expanded', 'true' );
 		dimasSubmenuPosition( el.parentElement );
 		if ( withListeners ) {
-			document.addEventListener( 'click', dimasCollapseMenuOnClickOutside );
+			document.addEventListener( 'click', dimasCollapseDimas_MenuOnClickOutside );
 		}
 	} else {
 		el.setAttribute( 'aria-expanded', 'false' );
 		if ( withListeners ) {
-			document.removeEventListener( 'click', dimasCollapseMenuOnClickOutside );
+			document.removeEventListener( 'click', dimasCollapseDimas_MenuOnClickOutside );
 		}
 	}
 }
 
-function dimasCollapseMenuOnClickOutside( event ) {
+function dimasCollapseDimas_MenuOnClickOutside( event ) {
 	if ( ! document.getElementById( 'site-navigation' ).contains( event.target ) ) {
 		document.getElementById( 'site-navigation' ).querySelectorAll( '.sub-menu-toggle' ).forEach( function( button ) {
 			button.setAttribute( 'aria-expanded', 'false' );
@@ -43,25 +43,25 @@ function dimasCollapseMenuOnClickOutside( event ) {
  * @param {Element} li - The li element.
  */
 function dimasSubmenuPosition( li ) {
-	var subMenu = li.querySelector( 'ul.sub-menu' ),
+	var subDimas_Menu = li.querySelector( 'ul.sub-menu' ),
 		rect,
 		right,
 		left,
 		windowWidth;
 
-	if ( ! subMenu ) {
+	if ( ! subDimas_Menu ) {
 		return;
 	}
 
-	rect = subMenu.getBoundingClientRect();
+	rect = subDimas_Menu.getBoundingClientRect();
 	right = Math.round( rect.right );
 	left = Math.round( rect.left );
 	windowWidth = Math.round( window.innerWidth );
 
 	if ( right > windowWidth ) {
-		subMenu.classList.add( 'submenu-reposition-right' );
+		subDimas_Menu.classList.add( 'submenu-reposition-right' );
 	} else if ( document.body.classList.contains( 'rtl' ) && left < 0 ) {
-		subMenu.classList.add( 'submenu-reposition-left' );
+		subDimas_Menu.classList.add( 'submenu-reposition-left' );
 	}
 }
 
@@ -72,7 +72,7 @@ function dimasSubmenuPosition( li ) {
  *
  * @param {Element} el - The element.
  */
-function dimasExpandSubMenu( el ) { // jshint ignore:line
+function dimasExpandSubDimas_Menu( el ) { // jshint ignore:line
 	// Close other expanded items.
 	el.closest( 'nav' ).querySelectorAll( '.sub-menu-toggle' ).forEach( function( button ) {
 		if ( button !== el ) {
@@ -95,19 +95,19 @@ function dimasExpandSubMenu( el ) { // jshint ignore:line
 
 ( function() {
 	/**
-	 * Menu Toggle Behaviors
+	 * Dimas_Menu Toggle Behaviors
 	 *
 	 * @since Dimas 1.0
 	 *
 	 * @param {string} id - The ID.
 	 */
-	var navMenu = function( id ) {
+	var navDimas_Menu = function( id ) {
 		var wrapper = document.body, // this is the element to which a CSS class is added when a mobile nav menu is open
 			mobileButton = document.getElementById( id + '-mobile-menu' ),
-			navMenuEl = document.getElementById( 'site-navigation' );
+			navDimas_MenuEl = document.getElementById( 'site-navigation' );
 
 		// If there's no nav menu, none of this is necessary.
-		if ( ! navMenuEl ) {
+		if ( ! navDimas_MenuEl ) {
 			return;
 		}
 
@@ -187,7 +187,7 @@ function dimasExpandSubMenu( el ) { // jshint ignore:line
 			}
 		} );
 
-		navMenuEl.querySelectorAll( '.menu-wrapper > .menu-item-has-children' ).forEach( function( li ) {
+		navDimas_MenuEl.querySelectorAll( '.menu-wrapper > .menu-item-has-children' ).forEach( function( li ) {
 			li.addEventListener( 'mouseenter', function() {
 				this.querySelector( '.sub-menu-toggle' ).setAttribute( 'aria-expanded', 'true' );
 				dimasSubmenuPosition( li );
@@ -199,6 +199,6 @@ function dimasExpandSubMenu( el ) { // jshint ignore:line
 	};
 
 	window.addEventListener( 'load', function() {
-		new navMenu( 'primary' );
+		new navDimas_Menu( 'primary' );
 	} );
 }() );

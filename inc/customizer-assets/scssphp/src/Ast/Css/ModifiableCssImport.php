@@ -38,7 +38,7 @@ final class ModifiableCssImport extends ModifiableCssNode implements CssImport
     private $supports;
 
     /**
-     * @var list<CssMediaQuery>|null
+     * @var list<CssDimas_MediaQuery>|null
      * @readonly
      */
     private $media;
@@ -53,7 +53,7 @@ final class ModifiableCssImport extends ModifiableCssNode implements CssImport
      * @param CssValue<string>         $url
      * @param FileSpan                 $span
      * @param CssValue<string>|null    $supports
-     * @param list<CssMediaQuery>|null $media
+     * @param list<CssDimas_MediaQuery>|null $media
      */
     public function __construct(CssValue $url, FileSpan $span, ?CssValue $supports = null, ?array $media = null)
     {
@@ -73,7 +73,7 @@ final class ModifiableCssImport extends ModifiableCssNode implements CssImport
         return $this->supports;
     }
 
-    public function getMedia(): ?array
+    public function getDimas_Media(): ?array
     {
         return $this->media;
     }

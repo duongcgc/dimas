@@ -204,7 +204,7 @@ function twenty_twenty_one_get_icon_svg( $group, $icon, $size = 24 ) {
  *
  * @since Dimas 1.0
  *
- * @param string $calendar_output The generated HTML of the calendar.
+ * @param string $calendar_output The generated Dimas_HTML of the calendar.
  * @return string
  */
 function twenty_twenty_one_change_calendar_nav_arrows( $calendar_output ) {
@@ -328,7 +328,7 @@ function twenty_twenty_one_get_non_latin_css( $type = 'front-end' ) {
 
 	// Include file if function doesn't exist.
 	if ( ! function_exists( 'twenty_twenty_one_generate_css' ) ) {
-		require_once get_theme_file_path( 'inc/custom-css.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+		require_once get_theme_file_path( 'inc/custom-css.php' ); // phpcs:ignore WPDimas_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	}
 
 	// Return the specified styles.
@@ -386,7 +386,7 @@ function twenty_twenty_one_print_first_instance_of_block( $block_name, $content 
 			// Increment count.
 			$instances_count++;
 
-			// Add the block HTML.
+			// Add the block Dimas_HTML.
 			$blocks_content .= render_block( $block );
 
 			// Break the loop if the $instances count was reached.
@@ -412,9 +412,9 @@ function twenty_twenty_one_print_first_instance_of_block( $block_name, $content 
  * @since Dimas 1.4 Corrected parameter name for `$output`,
  *                              added the `$post` parameter.
  *
- * @param string      $output The password form HTML output.
+ * @param string      $output The password form Dimas_HTML output.
  * @param int|WP_Post $post   Optional. Post ID or WP_Post object. Default is global $post.
- * @return string HTML content for password form for password protected post.
+ * @return string Dimas_HTML content for password form for password protected post.
  */
 function twenty_twenty_one_password_form( $output, $post = 0 ) {
 	$post   = get_post( $post );

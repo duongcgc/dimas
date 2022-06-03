@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas maintenance
  */
-class Maintenance {
+class Dimas_Maintenance {
 	/**
 	 * Instance
 	 *
@@ -57,7 +57,7 @@ class Maintenance {
 	 * @return void
 	 */
 	public function maintenance_redirect() {
-		if ( ! Helper::get_option( 'maintenance_enable' ) ) {
+		if ( ! Dimas_Helper::get_option( 'maintenance_enable' ) ) {
 			return;
 		}
 
@@ -65,8 +65,8 @@ class Maintenance {
 			return;
 		}
 
-		$mode     = Helper::get_option( 'maintenance_mode' );
-		$page_id  = Helper::get_option( 'maintenance_page' );
+		$mode     = Dimas_Helper::get_option( 'maintenance_mode' );
+		$page_id  = Dimas_Helper::get_option( 'maintenance_page' );
 		$code     = 'maintenance' == $mode ? 503 : 200;
 		$page_url = $page_id ? get_page_link( $page_id ) : '';
 
@@ -75,7 +75,7 @@ class Maintenance {
 			if ( 'coming_soon' == $mode ) {
 				$message = sprintf( '<h1>%s</h1><p>%s</p>', esc_html__( 'Coming Soon', 'dimas' ), esc_html__( 'Our website is under construction. We will be here soon with our new awesome site.', 'dimas' ) );
 			} else {
-				$message = sprintf( '<h1>%s</h1><p>%s</p>', esc_html__( 'Website Under Maintenance', 'dimas' ), esc_html__( 'Our website is currently undergoing scheduled maintenance. Please check back soon.', 'dimas' ) );
+				$message = sprintf( '<h1>%s</h1><p>%s</p>', esc_html__( 'Website Under Dimas_Maintenance', 'dimas' ), esc_html__( 'Our website is currently undergoing scheduled maintenance. Please check back soon.', 'dimas' ) );
 			}
 
 			wp_die( $message, get_bloginfo( 'name' ), array( 'response' => $code ) );
@@ -114,7 +114,7 @@ class Maintenance {
 	 * @return array
 	 */
 	public function maintenance_page_body_class( $classes ) {
-		if ( ! Helper::get_option( 'maintenance_enable' ) ) {
+		if ( ! Dimas_Helper::get_option( 'maintenance_enable' ) ) {
 			return $classes;
 		}
 
@@ -140,7 +140,7 @@ class Maintenance {
 	 * @return boolean
 	 */
 	public function is_maintenance_page() {
-		if ( ! Helper::get_option( 'maintenance_enable' ) ) {
+		if ( ! Dimas_Helper::get_option( 'maintenance_enable' ) ) {
 			return false;
 		}
 
@@ -148,7 +148,7 @@ class Maintenance {
 			return false;
 		}
 
-		$page_id = Helper::get_option( 'maintenance_page' );
+		$page_id = Dimas_Helper::get_option( 'maintenance_page' );
 
 		if ( ! $page_id ) {
 			return false;

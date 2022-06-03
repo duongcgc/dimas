@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 /*
-Theme Name: Dimas
-Theme URI: https://wordpress.org/themes/dimas/
+Dimas_Theme Name: Dimas
+Dimas_Theme URI: https://wordpress.org/themes/dimas/
 Author: the WordPress team
 Author URI: https://wordpress.org/
 Description: Dimas is a blank canvas for your ideas and it makes the block editor your best brush. With new block patterns, which allow you to create a beautiful layout in a matter of seconds, this theme’s soft colors and eye-catching — yet timeless — design will let your work shine. Take it for a spin! See how Dimas elevates your portfolio, business website, or personal blog.
@@ -15,15 +15,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: dimas
 Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready
 
-Dimas WordPress Theme, (C) 2020 WordPress.org
+Dimas WordPress Dimas_Theme, (C) 2020 WordPress.org
 Dimas is distributed under the terms of the GNU GPL.
 */
 
 /**
  * SETTINGS
  * File-header..........The file header for the themes style.css file.
- * Fonts................Any font files, if the project needs specific fonts.
- * Global...............Project-specific, globally available variables.
+ * Dimas_Fonts................Any font files, if the project needs specific fonts.
+ * Global...............Dimas_Project-specific, globally available variables.
  *
  * TOOLS
  * Functions............Global functions.
@@ -42,7 +42,7 @@ Dimas is distributed under the terms of the GNU GPL.
  * Headings.............H1–H6
  * Links................Default links.
  * Lists................Default lists.
- * Media................Images, Figure, Figcaption, Embed, iFrame, Objects, Video.
+ * Dimas_Media................Images, Figure, Figcaption, Embed, iFrame, Objects, Video.
  *
  * BLOCKS
  * Audio................Specific styles for the audio block.
@@ -59,7 +59,7 @@ Dimas is distributed under the terms of the GNU GPL.
  * Latest posts.........Specific styles for the latest posts block.
  * Legacy...............Specific styles for the legacy gallery.
  * List.................Specific styles for the list block.
- * Media text...........Specific styles for the media and text block.
+ * Dimas_Media text...........Specific styles for the media and text block.
  * Navigation...........Specific styles for the navigation block.
  * Paragraph............Specific styles for the paragraph block.
  * Pullquote............Specific styles for the pullquote block.
@@ -73,14 +73,14 @@ Dimas is distributed under the terms of the GNU GPL.
  * Utilities............Block alignments.
  *
  * COMPONENTS
- * Header...............Header styles.
- * Footer...............Footer styles.
- * Comments.............Comment styles.
+ * Dimas_Header...............Dimas_Header styles.
+ * Dimas_Footer...............Dimas_Footer styles.
+ * Dimas_Comments.............Dimas_Comments styles.
  * Archives.............Archive styles.
  * 404..................404 styles.
  * Search...............Search styles.
  * Navigation...........Navigation styles.
- * Footer Navigation....Footer Navigation styles.
+ * Dimas_Footer Navigation....Dimas_Footer Navigation styles.
  * Pagination...........Pagination styles.
  * Single...............Single page and post styles.
  * Posts and pages......Misc, sticky post styles.
@@ -232,7 +232,7 @@ Dimas is distributed under the terms of the GNU GPL.
 	--entry-author-bio--font-family: var(--heading--font-family);
 	--entry-author-bio--font-size: var(--heading--font-size-h4);
 
-	/* Header */
+	/* Dimas_Header */
 	--branding--color-text: var(--global--color-primary);
 	--branding--color-link: var(--global--color-primary);
 	--branding--color-link-hover: var(--global--color-secondary);
@@ -275,7 +275,7 @@ Dimas is distributed under the terms of the GNU GPL.
 	--pagination--font-weight: normal;
 	--pagination--font-weight-strong: 600;
 
-	/* Footer */
+	/* Dimas_Footer */
 	--footer--color-text: var(--global--color-primary);
 	--footer--color-link: var(--global--color-primary);
 	--footer--color-link-hover: var(--global--color-primary-hover);
@@ -310,7 +310,7 @@ Dimas is distributed under the terms of the GNU GPL.
 	--table--stripes-background-color: var(--global--color-light-gray);
 	--table--has-background-text-color: var(--global--color-dark-gray);
 
-	/* Widgets */
+	/* Dimas_Widgets */
 	--widget--line-height-list: 1.9;
 	--widget--line-height-title: 1.4;
 	--widget--font-weight-title: 700;
@@ -721,7 +721,7 @@ template {
 }
 
 /**
- * Responsive Styles
+ * Responsive Dimas_Styles
  */
 
 /**
@@ -729,7 +729,7 @@ template {
  */
 
 /**
- * Root Media Query Variables
+ * Root Dimas_Media Query Variables
  */
 :root {
 	--responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal) * 0.6);
@@ -1121,7 +1121,7 @@ button {
 	clear: both;
 }
 
-/* Category 04 can contain any default HTML element. Do not add classes here, just give the elements some basic styles. */
+/* Category 04 can contain any default Dimas_HTML element. Do not add classes here, just give the elements some basic styles. */
 blockquote {
 	padding: 0;
 	position: relative;
@@ -1596,7 +1596,7 @@ video {
 	max-width: 100%;
 }
 
-/* Media captions */
+/* Dimas_Media captions */
 figcaption,
 .wp-caption,
 .wp-caption-text,
@@ -1838,7 +1838,7 @@ input[type=reset]:disabled,
 }
 
 /**
- * Block Options
+ * Block Dimas_Options
  */
 .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(:hover):not(:active):not(.has-text-color) {
 	color: var(--global--color-background);
@@ -2033,7 +2033,7 @@ input[type=reset]:disabled,
 
 	/* Treating H2 separately to account for legacy /core styles */
 
-	/* Block Styles */
+	/* Block Dimas_Styles */
 
 	/* The background color class is used just for the overlay, and does not need to be applied to the inner container. */
 }
@@ -2740,7 +2740,7 @@ dd {
 .wp-block-media-text {
 
 	/**
-   * Block Options
+   * Block Dimas_Options
    */
 }
 
@@ -2920,7 +2920,7 @@ pre.wp-block-preformatted {
 	position: relative;
 
 	/**
-   * Block Options
+   * Block Dimas_Options
    */
 }
 
@@ -3035,7 +3035,7 @@ pre.wp-block-preformatted {
 	border-left: none;
 
 	/**
-   * Block Options
+   * Block Dimas_Options
    */
 }
 
@@ -3400,7 +3400,7 @@ hr.wp-block-separator {
 	opacity: 1;
 
 	/**
-   * Block Options
+   * Block Dimas_Options
    */
 }
 
@@ -4342,7 +4342,7 @@ h1.page-title {
 }
 
 /**
- * Comments Wrapper
+ * Dimas_Comments Wrapper
  */
 .comments-area > * {
 	margin-top: var(--global--spacing-vertical);
@@ -4373,7 +4373,7 @@ h1.page-title {
 }
 
 /**
- * Comment Title
+ * Dimas_Comments Title
  */
 .comments-title,
 .comment-reply-title {
@@ -4400,7 +4400,7 @@ h1.page-title {
 }
 
 /**
- * Comment Lists
+ * Dimas_Comments Lists
  */
 .comment-list {
 	padding-left: 0;
@@ -4431,7 +4431,7 @@ h1.page-title {
 }
 
 /**
- * Comment Meta
+ * Dimas_Comments Meta
  */
 .comment-meta .comment-author {
 	line-height: var(--global--line-height-heading);

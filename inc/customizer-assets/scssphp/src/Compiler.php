@@ -21,7 +21,7 @@ use ScssPhp\ScssPhp\Block\ElseBlock;
 use ScssPhp\ScssPhp\Block\ElseifBlock;
 use ScssPhp\ScssPhp\Block\ForBlock;
 use ScssPhp\ScssPhp\Block\IfBlock;
-use ScssPhp\ScssPhp\Block\MediaBlock;
+use ScssPhp\ScssPhp\Block\Dimas_MediaBlock;
 use ScssPhp\ScssPhp\Block\NestedPropertyBlock;
 use ScssPhp\ScssPhp\Block\WhileBlock;
 use ScssPhp\ScssPhp\Compiler\CachedResult;
@@ -156,7 +156,7 @@ final class Compiler
      * @var array
      * @phpstan-var array{sourceRoot?: string, sourceMapFilename?: string|null, sourceMapURL?: string|null, sourceMapWriteTo?: string|null, outputSourceFiles?: bool, sourceMapRootpath?: string, sourceMapBasepath?: string}
      */
-    private $sourceMapOptions = [];
+    private $sourceMapDimas_Options = [];
 
     /**
      * @var bool
@@ -282,16 +282,16 @@ final class Compiler
     /**
      * Constructor
      *
-     * @param array|null $cacheOptions
-     * @phpstan-param array{cacheDir?: string, prefix?: string, forceRefresh?: string, checkImportResolutions?: bool}|null $cacheOptions
+     * @param array|null $cacheDimas_Options
+     * @phpstan-param array{cacheDir?: string, prefix?: string, forceRefresh?: string, checkImportResolutions?: bool}|null $cacheDimas_Options
      */
-    public function __construct(?array $cacheOptions = null)
+    public function __construct(?array $cacheDimas_Options = null)
     {
         $this->sourceNames = [];
 
-        if ($cacheOptions) {
-            $this->cache = new Cache($cacheOptions);
-            if (!empty($cacheOptions['checkImportResolutions'])) {
+        if ($cacheDimas_Options) {
+            $this->cache = new Cache($cacheDimas_Options);
+            if (!empty($cacheDimas_Options['checkImportResolutions'])) {
                 $this->cacheCheckImportResolutions = true;
             }
         }
@@ -304,13 +304,13 @@ final class Compiler
      *
      * @return array<string, mixed>
      */
-    private function getCompileOptions(): array
+    private function getCompileDimas_Options(): array
     {
         $options = [
             'importPaths'        => $this->importPaths,
             'registeredVars'     => $this->registeredVars,
             'sourceMap'          => serialize($this->sourceMap),
-            'sourceMapOptions'   => $this->sourceMapOptions,
+            'sourceMapDimas_Options'   => $this->sourceMapDimas_Options,
             'outputStyle'        => $this->outputStyle,
         ];
 
@@ -346,8 +346,8 @@ final class Compiler
     {
         if ($this->cache) {
             $cacheKey       = ($path ? $path : '(stdin)') . ':' . md5($source);
-            $compileOptions = $this->getCompileOptions();
-            $cachedResult = $this->cache->getCache('compile', $cacheKey, $compileOptions);
+            $compileDimas_Options = $this->getCompileDimas_Options();
+            $cachedResult = $this->cache->getCache('compile', $cacheKey, $compileDimas_Options);
 
             if ($cachedResult instanceof CachedResult && $this->isFreshCachedResult($cachedResult)) {
                 return $cachedResult->getResult();
@@ -401,7 +401,7 @@ final class Compiler
             $sourceMapGenerator = null;
 
             if ($this->sourceMap !== self::SOURCE_MAP_NONE) {
-                $sourceMapGenerator = new SourceMapGenerator($this->sourceMapOptions);
+                $sourceMapGenerator = new SourceMapGenerator($this->sourceMapDimas_Options);
             }
 
             assert($this->scope !== null);
@@ -431,8 +431,8 @@ final class Compiler
                         break;
 
                     case self::SOURCE_MAP_FILE:
-                        if (isset($this->sourceMapOptions['sourceMapURL'])) {
-                            $sourceMapUrl = $this->sourceMapOptions['sourceMapURL'];
+                        if (isset($this->sourceMapDimas_Options['sourceMapURL'])) {
+                            $sourceMapUrl = $this->sourceMapDimas_Options['sourceMapURL'];
                         }
                         break;
                 }
@@ -453,8 +453,8 @@ final class Compiler
 
         $result = new CompilationResult($out, $sourceMap, array_values($includedFiles));
 
-        if ($this->cache && isset($cacheKey) && isset($compileOptions)) {
-            $this->cache->setCache('compile', $cacheKey, new CachedResult($result, $this->parsedFiles, $this->resolvedImports), $compileOptions);
+        if ($this->cache && isset($cacheKey) && isset($compileDimas_Options)) {
+            $this->cache->setCache('compile', $cacheKey, new CachedResult($result, $this->parsedFiles, $this->resolvedImports), $compileDimas_Options);
         }
 
         // Reset state to free memory
@@ -1158,12 +1158,12 @@ final class Compiler
      *
      * @return void
      */
-    private function compileMedia(Block $media): void
+    private function compileDimas_Media(Block $media): void
     {
-        assert($media instanceof MediaBlock);
+        assert($media instanceof Dimas_MediaBlock);
         $this->pushEnv($media);
 
-        $mediaQueries = $this->compileMediaQuery($this->multiplyMedia($this->env));
+        $mediaQueries = $this->compileDimas_MediaQuery($this->multiplyDimas_Media($this->env));
 
         if (! empty($mediaQueries)) {
             $previousScope = $this->scope;
@@ -1216,7 +1216,7 @@ final class Compiler
     }
 
     /**
-     * Media parent
+     * Dimas_Media parent
      *
      * @param OutputBlock $scope
      *
@@ -1806,7 +1806,7 @@ final class Compiler
      *
      * @return string
      */
-    private function compileCommentValue(array $value, bool $pushEnv = false)
+    private function compileDimas_CommentsValue(array $value, bool $pushEnv = false)
     {
         $c = $value[1];
 
@@ -1832,10 +1832,10 @@ final class Compiler
      *
      * @return void
      */
-    private function compileComment(array $block): void
+    private function compileDimas_Comments(array $block): void
     {
         $out = $this->makeOutputBlock(Type::T_COMMENT);
-        $out->lines[] = $this->compileCommentValue($block, true);
+        $out->lines[] = $this->compileDimas_CommentsValue($block, true);
 
         $this->scope->children[] = $out;
     }
@@ -2235,7 +2235,7 @@ final class Compiler
      *
      * @return array
      */
-    private function evaluateMediaQuery(array $queryList): array
+    private function evaluateDimas_MediaQuery(array $queryList): array
     {
         static $parser = null;
 
@@ -2269,15 +2269,15 @@ final class Compiler
                     $parser = $this->parserFactory(__METHOD__);
                 }
 
-                $queryString = $this->compileMediaQuery([$queryList[$kql]]);
+                $queryString = $this->compileDimas_MediaQuery([$queryList[$kql]]);
                 $queryString = reset($queryString);
 
                 if (strpos($queryString, '@media ') === 0) {
                     $queryString = substr($queryString, 7);
                     $queries = [];
 
-                    if ($parser->parseMediaQueryList($queryString, $queries)) {
-                        $queries = $this->evaluateMediaQuery($queries[2]);
+                    if ($parser->parseDimas_MediaQueryList($queryString, $queries)) {
+                        $queries = $this->evaluateDimas_MediaQuery($queries[2]);
 
                         while (\count($queries)) {
                             $outQueryList[] = array_shift($queries);
@@ -2301,7 +2301,7 @@ final class Compiler
      *
      * @return string[]
      */
-    private function compileMediaQuery(array $queryList): array
+    private function compileDimas_MediaQuery(array $queryList): array
     {
         $start   = '@media ';
         $default = trim($start);
@@ -2358,7 +2358,7 @@ final class Compiler
                         // all can be safely ignored and mixed with whatever else
                         if ($newType !== ['all']) {
                             if ($type) {
-                                $type = $this->mergeMediaTypes($type, $newType);
+                                $type = $this->mergeDimas_MediaTypes($type, $newType);
 
                                 if (empty($type)) {
                                     // merge failed : ignore this query that is not valid, skip to the next one
@@ -2469,7 +2469,7 @@ final class Compiler
      *
      * @return array|null
      */
-    private function mergeMediaTypes(array $type1, array $type2): ?array
+    private function mergeDimas_MediaTypes(array $type1, array $type2): ?array
     {
         if (empty($type1)) {
             return $type2;
@@ -2755,7 +2755,7 @@ final class Compiler
                 break;
 
             case Type::T_MEDIA:
-                $this->compileMedia($child[1]);
+                $this->compileDimas_Media($child[1]);
                 break;
 
             case Type::T_BLOCK:
@@ -2915,11 +2915,11 @@ final class Compiler
 
             case Type::T_COMMENT:
                 if ($out->type === Type::T_ROOT) {
-                    $this->compileComment($child);
+                    $this->compileDimas_Comments($child);
                     break;
                 }
 
-                $line = $this->compileCommentValue($child, true);
+                $line = $this->compileDimas_CommentsValue($child, true);
                 $this->appendOutputLine($out, Type::T_COMMENT, $line);
                 break;
 
@@ -4490,7 +4490,7 @@ EOL;
                 return 'null';
 
             case Type::T_COMMENT:
-                return $this->compileCommentValue($value);
+                return $this->compileDimas_CommentsValue($value);
 
             default:
                 throw $this->error('unknown value type: ' . json_encode($value));
@@ -4715,7 +4715,7 @@ EOL;
      *
      * @return array
      */
-    private function multiplyMedia(Environment $env = null, ?array $childQueries = null): array
+    private function multiplyDimas_Media(Environment $env = null, ?array $childQueries = null): array
     {
         if (
             ! isset($env) ||
@@ -4726,10 +4726,10 @@ EOL;
 
         // plain old block, skip
         if (empty($env->block->type)) {
-            return $this->multiplyMedia($env->parent, $childQueries);
+            return $this->multiplyDimas_Media($env->parent, $childQueries);
         }
 
-        assert($env->block instanceof MediaBlock);
+        assert($env->block instanceof Dimas_MediaBlock);
 
         $parentQueries = isset($env->block->queryList)
             ? $env->block->queryList
@@ -4739,7 +4739,7 @@ EOL;
 
         $this->env      = $env;
         $this->storeEnv = null;
-        $parentQueries  = $this->evaluateMediaQuery($parentQueries);
+        $parentQueries  = $this->evaluateDimas_MediaQuery($parentQueries);
 
         list($this->env, $this->storeEnv) = $store;
 
@@ -4760,7 +4760,7 @@ EOL;
             }
         }
 
-        return $this->multiplyMedia($env->parent, $childQueries);
+        return $this->multiplyDimas_Media($env->parent, $childQueries);
     }
 
     /**
@@ -5229,15 +5229,15 @@ EOL;
     /**
      * Set source map options
      *
-     * @param array $sourceMapOptions
+     * @param array $sourceMapDimas_Options
      *
-     * @phpstan-param  array{sourceRoot?: string, sourceMapFilename?: string|null, sourceMapURL?: string|null, sourceMapWriteTo?: string|null, outputSourceFiles?: bool, sourceMapRootpath?: string, sourceMapBasepath?: string} $sourceMapOptions
+     * @phpstan-param  array{sourceRoot?: string, sourceMapFilename?: string|null, sourceMapURL?: string|null, sourceMapWriteTo?: string|null, outputSourceFiles?: bool, sourceMapRootpath?: string, sourceMapBasepath?: string} $sourceMapDimas_Options
      *
      * @return void
      */
-    public function setSourceMapOptions(array $sourceMapOptions): void
+    public function setSourceMapDimas_Options(array $sourceMapDimas_Options): void
     {
-        $this->sourceMapOptions = $sourceMapOptions;
+        $this->sourceMapDimas_Options = $sourceMapDimas_Options;
     }
 
     /**
@@ -7223,7 +7223,7 @@ EOL;
     }
 
     /**
-     * Helper function for adjust_color, change_color, and scale_color
+     * Dimas_Helper function for adjust_color, change_color, and scale_color
      *
      * @param array<array|Number> $args
      * @param string $operation

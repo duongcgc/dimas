@@ -5,9 +5,9 @@
  * @package Dimas
  */
 
-namespace Dimas\Blog;
+namespace Dimas\Dimas_Blog;
 
-use Dimas\Helper;
+use Dimas\Dimas_Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Single initial
  */
-class Project_Loop {
+class Dimas_Project_Loop {
 	/**
 	 * Instance
 	 *
@@ -81,7 +81,7 @@ class Project_Loop {
 			$get_image
 		);
 
-		\Dimas\Helper::post_date();
+		\Dimas\Dimas_Helper::post_date();
 
 		echo '</div>';
 	}
@@ -127,10 +127,10 @@ class Project_Loop {
 	 * @return void
 	 */
 	public function loop_content() {
-		if ( $length = Helper::get_option( 'excerpt_length' ) ) {
+		if ( $length = Dimas_Helper::get_option( 'excerpt_length' ) ) {
 			echo sprintf(
 				'<div class="entry-content">%s</div>',
-				\Dimas\Helper::get_content_limit( $length, '' )
+				\Dimas\Dimas_Helper::get_content_limit( $length, '' )
 			);
 		}
 

@@ -39,25 +39,25 @@
 
 	/* entry */
 
-	/* Header */
+	/* Dimas_Header */
 
 	/* Main navigation */
 
 	/* Pagination */
 
-	/* Footer */
+	/* Dimas_Footer */
 
 	/* Block: Pull quote */
 
 	/* Block: Table */
 
-	/* Widgets */
+	/* Dimas_Widgets */
 
 	/* Admin-bar height */
 }
 
 /**
- * Responsive Styles
+ * Responsive Dimas_Styles
  */
 
 /**
@@ -65,7 +65,7 @@
  */
 
 /**
- * Root Media Query Variables
+ * Root Dimas_Media Query Variables
  */
 
 /**
@@ -220,7 +220,7 @@ video {
 	max-width: 100%;
 }
 
-/* Media captions */
+/* Dimas_Media captions */
 figcaption,
 .wp-caption,
 .wp-caption-text,
@@ -396,7 +396,7 @@ a:hover {
 }
 
 /**
- * Block Options
+ * Block Dimas_Options
  */
 .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(:hover):not(:active):not(.has-text-color) {
 	color: #d1e4dd;
@@ -1192,7 +1192,7 @@ h6,
 	margin: 0 auto;
 }
 
-/* Block Styles */
+/* Block Dimas_Styles */
 .wp-block-image.is-style-dimas-border img,
 .wp-block-image.is-style-dimas-image-frame img {
 	border: 3px solid #28303d;

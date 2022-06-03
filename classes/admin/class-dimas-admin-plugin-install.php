@@ -74,14 +74,14 @@ class Plugin_Install {
 				'force_deactivation' => false,
 			),
 			array(
-				'name'               => esc_html__( 'WooCommerce', 'dimas' ),
+				'name'               => esc_html__( 'Dimas_WooCommerce', 'dimas' ),
 				'slug'               => 'woocommerce',
 				'required'           => true,
 				'force_activation'   => false,
 				'force_deactivation' => false,
 			),
 			array(
-				'name'               => esc_html__( 'Elementor Page Builder', 'dimas' ),
+				'name'               => esc_html__( 'Elementor Dimas_Page Builder', 'dimas' ),
 				'slug'               => 'elementor',
 				'required'           => true,
 				'force_activation'   => false,
@@ -111,7 +111,7 @@ class Plugin_Install {
 				'force_deactivation' => false,
 			),
 			array(
-				'name'               => esc_html__( 'YITH WooCommerce Wishlist', 'dimas' ),
+				'name'               => esc_html__( 'YITH Dimas_WooCommerce Wishlist', 'dimas' ),
 				'slug'               => 'yith-woocommerce-wishlist',
 				'required'           => false,
 				'force_activation'   => false,

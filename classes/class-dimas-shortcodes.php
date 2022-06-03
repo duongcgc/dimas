@@ -57,13 +57,13 @@ class Dimas_Shortcodes {
 	 */
 	public function widgets_init() {
 		$sidebars = array(
-			'blog-sidebar'           => esc_html__( 'Blog Sidebar', 'dimas' ),
-			'header-bar'             => esc_html__( 'Header Bar', 'dimas' ),
+			'blog-sidebar'           => esc_html__( 'Dimas_Blog Sidebar', 'dimas' ),
+			'header-bar'             => esc_html__( 'Dimas_Header Bar', 'dimas' ),
 		);
 
 		// Register footer sidebars
 		for ( $i = 1; $i <= 5; $i ++ ) {
-			$sidebars["footer-$i"] = esc_html__( 'Footer', 'dimas' ) . " $i";
+			$sidebars["footer-$i"] = esc_html__( 'Dimas_Footer', 'dimas' ) . " $i";
 		}
 
 		// Register sidebars

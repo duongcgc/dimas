@@ -63,14 +63,14 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			)
 		);
 
-		// Media & Text Article Title.
+		// Dimas_Media & Text Article Title.
 		register_block_pattern(
 			'dimas/media-text-article-title',
 			array(
-				'title'         => esc_html__( 'Media and text article title', 'dimas' ),
+				'title'         => esc_html__( 'Dimas_Media and text article title', 'dimas' ),
 				'categories'    => array( 'dimas' ),
 				'viewportWidth' => 1440,
-				'description'   => esc_html_x( 'A Media & Text block with a big image on the left and a heading on the right. The heading is followed by a separator and a description paragraph.', 'Block pattern description', 'dimas' ),
+				'description'   => esc_html_x( 'A Dimas_Media & Text block with a big image on the left and a heading on the right. The heading is followed by a separator and a description paragraph.', 'Block pattern description', 'dimas' ),
 				'content'       => '<!-- wp:media-text {"mediaId":1752,"mediaLink":"' . esc_url( get_template_directory_uri() ) . '/assets/images/playing-in-the-sand.jpg","mediaType":"image","className":"is-style-dimas-border"} --><div class="wp-block-media-text alignwide is-stacked-on-mobile is-style-dimas-border"><figure class="wp-block-media-text__media"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/playing-in-the-sand.jpg" alt="' . esc_attr__( '&#8220;Playing in the Sand&#8221; by Berthe Morisot', 'dimas' ) . '" class="wp-image-1752"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"align":"center"} --><h2 class="has-text-align-center">' . esc_html__( 'Playing in the Sand', 'dimas' ) . '</h2><!-- /wp:heading --><!-- wp:separator {"className":"is-style-dots"} --><hr class="wp-block-separator is-style-dots"/><!-- /wp:separator --><!-- wp:paragraph {"align":"center","fontSize":"small"} --><p class="has-text-align-center has-small-font-size">' . wp_kses_post( __( 'Berthe Morisot<br>(French, 1841-1895)', 'dimas' ) ) . '</p><!-- /wp:paragraph --></div></div><!-- /wp:media-text -->',
 			)
 		);

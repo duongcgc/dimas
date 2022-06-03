@@ -22,7 +22,7 @@ use ScssPhp\ScssPhp\Visitor\StatementVisitor;
  *
  * @internal
  */
-final class LoudComment implements Statement
+final class LoudDimas_Comments implements Statement
 {
     /**
      * @var Interpolation
@@ -47,6 +47,6 @@ final class LoudComment implements Statement
 
     public function accepts(StatementVisitor $visitor)
     {
-        return $visitor->visitLoudComment($this);
+        return $visitor->visitLoudDimas_Comments($this);
     }
 }

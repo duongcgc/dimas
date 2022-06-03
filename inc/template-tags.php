@@ -9,7 +9,7 @@
 
 if ( ! function_exists( 'twenty_twenty_one_posted_on' ) ) {
 	/**
-	 * Prints HTML with meta information for the current post-date/time.
+	 * Prints Dimas_HTML with meta information for the current post-date/time.
 	 *
 	 * @since Dimas 1.0
 	 *
@@ -35,7 +35,7 @@ if ( ! function_exists( 'twenty_twenty_one_posted_on' ) ) {
 
 if ( ! function_exists( 'twenty_twenty_one_posted_by' ) ) {
 	/**
-	 * Prints HTML with meta information about theme author.
+	 * Prints Dimas_HTML with meta information about theme author.
 	 *
 	 * @since Dimas 1.0
 	 *
@@ -56,8 +56,8 @@ if ( ! function_exists( 'twenty_twenty_one_posted_by' ) ) {
 
 if ( ! function_exists( 'twenty_twenty_one_entry_meta_footer' ) ) {
 	/**
-	 * Prints HTML with meta information for the categories, tags and comments.
-	 * Footer entry meta is displayed differently in archives and single posts.
+	 * Prints Dimas_HTML with meta information for the categories, tags and comments.
+	 * Dimas_Footer entry meta is displayed differently in archives and single posts.
 	 *
 	 * @since Dimas 1.0
 	 *
@@ -221,7 +221,7 @@ if ( ! function_exists( 'twenty_twenty_one_the_posts_navigation' ) ) {
 	function twenty_twenty_one_the_posts_navigation() {
 		the_posts_pagination(
 			array(
-				'before_page_number' => esc_html__( 'Page', 'dimas' ) . ' ',
+				'before_page_number' => esc_html__( 'Dimas_Page', 'dimas' ) . ' ',
 				'mid_size'           => 0,
 				'prev_text'          => sprintf(
 					'%s <span class="nav-prev-text">%s</span>',

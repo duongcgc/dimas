@@ -1,6 +1,6 @@
 <?php
 /**
- * Menu functions and definitions.
+ * Dimas_Menu functions and definitions.
  *
  * @package Dimas
  */
@@ -12,10 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Menu initial
+ * Dimas_Menu initial
  *
  */
-class Menu {
+class Dimas_Menu {
 	/**
 	 * Instance
 	 *
@@ -73,7 +73,7 @@ class Menu {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		wp_register_style( 'dimas-fonts', Helper::get_fonts_url(), array(), '20200928' );
+		wp_register_style( 'dimas-fonts', Dimas_Helper::get_fonts_url(), array(), '20200928' );
 
 		$style_file = is_rtl() ? 'style-rtl.css' : 'style.css';
 		wp_enqueue_style( 'dimas', apply_filters( 'dimas_get_style_directory_uri', get_template_directory_uri() ) . '/' . $style_file, array(
@@ -113,16 +113,16 @@ class Menu {
 			'direction'            => is_rtl() ? 'true' : 'false',
 			'ajax_url'             => class_exists( 'WC_AJAX' ) ? \WC_AJAX::get_endpoint( '%%endpoint%%' ) : '',
 			'nonce'                => wp_create_nonce( '_dimas_nonce' ),
-			'search_content_type'  => Helper::get_option( 'header_search_type' ),
-			'header_search_number' => Helper::get_option( 'header_search_number' ),
-			'header_ajax_search'   => intval( Helper::get_option( 'header_search_ajax' ) ),
-			'sticky_header'        => intval( Helper::get_option( 'header_sticky' ) ),
-			'mobile_landscape'     => Helper::get_option( 'mobile_landscape_product_columns' ),
-			'mobile_portrait'      => Helper::get_option( 'mobile_portrait_product_columns' ),
-			'popup'                => Helper::get_option( 'newsletter_popup_enable' ),
-			'popup_frequency'      => Helper::get_option( 'newsletter_popup_frequency' ),
-			'popup_visible'        => Helper::get_option( 'newsletter_popup_visible' ),
-			'popup_visible_delay'  => Helper::get_option( 'newsletter_popup_visible_delay' ),
+			'search_content_type'  => Dimas_Helper::get_option( 'header_search_type' ),
+			'header_search_number' => Dimas_Helper::get_option( 'header_search_number' ),
+			'header_ajax_search'   => intval( Dimas_Helper::get_option( 'header_search_ajax' ) ),
+			'sticky_header'        => intval( Dimas_Helper::get_option( 'header_sticky' ) ),
+			'mobile_landscape'     => Dimas_Helper::get_option( 'mobile_landscape_product_columns' ),
+			'mobile_portrait'      => Dimas_Helper::get_option( 'mobile_portrait_product_columns' ),
+			'popup'                => Dimas_Helper::get_option( 'newsletter_popup_enable' ),
+			'popup_frequency'      => Dimas_Helper::get_option( 'newsletter_popup_frequency' ),
+			'popup_visible'        => Dimas_Helper::get_option( 'newsletter_popup_visible' ),
+			'popup_visible_delay'  => Dimas_Helper::get_option( 'newsletter_popup_visible_delay' ),
 		);
 
 		$dimas_data = apply_filters( 'dimas_wp_script_data', $dimas_data );
@@ -142,16 +142,16 @@ class Menu {
 	 */
 
 	public function show_header_sticky_minimized() {
-		$show_header = is_page() ? ! get_post_meta( \Dimas\Helper::get_post_ID(), 'rz_hide_header_section', true ) : true;
+		$show_header = is_page() ? ! get_post_meta( \Dimas\Dimas_Helper::get_post_ID(), 'rz_hide_header_section', true ) : true;
 		if ( ! apply_filters( 'dimas_get_header', $show_header ) ) {
 			return;
 		}
 
-		if ( ! intval(Helper::get_option( 'header_sticky' ) ) ) {
+		if ( ! intval(Dimas_Helper::get_option( 'header_sticky' ) ) ) {
 			return;
 		}
 
-		if ( get_post_meta( Helper::get_post_ID(), 'rz_header_background', true ) == 'transparent' ) {
+		if ( get_post_meta( Dimas_Helper::get_post_ID(), 'rz_header_background', true ) == 'transparent' ) {
 			return;
 		}
 
@@ -167,42 +167,42 @@ class Menu {
 	 */
 
 	public function show_header() {
-		$show_header = is_page() ? ! get_post_meta( \Dimas\Helper::get_post_ID(), 'rz_hide_header_section', true ) : true;
+		$show_header = is_page() ? ! get_post_meta( \Dimas\Dimas_Helper::get_post_ID(), 'rz_hide_header_section', true ) : true;
 		if ( ! apply_filters( 'dimas_get_header', $show_header ) ) {
 			return;
 		}
 
-		$custom_header_layout = get_post_meta( Helper::get_post_ID(), 'rz_header_layout', true );
+		$custom_header_layout = get_post_meta( Dimas_Helper::get_post_ID(), 'rz_header_layout', true );
 		if( ! empty($custom_header_layout) && 'default' != $custom_header_layout ) {
 			$this->prebuild_header( $custom_header_layout );
 		} else {
-			if ( 'default' == Helper::get_option( 'header_type' ) ) {
-				$this->prebuild_header( Helper::get_option( 'header_layout' ) );
+			if ( 'default' == Dimas_Helper::get_option( 'header_type' ) ) {
+				$this->prebuild_header( Dimas_Helper::get_option( 'header_layout' ) );
 			} else {
 				$options = array();
 
-				// Menu main.
+				// Dimas_Menu main.
 				$sections = array(
-					'left'   => Helper::get_option( 'header_main_left' ),
-					'center' => Helper::get_option( 'header_main_center' ),
-					'right'  => Helper::get_option( 'header_main_right' ),
+					'left'   => Dimas_Helper::get_option( 'header_main_left' ),
+					'center' => Dimas_Helper::get_option( 'header_main_center' ),
+					'right'  => Dimas_Helper::get_option( 'header_main_right' ),
 				);
 
 				$classes = array( 'header-main', 'header-contents', 'hidden-md hidden-xs hidden-sm' );
 
 				$this->get_header_contents( $sections, $options, array( 'class' => $classes ) );
 
-				// Menu bottom.
+				// Dimas_Menu bottom.
 				$sections = array(
-					'left'   => Helper::get_option( 'header_bottom_left' ),
-					'center' => Helper::get_option( 'header_bottom_center' ),
-					'right'  => Helper::get_option( 'header_bottom_right' ),
+					'left'   => Dimas_Helper::get_option( 'header_bottom_left' ),
+					'center' => Dimas_Helper::get_option( 'header_bottom_center' ),
+					'right'  => Dimas_Helper::get_option( 'header_bottom_right' ),
 				);
 
-				$border = Helper::get_option( 'header_bottom_border_top' );
+				$border = Dimas_Helper::get_option( 'header_bottom_border_top' );
 				$border = $border ? 'has-border' : '';
 
-				$sticky_bottom = in_array( 'header_main', (array) Helper::get_option( 'header_sticky_el' ) ) ? 'rz-sticky-main' : '';
+				$sticky_bottom = in_array( 'header_main', (array) Dimas_Helper::get_option( 'header_sticky_el' ) ) ? 'rz-sticky-main' : '';
 
 				$classes = array(
 					'header-bottom',
@@ -537,11 +537,11 @@ class Menu {
 
 		$container_width = 'container';
 
-		if ( Helper::get_header_layout() == 'v6' ) {
+		if ( Dimas_Helper::get_header_layout() == 'v6' ) {
 			$container_width = 'header-container';
-		} elseif ( Helper::get_option( 'header_width' ) == 'large' ) {
+		} elseif ( Dimas_Helper::get_option( 'header_width' ) == 'large' ) {
 			$container_width = 'dimas-container';
-		}elseif ( Helper::get_option( 'header_width' ) == 'wide' ) {
+		}elseif ( Dimas_Helper::get_option( 'header_width' ) == 'wide' ) {
 			$container_width = 'dimas-container-wide';
 		}
 
@@ -598,17 +598,17 @@ class Menu {
 
 			switch ( $item['item'] ) {
 				case 'hamburger':
-					\Dimas\Theme::instance()->set_prop( 'modals', $item['item'] );
+					\Dimas\Dimas_Theme::instance()->set_prop( 'modals', $item['item'] );
 					break;
 
 				case 'cart':
-					if ( ! class_exists( 'WooCommerce' ) ) {
+					if ( ! class_exists( 'Dimas_WooCommerce' ) ) {
 						$template_file = '';
 						break;
 					}
 
-					if ( 'panel' == Helper::get_option( 'header_cart_behaviour' ) ) {
-						\Dimas\Theme::instance()->set_prop( 'modals', $item['item'] );
+					if ( 'panel' == Dimas_Helper::get_option( 'header_cart_behaviour' ) ) {
+						\Dimas\Dimas_Theme::instance()->set_prop( 'modals', $item['item'] );
 					}
 
 					break;
@@ -618,8 +618,8 @@ class Menu {
 					break;
 
 				case 'account':
-					if ( 'panel' == Helper::get_option( 'header_account_behaviour' ) ) {
-						\Dimas\Theme::instance()->set_prop( 'modals', $item['item'] );
+					if ( 'panel' == Dimas_Helper::get_option( 'header_account_behaviour' ) ) {
+						\Dimas\Dimas_Theme::instance()->set_prop( 'modals', $item['item'] );
 					}
 					break;
 			}
@@ -631,7 +631,7 @@ class Menu {
 	}
 
 	/**
-	 * Options of header items
+	 * Dimas_Options of header items
 	 *
 	 * @since 1.0.0
 	 *
@@ -641,8 +641,8 @@ class Menu {
 		return apply_filters( 'dimas_header_items_option', array(
 			'0'              => esc_html__( 'Select a item', 'dimas' ),
 			'logo'           => esc_html__( 'Logo', 'dimas' ),
-			'menu-primary'   => esc_html__( 'Primary Menu', 'dimas' ),
-			'menu-secondary' => esc_html__( 'Secondary Menu', 'dimas' ),
+			'menu-primary'   => esc_html__( 'Primary Dimas_Menu', 'dimas' ),
+			'menu-secondary' => esc_html__( 'Secondary Dimas_Menu', 'dimas' ),
 			'hamburger'      => esc_html__( 'Hamburger Icon', 'dimas' ),
 			'search'         => esc_html__( 'Search Icon', 'dimas' ),
 			'cart'           => esc_html__( 'Cart Icon', 'dimas' ),
@@ -655,7 +655,7 @@ class Menu {
 	}
 
 	/**
-	 * Options of header items
+	 * Dimas_Options of header items
 	 *
 	 * @since 1.0.0
 	 *
@@ -666,7 +666,7 @@ class Menu {
 			'cart'     => esc_html__( 'Cart Icon', 'dimas' ),
 			'wishlist' => esc_html__( 'Wishlist Icon', 'dimas' ),
 			'account'  => esc_html__( 'Account Icon', 'dimas' ),
-			'menu'     => esc_html__( 'Menu Icon', 'dimas' ),
+			'menu'     => esc_html__( 'Dimas_Menu Icon', 'dimas' ),
 			'search'   => esc_html__( 'Search Icon', 'dimas' ),
 		) );
 	}
@@ -679,24 +679,24 @@ class Menu {
 	 * @return void
 	 */
 	public function primary_menu( $mega_menu = true ) {
-		$arrow_class = Helper::get_option('primary_menu_show_arrow') ? 'has-arrow' : '' ;
-		$class   = array( 'nav-menu', Helper::get_option( 'hamburger_click_item' ), $arrow_class );
+		$arrow_class = Dimas_Helper::get_option('primary_menu_show_arrow') ? 'has-arrow' : '' ;
+		$class   = array( 'nav-menu', Dimas_Helper::get_option( 'hamburger_click_item' ), $arrow_class );
 		$classes = implode( ' ', $class );
 
-		$primary_menu = get_post_meta( \Dimas\Helper::get_post_ID(), 'rz_header_primary_menu', true );
+		$primary_menu = get_post_meta( \Dimas\Dimas_Helper::get_post_ID(), 'rz_header_primary_menu', true );
 		$theme_location = $primary_menu ? '__no_such_location' : 'primary';
 
 		if( empty($primary_menu ) && ! has_nav_menu( $theme_location ) ) {
 			return;
 		}
 
-		if ( $mega_menu == true && Helper::get_header_layout() != 'v6' && class_exists( '\Dimas\Addons\Modules\Mega_Menu\Walker' ) ) {
+		if ( $mega_menu == true && Dimas_Helper::get_header_layout() != 'v6' && class_exists( '\Dimas\Addons\Modules\Mega_Dimas_Menu\Walker' ) ) {
 			wp_nav_menu( apply_filters( 'dimas_navigation_primary_content', array(
 				'theme_location' => $theme_location,
 				'container'      => false,
 				'menu_class'     => $classes,
 				'menu' => $primary_menu,
-				'walker' 		=>  new \Dimas\Addons\Modules\Mega_Menu\Walker()
+				'walker' 		=>  new \Dimas\Addons\Modules\Mega_Dimas_Menu\Walker()
 			) ) );
 
 		} else {
@@ -717,10 +717,10 @@ class Menu {
 	 * @return string
 	 */
 	public static function classes( $classes ) {
-		if ( intval( Helper::get_option( 'header_sticky' ) ) && Helper::get_header_layout() != 'v6' ) {
-			$header_sticky_el = (array) Helper::get_option( 'header_sticky_el' );
+		if ( intval( Dimas_Helper::get_option( 'header_sticky' ) ) && Dimas_Helper::get_header_layout() != 'v6' ) {
+			$header_sticky_el = (array) Dimas_Helper::get_option( 'header_sticky_el' );
 
-			if( Helper::get_option('header_type') == 'custom' ) {
+			if( Dimas_Helper::get_option('header_type') == 'custom' ) {
 				if ( ! in_array( 'header_main', $header_sticky_el ) ) {
 					$classes .= ' header-main-no-sticky';
 				}
@@ -729,7 +729,7 @@ class Menu {
 					$classes .= ' header-bottom-no-sticky';
 				}
 			} else {
-				if( in_array( Helper::get_option('header_layout'), array( 'v3', 'v4', 'v9' ) ) ) {
+				if( in_array( Dimas_Helper::get_option('header_layout'), array( 'v3', 'v4', 'v9' ) ) ) {
 					if ( ! in_array( 'header_main', $header_sticky_el ) ) {
 						$classes .= ' header-main-no-sticky';
 					}
@@ -744,7 +744,7 @@ class Menu {
 
 		}
 
-		if ( ! get_post_meta( \Dimas\Helper::get_post_ID(), 'rz_hide_header_border', true ) ) {
+		if ( ! get_post_meta( \Dimas\Dimas_Helper::get_post_ID(), 'rz_hide_header_border', true ) ) {
 			$classes .= ' site-header__border';
 		}
 
@@ -763,7 +763,7 @@ class Menu {
 			return;
 		}
 
-		$show_header = is_page() ? ! get_post_meta( \Dimas\Helper::get_post_ID(), 'rz_hide_header_section', true ) : true;
+		$show_header = is_page() ? ! get_post_meta( \Dimas\Dimas_Helper::get_post_ID(), 'rz_hide_header_section', true ) : true;
 		if ( ! $show_header ) {
 			return;
 		}
@@ -782,12 +782,12 @@ class Menu {
 	 * @return string
 	 */
 	public function mobile_header_classes( $classes ) {
-		$mobile_logo = Helper::get_option( 'mobile_custom_logo' ) ? 'custom' : 'default';
+		$mobile_logo = Dimas_Helper::get_option( 'mobile_custom_logo' ) ? 'custom' : 'default';
 		$classes     .= ' header-contents';
 		$classes     .= ' logo-' . $mobile_logo;
 		$classes     .= ' hidden-md hidden-lg';
 
-		if ( ! intval( Helper::get_option( 'mobile_menu_left' ) ) ) {
+		if ( ! intval( Dimas_Helper::get_option( 'mobile_menu_left' ) ) ) {
 			$classes     .= ' header-no-menu';
 		}
 
@@ -802,7 +802,7 @@ class Menu {
 	 * @return void
 	 */
 	public function mobile_header_icons() {
-		$icons = Helper::get_option( 'mobile_header_icons' );
+		$icons = Dimas_Helper::get_option( 'mobile_header_icons' );
 
 		if ( empty( $icons ) ) {
 			return;
@@ -815,7 +815,7 @@ class Menu {
 
 			switch ( $icon['item'] ) {
 				case 'cart':
-					\Dimas\Theme::instance()->set_prop( 'modals', 'cart' );
+					\Dimas\Dimas_Theme::instance()->set_prop( 'modals', 'cart' );
 					get_template_part( 'template-parts/headers/cart' );
 					break;
 
@@ -824,7 +824,7 @@ class Menu {
 					break;
 
 				case 'account':
-					\Dimas\Theme::instance()->set_prop( 'modals', 'account' );
+					\Dimas\Dimas_Theme::instance()->set_prop( 'modals', 'account' );
 					get_template_part( 'template-parts/headers/account' );
 					break;
 
@@ -833,7 +833,7 @@ class Menu {
 					break;
 
 				case 'search':
-					\Dimas\Theme::instance()->set_prop( 'modals', 'search' );
+					\Dimas\Dimas_Theme::instance()->set_prop( 'modals', 'search' );
 					get_template_part( 'template-parts/mobile/header-search' );
 					break;
 
@@ -861,7 +861,7 @@ class Menu {
             <div class="menu-mobile-panel-content panel-content">
                 <div class="modal-header">
                     <div class="mobile-logo">
-					<?php if ( Helper::get_option( 'mobile_panel_custom_logo' ) ) : ?>
+					<?php if ( Dimas_Helper::get_option( 'mobile_panel_custom_logo' ) ) : ?>
 							<?php get_template_part( 'template-parts/mobile/header-panel-logo' ); ?>
 					<?php else : ?>
 						<?php get_template_part( 'template-parts/headers/logo' ); ?>
@@ -874,7 +874,7 @@ class Menu {
                     <nav class="hamburger-navigation menu-mobile-navigation">
 						<?php
 
-						$class = array( 'nav-menu', 'menu', Helper::get_option( 'mobile_menu_click_item' ) );
+						$class = array( 'nav-menu', 'menu', Dimas_Helper::get_option( 'mobile_menu_click_item' ) );
 
 						$classes = implode( ' ', $class );
 
@@ -887,8 +887,8 @@ class Menu {
 							'menu_class'     => $classes,
 						);
 
-						if ( class_exists( '\Dimas\Addons\Modules\Mega_Menu\Mobile_Walker' ) ) {
-							$arg['walker'] = new \Dimas\Addons\Modules\Mega_Menu\Mobile_Walker();
+						if ( class_exists( '\Dimas\Addons\Modules\Mega_Dimas_Menu\Mobile_Walker' ) ) {
+							$arg['walker'] = new \Dimas\Addons\Modules\Mega_Dimas_Menu\Mobile_Walker();
 						}
 
 						wp_nav_menu( $arg );
@@ -896,7 +896,7 @@ class Menu {
                     </nav>
                     <div class="content-footer">
 						<?php
-						if ( intval( Helper::get_option( 'mobile_menu_show_socials' ) ) ) {
+						if ( intval( Dimas_Helper::get_option( 'mobile_menu_show_socials' ) ) ) {
 							if ( has_nav_menu( 'socials' ) ) {
 								$args = array(
 									'container'       => 'div',
@@ -907,16 +907,16 @@ class Menu {
 									'link_after'      => '</span>',
 								);
 
-								if ( class_exists( '\Dimas\Addons\Modules\Mega_Menu\Socials_Walker' ) ) {
-									$args['walker'] = new \Dimas\Addons\Modules\Mega_Menu\Socials_Walker();
+								if ( class_exists( '\Dimas\Addons\Modules\Mega_Dimas_Menu\Socials_Walker' ) ) {
+									$args['walker'] = new \Dimas\Addons\Modules\Mega_Dimas_Menu\Socials_Walker();
 								}
 
 								wp_nav_menu( $args );
 							}
 						}
 
-						if ( intval( Helper::get_option( 'mobile_menu_show_copyright' ) ) ) {
-							echo '<div class="menu-copyright">' . do_shortcode( wp_kses_post( Helper::get_option( 'footer_copyright' ) ) ) . '</div>';
+						if ( intval( Dimas_Helper::get_option( 'mobile_menu_show_copyright' ) ) ) {
+							echo '<div class="menu-copyright">' . do_shortcode( wp_kses_post( Dimas_Helper::get_option( 'footer_copyright' ) ) ) . '</div>';
 						}
 						?>
                     </div>
@@ -927,14 +927,14 @@ class Menu {
 	}
 
 	/**
-	 * Add Menu Hamburger Modal
+	 * Add Dimas_Menu Hamburger Modal
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return void
 	 */
 	public function menu_hamburger_modal() {
-		$modals = Theme::instance()->get_prop( 'modals' );
+		$modals = Dimas_Theme::instance()->get_prop( 'modals' );
 
 		if ( ! in_array( 'hamburger', $modals ) ) {
 			return;
@@ -942,7 +942,7 @@ class Menu {
 
 		?>
         <div id="hamburger-modal"
-             class="hamburger-modal rz-modal ra-hamburger-modal <?php echo esc_attr( Helper::get_option( 'hamburger_side_type' ) == 'side-left' ? 'side-left' : '' ) ?>"
+             class="hamburger-modal rz-modal ra-hamburger-modal <?php echo esc_attr( Dimas_Helper::get_option( 'hamburger_side_type' ) == 'side-left' ? 'side-left' : '' ) ?>"
              tabindex="-1" role="dialog">
             <div class="off-modal-layer"></div>
             <div class="hamburger-panel-content panel-content">
@@ -961,7 +961,7 @@ class Menu {
 	 */
 	public function mobile_header_logo() {
 		?>
-		<?php if ( Helper::get_option( 'mobile_custom_logo' ) ) : ?>
+		<?php if ( Dimas_Helper::get_option( 'mobile_custom_logo' ) ) : ?>
 			<?php get_template_part( 'template-parts/mobile/header-logo' ); ?>
 		<?php else : ?>
 			<?php get_template_part( 'template-parts/headers/logo' ); ?>
@@ -978,13 +978,13 @@ class Menu {
 	 */
 	public function mobile_header_left() {
 		if ( is_front_page() || is_home() ) {
-			if ( intval( Helper::get_option( 'mobile_menu_left' ) ) ) {
+			if ( intval( Dimas_Helper::get_option( 'mobile_menu_left' ) ) ) {
 				get_template_part( 'template-parts/mobile/header-menu' );
 			}
 		} else {
-			if ( ! intval( Helper::get_option( 'mobile_header_history_back' ) ) && intval( Helper::get_option( 'mobile_menu_left' ) ) ) {
+			if ( ! intval( Dimas_Helper::get_option( 'mobile_header_history_back' ) ) && intval( Dimas_Helper::get_option( 'mobile_menu_left' ) ) ) {
 				get_template_part( 'template-parts/mobile/header-menu' );
-			} elseif(intval( Helper::get_option( 'mobile_header_history_back' ) ) ) {
+			} elseif(intval( Dimas_Helper::get_option( 'mobile_header_history_back' ) ) ) {
 				get_template_part( 'template-parts/mobile/header-history-back' );
 			}
 		}
@@ -999,11 +999,11 @@ class Menu {
 	 * @return void
 	 */
 	public static function search_quicklinks( $post_type = 'product' ) {
-		if ( ! Helper::get_option( 'header_search_quick_links' ) ) {
+		if ( ! Dimas_Helper::get_option( 'header_search_quick_links' ) ) {
 			return;
 		}
 
-		$links = (array) Helper::get_option( 'header_search_links' );
+		$links = (array) Dimas_Helper::get_option( 'header_search_links' );
 
 		if ( empty( $links ) ) {
 			return;
@@ -1051,16 +1051,16 @@ class Menu {
 		$options = isset( $options['search'] ) ? $options['search'] : '';
 		$args = array();
 
-		$args['search_style'] = ! empty( $options ) && isset( $options['search_style'] ) ? $options['search_style'] : Helper::get_option( 'header_search_style' );
+		$args['search_style'] = ! empty( $options ) && isset( $options['search_style'] ) ? $options['search_style'] : Dimas_Helper::get_option( 'header_search_style' );
 
 		$args['search_class'] = 'ra-search-form search-type-' . $args['search_style'];
 
-		$args['search_form_style'] = ! empty( $options ) && isset( $options['search_form_style'] ) ? $options['search_form_style'] : Helper::get_option( 'header_search_form_style' );
-		$args['search_type'] = ! empty( $options ) && isset( $options['search_type'] ) ? $options['search_type'] : Helper::get_option( 'header_search_type' );
-		$args['header_type'] = ! empty( $options ) && isset( $options['header_type'] ) ? $options['header_type'] : Helper::get_option( 'header_type' );
+		$args['search_form_style'] = ! empty( $options ) && isset( $options['search_form_style'] ) ? $options['search_form_style'] : Dimas_Helper::get_option( 'header_search_form_style' );
+		$args['search_type'] = ! empty( $options ) && isset( $options['search_type'] ) ? $options['search_type'] : Dimas_Helper::get_option( 'header_search_type' );
+		$args['header_type'] = ! empty( $options ) && isset( $options['header_type'] ) ? $options['header_type'] : Dimas_Helper::get_option( 'header_type' );
 
 		if ( 'icon' == $args['search_style'] ) {
-			\Dimas\Theme::instance()->set_prop( 'modals', 'search' );
+			\Dimas\Dimas_Theme::instance()->set_prop( 'modals', 'search' );
 		}
 
 		if ( $args['search_style'] == 'form' || $args['search_style'] == 'form-cat' ) {

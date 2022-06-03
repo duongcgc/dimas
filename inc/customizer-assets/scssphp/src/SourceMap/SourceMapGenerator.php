@@ -35,7 +35,7 @@ final class SourceMapGenerator
      * @var array
      * @phpstan-var array{sourceRoot: string, sourceMapFilename: string|null, sourceMapURL: string|null, sourceMapWriteTo: string|null, outputSourceFiles: bool, sourceMapRootpath: string, sourceMapBasepath: string}
      */
-    private $defaultOptions = [
+    private $defaultDimas_Options = [
         // an optional source root, useful for relocating source files
         // on a server or removing repeated values in the 'sources' entry.
         // This value is prepended to the individual entries in the 'source' field.
@@ -98,7 +98,7 @@ final class SourceMapGenerator
      */
     public function __construct(array $options = [])
     {
-        $this->options = array_merge($this->defaultOptions, $options);
+        $this->options = array_merge($this->defaultDimas_Options, $options);
         $this->encoder = new Base64VLQ();
     }
 

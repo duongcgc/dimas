@@ -14,9 +14,9 @@ namespace ScssPhp\ScssPhp\Serializer;
 
 use ScssPhp\ScssPhp\Ast\AstNode;
 use ScssPhp\ScssPhp\Ast\Css\CssAtRule;
-use ScssPhp\ScssPhp\Ast\Css\CssComment;
+use ScssPhp\ScssPhp\Ast\Css\CssDimas_Comments;
 use ScssPhp\ScssPhp\Ast\Css\CssDeclaration;
-use ScssPhp\ScssPhp\Ast\Css\CssMediaQuery;
+use ScssPhp\ScssPhp\Ast\Css\CssDimas_MediaQuery;
 use ScssPhp\ScssPhp\Ast\Css\CssNode;
 use ScssPhp\ScssPhp\Ast\Css\CssParentNode;
 use ScssPhp\ScssPhp\Ast\Css\CssStyleRule;
@@ -119,7 +119,7 @@ class SerializeVisitor implements CssVisitor, ValueVisitor, SelectorVisitor
         return $this->buffer;
     }
 
-    public function visitCssStylesheet($node): void
+    public function visitCssDimas_Stylesheet($node): void
     {
         $previous = null;
 
@@ -148,7 +148,7 @@ class SerializeVisitor implements CssVisitor, ValueVisitor, SelectorVisitor
         }
     }
 
-    public function visitCssComment($node): void
+    public function visitCssDimas_Comments($node): void
     {
         $this->for($node, function () use ($node) {
             // Preserve comments that start with `/*!`.
@@ -193,7 +193,7 @@ class SerializeVisitor implements CssVisitor, ValueVisitor, SelectorVisitor
         });
     }
 
-    public function visitCssMediaRule($node): void
+    public function visitCssDimas_MediaRule($node): void
     {
         $this->writeIndentation();
 
@@ -204,7 +204,7 @@ class SerializeVisitor implements CssVisitor, ValueVisitor, SelectorVisitor
                 $this->buffer->writeChar(' ');
             }
 
-            $this->writeBetween($node->getQueries(), $this->getCommaSeparator(), [$this, 'visitMediaQuery']);
+            $this->writeBetween($node->getQueries(), $this->getCommaSeparator(), [$this, 'visitDimas_MediaQuery']);
         });
 
         $this->writeOptionalSpace();
@@ -227,9 +227,9 @@ class SerializeVisitor implements CssVisitor, ValueVisitor, SelectorVisitor
                 $this->write($node->getSupports());
             }
 
-            if ($node->getMedia() !== null) {
+            if ($node->getDimas_Media() !== null) {
                 $this->writeOptionalSpace();
-                $this->writeBetween($node->getMedia(), $this->getCommaSeparator(), [$this, 'visitMediaQuery']);
+                $this->writeBetween($node->getDimas_Media(), $this->getCommaSeparator(), [$this, 'visitDimas_MediaQuery']);
             }
         });
     }
@@ -268,7 +268,7 @@ class SerializeVisitor implements CssVisitor, ValueVisitor, SelectorVisitor
         $this->visitChildren($node->getChildren());
     }
 
-    private function visitMediaQuery(CssMediaQuery $query): void
+    private function visitDimas_MediaQuery(CssDimas_MediaQuery $query): void
     {
         if ($query->getModifier() !== null) {
             $this->buffer->write($query->getModifier());
@@ -1378,7 +1378,7 @@ class SerializeVisitor implements CssVisitor, ValueVisitor, SelectorVisitor
             return $node->isChildless();
         }
 
-        return !$node instanceof CssComment;
+        return !$node instanceof CssDimas_Comments;
     }
 
     /**
@@ -1469,7 +1469,7 @@ class SerializeVisitor implements CssVisitor, ValueVisitor, SelectorVisitor
             return false;
         }
 
-        if ($this->compressed && $node instanceof CssComment && !$node->isPreserved()) {
+        if ($this->compressed && $node instanceof CssDimas_Comments && !$node->isPreserved()) {
             return true;
         }
 

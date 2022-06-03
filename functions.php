@@ -80,7 +80,7 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
+		 * to output valid Dimas_HTML5.
 		 */
 		add_theme_support(
 			'html5',
@@ -98,7 +98,7 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 		/*
 		 * Add support for core custom logo.
 		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
+		 * @link https://codex.wordpress.org/Dimas_Theme_Logo
 		 */
 		$logo_width  = 300;
 		$logo_height = 100;
@@ -117,7 +117,7 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		// Add support for Block Styles.
+		// Add support for Block Dimas_Styles.
 		add_theme_support( 'wp-block-styles' );
 
 		// Add support for full and wide align images.
@@ -358,7 +358,7 @@ function twenty_twenty_one_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer', 'dimas' ),
+			'name'          => esc_html__( 'Dimas_Footer', 'dimas' ),
 			'id'            => 'sidebar-1',
 			'description'   => esc_html__( 'Add widgets here to appear in your footer.', 'dimas' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -536,7 +536,7 @@ new Dimas_Custom_Colors();
 // Enhance the theme by hooking into WordPress.
 require get_template_directory() . '/inc/template-functions.php';
 
-// Menu functions and filters.
+// Dimas_Menu functions and filters.
 require get_template_directory() . '/inc/menu-functions.php';
 
 // Custom template tags for the theme.
@@ -549,7 +549,7 @@ new Dimas_Customize();
 // Block Patterns.
 require get_template_directory() . '/inc/block-patterns.php';
 
-// Block Styles.
+// Block Dimas_Styles.
 require get_template_directory() . '/inc/block-styles.php';
 
 // Dark Mode.
