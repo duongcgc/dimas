@@ -3,7 +3,7 @@ namespace Dimas;
 
 /**
  * Dimas HTML markup rendering class. 
- * All methods create html tag for template.
+ * => All methods create html tag for template.
  */
 
 class Dimas_HTML {

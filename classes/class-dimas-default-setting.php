@@ -1,7 +1,7 @@
 <?php
 /**
  * Default Setting for Dimas_Theme
- *
+ * => default settings values for customizer and options
  * @package WordPress
  * @subpackage Dimas
  * @since Dimas 1.0
