@@ -33,8 +33,8 @@ while ( have_posts() ) :
 	}
 
 	// Previous/next post navigation.
-	$dimas_next = is_rtl() ? twenty_twenty_one_get_icon_svg( 'ui', 'arrow_left' ) : twenty_twenty_one_get_icon_svg( 'ui', 'arrow_right' );
-	$dimas_prev = is_rtl() ? twenty_twenty_one_get_icon_svg( 'ui', 'arrow_right' ) : twenty_twenty_one_get_icon_svg( 'ui', 'arrow_left' );
+	$dimas_next = is_rtl() ? dimas_get_icon_svg( 'ui', 'arrow_left' ) : dimas_get_icon_svg( 'ui', 'arrow_right' );
+	$dimas_prev = is_rtl() ? dimas_get_icon_svg( 'ui', 'arrow_right' ) : dimas_get_icon_svg( 'ui', 'arrow_left' );
 
 	$dimas_next_label     = esc_html__( 'Next post', 'dimas' );
 	$dimas_previous_label = esc_html__( 'Previous post', 'dimas' );

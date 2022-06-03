@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom Hooks functions and definitions.
+ * Custom Hooks for this theme.
  *
  * @package Dimas
  */

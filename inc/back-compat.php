@@ -18,10 +18,10 @@
  *
  * @return void
  */
-function twenty_twenty_one_switch_theme() {
-	add_action( 'admin_notices', 'twenty_twenty_one_upgrade_notice' );
+function dimas_switch_theme() {
+	add_action( 'admin_notices', 'dimas_upgrade_notice' );
 }
-add_action( 'after_switch_theme', 'twenty_twenty_one_switch_theme' );
+add_action( 'after_switch_theme', 'dimas_switch_theme' );
 
 /**
  * Adds a message for unsuccessful theme switch.
@@ -35,7 +35,7 @@ add_action( 'after_switch_theme', 'twenty_twenty_one_switch_theme' );
  *
  * @return void
  */
-function twenty_twenty_one_upgrade_notice() {
+function dimas_upgrade_notice() {
 	echo '<div class="error"><p>';
 	printf(
 		/* translators: %s: WordPress Version. */
@@ -54,7 +54,7 @@ function twenty_twenty_one_upgrade_notice() {
  *
  * @return void
  */
-function twenty_twenty_one_customize() {
+function dimas_customize() {
 	wp_die(
 		sprintf(
 			/* translators: %s: WordPress Version. */
@@ -67,7 +67,7 @@ function twenty_twenty_one_customize() {
 		)
 	);
 }
-add_action( 'load-customize.php', 'twenty_twenty_one_customize' );
+add_action( 'load-customize.php', 'dimas_customize' );
 
 /**
  * Prevents the Dimas_Theme Preview from being loaded on WordPress versions prior to 5.3.
@@ -78,7 +78,7 @@ add_action( 'load-customize.php', 'twenty_twenty_one_customize' );
  *
  * @return void
  */
-function twenty_twenty_one_preview() {
+function dimas_preview() {
 	if ( isset( $_GET['preview'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 		wp_die(
 			sprintf(
@@ -89,4 +89,4 @@ function twenty_twenty_one_preview() {
 		);
 	}
 }
-add_action( 'template_redirect', 'twenty_twenty_one_preview' );
+add_action( 'template_redirect', 'dimas_preview' );

@@ -21,7 +21,7 @@ if ( post_password_required() ) {
 	return;
 }
 
-$twenty_twenty_one_comment_count = get_comments_number();
+$dimas_comment_count = get_comments_number();
 ?>
 
 <div id="comments" class="comments-area default-max-width <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>">
@@ -30,14 +30,14 @@ $twenty_twenty_one_comment_count = get_comments_number();
 	if ( have_comments() ) :
 		?>
 		<h2 class="comments-title">
-			<?php if ( '1' === $twenty_twenty_one_comment_count ) : ?>
+			<?php if ( '1' === $dimas_comment_count ) : ?>
 				<?php esc_html_e( '1 comment', 'dimas' ); ?>
 			<?php else : ?>
 				<?php
 				printf(
 					/* translators: %s: Dimas_Comments count number. */
-					esc_html( _nx( '%s comment', '%s comments', $twenty_twenty_one_comment_count, 'Dimas_Comments title', 'dimas' ) ),
-					esc_html( number_format_i18n( $twenty_twenty_one_comment_count ) )
+					esc_html( _nx( '%s comment', '%s comments', $dimas_comment_count, 'Dimas_Comments title', 'dimas' ) ),
+					esc_html( number_format_i18n( $dimas_comment_count ) )
 				);
 				?>
 			<?php endif; ?>
@@ -62,13 +62,13 @@ $twenty_twenty_one_comment_count = get_comments_number();
 				'mid_size'           => 0,
 				'prev_text'          => sprintf(
 					'%s <span class="nav-prev-text">%s</span>',
-					is_rtl() ? twenty_twenty_one_get_icon_svg( 'ui', 'arrow_right' ) : twenty_twenty_one_get_icon_svg( 'ui', 'arrow_left' ),
+					is_rtl() ? dimas_get_icon_svg( 'ui', 'arrow_right' ) : dimas_get_icon_svg( 'ui', 'arrow_left' ),
 					esc_html__( 'Older comments', 'dimas' )
 				),
 				'next_text'          => sprintf(
 					'<span class="nav-next-text">%s</span> %s',
 					esc_html__( 'Newer comments', 'dimas' ),
-					is_rtl() ? twenty_twenty_one_get_icon_svg( 'ui', 'arrow_left' ) : twenty_twenty_one_get_icon_svg( 'ui', 'arrow_right' )
+					is_rtl() ? dimas_get_icon_svg( 'ui', 'arrow_left' ) : dimas_get_icon_svg( 'ui', 'arrow_right' )
 				),
 			)
 		);

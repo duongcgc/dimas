@@ -55,7 +55,7 @@ if ( have_posts() ) {
 	} // End the loop.
 
 	// Previous/next page navigation.
-	twenty_twenty_one_the_posts_navigation();
+	dimas_the_posts_navigation();
 
 	// If no content, include the "No posts found" template.
 } else {

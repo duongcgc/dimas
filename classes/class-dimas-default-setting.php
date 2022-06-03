@@ -171,7 +171,7 @@ class Dimas_Default_Setting {
 		 *
 		 * @param array $arr Array of settings.
 		 */
-		$arr = apply_filters( "twenty_twenty_one_svg_settings_{$group}", $arr );
+		$arr = apply_filters( "dimas_svg_settings_{$group}", $arr );
 
 		$svg = '';
 		if ( array_key_exists( $icon, $arr ) ) {
@@ -211,7 +211,7 @@ class Dimas_Default_Setting {
 			 *
 			 * @param array $social_settings_map Array of default social settings.
 			 */
-			$map = apply_filters( 'twenty_twenty_one_social_settings_map', self::$social_settings_map );
+			$map = apply_filters( 'dimas_social_settings_map', self::$social_settings_map );
 
 			/**
 			 * Filters Dimas's array of social settings.
@@ -220,7 +220,7 @@ class Dimas_Default_Setting {
 			 *
 			 * @param array $social_settings Array of default social settings.
 			 */
-			$social_settings = apply_filters( 'twenty_twenty_one_svg_settings_social', self::$social_settings );
+			$social_settings = apply_filters( 'dimas_svg_settings_social', self::$social_settings );
 
 			foreach ( array_keys( $social_settings ) as $icon ) {
 				$domains            = array_key_exists( $icon, $map ) ? $map[ $icon ] : array( sprintf( '%s.com', $icon ) );

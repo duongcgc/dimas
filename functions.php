@@ -14,7 +14,7 @@ if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
+if ( ! function_exists( 'dimas_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -26,7 +26,7 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 	 *
 	 * @return void
 	 */
-	function twenty_twenty_one_setup() {
+	function dimas_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -320,7 +320,7 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 		*/
 		if ( is_customize_preview() ) {
 			require get_template_directory() . '/inc/starter-content.php';
-			add_theme_support( 'starter-content', twenty_twenty_one_get_starter_content() );
+			add_theme_support( 'starter-content', dimas_get_starter_content() );
 		}
 
 		// Add support for responsive embedded content.
@@ -343,7 +343,7 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 		add_filter( 'rss_widget_feed_link', '__return_false' );
 	}
 }
-add_action( 'after_setup_theme', 'twenty_twenty_one_setup' );
+add_action( 'after_setup_theme', 'dimas_setup' );
 
 /**
  * Register widget area.
@@ -354,7 +354,7 @@ add_action( 'after_setup_theme', 'twenty_twenty_one_setup' );
  *
  * @return void
  */
-function twenty_twenty_one_widgets_init() {
+function dimas_widgets_init() {
 
 	register_sidebar(
 		array(
@@ -368,7 +368,7 @@ function twenty_twenty_one_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'twenty_twenty_one_widgets_init' );
+add_action( 'widgets_init', 'dimas_widgets_init' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -381,13 +381,13 @@ add_action( 'widgets_init', 'twenty_twenty_one_widgets_init' );
  *
  * @return void
  */
-function twenty_twenty_one_content_width() {
+function dimas_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'twenty_twenty_one_content_width', 750 );
+	$GLOBALS['content_width'] = apply_filters( 'dimas_content_width', 750 );
 }
-add_action( 'after_setup_theme', 'twenty_twenty_one_content_width', 0 );
+add_action( 'after_setup_theme', 'dimas_content_width', 0 );
 
 /**
  * Enqueue scripts and styles.
@@ -396,7 +396,7 @@ add_action( 'after_setup_theme', 'twenty_twenty_one_content_width', 0 );
  *
  * @return void
  */
-function twenty_twenty_one_scripts() {
+function dimas_scripts() {
 	// Note, the is_IE global variable is defined by WordPress and is used
 	// to detect if the current browser is internet explorer.
 	global $is_IE, $wp_scripts;
@@ -466,7 +466,7 @@ function twenty_twenty_one_scripts() {
 		true
 	);
 }
-add_action( 'wp_enqueue_scripts', 'twenty_twenty_one_scripts' );
+add_action( 'wp_enqueue_scripts', 'dimas_scripts' );
 
 /**
  * Enqueue block editor script.
@@ -492,7 +492,7 @@ add_action( 'enqueue_block_editor_assets', 'dimas_block_editor_script' );
  *
  * @link https://git.io/vWdr2
  */
-function twenty_twenty_one_skip_link_focus_fix() {
+function dimas_skip_link_focus_fix() {
 
 	// If SCRIPT_DEBUG is defined and true, print the unminified file.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
@@ -508,7 +508,7 @@ function twenty_twenty_one_skip_link_focus_fix() {
 		<?php
 	}
 }
-add_action( 'wp_print_footer_scripts', 'twenty_twenty_one_skip_link_focus_fix' );
+add_action( 'wp_print_footer_scripts', 'dimas_skip_link_focus_fix' );
 
 /**
  * Enqueue non-latin language styles.
@@ -517,14 +517,14 @@ add_action( 'wp_print_footer_scripts', 'twenty_twenty_one_skip_link_focus_fix' )
  *
  * @return void
  */
-function twenty_twenty_one_non_latin_languages() {
-	$custom_css = twenty_twenty_one_get_non_latin_css( 'front-end' );
+function dimas_non_latin_languages() {
+	$custom_css = dimas_get_non_latin_css( 'front-end' );
 
 	if ( $custom_css ) {
 		wp_add_inline_style( 'dimas-style', $custom_css );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'twenty_twenty_one_non_latin_languages' );
+add_action( 'wp_enqueue_scripts', 'dimas_non_latin_languages' );
 
 // SVG Icons class.
 require get_template_directory() . '/classes/class-dimas-svg-icons.php';
