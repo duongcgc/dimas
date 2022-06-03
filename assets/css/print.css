@@ -8,7 +8,7 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
 ----------------------------------------------------------------
 # Margins & paddings
 # Typography
-# Dimas_Page breaks
+# Page breaks
 # Links
 # Visibility
 --------------------------------------------------------------*/
@@ -34,7 +34,7 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
 		padding: 0;
 	}
 
-	/* Dimas_Fonts */
+	/* Fonts */
 	body {
 		font: 13pt Georgia, "Times New Roman", Times, serif;
 		font: 13pt var(--global--font-secondary, Georgia, "Times New Roman", Times, serif);
@@ -73,7 +73,7 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
 		font-size: 13pt;
 	}
 
-	/* Dimas_Page breaks */
+	/* Page breaks */
 	a {
 		page-break-inside: avoid;
 	}

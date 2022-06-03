@@ -196,7 +196,7 @@ add_filter( 'the_title', 'dimas_post_title' );
  * @return string
  */
 function dimas_get_icon_svg( $group, $icon, $size = 24 ) {
-	return Dimas_SVG_Icons::get_svg( $group, $icon, $size );
+	return SVG_Icons::get_svg( $group, $icon, $size );
 }
 
 /**
@@ -204,7 +204,7 @@ function dimas_get_icon_svg( $group, $icon, $size = 24 ) {
  *
  * @since Dimas 1.0
  *
- * @param string $calendar_output The generated Dimas_HTML of the calendar.
+ * @param string $calendar_output The generated HTML of the calendar.
  * @return string
  */
 function dimas_change_calendar_nav_arrows( $calendar_output ) {
@@ -386,7 +386,7 @@ function dimas_print_first_instance_of_block( $block_name, $content = null, $ins
 			// Increment count.
 			$instances_count++;
 
-			// Add the block Dimas_HTML.
+			// Add the block HTML.
 			$blocks_content .= render_block( $block );
 
 			// Break the loop if the $instances count was reached.
@@ -412,9 +412,9 @@ function dimas_print_first_instance_of_block( $block_name, $content = null, $ins
  * @since Dimas 1.4 Corrected parameter name for `$output`,
  *                              added the `$post` parameter.
  *
- * @param string      $output The password form Dimas_HTML output.
+ * @param string      $output The password form HTML output.
  * @param int|WP_Post $post   Optional. Post ID or WP_Post object. Default is global $post.
- * @return string Dimas_HTML content for password form for password protected post.
+ * @return string HTML content for password form for password protected post.
  */
 function dimas_password_form( $output, $post = 0 ) {
 	$post   = get_post( $post );

@@ -7,13 +7,15 @@
  * @since Dimas 1.0
  */
 
-if ( ! class_exists( 'Dimas_Customize' ) ) {
+namespace Dimas\Customizer; 
+
+if ( ! class_exists( 'Theme_Customize' ) ) {
 	/**
 	 * Customizer Settings.
 	 *
 	 * @since Dimas 1.0
 	 */
-	class Dimas_Customize {
+	class Theme_Customize {
 
 		/**
 		 * Constructor. Instantiate the object.
@@ -103,7 +105,7 @@ if ( ! class_exists( 'Dimas_Customize' ) ) {
 				array(
 					'type'    => 'radio',
 					'section' => 'excerpt_settings',
-					'label'   => esc_html__( 'On Archive Dimas_Pages, posts show:', 'dimas' ),
+					'label'   => esc_html__( 'On Archive Pages, posts show:', 'dimas' ),
 					'choices' => array(
 						'excerpt' => esc_html__( 'Summary', 'dimas' ),
 						'full'    => esc_html__( 'Full text', 'dimas' ),
@@ -116,7 +118,7 @@ if ( ! class_exists( 'Dimas_Customize' ) ) {
 			include_once get_theme_file_path( 'inc/classes/class-dimas-customize-color-control.php' ); // phpcs:ignore WPDimas_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 			// Register the custom control.
-			$wp_customize->register_control_type( 'Dimas_Customize_Color_Control' );
+			$wp_customize->register_control_type( 'Customize_Color_Control' );
 
 			// Get the palette from theme-supports.
 			$palette = get_theme_support( 'editor-color-palette' );
@@ -131,7 +133,7 @@ if ( ! class_exists( 'Dimas_Customize' ) ) {
 
 			// Add the control. Overrides the default background-color control.
 			$wp_customize->add_control(
-				new Dimas_Customize_Color_Control(
+				new Customize_Color_Control(
 					$wp_customize,
 					'background_color',
 					array(

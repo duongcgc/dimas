@@ -3,7 +3,7 @@
  * Single variation cart button
  *
  * @see https://docs.woocommerce.com/document/template-structure/
- * @package Dimas_WooCommerce/Templates
+ * @package Initial/Templates
  * @version 3.6.1
  */
 

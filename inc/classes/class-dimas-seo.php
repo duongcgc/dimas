@@ -1,10 +1,14 @@
 <?php
+/**
+ * SEO OnPage functions
+ */
+
 namespace Dimas;
 
 /**
- * SEO OnDimas_Page class
+ * SEO OnPage class
  */
-class Dimas_SEO {
+class SEO {
 	/**
 	 * The context data
 	 *

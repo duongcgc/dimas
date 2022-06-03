@@ -95,14 +95,14 @@ class Parser
     protected function whitespace(): void
     {
         do {
-            $this->whitespaceWithoutDimas_Comments();
-        } while ($this->scanDimas_Comments());
+            $this->whitespaceWithoutComments();
+        } while ($this->scanComments());
     }
 
     /**
      * Consumes whitespace, but not comments.
      */
-    protected function whitespaceWithoutDimas_Comments(): void
+    protected function whitespaceWithoutComments(): void
     {
         while (!$this->scanner->isDone() && Character::isWhitespace($this->scanner->peekChar())) {
             $this->scanner->readChar();
@@ -124,7 +124,7 @@ class Parser
      *
      * Returns whether the comment was consumed.
      */
-    protected function scanDimas_Comments(): bool
+    protected function scanComments(): bool
     {
         if ($this->scanner->peekChar() !== '/') {
             return false;
@@ -133,13 +133,13 @@ class Parser
         $next = $this->scanner->peekChar(1);
 
         if ($next === '/') {
-            $this->silentDimas_Comments();
+            $this->silentComments();
 
             return true;
         }
 
         if ($next === '*') {
-            $this->loudDimas_Comments();
+            $this->loudComments();
             return true;
         }
 
@@ -149,7 +149,7 @@ class Parser
     /**
      * Consumes and ignores a silent (Sass-style) comment.
      */
-    protected function silentDimas_Comments(): void
+    protected function silentComments(): void
     {
         $this->scanner->expect('//');
 
@@ -161,7 +161,7 @@ class Parser
     /**
      * Consumes and ignores a loud (CSS-style) comment.
      */
-    protected function loudDimas_Comments(): void
+    protected function loudComments(): void
     {
         $this->scanner->expect('/*');
 
@@ -380,7 +380,7 @@ class Parser
 
                 case '/':
                     if ($this->scanner->peekChar(1) === '*') {
-                        $buffer .= $this->rawText([$this, 'loudDimas_Comments']);
+                        $buffer .= $this->rawText([$this, 'loudComments']);
                     } else {
                         $buffer .= $this->scanner->readChar();
                     }

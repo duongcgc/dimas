@@ -1,6 +1,6 @@
 <?php
 /**
- * Dimas General Mobile functions and definitions.
+ * General Mobile functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -9,9 +9,9 @@
 
 namespace Dimas\Mobile;
 
-use Dimas\Dimas_Helper;
+use Dimas\Helper;
 
-class Dimas_Mobile_General {
+class Mobile_General {
 	/**
 	 * Instance
 	 *
@@ -43,7 +43,7 @@ class Dimas_Mobile_General {
 	 */
 	public function __construct() {
 		add_filter( 'dimas_newsletter_popup', array( $this, 'get_newsletter_popup' ) );
-		if ( intval( Dimas_Helper::get_option( 'custom_mobile_homepage' ) ) ) {
+		if ( intval( Helper::get_option( 'custom_mobile_homepage' ) ) ) {
 			add_filter( 'pre_option_page_on_front', array( $this, 'get_homepage_mobile' ) );
 		}
 	}
@@ -56,7 +56,7 @@ class Dimas_Mobile_General {
 	 * @return string
 	 */
 	public function get_newsletter_popup() {
-		return Dimas_Helper::get_option( 'mobile_newsletter_popup' );
+		return Helper::get_option( 'mobile_newsletter_popup' );
 	}
 
 	/**
@@ -68,7 +68,7 @@ class Dimas_Mobile_General {
 	 */
 	public function get_homepage_mobile( $value ) {
 		if ( ! isset( $this->mobile_homepage_id ) ) {
-			$page_id                  = Dimas_Helper::get_option( 'mobile_homepage_id' );
+			$page_id                  = Helper::get_option( 'mobile_homepage_id' );
 			$page_id                  = ! empty( $page_id ) ? $page_id : $value;
 			$this->mobile_homepage_id = $page_id;
 		}

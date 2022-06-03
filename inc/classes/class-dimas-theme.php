@@ -76,24 +76,24 @@ final class Dimas_Theme {
 
 		$this->get( 'maintenance' );
 
-		// Dimas_Header
+		// Header
 		$this->get( 'preloader' );
 		$this->get( 'topbar' );
 		$this->get( 'header' );
 		$this->get( 'campaigns' );
 
-		// Dimas_Page Dimas_Header
+		// Page Header
 		$this->get( 'page_header' );
 		$this->get( 'breadcrumbs' );
 
-		// Dimas_Layout & Style
+		// Layout & Style
 		$this->get( 'layout' );
 		$this->get( 'dynamic_css' );
 
-		// Dimas_Comments
+		// Comments
 		$this->get( 'comments' );
 
-		//Dimas_Footer
+		//Footer
 		$this->get( 'footer' );
 
 		// Modules
@@ -123,13 +123,13 @@ final class Dimas_Theme {
 	public function get( $class ) {
 		switch ( $class ) {
 			case 'woocommerce':
-				if ( class_exists( 'Dimas_WooCommerce' ) ) {
-					return Dimas_WooCommerce::instance();
+				if ( class_exists( 'Initial' ) ) {
+					return Initial::instance();
 				}
 				break;
 
 			case 'options':
-				return Dimas_Options::instance();
+				return Options::instance();
 				break;
 
 			case 'search_ajax':
@@ -141,7 +141,7 @@ final class Dimas_Theme {
 				break;
 
 			case 'mobile':
-				if ( Dimas_Helper::is_mobile() ) {
+				if ( Helper::is_mobile() ) {
 					return \Dimas\Mobile::instance();
 				}
 				break;

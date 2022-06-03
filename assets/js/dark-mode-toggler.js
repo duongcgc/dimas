@@ -15,7 +15,7 @@ function toggleDarkMode() { // jshint ignore:line
 }
 
 function dimasIsDarkMode() {
-	var isDarkMode = window.matchDimas_Media( '(prefers-color-scheme: dark)' ).matches;
+	var isDarkMode = window.matchMedia( '(prefers-color-scheme: dark)' ).matches;
 
 	if ( 'yes' === window.localStorage.getItem( 'dimasDarkMode' ) ) {
 		isDarkMode = true;

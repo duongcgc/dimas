@@ -7,10 +7,12 @@
  * @since Dimas 1.0
  */
 
+ namespace Dimas;
+
 /**
  * This class is in charge of Dark Mode.
  */
-class Dimas_Dark_Mode {
+class Dark_Mode {
 
 	/**
 	 * Instantiate the object.
@@ -31,7 +33,7 @@ class Dimas_Dark_Mode {
 		// Add customizer controls.
 		add_action( 'customize_register', array( $this, 'customizer_controls' ) );
 
-		// Add Dimas_HTML classes.
+		// Add HTML classes.
 		add_filter( 'dimas_html_classes', array( $this, 'html_classes' ) );
 
 		// Add classes to <body> in the dashboard.
@@ -57,7 +59,7 @@ class Dimas_Dark_Mode {
 		}
 		$background_color            = get_theme_mod( 'background_color', 'D1E4DD' );
 		$should_respect_color_scheme = get_theme_mod( 'respect_user_color_preference', false );
-		if ( $should_respect_color_scheme && Dimas_Custom_Colors::get_relative_luminance_from_hex( $background_color ) > 127 ) {
+		if ( $should_respect_color_scheme && Custom_Colors::get_relative_luminance_from_hex( $background_color ) > 127 ) {
 			// Add Dark Mode variable overrides.
 			wp_add_inline_style(
 				'dimas-custom-color-overrides',
@@ -147,14 +149,14 @@ class Dimas_Dark_Mode {
 		);
 
 		$wp_customize->add_control(
-			new Dimas_Customize_Notice_Control(
+			new Customize_Notice_Control(
 				$wp_customize,
 				'respect_user_color_preference_notice',
 				array(
 					'section'         => 'colors',
 					'priority'        => 100,
 					'active_callback' => static function() {
-						return 127 >= Dimas_Custom_Colors::get_relative_luminance_from_hex( get_theme_mod( 'background_color', 'D1E4DD' ) );
+						return 127 >= Custom_Colors::get_relative_luminance_from_hex( get_theme_mod( 'background_color', 'D1E4DD' ) );
 					},
 				)
 			)
@@ -189,7 +191,7 @@ class Dimas_Dark_Mode {
 				'priority'        => 110,
 				'description'     => $description,
 				'active_callback' => static function( $value ) {
-					return 127 < Dimas_Custom_Colors::get_relative_luminance_from_hex( get_theme_mod( 'background_color', 'D1E4DD' ) );
+					return 127 < Custom_Colors::get_relative_luminance_from_hex( get_theme_mod( 'background_color', 'D1E4DD' ) );
 				},
 			)
 		);
@@ -223,7 +225,7 @@ class Dimas_Dark_Mode {
 
 		$background_color            = get_theme_mod( 'background_color', 'D1E4DD' );
 		$should_respect_color_scheme = get_theme_mod( 'respect_user_color_preference', false );
-		if ( $should_respect_color_scheme && 127 <= Dimas_Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
+		if ( $should_respect_color_scheme && 127 <= Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
 			return ( $classes ) ? ' respect-color-scheme-preference' : 'respect-color-scheme-preference';
 		}
 
@@ -252,7 +254,7 @@ class Dimas_Dark_Mode {
 			$should_respect_color_scheme = get_theme_mod( 'respect_user_color_preference', false );
 			$background_color            = get_theme_mod( 'background_color', 'D1E4DD' );
 
-			if ( $should_respect_color_scheme && Dimas_Custom_Colors::get_relative_luminance_from_hex( $background_color ) > 127 ) {
+			if ( $should_respect_color_scheme && Custom_Colors::get_relative_luminance_from_hex( $background_color ) > 127 ) {
 				$classes .= ' dimas-supports-dark-theme';
 			}
 		}
@@ -272,7 +274,7 @@ class Dimas_Dark_Mode {
 		return (
 			get_theme_mod( 'respect_user_color_preference', false ) &&
 			! $is_IE &&
-			127 <= Dimas_Custom_Colors::get_relative_luminance_from_hex( get_theme_mod( 'background_color', 'D1E4DD' ) )
+			127 <= Custom_Colors::get_relative_luminance_from_hex( get_theme_mod( 'background_color', 'D1E4DD' ) )
 		);
 	}
 
@@ -292,7 +294,7 @@ class Dimas_Dark_Mode {
 	}
 
 	/**
-	 * Print the dark-mode switch Dimas_HTML.
+	 * Print the dark-mode switch HTML.
 	 *
 	 * Inspired from https://codepen.io/aaroniker/pen/KGpXZo (MIT-licensed)
 	 *

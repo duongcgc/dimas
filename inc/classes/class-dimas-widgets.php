@@ -1,6 +1,6 @@
 <?php
 /**
- * Dimas Dimas_Widgets functions and definitions.
+ * Custom Widgets functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas after setup theme
  */
-class Dimas_Widgets {
+class Widgets {
 	/**
 	 * Instance
 	 *
@@ -57,13 +57,13 @@ class Dimas_Widgets {
 	 */
 	public function widgets_init() {
 		$sidebars = array(
-			'blog-sidebar'           => esc_html__( 'Dimas_Blog Sidebar', 'dimas' ),
-			'header-bar'             => esc_html__( 'Dimas_Header Bar', 'dimas' ),
+			'blog-sidebar'           => esc_html__( 'Blog Sidebar', 'dimas' ),
+			'header-bar'             => esc_html__( 'Header Bar', 'dimas' ),
 		);
 
 		// Register footer sidebars
 		for ( $i = 1; $i <= 5; $i ++ ) {
-			$sidebars["footer-$i"] = esc_html__( 'Dimas_Footer', 'dimas' ) . " $i";
+			$sidebars["footer-$i"] = esc_html__( 'Footer', 'dimas' ) . " $i";
 		}
 
 		// Register sidebars

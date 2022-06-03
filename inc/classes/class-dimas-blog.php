@@ -12,10 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Woocommerce initial
+ * Blog initial
  *
  */
-class Dimas_Blog {
+class Blog {
 	/**
 	 * Instance
 	 *
@@ -64,7 +64,7 @@ class Dimas_Blog {
 	}
 
 	/**
-	 * Get Dimas Dimas_Page Template Class.
+	 * Get Dimas Page Template Class.
 	 *
 	 * @since 1.0.0
 	 *
@@ -73,29 +73,29 @@ class Dimas_Blog {
 	public function get( $class ) {
 		switch ( $class ) {
 			case 'posts':
-				if ( \Dimas\Dimas_Helper::is_blog() ) {
-					return \Dimas\Dimas_Blog\Posts::instance();
+				if ( \Dimas\Helper::is_blog() ) {
+					return \Dimas\Blog\Posts::instance();
 				}
 				break;
 			case 'post_loop':
-				return \Dimas\Dimas_Blog\Post_Loop::instance();
+				return \Dimas\Blog\Post_Loop::instance();
 				break;
 
 			case 'post':
 				if ( is_singular( 'post' ) ) {
-					return \Dimas\Dimas_Blog\Post::instance();
+					return \Dimas\Blog\Post::instance();
 				}
 				break;
 
 			case 'related_posts':
-				if ( is_singular( 'post' ) && Dimas_Helper::get_option('related_posts') ) {
-					return \Dimas\Dimas_Blog\Related_Posts::instance();
+				if ( is_singular( 'post' ) && Helper::get_option('related_posts') ) {
+					return \Dimas\Blog\Related_Posts::instance();
 				}
 				break;
 
 			case 'search':
 				if ( is_search() ) {
-					return \Dimas\Dimas_Blog\Search::instance();
+					return \Dimas\Blog\Search::instance();
 				}
 				break;
 		}

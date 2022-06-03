@@ -5,9 +5,9 @@
  * @package Dimas
  */
 
-namespace Dimas\Dimas_Blog;
+namespace Dimas\Blog;
 
-use Dimas\Dimas_Helper;
+use Dimas\Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Single initial
  */
-class Dimas_Post {
+class Post {
 	/**
 	 * Instance
 	 *
@@ -70,10 +70,10 @@ class Dimas_Post {
 	 * @return void
 	 */
 	public function taxs_list( $taxonomy = 'category' ) {
-		$orderby  = Dimas_Helper::get_option( 'blog_cats_orderby' );
-		$order    = Dimas_Helper::get_option( 'blog_cats_order' );
-		$number   = Dimas_Helper::get_option( 'blog_cats_number' );
-		$view_all = Dimas_Helper::get_option( 'blog_cats_view_all' );
+		$orderby  = Helper::get_option( 'blog_cats_orderby' );
+		$order    = Helper::get_option( 'blog_cats_order' );
+		$number   = Helper::get_option( 'blog_cats_number' );
+		$view_all = Helper::get_option( 'blog_cats_view_all' );
 
 		$cats   = '';
 		$output = array();
@@ -96,9 +96,9 @@ class Dimas_Post {
 		}
 
 		$found       = false;
-		$custom_slug = intval( Dimas_Helper::get_option( 'custom_blog_cats' ) );
+		$custom_slug = intval( Helper::get_option( 'custom_blog_cats' ) );
 		if ( $custom_slug ) {
-			$cats_slug = (array) Dimas_Helper::get_option( 'blog_cats_slug' );
+			$cats_slug = (array) Helper::get_option( 'blog_cats_slug' );
 
 			foreach ( $cats_slug as $slug ) {
 				$cat = get_term_by( 'slug', $slug, $taxonomy );
@@ -215,11 +215,11 @@ class Dimas_Post {
 	 * @return void
 	 */
 	public function get_post_thumbnail() {
-		if ( ! intval( Dimas_Helper::get_option( 'single_post_featured' ) ) ) {
+		if ( ! intval( Helper::get_option( 'single_post_featured' ) ) ) {
 			return;
 		}
 
-		\Dimas\Dimas_Helper::post_thumbnail( 'dimas-post-full' );
+		\Dimas\Helper::post_thumbnail( 'dimas-post-full' );
 	}
 
 	/**
@@ -340,20 +340,20 @@ class Dimas_Post {
 	 * @return void
 	 */
 	public function meta_socials() {
-		if ( ! class_exists( '\Dimas\Addons\Dimas_Helper' ) && ! method_exists( '\Dimas\Addons\Dimas_Helper','share_link' )) {
+		if ( ! class_exists( '\Dimas\Addons\Helper' ) && ! method_exists( '\Dimas\Addons\Helper','share_link' )) {
 			return;
 		}
 
-		if( ! intval( Dimas_Helper::get_option('post_socials_toggle') ) ) {
+		if( ! intval( Helper::get_option('post_socials_toggle') ) ) {
 			return;
 		}
 
-		$socials = (array) Dimas_Helper::get_option( 'post_socials_share' );
+		$socials = (array) Helper::get_option( 'post_socials_share' );
 		if ( ( ! empty( $socials ) ) ) {
 			$output = array();
 
 			foreach ( $socials as $social => $value ) {
-				$output[] = \Dimas\Addons\Dimas_Helper::share_link( $value );
+				$output[] = \Dimas\Addons\Helper::share_link( $value );
 			}
 			echo sprintf( '<div class="dimas-post__socials-share">%s</div>', implode( '', $output ) );
 		};
@@ -380,7 +380,7 @@ class Dimas_Post {
 	public function close_get_content() {
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Dimas_Pages:', 'dimas' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dimas' ),
 			'after'  => '</div>',
 		) );
 

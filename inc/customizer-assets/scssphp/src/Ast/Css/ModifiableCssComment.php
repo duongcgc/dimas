@@ -15,11 +15,11 @@ namespace ScssPhp\ScssPhp\Ast\Css;
 use ScssPhp\ScssPhp\SourceSpan\FileSpan;
 
 /**
- * A modifiable version of {@see CssDimas_Comments} for use in the evaluation step.
+ * A modifiable version of {@see CssComments} for use in the evaluation step.
  *
  * @internal
  */
-final class ModifiableCssDimas_Comments extends ModifiableCssNode implements CssDimas_Comments
+final class ModifiableCssComments extends ModifiableCssNode implements CssComments
 {
     /**
      * @var string
@@ -56,6 +56,6 @@ final class ModifiableCssDimas_Comments extends ModifiableCssNode implements Css
 
     public function accept($visitor)
     {
-        return $visitor->visitCssDimas_Comments($this);
+        return $visitor->visitCssComments($this);
     }
 }

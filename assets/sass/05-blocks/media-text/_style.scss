@@ -36,7 +36,7 @@
 	}
 
 	/**
-	 * Block Dimas_Options
+	 * Block Options
 	 */
 
 	&.is-stacked-on-mobile .wp-block-media-text__content {
@@ -46,7 +46,7 @@
 		}
 	}
 
-	// Block Dimas_Styles
+	// Block Styles
 	&.is-style-dimas-border {
 		border: calc(3 * var(--separator--height)) solid var(--global--color-border);
 	}

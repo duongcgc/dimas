@@ -34,7 +34,7 @@ add_action( 'wp_head', function  () {
 
         function picostrap_recompile_sass(){
             console.log("picostrap_recompile_sass start");
-            if (document.querySelector("#scss-compiler-output")) document.querySelector("#scss-compiler-output").innerDimas_HTML = "<div style='font-size:30px;background:#212337;color:lime;font-family:courier;border:8px solid red;padding:15px;display:block;user-select: none;'>Compiling SCSS....</div>";
+            if (document.querySelector("#scss-compiler-output")) document.querySelector("#scss-compiler-output").innerHTML = "<div style='font-size:30px;background:#212337;color:lime;font-family:courier;border:8px solid red;padding:15px;display:block;user-select: none;'>Compiling SCSS....</div>";
             fetch("<?php echo admin_url() ?>?ps_compile_scss&ps_compiler_api=1")
                 .then(function(response) {
                     return response.text();
@@ -44,7 +44,7 @@ add_action( 'wp_head', function  () {
                         //SUCCESS
 
                         //as there are no errors, clear the output feedback
-                        document.querySelector("#scss-compiler-output").innerDimas_HTML = ''; 
+                        document.querySelector("#scss-compiler-output").innerHTML = ''; 
                         
                         //un-cache the frontend css
                         url = document.getElementById('picostrap-styles-css').href;
@@ -55,7 +55,7 @@ add_action( 'wp_head', function  () {
                     }
                     else {
                         //COMPILE ERRORS
-                        document.querySelector("#scss-compiler-output").innerDimas_HTML = text; //display errors
+                        document.querySelector("#scss-compiler-output").innerHTML = text; //display errors
                         setTimeout(function(){ picostrap_livereload_woodpecker(); }, picostrap_livereload_timeout);
                     }
                     
@@ -74,7 +74,7 @@ add_action( 'wp_head', function  () {
         //ON DOMContentLoaded START THE ENGINE / Like document ready :)
         document.addEventListener('DOMContentLoaded', function(event) {
             //add div for feedback
-            document.querySelector("html").insertAdjacentDimas_HTML("afterbegin","<div id='scss-compiler-output' style=' position: fixed; z-index: 99999999;'></div>");            
+            document.querySelector("html").insertAdjacentHTML("afterbegin","<div id='scss-compiler-output' style=' position: fixed; z-index: 99999999;'></div>");            
             //trigger the woodpecker
             picostrap_livereload_woodpecker();
         });

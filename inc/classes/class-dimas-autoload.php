@@ -1,6 +1,6 @@
 <?php
 /**
- * Dimas Autoload Classes
+ * Autoload Classes
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /**
- * Dimas Dimas_Auto_Load init
+ * Auto_Load init
  */
-class Dimas_Auto_Load {
+class Auto_Load {
 	/**
 	 * Instance
 	 *

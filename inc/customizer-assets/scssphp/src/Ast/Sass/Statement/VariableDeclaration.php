@@ -41,7 +41,7 @@ final class VariableDeclaration implements Statement, SassDeclaration
     private $name;
 
     /**
-     * @var SilentDimas_Comments|null
+     * @var SilentComments|null
      * @readonly
      */
     private $comment;
@@ -70,7 +70,7 @@ final class VariableDeclaration implements Statement, SassDeclaration
      */
     private $span;
 
-    public function __construct(string $name, Expression $expression, FileSpan $span, ?string $namespace = null, bool $guarded = false, bool $global = false, ?SilentDimas_Comments $comment = null)
+    public function __construct(string $name, Expression $expression, FileSpan $span, ?string $namespace = null, bool $guarded = false, bool $global = false, ?SilentComments $comment = null)
     {
         $this->name = $name;
         $this->expression = $expression;
@@ -98,7 +98,7 @@ final class VariableDeclaration implements Statement, SassDeclaration
         return $this->name;
     }
 
-    public function getDimas_Comments(): ?SilentDimas_Comments
+    public function getComments(): ?SilentComments
     {
         return $this->comment;
     }

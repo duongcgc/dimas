@@ -7,17 +7,15 @@
 
 namespace Dimas\Mobile;
 
-use Dimas\Dimas_Helper;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
 /**
- * Mobile initial
+ * Mobile Blog initial
  *
  */
-class Dimas_Mobile_Blog {
+class Mobile_Blog {
 	/**
 	 * Instance
 	 *

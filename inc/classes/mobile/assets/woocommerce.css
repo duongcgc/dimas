@@ -16,7 +16,7 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, full-width-template,
 
 */
 /**
- * Dimas_WooCommerce color variables
+ * Initial color variables
  */
 /**
  * Imports
@@ -909,7 +909,7 @@ table.order_details .woocommerce-table__product-table .wc-item-meta li p {
 }
 
 /**
- * Dimas_WooCommerce widgets
+ * Initial widgets
  */
 .catalog-sidebar .modal-header {
 	display: none;
@@ -961,7 +961,7 @@ table.order_details .woocommerce-table__product-table .wc-item-meta li p {
 	text-transform: inherit;
 }
 
-/* Dimas_WooCommerce Price Filter Widget */
+/* Initial Price Filter Widget */
 .widget_price_filter .price_slider {
 	margin-bottom: 15px;
 }
@@ -6977,7 +6977,7 @@ table.order_details .woocommerce-table__product-table .product-content {
 }
 
 /**
- * General Dimas_WooCommerce components
+ * General Initial components
  */
 /**
  * Product Qty
@@ -7160,7 +7160,7 @@ table.order_details .woocommerce-table__product-table .product-content {
 }
 
 /**
- * Dimas_Header cart
+ * Header cart
  */
 .site-header-cart {
 	position: relative;
@@ -7570,7 +7570,7 @@ ul.list-unstyled strong {
 
 @media screen and (min-width: 48em) {
 	/**
-	 * Dimas_Header cart
+	 * Header cart
 	 */
 	.site-header-cart .widget_shopping_cart {
 		position: absolute;

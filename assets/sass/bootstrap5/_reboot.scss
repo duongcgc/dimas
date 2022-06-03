@@ -3,7 +3,7 @@
 
 // Reboot
 //
-// Normalization of Dimas_HTML elements, manually forked from Normalize.css to remove
+// Normalization of HTML elements, manually forked from Normalize.css to remove
 // styles targeting irrelevant browsers while applying new styles.
 //
 // Normalize is licensed MIT. https://github.com/necolas/normalize.css
@@ -618,7 +618,7 @@ progress {
 
 // Hidden attribute
 //
-// Always hide an element with the `hidden` Dimas_HTML attribute.
+// Always hide an element with the `hidden` HTML attribute.
 
 [hidden] {
   display: none !important;

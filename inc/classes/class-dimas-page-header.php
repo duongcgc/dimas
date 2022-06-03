@@ -1,6 +1,6 @@
 <?php
 /**
- * Dimas Page Header functions and definitions.
+ * Page Header functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -16,10 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Dimas_Page Dimas_Header
+ * Page Header Init
  *
  */
-class Dimas_Page_Header {
+class Page_Header {
 	/**
 	 * Instance
 	 *
@@ -95,9 +95,9 @@ class Dimas_Page_Header {
 		if ( is_search() ) {
 			$title = sprintf( esc_html__( 'Search Results for: %s', 'dimas' ), get_search_query() );
 		} elseif ( is_404() ) {
-			$title = sprintf( esc_html__( 'Dimas_Page Not Found', 'dimas' ) );
+			$title = sprintf( esc_html__( 'Page Not Found', 'dimas' ) );
 		} elseif ( is_page() ) {
-			$title = get_the_title(Dimas_Helper::get_post_ID());
+			$title = get_the_title(Helper::get_post_ID());
 		} elseif ( is_home() && is_front_page() ) {
 			$title = esc_html__( 'The Latest Posts', 'dimas' );
 		} elseif ( is_home() && ! is_front_page() ) {
@@ -130,29 +130,29 @@ class Dimas_Page_Header {
 			$items = [];
 
 			if ( is_singular('post') ) {
-				$items = intval( Dimas_Helper::get_option( 'single_post_breadcrumb' ) ) ? [ 'breadcrumb' ] : $items;
+				$items = intval( Helper::get_option( 'single_post_breadcrumb' ) ) ? [ 'breadcrumb' ] : $items;
 			} elseif ( is_singular('product') ) {
-				$items = intval( Dimas_Helper::get_option( 'single_product_page_header' ) ) ? [ 'breadcrumb' ] : $items;
-			} elseif ( \Dimas\Dimas_Helper::is_catalog() ) {
-				$page_header = Dimas_Helper::get_option( 'catalog_page_header' );
+				$items = intval( Helper::get_option( 'single_product_page_header' ) ) ? [ 'breadcrumb' ] : $items;
+			} elseif ( \Dimas\Helper::is_catalog() ) {
+				$page_header = Helper::get_option( 'catalog_page_header' );
 
 				if ( ! empty( $page_header ) ) {
-					$items = Dimas_Helper::get_option( 'catalog_page_header_els' );
+					$items = Helper::get_option( 'catalog_page_header_els' );
 
 					if ( $page_header == 'template' ) {
 						$items['layout'] = 'template';
 					} elseif ( $page_header == 'layout-2' ) {
-						$items['bg_image'] = Dimas_Helper::get_option( 'catalog_page_header_image' );
+						$items['bg_image'] = Helper::get_option( 'catalog_page_header_image' );
 					}
 				}
 
 			} elseif ( is_page() ) {
-				if ( intval( Dimas_Helper::get_option( 'page_header' ) ) ) {
-					$items = Dimas_Helper::get_option( 'page_header_els' );
+				if ( intval( Helper::get_option( 'page_header' ) ) ) {
+					$items = Helper::get_option( 'page_header_els' );
 				}
 
-			} elseif ( intval( Dimas_Helper::get_option( 'page_header_blog' ) ) ) {
-				$items = Dimas_Helper::get_option( 'page_header_blog_els' );
+			} elseif ( intval( Helper::get_option( 'page_header_blog' ) ) ) {
+				$items = Helper::get_option( 'page_header_blog_els' );
 			}
 
 			$items = $this->custom_items( $items );
@@ -187,7 +187,7 @@ class Dimas_Page_Header {
 			return [];
 		}
 
-		$get_id = Dimas_Helper::get_post_ID();
+		$get_id = Helper::get_post_ID();
 
 		if ( get_post_meta( $get_id, 'rz_hide_page_header', true ) ) {
 			return [];
@@ -239,16 +239,16 @@ class Dimas_Page_Header {
 		if( isset( $items['layout'] ) && $items['layout'] == 'template' ) {
 			$container_class = '';
 		}
-		if( Dimas_Helper::is_catalog() && Dimas_Helper::get_option('shop_catalog_layout') == 'grid' ) {
-			if( Dimas_Helper::get_option('catalog_content_width') == 'large' ) {
+		if( Helper::is_catalog() && Helper::get_option('shop_catalog_layout') == 'grid' ) {
+			if( Helper::get_option('catalog_content_width') == 'large' ) {
 				$container_class = 'dimas-container';
-			} elseif( Dimas_Helper::get_option('catalog_content_width') == 'wide' ) {
+			} elseif( Helper::get_option('catalog_content_width') == 'wide' ) {
 				$container_class = 'dimas-container-wide';
 			}
 		} elseif( is_singular('product') ) {
-			if( Dimas_Helper::get_option('product_content_width') == 'large' ) {
+			if( Helper::get_option('product_content_width') == 'large' ) {
 				$container_class = 'dimas-container';
-			} elseif( Dimas_Helper::get_option('product_content_width') == 'wide' ) {
+			} elseif( Helper::get_option('product_content_width') == 'wide' ) {
 				$container_class = 'dimas-container-wide';
 			}
 		}
@@ -279,7 +279,7 @@ class Dimas_Page_Header {
 		$items = $this->get_items();
 
 		if( isset( $items['layout'] ) && $items['layout'] == 'template' ) {
-			$template_id = Dimas_Helper::get_option('shop_header_template_id');
+			$template_id = Helper::get_option('shop_header_template_id');
 			if ( class_exists( 'Elementor\Plugin' ) ) {
 				$elementor_instance = \Elementor\Plugin::instance();
 				echo !empty($elementor_instance) ? $elementor_instance->frontend->get_builder_content_for_display( $template_id ) : '';
@@ -303,34 +303,34 @@ class Dimas_Page_Header {
 	 */
 	public function get_page_header_classes( $classes ) {
 		if ( is_singular('post') ) {
-			$classes .= ! intval( Dimas_Helper::get_option( 'mobile_single_post_breadcrumb' ) ) ? ' dimas-hide-on-mobile' : '';
+			$classes .= ! intval( Helper::get_option( 'mobile_single_post_breadcrumb' ) ) ? ' dimas-hide-on-mobile' : '';
 		} elseif ( is_singular('product') ) {
-			$classes .= ! intval( Dimas_Helper::get_option( 'mobile_single_product_breadcrumb' ) ) ? ' dimas-hide-on-mobile' : '';
-		} elseif ( \Dimas\Dimas_Helper::is_catalog() ) {
-			$items = (array) Dimas_Helper::get_option( 'mobile_catalog_page_header_els' );
+			$classes .= ! intval( Helper::get_option( 'mobile_single_product_breadcrumb' ) ) ? ' dimas-hide-on-mobile' : '';
+		} elseif ( \Dimas\Helper::is_catalog() ) {
+			$items = (array) Helper::get_option( 'mobile_catalog_page_header_els' );
 			if ( ! empty( $items ) ) {
 				$classes .= ! in_array( 'breadcrumb', $items ) ? 'dimas-hide-on__breadcrumb' : '';
 				$classes .= ! in_array( 'title', $items ) ? 'dimas-hide-on__title' : '';
 			}
 
-			$classes .= ! intval( Dimas_Helper::get_option( 'mobile_catalog_page_header' ) ) || empty( $items ) ? ' dimas-hide-on-mobile' : '';
+			$classes .= ! intval( Helper::get_option( 'mobile_catalog_page_header' ) ) || empty( $items ) ? ' dimas-hide-on-mobile' : '';
 		} elseif ( is_page() ) {
-			$items = (array) Dimas_Helper::get_option( 'mobile_page_header_els' );
+			$items = (array) Helper::get_option( 'mobile_page_header_els' );
 			if ( ! empty( $items ) ) {
 				$classes .= ! in_array( 'breadcrumb', $items ) ? 'dimas-hide-on__breadcrumb' : '';
 				$classes .= ! in_array( 'title', $items ) ? 'dimas-hide-on__title' : '';
 			}
 
-			$classes .= ! intval( Dimas_Helper::get_option( 'mobile_page_header' ) ) || empty( $items ) ? ' dimas-hide-on-mobile' : '';
+			$classes .= ! intval( Helper::get_option( 'mobile_page_header' ) ) || empty( $items ) ? ' dimas-hide-on-mobile' : '';
 
-		} elseif ( Dimas_Helper::is_blog() ) {
-			$items = (array) Dimas_Helper::get_option( 'mobile_blog_page_header_els' );
+		} elseif ( Helper::is_blog() ) {
+			$items = (array) Helper::get_option( 'mobile_blog_page_header_els' );
 			if ( ! empty( $items ) ) {
 				$classes .= ! in_array( 'breadcrumb', $items ) ? 'dimas-hide-on__breadcrumb' : '';
 				$classes .= ! in_array( 'title', $items ) ? 'dimas-hide-on__title' : '';
 			}
 
-			$classes .= ! intval( Dimas_Helper::get_option( 'mobile_blog_page_header' ) ) || empty( $items ) ? ' dimas-hide-on-mobile' : '';
+			$classes .= ! intval( Helper::get_option( 'mobile_blog_page_header' ) ) || empty( $items ) ? ' dimas-hide-on-mobile' : '';
 		}
 
 		return $classes;

@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /**
- * Dimas Dimas_Init init
+ * Classes Init init
  */
-class Dimas_Init {
+class Init {
 	/**
 	 * Instance
 	 *

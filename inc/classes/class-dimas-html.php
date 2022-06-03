@@ -6,7 +6,7 @@ namespace Dimas;
  * => All methods create html tag for template.
  */
 
-class Dimas_HTML {
+class HTML {
 	/**
 	 * The context data
 	 *

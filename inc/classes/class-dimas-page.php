@@ -1,6 +1,6 @@
 <?php
 /**
- * Dimas_Page functions and definitions.
+ * Page functions and definitions.
  *
  * @package Dimas
  */
@@ -12,11 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Dimas_Page initial
+ * Page initial
  *
  * @since 1.0.0
  */
-class Dimas_Page {
+class Page {
 	/**
 	 * Instance
 	 *
@@ -58,7 +58,7 @@ class Dimas_Page {
 	 */
 	public function loop_content() {
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Dimas_Pages:', 'dimas' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dimas' ),
 			'after'  => '</div>',
 		) );
 	}

@@ -64,7 +64,7 @@ class Dimas_Testimonial {
 	}
 
 	/**
-	 * Get Dimas Dimas_Page Template Class.
+	 * Get Dimas Page Template Class.
 	 *
 	 * @since 1.0.0
 	 *
@@ -73,7 +73,7 @@ class Dimas_Testimonial {
 	public function get( $class ) {
 		switch ( $class ) {
 			case 'posts':
-				if ( \Dimas\Dimas_Helper::is_blog() ) {
+				if ( \Dimas\Helper::is_blog() ) {
 					return \Dimas\Dimas_Testimonial\Posts::instance();
 				}
 				break;
@@ -88,7 +88,7 @@ class Dimas_Testimonial {
 				break;
 
 			case 'related_posts':
-				if ( is_singular( 'post' ) && Dimas_Helper::get_option('related_posts') ) {
+				if ( is_singular( 'post' ) && Helper::get_option('related_posts') ) {
 					return \Dimas\Dimas_Testimonial\Related_Posts::instance();
 				}
 				break;

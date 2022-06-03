@@ -1,23 +1,23 @@
 <?php
 /**
- * Mobile functions and definitions.
+ * Mobile Product Loop functions and definitions.
  *
  * @package Dimas
  */
 
 namespace Dimas\Mobile;
 
-use Dimas\Dimas_Helper;
+use Dimas\Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
 /**
- * Mobile initial
+ * Mobile Product Loop initial
  *
  */
-class Dimas_Mobile_Product_Loop {
+class Product_Loop {
 	/**
 	 * Instance
 	 *
@@ -74,8 +74,8 @@ class Dimas_Mobile_Product_Loop {
 	 * @return string
 	 */
 	public function get_product_loop_layout() {
-		if( in_array( Dimas_Helper::get_option('product_loop_layout'), array( '8', '9' ) ) ) {
-			return Dimas_Helper::get_option('product_loop_layout');
+		if( in_array( Helper::get_option('product_loop_layout'), array( '8', '9' ) ) ) {
+			return Helper::get_option('product_loop_layout');
 		} else {
 			return '1';
 		}
@@ -108,19 +108,19 @@ class Dimas_Mobile_Product_Loop {
 		);
 
 
-		if ( $mobile_pl_col = intval( Dimas_Helper::get_option( 'mobile_landscape_product_columns' ) ) ) {
+		if ( $mobile_pl_col = intval( Helper::get_option( 'mobile_landscape_product_columns' ) ) ) {
 			$classes[] = 'mobile-pl-col-' . $mobile_pl_col;
 		}
 
-		if ( $mobile_pp_col = intval( Dimas_Helper::get_option( 'mobile_portrait_product_columns' ) ) ) {
+		if ( $mobile_pp_col = intval( Helper::get_option( 'mobile_portrait_product_columns' ) ) ) {
 			$classes[] = 'mobile-pp-col-' . $mobile_pp_col;
 		}
 
-		if ( intval( Dimas_Helper::get_option( 'mobile_product_loop_atc' ) ) ) {
+		if ( intval( Helper::get_option( 'mobile_product_loop_atc' ) ) ) {
 			$classes[] = 'mobile-show-atc';
 		}
 
-		if ( intval( Dimas_Helper::get_option( 'mobile_product_featured_icons' ) ) ) {
+		if ( intval( Helper::get_option( 'mobile_product_featured_icons' ) ) ) {
 			$classes[] = 'mobile-show-featured-icons';
 		}
 

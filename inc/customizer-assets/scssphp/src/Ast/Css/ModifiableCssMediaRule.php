@@ -15,14 +15,14 @@ namespace ScssPhp\ScssPhp\Ast\Css;
 use ScssPhp\ScssPhp\SourceSpan\FileSpan;
 
 /**
- * A modifiable version of {@see CssDimas_MediaRule} for use in the evaluation step.
+ * A modifiable version of {@see CssMediaRule} for use in the evaluation step.
  *
  * @internal
  */
-final class ModifiableCssDimas_MediaRule extends ModifiableCssParentNode implements CssDimas_MediaRule
+final class ModifiableCssMediaRule extends ModifiableCssParentNode implements CssMediaRule
 {
     /**
-     * @var list<CssDimas_MediaQuery>
+     * @var list<CssMediaQuery>
      */
     private $queries;
 
@@ -33,7 +33,7 @@ final class ModifiableCssDimas_MediaRule extends ModifiableCssParentNode impleme
     private $span;
 
     /**
-     * @param CssDimas_MediaQuery[] $queries
+     * @param CssMediaQuery[] $queries
      * @param FileSpan        $span
      */
     public function __construct(array $queries, FileSpan $span)
@@ -55,11 +55,11 @@ final class ModifiableCssDimas_MediaRule extends ModifiableCssParentNode impleme
 
     public function accept($visitor)
     {
-        return $visitor->visitCssDimas_MediaRule($this);
+        return $visitor->visitCssMediaRule($this);
     }
 
     public function copyWithoutChildren(): ModifiableCssParentNode
     {
-        return new ModifiableCssDimas_MediaRule($this->queries, $this->span);
+        return new ModifiableCssMediaRule($this->queries, $this->span);
     }
 }

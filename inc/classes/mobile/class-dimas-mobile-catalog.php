@@ -1,13 +1,13 @@
 <?php
 /**
- * Mobile functions and definitions.
+ * Mobile catalog functions and definitions.
  *
  * @package Dimas
  */
 
 namespace Dimas\Mobile;
 
-use Dimas\Dimas_Helper;
+use Dimas\Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Mobile initial
  *
  */
-class Dimas_Mobile_Catalog {
+class Mobile_Catalog {
 	/**
 	 * Instance
 	 *
@@ -58,7 +58,7 @@ class Dimas_Mobile_Catalog {
 	 * @return void
 	 */
 	public function hooks() {
-		if ( ! \Dimas\Dimas_Helper::is_catalog() ) {
+		if ( ! \Dimas\Helper::is_catalog() ) {
 			return;
 		}
 
@@ -104,7 +104,7 @@ class Dimas_Mobile_Catalog {
 	}
 
 	/**
-	 * Dimas_Mobile_Catalog layout
+	 * Mobile_Catalog layout
 	 *
 	 * @since 1.0.0
 	 *
@@ -115,7 +115,7 @@ class Dimas_Mobile_Catalog {
 	}
 
 	/**
-	 * Dimas_Mobile_Catalog layout
+	 * Mobile_Catalog layout
 	 *
 	 * @since 1.0.0
 	 *
@@ -139,7 +139,7 @@ class Dimas_Mobile_Catalog {
 	}
 
 	/**
-	 * Dimas_Mobile_Catalog products toolbar.
+	 * Mobile_Catalog products toolbar.
 	 *
 	 * @since 1.0.0
 	 *
@@ -164,18 +164,18 @@ class Dimas_Mobile_Catalog {
 	}
 
 	/**
-	 * Dimas_Mobile_Catalog page header.
+	 * Mobile_Catalog page header.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return void
 	 */
 	public function page_header() {
-		if ( ! intval(Dimas_Helper::get_option( 'mobile_catalog_page_header' ) )) {
+		if ( ! intval(Helper::get_option( 'mobile_catalog_page_header' ) )) {
 			return;
 		}
 
-		$items = (array) Dimas_Helper::get_option( 'mobile_catalog_page_header_els' );
+		$items = (array) Helper::get_option( 'mobile_catalog_page_header_els' );
 		if( in_array( 'breadcrumb', $items )) {
 			\Dimas\Dimas_Theme::instance()->get( 'breadcrumbs' )->breadcrumbs();
 		}
@@ -187,7 +187,7 @@ class Dimas_Mobile_Catalog {
 	}
 
 	/**
-	 * Dimas_Mobile_Catalog products toolbar.
+	 * Mobile_Catalog products toolbar.
 	 *
 	 * @since 1.0.0
 	 *
@@ -198,7 +198,7 @@ class Dimas_Mobile_Catalog {
 			return;
 		}
 
-		$navigation_bar = Dimas_Helper::get_option( 'mobile_navigation_bar' );
+		$navigation_bar = Helper::get_option( 'mobile_navigation_bar' );
 		if ( in_array( $navigation_bar, array( 'simple_adoptive', 'standard_adoptive' ) ) ) {
 		    return;
 		}

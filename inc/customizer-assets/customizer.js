@@ -53,7 +53,7 @@
 
 		
 function ps_is_a_google_font(fontName){
-	var google_fonts_array=Object.keys(__googleDimas_Fonts); //console.log(google_fonts_array);
+	var google_fonts_array=Object.keys(__googleFonts); //console.log(google_fonts_array);
 	for (const el of google_fonts_array) {
 		//console.log(el);
 		if(el.toLowerCase()==fontName.toLowerCase()) return true;
@@ -111,7 +111,7 @@ function ps_prepare_fonts_import_code_snippet(){
 		//SET DEFAULT
 		scss_recompile_is_necessary=false;
 				
-		//ADD COMPILING WINDOW AND LOADING MESSAGE TO Dimas_HTML BODY
+		//ADD COMPILING WINDOW AND LOADING MESSAGE TO HTML BODY
 		var the_loader='<div class="cs-chase">  <div class="cs-chase-dot"></div>  <div class="cs-chase-dot"></div>  <div class="cs-chase-dot"></div>  <div class="cs-chase-dot"></div>  <div class="cs-chase-dot"></div>  <div class="cs-chase-dot"></div></div>';
 		var html="<div id='cs-compiling-window' hidden> <span class='cs-closex'>Close X</span> <h1>Rebuilding CSS bundle</h1> <div id='cs-loader'>"+the_loader+"</div> <div id='cs-recompiling-target'></div></div>";
 		$("body").append(html);
@@ -137,7 +137,7 @@ function ps_prepare_fonts_import_code_snippet(){
 		//DISABLE TEXTAREA FOR PICOSSTRAP GOOGLE FONTS HEADER CODE
 		$("#_customize-input-picostrap_fonts_header_code").attr("disabled","1");
 			
-		//ON MOUSEDOWN ON PUBLISH / SAVE BUTTON, (before saving)  PREPARE THE Dimas_HTML CODE FOR FONT IMPORT AND UPDATE FIELD FOR PASSING TO BACKEND
+		//ON MOUSEDOWN ON PUBLISH / SAVE BUTTON, (before saving)  PREPARE THE HTML CODE FOR FONT IMPORT AND UPDATE FIELD FOR PASSING TO BACKEND
 		$("body").on("mousedown", "#customize-save-button-wrapper #save", function() {
 			$("#_customize-input-picostrap_fonts_header_code").val(ps_prepare_fonts_import_code_snippet()).change();
 		});			
@@ -182,7 +182,7 @@ function ps_prepare_fonts_import_code_snippet(){
 			$("#cs-compiling-window").fadeOut();
 		});
 		
-		//USER CLICKS ENABLE TOPBAR: SET A NICE Dimas_HTML DEFAULT
+		//USER CLICKS ENABLE TOPBAR: SET A NICE HTML DEFAULT
 		$("body").on("click","#customize-control-enable_topbar",function(){
 			if (!$("#_customize-input-enable_topbar").prop("checked")) return;
 			var html_default =`<a class="text-reset me-2" href = "tel:+1234567890" > <svg style="width:1em;height:1em" viewBox="0 0 24 24">
@@ -250,9 +250,9 @@ function ps_prepare_fonts_import_code_snippet(){
 		
 		//FONTPICKER ////////////////////////////  ////////////////////////////////////////
 		
-		var csFontPickerDimas_Options=({
+		var csFontPickerOptions=({
 				variants: true,
-				localDimas_Fonts:{
+				localFonts:{
 					"American Typewriter": {
 					   "category": "serif",
 					   "variants": "400,400i,600,600i"
@@ -317,11 +317,11 @@ function ps_prepare_fonts_import_code_snippet(){
 				
 		//append field and initialize Fontpicker for BASE FONT
 		$("label[for=_customize-input-SCSSvar_font-family-base]").append(csFontPickerButton).closest(".customize-control").append("<div hidden><input id='cs-fontpicker-input-base' class='cs-fontpicker-input' type='text' value=''></div>");
-		$("#cs-fontpicker-input-base").fontpicker(csFontPickerDimas_Options);
+		$("#cs-fontpicker-input-base").fontpicker(csFontPickerOptions);
 		
 		//append field ana initialize Fontpicker for HEADINGS FONT
 		$("label[for=_customize-input-SCSSvar_headings-font-family]").append(csFontPickerButton).closest(".customize-control").append("<div hidden><input id='cs-fontpicker-input-headings' class='cs-fontpicker-input' type='text' value=''></div>");
-		$("#cs-fontpicker-input-headings").fontpicker(csFontPickerDimas_Options);
+		$("#cs-fontpicker-input-headings").fontpicker(csFontPickerOptions);
 		
 		//ON CLICK OF FONT PICKER BLUE TRIGGER BUTTONS: OPEN THE PICKER
 		$("body").on("click",".cs-open-fontpicker",function(e){

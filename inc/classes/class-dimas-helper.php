@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Dimas_Helper initial
+ * Helper initial
  */
-class Dimas_Helper {
+class Helper {
 	/**
 	 * Post ID
 	 *
@@ -25,7 +25,7 @@ class Dimas_Helper {
 	protected static $post_id = null;
 
 	/**
-	 * Dimas_Header Dimas_Layout
+	 * Header Layout
 	 *
 	 * @var $header_layout
 	 */
@@ -149,8 +149,8 @@ class Dimas_Helper {
 	 * @return string
 	 */
 	public static function get_content_limit( $num_words, $more = '&hellip;', $content = '' ) {
-		if ( class_exists( '\Dimas\Addons\Dimas_Helper' ) && method_exists( '\Dimas\Addons\Dimas_Helper', 'get_content_limit' ) ) {
-			return \Dimas\Addons\Dimas_Helper::get_content_limit( $num_words, $more, $content );
+		if ( class_exists( '\Dimas\Addons\Helper' ) && method_exists( '\Dimas\Addons\Helper', 'get_content_limit' ) ) {
+			return \Dimas\Addons\Helper::get_content_limit( $num_words, $more, $content );
 		}
 		$content = empty( $content ) ? get_the_excerpt() : $content;
 
@@ -213,8 +213,8 @@ class Dimas_Helper {
 	}
 
 	/**
-	 * Print Dimas_HTML of currency switcher
-	 * It requires plugin Dimas_WooCommerce Currency Switcher installed
+	 * Print HTML of currency switcher
+	 * It requires plugin Initial Currency Switcher installed
 	 *
 	 * @since 1.0.0
 	 *
@@ -280,7 +280,7 @@ class Dimas_Helper {
 	}
 
 	/**
-	 * Print Dimas_HTML of language switcher
+	 * Print HTML of language switcher
 	 * It requires plugin WPML installed
 	 *
 	 * @since 1.0.0
@@ -357,7 +357,7 @@ class Dimas_Helper {
 	 */
 	public static function socials_menu() {
 		if ( has_nav_menu( 'socials' ) ) {
-			if ( class_exists( '\Dimas\Addons\Modules\Mega_Dimas_Menu\Socials_Walker' ) ) {
+			if ( class_exists( '\Dimas\Addons\Modules\Mega_Menu\Socials_Walker' ) ) {
 				wp_nav_menu(
 					apply_filters(
 						'dimas_navigation_social_content',
@@ -368,7 +368,7 @@ class Dimas_Helper {
 							'depth'           => 1,
 							'link_before'     => '<span>',
 							'link_after'      => '</span>',
-							'walker'          => new \Dimas\Addons\Modules\Mega_Dimas_Menu\Socials_Walker(),
+							'walker'          => new \Dimas\Addons\Modules\Mega_Menu\Socials_Walker(),
 						)
 					)
 				);
@@ -391,7 +391,7 @@ class Dimas_Helper {
 	}
 
 	/**
-	 * Get Dimas_Header Dimas_Layout
+	 * Get Header Layout
 	 *
 	 * @since 1.0.0
 	 *
@@ -484,7 +484,7 @@ class Dimas_Helper {
 	}
 
 	/**
-	 * Prints Dimas_HTML with meta information for the categories, tags and comments.
+	 * Prints HTML with meta information for the categories, tags and comments.
 	 *
 	 * @since 1.0.0
 	 *
@@ -514,7 +514,7 @@ class Dimas_Helper {
 				sprintf(
 					wp_kses(
 					/* translators: %s: post title */
-						__( 'Leave a Dimas_Comments<span class="screen-reader-text"> on %s</span>', 'dimas' ),
+						__( 'Leave a Comments<span class="screen-reader-text"> on %s</span>', 'dimas' ),
 						array(
 							'span' => array(
 								'class' => array(),

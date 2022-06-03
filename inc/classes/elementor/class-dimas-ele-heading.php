@@ -1,13 +1,14 @@
 <?php
 /**
- * Dimas_Page Builder functions and definitions.
+ * Page Builder functions and definitions.
+ * => Init Elementor Page Builder - GCO Design
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package Dimas
  */
 
-namespace Dimas;
+namespace Dimas\Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas after setup theme
  */
-class Dimas_Dimas_Page_Builder {
+class GD_Heading {
 	/**
 	 * Instance
 	 *
@@ -57,13 +58,13 @@ class Dimas_Dimas_Page_Builder {
 	 */
 	public function widgets_init() {
 		$sidebars = array(
-			'blog-sidebar'           => esc_html__( 'Dimas_Blog Sidebar', 'dimas' ),
-			'header-bar'             => esc_html__( 'Dimas_Header Bar', 'dimas' ),
+			'blog-sidebar'           => esc_html__( 'Blog Sidebar', 'dimas' ),
+			'header-bar'             => esc_html__( 'Header Bar', 'dimas' ),
 		);
 
 		// Register footer sidebars
 		for ( $i = 1; $i <= 5; $i ++ ) {
-			$sidebars["footer-$i"] = esc_html__( 'Dimas_Footer', 'dimas' ) . " $i";
+			$sidebars["footer-$i"] = esc_html__( 'Footer', 'dimas' ) . " $i";
 		}
 
 		// Register sidebars

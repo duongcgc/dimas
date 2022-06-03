@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Custom Post Type initial
  */
-class Dimas_CPT {
+class CPT {
 	/**
 	 * Instance
 	 *
@@ -75,19 +75,19 @@ class Dimas_CPT {
 	 * @return array All registered meta boxes
 	 */
 	public function register_meta_boxes( $meta_boxes ) {
-		// Dimas_Header
+		// Header
 		$meta_boxes[] = $this->register_header_settings();
 
-		// Dimas_Page Dimas_Header
+		// Page Header
 		$meta_boxes[] = $this->register_page_header_settings();
 
 		// Content
 		$meta_boxes[] = $this->register_content_settings();
 
-		// Dimas_Page Boxed
+		// Page Boxed
 		$meta_boxes[] = $this->register_page_boxed_settings();
 
-		// Dimas_Footer
+		// Footer
 		$meta_boxes[] = $this->register_footer_settings();
 
 		return $meta_boxes;
@@ -104,37 +104,37 @@ class Dimas_CPT {
 
 		return array(
 			'id'       => 'header-settings',
-			'title'    => esc_html__( 'Dimas_Header Settings', 'dimas' ),
+			'title'    => esc_html__( 'Header Settings', 'dimas' ),
 			'pages'    => array( 'page' ),
 			'context'  => 'normal',
 			'priority' => 'high',
 			'fields'   => array(
 				array(
-					'name' => esc_html__( 'Hide Dimas_Header Section', 'dimas' ),
+					'name' => esc_html__( 'Hide Header Section', 'dimas' ),
 					'id'   => 'rz_hide_header_section',
 					'type' => 'select',
 					'type' => 'checkbox',
 					'std'  => false,
 				),
 				array(
-					'name'    => esc_html__( 'Dimas_Header Dimas_Layout', 'dimas' ),
+					'name'    => esc_html__( 'Header Layout', 'dimas' ),
 					'id'      => 'rz_header_layout',
 					'type'    => 'select',
 					'options' => array(
 						'default' => esc_html__( 'Default', 'dimas' ),
-						'v1'      => esc_html__( 'Dimas_Header v1', 'dimas' ),
-						'v2'      => esc_html__( 'Dimas_Header v2', 'dimas' ),
-						'v3'      => esc_html__( 'Dimas_Header v3', 'dimas' ),
-						'v4'      => esc_html__( 'Dimas_Header v4', 'dimas' ),
-						'v5'      => esc_html__( 'Dimas_Header v5', 'dimas' ),
-						'v6'      => esc_html__( 'Dimas_Header v6', 'dimas' ),
-						'v7'      => esc_html__( 'Dimas_Header v7', 'dimas' ),
-						'v8'      => esc_html__( 'Dimas_Header v8', 'dimas' ),
-						'v9'      => esc_html__( 'Dimas_Header v9', 'dimas' ),
+						'v1'      => esc_html__( 'Header v1', 'dimas' ),
+						'v2'      => esc_html__( 'Header v2', 'dimas' ),
+						'v3'      => esc_html__( 'Header v3', 'dimas' ),
+						'v4'      => esc_html__( 'Header v4', 'dimas' ),
+						'v5'      => esc_html__( 'Header v5', 'dimas' ),
+						'v6'      => esc_html__( 'Header v6', 'dimas' ),
+						'v7'      => esc_html__( 'Header v7', 'dimas' ),
+						'v8'      => esc_html__( 'Header v8', 'dimas' ),
+						'v9'      => esc_html__( 'Header v9', 'dimas' ),
 					),
 				),
 				array(
-					'name'    => esc_html__( 'Dimas_Header Background', 'dimas' ),
+					'name'    => esc_html__( 'Header Background', 'dimas' ),
 					'id'      => 'rz_header_background',
 					'type'    => 'select',
 					'options' => array(
@@ -143,7 +143,7 @@ class Dimas_CPT {
 					),
 				),
 				array(
-					'name'    => esc_html__( 'Dimas_Header Text Color', 'dimas' ),
+					'name'    => esc_html__( 'Header Text Color', 'dimas' ),
 					'id'      => 'rz_header_text_color',
 					'class'   => 'header-text-color hidden',
 					'type'    => 'select',
@@ -160,7 +160,7 @@ class Dimas_CPT {
 					'std'  => false,
 				),
 				array(
-					'name'       => esc_html__( 'Dimas_Header Spacing', 'dimas' ),
+					'name'       => esc_html__( 'Header Spacing', 'dimas' ),
 					'id'         => 'rz_header_bottom_spacing_bottom',
 					'type'       => 'slider',
 					'suffix'     => esc_html__( ' px', 'dimas' ),
@@ -171,18 +171,18 @@ class Dimas_CPT {
 					'std'        => '20',
 				),
 				array(
-					'name'    => esc_html__( 'Primary Dimas_Menu', 'dimas' ),
+					'name'    => esc_html__( 'Primary Menu', 'dimas' ),
 					'id'      => 'rz_header_primary_menu',
 					'type'    => 'select',
 					'options' => $this->get_menus(),
 				),
 				array(
-					'name'    => esc_html__( 'Department Dimas_Menu Display', 'dimas' ),
+					'name'    => esc_html__( 'Department Menu Display', 'dimas' ),
 					'id'      => 'rz_department_menu_display',
 					'type'    => 'select',
 					'options' => array(
 						'default'    => esc_html__( 'On Hover', 'dimas' ),
-						'onpageload' => esc_html__( 'On Dimas_Page Load', 'dimas' ),
+						'onpageload' => esc_html__( 'On Page Load', 'dimas' ),
 					),
 				),
 			),
@@ -226,13 +226,13 @@ class Dimas_CPT {
 	public function register_page_header_settings() {
 		return array(
 			'id'       => 'page-header-settings',
-			'title'    => esc_html__( 'Dimas_Page Dimas_Header Settings', 'dimas' ),
+			'title'    => esc_html__( 'Page Header Settings', 'dimas' ),
 			'pages'    => array( 'page' ),
 			'context'  => 'normal',
 			'priority' => 'high',
 			'fields'   => array(
 				array(
-					'name' => esc_html__( 'Hide Dimas_Page Dimas_Header', 'dimas' ),
+					'name' => esc_html__( 'Hide Page Header', 'dimas' ),
 					'id'   => 'rz_hide_page_header',
 					'type' => 'checkbox',
 					'std'  => false,
@@ -375,13 +375,13 @@ class Dimas_CPT {
 	public function register_page_boxed_settings() {
 		return array(
 			'id'       => 'page-boxed-settings',
-			'title'    => esc_html__( 'Boxed Dimas_Layout Settings', 'dimas' ),
+			'title'    => esc_html__( 'Boxed Layout Settings', 'dimas' ),
 			'pages'    => array( 'page', 'post', 'product' ),
 			'context'  => 'normal',
 			'priority' => 'high',
 			'fields'   => array(
 				array(
-					'name' => esc_html__( 'Disable Boxed Dimas_Layout', 'dimas' ),
+					'name' => esc_html__( 'Disable Boxed Layout', 'dimas' ),
 					'id'   => 'rz_disable_page_boxed',
 					'type' => 'checkbox',
 					'std'  => false,
@@ -468,20 +468,20 @@ class Dimas_CPT {
 	public function register_footer_settings() {
 		return array(
 			'id'       => 'footer-settings',
-			'title'    => esc_html__( 'Dimas_Footer Settings', 'dimas' ),
+			'title'    => esc_html__( 'Footer Settings', 'dimas' ),
 			'pages'    => array( 'page' ),
 			'context'  => 'normal',
 			'priority' => 'high',
 			'fields'   => array(
 				array(
-					'name' => esc_html__( 'Hide Dimas_Footer Section', 'dimas' ),
+					'name' => esc_html__( 'Hide Footer Section', 'dimas' ),
 					'id'   => 'rz_hide_footer_section',
 					'type' => 'select',
 					'type' => 'checkbox',
 					'std'  => false,
 				),
 				array(
-					'name'    => esc_html__( 'Dimas_Footer Border', 'dimas' ),
+					'name'    => esc_html__( 'Footer Border', 'dimas' ),
 					'id'      => 'rz_footer_section_border_top',
 					'type'    => 'select',
 					'desc'    => esc_html__( 'Show/hide a divide line on top of the footer', 'dimas' ),

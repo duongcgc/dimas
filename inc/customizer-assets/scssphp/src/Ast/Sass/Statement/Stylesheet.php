@@ -31,7 +31,7 @@ use ScssPhp\ScssPhp\Visitor\StatementVisitor;
  *
  * @internal
  */
-final class Dimas_Stylesheet extends ParentStatement
+final class Stylesheet extends ParentStatement
 {
     /**
      * @var bool
@@ -67,7 +67,7 @@ final class Dimas_Stylesheet extends ParentStatement
 
     public function accepts(StatementVisitor $visitor)
     {
-        return $visitor->visitDimas_Stylesheet($this);
+        return $visitor->visitStylesheet($this);
     }
 
     /**

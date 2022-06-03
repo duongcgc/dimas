@@ -1,22 +1,22 @@
 <?php
 /**
- * Single functions and definitions.
+ * Project Loop functions and definitions.
  *
  * @package Dimas
  */
 
-namespace Dimas\Dimas_Blog;
+namespace Dimas\Project;
 
-use Dimas\Dimas_Helper;
+use Dimas\Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
 /**
- * Single initial
+ * Single Project Loop initial
  */
-class Dimas_Project_Loop {
+class Project_Loop {
 	/**
 	 * Instance
 	 *
@@ -81,7 +81,7 @@ class Dimas_Project_Loop {
 			$get_image
 		);
 
-		\Dimas\Dimas_Helper::post_date();
+		\Dimas\Helper::post_date();
 
 		echo '</div>';
 	}
@@ -127,10 +127,10 @@ class Dimas_Project_Loop {
 	 * @return void
 	 */
 	public function loop_content() {
-		if ( $length = Dimas_Helper::get_option( 'excerpt_length' ) ) {
+		if ( $length = Helper::get_option( 'excerpt_length' ) ) {
 			echo sprintf(
 				'<div class="entry-content">%s</div>',
-				\Dimas\Dimas_Helper::get_content_limit( $length, '' )
+				\Dimas\Helper::get_content_limit( $length, '' )
 			);
 		}
 

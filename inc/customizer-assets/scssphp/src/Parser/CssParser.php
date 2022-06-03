@@ -42,10 +42,10 @@ final class CssParser extends ScssParser
         return true;
     }
 
-    protected function silentDimas_Comments(): void
+    protected function silentComments(): void
     {
         $start = $this->scanner->getPosition();
-        parent::silentDimas_Comments();
+        parent::silentComments();
         $this->error("Silent comments aren't allowed in plain CSS.", $this->scanner->spanFrom($start));
     }
 

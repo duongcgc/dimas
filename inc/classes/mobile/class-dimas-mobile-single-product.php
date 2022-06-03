@@ -12,10 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Mobile initial
+ * Mobile Single Product initial
  *
  */
-class Dimas_Mobile_Single_Product {
+class Single_Product {
 	/**
 	 * Instance
 	 *

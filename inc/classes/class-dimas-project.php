@@ -1,6 +1,6 @@
 <?php
 /**
- * Dimas_Project functions and definitions.
+ * Project functions and definitions.
  *
  * @package Dimas
  */
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Woocommerce initial
  *
  */
-class Dimas_Project {
+class Project {
 	/**
 	 * Instance
 	 *
@@ -64,7 +64,7 @@ class Dimas_Project {
 	}
 
 	/**
-	 * Get Dimas Dimas_Page Template Class.
+	 * Get Dimas Page Template Class.
 	 *
 	 * @since 1.0.0
 	 *
@@ -73,29 +73,29 @@ class Dimas_Project {
 	public function get( $class ) {
 		switch ( $class ) {
 			case 'posts':
-				if ( \Dimas\Dimas_Helper::is_blog() ) {
-					return \Dimas\Dimas_Project\Posts::instance();
+				if ( \Dimas\Helper::is_blog() ) {
+					return \Dimas\Project\Posts::instance();
 				}
 				break;
 			case 'post_loop':
-				return \Dimas\Dimas_Project\Post_Loop::instance();
+				return \Dimas\Project\Post_Loop::instance();
 				break;
 
 			case 'post':
 				if ( is_singular( 'post' ) ) {
-					return \Dimas\Dimas_Project\Post::instance();
+					return \Dimas\Project\Post::instance();
 				}
 				break;
 
 			case 'related_posts':
-				if ( is_singular( 'post' ) && Dimas_Helper::get_option('related_posts') ) {
-					return \Dimas\Dimas_Project\Related_Posts::instance();
+				if ( is_singular( 'post' ) && Helper::get_option('related_posts') ) {
+					return \Dimas\Project\Related_Posts::instance();
 				}
 				break;
 
 			case 'search':
 				if ( is_search() ) {
-					return \Dimas\Dimas_Project\Search::instance();
+					return \Dimas\Project\Search::instance();
 				}
 				break;
 		}

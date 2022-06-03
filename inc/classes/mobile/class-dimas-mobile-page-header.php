@@ -1,6 +1,6 @@
 <?php
 /**
- * Dimas_Topbar Mobile functions and definitions.
+ * Page Header Mobile functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -8,9 +8,9 @@
  */
 
 namespace Dimas\Mobile;
-use Dimas\Dimas_Helper;
+use Dimas\Helper;
 
-class Dimas_Mobile_Page_Header {
+class Page_Header {
 	/**
 	 * Instance
 	 *
@@ -44,7 +44,7 @@ class Dimas_Mobile_Page_Header {
 	}
 
 	/**
-	 * Dimas_Page Dimas_Header elements
+	 * Page Header elements
 	 *
 	 * @since 1.0.0
 	 *
@@ -52,23 +52,23 @@ class Dimas_Mobile_Page_Header {
 	 */
 	public function get_page_header_elements($items) {
 		if ( is_singular('post') ) {
-			$items = intval( Dimas_Helper::get_option( 'mobile_single_post_breadcrumb' ) ) ? [ 'breadcrumb' ] : $items;
+			$items = intval( Helper::get_option( 'mobile_single_post_breadcrumb' ) ) ? [ 'breadcrumb' ] : $items;
 		} elseif ( is_singular('product') ) {
-			$items = intval( Dimas_Helper::get_option( 'mobile_single_product_breadcrumb' ) ) ? [ 'breadcrumb' ] : $items;
-		} elseif ( \Dimas\Dimas_Helper::is_catalog() ) {
-			if ( intval( Dimas_Helper::get_option( 'mobile_catalog_page_header' ) ) ) {
-				$items = Dimas_Helper::get_option( 'mobile_catalog_page_header_els' );
+			$items = intval( Helper::get_option( 'mobile_single_product_breadcrumb' ) ) ? [ 'breadcrumb' ] : $items;
+		} elseif ( \Dimas\Helper::is_catalog() ) {
+			if ( intval( Helper::get_option( 'mobile_catalog_page_header' ) ) ) {
+				$items = Helper::get_option( 'mobile_catalog_page_header_els' );
 			}
 
 		} elseif ( is_page() ) {
-			if ( intval( Dimas_Helper::get_option( 'mobile_page_header' ) ) ) {
-				$items = Dimas_Helper::get_option( 'mobile_page_header_els' );
+			if ( intval( Helper::get_option( 'mobile_page_header' ) ) ) {
+				$items = Helper::get_option( 'mobile_page_header_els' );
 			}
 
 			$items = $this->custom_items( $items );
 
-		} elseif ( intval( Dimas_Helper::get_option( 'mobile_blog_page_header' ) ) ) {
-			$items = Dimas_Helper::get_option( 'mobile_blog_page_header_els' );
+		} elseif ( intval( Helper::get_option( 'mobile_blog_page_header' ) ) ) {
+			$items = Helper::get_option( 'mobile_blog_page_header_els' );
 		}
 
 		return $items;
@@ -86,7 +86,7 @@ class Dimas_Mobile_Page_Header {
 			return [];
 		}
 
-		$get_id = Dimas_Helper::get_post_ID();
+		$get_id = Helper::get_post_ID();
 
 		if ( get_post_meta( $get_id, 'rz_hide_page_header', true ) ) {
 			return [];

@@ -1,6 +1,6 @@
 <?php
 /**
- * Dimas_Topbar functions and definitions.
+ * Topbar functions and definitions.
  *
  * @package Dimas
  */
@@ -12,10 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Dimas_Topbar initial
+ * Topbar initial
  *
  */
-class Dimas_Topbar {
+class Topbar {
 	/**
 	 * Instance
 	 *
@@ -58,10 +58,10 @@ class Dimas_Topbar {
 	 * @return void
 	 */
 	public function display_topbar() {
-		if ( ! apply_filters( 'dimas_topbar', Dimas_Helper::get_option( 'topbar' ) ) ) {
+		if ( ! apply_filters( 'dimas_topbar', Helper::get_option( 'topbar' ) ) ) {
 			return;
 		}
-		$show_header = is_page() ? ! get_post_meta( \Dimas\Dimas_Helper::get_post_ID(), 'rz_hide_header_section', true ) : true;
+		$show_header = is_page() ? ! get_post_meta( \Dimas\Helper::get_post_ID(), 'rz_hide_header_section', true ) : true;
 		if ( ! $show_header ) {
 			return;
 		}
@@ -76,11 +76,11 @@ class Dimas_Topbar {
 	 * @return void
 	 */
 	public function display_topbar_mobile() {
-		if ( ! apply_filters( 'dimas_topbar_mobile', Dimas_Helper::get_option( 'mobile_topbar' ) ) ) {
+		if ( ! apply_filters( 'dimas_topbar_mobile', Helper::get_option( 'mobile_topbar' ) ) ) {
 			return;
 		}
 
-		$show_header = is_page() ? ! get_post_meta( \Dimas\Dimas_Helper::get_post_ID(), 'rz_hide_header_section', true ) : true;
+		$show_header = is_page() ? ! get_post_meta( \Dimas\Helper::get_post_ID(), 'rz_hide_header_section', true ) : true;
 		if ( ! $show_header ) {
 			return;
 		}
@@ -109,24 +109,24 @@ class Dimas_Topbar {
 					break;
 
 				case 'currency':
-					\Dimas\Dimas_Helper::currency_switcher();
+					\Dimas\Helper::currency_switcher();
 					break;
 
 				case 'language':
-					\Dimas\Dimas_Helper::language_switcher();
+					\Dimas\Helper::language_switcher();
 					break;
 
 				case 'social':
-					\Dimas\Dimas_Helper::socials_menu();
+					\Dimas\Helper::socials_menu();
 					break;
 
 				case 'text':
 					$html_svg = '';
-					if ( $svg = Dimas_Helper::get_option( 'topbar_svg_code' ) ) {
+					if ( $svg = Helper::get_option( 'topbar_svg_code' ) ) {
 						$html_svg = '<span class="dimas-svg-icon">' . \Dimas\Icon::sanitize_svg( $svg ) . '</span>';
 					}
 
-					echo '<div class="dimas-topbar__text">' . $html_svg . do_shortcode( wp_kses_post( Dimas_Helper::get_option( 'topbar_text' ) ) ) . '</div>';
+					echo '<div class="dimas-topbar__text">' . $html_svg . do_shortcode( wp_kses_post( Helper::get_option( 'topbar_text' ) ) ) . '</div>';
 
 					break;
 
@@ -162,24 +162,24 @@ class Dimas_Topbar {
 					break;
 
 				case 'currency':
-					\Dimas\Dimas_Helper::currency_switcher();
+					\Dimas\Helper::currency_switcher();
 					break;
 
 				case 'language':
-					\Dimas\Dimas_Helper::language_switcher();
+					\Dimas\Helper::language_switcher();
 					break;
 
 				case 'social':
-					\Dimas\Dimas_Helper::socials_menu();
+					\Dimas\Helper::socials_menu();
 					break;
 
 				case 'text':
 					$html_svg = '';
-					if ( $svg = Dimas_Helper::get_option( 'mobile_topbar_svg_code' ) ) {
+					if ( $svg = Helper::get_option( 'mobile_topbar_svg_code' ) ) {
 						$html_svg = '<span class="dimas-svg-icon">' . \Dimas\Icon::sanitize_svg( $svg ) . '</span>';
 					}
 
-					echo '<div class="dimas-topbar__text">' . $html_svg . do_shortcode( wp_kses_post( Dimas_Helper::get_option( 'mobile_topbar_text' ) ) ) . '</div>';
+					echo '<div class="dimas-topbar__text">' . $html_svg . do_shortcode( wp_kses_post( Helper::get_option( 'mobile_topbar_text' ) ) ) . '</div>';
 
 					break;
 
@@ -202,7 +202,7 @@ class Dimas_Topbar {
 	 * @return string
 	 */
 	public function topbar_menu() {
-		$menu_slug =  Dimas_Helper::get_option( 'topbar_menu_item' );
+		$menu_slug =  Helper::get_option( 'topbar_menu_item' );
 		if( empty($menu_slug) ) {
 			return;
 		}
@@ -216,7 +216,7 @@ class Dimas_Topbar {
 	}
 
 	/**
-	 * Dimas_Options of topbar items
+	 * Options of topbar items
 	 *
 	 * @since 1.0.0
 	 *
@@ -224,7 +224,7 @@ class Dimas_Topbar {
 	 */
 	public function topbar_items_option() {
 		return apply_filters( 'dimas_topbar_items_option', array(
-			'menu'     => esc_html__( 'Dimas_Menu', 'dimas' ),
+			'menu'     => esc_html__( 'Menu', 'dimas' ),
 			'currency' => esc_html__( 'Currency Switcher', 'dimas' ),
 			'language' => esc_html__( 'Language Switcher', 'dimas' ),
 			'social'   => esc_html__( 'Socials', 'dimas' ),

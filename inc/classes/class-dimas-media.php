@@ -1,6 +1,7 @@
 <?php
 /**
- * Dimas Media functions and definitions.
+ * Media functions and definitions.
+ * => Processing media files image, video, audio...
  *
  * @package Dimas
  */
@@ -12,10 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Dimas_Media initial
+ * Media initial
  *
  */
-class Dimas_Media {
+class Media {
 	/**
 	 * Instance
 	 *
@@ -85,7 +86,7 @@ class Dimas_Media {
 
 		echo '<h2 class="comments-title ' . esc_attr( $comments_class ) . '">';
 		printf( // WPCS: XSS OK.
-			esc_html( _nx( 'Dimas_Media (%1$s)', 'Dimas_Media (%1$s)', $comments_number, 'comments title', 'dimas' ) ),
+			esc_html( _nx( 'Media (%1$s)', 'Media (%1$s)', $comments_number, 'comments title', 'dimas' ) ),
 			number_format_i18n( $comments_number )
 		);
 
@@ -102,7 +103,7 @@ class Dimas_Media {
 	 */
 	public function comment_fields() {
 		if ( ! comments_open() ) {
-			echo '<p class="no-comments">' . esc_html__( 'Dimas_Media are closed.', 'dimas' ) . '</p>';
+			echo '<p class="no-comments">' . esc_html__( 'Media are closed.', 'dimas' ) . '</p>';
 		} else {
 			$comment_field = '<p class="comment-form-comment"><textarea required id="comment" placeholder="' . esc_attr__( 'Content', 'dimas' ) . '" name="comment" cols="45" rows="7" aria-required="true"></textarea></p>';
 			comment_form(
@@ -167,7 +168,7 @@ class Dimas_Media {
 	}
 
 	/**
-	 * Dimas_Media callback function
+	 * Media callback function
 	 *
 	 * @since 1.0.0
 	 *
@@ -214,7 +215,7 @@ class Dimas_Media {
 	}
 
 	/**
-	 * Dimas_Media Template function
+	 * Media Template function
 	 *
 	 * @since 1.0.0
 	 *

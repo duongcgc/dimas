@@ -12,10 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Dimas_Hooks initial
+ * Hooks initial
  *
  */
-class Dimas_Hooks {
+class Hooks {
 	/**
 	 * Instance
 	 *
@@ -85,7 +85,7 @@ class Dimas_Hooks {
 
 		echo '<h2 class="comments-title ' . esc_attr( $comments_class ) . '">';
 		printf( // WPCS: XSS OK.
-			esc_html( _nx( 'Dimas_Hooks (%1$s)', 'Dimas_Hooks (%1$s)', $comments_number, 'comments title', 'dimas' ) ),
+			esc_html( _nx( 'Hooks (%1$s)', 'Hooks (%1$s)', $comments_number, 'comments title', 'dimas' ) ),
 			number_format_i18n( $comments_number )
 		);
 
@@ -102,7 +102,7 @@ class Dimas_Hooks {
 	 */
 	public function comment_fields() {
 		if ( ! comments_open() ) {
-			echo '<p class="no-comments">' . esc_html__( 'Dimas_Hooks are closed.', 'dimas' ) . '</p>';
+			echo '<p class="no-comments">' . esc_html__( 'Hooks are closed.', 'dimas' ) . '</p>';
 		} else {
 			$comment_field = '<p class="comment-form-comment"><textarea required id="comment" placeholder="' . esc_attr__( 'Content', 'dimas' ) . '" name="comment" cols="45" rows="7" aria-required="true"></textarea></p>';
 			comment_form(
@@ -167,7 +167,7 @@ class Dimas_Hooks {
 	}
 
 	/**
-	 * Dimas_Hooks callback function
+	 * Hooks callback function
 	 *
 	 * @since 1.0.0
 	 *
@@ -214,7 +214,7 @@ class Dimas_Hooks {
 	}
 
 	/**
-	 * Dimas_Hooks Template function
+	 * Hooks Template function
 	 *
 	 * @since 1.0.0
 	 *

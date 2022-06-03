@@ -8,10 +8,10 @@
  */
 
 namespace Dimas\Mobile;
-use Dimas\Dimas_Helper;
+use Dimas\Helper;
 use WeDevs\WeMail\Rest\Help\Help;
 
-class Dimas_Mobile_Navigation_Bar {
+class Navigation_Bar {
 	/**
 	 * Instance
 	 *
@@ -93,9 +93,9 @@ class Dimas_Mobile_Navigation_Bar {
 		}
 
 		$this->items    = array();
-		$navigation_bar = Dimas_Helper::get_option( 'mobile_navigation_bar' );
+		$navigation_bar = Helper::get_option( 'mobile_navigation_bar' );
 		$classes = '';
-		if ( Dimas_Helper::is_catalog() ) {
+		if ( Helper::is_catalog() ) {
 			if ( in_array( $navigation_bar, array( 'simple_adoptive', 'standard_adoptive' ) ) ) {
 				$this->items['els']   = array( 'filter' );
 				$classes = 'rz-navigation-bar__simple';
@@ -118,7 +118,7 @@ class Dimas_Mobile_Navigation_Bar {
 			}
 
 
-			if ( in_array( $navigation_bar, array( 'simple_adoptive', 'standard_adoptive' ) ) && Dimas_Helper::get_option('mobile_floating_action_button') ) {
+			if ( in_array( $navigation_bar, array( 'simple_adoptive', 'standard_adoptive' ) ) && Helper::get_option('mobile_floating_action_button') ) {
 				$classes 	.= ' rz-navigation-bar--floating-button';
 			}
 
@@ -132,7 +132,7 @@ class Dimas_Mobile_Navigation_Bar {
 					$classes = 'rz-navigation-bar__standard rz-navigation-bar__sticky-atc';
 				}
 
-				if ( in_array( $navigation_bar, array( 'simple_adoptive', 'standard_adoptive' ) ) && Dimas_Helper::get_option('mobile_floating_action_button') ) {
+				if ( in_array( $navigation_bar, array( 'simple_adoptive', 'standard_adoptive' ) ) && Helper::get_option('mobile_floating_action_button') ) {
 					$classes 	.= ' rz-navigation-bar--floating-button';
 				}
 			}
@@ -145,10 +145,10 @@ class Dimas_Mobile_Navigation_Bar {
 
 		if ( ! $this->items ) {
 			if ( in_array( $navigation_bar, array( 'simple', 'simple_adoptive' ) ) ) {
-				$this->items['els']   = (array) Dimas_Helper::get_option( 'mobile_navigation_bar_item' );
-				$classes = 'rz-navigation-bar__simple rz-navigation-bar_items-' . Dimas_Helper::get_option( 'mobile_navigation_bar_item_align' );
+				$this->items['els']   = (array) Helper::get_option( 'mobile_navigation_bar_item' );
+				$classes = 'rz-navigation-bar__simple rz-navigation-bar_items-' . Helper::get_option( 'mobile_navigation_bar_item_align' );
 			} else {
-				$this->items['els']   = (array) Dimas_Helper::get_option( 'mobile_navigation_bar_items' );
+				$this->items['els']   = (array) Helper::get_option( 'mobile_navigation_bar_items' );
 				$classes = 'rz-navigation-bar__standard';
 			}
 		}
@@ -219,7 +219,7 @@ class Dimas_Mobile_Navigation_Bar {
 
 			switch ( $item ) {
 				case 'cart':
-					if ( ! class_exists( 'Dimas_WooCommerce' ) ) {
+					if ( ! class_exists( 'Initial' ) ) {
 						$template_file = '';
 						break;
 					}
@@ -263,17 +263,17 @@ class Dimas_Mobile_Navigation_Bar {
 	 * @return boolean
 	 */
 	public function has_menu() {
-		$navigation_bar = Dimas_Helper::get_option( 'mobile_navigation_bar' );
+		$navigation_bar = Helper::get_option( 'mobile_navigation_bar' );
 		if ( $navigation_bar == 'none' ) {
 			return false;
 		}
 
 		if ( in_array( $navigation_bar, array( 'standard', 'standard_adoptive' ) ) ) {
-			if ( ! in_array( 'menu', (array) Dimas_Helper::get_option( 'mobile_navigation_bar_items' ) ) ) {
+			if ( ! in_array( 'menu', (array) Helper::get_option( 'mobile_navigation_bar_items' ) ) ) {
 				return false;
 			}
 		} else {
-			if ( 'menu' != Dimas_Helper::get_option( 'mobile_navigation_bar_item' ) ) {
+			if ( 'menu' != Helper::get_option( 'mobile_navigation_bar_item' ) ) {
 				return false;
 			}
 		}
@@ -294,13 +294,13 @@ class Dimas_Mobile_Navigation_Bar {
 		}
 		?>
         <div id="mobile-category-menu-modal"
-             class="mobile-menu rz-modal ra-menu-mobile-modal ra-hamburger-modal <?php echo esc_attr( Dimas_Helper::get_option( 'mobile_navigation_bar_menu_side_type' ) == 'side-left' ? 'side-left' : '' ) ?>"
+             class="mobile-menu rz-modal ra-menu-mobile-modal ra-hamburger-modal <?php echo esc_attr( Helper::get_option( 'mobile_navigation_bar_menu_side_type' ) == 'side-left' ? 'side-left' : '' ) ?>"
              tabindex="-1" role="dialog">
             <div class="off-modal-layer"></div>
             <div class="menu-mobile-panel-content panel-content">
                 <div class="modal-header">
                     <div class="mobile-logo">
-						<?php if ( Dimas_Helper::get_option( 'mobile_panel_custom_logo' ) ) : ?>
+						<?php if ( Helper::get_option( 'mobile_panel_custom_logo' ) ) : ?>
 							<?php get_template_part( 'template-parts/mobile/header-panel-logo' ); ?>
 						<?php else : ?>
 							<?php get_template_part( 'template-parts/headers/logo' ); ?>
@@ -315,12 +315,12 @@ class Dimas_Mobile_Navigation_Bar {
 						$class = array(
 							'nav-menu',
 							'menu',
-							Dimas_Helper::get_option( 'mobile_navigation_bar_menu_click_item' )
+							Helper::get_option( 'mobile_navigation_bar_menu_click_item' )
 						);
 
 						$classes = implode( ' ', $class );
 
-						$menu_slug = Dimas_Helper::get_option( 'mobile_navigation_bar_menu_item' );
+						$menu_slug = Helper::get_option( 'mobile_navigation_bar_menu_item' );
 						if( ! empty($menu_slug) ) {
 							wp_nav_menu( array(
 								'theme_location' => '__no_such_location',
@@ -353,7 +353,7 @@ class Dimas_Mobile_Navigation_Bar {
 			return;
 		}
 
-		$navigation_bar = Dimas_Helper::get_option( 'mobile_navigation_bar' );
+		$navigation_bar = Helper::get_option( 'mobile_navigation_bar' );
 
 		if ( in_array( $navigation_bar, array( 'standard_adoptive' ) ) ) {
 			echo '<div class="rz-navigation-bar__type-variable--header">';
@@ -374,7 +374,7 @@ class Dimas_Mobile_Navigation_Bar {
 			return;
 		}
 
-		$navigation_bar = Dimas_Helper::get_option( 'mobile_navigation_bar' );
+		$navigation_bar = Helper::get_option( 'mobile_navigation_bar' );
 
 		if ( in_array( $navigation_bar, array( 'standard_adoptive' ) ) ) {
 			echo '</div>';
@@ -398,8 +398,8 @@ class Dimas_Mobile_Navigation_Bar {
 	public function get_content_navigation() {
 		global $product;
 
-		$navigation_bar = Dimas_Helper::get_option( 'mobile_navigation_bar' );
-		if ( in_array( $navigation_bar, array( 'standard_adoptive' ) ) && ! Dimas_Helper::get_option( 'mobile_floating_action_button' ) ) {
+		$navigation_bar = Helper::get_option( 'mobile_navigation_bar' );
+		if ( in_array( $navigation_bar, array( 'standard_adoptive' ) ) && ! Helper::get_option( 'mobile_floating_action_button' ) ) {
 			echo sprintf(
 				'<div class="price">%s</div>',
 				wp_kses_post( $product->get_price_html() )

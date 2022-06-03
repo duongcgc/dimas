@@ -1,21 +1,21 @@
 <?php
 /**
- * Dimas_Search functions and definitions.
+ * Search Blog functions and definitions.
  *
  * @package Dimas
  */
 
-namespace Dimas\Dimas_Blog;
+namespace Dimas\Blog;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
 /**
- * Dimas_Search initial
+ * Search Blog initial
  *
  */
-class Dimas_Search {
+class Search {
 	/**
 	 * Instance
 	 *
@@ -45,8 +45,8 @@ class Dimas_Search {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'dimas_before_close_search_content', array( new \Dimas\Dimas_Helper, 'posts_found' ) );
-		add_action( 'dimas_before_close_search_content', array( new \Dimas\Dimas_Helper, 'load_pagination' ), 30 );
+		add_action( 'dimas_before_close_search_content', array( new \Dimas\Helper, 'posts_found' ) );
+		add_action( 'dimas_before_close_search_content', array( new \Dimas\Helper, 'load_pagination' ), 30 );
 
 		add_action( 'dimas_before_search_loop', array( $this, 'open_post_list' ), 40 );
 		add_action( 'dimas_after_search_loop', array( $this, 'close_post_list' ), 10 );

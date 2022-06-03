@@ -71,7 +71,7 @@ final class StaticImport implements Import
         return $this->supports;
     }
 
-    public function getDimas_Media(): ?Interpolation
+    public function getMedia(): ?Interpolation
     {
         return $this->media;
     }

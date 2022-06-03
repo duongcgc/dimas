@@ -139,7 +139,7 @@
 	--entry-author-bio--font-family: var(--heading--font-family);
 	--entry-author-bio--font-size: var(--heading--font-size-h4);
 
-	/* Dimas_Header */
+	/* Header */
 	--branding--color-text: var(--global--color-primary);
 	--branding--color-link: var(--global--color-primary);
 	--branding--color-link-hover: var(--global--color-secondary);
@@ -182,7 +182,7 @@
 	--pagination--font-weight: normal;
 	--pagination--font-weight-strong: 600;
 
-	/* Dimas_Footer */
+	/* Footer */
 	--footer--color-text: var(--global--color-primary);
 	--footer--color-link: var(--global--color-primary);
 	--footer--color-link-hover: var(--global--color-primary-hover);
@@ -217,7 +217,7 @@
 	--table--stripes-background-color: var(--global--color-light-gray);
 	--table--has-background-text-color: var(--global--color-dark-gray);
 
-	/* Dimas_Widgets */
+	/* Widgets */
 	--widget--line-height-list: 1.9;
 	--widget--line-height-title: 1.4;
 	--widget--font-weight-title: 700;
@@ -249,7 +249,7 @@
 }
 
 /**
- * Responsive Dimas_Styles
+ * Responsive Styles
  */
 
 /**
@@ -257,7 +257,7 @@
  */
 
 /**
- * Root Dimas_Media Query Variables
+ * Root Media Query Variables
  */
 :root {
 	--responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal) * 0.6);
@@ -415,7 +415,7 @@ video {
 	max-width: 100%;
 }
 
-/* Dimas_Media captions */
+/* Media captions */
 figcaption,
 .wp-caption,
 .wp-caption-text,
@@ -584,7 +584,7 @@ a:hover {
 }
 
 /**
- * Block Dimas_Options
+ * Block Options
  */
 .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(:hover):not(:active):not(.has-text-color) {
 	color: var(--global--color-background);
@@ -1123,7 +1123,7 @@ h6,
 	margin: 0 auto;
 }
 
-/* Block Dimas_Styles */
+/* Block Styles */
 .wp-block-image.is-style-dimas-border img,
 .wp-block-image.is-style-dimas-image-frame img {
 	border: calc(3 * var(--separator--height)) solid var(--global--color-border);

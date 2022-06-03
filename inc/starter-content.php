@@ -84,7 +84,7 @@ function dimas_get_starter_content() {
 					<!-- /wp:heading -->
 
 					<!-- wp:paragraph -->
-					<p>' . esc_html_x( 'Dimas includes stylish borders for your content. With an Image block selected, open the "Dimas_Styles" panel within the Editor sidebar. Select the "Frame" block style to activate it.', 'Dimas_Theme starter content', 'dimas' ) . '</p>
+					<p>' . esc_html_x( 'Dimas includes stylish borders for your content. With an Image block selected, open the "Styles" panel within the Editor sidebar. Select the "Frame" block style to activate it.', 'Dimas_Theme starter content', 'dimas' ) . '</p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:column -->
 
@@ -94,7 +94,7 @@ function dimas_get_starter_content() {
 					<!-- /wp:heading -->
 
 					<!-- wp:paragraph -->
-					<p>' . esc_html_x( 'Dimas also includes an overlap style for column blocks. With a Columns block selected, open the "Dimas_Styles" panel within the Editor sidebar. Choose the "Overlap" block style to try it out.', 'Dimas_Theme starter content', 'dimas' ) . '</p>
+					<p>' . esc_html_x( 'Dimas also includes an overlap style for column blocks. With a Columns block selected, open the "Styles" panel within the Editor sidebar. Choose the "Overlap" block style to try it out.', 'Dimas_Theme starter content', 'dimas' ) . '</p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:column --></div>
 					<!-- /wp:columns -->

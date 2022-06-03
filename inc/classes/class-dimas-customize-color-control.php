@@ -7,6 +7,10 @@
  * @since Dimas 1.0
  */
 
+namespace Dimas;
+
+use WP_Customize_Color_Control;
+
 /**
  * Customize Color Control class.
  *
@@ -14,7 +18,7 @@
  *
  * @see WP_Customize_Control
  */
-class Dimas_Customize_Color_Control extends WP_Customize_Color_Control {
+class Customize_Color_Control extends WP_Customize_Color_Control {
 	/**
 	 * The control type.
 	 *

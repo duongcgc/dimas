@@ -1,6 +1,6 @@
 <?php
 /**
- * Dimas_Topbar Mobile functions and definitions.
+ * Header Mobile functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -9,9 +9,9 @@
 
 namespace Dimas\Mobile;
 
-use Dimas\Dimas_Helper;
+use Dimas\Helper;
 
-class Dimas_Mobile_Header {
+class Mobile_Header {
 	/**
 	 * Instance
 	 *
@@ -61,14 +61,14 @@ class Dimas_Mobile_Header {
 	}
 
 	/**
-	 * Get Mobile Dimas_Topbar
+	 * Get Mobile Topbar
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return string
 	 */
 	public function get_topbar() {
-		return Dimas_Helper::get_option( 'mobile_topbar' );
+		return Helper::get_option( 'mobile_topbar' );
 	}
 
 	/**
@@ -79,7 +79,7 @@ class Dimas_Mobile_Header {
 	 * @return string
 	 */
 	public function get_campaign_bar() {
-		return Dimas_Helper::get_option( 'mobile_campaign_bar' );
+		return Helper::get_option( 'mobile_campaign_bar' );
 	}
 
 	/**
@@ -127,7 +127,7 @@ class Dimas_Mobile_Header {
 	 * @return string
 	 */
 	public function header_history_back() {
-		if ( Dimas_Helper::get_option( 'mobile_header_history_back' ) == 'default' ) {
+		if ( Helper::get_option( 'mobile_header_history_back' ) == 'default' ) {
 			return;
 		}
 

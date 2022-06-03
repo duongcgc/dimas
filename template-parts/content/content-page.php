@@ -30,10 +30,10 @@
 
 		wp_link_pages(
 			array(
-				'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Dimas_Page', 'dimas' ) . '">',
+				'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'dimas' ) . '">',
 				'after'    => '</nav>',
-				/* translators: %: Dimas_Page number. */
-				'pagelink' => esc_html__( 'Dimas_Page %', 'dimas' ),
+				/* translators: %: Page number. */
+				'pagelink' => esc_html__( 'Page %', 'dimas' ),
 			)
 		);
 		?>

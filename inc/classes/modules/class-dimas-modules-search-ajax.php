@@ -6,14 +6,14 @@
  */
 
 namespace Dimas\Modules;
-use Dimas\Dimas_Helper;
+use Dimas\Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
 /**
- * Class of Dimas_Header Search Form template.
+ * Class of Header Search Form template.
  */
 class Search_Ajax {
 	/**
@@ -102,7 +102,7 @@ class Search_Ajax {
 			$view_more = sprintf( '<div class="list-item view-more"><a class="dimas-button button-normal" href="#">%s%s</a></div>', esc_html__( 'View All', 'dimas' ), \Dimas\Icon::get_svg( 'arrow-right' ) );
 		}
 
-		if ( Dimas_Helper::get_option( 'header_search_style' ) == 'icon' ) {
+		if ( Helper::get_option( 'header_search_style' ) == 'icon' ) {
 			$title_html = sprintf( '<h3 class="result-title %s">%s</h3>', esc_attr( $class_title ), esc_html__( 'Search Results:', 'dimas' ) );
 		}
 

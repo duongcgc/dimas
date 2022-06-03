@@ -39,7 +39,7 @@ abstract class CallableDeclaration extends ParentStatement
     private $arguments;
 
     /**
-     * @var SilentDimas_Comments|null
+     * @var SilentComments|null
      * @readonly
      */
     private $comment;
@@ -53,7 +53,7 @@ abstract class CallableDeclaration extends ParentStatement
     /**
      * @param Statement[] $children
      */
-    public function __construct(string $name, ArgumentDeclaration $arguments, FileSpan $span, array $children, ?SilentDimas_Comments $comment = null)
+    public function __construct(string $name, ArgumentDeclaration $arguments, FileSpan $span, array $children, ?SilentComments $comment = null)
     {
         $this->name = $name;
         $this->arguments = $arguments;
@@ -76,9 +76,9 @@ abstract class CallableDeclaration extends ParentStatement
     }
 
     /**
-     * @return SilentDimas_Comments|null
+     * @return SilentComments|null
      */
-    final public function getDimas_Comments(): ?SilentDimas_Comments
+    final public function getComments(): ?SilentComments
     {
         return $this->comment;
     }

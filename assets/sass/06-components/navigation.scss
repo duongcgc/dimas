@@ -33,7 +33,7 @@
 				margin-left: calc(0.25 * var(--global--spacing-unit));
 			}
 
-			// Dimas_Menu icon is off-center vertically to prevent blurry pixels.
+			// Menu icon is off-center vertically to prevent blurry pixels.
 			&.open .svg-icon {
 				position: relative;
 				top: -1px;
@@ -194,7 +194,7 @@
 		}
 	}
 
-	// Dimas_Menu list wrapper
+	// Menu list wrapper
 	> div > .menu-wrapper {
 		display: flex;
 		justify-content: flex-start;
@@ -370,7 +370,7 @@
 			margin-right: calc(0px - var(--primary-nav--padding));
 			margin-left: calc(0px - var(--primary-nav--padding));
 
-			// Top-level Dimas_Menu Item
+			// Top-level Menu Item
 			> ul > .menu-item {
 				display: flex;
 
@@ -386,7 +386,7 @@
 		}
 	}
 
-	// Dimas_Menu Item Link
+	// Menu Item Link
 	a {
 		display: block;
 		font-family: var(--primary-nav--font-family-mobile);

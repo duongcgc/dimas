@@ -3,8 +3,8 @@
 /**
  * SETTINGS
  * File-header..........The file header for the themes style.css file.
- * Dimas_Fonts................Any font files, if the project needs specific fonts.
- * Global...............Dimas_Project-specific, globally available variables.
+ * Fonts................Any font files, if the project needs specific fonts.
+ * Global...............Project-specific, globally available variables.
  *
  * TOOLS
  * Functions............Global functions.
@@ -23,7 +23,7 @@
  * Headings.............H1–H6
  * Links................Default links.
  * Lists................Default lists.
- * Dimas_Media................Images, Figure, Figcaption, Embed, iFrame, Objects, Video.
+ * Media................Images, Figure, Figcaption, Embed, iFrame, Objects, Video.
  *
  * BLOCKS
  * Audio................Specific styles for the audio block.
@@ -40,7 +40,7 @@
  * Latest posts.........Specific styles for the latest posts block.
  * Legacy...............Specific styles for the legacy gallery.
  * List.................Specific styles for the list block.
- * Dimas_Media text...........Specific styles for the media and text block.
+ * Media text...........Specific styles for the media and text block.
  * Navigation...........Specific styles for the navigation block.
  * Paragraph............Specific styles for the paragraph block.
  * Pullquote............Specific styles for the pullquote block.
@@ -54,14 +54,14 @@
  * Utilities............Block alignments.
  *
  * COMPONENTS
- * Dimas_Header...............Dimas_Header styles.
- * Dimas_Footer...............Dimas_Footer styles.
- * Dimas_Comments.............Dimas_Comments styles.
+ * Header...............Header styles.
+ * Footer...............Footer styles.
+ * Comments.............Comments styles.
  * Archives.............Archive styles.
  * 404..................404 styles.
  * Search...............Search styles.
  * Navigation...........Navigation styles.
- * Dimas_Footer Navigation....Dimas_Footer Navigation styles.
+ * Footer Navigation....Footer Navigation styles.
  * Pagination...........Pagination styles.
  * Single...............Single page and post styles.
  * Posts and pages......Misc, sticky post styles.
@@ -90,7 +90,7 @@
 @import "03-generic/reset";
 @import "03-generic/clearings";
 
-/* Category 04 can contain any default Dimas_HTML element. Do not add classes here, just give the elements some basic styles. */
+/* Category 04 can contain any default HTML element. Do not add classes here, just give the elements some basic styles. */
 @import "04-elements/blockquote";
 @import "04-elements/forms";
 @import "04-elements/media";

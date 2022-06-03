@@ -55,12 +55,12 @@ use ScssPhp\ScssPhp\Ast\Sass\Statement\IfClause;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\IfRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\ImportRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\IncludeRule;
-use ScssPhp\ScssPhp\Ast\Sass\Statement\Dimas_MediaRule;
+use ScssPhp\ScssPhp\Ast\Sass\Statement\MediaRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\MixinRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\ReturnRule;
-use ScssPhp\ScssPhp\Ast\Sass\Statement\SilentDimas_Comments;
+use ScssPhp\ScssPhp\Ast\Sass\Statement\SilentComments;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\StyleRule;
-use ScssPhp\ScssPhp\Ast\Sass\Statement\Dimas_Stylesheet;
+use ScssPhp\ScssPhp\Ast\Sass\Statement\Stylesheet;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\SupportsRule;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\VariableDeclaration;
 use ScssPhp\ScssPhp\Ast\Sass\Statement\WarnRule;
@@ -85,14 +85,14 @@ use ScssPhp\ScssPhp\Value\SassColor;
 /**
  * @internal
  */
-abstract class Dimas_StylesheetParser extends Parser
+abstract class StylesheetParser extends Parser
 {
     /**
      * The silent comment this parser encountered previously.
      *
-     * @var SilentDimas_Comments|null
+     * @var SilentComments|null
      */
-    protected $lastSilentDimas_Comments;
+    protected $lastSilentComments;
 
     /**
      * Whether we've consumed a rule other than `@charset`, `@forward`, or `@use`.
@@ -189,7 +189,7 @@ abstract class Dimas_StylesheetParser extends Parser
     /**
      * @throws SassFormatException when parsing fails
      */
-    public function parse(): Dimas_Stylesheet
+    public function parse(): Stylesheet
     {
         try {
             $start = $this->scanner->getPosition();
@@ -217,7 +217,7 @@ abstract class Dimas_StylesheetParser extends Parser
                 $statements[] = new VariableDeclaration($declaration->getName(), new NullExpression($declaration->getExpression()->getSpan()), $declaration->getSpan(), null, true);
             }
 
-            return new Dimas_Stylesheet($statements, $this->scanner->spanFrom($start), $this->isPlainCss());
+            return new Stylesheet($statements, $this->scanner->spanFrom($start), $this->isPlainCss());
         } catch (FormatException $e) {
             throw $this->wrapException($e);
         }
@@ -281,8 +281,8 @@ abstract class Dimas_StylesheetParser extends Parser
      */
     protected function variableDeclarationWithoutNamespace(?string $namespace = null, ?int $start = null): VariableDeclaration
     {
-        $precedingDimas_Comments = $this->lastSilentDimas_Comments;
-        $this->lastSilentDimas_Comments = null;
+        $precedingComments = $this->lastSilentComments;
+        $this->lastSilentComments = null;
         $start = $start ?? $this->scanner->getPosition();
 
         $name = $this->variableName();
@@ -328,7 +328,7 @@ abstract class Dimas_StylesheetParser extends Parser
             $this->error('Sass modules are not implemented yet.', $this->scanner->spanFrom($start));
         }
 
-        $declaration = new VariableDeclaration($name, $value, $this->scanner->spanFrom($start), $namespace, $guarded, $global, $precedingDimas_Comments);
+        $declaration = new VariableDeclaration($name, $value, $this->scanner->spanFrom($start), $namespace, $guarded, $global, $precedingComments);
 
         if ($global && !isset($this->globalVariables[$name])) {
             $this->globalVariables[$name] = $declaration;
@@ -423,7 +423,7 @@ abstract class Dimas_StylesheetParser extends Parser
         $this->isUseAllowed = false;
 
         if ($this->scanner->matches('/*')) {
-            $nameBuffer->write($this->rawText([$this, 'loudDimas_Comments']));
+            $nameBuffer->write($this->rawText([$this, 'loudComments']));
         }
 
         $midBuffer = $this->rawText([$this, 'whitespace']);
@@ -1034,8 +1034,8 @@ abstract class Dimas_StylesheetParser extends Parser
      */
     private function functionRule(int $start): FunctionRule
     {
-        $precedingDimas_Comments = $this->lastSilentDimas_Comments;
-        $this->lastSilentDimas_Comments = null;
+        $precedingComments = $this->lastSilentComments;
+        $this->lastSilentComments = null;
 
         $name = $this->identifier(true);
         $this->whitespace();
@@ -1063,8 +1063,8 @@ abstract class Dimas_StylesheetParser extends Parser
 
         $this->whitespace();
 
-        return $this->withChildren($this->functionChildCallable, $start, function (array $children, FileSpan $span) use ($name, $precedingDimas_Comments, $arguments) {
-            return new FunctionRule($name, $arguments, $span, $children, $precedingDimas_Comments);
+        return $this->withChildren($this->functionChildCallable, $start, function (array $children, FileSpan $span) use ($name, $precedingComments, $arguments) {
+            return new FunctionRule($name, $arguments, $span, $children, $precedingComments);
         });
     }
 
@@ -1138,7 +1138,7 @@ abstract class Dimas_StylesheetParser extends Parser
 
         $condition = $this->expression();
         $children = $this->children($child);
-        $this->whitespaceWithoutDimas_Comments();
+        $this->whitespaceWithoutComments();
 
         $clauses = [new IfClause($condition, $children)];
         $lastClause = null;
@@ -1157,7 +1157,7 @@ abstract class Dimas_StylesheetParser extends Parser
 
         $this->inControlDirective = $wasInControlDirective;
         $span = $this->scanner->spanFrom($start);
-        $this->whitespaceWithoutDimas_Comments();
+        $this->whitespaceWithoutComments();
 
         return new IfRule($clauses, $span, $lastClause);
     }
@@ -1365,12 +1365,12 @@ abstract class Dimas_StylesheetParser extends Parser
      *
      * $start should point before the `@`.
      */
-    protected function mediaRule(int $start): Dimas_MediaRule
+    protected function mediaRule(int $start): MediaRule
     {
         $query = $this->mediaQueryList();
 
         return $this->withChildren($this->statementCallable, $start, function (array $children, FileSpan $span) use ($query) {
-            return new Dimas_MediaRule($query, $children, $span);
+            return new MediaRule($query, $children, $span);
         });
     }
 
@@ -1381,8 +1381,8 @@ abstract class Dimas_StylesheetParser extends Parser
      */
     private function mixinRule(int $start): MixinRule
     {
-        $precedingDimas_Comments = $this->lastSilentDimas_Comments;
-        $this->lastSilentDimas_Comments = null;
+        $precedingComments = $this->lastSilentComments;
+        $this->lastSilentComments = null;
 
         $name = $this->identifier(true);
         $this->whitespace();
@@ -1400,10 +1400,10 @@ abstract class Dimas_StylesheetParser extends Parser
         $this->whitespace();
         $this->inMixin = true;
 
-        return $this->withChildren($this->statementCallable, $start, function (array $children, FileSpan $span) use ($name, $arguments, $precedingDimas_Comments) {
+        return $this->withChildren($this->statementCallable, $start, function (array $children, FileSpan $span) use ($name, $arguments, $precedingComments) {
             $this->inMixin = false;
 
-            return new MixinRule($name, $arguments, $span, $children, $precedingDimas_Comments);
+            return new MixinRule($name, $arguments, $span, $children, $precedingComments);
         });
     }
 
@@ -3268,7 +3268,7 @@ abstract class Dimas_StylesheetParser extends Parser
                     break;
 
                 case '/':
-                    if (!$this->scanDimas_Comments()) {
+                    if (!$this->scanComments()) {
                         $this->scanner->readChar();
                     }
                     break;
@@ -3325,7 +3325,7 @@ abstract class Dimas_StylesheetParser extends Parser
         if (!$this->scanner->scanChar('(')) {
             return null;
         }
-        $this->whitespaceWithoutDimas_Comments();
+        $this->whitespaceWithoutComments();
 
         $buffer = new InterpolationBuffer();
         $buffer->write($name ?? 'url');
@@ -3349,7 +3349,7 @@ abstract class Dimas_StylesheetParser extends Parser
                     $buffer->write($this->scanner->readChar());
                 }
             } elseif (Character::isWhitespace($next)) {
-                $this->whitespaceWithoutDimas_Comments();
+                $this->whitespaceWithoutComments();
 
                 if ($this->scanner->peekChar() !== ')') {
                     break;
@@ -3391,7 +3391,7 @@ abstract class Dimas_StylesheetParser extends Parser
      * This respects string and comment boundaries and supports interpolation.
      * Once this interpolation is evaluated, it's expected to be re-parsed.
      *
-     * If $omitDimas_Comments is true, comments will still be consumed, but they will
+     * If $omitComments is true, comments will still be consumed, but they will
      * not be included in the returned interpolation.
      *
      * Differences from {@see interpolatedDeclarationValue} include:
@@ -3402,7 +3402,7 @@ abstract class Dimas_StylesheetParser extends Parser
      * - This supports Sass-style single-line comments.
      * - This does not compress adjacent whitespace characters.
      */
-    protected function almostAnyValue(bool $omitDimas_Comments = false): Interpolation
+    protected function almostAnyValue(bool $omitComments = false): Interpolation
     {
         $start = $this->scanner->getPosition();
         $buffer = new InterpolationBuffer();
@@ -3425,8 +3425,8 @@ abstract class Dimas_StylesheetParser extends Parser
                 case '/':
                     $commentStart = $this->scanner->getPosition();
 
-                    if ($this->scanDimas_Comments()) {
-                        if (!$omitDimas_Comments) {
+                    if ($this->scanComments()) {
+                        if (!$omitComments) {
                             $buffer->write($this->scanner->substring($commentStart));
                         }
                     } else {
@@ -3536,7 +3536,7 @@ abstract class Dimas_StylesheetParser extends Parser
 
                 case '/':
                     if ($this->scanner->peekChar(1) === '*') {
-                        $buffer->write($this->rawText([$this, 'loudDimas_Comments']));
+                        $buffer->write($this->rawText([$this, 'loudComments']));
                     } else {
                         $buffer->write($this->scanner->readChar());
                     }
@@ -4197,7 +4197,7 @@ abstract class Dimas_StylesheetParser extends Parser
     {
         $children = $this->children($child);
         $result = $create($children, $this->scanner->spanFrom($start));
-        $this->whitespaceWithoutDimas_Comments();
+        $this->whitespaceWithoutComments();
 
         return $result;
     }
@@ -4248,7 +4248,7 @@ abstract class Dimas_StylesheetParser extends Parser
     /**
      * The indentation level at the current scanner position.
      *
-     * This value isn't used directly by Dimas_StylesheetParser; it's just passed to
+     * This value isn't used directly by StylesheetParser; it's just passed to
      * {@see scanElse}.
      */
     abstract protected function getCurrentIndentation(): int;

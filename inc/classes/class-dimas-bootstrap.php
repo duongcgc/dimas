@@ -12,10 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Dimas_Bootstrap initial
+ * Bootstrap initial
  *
  */
-class Dimas_Bootstrap {
+class Bootstrap {
 	/**
 	 * Instance
 	 *
@@ -85,7 +85,7 @@ class Dimas_Bootstrap {
 
 		echo '<h2 class="comments-title ' . esc_attr( $comments_class ) . '">';
 		printf( // WPCS: XSS OK.
-			esc_html( _nx( 'Dimas_Bootstrap (%1$s)', 'Dimas_Bootstrap (%1$s)', $comments_number, 'comments title', 'dimas' ) ),
+			esc_html( _nx( 'Bootstrap (%1$s)', 'Bootstrap (%1$s)', $comments_number, 'comments title', 'dimas' ) ),
 			number_format_i18n( $comments_number )
 		);
 
@@ -102,7 +102,7 @@ class Dimas_Bootstrap {
 	 */
 	public function comment_fields() {
 		if ( ! comments_open() ) {
-			echo '<p class="no-comments">' . esc_html__( 'Dimas_Bootstrap are closed.', 'dimas' ) . '</p>';
+			echo '<p class="no-comments">' . esc_html__( 'Bootstrap are closed.', 'dimas' ) . '</p>';
 		} else {
 			$comment_field = '<p class="comment-form-comment"><textarea required id="comment" placeholder="' . esc_attr__( 'Content', 'dimas' ) . '" name="comment" cols="45" rows="7" aria-required="true"></textarea></p>';
 			comment_form(
@@ -167,7 +167,7 @@ class Dimas_Bootstrap {
 	}
 
 	/**
-	 * Dimas_Bootstrap callback function
+	 * Bootstrap callback function
 	 *
 	 * @since 1.0.0
 	 *
@@ -214,7 +214,7 @@ class Dimas_Bootstrap {
 	}
 
 	/**
-	 * Dimas_Bootstrap Template function
+	 * Bootstrap Template function
 	 *
 	 * @since 1.0.0
 	 *

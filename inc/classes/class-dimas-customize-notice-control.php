@@ -1,11 +1,15 @@
 <?php
 /**
- * Customize API: Dimas_Customize_Notice_Control class
+ * Customize API: Customize_Notice_Control class
  *
  * @package WordPress
  * @subpackage Dimas
  * @since Dimas 1.0
  */
+
+namespace Dimas;
+
+use WP_Customize_Control;
 
 /**
  * Customize Notice Control class.
@@ -14,7 +18,7 @@
  *
  * @see WP_Customize_Control
  */
-class Dimas_Customize_Notice_Control extends WP_Customize_Control {
+class Customize_Notice_Control extends WP_Customize_Control {
 	/**
 	 * The control type.
 	 *

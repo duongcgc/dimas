@@ -24,16 +24,16 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, full-width-template,
 # Forms
 # Navigation
 	## Links
-	## Dimas_Menus
+	## Menus
 # Accessibility
 # Alignments
 # Clearings
-# Dimas_Widgets
+# Widgets
 # Content
 	## Posts and pages
-	## Dimas_Comments
+	## Comments
 # Infinite scroll
-# Dimas_Media
+# Media
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
@@ -1173,7 +1173,7 @@ textarea {
 # Navigation
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## Dimas_Menus
+## Menus
 --------------------------------------------------------------*/
 .socials-menu .menu {
 	margin: 0;
@@ -1380,7 +1380,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-# Dimas_Widgets
+# Widgets
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 40px;
@@ -1799,7 +1799,7 @@ textarea {
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-	/* Dimas_Theme Dimas_Footer (when set to scrolling) */
+	/* Dimas_Theme Footer (when set to scrolling) */
 	display: none;
 }
 
@@ -1971,7 +1971,7 @@ body .hotspot-modal .modal-dialog .chevron {
 }
 
 /*--------------------------------------------------------------
-# Dimas_Media
+# Media
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
@@ -2164,7 +2164,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-# Dimas_Layout
+# Layout
 --------------------------------------------------------------*/
 .site-content {
 	padding-top: 30px;
@@ -2235,7 +2235,7 @@ object {
 # Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-## Dimas_Preloader
+## Preloader
 --------------------------------------------------------------*/
 .preloader {
 	position: fixed;
@@ -2267,7 +2267,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-## Dimas_Topbar
+## Topbar
 --------------------------------------------------------------*/
 .dimas-topbar__text {
 	color: var(--rz-color-dark);
@@ -2503,7 +2503,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-## Dimas_Header
+## Header
 --------------------------------------------------------------*/
 .site-header {
 	--rz-header-color-light: #ffffff;
@@ -4126,7 +4126,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-## Dimas_Page Dimas_Header
+## Page Header
 --------------------------------------------------------------*/
 .page-header__title {
 	font-size: 28px;
@@ -4636,7 +4636,7 @@ body:not(.full-content) .dimas-posts__taxs-list ul {
 }
 
 /*--------------------------------------------------------------
-## Dimas_Comments
+## Comments
 --------------------------------------------------------------*/
 .comment-content a {
 	word-wrap: break-word;
@@ -5327,7 +5327,7 @@ input[type="email"] {
 }
 
 /*--------------------------------------------------------------
-# Dimas_Page
+# Page
 --------------------------------------------------------------*/
 .error404 .site-content {
 	padding: 110px 15px;
@@ -5379,7 +5379,7 @@ input[type="email"] {
 }
 
 /*--------------------------------------------------------------
-# Dimas_Footer
+# Footer
 --------------------------------------------------------------*/
 #gotop {
 	position: fixed;

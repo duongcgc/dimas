@@ -7,7 +7,7 @@
 
 namespace Dimas\Admin;
 
-use Dimas\Dimas_Helper;
+use Dimas\Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -15,9 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Block Editor
- *
  */
-class Dimas_Block_Editor {
+class Block_Editor {
 	/**
 	 * Instance
 	 *
@@ -56,11 +55,10 @@ class Dimas_Block_Editor {
 	 * @since 1.0.0
 	 *
 	 * @return void
-	 *
 	 */
 	public function block_editor_styles() {
 		wp_enqueue_style( 'dimas-block-editor-style', get_template_directory_uri() . '/assets/css/editor-blocks.css' );
-		wp_enqueue_style( 'dimas-block-editor-fonts', Dimas_Helper::get_fonts_url(), array(), '20180831' );
+		wp_enqueue_style( 'dimas-block-editor-fonts', Helper::get_fonts_url(), array(), '20180831' );
 	}
 }
 

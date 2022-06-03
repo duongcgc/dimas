@@ -13,13 +13,13 @@
 namespace ScssPhp\ScssPhp\Visitor;
 
 use ScssPhp\ScssPhp\Ast\Css\ModifiableCssAtRule;
-use ScssPhp\ScssPhp\Ast\Css\ModifiableCssDimas_Comments;
+use ScssPhp\ScssPhp\Ast\Css\ModifiableCssComments;
 use ScssPhp\ScssPhp\Ast\Css\ModifiableCssDeclaration;
 use ScssPhp\ScssPhp\Ast\Css\ModifiableCssImport;
 use ScssPhp\ScssPhp\Ast\Css\ModifiableCssKeyframeBlock;
-use ScssPhp\ScssPhp\Ast\Css\ModifiableCssDimas_MediaRule;
+use ScssPhp\ScssPhp\Ast\Css\ModifiableCssMediaRule;
 use ScssPhp\ScssPhp\Ast\Css\ModifiableCssStyleRule;
-use ScssPhp\ScssPhp\Ast\Css\ModifiableCssDimas_Stylesheet;
+use ScssPhp\ScssPhp\Ast\Css\ModifiableCssStylesheet;
 use ScssPhp\ScssPhp\Ast\Css\ModifiableCssSupportsRule;
 
 /**
@@ -39,11 +39,11 @@ interface ModifiableCssVisitor
     public function visitCssAtRule($node);
 
     /**
-     * @param ModifiableCssDimas_Comments $node
+     * @param ModifiableCssComments $node
      *
      * @return T
      */
-    public function visitCssDimas_Comments($node);
+    public function visitCssComments($node);
 
     /**
      * @param ModifiableCssDeclaration $node
@@ -67,11 +67,11 @@ interface ModifiableCssVisitor
     public function visitCssKeyframeBlock($node);
 
     /**
-     * @param ModifiableCssDimas_MediaRule $node
+     * @param ModifiableCssMediaRule $node
      *
      * @return T
      */
-    public function visitCssDimas_MediaRule($node);
+    public function visitCssMediaRule($node);
 
     /**
      * @param ModifiableCssStyleRule $node
@@ -81,11 +81,11 @@ interface ModifiableCssVisitor
     public function visitCssStyleRule($node);
 
     /**
-     * @param ModifiableCssDimas_Stylesheet $node
+     * @param ModifiableCssStylesheet $node
      *
      * @return T
      */
-    public function visitCssDimas_Stylesheet($node);
+    public function visitCssStylesheet($node);
 
     /**
      * @param ModifiableCssSupportsRule $node

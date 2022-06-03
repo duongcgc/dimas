@@ -12,10 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Dimas_Footer initial
+ * Footer initial.
  *
+ * @since 1.0.0
+ * @return mixed
  */
-class Dimas_Footer {
+class Footer {
 	/**
 	 * Instance
 	 *
@@ -58,12 +60,12 @@ class Dimas_Footer {
 	 * @return void
 	 */
 	public function show_footer() {
-		$show_footer = is_page() ? ! get_post_meta( \Dimas\Dimas_Helper::get_post_ID(), 'rz_hide_footer_section', true ) : true;
+		$show_footer = is_page() ? ! get_post_meta( \Dimas\Helper::get_post_ID(), 'rz_hide_footer_section', true ) : true;
 		if ( ! apply_filters( 'dimas_get_footer', $show_footer ) ) {
 			return;
 		}
 
-		$sections = apply_filters( 'dimas_get_footer_sections', Dimas_Helper::get_option( 'footer_sections' ) );
+		$sections = apply_filters( 'dimas_get_footer_sections', Helper::get_option( 'footer_sections' ) );
 
 		if ( empty( $sections ) ) {
 			return;
@@ -82,11 +84,11 @@ class Dimas_Footer {
 	 * @return string
 	 */
 	public static function classes( $classes ) {
-		$classes .= ' site-footer-' . Dimas_Helper::get_option('footer_background_scheme');
+		$classes .= ' site-footer-' . Helper::get_option( 'footer_background_scheme' );
 
-		$footer_border = intval( Dimas_Helper::get_option('footer_section_border_top'));
-		$footer_border_custom = get_post_meta( \Dimas\Dimas_Helper::get_post_ID(), 'rz_footer_section_border_top', true );
-		if( is_page() && $footer_border_custom != 'default' ) {
+		$footer_border        = intval( Helper::get_option( 'footer_section_border_top' ) );
+		$footer_border_custom = get_post_meta( \Dimas\Helper::get_post_ID(), 'rz_footer_section_border_top', true );
+		if ( is_page() && $footer_border_custom != 'default' ) {
 			$footer_border = $footer_border_custom;
 		}
 
@@ -94,25 +96,28 @@ class Dimas_Footer {
 			$classes .= ' has-divider';
 		}
 
-		echo apply_filters( 'dimas_site_footer_class', $classes);
+		echo apply_filters( 'dimas_site_footer_class', $classes );
 	}
 
 	/**
-	 * Dimas_Options of footer items
+	 * Options of footer items
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return array
 	 */
 	public function footer_items_option() {
-		return apply_filters( 'dimas_footer_items_option', array(
-			'copyright' => esc_html__( 'Copyright', 'dimas' ),
-			'menu'      => esc_html__( 'Dimas_Menu', 'dimas' ),
-			'text'      => esc_html__( 'Custom text', 'dimas' ),
-			'payment'   => esc_html__( 'Payments', 'dimas' ),
-			'social'    => esc_html__( 'Socials', 'dimas' ),
-			'logo'      => esc_html__( 'Logo', 'dimas' ),
-		) );
+		return apply_filters(
+			'dimas_footer_items_option',
+			array(
+				'copyright' => esc_html__( 'Copyright', 'dimas' ),
+				'menu'      => esc_html__( 'Menu', 'dimas' ),
+				'text'      => esc_html__( 'Custom text', 'dimas' ),
+				'payment'   => esc_html__( 'Payments', 'dimas' ),
+				'social'    => esc_html__( 'Socials', 'dimas' ),
+				'logo'      => esc_html__( 'Logo', 'dimas' ),
+			)
+		);
 	}
 
 	/**
@@ -125,26 +130,28 @@ class Dimas_Footer {
 	public function footer_item( $item ) {
 		switch ( $item ) {
 			case 'copyright':
-				echo '<div class="copyright">' . do_shortcode( wp_kses_post( Dimas_Helper::get_option( 'footer_copyright' ) ) ) . '</div>';
+				echo '<div class="copyright">' . do_shortcode( wp_kses_post( Helper::get_option( 'footer_copyright' ) ) ) . '</div>';
 				break;
 
 			case 'menu':
-				$menu_slug = Dimas_Helper::get_option( 'footer_menu' );
-				if( ! empty($menu_slug) ) {
-					wp_nav_menu( array(
-						'theme_location' => '__no_such_location',
-						'menu'           => Dimas_Helper::get_option( 'footer_menu' ),
-						'container'      => 'nav',
-						'menu_id'        => 'footer-menu',
-						'menu_class'     => 'footer-menu nav-menu menu',
-						'depth'          => 1,
-					) );
+				$menu_slug = Helper::get_option( 'footer_menu' );
+				if ( ! empty( $menu_slug ) ) {
+					wp_nav_menu(
+						array(
+							'theme_location' => '__no_such_location',
+							'menu'           => Helper::get_option( 'footer_menu' ),
+							'container'      => 'nav',
+							'menu_id'        => 'footer-menu',
+							'menu_class'     => 'footer-menu nav-menu menu',
+							'depth'          => 1,
+						)
+					);
 				}
 
 				break;
 
 			case 'text':
-				if ( $footer_custom_text = Dimas_Helper::get_option( 'footer_main_text' ) ) {
+				if ( $footer_custom_text = Helper::get_option( 'footer_main_text' ) ) {
 					echo '<div class="custom-text">' . do_shortcode( wp_kses_post( $footer_custom_text ) ) . '</div>';
 				}
 				break;
@@ -154,7 +161,7 @@ class Dimas_Footer {
 				break;
 
 			case 'social':
-				\Dimas\Dimas_Helper::socials_menu();
+				\Dimas\Helper::socials_menu();
 				break;
 
 			case 'logo':
@@ -175,40 +182,40 @@ class Dimas_Footer {
 	 * @return  void
 	 */
 	public function footer_logo() {
-		$logo_type = Dimas_Helper::get_option( 'footer_logo_type' );
+		$logo_type = Helper::get_option( 'footer_logo_type' );
 
 		$style = $class = '';
 
 		if ( 'svg' == $logo_type ) :
-			$logo =  Dimas_Helper::get_option( 'footer_logo_svg' );
+			$logo = Helper::get_option( 'footer_logo_svg' );
 
-        elseif ( 'text' == $logo_type ) :
-			$logo  = Dimas_Helper::get_option( 'footer_logo_text' );
-		else:
-			$logo = Dimas_Helper::get_option( 'footer_logo' );
+		elseif ( 'text' == $logo_type ) :
+			$logo = Helper::get_option( 'footer_logo_text' );
+		else :
+			$logo = Helper::get_option( 'footer_logo' );
 
 			if ( ! $logo ) {
 				$logo = $logo ? $logo : get_theme_file_uri( '/images/logo.svg' );
 			}
 
-			$dimension = Dimas_Helper::get_option( 'footer_logo_dimension' );
+			$dimension = Helper::get_option( 'footer_logo_dimension' );
 			$style     = ! empty( $dimension['width'] ) ? ' width="' . esc_attr( $dimension['width'] ) . '"' : '';
-			$style     .= ! empty( $dimension['width'] ) ? ' height="' . esc_attr( $dimension['height'] ) . '"' : '';
+			$style    .= ! empty( $dimension['width'] ) ? ' height="' . esc_attr( $dimension['height'] ) . '"' : '';
 		endif;
 
 		?>
-        <div class="footer-branding">
-            <a href="<?php echo esc_url( home_url( '/' ) ) ?>" class="logo <?php echo esc_attr( $class ) ?>">
+		<div class="footer-branding">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo <?php echo esc_attr( $class ); ?>">
 				<?php if ( 'svg' == $logo_type ) : ?>
 					<?php echo \Dimas\Icon::sanitize_svg( $logo ); ?>
 				<?php elseif ( 'text' == $logo_type ) : ?>
 					<?php echo esc_html( $logo ); ?>
 				<?php else : ?>
-                    <img src="<?php echo esc_url( $logo ); ?>"
-                         alt="<?php echo get_bloginfo( 'name' ); ?>" <?php echo wp_kses_post( $style ) ?>>
+					<img src="<?php echo esc_url( $logo ); ?>"
+						 alt="<?php echo get_bloginfo( 'name' ); ?>" <?php echo wp_kses_post( $style ); ?>>
 				<?php endif; ?>
-            </a>
-        </div>
+			</a>
+		</div>
 
 		<?php
 	}
@@ -223,7 +230,7 @@ class Dimas_Footer {
 	public function footer_payments() {
 		$output = array();
 
-		$images = (array) Dimas_Helper::get_option( 'footer_main_payment_images' );
+		$images = (array) Helper::get_option( 'footer_main_payment_images' );
 		if ( $images ) {
 
 			$output[] = '<ul class="payments">';
@@ -245,7 +252,6 @@ class Dimas_Footer {
 						$output[] = sprintf( '<li>%s</li>', $img );
 					}
 				}
-
 			}
 			$output[] = '</ul>';
 		}
@@ -263,7 +269,7 @@ class Dimas_Footer {
 	 * @return  void
 	 */
 	public function gotop_button() {
-		if ( apply_filters( 'dimas_get_back_to_top', Dimas_Helper::get_option( 'general_backtotop' ) ) ) {
+		if ( apply_filters( 'dimas_get_back_to_top', Helper::get_option( 'general_backtotop' ) ) ) {
 			echo '<a href="#page" id="gotop">' . \Dimas\Icon::get_svg( 'arrow-right' ) . '</a>';
 		}
 	}

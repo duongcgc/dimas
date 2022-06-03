@@ -13,9 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Woocommerce initial
- *
  */
-class Dimas_WooCommerce {
+class Woocommerce {
 	/**
 	 * Instance
 	 *
@@ -50,7 +49,7 @@ class Dimas_WooCommerce {
 	}
 
 	/**
-	 * Dimas_WooCommerce Init
+	 * Initial Init
 	 *
 	 * @since 1.0.0
 	 *
@@ -99,7 +98,7 @@ class Dimas_WooCommerce {
 	}
 
 	/**
-	 * Get Dimas_WooCommerce Class Init.
+	 * Get Initial Class Init.
 	 *
 	 * @since 1.0.0
 	 *
@@ -108,36 +107,36 @@ class Dimas_WooCommerce {
 	public function get( $class ) {
 		switch ( $class ) {
 			case 'setup':
-				return \Dimas\Dimas_WooCommerce\Setup::instance();
+				return \Dimas\Initial\Setup::instance();
 				break;
 			case 'sidebars':
-				return \Dimas\Dimas_WooCommerce\Sidebars::instance();
+				return \Dimas\Initial\Sidebars::instance();
 				break;
 			case 'customizer':
-				return \Dimas\Dimas_WooCommerce\Customizer::instance();
+				return \Dimas\Initial\Customizer::instance();
 				break;
 			case 'cache':
-				return \Dimas\Dimas_WooCommerce\Cache::instance();
+				return \Dimas\Initial\Cache::instance();
 				break;
 			case 'dynamic_css':
-				return \Dimas\Dimas_WooCommerce\Dimas_Dynamic_CSS::instance();
+				return \Dimas\Initial\Dynamic_CSS::instance();
 				break;
 			case 'cat_settings':
 				if ( is_admin() ) {
-					return \Dimas\Dimas_WooCommerce\Settings\Category::instance();
+					return \Dimas\Initial\Settings\Category::instance();
 				}
 				break;
 
 			case 'product_settings':
 				if ( is_admin() ) {
-					return \Dimas\Dimas_WooCommerce\Settings\Product::instance();
+					return \Dimas\Initial\Settings\Product::instance();
 				}
 				break;
 		}
 	}
 
 	/**
-	 * Get Dimas_WooCommerce Template Class.
+	 * Get Initial Template Class.
 	 *
 	 * @since 1.0.0
 	 *
@@ -146,41 +145,41 @@ class Dimas_WooCommerce {
 	public function get_template( $class ) {
 		switch ( $class ) {
 			case 'general':
-				return \Dimas\Dimas_WooCommerce\Template\General::instance();
+				return \Dimas\Initial\Template\General::instance();
 				break;
 			case 'product_loop':
-				return \Dimas\Dimas_WooCommerce\Template\Product_Loop::instance();
+				return \Dimas\Initial\Template\Product_Loop::instance();
 				break;
 			case 'catalog':
-				if ( \Dimas\Dimas_Helper::is_catalog() ) {
-					return \Dimas\Dimas_WooCommerce\Template\Catalog::instance();
+				if ( \Dimas\Helper::is_catalog() ) {
+					return \Dimas\Initial\Template\Catalog::instance();
 				}
 				break;
 			case 'single_product':
 				if ( is_singular( 'product' ) ) {
-					return \Dimas\Dimas_WooCommerce\Template\Single_Product::instance();
+					return \Dimas\Initial\Template\Single_Product::instance();
 				}
 				break;
 			case 'account':
-				return \Dimas\Dimas_WooCommerce\Template\Account::instance();
+				return \Dimas\Initial\Template\Account::instance();
 				break;
 			case 'cart':
-				if ( function_exists('is_cart') && is_cart() ) {
-					return \Dimas\Dimas_WooCommerce\Template\Cart::instance();
+				if ( function_exists( 'is_cart' ) && is_cart() ) {
+					return \Dimas\Initial\Template\Cart::instance();
 				}
 				break;
 			case 'checkout':
-				if ( function_exists('is_checkout') && is_checkout() ) {
-					return \Dimas\Dimas_WooCommerce\Template\Checkout::instance();
+				if ( function_exists( 'is_checkout' ) && is_checkout() ) {
+					return \Dimas\Initial\Template\Checkout::instance();
 				}
 				break;
-			default :
+			default:
 				break;
 		}
 	}
 
 	/**
-	 * Get Dimas_WooCommerce Elements.
+	 * Get Initial Elements.
 	 *
 	 * @since 1.0.0
 	 *
@@ -189,19 +188,19 @@ class Dimas_WooCommerce {
 	public function get_element( $class ) {
 		switch ( $class ) {
 			case 'deal':
-				return \Dimas\Dimas_WooCommerce\Elements\Product_Deal::instance();
+				return \Dimas\Initial\Elements\Product_Deal::instance();
 				break;
 			case 'masonry':
-				return \Dimas\Dimas_WooCommerce\Elements\Product_Masonry::instance();
+				return \Dimas\Initial\Elements\Product_Masonry::instance();
 				break;
 			case 'showcase':
-				return \Dimas\Dimas_WooCommerce\Elements\Product_ShowCase::instance();
+				return \Dimas\Initial\Elements\Product_ShowCase::instance();
 				break;
 			case 'summary':
-				return \Dimas\Dimas_WooCommerce\Elements\Product_Summary::instance();
+				return \Dimas\Initial\Elements\Product_Summary::instance();
 				break;
 			case 'product_with_thumbnails':
-				return \Dimas\Dimas_WooCommerce\Elements\Product_With_Thumbnails::instance();
+				return \Dimas\Initial\Elements\Product_With_Thumbnails::instance();
 				break;
 		}
 	}
@@ -216,26 +215,26 @@ class Dimas_WooCommerce {
 	public function get_module( $class ) {
 		switch ( $class ) {
 			case 'badges':
-				return \Dimas\Dimas_WooCommerce\Modules\Badges::instance();
+				return \Dimas\Initial\Modules\Badges::instance();
 				break;
 			case 'quick_view':
-				return \Dimas\Dimas_WooCommerce\Modules\Quick_View::instance();
+				return \Dimas\Initial\Modules\Quick_View::instance();
 				break;
 			case 'notices':
-				return \Dimas\Dimas_WooCommerce\Modules\Notices::instance();
+				return \Dimas\Initial\Modules\Notices::instance();
 				break;
 			case 'recently_viewed':
-				return \Dimas\Dimas_WooCommerce\Modules\Recently_Viewed::instance();
+				return \Dimas\Initial\Modules\Recently_Viewed::instance();
 				break;
 			case 'login_ajax':
-				return \Dimas\Dimas_WooCommerce\Modules\Login_AJAX::instance();
+				return \Dimas\Initial\Modules\Login_AJAX::instance();
 				break;
 			case 'mini_cart':
-				return \Dimas\Dimas_WooCommerce\Modules\Mini_Cart::instance();
+				return \Dimas\Initial\Modules\Mini_Cart::instance();
 				break;
 			case 'sticky_atc':
-				if ( is_singular( 'product' ) && intval( apply_filters( 'dimas_product_add_to_cart_sticky', Dimas_Helper::get_option( 'product_add_to_cart_sticky' ) ) ) ) {
-					return \Dimas\Dimas_WooCommerce\Modules\Sticky_ATC::instance();
+				if ( is_singular( 'product' ) && intval( apply_filters( 'dimas_product_add_to_cart_sticky', Helper::get_option( 'product_add_to_cart_sticky' ) ) ) ) {
+					return \Dimas\Initial\Modules\Sticky_ATC::instance();
 				}
 				break;
 		}

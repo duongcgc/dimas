@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Mobile initial
  *
  */
-class Mobile {
+class Initial {
 	/**
 	 * Instance
 	 *
@@ -69,13 +69,13 @@ class Mobile {
 				return \Dimas\Mobile\General::instance();
 				break;
 			case 'header':
-				return \Dimas\Mobile\Dimas_Header::instance();
+				return \Dimas\Mobile\Header::instance();
 				break;
 			case 'footer':
-				return \Dimas\Mobile\Dimas_Footer::instance();
+				return \Dimas\Mobile\Footer::instance();
 				break;
 			case 'navigation_bar':
-				if( Dimas_Helper::get_option('mobile_navigation_bar') != 'none' ) {
+				if( Helper::get_option('mobile_navigation_bar') != 'none' ) {
 					return \Dimas\Mobile\Navigation_Bar::instance();
 				}
 				break;
@@ -89,10 +89,10 @@ class Mobile {
 				return \Dimas\Mobile\Single_Product::instance();
 				break;
 			case 'page_header':
-				return \Dimas\Mobile\Dimas_Page_Header::instance();
+				return \Dimas\Mobile\Page_Header::instance();
 				break;
 			case 'blog':
-				return \Dimas\Mobile\Dimas_Blog::instance();
+				return \Dimas\Mobile\Blog::instance();
 				break;
 		}
 	}

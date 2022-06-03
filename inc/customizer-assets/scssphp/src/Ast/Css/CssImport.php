@@ -38,7 +38,7 @@ interface CssImport extends CssNode
     /**
      * The media query attached to this import.
      *
-     * @return list<CssDimas_MediaQuery>|null
+     * @return list<CssMediaQuery>|null
      */
-    public function getDimas_Media(): ?array;
+    public function getMedia(): ?array;
 }

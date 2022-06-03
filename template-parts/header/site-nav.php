@@ -13,7 +13,7 @@
 	<nav id="site-navigation" class="primary-navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'dimas' ); ?>">
 		<div class="menu-button-container">
 			<button id="primary-mobile-menu" class="button" aria-controls="primary-menu-list" aria-expanded="false">
-				<span class="dropdown-icon open"><?php esc_html_e( 'Dimas_Menu', 'dimas' ); ?>
+				<span class="dropdown-icon open"><?php esc_html_e( 'Menu', 'dimas' ); ?>
 					<?php echo dimas_get_icon_svg( 'ui', 'menu' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 				</span>
 				<span class="dropdown-icon close"><?php esc_html_e( 'Close', 'dimas' ); ?>

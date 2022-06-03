@@ -80,7 +80,7 @@ if ( ! function_exists( 'dimas_setup' ) ) {
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid Dimas_HTML5.
+		 * to output valid HTML5.
 		 */
 		add_theme_support(
 			'html5',
@@ -117,7 +117,7 @@ if ( ! function_exists( 'dimas_setup' ) ) {
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		// Add support for Block Dimas_Styles.
+		// Add support for Block Styles.
 		add_theme_support( 'wp-block-styles' );
 
 		// Add support for full and wide align images.
@@ -126,7 +126,7 @@ if ( ! function_exists( 'dimas_setup' ) ) {
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 		$background_color = get_theme_mod( 'background_color', 'D1E4DD' );
-		if ( 127 > Dimas_Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
+		if ( 127 > Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
 			add_theme_support( 'dark-editor-style' );
 		}
 
@@ -358,7 +358,7 @@ function dimas_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Dimas_Footer', 'dimas' ),
+			'name'          => esc_html__( 'Footer', 'dimas' ),
 			'id'            => 'sidebar-1',
 			'description'   => esc_html__( 'Add widgets here to appear in your footer.', 'dimas' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -531,12 +531,12 @@ require get_template_directory() . '/inc/classes/class-dimas-svg-icons.php';
 
 // Custom color classes.
 require get_template_directory() . '/inc/classes/class-dimas-custom-colors.php';
-new Dimas_Custom_Colors();
+new Custom_Colors();
 
 // Enhance the theme by hooking into WordPress.
 require get_template_directory() . '/inc/template-functions.php';
 
-// Dimas_Menu functions and filters.
+// Menu functions and filters.
 require get_template_directory() . '/inc/menu-functions.php';
 
 // Custom template tags for the theme.
@@ -544,17 +544,17 @@ require get_template_directory() . '/inc/template-tags.php';
 
 // Customizer additions.
 require get_template_directory() . '/inc/classes/class-dimas-customize.php';
-new Dimas_Customize();
+new Theme_Customize();
 
 // Block Patterns.
 require get_template_directory() . '/inc/block-patterns.php';
 
-// Block Dimas_Styles.
+// Block Styles.
 require get_template_directory() . '/inc/block-styles.php';
 
 // Dark Mode.
 require_once get_template_directory() . '/inc/classes/class-dimas-dark-mode.php';
-new Dimas_Dark_Mode();
+new Dark_Mode();
 
 /**
  * Enqueue scripts for the customizer preview.

@@ -1,21 +1,20 @@
 <?php
 /**
- * Newsletter popup template hooks.
+ * Dimas Admin functions and definitions.
  *
  * @package Dimas
  */
 
-namespace Dimas\Modules;
-use Dimas\Dimas_Helper;
+namespace Dimas;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
 /**
- * Class of Newsletter popup template.
+ * Admin initial
  */
-class Newsletter_Popup {
+class Admin {
 	/**
 	 * Instance
 	 *
@@ -36,6 +35,7 @@ class Newsletter_Popup {
 
 		return self::$instance;
 	}
+
 	/**
 	 * Instantiate the object.
 	 *
@@ -44,22 +44,33 @@ class Newsletter_Popup {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'wp_footer', array( $this, 'newsletter_popup' ), 40 );
+		if ( is_admin() ) {
+			$this->get( 'plugin' );
+			$this->get( 'block_editor' );
+			$this->get( 'meta_boxes' );
+		}
 	}
 
 	/**
-	 * Add the popup Dimas_HTML to footer
+	 * Get Mobile Class Init.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return void
+	 * @return object
 	 */
-	public function newsletter_popup() {
-		$newsletter = apply_filters( 'dimas_newsletter_popup', Dimas_Helper::get_option( 'newsletter_popup_enable' ) );
-		if ( ! $newsletter ) {
-			return;
-		}
+	public function get( $class ) {
+		switch ( $class ) {
 
-		get_template_part( 'template-parts/popup/newsletter-popup' );
+			case 'plugin':
+				return \Dimas\Admin\Plugin_Install::instance();
+				break;
+			case 'block_editor':
+				return \Dimas\Admin\Block_Editor::instance();
+				break;
+			case 'meta_boxes':
+				return \Dimas\Admin\Meta_Boxes::instance();
+				break;
+		}
 	}
 }
+
