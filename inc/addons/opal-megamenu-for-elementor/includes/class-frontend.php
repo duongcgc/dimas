@@ -2,7 +2,7 @@
 
 defined( 'ABSPATH' ) || exit();
 
-class OSF_Megamenu_Frontend {
+class Dimas_Megamenu_Frontend {
 
 	/**
 	 *
@@ -24,5 +24,5 @@ class OSF_Megamenu_Frontend {
 
 }
 
-new OSF_Megamenu_Frontend();
+new Dimas_Megamenu_Frontend();
 

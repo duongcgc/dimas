@@ -3,11 +3,11 @@
 defined( 'ABSPATH' ) || exit();
 
 /**
- * OSF_Megamenu_Walker
+ * Dimas_Megamenu_Walker
  *
  * extends Walker_Nav_Menu
  */
-class OSF_Menu_Item_Post_Type {
+class Dimas_Menu_Item_Post_Type {
 
 	/**
 	 * Constructor
@@ -22,20 +22,20 @@ class OSF_Menu_Item_Post_Type {
 	 */
 	public function register_post_types() {
 		$labels = array(
-			'name'               => _x( 'Menu Item', 'post type general name', 'beautifo-core' ),
-			'singular_name'      => _x( 'Menu', 'post type singular name', 'beautifo-core' ),
-			'menu_name'          => _x( 'Menu Items', 'admin menu', 'beautifo-core' ),
-			'name_admin_bar'     => _x( 'Menu', 'add new on admin bar', 'beautifo-core' ),
-			'add_new'            => _x( 'Add New', 'book', 'beautifo-core' ),
-			'add_new_item'       => __( 'Add New Menu', 'beautifo-core' ),
-			'new_item'           => __( 'New Menu', 'beautifo-core' ),
-			'edit_item'          => __( 'Edit Menu', 'beautifo-core' ),
-			'view_item'          => __( 'View Menu', 'beautifo-core' ),
-			'all_items'          => __( 'All Menu', 'beautifo-core' ),
-			'search_items'       => __( 'Search Items', 'beautifo-core' ),
-			'parent_item_colon'  => __( 'Parent Items:', 'beautifo-core' ),
-			'not_found'          => __( 'No menus found.', 'beautifo-core' ),
-			'not_found_in_trash' => __( 'No menus found in Trash.', 'beautifo-core' )
+			'name'               => _x( 'Menu Item', 'post type general name', 'dimas' ),
+			'singular_name'      => _x( 'Menu', 'post type singular name', 'dimas' ),
+			'menu_name'          => _x( 'Menu Items', 'admin menu', 'dimas' ),
+			'name_admin_bar'     => _x( 'Menu', 'add new on admin bar', 'dimas' ),
+			'add_new'            => _x( 'Add New', 'book', 'dimas' ),
+			'add_new_item'       => __( 'Add New Menu', 'dimas' ),
+			'new_item'           => __( 'New Menu', 'dimas' ),
+			'edit_item'          => __( 'Edit Menu', 'dimas' ),
+			'view_item'          => __( 'View Menu', 'dimas' ),
+			'all_items'          => __( 'All Menu', 'dimas' ),
+			'search_items'       => __( 'Search Items', 'dimas' ),
+			'parent_item_colon'  => __( 'Parent Items:', 'dimas' ),
+			'not_found'          => __( 'No menus found.', 'dimas' ),
+			'not_found_in_trash' => __( 'No menus found in Trash.', 'dimas' )
 		);
 
 		$args = array(
@@ -97,4 +97,4 @@ class OSF_Menu_Item_Post_Type {
 
 }
 
-new OSF_Menu_Item_Post_Type();
+new Dimas_Menu_Item_Post_Type();

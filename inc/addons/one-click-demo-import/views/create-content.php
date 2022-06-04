@@ -23,9 +23,9 @@ $content_items        = $demo_content_creator->get_default_content();
 			<div class="ocdi__content-container-content--main">
 				<div class="ocdi-create-content">
 					<div class="ocdi-create-content-header">
-						<h2><?php esc_html_e( 'Create Demo Content', 'beautifo-core' ); ?></h2>
+						<h2><?php esc_html_e( 'Create Demo Content', 'dimas' ); ?></h2>
 						<p>
-							<?php esc_html_e( 'Select which pre-built pages you want to import to use on your website. After that, all you need to do is customize the content to fit your needs and your page will be good to go.', 'beautifo-core' ); ?>
+							<?php esc_html_e( 'Select which pre-built pages you want to import to use on your website. After that, all you need to do is customize the content to fit your needs and your page will be good to go.', 'dimas' ); ?>
 						</p>
 					</div>
 					<div class="ocdi-create-content-content">
@@ -47,8 +47,8 @@ $content_items        = $demo_content_creator->get_default_content();
 									<span class="content-item-checkbox">
 										<input type="checkbox" id="ocdi-<?php echo esc_attr( $item['slug'] ); ?>-content-item" name="<?php echo esc_attr( $item['slug'] ); ?>" data-plugins="<?php echo esc_attr( implode( ',', $item['required_plugins'] ) ); ?>">
 										<span class="checkbox">
-											<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/check-solid-white.svg' ); ?>" class="ocdi-check-icon" alt="<?php esc_attr_e( 'Checkmark icon', 'beautifo-core' ); ?>">
-											<img src="<?php echo esc_url( OCDI_URL . 'assets/images/loader.svg' ); ?>" class="ocdi-loading ocdi-loading-md" alt="<?php esc_attr_e( 'Loading...', 'beautifo-core' ); ?>">
+											<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/check-solid-white.svg' ); ?>" class="ocdi-check-icon" alt="<?php esc_attr_e( 'Checkmark icon', 'dimas' ); ?>">
+											<img src="<?php echo esc_url( OCDI_URL . 'assets/images/loader.svg' ); ?>" class="ocdi-loading ocdi-loading-md" alt="<?php esc_attr_e( 'Loading...', 'dimas' ); ?>">
 										</span>
 									</span>
 								</label>
@@ -57,14 +57,14 @@ $content_items        = $demo_content_creator->get_default_content();
 
 						<div class="ocdi-create-content-content-notice js-ocdi-create-content-install-plugins-notice">
 							<p>
-								<?php esc_html_e( 'The following plugins will be installed for free: ', 'beautifo-core' ); ?>
+								<?php esc_html_e( 'The following plugins will be installed for free: ', 'dimas' ); ?>
 								<span class="js-ocdi-create-content-install-plugins-list"></span>
 							</p>
 						</div>
 					</div>
 					<div class="ocdi-create-content-footer">
-						<a href="<?php echo esc_url( $this->get_plugin_settings_url() ); ?>" class="button"><img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/long-arrow-alt-left-blue.svg' ); ?>" alt="<?php esc_attr_e( 'Back icon', 'beautifo-core' ); ?>"><span><?php esc_html_e( 'Go Back' , 'beautifo-core' ); ?></span></a>
-						<a href="#" class="button button-primary js-ocdi-create-content"><?php esc_html_e( 'Import' , 'beautifo-core' ); ?></a>
+						<a href="<?php echo esc_url( $this->get_plugin_settings_url() ); ?>" class="button"><img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/long-arrow-alt-left-blue.svg' ); ?>" alt="<?php esc_attr_e( 'Back icon', 'dimas' ); ?>"><span><?php esc_html_e( 'Go Back' , 'dimas' ); ?></span></a>
+						<a href="#" class="button button-primary js-ocdi-create-content"><?php esc_html_e( 'Import' , 'dimas' ); ?></a>
 					</div>
 				</div>
 			</div>

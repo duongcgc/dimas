@@ -25,9 +25,9 @@ $theme            = wp_get_theme();
 				<?php if ( isset( $_GET['import'] ) ) : ?>
 					<div class="ocdi-install-plugins-content js-ocdi-install-plugins-content">
 						<div class="ocdi-install-plugins-content-header">
-							<h2><?php esc_html_e( 'Before We Import Your Demo', 'beautifo-core' ); ?></h2>
+							<h2><?php esc_html_e( 'Before We Import Your Demo', 'dimas' ); ?></h2>
 							<p>
-								<?php esc_html_e( 'To ensure the best experience, installing the following plugins is strongly recommended, and in some cases required.', 'beautifo-core' ); ?>
+								<?php esc_html_e( 'To ensure the best experience, installing the following plugins is strongly recommended, and in some cases required.', 'dimas' ); ?>
 							</p>
 
 							<?php if ( ! empty( $this->import_files[ $_GET['import'] ]['import_notice'] ) ) : ?>
@@ -40,7 +40,7 @@ $theme            = wp_get_theme();
 							<?php if ( empty( $theme_plugins ) ) : ?>
 								<div class="ocdi-content-notice">
 									<p>
-										<?php esc_html_e( 'All required/recommended plugins are already installed. You can import your demo content.' , 'beautifo-core' ); ?>
+										<?php esc_html_e( 'All required/recommended plugins are already installed. You can import your demo content.' , 'dimas' ); ?>
 									</p>
 								</div>
 							<?php else : ?>
@@ -53,7 +53,7 @@ $theme            = wp_get_theme();
 												<h3><?php echo esc_html( $plugin['name'] ); ?></h3>
 												<?php if ( in_array( $plugin['slug'], [ 'wpforms-lite', 'all-in-one-seo-pack', 'google-analytics-for-wordpress' ], true ) ) : ?>
 													<span>
-														<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/star.svg' ); ?>" alt="<?php esc_attr_e( 'Star icon', 'beautifo-core' ); ?>">
+														<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/star.svg' ); ?>" alt="<?php esc_attr_e( 'Star icon', 'dimas' ); ?>">
 													</span>
 												<?php endif; ?>
 											</div>
@@ -68,11 +68,11 @@ $theme            = wp_get_theme();
 										<span class="plugin-item-checkbox">
 											<input type="checkbox" id="ocdi-<?php echo esc_attr( $plugin['slug'] ); ?>-plugin" name="<?php echo esc_attr( $plugin['slug'] ); ?>" <?php checked( ! empty( $plugin['preselected'] ) || ! empty( $plugin['required'] ) || $is_plugin_active ); ?><?php disabled( $is_plugin_active ); ?>>
 											<span class="checkbox">
-												<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/check-solid-white.svg' ); ?>" class="ocdi-check-icon" alt="<?php esc_attr_e( 'Checkmark icon', 'beautifo-core' ); ?>">
+												<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/check-solid-white.svg' ); ?>" class="ocdi-check-icon" alt="<?php esc_attr_e( 'Checkmark icon', 'dimas' ); ?>">
 												<?php if ( ! empty( $plugin['required'] ) ) : ?>
-													<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/lock.svg' ); ?>" class="ocdi-lock-icon" alt="<?php esc_attr_e( 'Lock icon', 'beautifo-core' ); ?>">
+													<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/lock.svg' ); ?>" class="ocdi-lock-icon" alt="<?php esc_attr_e( 'Lock icon', 'dimas' ); ?>">
 												<?php endif; ?>
-												<img src="<?php echo esc_url( OCDI_URL . 'assets/images/loader.svg' ); ?>" class="ocdi-loading ocdi-loading-md" alt="<?php esc_attr_e( 'Loading...', 'beautifo-core' ); ?>">
+												<img src="<?php echo esc_url( OCDI_URL . 'assets/images/loader.svg' ); ?>" class="ocdi-loading ocdi-loading-md" alt="<?php esc_attr_e( 'Loading...', 'dimas' ); ?>">
 											</span>
 										</span>
 									</label>
@@ -84,9 +84,9 @@ $theme            = wp_get_theme();
 											printf(
 												esc_html__(
 													'The plugins with %1$s are recommended by One Click Demo Import plugin to help you grow your website. They are not required for the %2$s theme to work.',
-													'beautifo-core'
+													'dimas'
 												),
-												'<span class="ocdi-recommended-star"><img src="' . esc_url( OCDI_URL . 'assets/images/icons/star.svg' ) . '" alt="' . esc_attr__( 'Star icon', 'beautifo-core' ) . '"></span>',
+												'<span class="ocdi-recommended-star"><img src="' . esc_url( OCDI_URL . 'assets/images/icons/star.svg' ) . '" alt="' . esc_attr__( 'Star icon', 'dimas' ) . '"></span>',
 												$theme->name
 											);
 										?>
@@ -95,8 +95,8 @@ $theme            = wp_get_theme();
 							<?php endif; ?>
 						</div>
 						<div class="ocdi-install-plugins-content-footer">
-							<a href="<?php echo esc_url( $this->get_plugin_settings_url() ); ?>" class="button"><img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/long-arrow-alt-left-blue.svg' ); ?>" alt="<?php esc_attr_e( 'Back icon', 'beautifo-core' ); ?>"><span><?php esc_html_e( 'Go Back' , 'beautifo-core' ); ?></span></a>
-							<a href="#" class="button button-primary js-ocdi-install-plugins-before-import"><?php esc_html_e( 'Continue & Import' , 'beautifo-core' ); ?></a>
+							<a href="<?php echo esc_url( $this->get_plugin_settings_url() ); ?>" class="button"><img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/long-arrow-alt-left-blue.svg' ); ?>" alt="<?php esc_attr_e( 'Back icon', 'dimas' ); ?>"><span><?php esc_html_e( 'Go Back' , 'dimas' ); ?></span></a>
+							<a href="#" class="button button-primary js-ocdi-install-plugins-before-import"><?php esc_html_e( 'Continue & Import' , 'dimas' ); ?></a>
 						</div>
 					</div>
 				<?php else : ?>
@@ -105,20 +105,20 @@ $theme            = wp_get_theme();
 
 				<div class="ocdi-importing js-ocdi-importing">
 					<div class="ocdi-importing-header">
-						<h2><?php esc_html_e( 'Importing Content' , 'beautifo-core' ); ?></h2>
-						<p><?php esc_html_e( 'Please sit tight while we import your content. Do not refresh the page or hit the back button.' , 'beautifo-core' ); ?></p>
+						<h2><?php esc_html_e( 'Importing Content' , 'dimas' ); ?></h2>
+						<p><?php esc_html_e( 'Please sit tight while we import your content. Do not refresh the page or hit the back button.' , 'dimas' ); ?></p>
 					</div>
 					<div class="ocdi-importing-content">
-						<img class="ocdi-importing-content-importing" src="<?php echo esc_url( OCDI_URL . 'assets/images/importing.svg' ); ?>" alt="<?php esc_attr_e( 'Importing animation', 'beautifo-core' ); ?>">
+						<img class="ocdi-importing-content-importing" src="<?php echo esc_url( OCDI_URL . 'assets/images/importing.svg' ); ?>" alt="<?php esc_attr_e( 'Importing animation', 'dimas' ); ?>">
 					</div>
 				</div>
 
 				<div class="ocdi-imported js-ocdi-imported">
 					<div class="ocdi-imported-header">
-						<h2 class="js-ocdi-ajax-response-title"><?php esc_html_e( 'Import Complete!' , 'beautifo-core' ); ?></h2>
+						<h2 class="js-ocdi-ajax-response-title"><?php esc_html_e( 'Import Complete!' , 'dimas' ); ?></h2>
 						<div class="js-ocdi-ajax-response-subtitle">
 							<p>
-								<?php esc_html_e( 'Congrats, your demo was imported successfully. You can now begin editing your site.' , 'beautifo-core' ); ?>
+								<?php esc_html_e( 'Congrats, your demo was imported successfully. You can now begin editing your site.' , 'dimas' ); ?>
 							</p>
 						</div>
 					</div>
@@ -126,8 +126,8 @@ $theme            = wp_get_theme();
 						<div class="ocdi__response  js-ocdi-ajax-response"></div>
 					</div>
 					<div class="ocdi-imported-footer">
-						<a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-primary button-hero"><?php esc_html_e( 'Theme Settings' , 'beautifo-core' ); ?></a>
-						<a href="<?php echo esc_url( get_home_url() ); ?>" class="button button-primary button-hero"><?php esc_html_e( 'Visit Site' , 'beautifo-core' ); ?></a>
+						<a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-primary button-hero"><?php esc_html_e( 'Theme Settings' , 'dimas' ); ?></a>
+						<a href="<?php echo esc_url( get_home_url() ); ?>" class="button button-primary button-hero"><?php esc_html_e( 'Visit Site' , 'dimas' ); ?></a>
 					</div>
 				</div>
 			</div>

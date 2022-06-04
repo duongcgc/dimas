@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) || exit();
 
 
-class OSF_Megamenu {
+class Dimas_Megamenu {
 
 	private $version = '1.0.0';
 
@@ -97,7 +97,7 @@ class OSF_Megamenu {
 }
 
 function osf_megamenu() {
-	return OSF_Megamenu::instance();
+	return Dimas_Megamenu::instance();
 }
 
 $GLOBALS['osf_megamenu'] = osf_megamenu();

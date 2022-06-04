@@ -16,9 +16,9 @@ class ViewHelpers {
 	public static function plugin_header_output() {
 		ob_start(); ?>
 		<div class="ocdi__title-container">
-			<h1 class="ocdi__title-container-title"><?php esc_html_e( 'One Click Demo Import', 'beautifo-core' ); ?></h1>
+			<h1 class="ocdi__title-container-title"><?php esc_html_e( 'One Click Demo Import', 'dimas' ); ?></h1>
 			<a href="https://ocdi.com/user-guide/" target="_blank" rel="noopener noreferrer">
-				<img class="ocdi__title-container-icon" src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/question-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Questionmark icon', 'beautifo-core' ); ?>">
+				<img class="ocdi__title-container-icon" src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/question-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Questionmark icon', 'dimas' ); ?>">
 			</a>
 		</div>
 		<?php
@@ -49,7 +49,7 @@ class ViewHelpers {
 		<div class="ocdi__card ocdi__card--theme">
 			<div class="ocdi__card-content">
 				<?php if ( $screenshot ) : ?>
-					<div class="screenshot"><img src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Theme screenshot', 'beautifo-core' ); ?>" /></div>
+					<div class="screenshot"><img src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Theme screenshot', 'dimas' ); ?>" /></div>
 				<?php else : ?>
 					<div class="screenshot blank"></div>
 				<?php endif; ?>

@@ -1,12 +1,15 @@
 <?php
+
+namespace Dimas\CPT;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
- * Class OSF_Custom_Post_Type_Header
+ * Class CPT_Header
  */
-class OSF_Custom_Post_Type_Header extends OSF_Custom_Post_Type_Abstract {
+class CPT_Header extends Dimas_Custom_Post_Type_Abstract {
 
 	/**
 	 * @return void
@@ -52,5 +55,5 @@ class OSF_Custom_Post_Type_Header extends OSF_Custom_Post_Type_Abstract {
 
 }
 
-new OSF_Custom_Post_Type_Header;
+new CPT_Header;
 

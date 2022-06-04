@@ -34,7 +34,7 @@ class Header_Builder {
 		if ( $osf_header && $osf_header instanceof WP_Post ) {
 			$args = array(
 				'id'    => 'header-builder-button',
-				'title' => __( 'Edit Header', 'beautifo-core' ),
+				'title' => __( 'Edit Header', 'dimas' ),
 				'href'  => add_query_arg( 'action', 'elementor', remove_query_arg( 'action', get_edit_post_link( $osf_header->ID ) ) ),
 			// 'meta'  => array(
 			// 'class' => 'custom-button-class'

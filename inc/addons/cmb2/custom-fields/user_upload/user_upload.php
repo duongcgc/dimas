@@ -16,7 +16,7 @@ if (!defined( 'ABSPATH' )) {
     exit; // Exit if accessed directly
 }
 
-class OSF_Field_User_upload {
+class Dimas_Field_User_upload {
 
     /**
      * Current version number
@@ -44,7 +44,7 @@ class OSF_Field_User_upload {
         // Verify Nonce
         $nonce = $_REQUEST['nonce'];
         if (!wp_verify_nonce( $nonce, 'allow_uploaded' )) {
-            $ajax_response = array( 'success' => false, 'reason' => __( 'Security check failed!', 'beautifo-core' ) );
+            $ajax_response = array( 'success' => false, 'reason' => __( 'Security check failed!', 'dimas' ) );
             echo json_encode( $ajax_response );
             die;
         }
@@ -117,7 +117,7 @@ class OSF_Field_User_upload {
                         <?php
                         echo '<div class="upload-thumbnail">';
                         echo wp_get_attachment_image( $image_id, 'thumbnail' );
-                        echo '<a class="icon icon-delete" data-toggle="tooltip" title="' . __( 'Delete', 'beautifo-core' ) . '" data-post-id="' . intval( $post_id ) . '" data-attachment-id="' . intval( $image_id ) . '" href="javascript:;">';
+                        echo '<a class="icon icon-delete" data-toggle="tooltip" title="' . __( 'Delete', 'dimas' ) . '" data-post-id="' . intval( $post_id ) . '" data-attachment-id="' . intval( $image_id ) . '" href="javascript:;">';
                         echo '<i class="fa fa-trash-o"></i>';
                         echo '</a>';
 
@@ -147,8 +147,8 @@ class OSF_Field_User_upload {
         $prop_data = array(
             'ajaxURL'       => admin_url( 'admin-ajax.php' ),
             'uploadNonce'   => wp_create_nonce( 'allow_uploaded' ),
-            'fileTypeTitle' => esc_html__( 'Valid file formats', 'beautifo-core' ),
-            'message'       => esc_html__( 'Please enter only digits', 'beautifo-core' ),
+            'fileTypeTitle' => esc_html__( 'Valid file formats', 'dimas' ),
+            'message'       => esc_html__( 'Please enter only digits', 'dimas' ),
         );
         wp_localize_script( 'opalrealestate-userupload', 'opalrealestate', $prop_data );
 
@@ -181,7 +181,7 @@ class OSF_Field_User_upload {
                         <?php
                         echo '<div class="upload-thumbnail">';
                         echo wp_get_attachment_image( $image_id, 'thumbnail' );
-                        echo '<a class="icon icon-delete" data-toggle="tooltip" title="' . __( 'Delete', 'beautifo-core' ) . '" data-post-id="' . intval( $post_id ) . '" data-attachment-id="' . intval( $image_id ) . '" href="javascript:;">';
+                        echo '<a class="icon icon-delete" data-toggle="tooltip" title="' . __( 'Delete', 'dimas' ) . '" data-post-id="' . intval( $post_id ) . '" data-attachment-id="' . intval( $image_id ) . '" href="javascript:;">';
                         echo '<i class="fa fa-trash-o"></i>';
                         echo '</a>';
 
@@ -231,4 +231,4 @@ class OSF_Field_User_upload {
     }
 }
 
-OSF_Field_User_upload::init();
+Dimas_Field_User_upload::init();

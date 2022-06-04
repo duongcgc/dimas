@@ -82,41 +82,41 @@ class PluginInstaller {
 	public function get_partner_plugins() {
 		return array(
 			array(
-				'name'        => esc_html__( 'WPForms', 'beautifo-core' ),
-				'description' => esc_html__( 'Join 4,000,000+ professionals who build smarter forms and surveys with WPForms.', 'beautifo-core' ),
+				'name'        => esc_html__( 'WPForms', 'dimas' ),
+				'description' => esc_html__( 'Join 4,000,000+ professionals who build smarter forms and surveys with WPForms.', 'dimas' ),
 				'slug'        => 'wpforms-lite',
 				'required'    => false,
 				'preselected' => true,
 			),
 			array(
-				'name'        => esc_html__( 'All in One SEO', 'beautifo-core' ),
-				'description' => esc_html__( 'Use All in One SEO Pack to optimize your WordPress site for SEO.', 'beautifo-core' ),
+				'name'        => esc_html__( 'All in One SEO', 'dimas' ),
+				'description' => esc_html__( 'Use All in One SEO Pack to optimize your WordPress site for SEO.', 'dimas' ),
 				'slug'        => 'all-in-one-seo-pack',
 				'required'    => false,
 				'preselected' => true,
 			),
 			array(
-				'name'        => esc_html__( 'MonsterInsights', 'beautifo-core' ),
-				'description' => esc_html__( 'The #1 Google Analytics Plugin for WordPress that’s easy and powerful.', 'beautifo-core' ),
+				'name'        => esc_html__( 'MonsterInsights', 'dimas' ),
+				'description' => esc_html__( 'The #1 Google Analytics Plugin for WordPress that’s easy and powerful.', 'dimas' ),
 				'slug'        => 'google-analytics-for-wordpress',
 				'required'    => false,
 				'preselected' => true,
 			),
 			array(
-				'name'        => esc_html__( 'Custom Landing Pages by SeedProd', 'beautifo-core' ),
-				'description' => esc_html__( 'Work on your site in private while visitors see a "Coming Soon" or "Maintenance Mode" page.', 'beautifo-core' ),
+				'name'        => esc_html__( 'Custom Landing Pages by SeedProd', 'dimas' ),
+				'description' => esc_html__( 'Work on your site in private while visitors see a "Coming Soon" or "Maintenance Mode" page.', 'dimas' ),
 				'slug'        => 'coming-soon',
 				'required'    => false,
 			),
 			array(
-				'name'        => esc_html__( 'Smash Balloon Social Photo Feed', 'beautifo-core' ),
-				'description' => esc_html__( 'Display beautifully clean, customizable, and responsive Instagram feeds.', 'beautifo-core' ),
+				'name'        => esc_html__( 'Smash Balloon Social Photo Feed', 'dimas' ),
+				'description' => esc_html__( 'Display beautifully clean, customizable, and responsive Instagram feeds.', 'dimas' ),
 				'slug'        => 'instagram-feed',
 				'required'    => false,
 			),
 			array(
-				'name'        => esc_html__( 'WP Mail SMTP', 'beautifo-core' ),
-				'description' => esc_html__( 'Make email delivery easy for WordPress. Connect with SMTP, Gmail, Outlook, Mailgun, and more.', 'beautifo-core' ),
+				'name'        => esc_html__( 'WP Mail SMTP', 'dimas' ),
+				'description' => esc_html__( 'Make email delivery easy for WordPress. Connect with SMTP, Gmail, Outlook, Mailgun, and more.', 'dimas' ),
 				'slug'        => 'wp-mail-smtp',
 				'required'    => false,
 			),
@@ -223,18 +223,18 @@ class PluginInstaller {
 
 		// Check if user has the WP capability to install plugins.
 		if ( ! current_user_can( 'install_plugins' ) ) {
-			wp_send_json_error( esc_html__( 'Could not install the plugin. You don\'t have permission to install plugins.', 'beautifo-core' ) );
+			wp_send_json_error( esc_html__( 'Could not install the plugin. You don\'t have permission to install plugins.', 'dimas' ) );
 		}
 
 		$slug = ! empty( $_POST['slug'] ) ? sanitize_key( wp_unslash( $_POST['slug'] ) ) : '';
 
 		if ( empty( $slug ) ) {
-			wp_send_json_error( esc_html__( 'Could not install the plugin. Plugin slug is missing.', 'beautifo-core' ) );
+			wp_send_json_error( esc_html__( 'Could not install the plugin. Plugin slug is missing.', 'dimas' ) );
 		}
 
 		// Check if the plugin is already installed and activated.
 		if ( $this->is_plugin_active( $slug ) ) {
-			wp_send_json_success( esc_html__( 'Plugin is already installed and activated!', 'beautifo-core' ) );
+			wp_send_json_success( esc_html__( 'Plugin is already installed and activated!', 'dimas' ) );
 		}
 
 		// Activate the plugin if the plugin is already installed.
@@ -242,7 +242,7 @@ class PluginInstaller {
 			$activated = $this->activate_plugin( $this->get_plugin_basename_from_slug( $slug ), $slug );
 
 			if ( ! is_wp_error( $activated ) ) {
-				wp_send_json_success( esc_html__( 'Plugin was already installed! We activated it for you.', 'beautifo-core' ) );
+				wp_send_json_success( esc_html__( 'Plugin was already installed! We activated it for you.', 'dimas' ) );
 			} else {
 				wp_send_json_error( $activated->get_error_message() );
 			}
@@ -250,7 +250,7 @@ class PluginInstaller {
 
 		// Check for file system permissions.
 		if ( ! $this->filesystem_permissions_allowed() ) {
-			wp_send_json_error( esc_html__( 'Could not install the plugin. Don\'t have file permission.', 'beautifo-core' ) );
+			wp_send_json_error( esc_html__( 'Could not install the plugin. Don\'t have file permission.', 'dimas' ) );
 		}
 
 		// Do not allow WordPress to search/download translations, as this will break JS output.
@@ -290,14 +290,14 @@ class PluginInstaller {
 
 			if ( ! is_wp_error( $activated ) ) {
 				wp_send_json_success(
-					esc_html__( 'Plugin installed and activated succesfully.', 'beautifo-core' )
+					esc_html__( 'Plugin installed and activated succesfully.', 'dimas' )
 				);
 			} else {
 				wp_send_json_success( $activated->get_error_message() );
 			}
 		}
 
-		wp_send_json_error( esc_html__( 'Could not install the plugin. WP Plugin installer could not retrieve plugin information.', 'beautifo-core' ) );
+		wp_send_json_error( esc_html__( 'Could not install the plugin. WP Plugin installer could not retrieve plugin information.', 'dimas' ) );
 	}
 
 	/**

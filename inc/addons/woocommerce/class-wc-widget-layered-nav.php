@@ -18,16 +18,16 @@ if (!defined('ABSPATH')) {
  * @version  2.6.0
  * @extends  WC_Widget
  */
-class OSF_Widget_Layered_Nav extends WC_Widget {
+class Dimas_Widget_Layered_Nav extends WC_Widget {
 
     /**
      * Constructor.
      */
     public function __construct() {
         $this->widget_cssclass    = 'woocommerce otf_widget_layered_nav woocommerce-widget-layered-nav';
-        $this->widget_description = __('Display a list of attributes to filter products in your store.(OSF custom)', 'beautifo-core');
+        $this->widget_description = __('Display a list of attributes to filter products in your store.(OSF custom)', 'dimas');
         $this->widget_id          = 'otf_woocommerce_layered_nav';
-        $this->widget_name        = __('OSF Filter Products by Attribute', 'beautifo-core');
+        $this->widget_name        = __('OSF Filter Products by Attribute', 'dimas');
         parent::__construct();
     }
 
@@ -77,41 +77,41 @@ class OSF_Widget_Layered_Nav extends WC_Widget {
         $this->settings = array(
             'title'        => array(
                 'type'  => 'text',
-                'std'   => __('Filter by', 'beautifo-core'),
-                'label' => __('Title', 'beautifo-core'),
+                'std'   => __('Filter by', 'dimas'),
+                'label' => __('Title', 'dimas'),
             ),
             'attribute'    => array(
                 'type'    => 'select',
                 'std'     => '',
-                'label'   => __('Attribute', 'beautifo-core'),
+                'label'   => __('Attribute', 'dimas'),
                 'options' => $attribute_array,
             ),
             'display_type' => array(
                 'type'    => 'select',
                 'std'     => 'list',
-                'label'   => __('Display type', 'beautifo-core'),
+                'label'   => __('Display type', 'dimas'),
                 'options' => array(
-                    'list'     => __('List', 'beautifo-core'),
-                    'dropdown' => __('Dropdown', 'beautifo-core'),
+                    'list'     => __('List', 'dimas'),
+                    'dropdown' => __('Dropdown', 'dimas'),
                 ),
             ),
             'style'        => array(
                 'type'    => 'select',
                 'std'     => 'one_column',
-                'label'   => __('Style', 'beautifo-core'),
+                'label'   => __('Style', 'dimas'),
                 'options' => array(
-                    'one_column'  => __('1 Column', 'beautifo-core'),
-                    'two_columns' => __('2 Columns', 'beautifo-core'),
-                    'inline'      => __('Inline', 'beautifo-core'),
+                    'one_column'  => __('1 Column', 'dimas'),
+                    'two_columns' => __('2 Columns', 'dimas'),
+                    'inline'      => __('Inline', 'dimas'),
                 ),
             ),
             'query_type'   => array(
                 'type'    => 'select',
                 'std'     => 'and',
-                'label'   => __('Query type', 'beautifo-core'),
+                'label'   => __('Query type', 'dimas'),
                 'options' => array(
-                    'and' => __('AND', 'beautifo-core'),
-                    'or'  => __('OR', 'beautifo-core'),
+                    'and' => __('AND', 'dimas'),
+                    'or'  => __('OR', 'dimas'),
                 ),
             ),
         );

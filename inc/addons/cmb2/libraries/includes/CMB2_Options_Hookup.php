@@ -123,11 +123,11 @@ class CMB2_Options_Hookup extends CMB2_hookup {
 		$is_updated      = $should_notify && 'true' === $_GET['settings-updated'];
 		$setting         = "{$this->option_key}-notices";
 		$code            = '';
-		$message         = __( 'Nothing to update.', 'beautifo-core' );
+		$message         = __( 'Nothing to update.', 'dimas' );
 		$type            = 'notice-warning';
 
 		if ( $is_updated ) {
-			$message = __( 'Settings updated.', 'beautifo-core' );
+			$message = __( 'Settings updated.', 'dimas' );
 			$type    = 'updated';
 		}
 
@@ -283,7 +283,7 @@ class CMB2_Options_Hookup extends CMB2_hookup {
 			case 'cmb':
 				return $this->{$field};
 			default:
-				throw new Exception( sprintf( esc_html__( 'Invalid %1$s property: %2$s', 'beautifo-core' ), __CLASS__, $field ) );
+				throw new Exception( sprintf( esc_html__( 'Invalid %1$s property: %2$s', 'dimas' ), __CLASS__, $field ) );
 		}
 	}
 }

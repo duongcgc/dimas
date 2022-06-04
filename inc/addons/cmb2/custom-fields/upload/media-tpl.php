@@ -32,10 +32,10 @@
 							echo '<div class="col-sm-2">';
 							echo '<div class="gallery-thumbnail">';
 							echo wp_get_attachment_image( $image_id, 'thumbnail' );
-							echo '<a class="icon icon-delete" data-toggle="tooltip" title="' . __( 'Delete this image', 'beautifo-core' ) . '" data-property-id="' . intval( $post_id ) . '" data-attachment-id="' . intval( $image_id ) . '" href="javascript:;">';
+							echo '<a class="icon icon-delete" data-toggle="tooltip" title="' . __( 'Delete this image', 'dimas' ) . '" data-property-id="' . intval( $post_id ) . '" data-attachment-id="' . intval( $image_id ) . '" href="javascript:;">';
 							echo '<i class="fa fa-trash-o"></i>';
 							echo '</a>';
-							echo '<a class="icon icon-fav icon-featured" data-toggle="tooltip" title="' . __( 'Set featured image', 'beautifo-core' ) . '" data-property-id="' . intval( $post_id ) . '" data-attachment-id="' . intval( $image_id ) . '" href="javascript:;">';
+							echo '<a class="icon icon-fav icon-featured" data-toggle="tooltip" title="' . __( 'Set featured image', 'dimas' ) . '" data-property-id="' . intval( $post_id ) . '" data-attachment-id="' . intval( $image_id ) . '" href="javascript:;">';
 							echo '<i class="fa ' . esc_attr( $featured_icon ) . '"></i>';
 							echo '</a>';
 							echo '<input type="hidden" class="propperty-image-id" name="propperty_image_ids[]" value="' . intval( $image_id ) . '">';
@@ -53,11 +53,11 @@
         </div>
 		<?php ?>
         <div id="drag-and-drop" class="media-drag-drop">
-            <h4><i class="fa fa-cloud-upload"></i><?php esc_html_e( 'Drag and drop images here', 'beautifo-core' ); ?>
+            <h4><i class="fa fa-cloud-upload"></i><?php esc_html_e( 'Drag and drop images here', 'dimas' ); ?>
             </h4>
-            <h4><?php esc_html_e( 'or', 'beautifo-core' ); ?></h4>
+            <h4><?php esc_html_e( 'or', 'dimas' ); ?></h4>
             <a id="select-images" href="javascript:;"
-               class="btn btn-primary btn-3d"><?php esc_html_e( 'Select Images', 'beautifo-core' ); ?></a>
+               class="btn btn-primary btn-3d"><?php esc_html_e( 'Select Images', 'dimas' ); ?></a>
         </div>
         <div id="plupload-container"></div>
         <div id="errors-log"></div>

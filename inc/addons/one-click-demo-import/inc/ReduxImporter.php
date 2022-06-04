@@ -20,7 +20,7 @@ class ReduxImporter {
 
 		// Redux plugin is not active!
 		if ( ! class_exists( 'ReduxFramework' ) ) {
-			$error_message = esc_html__( 'The Redux plugin is not activated, so the Redux import was skipped!', 'beautifo-core' );
+			$error_message = esc_html__( 'The Redux plugin is not activated, so the Redux import was skipped!', 'dimas' );
 
 			// Add any error messages to the frontend_error_messages variable in OCDI main class.
 			$ocdi->append_to_frontend_error_messages( $error_message );
@@ -29,7 +29,7 @@ class ReduxImporter {
 			Helpers::append_to_file(
 				$error_message,
 				$log_file_path,
-				esc_html__( 'Importing Redux settings' , 'beautifo-core' )
+				esc_html__( 'Importing Redux settings' , 'dimas' )
 			);
 
 			return;
@@ -48,13 +48,13 @@ class ReduxImporter {
 
 				// Add this message to log file.
 				$log_added = Helpers::append_to_file( /* translators: %s - the name of the Redux option. */
-					sprintf( esc_html__( 'Redux settings import for: %s finished successfully!', 'beautifo-core' ), $redux_item['option_name'] ),
+					sprintf( esc_html__( 'Redux settings import for: %s finished successfully!', 'dimas' ), $redux_item['option_name'] ),
 					$log_file_path,
-					esc_html__( 'Importing Redux settings' , 'beautifo-core' )
+					esc_html__( 'Importing Redux settings' , 'dimas' )
 				);
 			}
 			else { /* translators: %s - the name of the Redux option. */
-				$error_message = sprintf( esc_html__( 'The Redux option name: %s, was not found in this WP site, so it was not imported!', 'beautifo-core' ), $redux_item['option_name'] );
+				$error_message = sprintf( esc_html__( 'The Redux option name: %s, was not found in this WP site, so it was not imported!', 'dimas' ), $redux_item['option_name'] );
 
 				// Add any error messages to the frontend_error_messages variable in OCDI main class.
 				$ocdi->append_to_frontend_error_messages( $error_message );
@@ -63,7 +63,7 @@ class ReduxImporter {
 				Helpers::append_to_file(
 					$error_message,
 					$log_file_path,
-					esc_html__( 'Importing Redux settings' , 'beautifo-core' )
+					esc_html__( 'Importing Redux settings' , 'dimas' )
 				);
 			}
 		}

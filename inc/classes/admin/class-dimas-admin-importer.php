@@ -5,7 +5,7 @@
  * @package Dimas
  */
 
-namespace Dimas\Addons;
+namespace Dimas\Admin;
 
 
 /**

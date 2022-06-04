@@ -43,71 +43,71 @@ class DemoContentCreator {
 			array(
 				'slug'             => 'about-page',
 				'file'             => OCDI_PATH . 'assets/demo-content/about-page.xml',
-				'name'             => esc_html__( 'About Us', 'beautifo-core' ),
-				'description'      => esc_html__( 'Introduce yourself and your business with a clean layout to reassure your leads and customers.', 'beautifo-core' ),
+				'name'             => esc_html__( 'About Us', 'dimas' ),
+				'description'      => esc_html__( 'Introduce yourself and your business with a clean layout to reassure your leads and customers.', 'dimas' ),
 				'required_plugins' => array(),
 			),
 			array(
 				'slug'             => 'book-now-page',
 				'file'             => OCDI_PATH . 'assets/demo-content/book-now-page.xml',
-				'name'             => esc_html__( 'Book Now', 'beautifo-core' ),
-				'description'      => esc_html__( 'Expand your reach by accepting appointments online plus detailing your services and staff.', 'beautifo-core' ),
+				'name'             => esc_html__( 'Book Now', 'dimas' ),
+				'description'      => esc_html__( 'Expand your reach by accepting appointments online plus detailing your services and staff.', 'dimas' ),
 				'required_plugins' => array(),
 			),
 			array(
 				'slug'             => 'contact-page',
 				'file'             => OCDI_PATH . 'assets/demo-content/contact-page.xml',
-				'name'             => esc_html__( 'Contact Us', 'beautifo-core' ),
-				'description'      => esc_html__( 'Make it easy to get in touch with you through a completely customizable built-in contact form.', 'beautifo-core' ),
+				'name'             => esc_html__( 'Contact Us', 'dimas' ),
+				'description'      => esc_html__( 'Make it easy to get in touch with you through a completely customizable built-in contact form.', 'dimas' ),
 				'required_plugins' => array( 'wpforms-lite' ),
 			),
 			array(
 				'slug'             => 'faq-page',
 				'file'             => OCDI_PATH . 'assets/demo-content/faq-page.xml',
-				'name'             => esc_html__( 'FAQ', 'beautifo-core' ),
-				'description'      => esc_html__( 'Lighten the load on your support team or your inbox by addressing frequently asked questions.', 'beautifo-core' ),
+				'name'             => esc_html__( 'FAQ', 'dimas' ),
+				'description'      => esc_html__( 'Lighten the load on your support team or your inbox by addressing frequently asked questions.', 'dimas' ),
 				'required_plugins' => array(),
 			),
 			array(
 				'slug'             => 'meet-the-team-page',
 				'file'             => OCDI_PATH . 'assets/demo-content/meet-the-team-page.xml',
-				'name'             => esc_html__( 'Meet the Team', 'beautifo-core' ),
-				'description'      => esc_html__( 'Help potential clients feel more at ease by showing off your hard-working and trustworthy team.', 'beautifo-core' ),
+				'name'             => esc_html__( 'Meet the Team', 'dimas' ),
+				'description'      => esc_html__( 'Help potential clients feel more at ease by showing off your hard-working and trustworthy team.', 'dimas' ),
 				'required_plugins' => array( 'wpforms-lite' ),
 			),
 			array(
 				'slug'             => 'menu-page',
 				'file'             => OCDI_PATH . 'assets/demo-content/menu-page.xml',
-				'name'             => esc_html__( 'Menu', 'beautifo-core' ),
-				'description'      => esc_html__( 'Display your delicious dishes online to entice website visitors to become restaurant customers.', 'beautifo-core' ),
+				'name'             => esc_html__( 'Menu', 'dimas' ),
+				'description'      => esc_html__( 'Display your delicious dishes online to entice website visitors to become restaurant customers.', 'dimas' ),
 				'required_plugins' => array(),
 			),
 			array(
 				'slug'             => 'portfolio-page',
 				'file'             => OCDI_PATH . 'assets/demo-content/portfolio-page.xml',
-				'name'             => esc_html__( 'Portfolio', 'beautifo-core' ),
-				'description'      => esc_html__( 'Impress leads by visually showcasing your achievements, case studies, and past work.', 'beautifo-core' ),
+				'name'             => esc_html__( 'Portfolio', 'dimas' ),
+				'description'      => esc_html__( 'Impress leads by visually showcasing your achievements, case studies, and past work.', 'dimas' ),
 				'required_plugins' => array(),
 			),
 			array(
 				'slug'             => 'services-page',
 				'file'             => OCDI_PATH . 'assets/demo-content/services-page.xml',
-				'name'             => esc_html__( 'Services', 'beautifo-core' ),
-				'description'      => esc_html__( 'Let the world know your services or products\' cost and features in an organized pricing table.', 'beautifo-core' ),
+				'name'             => esc_html__( 'Services', 'dimas' ),
+				'description'      => esc_html__( 'Let the world know your services or products\' cost and features in an organized pricing table.', 'dimas' ),
 				'required_plugins' => array(),
 			),
 			array(
 				'slug'             => 'shop-page',
 				'file'             => OCDI_PATH . 'assets/demo-content/shop-page.xml',
-				'name'             => esc_html__( 'Shop', 'beautifo-core' ),
-				'description'      => esc_html__( 'Categorize and sell your products online while displaying reviews from happy customers.', 'beautifo-core' ),
+				'name'             => esc_html__( 'Shop', 'dimas' ),
+				'description'      => esc_html__( 'Categorize and sell your products online while displaying reviews from happy customers.', 'dimas' ),
 				'required_plugins' => array(),
 			),
 			array(
 				'file'             => OCDI_PATH . 'assets/demo-content/testimonials-page.xml',
 				'slug'             => 'testimonials-page',
-				'name'             => esc_html__( 'Testimonials', 'beautifo-core' ),
-				'description'      => esc_html__( 'Tap into the power of social proof by displaying real-life testimonials on your website.', 'beautifo-core' ),
+				'name'             => esc_html__( 'Testimonials', 'dimas' ),
+				'description'      => esc_html__( 'Tap into the power of social proof by displaying real-life testimonials on your website.', 'dimas' ),
 				'required_plugins' => array(),
 			),
 		);
@@ -148,24 +148,24 @@ class DemoContentCreator {
 				$plugin_installer->is_plugin_active( 'wpforms' )
 			)
 		) {
-			wp_send_json_error( esc_html__( 'Could not complete the import process for this page. Required WPForms plugin is not activated.', 'beautifo-core' ) );
+			wp_send_json_error( esc_html__( 'Could not complete the import process for this page. Required WPForms plugin is not activated.', 'dimas' ) );
 		}
 
 		if ( ! function_exists( 'wpforms' ) ) {
-			wp_send_json_error( esc_html__( 'Could not complete the import process for this page. Required WPForms plugin doesn\'t exist.', 'beautifo-core' ) );
+			wp_send_json_error( esc_html__( 'Could not complete the import process for this page. Required WPForms plugin doesn\'t exist.', 'dimas' ) );
 		}
 
-		$form_title = ( $slug === 'meet-the-team-page' ) ? esc_html__( 'Meet the Team Form', 'beautifo-core' ) : esc_html__( 'Contact Form', 'beautifo-core' );
+		$form_title = ( $slug === 'meet-the-team-page' ) ? esc_html__( 'Meet the Team Form', 'dimas' ) : esc_html__( 'Contact Form', 'dimas' );
 		$form_id = $this->create_wpforms_form( $form_title );
 
 		if ( empty( $form_id ) ) {
-			wp_send_json_error( esc_html__( 'Could not complete the import process for this page. Something went wrong while creating a WPForms contact form.', 'beautifo-core' ) );
+			wp_send_json_error( esc_html__( 'Could not complete the import process for this page. Something went wrong while creating a WPForms contact form.', 'dimas' ) );
 		}
 
 		$update_page = $this->update_contact_page_form_id( $form_id );
 
 		if ( empty( $update_page ) ) {
-			wp_send_json_error( esc_html__( 'Could not complete the import process for this page. Could not update the imported page with correct WPForms form ID.', 'beautifo-core' ) );
+			wp_send_json_error( esc_html__( 'Could not complete the import process for this page. Could not update the imported page with correct WPForms form ID.', 'dimas' ) );
 		}
 	}
 
@@ -178,13 +178,13 @@ class DemoContentCreator {
 
 		// Check if user has the WP capability to import content.
 		if ( ! current_user_can( 'import' ) ) {
-			wp_send_json_error( esc_html__( 'Could not import this page. You don\'t have permission to import content.', 'beautifo-core' ) );
+			wp_send_json_error( esc_html__( 'Could not import this page. You don\'t have permission to import content.', 'dimas' ) );
 		}
 
 		$slug = ! empty( $_POST['slug'] ) ? sanitize_key( wp_unslash( $_POST['slug'] ) ) : '';
 
 		if ( empty( $slug ) ) {
-			wp_send_json_error( esc_html__( 'Could not import this page. Page slug is missing.', 'beautifo-core' ) );
+			wp_send_json_error( esc_html__( 'Could not import this page. Page slug is missing.', 'dimas' ) );
 		}
 
 		// Install required plugins.
@@ -211,7 +211,7 @@ class DemoContentCreator {
 		if ( ! empty( $error ) ) {
 			wp_send_json_error(
 				sprintf( /* translators: %s - The actual error message. */
-					esc_html__( 'An error occured while importing this page: %s', 'beautifo-core' ),
+					esc_html__( 'An error occured while importing this page: %s', 'dimas' ),
 					esc_html( $error )
 				)
 			);
@@ -251,7 +251,7 @@ class DemoContentCreator {
 		$import_file = $this->get_import_file( $slug );
 
 		if ( empty( $import_file ) ) {
-			return esc_html__( 'The demo content import file is missing.', 'beautifo-core' );
+			return esc_html__( 'The demo content import file is missing.', 'dimas' );
 		}
 
 		// Change the date to allow same page import multiple times.
@@ -333,21 +333,21 @@ class DemoContentCreator {
 						'id'       => '0',
 						'type'     => 'name',
 						'format'   => 'first-last',
-						'label'    => esc_html__( 'Name', 'beautifo-core' ),
+						'label'    => esc_html__( 'Name', 'dimas' ),
 						'required' => '1',
 						'size'     => 'medium',
 					),
 					'1' => array(
 						'id'       => '1',
 						'type'     => 'email',
-						'label'    => esc_html__( 'Email', 'beautifo-core' ),
+						'label'    => esc_html__( 'Email', 'dimas' ),
 						'required' => '1',
 						'size'     => 'medium',
 					),
 					'2' => array(
 						'id'          => '2',
 						'type'        => 'textarea',
-						'label'       => esc_html__( 'Comment or Message', 'beautifo-core' ),
+						'label'       => esc_html__( 'Comment or Message', 'dimas' ),
 						'description' => '',
 						'required'    => '1',
 						'size'        => 'medium',
@@ -369,13 +369,13 @@ class DemoContentCreator {
 					'confirmations'          => array(
 						'1' => array(
 							'type'           => 'message',
-							'message'        => esc_html__( 'Thanks for contacting us! We will be in touch with you shortly.', 'beautifo-core' ),
+							'message'        => esc_html__( 'Thanks for contacting us! We will be in touch with you shortly.', 'dimas' ),
 							'message_scroll' => '1',
 						),
 					),
 					'antispam'               => '1',
-					'submit_text'            => esc_html__( 'Submit', 'beautifo-core' ),
-					'submit_text_processing' => esc_html__( 'Sending...', 'beautifo-core' ),
+					'submit_text'            => esc_html__( 'Submit', 'dimas' ),
+					'submit_text_processing' => esc_html__( 'Sending...', 'dimas' ),
 				),
 			)
 		);

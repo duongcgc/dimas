@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class OSF_Field_Map {
+class Dimas_Field_Map {
 
 	/**
 	 * Current version number
@@ -50,7 +50,7 @@ class OSF_Field_Map {
 		$field_type_object->_desc( true, true );
 
 		echo ' <div class="form-group">';
-		echo '<label>' . __( 'Latitude', 'beautifo-core' ) . '</label>';
+		echo '<label>' . __( 'Latitude', 'dimas' ) . '</label>';
 		echo $field_type_object->input( array(
 			'type'  => 'text',
 			'name'  => $field->args( '_name' ) . '[latitude]',
@@ -60,7 +60,7 @@ class OSF_Field_Map {
 		) );
 		echo '</div>';
 		echo ' <div class="form-group">';
-		echo '<label>' . __( 'Longitude', 'beautifo-core' ) . '</label>';
+		echo '<label>' . __( 'Longitude', 'dimas' ) . '</label>';
 		echo $field_type_object->input( array(
 			'type'  => 'text',
 			'name'  => $field->args( '_name' ) . '[longitude]',
@@ -109,4 +109,4 @@ class OSF_Field_Map {
 	}
 }
 
-OSF_Field_Map::init();
+Dimas_Field_Map::init();

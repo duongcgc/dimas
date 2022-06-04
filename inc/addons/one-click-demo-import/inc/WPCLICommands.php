@@ -31,10 +31,10 @@ class WPCLICommands extends \WP_CLI_Command {
 	 */
 	public function list_predefined() {
 		if ( empty( $this->ocdi->import_files ) ) {
-			WP_CLI::error( esc_html__( 'There are no predefined demo imports for currently active theme!', 'beautifo-core' ) );
+			WP_CLI::error( esc_html__( 'There are no predefined demo imports for currently active theme!', 'dimas' ) );
 		}
 
-		WP_CLI::success( esc_html__( 'Here are the predefined demo imports:', 'beautifo-core' ) );
+		WP_CLI::success( esc_html__( 'Here are the predefined demo imports:', 'dimas' ) );
 
 		foreach ( $this->ocdi->import_files as $index => $import_file ) {
 			WP_CLI::log( sprintf(
@@ -68,7 +68,7 @@ class WPCLICommands extends \WP_CLI_Command {
 	 */
 	public function import( $args, $assoc_args ) {
 		if ( ! $this->any_import_options_set( $assoc_args ) ) {
-			WP_CLI::error( esc_html__( 'At least one of the possible options should be set! Check them with --help', 'beautifo-core' ) );
+			WP_CLI::error( esc_html__( 'At least one of the possible options should be set! Check them with --help', 'dimas' ) );
 		}
 
 		if ( isset( $assoc_args['predefined'] ) ) {
@@ -119,38 +119,38 @@ class WPCLICommands extends \WP_CLI_Command {
 	 */
 	private function import_predefined( $predefined_index ) {
 		if ( ! is_numeric( $predefined_index ) ) {
-			WP_CLI::error( esc_html__( 'The "predefined" parameter should be a number (an index of the OCDI predefined demo import)!', 'beautifo-core' ) );
+			WP_CLI::error( esc_html__( 'The "predefined" parameter should be a number (an index of the OCDI predefined demo import)!', 'dimas' ) );
 		}
 
 		$predefined_index = absint( $predefined_index );
 
 		if ( ! array_key_exists( $predefined_index, $this->ocdi->import_files ) ) {
-			WP_CLI::warning( esc_html__( 'The supplied predefined index does not exist! Please take a look at the available predefined demo imports:', 'beautifo-core' ) );
+			WP_CLI::warning( esc_html__( 'The supplied predefined index does not exist! Please take a look at the available predefined demo imports:', 'dimas' ) );
 
 			$this->list_predefined();
 
 			return false;
 		}
 
-		WP_CLI::log( esc_html__( 'Predefined demo import started! All other parameters will be ignored!', 'beautifo-core' ) );
+		WP_CLI::log( esc_html__( 'Predefined demo import started! All other parameters will be ignored!', 'dimas' ) );
 
 		$selected_files = $this->ocdi->import_files[ $predefined_index ];
 
 		if ( ! empty( $selected_files['import_file_name'] ) ) { /* translators: %s - the name of the selected demo import. */
-			WP_CLI::log( sprintf( esc_html__( 'Selected predefined demo import: %s', 'beautifo-core' ), $selected_files['import_file_name'] ) );
+			WP_CLI::log( sprintf( esc_html__( 'Selected predefined demo import: %s', 'dimas' ), $selected_files['import_file_name'] ) );
 		}
 
-		WP_CLI::log( esc_html__( 'Preparing the demo import files...', 'beautifo-core' ) );
+		WP_CLI::log( esc_html__( 'Preparing the demo import files...', 'dimas' ) );
 
 		$import_files =	Helpers::download_import_files( $selected_files );
 
 		if ( empty( $import_files ) ) {
-			WP_CLI::error( esc_html__( 'Demo import files could not be retrieved!', 'beautifo-core' ) );
+			WP_CLI::error( esc_html__( 'Demo import files could not be retrieved!', 'dimas' ) );
 		}
 
-		WP_CLI::log( esc_html__( 'Demo import files retrieved successfully!', 'beautifo-core' ) );
+		WP_CLI::log( esc_html__( 'Demo import files retrieved successfully!', 'dimas' ) );
 
-		WP_CLI::log( esc_html__( 'Importing...', 'beautifo-core' ) );
+		WP_CLI::log( esc_html__( 'Importing...', 'dimas' ) );
 
 		if ( ! empty( $import_files['content'] ) ) {
 			$this->do_action( 'ocdi/before_content_import_execution', $import_files, $this->ocdi->import_files, $predefined_index );
@@ -170,7 +170,7 @@ class WPCLICommands extends \WP_CLI_Command {
 
 		$this->do_action( 'ocdi/after_all_import_execution', $import_files, $this->ocdi->import_files, $predefined_index );
 
-		WP_CLI::log( esc_html__( 'Predefined import finished!', 'beautifo-core' ) );
+		WP_CLI::log( esc_html__( 'Predefined import finished!', 'dimas' ) );
 	}
 
 	/**
@@ -182,7 +182,7 @@ class WPCLICommands extends \WP_CLI_Command {
 		$content_import_file_path = realpath( $relative_file_path );
 
 		if ( ! file_exists( $content_import_file_path ) ) {
-			WP_CLI::warning( esc_html__( 'Content import file provided does not exist! Skipping this import!', 'beautifo-core' ) );
+			WP_CLI::warning( esc_html__( 'Content import file provided does not exist! Skipping this import!', 'dimas' ) );
 			return false;
 		}
 
@@ -191,17 +191,17 @@ class WPCLICommands extends \WP_CLI_Command {
 			return 3600;
 		} );
 
-		WP_CLI::log( esc_html__( 'Importing content (this might take a while)...', 'beautifo-core' ) );
+		WP_CLI::log( esc_html__( 'Importing content (this might take a while)...', 'dimas' ) );
 
-		Helpers::append_to_file( '', $this->ocdi->log_file_path, esc_html__( 'Importing content' , 'beautifo-core' ) );
+		Helpers::append_to_file( '', $this->ocdi->log_file_path, esc_html__( 'Importing content' , 'dimas' ) );
 
 		$this->ocdi->append_to_frontend_error_messages( $this->ocdi->importer->import_content( $content_import_file_path ) );
 
 		if( empty( $this->ocdi->frontend_error_messages ) ) {
-			WP_CLI::success( esc_html__( 'Content import finished!', 'beautifo-core' ) );
+			WP_CLI::success( esc_html__( 'Content import finished!', 'dimas' ) );
 		}
 		else {
-			WP_CLI::warning( esc_html__( 'There were some issues while importing the content!', 'beautifo-core' ) );
+			WP_CLI::warning( esc_html__( 'There were some issues while importing the content!', 'dimas' ) );
 
 			foreach ( $this->ocdi->frontend_error_messages as $line ) {
 				WP_CLI::log( $line );
@@ -220,19 +220,19 @@ class WPCLICommands extends \WP_CLI_Command {
 		$widgets_import_file_path = realpath( $relative_file_path );
 
 		if ( ! file_exists( $widgets_import_file_path ) ) {
-			WP_CLI::warning( esc_html__( 'Widgets import file provided does not exist! Skipping this import!', 'beautifo-core' ) );
+			WP_CLI::warning( esc_html__( 'Widgets import file provided does not exist! Skipping this import!', 'dimas' ) );
 			return false;
 		}
 
-		WP_CLI::log( esc_html__( 'Importing widgets...', 'beautifo-core' ) );
+		WP_CLI::log( esc_html__( 'Importing widgets...', 'dimas' ) );
 
 		WidgetImporter::import( $widgets_import_file_path );
 
 		if( empty( $this->ocdi->frontend_error_messages ) ) {
-			WP_CLI::success( esc_html__( 'Widgets imported successfully!', 'beautifo-core' ) );
+			WP_CLI::success( esc_html__( 'Widgets imported successfully!', 'dimas' ) );
 		}
 		else {
-			WP_CLI::warning( esc_html__( 'There were some issues while importing widgets!', 'beautifo-core' ) );
+			WP_CLI::warning( esc_html__( 'There were some issues while importing widgets!', 'dimas' ) );
 
 			foreach ( $this->ocdi->frontend_error_messages as $line ) {
 				WP_CLI::log( $line );
@@ -251,19 +251,19 @@ class WPCLICommands extends \WP_CLI_Command {
 		$customizer_import_file_path = realpath( $relative_file_path );
 
 		if ( ! file_exists( $customizer_import_file_path ) ) {
-			WP_CLI::warning( esc_html__( 'Customizer import file provided does not exist! Skipping this import!', 'beautifo-core' ) );
+			WP_CLI::warning( esc_html__( 'Customizer import file provided does not exist! Skipping this import!', 'dimas' ) );
 			return false;
 		}
 
-		WP_CLI::log( esc_html__( 'Importing customizer settings...', 'beautifo-core' ) );
+		WP_CLI::log( esc_html__( 'Importing customizer settings...', 'dimas' ) );
 
 		CustomizerImporter::import( $customizer_import_file_path );
 
 		if( empty( $this->ocdi->frontend_error_messages ) ) {
-			WP_CLI::success( esc_html__( 'Customizer settings imported successfully!', 'beautifo-core' ) );
+			WP_CLI::success( esc_html__( 'Customizer settings imported successfully!', 'dimas' ) );
 		}
 		else {
-			WP_CLI::warning( esc_html__( 'There were some issues while importing customizer settings!', 'beautifo-core' ) );
+			WP_CLI::warning( esc_html__( 'There were some issues while importing customizer settings!', 'dimas' ) );
 
 			foreach ( $this->ocdi->frontend_error_messages as $line ) {
 				WP_CLI::log( $line );
@@ -283,7 +283,7 @@ class WPCLICommands extends \WP_CLI_Command {
 	 */
 	private function do_action( $action, $import_files = array(), $all_import_files = array(), $selected_index = null ) {
 		if ( false !== Helpers::has_action( $action ) ) { /* translators: %s - the name of the executing action. */
-			WP_CLI::log( sprintf( esc_html__( 'Executing action: %s ...', 'beautifo-core' ), $action ) );
+			WP_CLI::log( sprintf( esc_html__( 'Executing action: %s ...', 'dimas' ), $action ) );
 
 			ob_start();
 				Helpers::do_action( $action, $import_files, $all_import_files, $selected_index );

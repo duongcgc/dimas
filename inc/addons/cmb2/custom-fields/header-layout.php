@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class OSF_CMB2_Field_Header_Layout {
+class Dimas_CMB2_Field_Header_Layout {
 
 	/**
 	 * Current version number
@@ -28,8 +28,8 @@ class OSF_CMB2_Field_Header_Layout {
 	public function render( $field, $field_escaped_value, $field_object_id, $field_object_type, $field_type_object ) {
 		$headers = $this->get_headers();
 		echo $field_type_object->select();
-		$option = '<option value="global" selected>' . esc_html__( 'Global', 'beautifo-core' ) . '</option>';
-		$option .= '<option value="default" selected>' . esc_html__( 'Default', 'beautifo-core' ) . '</option>';
+		$option = '<option value="global" selected>' . esc_html__( 'Global', 'dimas' ) . '</option>';
+		$option .= '<option value="default" selected>' . esc_html__( 'Default', 'dimas' ) . '</option>';
 		if ( $headers ) {
 			foreach ( $headers as $header ) {
 				$option .= '<option value="' . esc_attr( $header->ID ) . '"' . selected( $field_escaped_value, $header->ID, false ) . '>' . esc_html( $header->post_title ) . '</option>';
@@ -54,4 +54,4 @@ class OSF_CMB2_Field_Header_Layout {
 	}
 }
 
-new OSF_CMB2_Field_Header_Layout();
+new Dimas_CMB2_Field_Header_Layout();

@@ -114,7 +114,7 @@ function yourprefix_register_demo_metabox() {
 	 */
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => esc_html__( 'Test Metabox', 'beautifo-core' ),
+		'title'         => esc_html__( 'Test Metabox', 'dimas' ),
 		'object_types'  => array( 'page' ), // Post type
 		// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
 		// 'context'    => 'normal',
@@ -127,8 +127,8 @@ function yourprefix_register_demo_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'Test Text', 'beautifo-core' ),
-		'desc'       => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'       => esc_html__( 'Test Text', 'dimas' ),
+		'desc'       => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'         => $prefix . 'text',
 		'type'       => 'text',
 		'show_on_cb' => 'yourprefix_hide_if_no_cats', // function should return a bool value
@@ -140,8 +140,8 @@ function yourprefix_register_demo_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Text Small', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Text Small', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'textsmall',
 		'type' => 'text_small',
 		// 'repeatable' => true,
@@ -153,18 +153,18 @@ function yourprefix_register_demo_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Text Medium', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Text Medium', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'textmedium',
 		'type' => 'text_medium',
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'       => esc_html__( 'Read-only Disabled Field', 'beautifo-core' ),
-		'desc'       => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'       => esc_html__( 'Read-only Disabled Field', 'dimas' ),
+		'desc'       => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'         => $prefix . 'readonly',
 		'type'       => 'text_medium',
-		'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'beautifo-core' ),
+		'default'    => esc_attr__( 'Hey there, I\'m a read-only field', 'dimas' ),
 		'save_field' => false, // Disables the saving of this field.
 		'attributes' => array(
 			'disabled' => 'disabled',
@@ -173,16 +173,16 @@ function yourprefix_register_demo_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Custom Rendered Field', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Custom Rendered Field', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'render_row_cb',
 		'type' => 'text',
 		'render_row_cb' => 'yourprefix_render_row_cb',
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Website URL', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Website URL', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'url',
 		'type' => 'text_url',
 		// 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
@@ -190,47 +190,47 @@ function yourprefix_register_demo_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Text Email', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Text Email', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'email',
 		'type' => 'text_email',
 		// 'repeatable' => true,
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Time', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Time', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'time',
 		'type' => 'text_time',
 		// 'time_format' => 'H:i', // Set to 24hr format
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Time zone', 'beautifo-core' ),
-		'desc' => esc_html__( 'Time zone', 'beautifo-core' ),
+		'name' => esc_html__( 'Time zone', 'dimas' ),
+		'desc' => esc_html__( 'Time zone', 'dimas' ),
 		'id'   => $prefix . 'timezone',
 		'type' => 'select_timezone',
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Date Picker', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Date Picker', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'textdate',
 		'type' => 'text_date',
 		// 'date_format' => 'Y-m-d',
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Date Picker (UNIX timestamp)', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Date Picker (UNIX timestamp)', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'textdate_timestamp',
 		'type' => 'text_date_timestamp',
 		// 'timezone_meta_key' => $prefix . 'timezone', // Optionally make this field honor the timezone selected in the select_timezone specified above
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Date/Time Picker Combo (UNIX timestamp)', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Date/Time Picker Combo (UNIX timestamp)', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'datetime_timestamp',
 		'type' => 'text_datetime_timestamp',
 	) );
@@ -246,8 +246,8 @@ function yourprefix_register_demo_metabox() {
 	// ) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Money', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Money', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'textmoney',
 		'type' => 'text_money',
 		// 'before_field' => '£', // override '$' symbol if needed
@@ -255,8 +255,8 @@ function yourprefix_register_demo_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'    => esc_html__( 'Test Color Picker', 'beautifo-core' ),
-		'desc'    => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'    => esc_html__( 'Test Color Picker', 'dimas' ),
+		'desc'    => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'      => $prefix . 'colorpicker',
 		'type'    => 'colorpicker',
 		'default' => '#ffffff',
@@ -271,74 +271,74 @@ function yourprefix_register_demo_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Text Area', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Text Area', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'textarea',
 		'type' => 'textarea',
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Text Area Small', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Text Area Small', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'textareasmall',
 		'type' => 'textarea_small',
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Text Area for Code', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Text Area for Code', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'textarea_code',
 		'type' => 'textarea_code',
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Title Weeeee', 'beautifo-core' ),
-		'desc' => esc_html__( 'This is a title description', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Title Weeeee', 'dimas' ),
+		'desc' => esc_html__( 'This is a title description', 'dimas' ),
 		'id'   => $prefix . 'title',
 		'type' => 'title',
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'             => esc_html__( 'Test Select', 'beautifo-core' ),
-		'desc'             => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'             => esc_html__( 'Test Select', 'dimas' ),
+		'desc'             => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'               => $prefix . 'select',
 		'type'             => 'select',
 		'show_option_none' => true,
 		'options'          => array(
-			'standard' => esc_html__( 'Option One', 'beautifo-core' ),
-			'custom'   => esc_html__( 'Option Two', 'beautifo-core' ),
-			'none'     => esc_html__( 'Option Three', 'beautifo-core' ),
+			'standard' => esc_html__( 'Option One', 'dimas' ),
+			'custom'   => esc_html__( 'Option Two', 'dimas' ),
+			'none'     => esc_html__( 'Option Three', 'dimas' ),
 		),
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'             => esc_html__( 'Test Radio inline', 'beautifo-core' ),
-		'desc'             => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'             => esc_html__( 'Test Radio inline', 'dimas' ),
+		'desc'             => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'               => $prefix . 'radio_inline',
 		'type'             => 'radio_inline',
 		'show_option_none' => 'No Selection',
 		'options'          => array(
-			'standard' => esc_html__( 'Option One', 'beautifo-core' ),
-			'custom'   => esc_html__( 'Option Two', 'beautifo-core' ),
-			'none'     => esc_html__( 'Option Three', 'beautifo-core' ),
+			'standard' => esc_html__( 'Option One', 'dimas' ),
+			'custom'   => esc_html__( 'Option Two', 'dimas' ),
+			'none'     => esc_html__( 'Option Three', 'dimas' ),
 		),
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'    => esc_html__( 'Test Radio', 'beautifo-core' ),
-		'desc'    => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'    => esc_html__( 'Test Radio', 'dimas' ),
+		'desc'    => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'      => $prefix . 'radio',
 		'type'    => 'radio',
 		'options' => array(
-			'option1' => esc_html__( 'Option One', 'beautifo-core' ),
-			'option2' => esc_html__( 'Option Two', 'beautifo-core' ),
-			'option3' => esc_html__( 'Option Three', 'beautifo-core' ),
+			'option1' => esc_html__( 'Option One', 'dimas' ),
+			'option2' => esc_html__( 'Option Two', 'dimas' ),
+			'option3' => esc_html__( 'Option Three', 'dimas' ),
 		),
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'     => esc_html__( 'Test Taxonomy Radio', 'beautifo-core' ),
-		'desc'     => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'     => esc_html__( 'Test Taxonomy Radio', 'dimas' ),
+		'desc'     => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'       => $prefix . 'text_taxonomy_radio',
 		'type'     => 'taxonomy_radio',
 		'taxonomy' => 'category', // Taxonomy Slug
@@ -346,16 +346,16 @@ function yourprefix_register_demo_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'     => esc_html__( 'Test Taxonomy Select', 'beautifo-core' ),
-		'desc'     => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'     => esc_html__( 'Test Taxonomy Select', 'dimas' ),
+		'desc'     => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'       => $prefix . 'taxonomy_select',
 		'type'     => 'taxonomy_select',
 		'taxonomy' => 'category', // Taxonomy Slug
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'     => esc_html__( 'Test Taxonomy Multi Checkbox', 'beautifo-core' ),
-		'desc'     => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'     => esc_html__( 'Test Taxonomy Multi Checkbox', 'dimas' ),
+		'desc'     => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'       => $prefix . 'multitaxonomy',
 		'type'     => 'taxonomy_multicheck',
 		'taxonomy' => 'post_tag', // Taxonomy Slug
@@ -363,29 +363,29 @@ function yourprefix_register_demo_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Checkbox', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Checkbox', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'checkbox',
 		'type' => 'checkbox',
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'    => esc_html__( 'Test Multi Checkbox', 'beautifo-core' ),
-		'desc'    => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'    => esc_html__( 'Test Multi Checkbox', 'dimas' ),
+		'desc'    => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'      => $prefix . 'multicheckbox',
 		'type'    => 'multicheck',
 		// 'multiple' => true, // Store values in individual rows
 		'options' => array(
-			'check1' => esc_html__( 'Check One', 'beautifo-core' ),
-			'check2' => esc_html__( 'Check Two', 'beautifo-core' ),
-			'check3' => esc_html__( 'Check Three', 'beautifo-core' ),
+			'check1' => esc_html__( 'Check One', 'dimas' ),
+			'check2' => esc_html__( 'Check Two', 'dimas' ),
+			'check3' => esc_html__( 'Check Three', 'dimas' ),
 		),
 		// 'inline'  => true, // Toggles display to inline
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'    => esc_html__( 'Test wysiwyg', 'beautifo-core' ),
-		'desc'    => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'    => esc_html__( 'Test wysiwyg', 'dimas' ),
+		'desc'    => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'      => $prefix . 'wysiwyg',
 		'type'    => 'wysiwyg',
 		'options' => array(
@@ -394,25 +394,25 @@ function yourprefix_register_demo_metabox() {
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'Test Image', 'beautifo-core' ),
-		'desc' => esc_html__( 'Upload an image or enter a URL.', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Image', 'dimas' ),
+		'desc' => esc_html__( 'Upload an image or enter a URL.', 'dimas' ),
 		'id'   => $prefix . 'image',
 		'type' => 'file',
 	) );
 
 	$cmb_demo->add_field( array(
-		'name'         => esc_html__( 'Multiple Files', 'beautifo-core' ),
-		'desc'         => esc_html__( 'Upload or add multiple images/attachments.', 'beautifo-core' ),
+		'name'         => esc_html__( 'Multiple Files', 'dimas' ),
+		'desc'         => esc_html__( 'Upload or add multiple images/attachments.', 'dimas' ),
 		'id'           => $prefix . 'file_list',
 		'type'         => 'file_list',
 		'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 	) );
 
 	$cmb_demo->add_field( array(
-		'name' => esc_html__( 'oEmbed', 'beautifo-core' ),
+		'name' => esc_html__( 'oEmbed', 'dimas' ),
 		'desc' => sprintf(
 			/* translators: %s: link to codex.wordpress.org/Embeds */
-			esc_html__( 'Enter a youtube, twitter, or instagram URL. Supports services listed at %s.', 'beautifo-core' ),
+			esc_html__( 'Enter a youtube, twitter, or instagram URL. Supports services listed at %s.', 'dimas' ),
 			'<a href="https://codex.wordpress.org/Embeds">codex.wordpress.org/Embeds</a>'
 		),
 		'id'   => $prefix . 'embed',
@@ -445,7 +445,7 @@ function yourprefix_register_about_page_metabox() {
 	 */
 	$cmb_about_page = new_cmb2_box( array(
 		'id'           => $prefix . 'metabox',
-		'title'        => esc_html__( 'About Page Metabox', 'beautifo-core' ),
+		'title'        => esc_html__( 'About Page Metabox', 'dimas' ),
 		'object_types' => array( 'page' ), // Post type
 		'context'      => 'normal',
 		'priority'     => 'high',
@@ -456,8 +456,8 @@ function yourprefix_register_about_page_metabox() {
 	) );
 
 	$cmb_about_page->add_field( array(
-		'name' => esc_html__( 'Test Text', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Test Text', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'text',
 		'type' => 'text',
 	) );
@@ -476,7 +476,7 @@ function yourprefix_register_repeatable_group_field_metabox() {
 	 */
 	$cmb_group = new_cmb2_box( array(
 		'id'           => $prefix . 'metabox',
-		'title'        => esc_html__( 'Repeating Field Group', 'beautifo-core' ),
+		'title'        => esc_html__( 'Repeating Field Group', 'dimas' ),
 		'object_types' => array( 'page' ),
 	) );
 
@@ -484,11 +484,11 @@ function yourprefix_register_repeatable_group_field_metabox() {
 	$group_field_id = $cmb_group->add_field( array(
 		'id'          => $prefix . 'demo',
 		'type'        => 'group',
-		'description' => esc_html__( 'Generates reusable form entries', 'beautifo-core' ),
+		'description' => esc_html__( 'Generates reusable form entries', 'dimas' ),
 		'options'     => array(
-			'group_title'   => esc_html__( 'Entry {#}', 'beautifo-core' ), // {#} gets replaced by row number
-			'add_button'    => esc_html__( 'Add Another Entry', 'beautifo-core' ),
-			'remove_button' => esc_html__( 'Remove Entry', 'beautifo-core' ),
+			'group_title'   => esc_html__( 'Entry {#}', 'dimas' ), // {#} gets replaced by row number
+			'add_button'    => esc_html__( 'Add Another Entry', 'dimas' ),
+			'remove_button' => esc_html__( 'Remove Entry', 'dimas' ),
 			'sortable'      => true, // beta
 			// 'closed'     => true, // true to have the groups closed by default
 		),
@@ -501,27 +501,27 @@ function yourprefix_register_repeatable_group_field_metabox() {
 	 * The parent field's id needs to be passed as the first argument.
 	 */
 	$cmb_group->add_group_field( $group_field_id, array(
-		'name'       => esc_html__( 'Entry Title', 'beautifo-core' ),
+		'name'       => esc_html__( 'Entry Title', 'dimas' ),
 		'id'         => 'title',
 		'type'       => 'text',
 		// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
 	) );
 
 	$cmb_group->add_group_field( $group_field_id, array(
-		'name'        => esc_html__( 'Description', 'beautifo-core' ),
-		'description' => esc_html__( 'Write a short description for this entry', 'beautifo-core' ),
+		'name'        => esc_html__( 'Description', 'dimas' ),
+		'description' => esc_html__( 'Write a short description for this entry', 'dimas' ),
 		'id'          => 'description',
 		'type'        => 'textarea_small',
 	) );
 
 	$cmb_group->add_group_field( $group_field_id, array(
-		'name' => esc_html__( 'Entry Image', 'beautifo-core' ),
+		'name' => esc_html__( 'Entry Image', 'dimas' ),
 		'id'   => 'image',
 		'type' => 'file',
 	) );
 
 	$cmb_group->add_group_field( $group_field_id, array(
-		'name' => esc_html__( 'Image Caption', 'beautifo-core' ),
+		'name' => esc_html__( 'Image Caption', 'dimas' ),
 		'id'   => 'image_caption',
 		'type' => 'text',
 	) );
@@ -540,58 +540,58 @@ function yourprefix_register_user_profile_metabox() {
 	 */
 	$cmb_user = new_cmb2_box( array(
 		'id'               => $prefix . 'edit',
-		'title'            => esc_html__( 'User Profile Metabox', 'beautifo-core' ), // Doesn't output for user boxes
+		'title'            => esc_html__( 'User Profile Metabox', 'dimas' ), // Doesn't output for user boxes
 		'object_types'     => array( 'user' ), // Tells CMB2 to use user_meta vs post_meta
 		'show_names'       => true,
 		'new_user_section' => 'add-new-user', // where form will show on new user page. 'add-existing-user' is only other valid option.
 	) );
 
 	$cmb_user->add_field( array(
-		'name'     => esc_html__( 'Extra Info', 'beautifo-core' ),
-		'desc'     => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'     => esc_html__( 'Extra Info', 'dimas' ),
+		'desc'     => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'       => $prefix . 'extra_info',
 		'type'     => 'title',
 		'on_front' => false,
 	) );
 
 	$cmb_user->add_field( array(
-		'name'    => esc_html__( 'Avatar', 'beautifo-core' ),
-		'desc'    => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'    => esc_html__( 'Avatar', 'dimas' ),
+		'desc'    => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'      => $prefix . 'avatar',
 		'type'    => 'file',
 	) );
 
 	$cmb_user->add_field( array(
-		'name' => esc_html__( 'Facebook URL', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Facebook URL', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'facebookurl',
 		'type' => 'text_url',
 	) );
 
 	$cmb_user->add_field( array(
-		'name' => esc_html__( 'Twitter URL', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Twitter URL', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'twitterurl',
 		'type' => 'text_url',
 	) );
 
 	$cmb_user->add_field( array(
-		'name' => esc_html__( 'Google+ URL', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Google+ URL', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'googleplusurl',
 		'type' => 'text_url',
 	) );
 
 	$cmb_user->add_field( array(
-		'name' => esc_html__( 'Linkedin URL', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Linkedin URL', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'linkedinurl',
 		'type' => 'text_url',
 	) );
 
 	$cmb_user->add_field( array(
-		'name' => esc_html__( 'User Field', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'User Field', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'user_text_field',
 		'type' => 'text',
 	) );
@@ -610,30 +610,30 @@ function yourprefix_register_taxonomy_metabox() {
 	 */
 	$cmb_term = new_cmb2_box( array(
 		'id'               => $prefix . 'edit',
-		'title'            => esc_html__( 'Category Metabox', 'beautifo-core' ), // Doesn't output for term boxes
+		'title'            => esc_html__( 'Category Metabox', 'dimas' ), // Doesn't output for term boxes
 		'object_types'     => array( 'term' ), // Tells CMB2 to use term_meta vs post_meta
 		'taxonomies'       => array( 'category', 'post_tag' ), // Tells CMB2 which taxonomies should have these fields
 		// 'new_term_section' => true, // Will display in the "Add New Category" section
 	) );
 
 	$cmb_term->add_field( array(
-		'name'     => esc_html__( 'Extra Info', 'beautifo-core' ),
-		'desc'     => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'     => esc_html__( 'Extra Info', 'dimas' ),
+		'desc'     => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'       => $prefix . 'extra_info',
 		'type'     => 'title',
 		'on_front' => false,
 	) );
 
 	$cmb_term->add_field( array(
-		'name' => esc_html__( 'Term Image', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Term Image', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'avatar',
 		'type' => 'file',
 	) );
 
 	$cmb_term->add_field( array(
-		'name' => esc_html__( 'Arbitrary Term Field', 'beautifo-core' ),
-		'desc' => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name' => esc_html__( 'Arbitrary Term Field', 'dimas' ),
+		'desc' => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'   => $prefix . 'term_text_field',
 		'type' => 'text',
 	) );
@@ -651,7 +651,7 @@ function yourprefix_register_theme_options_metabox() {
 	 */
 	$cmb_options = new_cmb2_box( array(
 		'id'           => 'yourprefix_theme_options_page',
-		'title'        => esc_html__( 'Theme Options', 'beautifo-core' ),
+		'title'        => esc_html__( 'Theme Options', 'dimas' ),
 		'object_types' => array( 'options-page' ),
 
 		/*
@@ -678,8 +678,8 @@ function yourprefix_register_theme_options_metabox() {
 	 * Prefix is not needed.
 	 */
 	$cmb_options->add_field( array(
-		'name'    => esc_html__( 'Site Background Color', 'beautifo-core' ),
-		'desc'    => esc_html__( 'field description (optional)', 'beautifo-core' ),
+		'name'    => esc_html__( 'Site Background Color', 'dimas' ),
+		'desc'    => esc_html__( 'field description (optional)', 'dimas' ),
 		'id'      => 'bg_color',
 		'type'    => 'colorpicker',
 		'default' => '#ffffff',
@@ -715,7 +715,7 @@ function yourprefix_options_page_message_callback( $cmb, $args ) {
 		if ( $args['is_updated'] ) {
 
 			// Modify the updated message.
-			$args['message'] = sprintf( esc_html__( '%s &mdash; Updated!', 'beautifo-core' ), $cmb->prop( 'title' ) );
+			$args['message'] = sprintf( esc_html__( '%s &mdash; Updated!', 'dimas' ), $cmb->prop( 'title' ) );
 		}
 
 		add_settings_error( $args['setting'], $args['code'], $args['message'], $args['type'] );
@@ -749,7 +749,7 @@ function yourprefix_register_rest_api_box() {
 
 	$cmb_rest = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => esc_html__( 'REST Test Box', 'beautifo-core' ),
+		'title'         => esc_html__( 'REST Test Box', 'dimas' ),
 		'object_types'  => array( 'page' ), // Post type
 		'show_in_rest' => WP_REST_Server::ALLMETHODS, // WP_REST_Server::READABLE|WP_REST_Server::EDITABLE, // Determines which HTTP methods the box is visible in.
 		// Optional callback to limit box visibility.
@@ -758,15 +758,15 @@ function yourprefix_register_rest_api_box() {
 	) );
 
 	$cmb_rest->add_field( array(
-		'name'       => esc_html__( 'REST Test Text', 'beautifo-core' ),
-		'desc'       => esc_html__( 'Will show in the REST API for this box and for pages.', 'beautifo-core' ),
+		'name'       => esc_html__( 'REST Test Text', 'dimas' ),
+		'desc'       => esc_html__( 'Will show in the REST API for this box and for pages.', 'dimas' ),
 		'id'         => $prefix . 'text',
 		'type'       => 'text',
 	) );
 
 	$cmb_rest->add_field( array(
-		'name'       => esc_html__( 'REST Editable Test Text', 'beautifo-core' ),
-		'desc'       => esc_html__( 'Will show in REST API "editable" contexts only (`POST` requests).', 'beautifo-core' ),
+		'name'       => esc_html__( 'REST Editable Test Text', 'dimas' ),
+		'desc'       => esc_html__( 'Will show in REST API "editable" contexts only (`POST` requests).', 'dimas' ),
 		'id'         => $prefix . 'editable_text',
 		'type'       => 'text',
 		'show_in_rest' => WP_REST_Server::EDITABLE,// WP_REST_Server::ALLMETHODS|WP_REST_Server::READABLE, // Determines which HTTP methods the field is visible in. Will override the cmb2_box 'show_in_rest' param.

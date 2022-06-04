@@ -1,5 +1,5 @@
 ( function($) {
-	var OSF_Modal_Menu_Item = Backbone.View.extend({
+	var Dimas_Modal_Menu_Item = Backbone.View.extend({
 
 		initialize: function( data ) {
 			this.model = new Backbone.Model( data );
@@ -16,13 +16,13 @@
 		},
 
 		_openModalHandler: function() {
-			window.osf_menu_modal = new OSF_Modal( this.model );
+			window.osf_menu_modal = new Dimas_Modal( this.model );
 		}
 
 	});
 	// osf-modal-content
 	// Backbone Modal View
-	var OSF_Modal = Backbone.View.extend({
+	var Dimas_Modal = Backbone.View.extend({
 
 		initialize: function( model ) {
 			this.model = model;
@@ -189,7 +189,7 @@
 		var menu_id = li.attr( 'id' ).replace( 'menu-item-', '' );
 		menu_id = parseInt( menu_id );
 		var istop =  $(li).hasClass('menu-item-depth-0');
-		menu_title.append( new OSF_Modal_Menu_Item({
+		menu_title.append( new Dimas_Modal_Menu_Item({
 			menu_id: menu_id,
 			is_loading: true,
 			istop:istop?1:0

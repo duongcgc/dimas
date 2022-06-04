@@ -1208,8 +1208,8 @@ class CMB2_Field extends CMB2_Base {
 	 */
 	protected function set_field_defaults_group( $args ) {
 		$args['options'] = wp_parse_args( $args['options'], array(
-			'add_button'    => esc_html__( 'Add Group', 'beautifo-core' ),
-			'remove_button' => esc_html__( 'Remove Group', 'beautifo-core' ),
+			'add_button'    => esc_html__( 'Add Group', 'dimas' ),
+			'remove_button' => esc_html__( 'Remove Group', 'dimas' ),
 		) );
 
 		return $args;
@@ -1240,11 +1240,11 @@ class CMB2_Field extends CMB2_Base {
 	 */
 	protected function set_field_defaults_all_or_nothing_types( $args ) {
 		$args['show_option_none'] = isset( $args['show_option_none'] ) ? $args['show_option_none'] : null;
-		$args['show_option_none'] = true === $args['show_option_none'] ? esc_html__( 'None', 'beautifo-core' ) : $args['show_option_none'];
+		$args['show_option_none'] = true === $args['show_option_none'] ? esc_html__( 'None', 'dimas' ) : $args['show_option_none'];
 
 		if ( null === $args['show_option_none'] ) {
 			$off_by_default = in_array( $args['type'], array( 'select', 'radio', 'radio_inline' ), true );
-			$args['show_option_none'] = $off_by_default ? false : esc_html__( 'None', 'beautifo-core' );
+			$args['show_option_none'] = $off_by_default ? false : esc_html__( 'None', 'dimas' );
 		}
 
 		return $args;
@@ -1355,7 +1355,7 @@ class CMB2_Field extends CMB2_Base {
 	 */
 	public function get_cmb() {
 		if ( ! $this->cmb_id ) {
-			return new WP_Error( 'no_cmb_id', esc_html__( 'Sorry, this field does not have a cmb_id specified.', 'beautifo-core' ) );
+			return new WP_Error( 'no_cmb_id', esc_html__( 'Sorry, this field does not have a cmb_id specified.', 'dimas' ) );
 		}
 
 		return cmb2_get_metabox( $this->cmb_id, $this->object_id, $this->object_type );

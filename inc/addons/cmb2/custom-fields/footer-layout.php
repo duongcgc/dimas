@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class OSF_CMB2_Field_Footer_Layout {
+class Dimas_CMB2_Field_Footer_Layout {
 
 	/**
 	 * Current version number
@@ -24,7 +24,7 @@ class OSF_CMB2_Field_Footer_Layout {
 	public function render( $field, $field_escaped_value, $field_object_id, $field_object_type, $field_type_object ) {
 		$footers = $this->get_footers();
 		echo $field_type_object->input( array( 'type' => 'hidden' ) );
-		$option = '<option value="" selected>' . esc_html__( 'Default', 'beautifo-core' ) . '</option>';
+		$option = '<option value="" selected>' . esc_html__( 'Default', 'dimas' ) . '</option>';
 		if ( $footers ) {
 			foreach ( $footers as $footer ) {
 				$option .= '<option value="' . esc_attr( $footer->post_name ) . '"' . selected( $field_escaped_value, $footer->post_name, false ) . '>' . esc_html( $footer->post_title ) . '</option>';
@@ -49,4 +49,4 @@ class OSF_CMB2_Field_Footer_Layout {
 	}
 }
 
-new OSF_CMB2_Field_Footer_Layout();
+new Dimas_CMB2_Field_Footer_Layout();

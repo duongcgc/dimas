@@ -16,7 +16,7 @@ if (!defined( 'ABSPATH' )) {
     exit; // Exit if accessed directly
 }
 
-class OSF_Field_Adduser {
+class Dimas_Field_Adduser {
 
     /**
      * Current version number
@@ -42,9 +42,9 @@ class OSF_Field_Adduser {
         //	echo '<pre>'.print_r( $value, 1 );die;
         echo '<div class="opalrealestate-add-user-field ' . apply_filters( 'opalrealestate_row_container_class', 'row opal-row' ) . '"> '; ?>
         <div class="col-lg-12">
-            <h5 class=""><?php _e( 'As an author, you can add other users to your office.', 'beautifo-core' ); ?></h5>
+            <h5 class=""><?php _e( 'As an author, you can add other users to your office.', 'dimas' ); ?></h5>
             <div>
-                <p><?php _e( 'Add someone to your office, please enter extractly username in below input:', 'beautifo-core' ); ?></p>
+                <p><?php _e( 'Add someone to your office, please enter extractly username in below input:', 'dimas' ); ?></p>
 
                 <div class="<?php echo apply_filters( 'opalrealestate_row_container_class', 'row opal-row' ); ?>">
 
@@ -52,7 +52,7 @@ class OSF_Field_Adduser {
                                                  name="opalrealestate_adduser_search" id="opalrealestate_adduser_search"
                                                  value="" type="text"></div>
                     <div class="col-lg-4"><input name="search" class="button button-primary button-large pull-left"
-                                                 id="publish" value="<?php _e( 'add', 'beautifo-core' ); ?>"
+                                                 id="publish" value="<?php _e( 'add', 'dimas' ); ?>"
                                                  type="button">
                     </div>
                 </div>
@@ -71,7 +71,7 @@ class OSF_Field_Adduser {
                                 <a href="<?php get_author_posts_url( $user_id ); ?>"
                                    target="_blank"> <?php echo $user->user_login; ?> </a></div>
                             <div><span class="remove-user"
-                                       data-alert="<?php _e( 'Are you sure to delete this', 'beautifo-core' ); ?>"><?php _e( 'Remove', 'beautifo-core' ); ?></span>
+                                       data-alert="<?php _e( 'Are you sure to delete this', 'dimas' ); ?>"><?php _e( 'Remove', 'dimas' ); ?></span>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -86,7 +86,7 @@ class OSF_Field_Adduser {
                 <div><img src="{{{data.avatar}}}"> <a href="{{{data.author_link}}}" target="_blank">
                         {{{data.user_login}}} </a></div>
                 <div><span class="remove-user"
-                           data-alert="<?php _e( 'Are you sure to delete this', 'beautifo-core' ); ?>"><?php _e( 'Remove', 'beautifo-core' ); ?></span>
+                           data-alert="<?php _e( 'Are you sure to delete this', 'dimas' ); ?>"><?php _e( 'Remove', 'dimas' ); ?></span>
                 </div>
             </div>
         </script>
@@ -111,4 +111,4 @@ class OSF_Field_Adduser {
     }
 }
 
-OSF_Field_Adduser::init();
+Dimas_Field_Adduser::init();

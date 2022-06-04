@@ -34,7 +34,7 @@ class Footer_Builder {
 		if ( $osf_footer && $osf_footer instanceof WP_Post ) {
 			$args = array(
 				'id'    => 'footer-builder-button',
-				'title' => __( 'Edit Footer', 'beautifo-core' ),
+				'title' => __( 'Edit Footer', 'dimas' ),
 				'href'  => add_query_arg( 'action', 'elementor', remove_query_arg( 'action', get_edit_post_link( $osf_footer->ID ) ) ),
 			// 'meta'  => array(
 			// 'class' => 'custom-button-class'

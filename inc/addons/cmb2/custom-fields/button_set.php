@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class OSF_Field_Button_Set {
+class Dimas_Field_Button_Set {
 
 	/**
 	 * Current version number
@@ -33,4 +33,4 @@ class OSF_Field_Button_Set {
 	}
 }
 
-new OSF_Field_Button_Set();
+new Dimas_Field_Button_Set();

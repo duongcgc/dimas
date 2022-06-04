@@ -174,10 +174,10 @@ if (!class_exists('osf_WooCommerce')) :
                 return false;
             }
             $links = array(
-                'my-account' => '<a class="my-accrount-footer" href="' . esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))) . '">' . esc_attr__('My Account', 'beautifo-core') . '</a>',
-                'search'     => '<a class="search-footer" href="">' . esc_attr__('Search', 'beautifo-core') . '</a><div class="site-search">' . get_search_form(false) . '</div>',
+                'my-account' => '<a class="my-accrount-footer" href="' . esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))) . '">' . esc_attr__('My Account', 'dimas') . '</a>',
+                'search'     => '<a class="search-footer" href="">' . esc_attr__('Search', 'dimas') . '</a><div class="site-search">' . get_search_form(false) . '</div>',
                 'cart'       => ' <a class="footer-cart-contents" href="' . esc_url(wc_get_cart_url()) . '" 
-                title="' . esc_attr__('View your shopping cart', 'beautifo-core') . '">  
+                title="' . esc_attr__('View your shopping cart', 'dimas') . '">  
  <span class="count">' . wp_kses_data(WC()->cart->get_cart_contents_count()) . '</span>
  </a>'
             );
@@ -293,7 +293,7 @@ if (!class_exists('osf_WooCommerce')) :
 
         public function label_tooltip() {
             echo '<div class="woocommerce-lablel-tooltip" style="display: none!important;">';
-            echo '<div id="osf-woocommerce-cart">' . esc_html__('Add to cart', 'beautifo-core') . '</div>';
+            echo '<div id="osf-woocommerce-cart">' . esc_html__('Add to cart', 'dimas') . '</div>';
             echo '</div>';
         }
 
@@ -310,7 +310,7 @@ if (!class_exists('osf_WooCommerce')) :
         }
 
         public function added_to_cart_template() {
-            $text = esc_html__('has been added to your cart', 'beautifo-core');
+            $text = esc_html__('has been added to your cart', 'dimas');
             echo <<<HTML
         <script type="text/html" id="tmpl-added-to-cart-template"><div class="notification-added-to-cart"><div class="notification-wrap"><div class="ns-thumb d-inline-block"><img src="{{{data.src}}}" alt="{{{data.name}}}"></div><div class="ns-content d-inline-block"><p><strong>{{{data.name}}}</strong> $text </p></div></div></div></script>
 HTML;
@@ -338,18 +338,18 @@ HTML;
 
         public function widgets_init() {
             register_sidebar(array(
-                'name'          => __('WooCommerce Shop', 'beautifo-core'),
+                'name'          => __('WooCommerce Shop', 'dimas'),
                 'id'            => 'sidebar-woocommerce-shop',
-                'description'   => __('Add widgets here to appear in your sidebar on shop page and archive shop pages.', 'beautifo-core'),
+                'description'   => __('Add widgets here to appear in your sidebar on shop page and archive shop pages.', 'dimas'),
                 'before_widget' => '<section id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</section>',
                 'before_title'  => '<h2 class="widget-title">',
                 'after_title'   => '</h2>',
             ));
             register_sidebar(array(
-                'name'          => __('WooCommerce Detail', 'beautifo-core'),
+                'name'          => __('WooCommerce Detail', 'dimas'),
                 'id'            => 'sidebar-woocommerce-detail',
-                'description'   => __('Add widgets here to appear in your sidebar on single product page', 'beautifo-core'),
+                'description'   => __('Add widgets here to appear in your sidebar on single product page', 'dimas'),
                 'before_widget' => '<section id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</section>',
                 'before_title'  => '<h2 class="widget-title">',
@@ -360,7 +360,7 @@ HTML;
         public function render_woocommerce_shop_canvas() {
             $position = get_theme_mod('osf_woocommerce_archive_layout', '2cl');
             if (is_active_sidebar('sidebar-woocommerce-shop') && osf_is_product_archive() && $position != '1c') {
-                echo '<div id="opal-canvas-filter" class="opal-canvas-filter position-' . $position . '"><span class="filter-close">' . esc_html__('CLOSE', 'beautifo-core') . '</span><div class="opal-canvas-filter-wrap">';
+                echo '<div id="opal-canvas-filter" class="opal-canvas-filter position-' . $position . '"><span class="filter-close">' . esc_html__('CLOSE', 'dimas') . '</span><div class="opal-canvas-filter-wrap">';
                 dynamic_sidebar('sidebar-woocommerce-shop');
                 echo '</div></div>';
                 echo '<div class="opal-overlay-filter"></div>';
@@ -371,7 +371,7 @@ HTML;
         public function render_button_shop_canvas() {
             $position = get_theme_mod('osf_woocommerce_archive_layout', '2cl');
             if (is_active_sidebar('sidebar-woocommerce-shop') && osf_is_product_archive() && $position != '1c') {
-                echo '<button class="filter-toggle" aria-expanded="false"><span class="filter-icon"></span>' . esc_html__('Filter', 'beautifo-core') . '</button>';
+                echo '<button class="filter-toggle" aria-expanded="false"><span class="filter-icon"></span>' . esc_html__('Filter', 'dimas') . '</button>';
             }
         }
 
@@ -387,15 +387,15 @@ HTML;
 
                     $product_sku_display = '';
                     if (!empty($product_sku)) {
-                        $product_sku_display = ' - ' . __('Sku', 'beautifo-core') . ': ' . $product_sku;
+                        $product_sku_display = ' - ' . __('Sku', 'dimas') . ': ' . $product_sku;
                     }
 
                     $product_title_display = '';
                     if (!empty($product_title)) {
-                        $product_title_display = ' - ' . __('Title', 'beautifo-core') . ': ' . $product_title;
+                        $product_title_display = ' - ' . __('Title', 'dimas') . ': ' . $product_title;
                     }
 
-                    $product_id_display = __('Id', 'beautifo-core') . ': ' . $product_id;
+                    $product_id_display = __('Id', 'dimas') . ': ' . $product_id;
 
                     $data          = array();
                     $data['value'] = $product_id;
@@ -421,15 +421,15 @@ HTML;
 
             $term_slug_display = '';
             if (!empty($term_slug)) {
-                $term_slug_display = ' - ' . __('Sku', 'beautifo-core') . ': ' . $term_slug;
+                $term_slug_display = ' - ' . __('Sku', 'dimas') . ': ' . $term_slug;
             }
 
             $term_title_display = '';
             if (!empty($term_title)) {
-                $term_title_display = ' - ' . __('Title', 'beautifo-core') . ': ' . $term_title;
+                $term_title_display = ' - ' . __('Title', 'dimas') . ': ' . $term_title;
             }
 
-            $term_id_display = __('Id', 'beautifo-core') . ': ' . $term_id;
+            $term_id_display = __('Id', 'dimas') . ': ' . $term_id;
 
             $data          = array();
             $data['value'] = $term_id;
@@ -442,14 +442,14 @@ HTML;
             $prefix   = 'product_cat_';
             $cmb_term = new_cmb2_box(array(
                 'id'           => 'product_cat',
-                'title'        => __('Product Metabox', 'beautifo-core'), // Doesn't output for term boxes
+                'title'        => __('Product Metabox', 'dimas'), // Doesn't output for term boxes
                 'object_types' => array('term'),
                 'taxonomies'   => array('product_cat'),
                 // 'new_term_section' => true, // Will display in the "Add New Category" section
             ));
 
             $cmb_term->add_field(array(
-                'name'       => __('Banner', 'beautifo-core'),
+                'name'       => __('Banner', 'dimas'),
                 //                'desc' => __('Location image', 'homefinder'),
                 'id'         => $prefix . 'banner',
                 'type'       => 'file',
@@ -466,21 +466,21 @@ HTML;
             $prefix = 'osf_products_';
             $cmb    = new_cmb2_box(array(
                 'id'           => $prefix . 'product_video',
-                'title'        => esc_html__('Product Video Config', 'beautifo-core'),
+                'title'        => esc_html__('Product Video Config', 'dimas'),
                 'object_types' => array('product'),
                 'context'      => 'normal',
                 'priority'     => 'default',
             ));
 
             $cmb->add_field(array(
-                'name' => __('Product video', 'beautifo-core'),
-                'desc' => __('Supports video from youtube and vimeo.', 'beautifo-core'),
+                'name' => __('Product video', 'dimas'),
+                'desc' => __('Supports video from youtube and vimeo.', 'dimas'),
                 'id'   => $prefix . 'video',
                 'type' => 'oembed',
             ));
 
             $cmb->add_field(array(
-                'name'         => __('Video Thumbnail', 'beautifo-core'),
+                'name'         => __('Video Thumbnail', 'dimas'),
                 'desc'         => 'Upload an image or enter an URL.',
                 'id'           => $prefix . 'video_thumbnail',
                 'type'         => 'file',
@@ -882,20 +882,20 @@ HTML;
             $comment_form['comment_field'] = '';
 
             if (wc_review_ratings_enabled()) {
-                $comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating">' . esc_html__('Your rating', 'beautifo-core') . '</label><select name="rating" id="rating" required>
-						<option value="">' . esc_html__('Rate&hellip;', 'beautifo-core') . '</option>
-						<option value="5">' . esc_html__('Perfect', 'beautifo-core') . '</option>
-						<option value="4">' . esc_html__('Good', 'beautifo-core') . '</option>
-						<option value="3">' . esc_html__('Average', 'beautifo-core') . '</option>
-						<option value="2">' . esc_html__('Not that bad', 'beautifo-core') . '</option>
-						<option value="1">' . esc_html__('Very poor', 'beautifo-core') . '</option>
+                $comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating">' . esc_html__('Your rating', 'dimas') . '</label><select name="rating" id="rating" required>
+						<option value="">' . esc_html__('Rate&hellip;', 'dimas') . '</option>
+						<option value="5">' . esc_html__('Perfect', 'dimas') . '</option>
+						<option value="4">' . esc_html__('Good', 'dimas') . '</option>
+						<option value="3">' . esc_html__('Average', 'dimas') . '</option>
+						<option value="2">' . esc_html__('Not that bad', 'dimas') . '</option>
+						<option value="1">' . esc_html__('Very poor', 'dimas') . '</option>
 					</select></div>';
             }
 
 
             $comment_form['comment_field'] .= '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="6" required placeholder="' . esc_attr__("Your review", "beautifo-core") . '"></textarea></p>';
             $comment_form['submit_button'] = '<button name="%1$s" type="submit" id="%2$s" class="%3$s"><span>%4$s</span></button>';
-            $comment_form['label_submit']  = __('Submit Your Review', 'beautifo-core');
+            $comment_form['label_submit']  = __('Submit Your Review', 'dimas');
 
             return $comment_form;
         }

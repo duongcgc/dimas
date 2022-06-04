@@ -228,7 +228,7 @@ class CMB2_Types {
 			$this->type = new $render_class_name( $this, $args );
 
 			if ( ! ( $this->type instanceof CMB2_Type_Base ) ) {
-				throw new Exception( __( 'Custom CMB2 field type classes must extend CMB2_Type_Base.', 'beautifo-core' ) );
+				throw new Exception( __( 'Custom CMB2 field type classes must extend CMB2_Type_Base.', 'dimas' ) );
 			}
 
 			return $this->type;
@@ -346,7 +346,7 @@ class CMB2_Types {
 			</div>
 		</div>
 		<p class="cmb-add-row">
-			<button type="button" data-selector="<?php echo $table_id; ?>" class="cmb-add-row-button button-secondary"><?php echo esc_html( $this->_text( 'add_row_text', esc_html__( 'Add Row', 'beautifo-core' ) ) ); ?></button>
+			<button type="button" data-selector="<?php echo $table_id; ?>" class="cmb-add-row-button button-secondary"><?php echo esc_html( $this->_text( 'add_row_text', esc_html__( 'Add Row', 'dimas' ) ) ); ?></button>
 		</p>
 
 		<?php
@@ -409,7 +409,7 @@ class CMB2_Types {
 				<?php $this->_render(); ?>
 			</div>
 			<div class="cmb-td cmb-remove-row">
-				<button type="button" class="button-secondary cmb-remove-row-button" title="<?php echo esc_attr( $this->_text( 'remove_row_button_title', esc_html__( 'Remove Row', 'beautifo-core' ) ) ); ?>"><?php echo esc_html( $this->_text( 'remove_row_text', esc_html__( 'Remove', 'beautifo-core' ) ) ); ?></button>
+				<button type="button" class="button-secondary cmb-remove-row-button" title="<?php echo esc_attr( $this->_text( 'remove_row_button_title', esc_html__( 'Remove Row', 'dimas' ) ) ); ?>"><?php echo esc_html( $this->_text( 'remove_row_text', esc_html__( 'Remove', 'dimas' ) ) ); ?></button>
 			</div>
 		</div>
 

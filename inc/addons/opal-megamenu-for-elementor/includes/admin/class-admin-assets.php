@@ -3,11 +3,11 @@
 defined( 'ABSPATH' ) || exit();
 
 /**
- * OSF_Megamenu_Walker
+ * Dimas_Megamenu_Walker
  *
  * extends Walker_Nav_Menu
  */
-class OSF_Admin_Megamenu_Assets {
+class Dimas_Admin_Megamenu_Assets {
 
 	public static function init() {
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_scripts' ) );
@@ -61,8 +61,8 @@ class OSF_Admin_Megamenu_Assets {
 			wp_localize_script( 'otf-megamenu', 'osf_memgamnu_params', apply_filters( 'osf_admin_megamenu_localize_scripts', array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 				'i18n'    => array(
-					'close'  => __( 'Close', 'beautifo-core' ),
-					'submit' => __( 'Save', 'beautifo-core' )
+					'close'  => __( 'Close', 'dimas' ),
+					'submit' => __( 'Save', 'dimas' )
 				),
 				'nonces'  => array(
 					'load_menu_data' => wp_create_nonce( 'osf-menu-data-nonce' )
@@ -77,4 +77,4 @@ class OSF_Admin_Megamenu_Assets {
 
 }
 
-OSF_Admin_Megamenu_Assets::init();
+Dimas_Admin_Megamenu_Assets::init();

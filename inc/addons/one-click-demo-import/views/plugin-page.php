@@ -29,7 +29,7 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 		// Display warrning if PHP safe mode is enabled, since we wont be able to change the max_execution_time.
 		if ( ini_get( 'safe_mode' ) ) {
 			printf( /* translators: %1$s - the opening div and paragraph HTML tags, %2$s and %3$s - strong HTML tags, %4$s - the closing div and paragraph HTML tags. */
-				esc_html__( '%1$sWarning: your server is using %2$sPHP safe mode%3$s. This means that you might experience server timeout errors.%4$s', 'beautifo-core' ),
+				esc_html__( '%1$sWarning: your server is using %2$sPHP safe mode%3$s. This means that you might experience server timeout errors.%4$s', 'dimas' ),
 				'<div class="notice  notice-warning  is-dismissible"><p>',
 				'<strong>',
 				'</strong>',
@@ -47,9 +47,9 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 
 		<div class="ocdi__intro-text">
 			<p class="about-description">
-				<?php esc_html_e( 'Importing demo data (post, pages, images, theme settings, etc.) is the quickest and easiest way to set up your new theme.', 'beautifo-core' ); ?>
-				<?php esc_html_e( 'It allows you to simply edit everything instead of creating content and layouts from scratch.', 'beautifo-core' ); ?>
-				<a href="https://ocdi.com/user-guide/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Learn more', 'beautifo-core' ); ?></a>.
+				<?php esc_html_e( 'Importing demo data (post, pages, images, theme settings, etc.) is the quickest and easiest way to set up your new theme.', 'dimas' ); ?>
+				<?php esc_html_e( 'It allows you to simply edit everything instead of creating content and layouts from scratch.', 'dimas' ); ?>
+				<a href="https://ocdi.com/user-guide/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Learn more', 'dimas' ); ?></a>.
 			</p>
 		</div>
 
@@ -62,7 +62,7 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 
 		<?php if ( empty( $this->import_files ) ) : ?>
 			<div class="notice  notice-info">
-				<p><?php esc_html_e( 'There are no predefined import files available for this theme. Please upload the import files manually below.', 'beautifo-core' ); ?></p>
+				<p><?php esc_html_e( 'There are no predefined import files available for this theme. Please upload the import files manually below.', 'dimas' ); ?></p>
 			</div>
 		<?php endif; ?>
 
@@ -71,7 +71,7 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 		<div class="ocdi__theme-about">
 			<div class="ocdi__theme-about-screenshots">
 				<?php if ( $theme->get_screenshot() ) : ?>
-				<div class="screenshot"><img src="<?php echo esc_url( $theme->get_screenshot() ); ?>" alt="<?php esc_attr_e( 'Theme screenshot', 'beautifo-core' ); ?>" /></div>
+				<div class="screenshot"><img src="<?php echo esc_url( $theme->get_screenshot() ); ?>" alt="<?php esc_attr_e( 'Theme screenshot', 'dimas' ); ?>" /></div>
 				<?php else : ?>
 				<div class="screenshot blank"></div>
 				<?php endif; ?>
@@ -84,14 +84,14 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 						<span class="theme-version">
 							<?php
 							/* translators: %s: Theme version. */
-							printf( __( 'Version: %s', 'beautifo-core' ), esc_html( $theme->version ) );
+							printf( __( 'Version: %s', 'dimas' ), esc_html( $theme->version ) );
 							?>
 						</span>
 					</div>
 					<p class="theme-author">
 						<?php
 						/* translators: %s: Theme author link. */
-						printf( __( 'By %s', 'beautifo-core' ), wp_kses_post( $theme->author ) );
+						printf( __( 'By %s', 'dimas' ), wp_kses_post( $theme->author ) );
 						?>
 					</p>
 
@@ -99,15 +99,15 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 
 					<?php if ( ! empty( $theme->tags ) ) : ?>
 					<hr>
-					<p class="theme-tags"><span><?php esc_html_e( 'Tags:', 'beautifo-core' ); ?></span> <?php echo esc_html( implode( ', ', $theme->tags ) ); ?></p>
+					<p class="theme-tags"><span><?php esc_html_e( 'Tags:', 'dimas' ); ?></span> <?php echo esc_html( implode( ', ', $theme->tags ) ); ?></p>
 					<?php endif; ?>
 				</div>
 				<div class="bottom-content">
 					<?php if ( ! empty( $this->import_files ) ) : ?>
 						<?php if ( empty( $_GET['import-mode'] ) || 'manual' !== $_GET['import-mode'] ) : ?>
-							<a href="<?php echo esc_url( $this->get_plugin_settings_url( array( 'import-mode' => 'manual' ) ) ); ?>" class="ocdi-import-mode-switch"><?php esc_html_e( 'Switch to Manual Import', 'beautifo-core' ); ?></a>
+							<a href="<?php echo esc_url( $this->get_plugin_settings_url( array( 'import-mode' => 'manual' ) ) ); ?>" class="ocdi-import-mode-switch"><?php esc_html_e( 'Switch to Manual Import', 'dimas' ); ?></a>
 						<?php else : ?>
-							<a href="<?php echo esc_url( $this->get_plugin_settings_url() ); ?>" class="ocdi-import-mode-switch"><?php esc_html_e( 'Switch back to Theme Predefined Imports', 'beautifo-core' ); ?></a>
+							<a href="<?php echo esc_url( $this->get_plugin_settings_url() ); ?>" class="ocdi-import-mode-switch"><?php esc_html_e( 'Switch back to Theme Predefined Imports', 'dimas' ); ?></a>
 						<?php endif; ?>
 					<?php endif; ?>
 				</div>
@@ -118,7 +118,7 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 
 			<div class="ocdi__file-upload-container">
 				<div class="ocdi__file-upload-container--header">
-					<h2><?php esc_html_e( 'Manual Demo File Import', 'beautifo-core' ); ?></h2>
+					<h2><?php esc_html_e( 'Manual Demo File Import', 'dimas' ); ?></h2>
 				</div>
 
 				<div class="ocdi__file-upload-container-items">
@@ -127,18 +127,18 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 						<div class="ocdi__card-content">
 							<label for="ocdi__content-file-upload">
 								<div class="ocdi-icon-container">
-									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/content.svg' ); ?>" class="ocdi-icon--content" alt="<?php esc_attr_e( 'Content import icon', 'beautifo-core' ); ?>">
+									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/content.svg' ); ?>" class="ocdi-icon--content" alt="<?php esc_attr_e( 'Content import icon', 'dimas' ); ?>">
 								</div>
-								<h3><?php esc_html_e( 'Import Content', 'beautifo-core' ); ?></h3>
-								<p><?php esc_html_e( 'Select an XML file to import.', 'beautifo-core' ); ?></p>
+								<h3><?php esc_html_e( 'Import Content', 'dimas' ); ?></h3>
+								<p><?php esc_html_e( 'Select an XML file to import.', 'dimas' ); ?></p>
 							</label>
 							<a href="https://ocdi.com/user-guide/#import-content" target="_blank" rel="noopener noreferrer" class="ocdi__card-content-info">
-								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'beautifo-core' ); ?>">
+								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'dimas' ); ?>">
 							</a>
 						</div>
 						<div class="ocdi__card-footer">
 							<label for="ocdi__content-file-upload" class="button button-primary custom-file-upload-button">
-								<?php esc_html_e( 'Select a File', 'beautifo-core' ); ?>
+								<?php esc_html_e( 'Select a File', 'dimas' ); ?>
 							</label>
 							<input id="ocdi__content-file-upload" type="file" class="ocdi-hide-input" name="content-file-upload">
 						</div>
@@ -148,18 +148,18 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 						<div class="ocdi__card-content">
 							<label for="ocdi__widget-file-upload">
 								<div class="ocdi-icon-container">
-									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/widgets.svg' ); ?>" class="ocdi-icon--widgets" alt="<?php esc_attr_e( 'Widgets import icon', 'beautifo-core' ); ?>">
+									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/widgets.svg' ); ?>" class="ocdi-icon--widgets" alt="<?php esc_attr_e( 'Widgets import icon', 'dimas' ); ?>">
 								</div>
-								<h3><?php esc_html_e( 'Import Widgets', 'beautifo-core' ); ?></h3>
-								<p><?php esc_html_e( 'Select a JSON/WIE file to import.', 'beautifo-core' ); ?></p>
+								<h3><?php esc_html_e( 'Import Widgets', 'dimas' ); ?></h3>
+								<p><?php esc_html_e( 'Select a JSON/WIE file to import.', 'dimas' ); ?></p>
 							</label>
 							<a href="https://ocdi.com/user-guide/#import-widgets" target="_blank" rel="noopener noreferrer" class="ocdi__card-content-info">
-								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'beautifo-core' ); ?>">
+								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'dimas' ); ?>">
 							</a>
 						</div>
 						<div class="ocdi__card-footer">
 							<label for="ocdi__widget-file-upload" class="button button-primary custom-file-upload-button">
-								<?php esc_html_e( 'Select a File', 'beautifo-core' ); ?>
+								<?php esc_html_e( 'Select a File', 'dimas' ); ?>
 							</label>
 							<input id="ocdi__widget-file-upload" type="file" class="ocdi-hide-input" name="widget-file-upload">
 						</div>
@@ -169,18 +169,18 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 						<div class="ocdi__card-content">
 							<label for="ocdi__customizer-file-upload">
 								<div class="ocdi-icon-container">
-									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/brush.svg' ); ?>" class="ocdi-icon--brush" alt="<?php esc_attr_e( 'Customizer import icon', 'beautifo-core' ); ?>">
+									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/brush.svg' ); ?>" class="ocdi-icon--brush" alt="<?php esc_attr_e( 'Customizer import icon', 'dimas' ); ?>">
 								</div>
-								<h3><?php esc_html_e( 'Import Customizer', 'beautifo-core' ); ?></h3>
-								<p><?php esc_html_e( 'Select a DAT file to import.', 'beautifo-core' ); ?></p>
+								<h3><?php esc_html_e( 'Import Customizer', 'dimas' ); ?></h3>
+								<p><?php esc_html_e( 'Select a DAT file to import.', 'dimas' ); ?></p>
 							</label>
 							<a href="https://ocdi.com/user-guide/#import-customizer" target="_blank" rel="noopener noreferrer" class="ocdi__card-content-info">
-								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'beautifo-core' ); ?>">
+								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'dimas' ); ?>">
 							</a>
 						</div>
 						<div class="ocdi__card-footer">
 							<label for="ocdi__customizer-file-upload" class="button button-primary custom-file-upload-button">
-								<?php esc_html_e( 'Select a File', 'beautifo-core' ); ?>
+								<?php esc_html_e( 'Select a File', 'dimas' ); ?>
 							</label>
 							<input id="ocdi__customizer-file-upload" type="file" class="ocdi-hide-input" name="customizer-file-upload">
 						</div>
@@ -191,21 +191,21 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 						<div class="ocdi__card-content">
 							<label for="ocdi__redux-file-upload">
 								<div class="ocdi-icon-container">
-									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/redux.svg' ); ?>" class="ocdi-icon--redux" alt="<?php esc_attr_e( 'Redux import icon', 'beautifo-core' ); ?>">
+									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/redux.svg' ); ?>" class="ocdi-icon--redux" alt="<?php esc_attr_e( 'Redux import icon', 'dimas' ); ?>">
 								</div>
-								<h3><?php esc_html_e( 'Import Redux', 'beautifo-core' ); ?></h3>
-								<p><?php esc_html_e( 'Select a JSON file and enter Redux option name.', 'beautifo-core' ); ?></p>
+								<h3><?php esc_html_e( 'Import Redux', 'dimas' ); ?></h3>
+								<p><?php esc_html_e( 'Select a JSON file and enter Redux option name.', 'dimas' ); ?></p>
 							</label>
 							<a href="https://ocdi.com/user-guide/#import-redux" target="_blank" rel="noopener noreferrer" class="ocdi__card-content-info">
-								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'beautifo-core' ); ?>">
+								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'dimas' ); ?>">
 							</a>
 						</div>
 						<div class="ocdi__card-footer">
 							<label for="ocdi__redux-file-upload" class="button button-primary custom-file-upload-button">
-								<?php esc_html_e( 'Select a File', 'beautifo-core' ); ?>
+								<?php esc_html_e( 'Select a File', 'dimas' ); ?>
 							</label>
 							<input id="ocdi__redux-file-upload" type="file" class="ocdi-hide-input" name="redux-file-upload">
-							<input id="ocdi__redux-option-name" class="ocdi__redux-option-name-input" type="text" name="redux-option-name" placeholder="<?php esc_attr_e( 'Enter Option Name', 'beautifo-core' ); ?>">
+							<input id="ocdi__redux-option-name" class="ocdi__redux-option-name-input" type="text" name="redux-option-name" placeholder="<?php esc_attr_e( 'Enter Option Name', 'dimas' ); ?>">
 						</div>
 					</div>
 					<?php endif; ?>
@@ -216,17 +216,17 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 						<div class="ocdi__card-content">
 							<label>
 								<div class="ocdi-icon-container">
-									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/plugins.svg' ); ?>" class="ocdi-icon--plugins" alt="<?php esc_attr_e( 'Recommended plugins icon', 'beautifo-core' ); ?>">
+									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/plugins.svg' ); ?>" class="ocdi-icon--plugins" alt="<?php esc_attr_e( 'Recommended plugins icon', 'dimas' ); ?>">
 								</div>
-								<h3><?php esc_html_e( 'Recommended Plugins', 'beautifo-core' ); ?></h3>
-								<p><?php esc_html_e( 'Install our recommended plugins.', 'beautifo-core' ); ?></p>
+								<h3><?php esc_html_e( 'Recommended Plugins', 'dimas' ); ?></h3>
+								<p><?php esc_html_e( 'Install our recommended plugins.', 'dimas' ); ?></p>
 							</label>
 							<a href="https://ocdi.com/user-guide/#recommended-plugins" target="_blank" rel="noopener noreferrer" class="ocdi__card-content-info">
-								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'beautifo-core' ); ?>">
+								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'dimas' ); ?>">
 							</a>
 						</div>
 						<div class="ocdi__card-footer">
-							<a href="<?php echo esc_url( $this->get_plugin_settings_url( array( 'step' => 'install-plugins' ) ) ); ?>" class="button button-secondary"><?php esc_html_e( 'Install Plugins', 'beautifo-core' ); ?></a>
+							<a href="<?php echo esc_url( $this->get_plugin_settings_url( array( 'step' => 'install-plugins' ) ) ); ?>" class="button button-secondary"><?php esc_html_e( 'Install Plugins', 'dimas' ); ?></a>
 						</div>
 					</div>
 
@@ -234,17 +234,17 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 						<div class="ocdi__card-content">
 							<label>
 								<div class="ocdi-icon-container">
-									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/copy.svg' ); ?>" class="ocdi-icon--copy" alt="<?php esc_attr_e( 'Create demo content icon', 'beautifo-core' ); ?>">
+									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/copy.svg' ); ?>" class="ocdi-icon--copy" alt="<?php esc_attr_e( 'Create demo content icon', 'dimas' ); ?>">
 								</div>
-								<h3><?php esc_html_e( 'Create Demo Content', 'beautifo-core' ); ?></h3>
-								<p><?php esc_html_e( 'Create useful content with a few clicks.', 'beautifo-core' ); ?></p>
+								<h3><?php esc_html_e( 'Create Demo Content', 'dimas' ); ?></h3>
+								<p><?php esc_html_e( 'Create useful content with a few clicks.', 'dimas' ); ?></p>
 							</label>
 							<a href="https://ocdi.com/user-guide/#create-demo-content" target="_blank" rel="noopener noreferrer" class="ocdi__card-content-info">
-								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'beautifo-core' ); ?>">
+								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'dimas' ); ?>">
 							</a>
 						</div>
 						<div class="ocdi__card-footer">
-							<a href="<?php echo esc_url( $this->get_plugin_settings_url( array( 'step' => 'create-content' ) ) ); ?>" class="button button-secondary"><?php esc_html_e( 'Create Content', 'beautifo-core' ); ?></a>
+							<a href="<?php echo esc_url( $this->get_plugin_settings_url( array( 'step' => 'create-content' ) ) ); ?>" class="button button-secondary"><?php esc_html_e( 'Create Content', 'dimas' ); ?></a>
 						</div>
 					</div>
 
@@ -252,13 +252,13 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 						<div class="ocdi__card-content">
 							<label>
 								<div class="ocdi-icon-container">
-									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/layout.svg' ); ?>" class="ocdi-icon--layout" alt="<?php esc_attr_e( 'Create landing pages icon', 'beautifo-core' ); ?>">
+									<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/layout.svg' ); ?>" class="ocdi-icon--layout" alt="<?php esc_attr_e( 'Create landing pages icon', 'dimas' ); ?>">
 								</div>
-								<h3><?php esc_html_e( 'Create Landing Pages', 'beautifo-core' ); ?></h3>
-								<p><?php esc_html_e( 'Create beautiful converting pages.', 'beautifo-core' ); ?></p>
+								<h3><?php esc_html_e( 'Create Landing Pages', 'dimas' ); ?></h3>
+								<p><?php esc_html_e( 'Create beautiful converting pages.', 'dimas' ); ?></p>
 							</label>
 							<a href="https://ocdi.com/user-guide/#create-landing-pages" target="_blank" rel="noopener noreferrer" class="ocdi__card-content-info">
-								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'beautifo-core' ); ?>">
+								<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/info-circle.svg' ); ?>" alt="<?php esc_attr_e( 'Info icon', 'dimas' ); ?>">
 							</a>
 						</div>
 						<div class="ocdi__card-footer">
@@ -267,14 +267,14 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 								$seedprod_active = $plugin_installer->is_plugin_active( 'coming-soon' );
 							?>
 							<a href="#" class="button button-secondary js-ocdi-install-coming-soon-plugin<?php echo empty( $seedprod_active ) ? '' : ' button-disabled'; ?>">
-								<?php echo empty( $seedprod_active ) ? esc_html__( 'Install Plugin', 'beautifo-core' ) : esc_html__( 'Installed', 'beautifo-core' ); ?>
+								<?php echo empty( $seedprod_active ) ? esc_html__( 'Install Plugin', 'dimas' ) : esc_html__( 'Installed', 'dimas' ); ?>
 							</a>
 						</div>
 					</div>
 				</div>
 				<div class="ocdi__file-upload-container--footer">
-					<button class="ocdi__button button button-hero js-ocdi-cancel-manual-import" disabled><?php esc_html_e( 'Cancel', 'beautifo-core' ); ?></button>
-					<button class="ocdi__button button button-hero button-primary js-ocdi-start-manual-import" disabled><?php esc_html_e( 'Continue & Import', 'beautifo-core' ); ?></button>
+					<button class="ocdi__button button button-hero js-ocdi-cancel-manual-import" disabled><?php esc_html_e( 'Cancel', 'dimas' ); ?></button>
+					<button class="ocdi__button button button-hero button-primary js-ocdi-start-manual-import" disabled><?php esc_html_e( 'Continue & Import', 'dimas' ); ?></button>
 				</div>
 			</div>
 
@@ -287,7 +287,7 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 			?></div>
 
 			<p class="ocdi__button-container">
-				<a href="<?php echo esc_url( $this->get_plugin_settings_url( [ 'step' => 'import', 'import' => 0 ] ) ); ?>" class="ocdi__button  button  button-hero  button-primary"><?php esc_html_e( 'Import Demo Data', 'beautifo-core' ); ?></a>
+				<a href="<?php echo esc_url( $this->get_plugin_settings_url( [ 'step' => 'import', 'import' => 0 ] ) ); ?>" class="ocdi__button  button  button-hero  button-primary"><?php esc_html_e( 'Import Demo Data', 'dimas' ); ?></a>
 			</p>
 
 		<?php else : ?>
@@ -302,7 +302,7 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 					<div class="ocdi__gl-header  js-ocdi-gl-header">
 						<nav class="ocdi__gl-navigation">
 							<ul>
-								<li class="active"><a href="#all" class="ocdi__gl-navigation-link  js-ocdi-nav-link"><span><?php esc_html_e( 'All Demos', 'beautifo-core' ); ?></span></a></li>
+								<li class="active"><a href="#all" class="ocdi__gl-navigation-link  js-ocdi-nav-link"><span><?php esc_html_e( 'All Demos', 'dimas' ); ?></span></a></li>
 								<?php foreach ( $categories as $key => $name ) : ?>
 									<li>
 										<a href="#<?php echo esc_attr( $key ); ?>" class="ocdi__gl-navigation-link  js-ocdi-nav-link">
@@ -315,7 +315,7 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 							</ul>
 						</nav>
 						<div clas="ocdi__gl-search">
-							<input type="search" class="ocdi__gl-search-input  js-ocdi-gl-search" name="ocdi-gl-search" value="" placeholder="<?php esc_html_e( 'Search Demos...', 'beautifo-core' ); ?>">
+							<input type="search" class="ocdi__gl-search-input  js-ocdi-gl-search" name="ocdi-gl-search" value="" placeholder="<?php esc_html_e( 'Search Demos...', 'dimas' ); ?>">
 						</div>
 					</div>
 				<?php else : ?>
@@ -338,16 +338,16 @@ Helpers::do_action( 'ocdi/plugin_page_header' );
 								<?php if ( ! empty( $img_src ) ) : ?>
 									<img class="ocdi__gl-item-image" src="<?php echo esc_url( $img_src ) ?>">
 								<?php else : ?>
-									<div class="ocdi__gl-item-image  ocdi__gl-item-image--no-image"><?php esc_html_e( 'No preview image.', 'beautifo-core' ); ?></div>
+									<div class="ocdi__gl-item-image  ocdi__gl-item-image--no-image"><?php esc_html_e( 'No preview image.', 'dimas' ); ?></div>
 								<?php endif; ?>
 							</div>
 							<div class="ocdi__gl-item-footer<?php echo ! empty( $import_file['preview_url'] ) ? '  ocdi__gl-item-footer--with-preview' : ''; ?>">
 								<h4 class="ocdi__gl-item-title" title="<?php echo esc_attr( $import_file['import_file_name'] ); ?>"><?php echo esc_html( $import_file['import_file_name'] ); ?></h4>
 								<span class="ocdi__gl-item-buttons">
 									<?php if ( ! empty( $import_file['preview_url'] ) ) : ?>
-										<a class="ocdi__gl-item-button  button" href="<?php echo esc_url( $import_file['preview_url'] ); ?>" target="_blank"><?php esc_html_e( 'Preview Demo', 'beautifo-core' ); ?></a>
+										<a class="ocdi__gl-item-button  button" href="<?php echo esc_url( $import_file['preview_url'] ); ?>" target="_blank"><?php esc_html_e( 'Preview Demo', 'dimas' ); ?></a>
 									<?php endif; ?>
-									<a class="ocdi__gl-item-button  button  button-primary" href="<?php echo $this->get_plugin_settings_url( [ 'step' => 'import', 'import' => esc_attr( $index ) ] ); ?>"><?php esc_html_e( 'Import Demo', 'beautifo-core' ); ?></a>
+									<a class="ocdi__gl-item-button  button  button-primary" href="<?php echo $this->get_plugin_settings_url( [ 'step' => 'import', 'import' => esc_attr( $index ) ] ); ?>"><?php esc_html_e( 'Import Demo', 'dimas' ); ?></a>
 								</span>
 							</div>
 						</div>

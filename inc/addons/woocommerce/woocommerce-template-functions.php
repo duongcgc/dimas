@@ -6,7 +6,7 @@ if (!function_exists('osf_woocommerce_widget_shopping_cart_button_view_cart')) {
      * Output the view cart button.
      */
     function osf_woocommerce_widget_shopping_cart_button_view_cart() {
-        echo '<a href="' . esc_url(wc_get_cart_url()) . '" class="button wc-forward"><span>' . esc_html__('View cart', 'beautifo-core') . '</span></a>';
+        echo '<a href="' . esc_url(wc_get_cart_url()) . '" class="button wc-forward"><span>' . esc_html__('View cart', 'dimas') . '</span></a>';
     }
 }
 
@@ -16,7 +16,7 @@ if (!function_exists('osf_woocommerce_widget_shopping_cart_proceed_to_checkout')
      * Output the proceed to checkout button.
      */
     function osf_woocommerce_widget_shopping_cart_proceed_to_checkout() {
-        echo '<a href="' . esc_url(wc_get_checkout_url()) . '" class="button checkout wc-forward"><span>' . esc_html__('Checkout', 'beautifo-core') . '</span></a>';
+        echo '<a href="' . esc_url(wc_get_checkout_url()) . '" class="button checkout wc-forward"><span>' . esc_html__('Checkout', 'dimas') . '</span></a>';
     }
 }
 
@@ -344,7 +344,7 @@ if (!function_exists('osf_handheld_footer_bar_search')) {
      * @since 2.0.0
      */
     function osf_handheld_footer_bar_search() {
-        echo '<a href="">' . esc_attr__('Search', 'beautifo-core') . '</a>';
+        echo '<a href="">' . esc_attr__('Search', 'dimas') . '</a>';
         osf_product_search();
     }
 }
@@ -358,7 +358,7 @@ if (!function_exists('osf_handheld_footer_bar_cart_link')) {
     function osf_handheld_footer_bar_cart_link() {
         ?>
         <a class="footer-cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>"
-           title="<?php esc_attr_e('View your shopping cart', 'beautifo-core'); ?>">
+           title="<?php esc_attr_e('View your shopping cart', 'dimas'); ?>">
             <span class="count"><?php echo wp_kses_data(WC()->cart->get_cart_contents_count()); ?></span>
         </a>
         <?php
@@ -372,7 +372,7 @@ if (!function_exists('osf_handheld_footer_bar_account_link')) {
      * @since 2.0.0
      */
     function osf_handheld_footer_bar_account_link() {
-        echo '<a href="' . esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))) . '">' . esc_attr__('My Account', 'beautifo-core') . '</a>';
+        echo '<a href="' . esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))) . '">' . esc_attr__('My Account', 'dimas') . '</a>';
     }
 }
 
@@ -466,7 +466,7 @@ if (!function_exists('osf_woocommerce_product_best_selling')) {
         ?>
         <div class="best-selling">
             <div class="best-selling-inner">
-                <h4 class="best-selling-title"><?php echo esc_html__('Trending', 'beautifo-core'); ?></h4>
+                <h4 class="best-selling-title"><?php echo esc_html__('Trending', 'dimas'); ?></h4>
                 <ul class="product_list_widget product-best-selling">
                     <?php
                     $args = array(
@@ -481,7 +481,7 @@ if (!function_exists('osf_woocommerce_product_best_selling')) {
                             wc_get_template_part('content', 'widget-product');
                         endwhile;
                     } else {
-                        echo __('No products found', 'beautifo-core');
+                        echo __('No products found', 'dimas');
                     }
                     wp_reset_postdata();
                     ?>
@@ -500,7 +500,7 @@ if (!function_exists('osf_template_loop_product_thumbnail')) {
 }
 if (!function_exists('osf_woocommerce_order_review_heading')) {
     function osf_woocommerce_order_review_heading() {
-        echo ' <h3 class="order_review_heading">' . esc_attr__('Your order', 'beautifo-core') . '</h3>';
+        echo ' <h3 class="order_review_heading">' . esc_attr__('Your order', 'dimas') . '</h3>';
     }
 }
 
@@ -676,11 +676,11 @@ if (!function_exists('osf_woocommerce_get_product_label_stock')) {
          */
         global $product;
         if ($product->get_stock_status() == 'outofstock') {
-            echo '<span class="stock-label outofstock"><span>' . esc_html__('Out Of Stock', 'beautifo-core') . '</span></span>';
+            echo '<span class="stock-label outofstock"><span>' . esc_html__('Out Of Stock', 'dimas') . '</span></span>';
         } elseif ($product->get_stock_status() == 'instock') {
-            echo '<span class="stock-label instock"><span>' . esc_html__('In Stock', 'beautifo-core') . '</span></span>';
+            echo '<span class="stock-label instock"><span>' . esc_html__('In Stock', 'dimas') . '</span></span>';
         } else {
-            echo '<span class="stock-label onbackorder"><span>' . esc_html__('On backorder', 'beautifo-core') . '</span></span>';
+            echo '<span class="stock-label onbackorder"><span>' . esc_html__('On backorder', 'dimas') . '</span></span>';
         }
     }
 }
@@ -691,7 +691,7 @@ if (!function_exists('osf_woocommerce_get_product_label_new')) {
         $newness_days = 30;
         $created      = strtotime($product->get_date_created());
         if ((time() - (60 * 60 * 24 * $newness_days)) < $created) {
-            echo '<span class="new-label"><span>' . esc_html__('New!', 'beautifo-core') . '</span></span>';
+            echo '<span class="new-label"><span>' . esc_html__('New!', 'dimas') . '</span></span>';
         }
     }
 }
@@ -706,7 +706,7 @@ if (!function_exists('osf_woocommerce_get_product_label_sale_number')) {
             $sale  = $product->get_sale_price();
             $price = $product->get_regular_price();
             $ratio = round(($price - $sale) / $price * 100);
-            echo '<span class="onsale">-' . esc_html($ratio) . '% ' . esc_html__('Off', 'beautifo-core') . ' </span>';
+            echo '<span class="onsale">-' . esc_html($ratio) . '% ' . esc_html__('Off', 'dimas') . ' </span>';
         }
     }
 }
@@ -718,7 +718,7 @@ if (!function_exists('osf_woocommerce_get_product_label_sale')) {
          */
         global $product;
         if ($product->is_on_sale() && $product->is_type('simple')) {
-            echo '<span class="onsale">' . esc_html__('Sale', 'beautifo-core') . ' </span>';
+            echo '<span class="onsale">' . esc_html__('Sale', 'dimas') . ' </span>';
         }
     }
 }
@@ -730,7 +730,7 @@ if (!function_exists('osf_woocommerce_get_product_label_feature')) {
          */
         global $product;
         if ($product->is_featured()) {
-            echo '<span class="trend"><span>' . esc_html__('Trend', 'beautifo-core') . '</span></span>';
+            echo '<span class="trend"><span>' . esc_html__('Trend', 'dimas') . '</span></span>';
         }
     }
 }
@@ -814,14 +814,14 @@ if (!function_exists('osf_woocommerce_time_sale')) {
             wp_enqueue_script('otf-countdown');
             $time_sale += (get_option('gmt_offset') * 3600);
             echo '<div class="time">
-                    <div class="deal-text d-none">' . esc_html__('Hurry up. Offer end in', 'beautifo-core') . '</div>
+                    <div class="deal-text d-none">' . esc_html__('Hurry up. Offer end in', 'dimas') . '</div>
                     <div class="opal-countdown clearfix typo-quaternary"
                         data-countdown="countdown"
                         data-days="' . esc_html__("days", "beautifo-core") . '" 
                         data-hours="' . esc_html__("hours", "beautifo-core") . '"
                         data-minutes="' . esc_html__("mins", "beautifo-core") . '"
                         data-seconds="' . esc_html__("secs", "beautifo-core") . '"
-                        data-Message="' . esc_html__('Expired', 'beautifo-core') . '"
+                        data-Message="' . esc_html__('Expired', 'dimas') . '"
                         data-date="' . date('m', $time_sale) . '-' . date('d', $time_sale) . '-' . date('Y', $time_sale) . '-' . date('H', $time_sale) . '-' . date('i', $time_sale) . '-' . date('s', $time_sale) . '">
                     </div>
             </div>';
@@ -982,10 +982,10 @@ if (!function_exists('osf_active_filters')) {
         if (is_filtered()) {
             $link_remove_all = $_SERVER['REQUEST_URI'];
             $link_remove_all = strtok($link_remove_all, '?');
-            echo '<div class="osf-active-filters"> <span class="osf_active_filters_label">' . esc_html__('Active Filters: ', 'beautifo-core') . '</span>';
+            echo '<div class="osf-active-filters"> <span class="osf_active_filters_label">' . esc_html__('Active Filters: ', 'dimas') . '</span>';
             the_widget('WC_Widget_Layered_Nav_Filters');
             echo '
-                <a class="clear-all" href="' . esc_url($link_remove_all) . '">' . __('Clear Filters', 'beautifo-core') . '</a>
+                <a class="clear-all" href="' . esc_url($link_remove_all) . '">' . __('Clear Filters', 'dimas') . '</a>
             </div>';
         }
 
@@ -1039,7 +1039,7 @@ if (!function_exists('osf_single_product_quantity_label')) {
         $min_value = apply_filters('woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product);
         $max_value = apply_filters('woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product);
         if ($max_value && $min_value !== $max_value) {
-            echo '<label class="quantity_label">' . __('Quantity:', 'beautifo-core') . ' </label>';
+            echo '<label class="quantity_label">' . __('Quantity:', 'dimas') . ' </label>';
         }
     }
 }
@@ -1097,8 +1097,8 @@ if (!function_exists('osf_woocommerce_deal_progress')) {
         ?>
 
         <div class="deal-sold">
-            <span class="deal-text d-block"><span><?php esc_html_e('Hurry! only', 'beautifo-core') ?></span>
-                <span class="c-primary"><?php echo esc_attr(trim($limit - $sold)) ?></span> <span><?php esc_html_e('left in stock.', 'beautifo-core') ?></span></span>
+            <span class="deal-text d-block"><span><?php esc_html_e('Hurry! only', 'dimas') ?></span>
+                <span class="c-primary"><?php echo esc_attr(trim($limit - $sold)) ?></span> <span><?php esc_html_e('left in stock.', 'dimas') ?></span></span>
             <div>
                 <div class="deal-progress">
                     <div class="progress-bar">
@@ -1138,7 +1138,7 @@ function otf_woocommerce_recently_viewed_product() {
         $columns = get_theme_mod('otf_woocommerce_extra_product_recently_viewed_columns', 5);
         if (!empty($_COOKIE['otf_woocommerce_recently_viewed'])) {
             echo '<div class="otf-product-recently-review">';
-            echo '<h2 class="otf-woocommerce-recently-viewed">' . esc_html__('Your Recently Viewed', 'beautifo-core') . '</h2>';
+            echo '<h2 class="otf-woocommerce-recently-viewed">' . esc_html__('Your Recently Viewed', 'dimas') . '</h2>';
             echo '<div class="otf-product-recently-content" id="otf-woocommerce-recently-viewed"><div class="otf-product-recently-content-overlay"></div>';
             echo '<div class="woocommerce-product" data-columns="' . esc_attr($columns) . '">';
             otf_woocommerce_widget_recently_viewed();
@@ -1297,8 +1297,8 @@ function osf_woocommerce_single_product_image_gallery_classes($array) {
 add_filter('woocommerce_single_product_image_gallery_classes', 'osf_woocommerce_single_product_image_gallery_classes', 10, 1);
 
 function osf_woocommerce_pagination_args($args) {
-    $args['prev_text'] = '<span class="opal-icon-angle-left"></span>' . __('PREV', 'beautifo-core');
-    $args['next_text'] = __('NEXT', 'beautifo-core') . '<span class="opal-icon-angle-right"></span>';
+    $args['prev_text'] = '<span class="opal-icon-angle-left"></span>' . __('PREV', 'dimas');
+    $args['next_text'] = __('NEXT', 'dimas') . '<span class="opal-icon-angle-right"></span>';
     $args['type']      = 'plain';
 
     return $args;
@@ -1308,7 +1308,7 @@ add_filter('woocommerce_pagination_args', 'osf_woocommerce_pagination_args', 10,
 
 // define the woocommerce_empty_price_html callback
 function filter_woocommerce_empty_price_html($var, $instance) {
-    return esc_html__('Free', 'beautifo-core');
+    return esc_html__('Free', 'dimas');
 }
 
 ;
@@ -1326,7 +1326,7 @@ add_filter('woocommerce_empty_price_html', 'filter_woocommerce_empty_price_html'
 //add_filter( 'woocommerce_get_availability_text', 'woocommerce_custom_get_availability_text', 99, 2 );
 
 function woocommerce_custom_get_availability_text($availability, $product) {
-    $availability = '<span class="label">' . esc_html__('Availability: ', 'beautifo-core') . '</span><span class="stock-availability">' . $availability . '</span>';
+    $availability = '<span class="label">' . esc_html__('Availability: ', 'dimas') . '</span><span class="stock-availability">' . $availability . '</span>';
 
     return $availability;
 }
@@ -1335,8 +1335,8 @@ if (!function_exists('osf_button_grid_list_layout')) {
     function osf_button_grid_list_layout() {
         ?>
         <div class="gridlist-toggle desktop-hide-down">
-            <a href="<?php echo esc_url(add_query_arg('osf_woocommerce_product_style', 'grid')); ?>" id="grid" class="<?php echo isset($_GET['osf_woocommerce_product_style']) && $_GET['osf_woocommerce_product_style'] == 'list' ? '' : 'active'; ?>" title="<?php echo esc_html__('Grid View', 'beautifo-core'); ?>"><i class="opal-icon-th-grid" aria-hidden="true"></i></a>
-            <a href="<?php echo esc_url(add_query_arg('osf_woocommerce_product_style', 'list')); ?>" id="list" class="<?php echo isset($_GET['osf_woocommerce_product_style']) && $_GET['osf_woocommerce_product_style'] == 'list' ? 'active' : ''; ?>" title="<?php echo esc_html__('List View', 'beautifo-core'); ?>"><i class="opal-icon-th-list" aria-hidden="true"></i></a>
+            <a href="<?php echo esc_url(add_query_arg('osf_woocommerce_product_style', 'grid')); ?>" id="grid" class="<?php echo isset($_GET['osf_woocommerce_product_style']) && $_GET['osf_woocommerce_product_style'] == 'list' ? '' : 'active'; ?>" title="<?php echo esc_html__('Grid View', 'dimas'); ?>"><i class="opal-icon-th-grid" aria-hidden="true"></i></a>
+            <a href="<?php echo esc_url(add_query_arg('osf_woocommerce_product_style', 'list')); ?>" id="list" class="<?php echo isset($_GET['osf_woocommerce_product_style']) && $_GET['osf_woocommerce_product_style'] == 'list' ? 'active' : ''; ?>" title="<?php echo esc_html__('List View', 'dimas'); ?>"><i class="opal-icon-th-list" aria-hidden="true"></i></a>
         </div>
         <?php
     }
@@ -1348,7 +1348,7 @@ function osf_woocommerce_show_product_sale_flash() {
     global $post, $product;
     if ($product->is_on_sale()) :
 
-        return '<span class="onsale"><span>' . esc_html__('Sale!', 'beautifo-core') . '</span></span>';
+        return '<span class="onsale"><span>' . esc_html__('Sale!', 'dimas') . '</span></span>';
     endif;
 
 }

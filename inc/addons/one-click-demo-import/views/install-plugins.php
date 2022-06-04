@@ -22,9 +22,9 @@ $plugin_installer = new PluginInstaller();
 			<div class="ocdi__content-container-content--main">
 				<div class="ocdi-install-plugins-content">
 					<div class="ocdi-install-plugins-content-header">
-						<h2><?php esc_html_e( 'Install Recommended Plugins', 'beautifo-core' ); ?></h2>
+						<h2><?php esc_html_e( 'Install Recommended Plugins', 'dimas' ); ?></h2>
 						<p>
-							<?php esc_html_e( 'Want to use the best plugins for the job? Here is the list of awesome plugins that will help you achieve your goals.', 'beautifo-core' ); ?>
+							<?php esc_html_e( 'Want to use the best plugins for the job? Here is the list of awesome plugins that will help you achieve your goals.', 'dimas' ); ?>
 						</p>
 					</div>
 					<div class="ocdi-install-plugins-content-content">
@@ -46,16 +46,16 @@ $plugin_installer = new PluginInstaller();
 								<span class="plugin-item-checkbox">
 									<input type="checkbox" id="ocdi-<?php echo esc_attr( $plugin['slug'] ); ?>-plugin" name="<?php echo esc_attr( $plugin['slug'] ); ?>" <?php checked( ! empty( $plugin['preselected'] ) || $is_plugin_active ); ?><?php disabled( $is_plugin_active ) ?>>
 									<span class="checkbox">
-										<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/check-solid-white.svg' ); ?>" class="ocdi-check-icon" alt="<?php esc_attr_e( 'Checkmark icon', 'beautifo-core' ); ?>">
-										<img src="<?php echo esc_url( OCDI_URL . 'assets/images/loader.svg' ); ?>" class="ocdi-loading ocdi-loading-md" alt="<?php esc_attr_e( 'Loading...', 'beautifo-core' ); ?>">
+										<img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/check-solid-white.svg' ); ?>" class="ocdi-check-icon" alt="<?php esc_attr_e( 'Checkmark icon', 'dimas' ); ?>">
+										<img src="<?php echo esc_url( OCDI_URL . 'assets/images/loader.svg' ); ?>" class="ocdi-loading ocdi-loading-md" alt="<?php esc_attr_e( 'Loading...', 'dimas' ); ?>">
 									</span>
 								</span>
 							</label>
 						<?php endforeach; ?>
 					</div>
 					<div class="ocdi-install-plugins-content-footer">
-						<a href="<?php echo esc_url( $this->get_plugin_settings_url() ); ?>" class="button"><img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/long-arrow-alt-left-blue.svg' ); ?>" alt="<?php esc_attr_e( 'Back icon', 'beautifo-core' ); ?>"><span><?php esc_html_e( 'Go Back' , 'beautifo-core' ); ?></span></a>
-						<a href="#" class="button button-primary js-ocdi-install-plugins"><?php esc_html_e( 'Install & Activate' , 'beautifo-core' ); ?></a>
+						<a href="<?php echo esc_url( $this->get_plugin_settings_url() ); ?>" class="button"><img src="<?php echo esc_url( OCDI_URL . 'assets/images/icons/long-arrow-alt-left-blue.svg' ); ?>" alt="<?php esc_attr_e( 'Back icon', 'dimas' ); ?>"><span><?php esc_html_e( 'Go Back' , 'dimas' ); ?></span></a>
+						<a href="#" class="button button-primary js-ocdi-install-plugins"><?php esc_html_e( 'Install & Activate' , 'dimas' ); ?></a>
 					</div>
 				</div>
 			</div>

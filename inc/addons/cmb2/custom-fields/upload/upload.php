@@ -16,7 +16,7 @@ if (!defined( 'ABSPATH' )) {
     exit; // Exit if accessed directly
 }
 
-class OSF_Field_Opal_Upload {
+class Dimas_Field_Opal_Upload {
 
     /**
      * Current version number
@@ -50,7 +50,7 @@ class OSF_Field_Opal_Upload {
         $user_id = get_current_user_id();
         $nonce   = $_REQUEST['nonce'];
         if (!wp_verify_nonce( $nonce, 'allow_uploaded' ) || !$user_id) {
-            $ajax_response = array( 'success' => false, 'reason' => __( 'Security check failed!', 'beautifo-core' ) );
+            $ajax_response = array( 'success' => false, 'reason' => __( 'Security check failed!', 'dimas' ) );
             echo json_encode( $ajax_response );
             die;
         }
@@ -110,7 +110,7 @@ class OSF_Field_Opal_Upload {
         // Verify Nonce
         $nonce = $_REQUEST['nonce'];
         if (!wp_verify_nonce( $nonce, 'allow_uploaded' )) {
-            $ajax_response = array( 'success' => false, 'reason' => __( 'Security check failed!', 'beautifo-core' ) );
+            $ajax_response = array( 'success' => false, 'reason' => __( 'Security check failed!', 'dimas' ) );
             echo json_encode( $ajax_response );
             die;
         }
@@ -189,8 +189,8 @@ class OSF_Field_Opal_Upload {
         $prop_data = array(
             'ajaxURL'       => admin_url( 'admin-ajax.php' ),
             'uploadNonce'   => wp_create_nonce( 'allow_uploaded' ),
-            'fileTypeTitle' => esc_html__( 'Valid file formats', 'beautifo-core' ),
-            'message'       => esc_html__( 'Please enter only digits', 'beautifo-core' ),
+            'fileTypeTitle' => esc_html__( 'Valid file formats', 'dimas' ),
+            'message'       => esc_html__( 'Please enter only digits', 'dimas' ),
         );
         wp_localize_script( 'opal-upload', 'opalrealestate', $prop_data );
     }
@@ -231,7 +231,7 @@ class OSF_Field_Opal_Upload {
         if (!isset( $_POST['property_id'], $_POST['attachment_id'] )) {
 
 
-            $ouput->message = __( 'Could not delete this?', 'beautifo-core' );
+            $ouput->message = __( 'Could not delete this?', 'dimas' );
             echo json_encode( $ouput );
             exit;
 
@@ -243,7 +243,7 @@ class OSF_Field_Opal_Upload {
 
         if ($user_id == $author_id) {
             wp_delete_attachment( $attchment_id );
-            $ouput->message = __( 'Deleted this done', 'beautifo-core' );
+            $ouput->message = __( 'Deleted this done', 'dimas' );
             $ouput->status  = true;
             echo json_encode( $ouput );
             exit;
@@ -254,12 +254,12 @@ class OSF_Field_Opal_Upload {
 
 
         if (!isset( $property_images[$attchment_id] )) {
-            $ouput->message = __( 'Could not found this in the collection?', 'beautifo-core' );
+            $ouput->message = __( 'Could not found this in the collection?', 'dimas' );
             echo json_encode( $ouput );
             exit;
         }
         if (!opalrealestate_is_own_property( $post_id, $user_id )) {
-            $ouput->message = __( 'The post is not owned by this user?', 'beautifo-core' );
+            $ouput->message = __( 'The post is not owned by this user?', 'dimas' );
             echo json_encode( $ouput );
             exit;
         }
@@ -269,7 +269,7 @@ class OSF_Field_Opal_Upload {
         update_post_meta( $post_id, OPALREALESTATE_PROPERTY_PREFIX . 'gallery', $property_images );
         wp_delete_attachment( $attchment_id );
 
-        $ouput->message = __( 'Deleted this done', 'beautifo-core' );
+        $ouput->message = __( 'Deleted this done', 'dimas' );
         $ouput->status  = true;
 
         echo json_encode( $ouput );
@@ -277,4 +277,4 @@ class OSF_Field_Opal_Upload {
     }
 }
 
-OSF_Field_Opal_Upload::init();
+Dimas_Field_Opal_Upload::init();

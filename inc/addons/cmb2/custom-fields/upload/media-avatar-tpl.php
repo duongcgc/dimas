@@ -19,7 +19,7 @@
         <div id="plupload-container"></div>
     </div>
     <a id="select-profile-image" class="btn btn-primary btn-block btn-3d"
-       href="javascript:;"><?php esc_html_e( 'Update Profile Picture', 'beautifo-core' ); ?></a>
+       href="javascript:;"><?php esc_html_e( 'Update Profile Picture', 'dimas' ); ?></a>
 
-    <span class="profile-img-info"><?php esc_html_e( '*minimum 270px x 270px', 'beautifo-core' ); ?><br/></span>
+    <span class="profile-img-info"><?php esc_html_e( '*minimum 270px x 270px', 'dimas' ); ?><br/></span>
 </div>

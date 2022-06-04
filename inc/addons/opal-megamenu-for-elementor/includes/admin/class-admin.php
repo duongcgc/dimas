@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) || exit();
 
 
-class OSF_Admin_MegaMenu {
+class Dimas_Admin_MegaMenu {
 
 	public function __construct() {
 		$this->includes();
@@ -42,4 +42,4 @@ class OSF_Admin_MegaMenu {
 	}
 }
 
-new OSF_Admin_MegaMenu();
+new Dimas_Admin_MegaMenu();

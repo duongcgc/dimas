@@ -1,22 +1,23 @@
 <?php
 
+namespace Dimas;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
 /**
- * Class OSF_Custom_Post_Type_Portfolio
+ * Class CPT_Portfolio
  */
-class OSF_Custom_Post_Type_Portfolio extends OSF_Custom_Post_Type_Abstract {
+class CPT_Portfolio extends Dimas_Custom_Post_Type_Abstract {
     public $post_type = 'osf_portfolio';
     public $prefix    = 'osf_portfolio_';
     public $taxonomy  = 'osf_portfolio_category';
     static $instance;
 
     public static function getInstance() {
-        if (!isset(self::$instance) && !(self::$instance instanceof OSF_Custom_Post_Type_Portfolio)) {
-            self::$instance = new OSF_Custom_Post_Type_Portfolio();
+        if (!isset(self::$instance) && !(self::$instance instanceof CPT_Portfolio)) {
+            self::$instance = new CPT_Portfolio();
         }
 
         return self::$instance;
@@ -26,18 +27,18 @@ class OSF_Custom_Post_Type_Portfolio extends OSF_Custom_Post_Type_Abstract {
     public function create_post_type() {
 
         $labels = array(
-            'name'               => __('Portfolios', 'beautifo-core'),
-            'singular_name'      => __('Portfolios', 'beautifo-core'),
-            'add_new'            => __('Add Portfolio', 'beautifo-core'),
-            'add_new_item'       => __('Add New Portfolio', 'beautifo-core'),
-            'edit_item'          => __('Edit Portfolio', 'beautifo-core'),
-            'new_item'           => __('New Portfolio', 'beautifo-core'),
-            'all_items'          => __('All Portfolios', 'beautifo-core'),
-            'view_item'          => __('View Portfolio', 'beautifo-core'),
-            'search_items'       => __('Search Portfolio', 'beautifo-core'),
-            'not_found'          => __('No Portfolio found', 'beautifo-core'),
-            'not_found_in_trash' => __('No Portfolio found in Trash', 'beautifo-core'),
-            'menu_name'          => __('Portfolios', 'beautifo-core'),
+            'name'               => __('Portfolios', 'dimas'),
+            'singular_name'      => __('Portfolios', 'dimas'),
+            'add_new'            => __('Add Portfolio', 'dimas'),
+            'add_new_item'       => __('Add New Portfolio', 'dimas'),
+            'edit_item'          => __('Edit Portfolio', 'dimas'),
+            'new_item'           => __('New Portfolio', 'dimas'),
+            'all_items'          => __('All Portfolios', 'dimas'),
+            'view_item'          => __('View Portfolio', 'dimas'),
+            'search_items'       => __('Search Portfolio', 'dimas'),
+            'not_found'          => __('No Portfolio found', 'dimas'),
+            'not_found_in_trash' => __('No Portfolio found in Trash', 'dimas'),
+            'menu_name'          => __('Portfolios', 'dimas'),
         );
 
         $labels     = apply_filters('osf_postype_portfolio_labels', $labels);
@@ -169,14 +170,14 @@ class OSF_Custom_Post_Type_Portfolio extends OSF_Custom_Post_Type_Abstract {
 
         $cmb2 = new_cmb2_box(array(
             'id'           => $this->prefix . 'info',
-            'title'        => __('Info', 'beautifo-core'),
+            'title'        => __('Info', 'dimas'),
             'object_types' => array($this->post_type), // Post type
             'context'      => 'normal',
             'priority'     => 'high',
             'show_names'   => true, // Show field names on the left
         ));
         $cmb2->add_field(array(
-            'name'       => __('Description', 'beautifo-core'),
+            'name'       => __('Description', 'dimas'),
             'id'         => $this->prefix . 'description',
             'type'       => 'textarea',
             'attributes' => array(
@@ -184,7 +185,7 @@ class OSF_Custom_Post_Type_Portfolio extends OSF_Custom_Post_Type_Abstract {
             ),
         ));
         $cmb2->add_field(array(
-            'name'       => __('Client', 'beautifo-core'),
+            'name'       => __('Client', 'dimas'),
             'id'         => $this->prefix . 'client',
             'type'       => 'text',
             'attributes' => array(
@@ -192,7 +193,7 @@ class OSF_Custom_Post_Type_Portfolio extends OSF_Custom_Post_Type_Abstract {
             ),
         ));
         $cmb2->add_field(array(
-            'name'       => __('Date', 'beautifo-core'),
+            'name'       => __('Date', 'dimas'),
             'id'         => $this->prefix . 'date',
             'type'       => 'text_date',
             'attributes' => array(
@@ -200,7 +201,7 @@ class OSF_Custom_Post_Type_Portfolio extends OSF_Custom_Post_Type_Abstract {
             ),
         ));
         $cmb2->add_field(array(
-            'name'       => __('Website', 'beautifo-core'),
+            'name'       => __('Website', 'dimas'),
             'id'         => $this->prefix . 'website',
             'type'       => 'text_url',
             'attributes' => array(
@@ -208,7 +209,7 @@ class OSF_Custom_Post_Type_Portfolio extends OSF_Custom_Post_Type_Abstract {
             ),
         ));
         $cmb2->add_field(array(
-            'name'       => __('Location', 'beautifo-core'),
+            'name'       => __('Location', 'dimas'),
             'id'         => $this->prefix . 'location',
             'type'       => 'text',
             'attributes' => array(
@@ -238,7 +239,7 @@ class OSF_Custom_Post_Type_Portfolio extends OSF_Custom_Post_Type_Abstract {
 
         if ($categories_list) {
             // Make sure there's more than one category before displaying.
-            echo '<span class="portfolio-cat-links"><span class="screen-reader-text">' . esc_html__('Categories', 'beautifo-core') . '</span>' . $categories_list . '</span>';
+            echo '<span class="portfolio-cat-links"><span class="screen-reader-text">' . esc_html__('Categories', 'dimas') . '</span>' . $categories_list . '</span>';
         }
     }
 
@@ -278,9 +279,9 @@ class OSF_Custom_Post_Type_Portfolio extends OSF_Custom_Post_Type_Abstract {
 
     public function widgets_init() {
         register_sidebar(array(
-            'name'          => esc_html__('Portfolio Sidebar', 'beautifo-core'),
+            'name'          => esc_html__('Portfolio Sidebar', 'dimas'),
             'id'            => 'sidebar-portfolio',
-            'description'   => esc_html__('Add widgets here to appear in your Portfolio.', 'beautifo-core'),
+            'description'   => esc_html__('Add widgets here to appear in your Portfolio.', 'dimas'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title">',
@@ -326,4 +327,4 @@ class OSF_Custom_Post_Type_Portfolio extends OSF_Custom_Post_Type_Abstract {
     }
 
 }// end class
-OSF_Custom_Post_Type_Portfolio::getInstance();
+CPT_Portfolio::getInstance();

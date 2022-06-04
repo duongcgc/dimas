@@ -1,6 +1,7 @@
 <?php
 /**
- * Dimas Admin functions and definitions.
+ * Admin and Backend functions and definitions.
+ * => Importer, Block Editor, Plugin Installer,...
  *
  * @package Dimas
  */

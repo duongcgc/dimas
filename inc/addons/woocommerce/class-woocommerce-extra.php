@@ -42,7 +42,7 @@ class Opal_Woocommerce_Extra {
     }
 
     public function register_widget() {
-        register_widget('OSF_Widget_Layered_Nav');
+        register_widget('Dimas_Widget_Layered_Nav');
     }
 
     /**
@@ -58,14 +58,14 @@ class Opal_Woocommerce_Extra {
         ?>
 
         <p class="form-field _deal_quantity_field">
-            <label for="_sale_quantity"><?php esc_html_e('Sale quantity', 'beautifo-core') ?></label>
-            <?php echo wc_help_tip(__('Set this quantity will make the product to be a deal. The sale will end when this quantity is sold out.', 'beautifo-core')); ?>
+            <label for="_sale_quantity"><?php esc_html_e('Sale quantity', 'dimas') ?></label>
+            <?php echo wc_help_tip(__('Set this quantity will make the product to be a deal. The sale will end when this quantity is sold out.', 'dimas')); ?>
             <input type="number" min="<?php echo $min; ?>" class="short" name="_deal_quantity" id="_deal_quantity"
                    value="<?php echo esc_attr($quantity) ?>">
 
             <?php
             if ($quantity > 0) {
-                echo '<span class="deal-sold-counts" style="clear:both;display:block;"><strong>' . sprintf(_n('%s product is sold', '%s products are sold', max(1, $sales_counts), 'beautifo-core'), $sales_counts) . '</strong></span>';
+                echo '<span class="deal-sold-counts" style="clear:both;display:block;"><strong>' . sprintf(_n('%s product is sold', '%s products are sold', max(1, $sales_counts), 'dimas'), $sales_counts) . '</strong></span>';
             }
             ?>
         </p>
@@ -233,14 +233,14 @@ class Opal_Woocommerce_Extra {
         $prefix   = 'product_cat';
         $cmb_term = new_cmb2_box(array(
             'id'           => 'osf_woo_category_meta',
-            'title'        => __('Metabox', 'beautifo-core'), // Doesn't output for term boxes
+            'title'        => __('Metabox', 'dimas'), // Doesn't output for term boxes
             'object_types' => array('term'),
             'taxonomies'   => array('product_cat'),
             // 'new_term_section' => true, // Will display in the "Add New Category" section
         ));
         $cmb_term->add_field(array(
-            'name'       => __('Banner', 'beautifo-core'),
-            'desc'       => __('Show the banner in product category page or any widgets', 'beautifo-core'),
+            'name'       => __('Banner', 'dimas'),
+            'desc'       => __('Show the banner in product category page or any widgets', 'dimas'),
             'id'         => $prefix . '_banner',
             'type'       => 'file',
             'options'    => array(

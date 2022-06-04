@@ -7,7 +7,7 @@ add_action( 'elementor/widgets/widgets_registered', "osf_include_single_widgets"
 function osf_include_single_widgets( $widgets_manager ) {
 	$files = glob( OM_PLUGIN_INC_DIR . "widgets/*.php" );
 	foreach ( $files as $file ) {
-		$class = "OSF_Elementor_" . ucfirst( basename( str_replace( '.php', '', $file ) ) ) . '_Widget';
+		$class = "Dimas_Elementor_" . ucfirst( basename( str_replace( '.php', '', $file ) ) ) . '_Widget';
 		require_once( $file );
 		if ( class_exists( $class ) ) {
 			$widgets_manager->register_widget_type( new $class() );
@@ -49,43 +49,43 @@ function osf_add_back_button_inspector() {
         })(jQuery);
     </script>
     <script type="text/template" id="tmpl-elementor-panel-footer-content">
-        <div id="elementor-panel-footer-back-to-admin" class="elementor-panel-footer-tool elementor-leave-open tooltip-target" data-tooltip="<?php esc_attr_e( 'Back', 'beautifo-core' ); ?>">
+        <div id="elementor-panel-footer-back-to-admin" class="elementor-panel-footer-tool elementor-leave-open tooltip-target" data-tooltip="<?php esc_attr_e( 'Back', 'dimas' ); ?>">
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </div>
         <div id="elementor-panel-footer-responsive" class="elementor-panel-footer-tool">
-            <i class="eicon-device-desktop tooltip-target" aria-hidden="true" data-tooltip="<?php esc_attr_e( 'Responsive Mode', 'beautifo-core' ); ?>"></i>
+            <i class="eicon-device-desktop tooltip-target" aria-hidden="true" data-tooltip="<?php esc_attr_e( 'Responsive Mode', 'dimas' ); ?>"></i>
             <span class="elementor-screen-only">
-					<?php echo __( 'Responsive Mode', 'beautifo-core' ); ?>
+					<?php echo __( 'Responsive Mode', 'dimas' ); ?>
 				</span>
             <div class="elementor-panel-footer-sub-menu-wrapper">
                 <div class="elementor-panel-footer-sub-menu">
                     <div class="elementor-panel-footer-sub-menu-item" data-device-mode="desktop">
                         <i class="elementor-icon eicon-device-desktop" aria-hidden="true"></i>
-                        <span class="elementor-title"><?php echo __( 'Desktop', 'beautifo-core' ); ?></span>
-                        <span class="elementor-description"><?php echo __( 'Default Preview', 'beautifo-core' ); ?></span>
+                        <span class="elementor-title"><?php echo __( 'Desktop', 'dimas' ); ?></span>
+                        <span class="elementor-description"><?php echo __( 'Default Preview', 'dimas' ); ?></span>
                     </div>
                     <div class="elementor-panel-footer-sub-menu-item" data-device-mode="tablet">
                         <i class="elementor-icon eicon-device-tablet" aria-hidden="true"></i>
-                        <span class="elementor-title"><?php echo __( 'Tablet', 'beautifo-core' ); ?></span>
+                        <span class="elementor-title"><?php echo __( 'Tablet', 'dimas' ); ?></span>
 						<?php $breakpoints = Elementor\Core\Responsive\Responsive::get_breakpoints(); ?>
-                        <span class="elementor-description"><?php echo sprintf( __( 'Preview for %s', 'beautifo-core' ), $breakpoints['md'] . 'px' ); ?></span>
+                        <span class="elementor-description"><?php echo sprintf( __( 'Preview for %s', 'dimas' ), $breakpoints['md'] . 'px' ); ?></span>
                     </div>
                     <div class="elementor-panel-footer-sub-menu-item" data-device-mode="mobile">
                         <i class="elementor-icon eicon-device-mobile" aria-hidden="true"></i>
-                        <span class="elementor-title"><?php echo __( 'Mobile', 'beautifo-core' ); ?></span>
-                        <span class="elementor-description"><?php echo __( 'Preview for 360px', 'beautifo-core' ); ?></span>
+                        <span class="elementor-title"><?php echo __( 'Mobile', 'dimas' ); ?></span>
+                        <span class="elementor-description"><?php echo __( 'Preview for 360px', 'dimas' ); ?></span>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="elementor-panel-footer-history" class="elementor-panel-footer-tool elementor-leave-open tooltip-target" data-tooltip="<?php esc_attr_e( 'History', 'beautifo-core' ); ?>">
+        <div id="elementor-panel-footer-history" class="elementor-panel-footer-tool elementor-leave-open tooltip-target" data-tooltip="<?php esc_attr_e( 'History', 'dimas' ); ?>">
             <i class="fa fa-history" aria-hidden="true"></i>
-            <span class="elementor-screen-only"><?php echo __( 'History', 'beautifo-core' ); ?></span>
+            <span class="elementor-screen-only"><?php echo __( 'History', 'dimas' ); ?></span>
         </div>
-        <div id="elementor-panel-saver-button-preview" class="elementor-panel-footer-tool tooltip-target" data-tooltip="<?php esc_attr_e( 'Preview Changes', 'beautifo-core' ); ?>">
+        <div id="elementor-panel-saver-button-preview" class="elementor-panel-footer-tool tooltip-target" data-tooltip="<?php esc_attr_e( 'Preview Changes', 'dimas' ); ?>">
 				<span id="elementor-panel-saver-button-preview-label">
 					<i class="fa fa-eye" aria-hidden="true"></i>
-					<span class="elementor-screen-only"><?php echo __( 'Preview Changes', 'beautifo-core' ); ?></span>
+					<span class="elementor-screen-only"><?php echo __( 'Preview Changes', 'dimas' ); ?></span>
 				</span>
         </div>
         <div id="elementor-panel-saver-publish" class="elementor-panel-footer-tool">
@@ -94,14 +94,14 @@ function osf_add_back_button_inspector() {
 						<i class="fa fa-spin fa-circle-o-notch" aria-hidden="true"></i>
 					</span>
                 <span id="elementor-panel-saver-button-publish-label">
-						<?php echo __( 'Publish', 'beautifo-core' ); ?>
+						<?php echo __( 'Publish', 'dimas' ); ?>
 					</span>
             </button>
         </div>
         <div id="elementor-panel-saver-save-options" class="elementor-panel-footer-tool">
-            <button id="elementor-panel-saver-button-save-options" class="elementor-button elementor-button-success tooltip-target elementor-saver-disabled" data-tooltip="<?php esc_attr_e( 'Save Options', 'beautifo-core' ); ?>">
+            <button id="elementor-panel-saver-button-save-options" class="elementor-button elementor-button-success tooltip-target elementor-saver-disabled" data-tooltip="<?php esc_attr_e( 'Save Options', 'dimas' ); ?>">
                 <i class="fa fa-caret-up" aria-hidden="true"></i>
-                <span class="elementor-screen-only"><?php echo __( 'Save Options', 'beautifo-core' ); ?></span>
+                <span class="elementor-screen-only"><?php echo __( 'Save Options', 'dimas' ); ?></span>
             </button>
             <div class="elementor-panel-footer-sub-menu-wrapper">
                 <p class="elementor-last-edited-wrapper">
@@ -115,11 +115,11 @@ function osf_add_back_button_inspector() {
                 <div class="elementor-panel-footer-sub-menu">
                     <div id="elementor-panel-saver-menu-save-draft" class="elementor-panel-footer-sub-menu-item elementor-saver-disabled">
                         <i class="elementor-icon fa fa-save" aria-hidden="true"></i>
-                        <span class="elementor-title"><?php echo __( 'Save Draft', 'beautifo-core' ); ?></span>
+                        <span class="elementor-title"><?php echo __( 'Save Draft', 'dimas' ); ?></span>
                     </div>
                     <div id="elementor-panel-saver-menu-save-template" class="elementor-panel-footer-sub-menu-item">
                         <i class="elementor-icon fa fa-folder" aria-hidden="true"></i>
-                        <span class="elementor-title"><?php echo __( 'Save as Template', 'beautifo-core' ); ?></span>
+                        <span class="elementor-title"><?php echo __( 'Save as Template', 'dimas' ); ?></span>
                     </div>
                 </div>
             </div>
@@ -135,7 +135,7 @@ function osf_load_menu_data() {
 	$menu_id = ! empty( $_POST['menu_id'] ) ? absint( $_POST['menu_id'] ) : false;
 	if ( ! wp_verify_nonce( $nonce, 'osf-menu-data-nonce' ) || ! $menu_id ) {
 		wp_send_json( array(
-			'message' => __( 'Access denied', 'beautifo-core' )
+			'message' => __( 'Access denied', 'dimas' )
 		) );
 	}
 
@@ -179,7 +179,7 @@ function osf_update_menu_item_data() {
 	$nonce = ! empty( $_POST['nonce'] ) ? sanitize_text_field( $_POST['nonce'] ) : '';
 	if ( ! wp_verify_nonce( $nonce, 'osf-update-menu-item' ) ) {
 		wp_send_json( array(
-			'message' => __( 'Access denied', 'beautifo-core' )
+			'message' => __( 'Access denied', 'dimas' )
 		) );
 	}
 
@@ -197,7 +197,7 @@ function osf_update_menu_item_data() {
 
 add_filter( 'opal_nav_menu_args', 'osf_set_menu_args', 99999 );
 function osf_set_menu_args( $args ) {
-	$args['walker'] = new OSF_Megamenu_Walker();
+	$args['walker'] = new Dimas_Megamenu_Walker();
 
 	return $args;
 }
@@ -219,11 +219,11 @@ function osf_menu_underscore_template() {
                             <i class="fa fa-spin fa-spinner"></i>
                             <% } else { %>
                             <div class="form-group">
-                                <label for="icon_color"><?php _e( 'Menu Description', 'beautifo-core' ) ?></label>
+                                <label for="icon_color"><?php _e( 'Menu Description', 'dimas' ) ?></label>
                                 <input type="text" name="opal-menu-item[description]" value="<%= data.description %>" class="input" id="menu_description"/>
                             </div>
                             <div class="form-group">
-                                <label for="icon"><?php _e( 'Icon', 'beautifo-core' ) ?></label>
+                                <label for="icon"><?php _e( 'Icon', 'dimas' ) ?></label>
                                 <select id="icon" name="opal-menu-item[icon]" class="form-control icon-picker">
                                     <option value=""
                                     <%= data.icon == '' ? ' selected' : ''
@@ -235,60 +235,60 @@ function osf_menu_underscore_template() {
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="icon_color"><?php _e( 'Icon Color', 'beautifo-core' ) ?></label>
+                                <label for="icon_color"><?php _e( 'Icon Color', 'dimas' ) ?></label>
                                 <input class="color-picker" name="opal-menu-item[icon_color]" value="<%= data.icon_color %>" id="icon_color"/>
                             </div>
 
                             <div class="form-group">
-                                <label for="badge_title"><?php _e( 'Badges Title', 'beautifo-core' ) ?></label>
+                                <label for="badge_title"><?php _e( 'Badges Title', 'dimas' ) ?></label>
                                 <input class="form-control" name="opal-menu-item[badge_title]" value="<%= data.badge_title %>" id="badge_title"/>
                             </div>
                             <div class="form-group">
-                                <label for="badge_color"><?php _e( 'Badges Color', 'beautifo-core' ) ?></label>
+                                <label for="badge_color"><?php _e( 'Badges Color', 'dimas' ) ?></label>
                                 <input class="color-picker" name="opal-menu-item[badge_color]" value="<%= data.badge_color %>" id="badge_color"/>
                             </div>
                             <div class="form-group">
-                                <label for="badges_bg_color"><?php _e( 'Badges Bg Color', 'beautifo-core' ) ?></label>
+                                <label for="badges_bg_color"><?php _e( 'Badges Bg Color', 'dimas' ) ?></label>
                                 <input class="color-picker" name="opal-menu-item[badges_bg_color]" value="<%= data.badges_bg_color %>" id="badges_bg_color"/>
                             </div>
 
                             <div class="form-group submenu-setting toggle-select-setting">
-                                <label><?php _e( 'Mega Submenu Enabled', 'beautifo-core' ) ?></label>
+                                <label><?php _e( 'Mega Submenu Enabled', 'dimas' ) ?></label>
                                 <select name="opal-menu-item[enabled]" class="opal-input-switcher opal-input-switcher-true" data-target=".submenu-width-setting">
                                     <option value="1"
                                     <%= data.enabled == 1? 'selected':''
-                                    %>> <?php _e( 'Yes', 'beautifo-core' ) ?></opttion>
+                                    %>> <?php _e( 'Yes', 'dimas' ) ?></opttion>
                                     <option value="0"
-                                    <%= data.enabled == 0? 'selected':'' %>><?php _e( 'No', 'beautifo-core' ) ?></opttion>
+                                    <%= data.enabled == 0? 'selected':'' %>><?php _e( 'No', 'dimas' ) ?></opttion>
                                 </select>
                                 <button id="edit-megamenu" class="button button-primary button-large">
-									<?php _e( 'Edit Megamenu Submenu', 'beautifo-core' ) ?>
+									<?php _e( 'Edit Megamenu Submenu', 'dimas' ) ?>
                                 </button>
                             </div>
 
                             <div class="form-group submenu-width-setting toggle-select-setting" style="display: none">
-                                <label><?php _e( 'Sub Megamenu Width', 'beautifo-core' ) ?></label>
+                                <label><?php _e( 'Sub Megamenu Width', 'dimas' ) ?></label>
                                 <select name="opal-menu-item[customwidth]" class="opal-input-switcher opal-input-switcher-true" data-target=".submenu-subwidth-setting">
                                     <option value="1"
                                     <%= data.customwidth == 1? 'selected':''
-                                    %>> <?php _e( 'Yes', 'beautifo-core' ) ?></opttion>
+                                    %>> <?php _e( 'Yes', 'dimas' ) ?></opttion>
                                     <option value="3"
                                     <%= data.customwidth == 3? 'selected':''
-                                    %>><?php _e( 'Set Container Width', 'beautifo-core' ) ?></opttion>
+                                    %>><?php _e( 'Set Container Width', 'dimas' ) ?></opttion>
                                     <option value="0"
                                     <%= data.customwidth == 0? 'selected':''
-                                    %>><?php _e( 'Set Full Width', 'beautifo-core' ) ?></opttion>
+                                    %>><?php _e( 'Set Full Width', 'dimas' ) ?></opttion>
                                     <option value="2"
                                     <%= data.customwidth == 2? 'selected':''
-                                    %>><?php _e( 'Set Stretch Width', 'beautifo-core' ) ?></opttion>
+                                    %>><?php _e( 'Set Stretch Width', 'dimas' ) ?></opttion>
                                     <option value="4"
                                     <%= data.customwidth == 4? 'selected':''
-                                    %>><?php _e( 'Set Left Full Width', 'beautifo-core' ) ?></opttion>
+                                    %>><?php _e( 'Set Left Full Width', 'dimas' ) ?></opttion>
                                 </select>
                             </div>
 
                             <div class="form-group submenu-width-setting submenu-subwidth-setting toggle-select-setting" style="display: none">
-                                <label for="menu_subwidth"><?php _e( 'Sub Mega Menu Max Width', 'beautifo-core' ) ?></label>
+                                <label for="menu_subwidth"><?php _e( 'Sub Mega Menu Max Width', 'dimas' ) ?></label>
                                 <input type="text" name="opal-menu-item[subwidth]" value="<%= data.subwidth?data.subwidth:'600' %>" class="input" id="menu_subwidth"/>
                                 <span class="unit">px</span>
                             </div>

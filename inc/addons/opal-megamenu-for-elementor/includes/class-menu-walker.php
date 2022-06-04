@@ -2,11 +2,11 @@
 defined( 'ABSPATH' ) || exit();
 
 /**
- * OSF_Megamenu_Walker
+ * Dimas_Megamenu_Walker
  *
  * extends Walker_Nav_Menu
  */
-class OSF_Megamenu_Walker extends Walker_Nav_Menu {
+class Dimas_Megamenu_Walker extends Walker_Nav_Menu {
 
 
     /**

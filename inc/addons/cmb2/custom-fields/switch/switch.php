@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class OSF_Field_Switch {
+class Dimas_Field_Switch {
 
 	/**
 	 * Current version number
@@ -26,8 +26,8 @@ class OSF_Field_Switch {
 		$checked     = $field_escaped_value != '0' ? 'checked' : '';
 		$label       = ( isset( $field->args['label'] ) && is_array( $field->args['label'] ) ) ? $field->args['label'] : array();
 		$label       = wp_parse_args( $label, array(
-			'yes' => __( 'YES', 'beautifo-core' ),
-			'no'  => __( 'NO', 'beautifo-core' ),
+			'yes' => __( 'YES', 'dimas' ),
+			'no'  => __( 'NO', 'dimas' ),
 		) );
 		$show_fields = json_encode( ( isset( $field->args['show_fields'] ) && is_array( $field->args['show_fields'] ) ) ? $field->args['show_fields'] : array() );
 		echo "
@@ -45,4 +45,4 @@ class OSF_Field_Switch {
 	}
 }
 
-OSF_Field_Switch::init();
+Dimas_Field_Switch::init();

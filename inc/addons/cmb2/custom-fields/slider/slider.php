@@ -4,9 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class OSF_CMB2Box_Slider
+ * Class Dimas_CMB2Box_Slider
  */
-class OSF_CMB2Box_Slider {
+class Dimas_CMB2Box_Slider {
 	const VERSION = '1.0.0';
 
 	public function __construct() {
@@ -63,4 +63,4 @@ class OSF_CMB2Box_Slider {
 	}
 }
 
-new OSF_CMB2Box_Slider();
+new Dimas_CMB2Box_Slider();

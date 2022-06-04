@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class OSF_Field_Agent_Info {
+class Dimas_Field_Agent_Info {
 
 	public function __construct() {
 		add_filter( 'cmb2_render_agent_info', array( $this, 'render' ), 10, 5 );
@@ -27,7 +27,7 @@ class OSF_Field_Agent_Info {
 		$avatar          = get_user_meta( $userid, OPALREALESTATE_USER_PROFILE_PREFIX . 'avatar', true );
 		$phone           = get_user_meta( $userid, 'phone', true );
 		if ( $phone ) {
-			$phone = '<strong>' . __( 'Phone', 'beautifo-core' ) . '</strong>: ' . $phone . '<br>';
+			$phone = '<strong>' . __( 'Phone', 'dimas' ) . '</strong>: ' . $phone . '<br>';
 		}
 		if ( ! $avatar ) {
 			$avatar = get_avatar( $userid, 120 );
@@ -42,14 +42,14 @@ class OSF_Field_Agent_Info {
             <div class="info">
                 <h3><?php echo esc_html( $user_info->display_name ) ?></h3>
                 <address>
-                    <strong><?php _e( 'Email', 'beautifo-core' ) ?></strong>: <?php echo $user_info->user_email; ?>
+                    <strong><?php _e( 'Email', 'dimas' ) ?></strong>: <?php echo $user_info->user_email; ?>
                     <br>
 					<?php echo $phone; ?>
                 </address>
                 <a href="<?php echo esc_url( $link_profile ) ?>"
-                   class="button button-primary button-large"><?php _e( 'View Profile', 'beautifo-core' ) ?></a>
+                   class="button button-primary button-large"><?php _e( 'View Profile', 'dimas' ) ?></a>
                 <a href="<?php echo esc_url( $link_properties ) ?>"
-                   class="button button-primary button-large"><?php _e( 'View all Properties', 'beautifo-core' ) ?></a>
+                   class="button button-primary button-large"><?php _e( 'View all Properties', 'dimas' ) ?></a>
             </div>
         </div>
 		<?php
@@ -62,4 +62,4 @@ class OSF_Field_Agent_Info {
 	}
 }
 
-new OSF_Field_Agent_Info();
+new Dimas_Field_Agent_Info();

@@ -26,12 +26,12 @@ if (!class_exists('osf_WooCommerce_Search')) :
                 endwhile;
                 echo '</ul>';
                 ?>
-                <a class="button-link-search" href="<?php echo get_site_url() . '?s=' . esc_attr($_REQUEST['keyword']) . '&post_type=product'; ?>"><?php printf(__('Show All %s Results', 'beautifo-core'), $the_query->found_posts); ?>
+                <a class="button-link-search" href="<?php echo get_site_url() . '?s=' . esc_attr($_REQUEST['keyword']) . '&post_type=product'; ?>"><?php printf(__('Show All %s Results', 'dimas'), $the_query->found_posts); ?>
                     <i class="opal-icon-arrow" aria-hidden="true"></i></a>
             <?php
             else:
                 ?>
-                <h4><?php echo __('No products found', 'beautifo-core'); ?></h4>
+                <h4><?php echo __('No products found', 'dimas'); ?></h4>
                 <?php
                 wp_reset_postdata();
             endif;

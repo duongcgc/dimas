@@ -10,14 +10,14 @@ use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Scheme_Typography;
 
-class OSF_Ajax_Load_More {
+class Dimas_Ajax_Load_More {
     public static $instance;
 
     private $template;
 
     public static function getInstance() {
-        if (!isset(self::$instance) && !(self::$instance instanceof OSF_Ajax_Load_More)) {
-            self::$instance = new OSF_Ajax_Load_More();
+        if (!isset(self::$instance) && !(self::$instance instanceof Dimas_Ajax_Load_More)) {
+            self::$instance = new Dimas_Ajax_Load_More();
         }
         return self::$instance;
     }
@@ -40,7 +40,7 @@ class OSF_Ajax_Load_More {
         $widget->start_controls_section(
             'section_ajax_options',
             [
-                'label'     => __('Ajax Load More', 'beautifo-core'),
+                'label'     => __('Ajax Load More', 'dimas'),
                 'tab'      => Controls_Manager::SECTION,
                 'condition' => $condition,
             ]
@@ -48,7 +48,7 @@ class OSF_Ajax_Load_More {
         $widget->add_control(
             'ajax_show',
             [
-                'label' => __('Enable load more', 'beautifo-core'),
+                'label' => __('Enable load more', 'dimas'),
                 'type'  => Controls_Manager::SWITCHER,
             ]
         );
@@ -56,7 +56,7 @@ class OSF_Ajax_Load_More {
         $widget->add_control(
             'button_label',
             [
-                'label'     => __('Button Label', 'beautifo-core'),
+                'label'     => __('Button Label', 'dimas'),
                 'type'      => Controls_Manager::TEXT,
                 'condition' => [
                     'ajax_show' => 'yes'
@@ -67,7 +67,7 @@ class OSF_Ajax_Load_More {
         $widget->add_control(
             'button_loading_label',
             [
-                'label'     => __('Button Loading Label', 'beautifo-core'),
+                'label'     => __('Button Loading Label', 'dimas'),
                 'type'      => Controls_Manager::TEXT,
                 'condition' => [
                     'ajax_show' => 'yes'
@@ -77,9 +77,9 @@ class OSF_Ajax_Load_More {
         $widget->add_control(
             'ajax_scroll',
             [
-                'label'        => __('Enable Scrolling', 'beautifo-core'),
+                'label'        => __('Enable Scrolling', 'dimas'),
                 'type'         => Controls_Manager::SWITCHER,
-                'description'  => __('Load more posts as the user scrolls the page.', 'beautifo-core'),
+                'description'  => __('Load more posts as the user scrolls the page.', 'dimas'),
                 'default'      => 'false',
                 'return_value' => 'true',
                 'condition'    => [
@@ -92,7 +92,7 @@ class OSF_Ajax_Load_More {
         $widget->start_controls_section(
             'section_ajax_style',
             [
-                'label'     => __('Load More Button', 'beautifo-core'),
+                'label'     => __('Load More Button', 'dimas'),
                 'tab'      => Controls_Manager::TAB_STYLE,
                 'condition'    => [
                     'ajax_show' => 'yes'
@@ -105,7 +105,7 @@ class OSF_Ajax_Load_More {
                 'name'     => 'button_ajax_typography',
                 'selector' => '{{WRAPPER}} .alm-btn-wrap .alm-load-more-btn',
                 'scheme'   => Scheme_Typography::TYPOGRAPHY_3,
-                'label'    =>  __('Button Typo', 'beautifo-core'),
+                'label'    =>  __('Button Typo', 'dimas'),
             ]
         );
 
@@ -114,13 +114,13 @@ class OSF_Ajax_Load_More {
         $widget->start_controls_tab(
             'button_ajax_normal',
             [
-                'label' => __('Normal', 'beautifo-core'),
+                'label' => __('Normal', 'dimas'),
             ]
         );
         $widget->add_control(
             'button_ajax_color',
             [
-                'label'     => __('Color', 'beautifo-core'),
+                'label'     => __('Color', 'dimas'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
@@ -157,13 +157,13 @@ class OSF_Ajax_Load_More {
         $widget->start_controls_tab(
             'button_ajax_hover',
             [
-                'label' => __('Hover', 'beautifo-core'),
+                'label' => __('Hover', 'dimas'),
             ]
         );
         $widget->add_control(
             'button_ajax_color_hover',
             [
-                'label'     => __('Color', 'beautifo-core'),
+                'label'     => __('Color', 'dimas'),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
@@ -201,7 +201,7 @@ class OSF_Ajax_Load_More {
         $widget->add_control(
             'button_ajax_padding',
             [
-                'label'      => __('Padding', 'beautifo-core'),
+                'label'      => __('Padding', 'dimas'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
@@ -215,4 +215,4 @@ class OSF_Ajax_Load_More {
     }
 }
 
-OSF_Ajax_Load_More::getInstance();
+Dimas_Ajax_Load_More::getInstance();

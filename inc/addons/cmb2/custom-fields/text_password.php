@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class OSF_Field_Text_Password {
+class Dimas_Field_Text_Password {
 
 	public function __construct() {
 		add_filter( 'cmb2_render_text_password', array( $this, 'render' ), 10, 5 );
@@ -15,4 +15,4 @@ class OSF_Field_Text_Password {
 	}
 }
 
-new OSF_Field_Text_Password();
+new Dimas_Field_Text_Password();

@@ -218,23 +218,23 @@ class OneClickDemoImport {
 					'plugin_url'       => OCDI_URL,
 					'import_url'       => $this->get_plugin_settings_url( [ 'step' => 'import' ] ),
 					'texts'            => array(
-						'missing_preview_image'    => esc_html__( 'No preview image defined for this import.', 'beautifo-core' ),
-						'dialog_title'             => esc_html__( 'Are you sure?', 'beautifo-core' ),
-						'dialog_no'                => esc_html__( 'Cancel', 'beautifo-core' ),
-						'dialog_yes'               => esc_html__( 'Yes, import!', 'beautifo-core' ),
-						'selected_import_title'    => esc_html__( 'Selected demo import:', 'beautifo-core' ),
-						'installing'               => esc_html__( 'Installing...', 'beautifo-core' ),
-						'importing'                => esc_html__( 'Importing...', 'beautifo-core' ),
-						'successful_import'        => esc_html__( 'Successfully Imported!', 'beautifo-core' ),
-						'install_plugin'           => esc_html__( 'Install Plugin', 'beautifo-core' ),
-						'installed'                => esc_html__( 'Installed', 'beautifo-core' ),
-						'import_failed'            => esc_html__( 'Import Failed', 'beautifo-core' ),
-						'import_failed_subtitle'   => esc_html__( 'Whoops, there was a problem importing your content.', 'beautifo-core' ),
-						'plugin_install_failed'    => esc_html__( 'Looks like some of the plugins failed to install. Please try again. If this issue persists, please manually install the failing plugins and come back to this step to import the theme demo data.', 'beautifo-core' ),
-						'content_filetype_warn'    => esc_html__( 'Invalid file type detected! Please select an XML file for the Content Import.', 'beautifo-core' ),
-						'widgets_filetype_warn'    => esc_html__( 'Invalid file type detected! Please select a JSON or WIE file for the Widgets Import.', 'beautifo-core' ),
-						'customizer_filetype_warn' => esc_html__( 'Invalid file type detected! Please select a DAT file for the Customizer Import.', 'beautifo-core' ),
-						'redux_filetype_warn'      => esc_html__( 'Invalid file type detected! Please select a JSON file for the Redux Import.', 'beautifo-core' ),
+						'missing_preview_image'    => esc_html__( 'No preview image defined for this import.', 'dimas' ),
+						'dialog_title'             => esc_html__( 'Are you sure?', 'dimas' ),
+						'dialog_no'                => esc_html__( 'Cancel', 'dimas' ),
+						'dialog_yes'               => esc_html__( 'Yes, import!', 'dimas' ),
+						'selected_import_title'    => esc_html__( 'Selected demo import:', 'dimas' ),
+						'installing'               => esc_html__( 'Installing...', 'dimas' ),
+						'importing'                => esc_html__( 'Importing...', 'dimas' ),
+						'successful_import'        => esc_html__( 'Successfully Imported!', 'dimas' ),
+						'install_plugin'           => esc_html__( 'Install Plugin', 'dimas' ),
+						'installed'                => esc_html__( 'Installed', 'dimas' ),
+						'import_failed'            => esc_html__( 'Import Failed', 'dimas' ),
+						'import_failed_subtitle'   => esc_html__( 'Whoops, there was a problem importing your content.', 'dimas' ),
+						'plugin_install_failed'    => esc_html__( 'Looks like some of the plugins failed to install. Please try again. If this issue persists, please manually install the failing plugins and come back to this step to import the theme demo data.', 'dimas' ),
+						'content_filetype_warn'    => esc_html__( 'Invalid file type detected! Please select an XML file for the Content Import.', 'dimas' ),
+						'widgets_filetype_warn'    => esc_html__( 'Invalid file type detected! Please select a JSON or WIE file for the Widgets Import.', 'dimas' ),
+						'customizer_filetype_warn' => esc_html__( 'Invalid file type detected! Please select a DAT file for the Customizer Import.', 'dimas' ),
+						'redux_filetype_warn'      => esc_html__( 'Invalid file type detected! Please select a JSON file for the Redux Import.', 'dimas' ),
 					),
 				)
 			);
@@ -251,7 +251,7 @@ class OneClickDemoImport {
 		Helpers::verify_ajax_call();
 
 		if ( empty( $_FILES ) ) {
-			wp_send_json_error( esc_html__( 'Manual import files are missing! Please select the import files and try again.', 'beautifo-core' ) );
+			wp_send_json_error( esc_html__( 'Manual import files are missing! Please select the import files and try again.', 'dimas' ) );
 		}
 
 		// Create a date and time string to use for demo and log file names.
@@ -266,7 +266,7 @@ class OneClickDemoImport {
 		$this->selected_import_files = Helpers::process_uploaded_files( $_FILES, $this->log_file_path );
 
 		// Set the name of the import files, because we used the uploaded files.
-		$this->import_files[ $this->selected_index ]['import_file_name'] = esc_html__( 'Manually uploaded files', 'beautifo-core' );
+		$this->import_files[ $this->selected_index ]['import_file_name'] = esc_html__( 'Manually uploaded files', 'dimas' );
 
 		// Save the initial import data as a transient, so the next import call (in new AJAX call) can use that data.
 		Helpers::set_ocdi_import_data_transient( $this->get_current_importer_data() );
@@ -311,7 +311,7 @@ class OneClickDemoImport {
 				$this->selected_import_files = Helpers::process_uploaded_files( $_FILES, $this->log_file_path );
 
 				// Set the name of the import files, because we used the uploaded files.
-				$this->import_files[ $this->selected_index ]['import_file_name'] = esc_html__( 'Manually uploaded files', 'beautifo-core' );
+				$this->import_files[ $this->selected_index ]['import_file_name'] = esc_html__( 'Manually uploaded files', 'dimas' );
 			}
 			elseif ( ! empty( $this->import_files[ $this->selected_index ] ) ) { // Use predefined import files from wp filter: ocdi/import_files.
 
@@ -324,23 +324,23 @@ class OneClickDemoImport {
 					Helpers::log_error_and_send_ajax_response(
 						$this->selected_import_files->get_error_message(),
 						$this->log_file_path,
-						esc_html__( 'Downloaded files', 'beautifo-core' )
+						esc_html__( 'Downloaded files', 'dimas' )
 					);
 				}
 
 				// Add this message to log file.
 				$log_added = Helpers::append_to_file(
 					sprintf( /* translators: %s - the name of the selected import. */
-						__( 'The import files for: %s were successfully downloaded!', 'beautifo-core' ),
+						__( 'The import files for: %s were successfully downloaded!', 'dimas' ),
 						$this->import_files[ $this->selected_index ]['import_file_name']
 					) . Helpers::import_file_info( $this->selected_import_files ),
 					$this->log_file_path,
-					esc_html__( 'Downloaded files' , 'beautifo-core' )
+					esc_html__( 'Downloaded files' , 'dimas' )
 				);
 			}
 			else {
 				// Send JSON Error response to the AJAX call.
-				wp_send_json( esc_html__( 'No import files specified!', 'beautifo-core' ) );
+				wp_send_json( esc_html__( 'No import files specified!', 'dimas' ) );
 			}
 		}
 
@@ -457,16 +457,16 @@ class OneClickDemoImport {
 		delete_transient( 'ocdi_importer_data' );
 
 		// Display final messages (success or warning messages).
-		$response['title'] = esc_html__( 'Import Complete!', 'beautifo-core' );
-		$response['subtitle'] = '<p>' . esc_html__( 'Congrats, your demo was imported successfully. You can now begin editing your site.', 'beautifo-core' ) . '</p>';
-		$response['message'] = '<img class="ocdi-imported-content-imported ocdi-imported-content-imported--success" src="' . esc_url( OCDI_URL . 'assets/images/success.svg' ) . '" alt="' . esc_attr__( 'Successful Import', 'beautifo-core' ) . '">';
+		$response['title'] = esc_html__( 'Import Complete!', 'dimas' );
+		$response['subtitle'] = '<p>' . esc_html__( 'Congrats, your demo was imported successfully. You can now begin editing your site.', 'dimas' ) . '</p>';
+		$response['message'] = '<img class="ocdi-imported-content-imported ocdi-imported-content-imported--success" src="' . esc_url( OCDI_URL . 'assets/images/success.svg' ) . '" alt="' . esc_attr__( 'Successful Import', 'dimas' ) . '">';
 
 		if ( ! empty( $this->frontend_error_messages ) ) {
-			$response['subtitle'] = '<p>' . esc_html__( 'Your import completed, but some things may not have imported properly.', 'beautifo-core' ) . '</p>';
+			$response['subtitle'] = '<p>' . esc_html__( 'Your import completed, but some things may not have imported properly.', 'dimas' ) . '</p>';
 			$response['subtitle'] .= sprintf(
 				wp_kses(
 				/* translators: %s - link to the log file. */
-					__( '<p><a href="%s" target="_blank">View error log</a> for more information.</p>', 'beautifo-core' ),
+					__( '<p><a href="%s" target="_blank">View error log</a> for more information.</p>', 'dimas' ),
 					array(
 						'p'      => [],
 						'a'      => [
