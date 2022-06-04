@@ -1,6 +1,7 @@
 <?php
 /**
- * Autoload Classes
+ * Autoload Classes.
+ * => Auto load all class with prefix class-dimas-
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *

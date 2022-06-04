@@ -1,6 +1,7 @@
 <?php
 /**
- * Awesome Icons class
+ * Awesome Icons class.
+ * => Get awesome icons for bootstrap
  *
  * @package WordPress
  * @subpackage Dimas

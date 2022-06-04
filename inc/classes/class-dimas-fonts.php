@@ -1,6 +1,7 @@
 <?php
 /**
  * Fonts functions and definitions.
+ * => Loading fonts into this theme.
  *
  * @package Dimas
  */
