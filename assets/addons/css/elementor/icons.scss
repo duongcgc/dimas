@@ -1,0 +1,675 @@
+@font-face {
+    font-family: "opal-icon";
+    src: url('fonts/opal-icon.eot');
+    src: url('fonts/opal-icon.eot?#iefix') format('eot'),
+    url('fonts/opal-icon.woff2') format('woff2'),
+    url('fonts/opal-icon.woff') format('woff'),
+    url('fonts/opal-icon.ttf') format('truetype'),
+    url('fonts/opal-icon.svg#opal-icon') format('svg');
+}
+
+@mixin opal-icon-font() {
+    font-family: "opal-icon";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.opal-icon,
+[class*="opal-icon-"]:before{
+    @include opal-icon-font();
+}
+
+@function opal-icon-char($filename) {
+    $char: "";
+
+    @if $filename == about-1 {
+    $char: "\E001";
+}
+    @if $filename == about-2 {
+    $char: "\E002";
+}
+    @if $filename == about-3 {
+    $char: "\E003";
+}
+    @if $filename == biography {
+    $char: "\E004";
+}
+    @if $filename == category-body {
+    $char: "\E005";
+}
+    @if $filename == category-cosmetic {
+    $char: "\E006";
+}
+    @if $filename == category-foundation {
+    $char: "\E007";
+}
+    @if $filename == category-health {
+    $char: "\E008";
+}
+    @if $filename == category-masks {
+    $char: "\E009";
+}
+    @if $filename == category-moisturizing {
+    $char: "\E00A";
+}
+    @if $filename == category-other1 {
+    $char: "\E00B";
+}
+    @if $filename == category-sale {
+    $char: "\E00C";
+}
+    @if $filename == category-skin {
+    $char: "\E00D";
+}
+    @if $filename == category-star {
+    $char: "\E00E";
+}
+    @if $filename == circle {
+    $char: "\E00F";
+}
+    @if $filename == earn-reward-points {
+    $char: "\E010";
+}
+    @if $filename == free-deluxe-samples {
+    $char: "\E011";
+}
+    @if $filename == free-standard-delivery {
+    $char: "\E012";
+}
+    @if $filename == get-in-touch {
+    $char: "\E013";
+}
+    @if $filename == location {
+    $char: "\E014";
+}
+    @if $filename == organic {
+    $char: "\E015";
+}
+    @if $filename == support {
+    $char: "\E016";
+}
+    @if $filename == addtocart {
+    $char: "\E017";
+}
+    @if $filename == cart-empty {
+    $char: "\E018";
+}
+    @if $filename == cart {
+    $char: "\E019";
+}
+    @if $filename == check-circle {
+    $char: "\E01A";
+}
+    @if $filename == check {
+    $char: "\E01B";
+}
+    @if $filename == cloud-download {
+    $char: "\E01C";
+}
+    @if $filename == compare {
+    $char: "\E01D";
+}
+    @if $filename == credit-card {
+    $char: "\E01E";
+}
+    @if $filename == download {
+    $char: "\E01F";
+}
+    @if $filename == exclamation-circle {
+    $char: "\E020";
+}
+    @if $filename == eye {
+    $char: "\E021";
+}
+    @if $filename == file-alt {
+    $char: "\E022";
+}
+    @if $filename == filter {
+    $char: "\E023";
+}
+    @if $filename == frown {
+    $char: "\E024";
+}
+    @if $filename == gift {
+    $char: "\E025";
+}
+    @if $filename == heart {
+    $char: "\E026";
+}
+    @if $filename == home-lg {
+    $char: "\E027";
+}
+    @if $filename == home {
+    $char: "\E028";
+}
+    @if $filename == info-circle {
+    $char: "\E029";
+}
+    @if $filename == level-up {
+    $char: "\E02A";
+}
+    @if $filename == meh {
+    $char: "\E02B";
+}
+    @if $filename == no-favorites {
+    $char: "\E02C";
+}
+    @if $filename == pen-square {
+    $char: "\E02D";
+}
+    @if $filename == pencil {
+    $char: "\E02E";
+}
+    @if $filename == quickview {
+    $char: "\E02F";
+}
+    @if $filename == reply {
+    $char: "\E030";
+}
+    @if $filename == search-plus {
+    $char: "\E031";
+}
+    @if $filename == shopping-bag {
+    $char: "\E032";
+}
+    @if $filename == shopping-basket {
+    $char: "\E033";
+}
+    @if $filename == sign-in {
+    $char: "\E034";
+}
+    @if $filename == sign-out {
+    $char: "\E035";
+}
+    @if $filename == smile {
+    $char: "\E036";
+}
+    @if $filename == spinner {
+    $char: "\E037";
+}
+    @if $filename == star {
+    $char: "\E038";
+}
+    @if $filename == sync {
+    $char: "\E039";
+}
+    @if $filename == tachometer-alt-fastest {
+    $char: "\E03A";
+}
+    @if $filename == times-circle {
+    $char: "\E03B";
+}
+    @if $filename == truck {
+    $char: "\E03C";
+}
+    @if $filename == wishlist-fill {
+    $char: "\E03D";
+}
+    @if $filename == wishlist {
+    $char: "\E03E";
+}
+    @if $filename == angle-double-down {
+    $char: "\E03F";
+}
+    @if $filename == angle-double-left {
+    $char: "\E040";
+}
+    @if $filename == angle-double-right {
+    $char: "\E041";
+}
+    @if $filename == angle-double-up {
+    $char: "\E042";
+}
+    @if $filename == angle-down {
+    $char: "\E043";
+}
+    @if $filename == angle-left {
+    $char: "\E044";
+}
+    @if $filename == angle-right {
+    $char: "\E045";
+}
+    @if $filename == angle-up {
+    $char: "\E046";
+}
+    @if $filename == arrow-circle-left {
+    $char: "\E047";
+}
+    @if $filename == arrow-circle-right {
+    $char: "\E048";
+}
+    @if $filename == arrow-down {
+    $char: "\E049";
+}
+    @if $filename == arrow-left {
+    $char: "\E04A";
+}
+    @if $filename == arrow-right {
+    $char: "\E04B";
+}
+    @if $filename == arrow-up {
+    $char: "\E04C";
+}
+    @if $filename == blockquote {
+    $char: "\E04D";
+}
+    @if $filename == blockquote2 {
+    $char: "\E04E";
+}
+    @if $filename == bookmark {
+    $char: "\E04F";
+}
+    @if $filename == calendar-alt {
+    $char: "\E050";
+}
+    @if $filename == calendar {
+    $char: "\E051";
+}
+    @if $filename == chevron-down {
+    $char: "\E052";
+}
+    @if $filename == chevron-left {
+    $char: "\E053";
+}
+    @if $filename == chevron-right {
+    $char: "\E054";
+}
+    @if $filename == chevron-up {
+    $char: "\E055";
+}
+    @if $filename == down {
+    $char: "\E056";
+}
+    @if $filename == instagram {
+    $char: "\E057";
+}
+    @if $filename == left {
+    $char: "\E058";
+}
+    @if $filename == long-arrow-alt-down {
+    $char: "\E059";
+}
+    @if $filename == long-arrow-alt-left {
+    $char: "\E05A";
+}
+    @if $filename == long-arrow-alt-right {
+    $char: "\E05B";
+}
+    @if $filename == long-arrow-alt-up {
+    $char: "\E05C";
+}
+    @if $filename == long-arrow-down {
+    $char: "\E05D";
+}
+    @if $filename == long-arrow-left {
+    $char: "\E05E";
+}
+    @if $filename == long-arrow-right {
+    $char: "\E05F";
+}
+    @if $filename == long-arrow-up {
+    $char: "\E060";
+}
+    @if $filename == menu {
+    $char: "\E061";
+}
+    @if $filename == right {
+    $char: "\E062";
+}
+    @if $filename == search {
+    $char: "\E063";
+}
+    @if $filename == share-all {
+    $char: "\E064";
+}
+    @if $filename == th-grid {
+    $char: "\E065";
+}
+    @if $filename == th-list {
+    $char: "\E066";
+}
+    @if $filename == thumbtack {
+    $char: "\E067";
+}
+    @if $filename == times {
+    $char: "\E068";
+}
+    @if $filename == user {
+    $char: "\E069";
+}
+    @if $filename == video {
+    $char: "\E06A";
+}
+
+@return $char;
+}
+
+@mixin opal-icon($filename, $insert: before) {
+&:#{$insert} {
+    content: opal-icon-char($filename);
+}
+}
+
+.opal-icon-about-1 {
+    @include opal-icon(about-1);
+}
+.opal-icon-about-2 {
+    @include opal-icon(about-2);
+}
+.opal-icon-about-3 {
+    @include opal-icon(about-3);
+}
+.opal-icon-biography {
+    @include opal-icon(biography);
+}
+.opal-icon-category-body {
+    @include opal-icon(category-body);
+}
+.opal-icon-category-cosmetic {
+    @include opal-icon(category-cosmetic);
+}
+.opal-icon-category-foundation {
+    @include opal-icon(category-foundation);
+}
+.opal-icon-category-health {
+    @include opal-icon(category-health);
+}
+.opal-icon-category-masks {
+    @include opal-icon(category-masks);
+}
+.opal-icon-category-moisturizing {
+    @include opal-icon(category-moisturizing);
+}
+.opal-icon-category-other1 {
+    @include opal-icon(category-other1);
+}
+.opal-icon-category-sale {
+    @include opal-icon(category-sale);
+}
+.opal-icon-category-skin {
+    @include opal-icon(category-skin);
+}
+.opal-icon-category-star {
+    @include opal-icon(category-star);
+}
+.opal-icon-circle {
+    @include opal-icon(circle);
+}
+.opal-icon-earn-reward-points {
+    @include opal-icon(earn-reward-points);
+}
+.opal-icon-free-deluxe-samples {
+    @include opal-icon(free-deluxe-samples);
+}
+.opal-icon-free-standard-delivery {
+    @include opal-icon(free-standard-delivery);
+}
+.opal-icon-get-in-touch {
+    @include opal-icon(get-in-touch);
+}
+.opal-icon-location {
+    @include opal-icon(location);
+}
+.opal-icon-organic {
+    @include opal-icon(organic);
+}
+.opal-icon-support {
+    @include opal-icon(support);
+}
+.opal-icon-addtocart {
+    @include opal-icon(addtocart);
+}
+.opal-icon-cart-empty {
+    @include opal-icon(cart-empty);
+}
+.opal-icon-cart {
+    @include opal-icon(cart);
+}
+.opal-icon-check-circle {
+    @include opal-icon(check-circle);
+}
+.opal-icon-check {
+    @include opal-icon(check);
+}
+.opal-icon-cloud-download {
+    @include opal-icon(cloud-download);
+}
+.opal-icon-compare {
+    @include opal-icon(compare);
+}
+.opal-icon-credit-card {
+    @include opal-icon(credit-card);
+}
+.opal-icon-download {
+    @include opal-icon(download);
+}
+.opal-icon-exclamation-circle {
+    @include opal-icon(exclamation-circle);
+}
+.opal-icon-eye {
+    @include opal-icon(eye);
+}
+.opal-icon-file-alt {
+    @include opal-icon(file-alt);
+}
+.opal-icon-filter {
+    @include opal-icon(filter);
+}
+.opal-icon-frown {
+    @include opal-icon(frown);
+}
+.opal-icon-gift {
+    @include opal-icon(gift);
+}
+.opal-icon-heart {
+    @include opal-icon(heart);
+}
+.opal-icon-home-lg {
+    @include opal-icon(home-lg);
+}
+.opal-icon-home {
+    @include opal-icon(home);
+}
+.opal-icon-info-circle {
+    @include opal-icon(info-circle);
+}
+.opal-icon-level-up {
+    @include opal-icon(level-up);
+}
+.opal-icon-meh {
+    @include opal-icon(meh);
+}
+.opal-icon-no-favorites {
+    @include opal-icon(no-favorites);
+}
+.opal-icon-pen-square {
+    @include opal-icon(pen-square);
+}
+.opal-icon-pencil {
+    @include opal-icon(pencil);
+}
+.opal-icon-quickview {
+    @include opal-icon(quickview);
+}
+.opal-icon-reply {
+    @include opal-icon(reply);
+}
+.opal-icon-search-plus {
+    @include opal-icon(search-plus);
+}
+.opal-icon-shopping-bag {
+    @include opal-icon(shopping-bag);
+}
+.opal-icon-shopping-basket {
+    @include opal-icon(shopping-basket);
+}
+.opal-icon-sign-in {
+    @include opal-icon(sign-in);
+}
+.opal-icon-sign-out {
+    @include opal-icon(sign-out);
+}
+.opal-icon-smile {
+    @include opal-icon(smile);
+}
+.opal-icon-spinner {
+    @include opal-icon(spinner);
+}
+.opal-icon-star {
+    @include opal-icon(star);
+}
+.opal-icon-sync {
+    @include opal-icon(sync);
+}
+.opal-icon-tachometer-alt-fastest {
+    @include opal-icon(tachometer-alt-fastest);
+}
+.opal-icon-times-circle {
+    @include opal-icon(times-circle);
+}
+.opal-icon-truck {
+    @include opal-icon(truck);
+}
+.opal-icon-wishlist-fill {
+    @include opal-icon(wishlist-fill);
+}
+.opal-icon-wishlist {
+    @include opal-icon(wishlist);
+}
+.opal-icon-angle-double-down {
+    @include opal-icon(angle-double-down);
+}
+.opal-icon-angle-double-left {
+    @include opal-icon(angle-double-left);
+}
+.opal-icon-angle-double-right {
+    @include opal-icon(angle-double-right);
+}
+.opal-icon-angle-double-up {
+    @include opal-icon(angle-double-up);
+}
+.opal-icon-angle-down {
+    @include opal-icon(angle-down);
+}
+.opal-icon-angle-left {
+    @include opal-icon(angle-left);
+}
+.opal-icon-angle-right {
+    @include opal-icon(angle-right);
+}
+.opal-icon-angle-up {
+    @include opal-icon(angle-up);
+}
+.opal-icon-arrow-circle-left {
+    @include opal-icon(arrow-circle-left);
+}
+.opal-icon-arrow-circle-right {
+    @include opal-icon(arrow-circle-right);
+}
+.opal-icon-arrow-down {
+    @include opal-icon(arrow-down);
+}
+.opal-icon-arrow-left {
+    @include opal-icon(arrow-left);
+}
+.opal-icon-arrow-right {
+    @include opal-icon(arrow-right);
+}
+.opal-icon-arrow-up {
+    @include opal-icon(arrow-up);
+}
+.opal-icon-blockquote {
+    @include opal-icon(blockquote);
+}
+.opal-icon-blockquote2 {
+    @include opal-icon(blockquote2);
+}
+.opal-icon-bookmark {
+    @include opal-icon(bookmark);
+}
+.opal-icon-calendar-alt {
+    @include opal-icon(calendar-alt);
+}
+.opal-icon-calendar {
+    @include opal-icon(calendar);
+}
+.opal-icon-chevron-down {
+    @include opal-icon(chevron-down);
+}
+.opal-icon-chevron-left {
+    @include opal-icon(chevron-left);
+}
+.opal-icon-chevron-right {
+    @include opal-icon(chevron-right);
+}
+.opal-icon-chevron-up {
+    @include opal-icon(chevron-up);
+}
+.opal-icon-down {
+    @include opal-icon(down);
+}
+.opal-icon-instagram {
+    @include opal-icon(instagram);
+}
+.opal-icon-left {
+    @include opal-icon(left);
+}
+.opal-icon-long-arrow-alt-down {
+    @include opal-icon(long-arrow-alt-down);
+}
+.opal-icon-long-arrow-alt-left {
+    @include opal-icon(long-arrow-alt-left);
+}
+.opal-icon-long-arrow-alt-right {
+    @include opal-icon(long-arrow-alt-right);
+}
+.opal-icon-long-arrow-alt-up {
+    @include opal-icon(long-arrow-alt-up);
+}
+.opal-icon-long-arrow-down {
+    @include opal-icon(long-arrow-down);
+}
+.opal-icon-long-arrow-left {
+    @include opal-icon(long-arrow-left);
+}
+.opal-icon-long-arrow-right {
+    @include opal-icon(long-arrow-right);
+}
+.opal-icon-long-arrow-up {
+    @include opal-icon(long-arrow-up);
+}
+.opal-icon-menu {
+    @include opal-icon(menu);
+}
+.opal-icon-right {
+    @include opal-icon(right);
+}
+.opal-icon-search {
+    @include opal-icon(search);
+}
+.opal-icon-share-all {
+    @include opal-icon(share-all);
+}
+.opal-icon-th-grid {
+    @include opal-icon(th-grid);
+}
+.opal-icon-th-list {
+    @include opal-icon(th-list);
+}
+.opal-icon-thumbtack {
+    @include opal-icon(thumbtack);
+}
+.opal-icon-times {
+    @include opal-icon(times);
+}
+.opal-icon-user {
+    @include opal-icon(user);
+}
+.opal-icon-video {
+    @include opal-icon(video);
+}
