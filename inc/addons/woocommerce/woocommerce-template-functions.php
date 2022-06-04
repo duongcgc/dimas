@@ -1018,7 +1018,7 @@ if (!function_exists('osf_single_product_video')) {
 if (!function_exists('osf_single_product_social')) {
     function osf_single_product_social() {
         if (get_theme_mod('osf_socials')) {
-            $template      = BEAUTIFO_CORE_PLUGIN_DIR . 'templates/socials.php';
+            $template      = DIMAS_CORE_PLUGIN_DIR . 'templates/socials.php';
             $socials_label = true;
             if (file_exists($template)) {
                 require $template;

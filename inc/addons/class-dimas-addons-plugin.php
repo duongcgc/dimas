@@ -75,15 +75,15 @@ class Addons {
 	 */
 	private function includes() {
 		// Auto Loader
-		require_once RAZZI_ADDONS_DIR . 'class-razzi-addons-autoloader.php';
+		require_once DIMAS_ADDONS_DIR . 'class-razzi-addons-autoloader.php';
 		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Helper'         => RAZZI_ADDONS_DIR . 'class-razzi-addons-helper.php',
-			'Dimas\Addons\Widgets'        => RAZZI_ADDONS_DIR . 'inc/widgets/class-razzi-addons-widgets.php',
-			'Dimas\Addons\Modules'        => RAZZI_ADDONS_DIR . 'modules/modules.php',
-			'Dimas\Addons\Elementor'      => RAZZI_ADDONS_DIR . 'inc/elementor/class-razzi-elementor.php',
-			'Dimas\Addons\Product_Brands' => RAZZI_ADDONS_DIR . 'inc/backend/class-razzi-addons-product-brand.php',
-			'Dimas\Addons\Product_Authors'=> RAZZI_ADDONS_DIR . 'inc/backend/class-razzi-addons-product-author.php',
-			'Dimas\Addons\Importer'       => RAZZI_ADDONS_DIR . 'inc/backend/class-razzi-addons-importer.php',
+			'Dimas\Addons\Helper'         => DIMAS_ADDONS_DIR . 'class-razzi-addons-helper.php',
+			'Dimas\Addons\Widgets'        => DIMAS_ADDONS_DIR . 'inc/widgets/class-razzi-addons-widgets.php',
+			'Dimas\Addons\Modules'        => DIMAS_ADDONS_DIR . 'modules/modules.php',
+			'Dimas\Addons\Elementor'      => DIMAS_ADDONS_DIR . 'inc/elementor/class-razzi-elementor.php',
+			'Dimas\Addons\Product_Brands' => DIMAS_ADDONS_DIR . 'inc/backend/class-razzi-addons-product-brand.php',
+			'Dimas\Addons\Product_Authors'=> DIMAS_ADDONS_DIR . 'inc/backend/class-razzi-addons-product-author.php',
+			'Dimas\Addons\Importer'       => DIMAS_ADDONS_DIR . 'inc/backend/class-razzi-addons-importer.php',
 		] );
 	}
 

@@ -59,16 +59,16 @@ class Modules {
 	 */
 	private function includes() {
 		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Modules\Size_Guide\Module'    			=> RAZZI_ADDONS_DIR . 'modules/size-guide/module.php',
-			'Dimas\Addons\Modules\Catalog_Mode\Module'    			=> RAZZI_ADDONS_DIR . 'modules/catalog-mode/module.php',
-			'Dimas\Addons\Modules\Product_Deals\Module'    			=> RAZZI_ADDONS_DIR . 'modules/product-deals/module.php',
-			'Dimas\Addons\Modules\Buy_Now\Module'    				=> RAZZI_ADDONS_DIR . 'modules/buy-now/module.php',
-			'Dimas\Addons\Modules\Mega_Menu\Module'    				=> RAZZI_ADDONS_DIR . 'modules/mega-menu/module.php',
-			'Dimas\Addons\Modules\Products_Filter\Module'     		=> RAZZI_ADDONS_DIR . 'modules/products-filter/module.php',
-			'Dimas\Addons\Modules\Related_Products\Module'    		=> RAZZI_ADDONS_DIR . 'modules/related-products/module.php',
-			'Dimas\Addons\Modules\Product_Tabs\Module'    			=> RAZZI_ADDONS_DIR . 'modules/product-tabs/module.php',
-			'Dimas\Addons\Modules\Ajax'    							=> RAZZI_ADDONS_DIR . 'modules/ajax.php',
-			'Dimas\Addons\Modules\Shortcodes' 						=> RAZZI_ADDONS_DIR . 'modules/shortcodes.php',
+			'Dimas\Addons\Modules\Size_Guide\Module'    			=> DIMAS_ADDONS_DIR . 'modules/size-guide/module.php',
+			'Dimas\Addons\Modules\Catalog_Mode\Module'    			=> DIMAS_ADDONS_DIR . 'modules/catalog-mode/module.php',
+			'Dimas\Addons\Modules\Product_Deals\Module'    			=> DIMAS_ADDONS_DIR . 'modules/product-deals/module.php',
+			'Dimas\Addons\Modules\Buy_Now\Module'    				=> DIMAS_ADDONS_DIR . 'modules/buy-now/module.php',
+			'Dimas\Addons\Modules\Mega_Menu\Module'    				=> DIMAS_ADDONS_DIR . 'modules/mega-menu/module.php',
+			'Dimas\Addons\Modules\Products_Filter\Module'     		=> DIMAS_ADDONS_DIR . 'modules/products-filter/module.php',
+			'Dimas\Addons\Modules\Related_Products\Module'    		=> DIMAS_ADDONS_DIR . 'modules/related-products/module.php',
+			'Dimas\Addons\Modules\Product_Tabs\Module'    			=> DIMAS_ADDONS_DIR . 'modules/product-tabs/module.php',
+			'Dimas\Addons\Modules\Ajax'    							=> DIMAS_ADDONS_DIR . 'modules/ajax.php',
+			'Dimas\Addons\Modules\Shortcodes' 						=> DIMAS_ADDONS_DIR . 'modules/shortcodes.php',
 		] );
 
 	}

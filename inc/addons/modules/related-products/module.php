@@ -59,9 +59,9 @@ class Module {
 	 */
 	private function includes() {
 		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Modules\Related_Products\Frontend'        => RAZZI_ADDONS_DIR . 'modules/related-products/frontend.php',
-			'Dimas\Addons\Modules\Related_Products\Settings'    	=> RAZZI_ADDONS_DIR . 'modules/related-products/settings.php',
-			'Dimas\Addons\Modules\Related_Products\Product_Options'    	=> RAZZI_ADDONS_DIR . 'modules/related-products/product-options.php',
+			'Dimas\Addons\Modules\Related_Products\Frontend'        => DIMAS_ADDONS_DIR . 'modules/related-products/frontend.php',
+			'Dimas\Addons\Modules\Related_Products\Settings'    	=> DIMAS_ADDONS_DIR . 'modules/related-products/settings.php',
+			'Dimas\Addons\Modules\Related_Products\Product_Options'    	=> DIMAS_ADDONS_DIR . 'modules/related-products/product-options.php',
 		] );
 	}
 

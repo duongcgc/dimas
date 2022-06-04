@@ -1,11 +1,11 @@
 <?php
 /**
- * Dimas_Testimonial functions and definitions.
+ * Service functions and definitions.
  *
  * @package Dimas
  */
 
-namespace Dimas;
+namespace Dimas\CPT;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Woocommerce initial
  *
  */
-class Dimas_Testimonial {
+class Service {
 	/**
 	 * Instance
 	 *
@@ -74,28 +74,28 @@ class Dimas_Testimonial {
 		switch ( $class ) {
 			case 'posts':
 				if ( \Dimas\Helper::is_blog() ) {
-					return \Dimas\Dimas_Testimonial\Posts::instance();
+					return \Dimas\Service\Posts::instance();
 				}
 				break;
 			case 'post_loop':
-				return \Dimas\Dimas_Testimonial\Post_Loop::instance();
+				return \Dimas\Service\Post_Loop::instance();
 				break;
 
 			case 'post':
 				if ( is_singular( 'post' ) ) {
-					return \Dimas\Dimas_Testimonial\Post::instance();
+					return \Dimas\Service\Post::instance();
 				}
 				break;
 
 			case 'related_posts':
 				if ( is_singular( 'post' ) && Helper::get_option('related_posts') ) {
-					return \Dimas\Dimas_Testimonial\Related_Posts::instance();
+					return \Dimas\Service\Related_Posts::instance();
 				}
 				break;
 
 			case 'search':
 				if ( is_search() ) {
-					return \Dimas\Dimas_Testimonial\Search::instance();
+					return \Dimas\Service\Search::instance();
 				}
 				break;
 		}

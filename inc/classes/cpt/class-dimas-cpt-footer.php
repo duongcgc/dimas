@@ -1,6 +1,7 @@
 <?php
 
 namespace Dimas\CPT;
+use Dimas\CPT_Abstract;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -11,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class CPT_Footer
  */
-class CPT_Footer extends Dimas_Custom_Post_Type_Abstract {
+class Custom_Footer extends CPT_Abstract {
 
 	/**
 	 * @return void

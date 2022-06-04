@@ -5,7 +5,7 @@
  * @package Dimas
  */
 
-namespace Dimas\Service;
+namespace Dimas\CPT;
 
 use Dimas\Helper;
 

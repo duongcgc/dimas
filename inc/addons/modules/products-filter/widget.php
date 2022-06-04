@@ -1845,8 +1845,8 @@ class Widget extends \WP_Widget {
 			return;
 		}
 
-		wp_enqueue_style( 'razzi-products-filter-admin', RAZZI_ADDONS_URL . 'modules/products-filter/assets/css/products-filter-admin.css', array(), '20210311' );
-		wp_enqueue_script( 'razzi-products-filter-admin', RAZZI_ADDONS_URL . 'modules/products-filter/assets/js/products-filter-admin.js', array( 'wp-util' ), '20210311', true );
+		wp_enqueue_style( 'razzi-products-filter-admin', DIMAS_ADDONS_URL . 'modules/products-filter/assets/css/products-filter-admin.css', array(), '20210311' );
+		wp_enqueue_script( 'razzi-products-filter-admin', DIMAS_ADDONS_URL . 'modules/products-filter/assets/js/products-filter-admin.js', array( 'wp-util' ), '20210311', true );
 
 		wp_localize_script(
 			'razzi-products-filter-admin', 'razzi_products_filter_params', array(
@@ -1873,7 +1873,7 @@ class Widget extends \WP_Widget {
 			wp_enqueue_style( 'select2' );
 		}
 
-		wp_enqueue_script( 'razzi-products-filter', RAZZI_ADDONS_URL . 'modules/products-filter/assets/js/products-filter.js', array(
+		wp_enqueue_script( 'razzi-products-filter', DIMAS_ADDONS_URL . 'modules/products-filter/assets/js/products-filter.js', array(
 			'jquery',
 			'wp-util',
 			'select2',

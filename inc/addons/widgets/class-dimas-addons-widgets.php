@@ -67,7 +67,7 @@ class Widgets {
 	 */
 	public function includes() {
 		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Widgets\Social_Links'    => RAZZI_ADDONS_DIR . 'inc/widgets/class-razzi-addons-socials.php',
+			'Dimas\Addons\Widgets\Social_Links'    => DIMAS_ADDONS_DIR . 'inc/widgets/class-razzi-addons-socials.php',
 		] );
 	}
 

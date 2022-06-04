@@ -1,6 +1,6 @@
 <?php
 /**
- * Service functions and definitions.
+ * Testimonial functions and definitions.
  *
  * @package Dimas
  */
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Woocommerce initial
  *
  */
-class Service {
+class Testimonial {
 	/**
 	 * Instance
 	 *
@@ -74,28 +74,28 @@ class Service {
 		switch ( $class ) {
 			case 'posts':
 				if ( \Dimas\Helper::is_blog() ) {
-					return \Dimas\Service\Posts::instance();
+					return \Dimas\Testimonial\Posts::instance();
 				}
 				break;
 			case 'post_loop':
-				return \Dimas\Service\Post_Loop::instance();
+				return \Dimas\Testimonial\Post_Loop::instance();
 				break;
 
 			case 'post':
 				if ( is_singular( 'post' ) ) {
-					return \Dimas\Service\Post::instance();
+					return \Dimas\Testimonial\Post::instance();
 				}
 				break;
 
 			case 'related_posts':
 				if ( is_singular( 'post' ) && Helper::get_option('related_posts') ) {
-					return \Dimas\Service\Related_Posts::instance();
+					return \Dimas\Testimonial\Related_Posts::instance();
 				}
 				break;
 
 			case 'search':
 				if ( is_search() ) {
-					return \Dimas\Service\Search::instance();
+					return \Dimas\Testimonial\Search::instance();
 				}
 				break;
 		}

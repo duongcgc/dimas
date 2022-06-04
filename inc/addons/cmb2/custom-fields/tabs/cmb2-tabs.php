@@ -99,10 +99,10 @@ if ( ! class_exists( 'CMB2_Tabs' ) ) {
 		 * Enqueue scripts and styles
 		 */
 		public function setup_admin_scripts() {
-			wp_register_script( 'cmb-tabs', trailingslashit( BEAUTIFO_CORE_PLUGIN_URL ) . 'inc/vendors/cmb2/libraries/js/tabs.js', array( 'jquery' ), self::VERSION, true );
+			wp_register_script( 'cmb-tabs', trailingslashit( DIMAS_CORE_PLUGIN_URL ) . 'inc/vendors/cmb2/libraries/js/tabs.js', array( 'jquery' ), self::VERSION, true );
 			wp_enqueue_script( 'cmb-tabs' );
 
-			wp_enqueue_style( 'cmb-tabs', trailingslashit( BEAUTIFO_CORE_PLUGIN_URL ) . 'inc/vendors/cmb2/libraries/css/tabs.css', array(), self::VERSION );
+			wp_enqueue_style( 'cmb-tabs', trailingslashit( DIMAS_CORE_PLUGIN_URL ) . 'inc/vendors/cmb2/libraries/css/tabs.css', array(), self::VERSION );
 			wp_enqueue_style( 'cmb-tabs' );
 
 		}
@@ -111,7 +111,7 @@ if ( ! class_exists( 'CMB2_Tabs' ) ) {
 		 * Enqueue dark mode styles
 		 */
 		public function setup_dark_mode() {
-			wp_enqueue_style( 'cmb-tabs-dark-mode', trailingslashit( BEAUTIFO_CORE_PLUGIN_URL ) . 'inc/vendors/cmb2/libraries/css/dark-mode.css', array(), self::VERSION );
+			wp_enqueue_style( 'cmb-tabs-dark-mode', trailingslashit( DIMAS_CORE_PLUGIN_URL ) . 'inc/vendors/cmb2/libraries/css/dark-mode.css', array(), self::VERSION );
 			wp_enqueue_style( 'cmb-tabs-dark-mode' );
 
 		}

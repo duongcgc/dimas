@@ -59,8 +59,8 @@ class Module {
 	 */
 	private function includes() {
 		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Modules\Buy_Now\Frontend'        => RAZZI_ADDONS_DIR . 'modules/buy-now/frontend.php',
-			'Dimas\Addons\Modules\Buy_Now\Settings'    	=> RAZZI_ADDONS_DIR . 'modules/buy-now/settings.php',
+			'Dimas\Addons\Modules\Buy_Now\Frontend'        => DIMAS_ADDONS_DIR . 'modules/buy-now/frontend.php',
+			'Dimas\Addons\Modules\Buy_Now\Settings'    	=> DIMAS_ADDONS_DIR . 'modules/buy-now/settings.php',
 		] );
 	}
 

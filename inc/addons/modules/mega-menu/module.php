@@ -59,8 +59,8 @@ class Module {
 	 */
 	private function includes() {
 		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Modules\Mega_Menu\Frontend'        => RAZZI_ADDONS_DIR . 'modules/mega-menu/frontend.php',
-			'Dimas\Addons\Modules\Mega_Menu\Settings'    	=> RAZZI_ADDONS_DIR . 'modules/mega-menu/settings.php',
+			'Dimas\Addons\Modules\Mega_Menu\Frontend'        => DIMAS_ADDONS_DIR . 'modules/mega-menu/frontend.php',
+			'Dimas\Addons\Modules\Mega_Menu\Settings'    	=> DIMAS_ADDONS_DIR . 'modules/mega-menu/settings.php',
 		] );
 	}
 

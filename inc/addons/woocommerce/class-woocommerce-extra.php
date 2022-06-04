@@ -14,7 +14,7 @@ class Opal_Woocommerce_Extra {
         add_action('save_post', array($this, 'save_product_data'));
         add_action('wp_head', array($this, 'initAjaxUrl'), 15);
 
-        include_once(BEAUTIFO_CORE_PLUGIN_DIR . '/inc/vendors/woocommerce/class-wc-widget-layered-nav.php');
+        include_once(DIMAS_CORE_PLUGIN_DIR . '/inc/vendors/woocommerce/class-wc-widget-layered-nav.php');
 
         add_action('widgets_init', array($this, 'register_widget'));
         add_action('cmb2_admin_init', array($this, 'taxonomy_metaboxes'));
@@ -30,7 +30,7 @@ class Opal_Woocommerce_Extra {
      */
     public function enqueue_scripts($hook) {
         if ($hook === 'post.php' && get_post_type() === 'product') {
-            wp_enqueue_script('otf-woocommerce-admin', BEAUTIFO_CORE_PLUGIN_URL . 'assets/js/woocommerce/admin.js', array('jquery'), BEAUTIFO_CORE_VERSION, true);
+            wp_enqueue_script('otf-woocommerce-admin', DIMAS_CORE_PLUGIN_URL . 'assets/js/woocommerce/admin.js', array('jquery'), DIMAS_CORE_VERSION, true);
         }
     }
 

@@ -56,8 +56,8 @@ class Frontend {
 	}
 
 	public function scripts() {
-		wp_enqueue_style( 'razzi-size-guide-content', RAZZI_ADDONS_URL . 'modules/size-guide/assets/css/size-guide.css', array(), '1.0' );
-		wp_enqueue_script('razzi-size-guide-content', RAZZI_ADDONS_URL . 'modules/size-guide/assets/js/size-guide-tab.js');
+		wp_enqueue_style( 'razzi-size-guide-content', DIMAS_ADDONS_URL . 'modules/size-guide/assets/css/size-guide.css', array(), '1.0' );
+		wp_enqueue_script('razzi-size-guide-content', DIMAS_ADDONS_URL . 'modules/size-guide/assets/js/size-guide-tab.js');
 	}
 
 	/**

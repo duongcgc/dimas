@@ -59,7 +59,7 @@ class Product_Options  {
 	public function enqueue_scripts( $hook ) {
 		$screen = get_current_screen();
 		if ( in_array( $hook, array( 'post.php', 'post-new.php' ) ) && $screen->post_type == 'product' ) {
-			wp_enqueue_script( 'razzi_wc_modules_js', RAZZI_ADDONS_URL . '/assets/js/admin/modules.js', array( 'jquery' ), '20211219', true );
+			wp_enqueue_script( 'razzi_wc_modules_js', DIMAS_ADDONS_URL . '/assets/js/admin/modules.js', array( 'jquery' ), '20211219', true );
 			wp_localize_script(
 				'razzi_wc_modules_js',
 				'razzi_wc_modules',

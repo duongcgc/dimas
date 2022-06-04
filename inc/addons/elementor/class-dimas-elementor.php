@@ -61,13 +61,13 @@ class Elementor {
 	 */
 	private function includes() {
 		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Elementor\Helper'                 => RAZZI_ADDONS_DIR . 'inc/elementor/class-razzi-elementor-helper.php',
-			'Dimas\Addons\Elementor\Setup'                  => RAZZI_ADDONS_DIR . 'inc/elementor/class-razzi-elementor-setup.php',
-			'Dimas\Addons\Elementor\AjaxLoader'             => RAZZI_ADDONS_DIR . 'inc/elementor/class-razzi-elementor-ajaxloader.php',
-			'Dimas\Addons\Elementor\Widgets'                => RAZZI_ADDONS_DIR . 'inc/elementor/class-razzi-elementor-widgets.php',
-			'Dimas\Addons\Elementor\Module\Motion_Parallax' => RAZZI_ADDONS_DIR . 'inc/elementor/modules/class-razzi-elementor-motion-parallax.php',
-			'Dimas\Addons\Elementor\Controls'               => RAZZI_ADDONS_DIR . 'inc/elementor/controls/class-razzi-elementor-controls.php',
-			'Dimas\Addons\Elementor\Page_Settings'          => RAZZI_ADDONS_DIR . 'inc/elementor/class-razzi-elementor-page-settings.php',
+			'Dimas\Addons\Elementor\Helper'                 => DIMAS_ADDONS_DIR . 'inc/elementor/class-razzi-elementor-helper.php',
+			'Dimas\Addons\Elementor\Setup'                  => DIMAS_ADDONS_DIR . 'inc/elementor/class-razzi-elementor-setup.php',
+			'Dimas\Addons\Elementor\AjaxLoader'             => DIMAS_ADDONS_DIR . 'inc/elementor/class-razzi-elementor-ajaxloader.php',
+			'Dimas\Addons\Elementor\Widgets'                => DIMAS_ADDONS_DIR . 'inc/elementor/class-razzi-elementor-widgets.php',
+			'Dimas\Addons\Elementor\Module\Motion_Parallax' => DIMAS_ADDONS_DIR . 'inc/elementor/modules/class-razzi-elementor-motion-parallax.php',
+			'Dimas\Addons\Elementor\Controls'               => DIMAS_ADDONS_DIR . 'inc/elementor/controls/class-razzi-elementor-controls.php',
+			'Dimas\Addons\Elementor\Page_Settings'          => DIMAS_ADDONS_DIR . 'inc/elementor/class-razzi-elementor-page-settings.php',
 		] );
 
 	}

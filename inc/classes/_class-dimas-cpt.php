@@ -5,7 +5,7 @@
  * @package Dimas
  */
 
-namespace Dimas\Admin;
+namespace Dimas;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

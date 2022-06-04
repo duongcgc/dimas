@@ -59,8 +59,8 @@ class Module {
 	 */
 	private function includes() {
 		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Modules\Size_Guide\Settings'    	=> RAZZI_ADDONS_DIR . 'modules/size-guide/settings.php',
-			'Dimas\Addons\Modules\Size_Guide\Frontend'    	=> RAZZI_ADDONS_DIR . 'modules/size-guide/frontend.php',
+			'Dimas\Addons\Modules\Size_Guide\Settings'    	=> DIMAS_ADDONS_DIR . 'modules/size-guide/settings.php',
+			'Dimas\Addons\Modules\Size_Guide\Frontend'    	=> DIMAS_ADDONS_DIR . 'modules/size-guide/frontend.php',
 		] );
 	}
 

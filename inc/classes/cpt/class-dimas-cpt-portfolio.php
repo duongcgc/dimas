@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
 /**
  * Class CPT_Portfolio
  */
-class CPT_Portfolio extends Dimas_Custom_Post_Type_Abstract {
+class CPT_Portfolio extends CPT_Abstract {
     public $post_type = 'osf_portfolio';
     public $prefix    = 'osf_portfolio_';
     public $taxonomy  = 'osf_portfolio_category';
@@ -319,9 +319,9 @@ class CPT_Portfolio extends Dimas_Custom_Post_Type_Abstract {
 
     public function get_page_template_file($template) {
         if (is_singular($this->post_type)) {
-            $template = locate_template('single-portfolio.php') ? locate_template('single-portfolio.php') : trailingslashit(BEAUTIFO_CORE_PLUGIN_DIR) . 'templates/portfolio/single-portfolio.php';
+            $template = locate_template('single-portfolio.php') ? locate_template('single-portfolio.php') : trailingslashit(DIMAS_CORE_PLUGIN_DIR) . 'templates/portfolio/single-portfolio.php';
         } elseif (is_post_type_archive($this->post_type) || is_tax($this->taxonomy)) {
-            $template = locate_template('archive-portfolio.php') ? locate_template('archive-portfolio.php') : trailingslashit(BEAUTIFO_CORE_PLUGIN_DIR) . 'templates/portfolio/archive-portfolio.php';
+            $template = locate_template('archive-portfolio.php') ? locate_template('archive-portfolio.php') : trailingslashit(DIMAS_CORE_PLUGIN_DIR) . 'templates/portfolio/archive-portfolio.php';
         }
         return $template;
     }

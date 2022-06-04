@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class CPT_Header
  */
-class CPT_Header extends Dimas_Custom_Post_Type_Abstract {
+class CPT_Header extends CPT_Abstract {
 
 	/**
 	 * @return void

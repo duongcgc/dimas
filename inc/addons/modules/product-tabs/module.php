@@ -61,10 +61,10 @@ class Module {
 	 */
 	private function includes() {
 		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Modules\Product_Tabs\FrontEnd'        => RAZZI_ADDONS_DIR . 'modules/product-tabs/frontend.php',
-			'Dimas\Addons\Modules\Product_Tabs\Settings'    	=> RAZZI_ADDONS_DIR . 'modules/product-tabs/settings.php',
-			'Dimas\Addons\Modules\Product_Tabs\Product_Meta'    => RAZZI_ADDONS_DIR . 'modules/product-tabs/product-meta.php',
-			'Dimas\Addons\Modules\Product_Tabs\Post_Type'    		=> RAZZI_ADDONS_DIR . 'modules/product-tabs/post-type.php',
+			'Dimas\Addons\Modules\Product_Tabs\FrontEnd'        => DIMAS_ADDONS_DIR . 'modules/product-tabs/frontend.php',
+			'Dimas\Addons\Modules\Product_Tabs\Settings'    	=> DIMAS_ADDONS_DIR . 'modules/product-tabs/settings.php',
+			'Dimas\Addons\Modules\Product_Tabs\Product_Meta'    => DIMAS_ADDONS_DIR . 'modules/product-tabs/product-meta.php',
+			'Dimas\Addons\Modules\Product_Tabs\Post_Type'    		=> DIMAS_ADDONS_DIR . 'modules/product-tabs/post-type.php',
 		] );
 	}
 

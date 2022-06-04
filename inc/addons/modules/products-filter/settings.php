@@ -63,7 +63,7 @@ class Settings {
 		}
 
 		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Modules\Products_Filter\Widget'    => RAZZI_ADDONS_DIR . 'modules/products-filter/widget.php',
+			'Dimas\Addons\Modules\Products_Filter\Widget'    => DIMAS_ADDONS_DIR . 'modules/products-filter/widget.php',
 		] );
 
 		if ( class_exists( 'WooCommerce' ) ) {

@@ -59,8 +59,8 @@ class Module {
 	 */
 	private function includes() {
 		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Modules\Catalog_Mode\Frontend'        => RAZZI_ADDONS_DIR . 'modules/catalog-mode/frontend.php',
-			'Dimas\Addons\Modules\Catalog_Mode\Settings'    	=> RAZZI_ADDONS_DIR . 'modules/catalog-mode/settings.php',
+			'Dimas\Addons\Modules\Catalog_Mode\Frontend'        => DIMAS_ADDONS_DIR . 'modules/catalog-mode/frontend.php',
+			'Dimas\Addons\Modules\Catalog_Mode\Settings'    	=> DIMAS_ADDONS_DIR . 'modules/catalog-mode/settings.php',
 		] );
 	}
 

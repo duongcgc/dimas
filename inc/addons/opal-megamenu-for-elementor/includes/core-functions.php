@@ -182,7 +182,7 @@ function osf_get_fontawesome_icons() {
     if (defined('ELEMENTOR_PATH') && !class_exists('Elementor\Icon')) {
         include_once ELEMENTOR_PATH . "includes/controls/icon.php";
     }
-    $icons = json_decode(file_get_contents(trailingslashit(BEAUTIFO_CORE_PLUGIN_DIR) . 'inc/vendors/elementor/icons.json'), true);
+    $icons = json_decode(file_get_contents(trailingslashit(DIMAS_CORE_PLUGIN_DIR) . 'inc/vendors/elementor/icons.json'), true);
     $icons = apply_filters('osf_languages_directory', array_merge($icons, Elementor\Control_Icon::get_icons()));
     return $icons;
 }

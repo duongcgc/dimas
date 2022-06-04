@@ -59,7 +59,7 @@ class Module {
 	 */
 	private function includes() {
 		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Modules\Products_Filter\Settings'    	=> RAZZI_ADDONS_DIR . 'modules/products-filter/settings.php',
+			'Dimas\Addons\Modules\Products_Filter\Settings'    	=> DIMAS_ADDONS_DIR . 'modules/products-filter/settings.php',
 		] );
 	}
 
