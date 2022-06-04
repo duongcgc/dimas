@@ -21,7 +21,7 @@ class Faq extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-faq';
+		return 'dimas-faq';
 	}
 
 	/**
@@ -30,7 +30,7 @@ class Faq extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - FAQs', 'razzi' );
+		return esc_html__( 'Dimas - FAQs', 'dimas' );
 	}
 
 	/**
@@ -48,12 +48,12 @@ class Faq extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-frontend'
+			'dimas-frontend'
 		];
 	}
 
@@ -76,16 +76,16 @@ class Faq extends Widget_Base {
 
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'FAQs', 'razzi' ) ]
+			[ 'label' => esc_html__( 'FAQs', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'status',
 			[
-				'label'   => esc_html__( 'Open the first tab', 'razzi' ),
+				'label'   => esc_html__( 'Open the first tab', 'dimas' ),
 				'type'    => Controls_Manager::SWITCHER,
-				'label_on'  => esc_html__( 'Open', 'razzi' ),
-				'label_off' => esc_html__( 'Close', 'razzi' ),
+				'label_on'  => esc_html__( 'Open', 'dimas' ),
+				'label_off' => esc_html__( 'Close', 'dimas' ),
 				'default'   => 'yes',
 				'frontend_available' => true,
 			]
@@ -96,9 +96,9 @@ class Faq extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'This is title', 'razzi' ),
+				'default'     => esc_html__( 'This is title', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -106,9 +106,9 @@ class Faq extends Widget_Base {
 		$repeater -> add_control(
 			'desc',
 			[
-				'label'       => esc_html__( 'Content', 'razzi' ),
+				'label'       => esc_html__( 'Content', 'dimas' ),
 				'type'        => Controls_Manager::WYSIWYG ,
-				'default'     => esc_html__( 'Event Note', 'razzi' ),
+				'default'     => esc_html__( 'Event Note', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -116,29 +116,29 @@ class Faq extends Widget_Base {
 		$this->add_control(
 			'elements',
 			[
-				'label'   => esc_html__( 'FAQs Lists', 'razzi' ),
+				'label'   => esc_html__( 'FAQs Lists', 'dimas' ),
 				'type'    => Controls_Manager::REPEATER,
 				'fields'  => $repeater->get_controls(),
 				'default' => [
 					[
-						'title'                 => esc_html__( 'This is title', 'razzi' ),
-						'desc'                  => esc_html__( 'This is description', 'razzi' ),
+						'title'                 => esc_html__( 'This is title', 'dimas' ),
+						'desc'                  => esc_html__( 'This is description', 'dimas' ),
 					],
 					[
-						'title'         => esc_html__( 'This is title', 'razzi' ),
-						'desc'                  => esc_html__( 'This is description', 'razzi' ),
+						'title'         => esc_html__( 'This is title', 'dimas' ),
+						'desc'                  => esc_html__( 'This is description', 'dimas' ),
 					],
 					[
-						'title'         => esc_html__( 'This is title', 'razzi' ),
-						'desc'                  => esc_html__( 'This is description', 'razzi' ),
+						'title'         => esc_html__( 'This is title', 'dimas' ),
+						'desc'                  => esc_html__( 'This is description', 'dimas' ),
 					],
 					[
-						'title'         => esc_html__( 'This is title', 'razzi' ),
-						'desc'                  => esc_html__( 'This is description', 'razzi' ),
+						'title'         => esc_html__( 'This is title', 'dimas' ),
+						'desc'                  => esc_html__( 'This is description', 'dimas' ),
 					],
 					[
-						'title'         => esc_html__( 'This is title', 'razzi' ),
-						'desc'                  => esc_html__( 'This is description', 'razzi' ),
+						'title'         => esc_html__( 'This is title', 'dimas' ),
+						'desc'                  => esc_html__( 'This is description', 'dimas' ),
 					],
 				],
 				'title_field'   => '{{{ title }}}',
@@ -164,7 +164,7 @@ class Faq extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'FAQs', 'razzi' ),
+				'label' => __( 'FAQs', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -172,11 +172,11 @@ class Faq extends Widget_Base {
 		$this->add_responsive_control(
 			'general_padding',
 			[
-				'label'      => __( 'Padding', 'razzi' ),
+				'label'      => __( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-faq .box-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-faq .box-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -185,11 +185,11 @@ class Faq extends Widget_Base {
 		$this->add_control(
 			'content_bk_color',
 			[
-				'label'        => esc_html__( 'Background Color', 'razzi' ),
+				'label'        => esc_html__( 'Background Color', 'dimas' ),
 				'type'         => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-faq .box-content' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-faq .box-content' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -197,10 +197,10 @@ class Faq extends Widget_Base {
 		$this->add_control(
 			'border_style',
 			[
-				'label'        => __( 'Border', 'razzi' ),
+				'label'        => __( 'Border', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -209,18 +209,18 @@ class Faq extends Widget_Base {
 		$this->add_control(
 			'content_border_style',
 			[
-				'label'     => esc_html__( 'Border Style', 'razzi' ),
+				'label'     => esc_html__( 'Border Style', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'dotted' => esc_html__( 'Dotted', 'razzi' ),
-					'dashed' => esc_html__( 'Dashed', 'razzi' ),
-					'solid'  => esc_html__( 'Solid', 'razzi' ),
-					'none'   => esc_html__( 'None', 'razzi' ),
+					'dotted' => esc_html__( 'Dotted', 'dimas' ),
+					'dashed' => esc_html__( 'Dashed', 'dimas' ),
+					'solid'  => esc_html__( 'Solid', 'dimas' ),
+					'none'   => esc_html__( 'None', 'dimas' ),
 				],
 				'default'   => '',
 				'toggle'    => false,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-faq .box-content' => 'border-style: {{VALUE}};',
+					'{{WRAPPER}} .dimas-faq .box-content' => 'border-style: {{VALUE}};',
 				],
 			]
 		);
@@ -228,11 +228,11 @@ class Faq extends Widget_Base {
 		$this->add_control(
 			'content_border_width',
 			[
-				'label'       => __( 'Border Width', 'razzi' ),
+				'label'       => __( 'Border Width', 'dimas' ),
 				'type'        => Controls_Manager::DIMENSIONS,
 				'size_units'  => [ 'px' ],
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-faq .box-content' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-faq .box-content' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -240,11 +240,11 @@ class Faq extends Widget_Base {
 		$this->add_control(
 			'content_border_color',
 			[
-				'label'     => __( 'Border Color', 'razzi' ),
+				'label'     => __( 'Border Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-faq .box-content' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-faq .box-content' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -254,7 +254,7 @@ class Faq extends Widget_Base {
 		$this->add_control(
 			'icon_style',
 			[
-				'label' => esc_html__( 'Icon', 'razzi' ),
+				'label' => esc_html__( 'Icon', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator'    => 'before',
 			]
@@ -263,7 +263,7 @@ class Faq extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_width',
 			[
-				'label'     => __( 'Font Size', 'razzi' ),
+				'label'     => __( 'Font Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -273,7 +273,7 @@ class Faq extends Widget_Base {
 				],
 				'default'   => [ ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-faq .faq-title .razzi-svg-icon ' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-faq .faq-title .dimas-svg-icon ' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -281,11 +281,11 @@ class Faq extends Widget_Base {
 		$this->add_control(
 			'icon_normal_color',
 			[
-				'label'        => esc_html__( 'Color', 'razzi' ),
+				'label'        => esc_html__( 'Color', 'dimas' ),
 				'type'         => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-faq .faq-title .razzi-svg-icon  ' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-faq .faq-title .dimas-svg-icon  ' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -299,7 +299,7 @@ class Faq extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_content',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -312,7 +312,7 @@ class Faq extends Widget_Base {
 		$this->start_controls_tab(
 			'content_style_title',
 			[
-				'label' => __( 'Title', 'razzi' ),
+				'label' => __( 'Title', 'dimas' ),
 			]
 		);
 
@@ -320,18 +320,18 @@ class Faq extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-faq .faq-title',
+				'selector' => '{{WRAPPER}} .dimas-faq .faq-title',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-faq .faq-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-faq .faq-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -342,7 +342,7 @@ class Faq extends Widget_Base {
 		$this->start_controls_tab(
 			'content_desc',
 			[
-				'label' => __( 'Description', 'razzi' ),
+				'label' => __( 'Description', 'dimas' ),
 			]
 		);
 
@@ -350,14 +350,14 @@ class Faq extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'note_typography',
-				'selector' => '{{WRAPPER}} .razzi-faq .faq-desc',
+				'selector' => '{{WRAPPER}} .dimas-faq .faq-desc',
 			]
 		);
 
 		$this->add_responsive_control(
 			'note_spacing',
 			[
-				'label'     => __( 'Spacing Top', 'razzi' ),
+				'label'     => __( 'Spacing Top', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -367,7 +367,7 @@ class Faq extends Widget_Base {
 				],
 				'default'   => [ ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-faq .faq-desc' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-faq .faq-desc' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -375,11 +375,11 @@ class Faq extends Widget_Base {
 		$this->add_control(
 			'desc_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-faq .faq-desc' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-faq .faq-desc' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -391,7 +391,7 @@ class Faq extends Widget_Base {
 		$this->add_control(
 			'active_style',
 			[
-				'label'     => esc_html__( 'Active', 'razzi' ),
+				'label'     => esc_html__( 'Active', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -400,11 +400,11 @@ class Faq extends Widget_Base {
 		$this->add_control(
 			'tit_ac_color',
 			[
-				'label'     => __( 'Title Color', 'razzi' ),
+				'label'     => __( 'Title Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-faq .box-content.active .faq-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-faq .box-content.active .faq-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -413,7 +413,7 @@ class Faq extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'arrows_border_shadow',
-				'selector' => '{{WRAPPER}} .razzi-faq .box-content.active',
+				'selector' => '{{WRAPPER}} .dimas-faq .box-content.active',
 			]
 		);
 
@@ -432,7 +432,7 @@ class Faq extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-faq'
+			'dimas-faq'
 		];
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );

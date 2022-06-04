@@ -33,8 +33,8 @@ class Settings  {
 		return self::$instance;
 	}
 
-	const POST_TYPE     = 'razzi_size_guide';
-	const OPTION_NAME   = 'razzi_size_guide';
+	const POST_TYPE     = 'dimas_size_guide';
+	const OPTION_NAME   = 'dimas_size_guide';
 
 
 	/**
@@ -51,7 +51,7 @@ class Settings  {
 		// Make sure the post types are loaded for imports
 		add_action( 'import_start', array( $this, 'register_post_type' ) );
 
-		if ( get_option( 'razzi_size_guide' ) != 'yes' ) {
+		if ( get_option( 'dimas_size_guide' ) != 'yes' ) {
 			return;
 		}
 
@@ -75,7 +75,7 @@ class Settings  {
 		add_filter( 'woocommerce_product_data_tabs', array( $this, 'product_data_tab' ) );
 		add_action( 'woocommerce_product_data_panels', array( $this, 'product_data_panel' ) );
 		add_action( 'woocommerce_process_product_meta', array( $this, 'process_product_meta' ) );
-		add_action( 'wp_ajax_razzi_addons_load_product_size_guide_attributes', array( $this, 'ajax_load_product_size_guide_attributes' ) );
+		add_action( 'wp_ajax_dimas_addons_load_product_size_guide_attributes', array( $this, 'ajax_load_product_size_guide_attributes' ) );
 	}
 
 	/**
@@ -87,7 +87,7 @@ class Settings  {
 	 * @return array
 	 */
 	public function size_guide_section( $sections ) {
-		$sections['razzi_addons_size_guide'] = esc_html__( 'Size Guide', 'razzi' );
+		$sections['dimas_addons_size_guide'] = esc_html__( 'Size Guide', 'dimas' );
 
 		return $sections;
 	}
@@ -102,67 +102,67 @@ class Settings  {
 	 * @return array
 	 */
 	public function size_guide_settings( $settings, $section ) {
-		if ( 'razzi_addons_size_guide' != $section ) {
+		if ( 'dimas_addons_size_guide' != $section ) {
 			return $settings;
 		}
 
 		$settings_size_guide = array(
 			array(
-				'name' => esc_html__( 'Size Guide', 'razzi' ),
+				'name' => esc_html__( 'Size Guide', 'dimas' ),
 				'type' => 'title',
 				'id'   => self::OPTION_NAME . '_options',
 			),
 			array(
-				'name'    => esc_html__( 'Enable Size Guide', 'razzi' ),
-				'desc'    => esc_html__( 'Enable product size guides', 'razzi' ),
+				'name'    => esc_html__( 'Enable Size Guide', 'dimas' ),
+				'desc'    => esc_html__( 'Enable product size guides', 'dimas' ),
 				'id'      => self::OPTION_NAME,
 				'default' => 'no',
 				'type'    => 'checkbox',
 				'checkboxgroup' => 'start',
 			),
 			array(
-				'desc'    => esc_html__( 'Enable on variable products only', 'razzi' ),
+				'desc'    => esc_html__( 'Enable on variable products only', 'dimas' ),
 				'id'      => self::OPTION_NAME . '_variable_only',
 				'default' => 'no',
 				'type'    => 'checkbox',
 				'checkboxgroup' => 'end',
 			),
 			array(
-				'name'    => esc_html__( 'Guide Display', 'razzi' ),
+				'name'    => esc_html__( 'Guide Display', 'dimas' ),
 				'id'      => self::OPTION_NAME . '_display',
 				'default' => 'tab',
 				'class'   => 'wc-enhanced-select',
 				'type'    => 'select',
 				'options' => array(
-					'tab'   => esc_html__( 'In product tabs', 'razzi' ),
-					'panel' => esc_html__( 'Panel by clicking on a button', 'razzi' ),
-					'popup' => esc_html__( 'Popup by clicking on a button', 'razzi' ),
+					'tab'   => esc_html__( 'In product tabs', 'dimas' ),
+					'panel' => esc_html__( 'Panel by clicking on a button', 'dimas' ),
+					'popup' => esc_html__( 'Popup by clicking on a button', 'dimas' ),
 				),
 			),
 			array(
-				'name'    => esc_html__( 'Button Position', 'razzi' ),
+				'name'    => esc_html__( 'Button Position', 'dimas' ),
 				'id'      => self::OPTION_NAME . '_button_position',
 				'default' => 'bellow_summary',
 				'class'   => 'wc-enhanced-select',
 				'type'    => 'select',
 				'options' => array(
-					'bellow_summary'   => esc_html__( 'Bellow short description', 'razzi' ),
-					'bellow_price'     => esc_html__( 'Bellow price', 'razzi' ),
-					'above_button'     => esc_html__( 'Above Add To Cart button', 'razzi' ),
-					'bellow_attribute' => esc_html__( 'Bellow the Size attribute (for variable products only)', 'razzi' ),
+					'bellow_summary'   => esc_html__( 'Bellow short description', 'dimas' ),
+					'bellow_price'     => esc_html__( 'Bellow price', 'dimas' ),
+					'above_button'     => esc_html__( 'Above Add To Cart button', 'dimas' ),
+					'bellow_attribute' => esc_html__( 'Bellow the Size attribute (for variable products only)', 'dimas' ),
 				),
 			),
 			array(
-				'name'    => esc_html__( 'Attribute Slug', 'razzi' ),
+				'name'    => esc_html__( 'Attribute Slug', 'dimas' ),
 				'id'      => self::OPTION_NAME . '_attribute',
 				'default' => 'size',
 				'type'    => 'text',
-				'desc_tip' => esc_html__( 'This is the slug of a product attribute', 'razzi' ),
+				'desc_tip' => esc_html__( 'This is the slug of a product attribute', 'dimas' ),
 			),
 			array(
-				'name'    => esc_html__( 'Button Text', 'razzi' ),
+				'name'    => esc_html__( 'Button Text', 'dimas' ),
 				'id'      => self::OPTION_NAME . '_button_text',
-				'default' => esc_html__('Size Chart', 'razzi'),
+				'default' => esc_html__('Size Chart', 'dimas'),
 				'type'    => 'text',
 			),
 			array(
@@ -186,23 +186,23 @@ class Settings  {
 			return;
 		}
 		register_post_type( self::POST_TYPE, array(
-			'description'         => esc_html__( 'Product size guide', 'razzi' ),
+			'description'         => esc_html__( 'Product size guide', 'dimas' ),
 			'labels'              => array(
-				'name'                  => esc_html__( 'Size Guide', 'razzi' ),
-				'singular_name'         => esc_html__( 'Size Guide', 'razzi' ),
-				'menu_name'             => esc_html__( 'Size Guides', 'razzi' ),
-				'all_items'             => esc_html__( 'Size Guides', 'razzi' ),
-				'add_new'               => esc_html__( 'Add New', 'razzi' ),
-				'add_new_item'          => esc_html__( 'Add New Size Guide', 'razzi' ),
-				'edit_item'             => esc_html__( 'Edit Size Guide', 'razzi' ),
-				'new_item'              => esc_html__( 'New Size Guide', 'razzi' ),
-				'view_item'             => esc_html__( 'View Size Guide', 'razzi' ),
-				'search_items'          => esc_html__( 'Search size guides', 'razzi' ),
-				'not_found'             => esc_html__( 'No size guide found', 'razzi' ),
-				'not_found_in_trash'    => esc_html__( 'No size guide found in Trash', 'razzi' ),
-				'filter_items_list'     => esc_html__( 'Filter size guides list', 'razzi' ),
-				'items_list_navigation' => esc_html__( 'Size guides list navigation', 'razzi' ),
-				'items_list'            => esc_html__( 'Size guides list', 'razzi' ),
+				'name'                  => esc_html__( 'Size Guide', 'dimas' ),
+				'singular_name'         => esc_html__( 'Size Guide', 'dimas' ),
+				'menu_name'             => esc_html__( 'Size Guides', 'dimas' ),
+				'all_items'             => esc_html__( 'Size Guides', 'dimas' ),
+				'add_new'               => esc_html__( 'Add New', 'dimas' ),
+				'add_new_item'          => esc_html__( 'Add New Size Guide', 'dimas' ),
+				'edit_item'             => esc_html__( 'Edit Size Guide', 'dimas' ),
+				'new_item'              => esc_html__( 'New Size Guide', 'dimas' ),
+				'view_item'             => esc_html__( 'View Size Guide', 'dimas' ),
+				'search_items'          => esc_html__( 'Search size guides', 'dimas' ),
+				'not_found'             => esc_html__( 'No size guide found', 'dimas' ),
+				'not_found_in_trash'    => esc_html__( 'No size guide found in Trash', 'dimas' ),
+				'filter_items_list'     => esc_html__( 'Filter size guides list', 'dimas' ),
+				'items_list_navigation' => esc_html__( 'Size guides list navigation', 'dimas' ),
+				'items_list'            => esc_html__( 'Size guides list', 'dimas' ),
 			),
 			'supports'            => array( 'title', 'editor' ),
 			'rewrite'             => false,
@@ -234,7 +234,7 @@ class Settings  {
 	 */
 	public function edit_admin_columns( $columns ) {
 		$columns = array_merge( $columns, array(
-			'apply_to' => esc_html__( 'Apply to Category', 'razzi' )
+			'apply_to' => esc_html__( 'Apply to Category', 'dimas' )
 		) );
 
 		return $columns;
@@ -257,11 +257,11 @@ class Settings  {
 
 				switch ( $selected ) {
 					case 'none':
-						esc_html_e( 'No Category', 'razzi' );
+						esc_html_e( 'No Category', 'dimas' );
 						break;
 
 					case 'all':
-						esc_html_e( 'All Categories', 'razzi' );
+						esc_html_e( 'All Categories', 'dimas' );
 						break;
 
 					case 'custom':
@@ -276,7 +276,7 @@ class Settings  {
 
 							}
 						} else {
-							$links[] = esc_html_e( 'No Category', 'razzi' );
+							$links[] = esc_html_e( 'No Category', 'dimas' );
 						}
 
 						echo implode( ', ', $links );
@@ -314,8 +314,8 @@ class Settings  {
 	 * @param object $post
 	 */
 	public function meta_boxes( $post ) {
-		add_meta_box( 'razzi-size-guide-category', esc_html__( 'Apply to Categories', 'razzi' ), array( $this, 'category_meta_box' ), self::POST_TYPE, 'side' );
-		add_meta_box( 'razzi-size-guide-tables', esc_html__( 'Tables', 'razzi' ), array( $this, 'tables_meta_box' ), self::POST_TYPE, 'advanced', 'high' );
+		add_meta_box( 'dimas-size-guide-category', esc_html__( 'Apply to Categories', 'dimas' ), array( $this, 'category_meta_box' ), self::POST_TYPE, 'side' );
+		add_meta_box( 'dimas-size-guide-tables', esc_html__( 'Tables', 'dimas' ), array( $this, 'tables_meta_box' ), self::POST_TYPE, 'advanced', 'high' );
 	}
 
 	/**
@@ -335,21 +335,21 @@ class Settings  {
 		<p>
 			<label>
 				<input type="radio" name="_size_guide_category" value="none" <?php checked( 'none', $selected ) ?>>
-				<?php esc_html_e( 'No category', 'razzi' ); ?>
+				<?php esc_html_e( 'No category', 'dimas' ); ?>
 			</label>
 		</p>
 
 		<p>
 			<label>
 				<input type="radio" name="_size_guide_category" value="all" <?php checked( 'all', $selected ) ?>>
-				<?php esc_html_e( 'All Categories', 'razzi' ); ?>
+				<?php esc_html_e( 'All Categories', 'dimas' ); ?>
 			</label>
 		</p>
 
 		<p>
 			<label>
 				<input type="radio" name="_size_guide_category" value="custom" <?php checked( 'custom', $selected ) ?>>
-				<?php esc_html_e( 'Select Categories', 'razzi' ); ?>
+				<?php esc_html_e( 'Select Categories', 'dimas' ); ?>
 			</label>
 		</p>
 
@@ -380,17 +380,17 @@ class Settings  {
 		$tables = get_post_meta( $post->ID, 'size_guides', true );
 		$tables = $tables ? $tables : array(
 			'names' => array( '' ),
-			'tabs' => array( __( 'Table 1', 'razzi' ) ),
+			'tabs' => array( __( 'Table 1', 'dimas' ) ),
 			'tables' => array( '[["",""],["",""]]' ),
 			'descriptions' => array( '' ),
 			'information' => array( '' ),
 		);
-		wp_localize_script( 'razzi-size-guide', 'razziSizeGuideTables', $tables );
+		wp_localize_script( 'dimas-size-guide', 'dimasSizeGuideTables', $tables );
 		?>
 
-		<div id="razzi-size-guide-tabs" class="razzi-size-guide-tabs">
-			<div class="razzi-size-guide-tabs--tabs">
-				<div class="razzi-size-guide-table-tabs--tab add-new-tab" data-title="<?php esc_attr_e( 'Table', 'razzi' ) ?>"><span class="dashicons dashicons-plus"></span></div>
+		<div id="dimas-size-guide-tabs" class="dimas-size-guide-tabs">
+			<div class="dimas-size-guide-tabs--tabs">
+				<div class="dimas-size-guide-table-tabs--tab add-new-tab" data-title="<?php esc_attr_e( 'Table', 'dimas' ) ?>"><span class="dashicons dashicons-plus"></span></div>
 			</div>
 		</div>
 
@@ -450,19 +450,19 @@ class Settings  {
 		$screen = get_current_screen();
 
 		if ( in_array( $hook, array( 'post-new.php', 'post.php' ) ) && self::POST_TYPE == $screen->post_type ) {
-			wp_enqueue_style( 'razzi-size-guide', DIMAS_ADDONS_URL . 'modules/size-guide/assets/css/size-guide-admin.css' );
+			wp_enqueue_style( 'dimas-size-guide', DIMAS_ADDONS_URL . 'modules/size-guide/assets/css/size-guide-admin.css' );
 
-			wp_enqueue_script( 'razzi-size-guide', DIMAS_ADDONS_URL . 'modules/size-guide/assets/js/size-guide.js', array( 'jquery', 'wp-util' ),'1.0', true );
+			wp_enqueue_script( 'dimas-size-guide', DIMAS_ADDONS_URL . 'modules/size-guide/assets/js/size-guide.js', array( 'jquery', 'wp-util' ),'1.0', true );
 		}
 
 		if ( in_array( $hook, array( 'post-new.php', 'post.php' ) ) && 'product' == $screen->post_type ) {
-			wp_enqueue_style( 'razzi-product-size-guide', DIMAS_ADDONS_URL . 'modules/size-guide/assets/css/product-size-guide-admin.css' );
+			wp_enqueue_style( 'dimas-product-size-guide', DIMAS_ADDONS_URL . 'modules/size-guide/assets/css/product-size-guide-admin.css' );
 
-			wp_enqueue_script( 'razzi-product-size-guide', DIMAS_ADDONS_URL . 'modules/size-guide/assets/js/product-size-guide.js', array( 'jquery' ),'1.0', true );
+			wp_enqueue_script( 'dimas-product-size-guide', DIMAS_ADDONS_URL . 'modules/size-guide/assets/js/product-size-guide.js', array( 'jquery' ),'1.0', true );
 		}
 
-		if ( 'woocommerce_page_wc-settings' == $screen->base && ! empty( $_GET['section'] ) && 'razzi_addons_size_guide' == $_GET['section'] ) {
-			wp_enqueue_script( 'razzi-size-guide', DIMAS_ADDONS_URL . 'modules/size-guide/assets/js/size-guide-settings.js', array( 'jquery' ),'1.0', true );
+		if ( 'woocommerce_page_wc-settings' == $screen->base && ! empty( $_GET['section'] ) && 'dimas_addons_size_guide' == $_GET['section'] ) {
+			wp_enqueue_script( 'dimas-size-guide', DIMAS_ADDONS_URL . 'modules/size-guide/assets/js/size-guide-settings.js', array( 'jquery' ),'1.0', true );
 		}
 	}
 
@@ -475,44 +475,44 @@ class Settings  {
 	 */
 	public function templates() {
 		?>
-		<script type="text/html" id="tmpl-razzi-size-guide-tab">
-			<div class="razzi-size-guide-table-tabs--tab" data-tab="{{data.index}}">
-				<span class="razzi-size-guide-table-tabs--tab-text">{{data.tab}}</span>
+		<script type="text/html" id="tmpl-dimas-size-guide-tab">
+			<div class="dimas-size-guide-table-tabs--tab" data-tab="{{data.index}}">
+				<span class="dimas-size-guide-table-tabs--tab-text">{{data.tab}}</span>
 				<input type="text" name="_size_guides[tabs][]" value="{{data.tab}}" class="hidden">
 				<span class="dashicons dashicons-edit edit-button"></span>
 				<span class="dashicons dashicons-yes confirm-button"></span>
 			</div>
 		</script>
 
-		<script type="text/html" id="tmpl-razzi-size-guide-panel">
-			<div class="razzi-size-guide-table-editor" data-tab="{{data.index}}">
+		<script type="text/html" id="tmpl-dimas-size-guide-panel">
+			<div class="dimas-size-guide-table-editor" data-tab="{{data.index}}">
 				<p>
 					<label>
-						<?php esc_html_e( 'Table Name', 'razzi' ); ?><br/>
+						<?php esc_html_e( 'Table Name', 'dimas' ); ?><br/>
 						<input type="text" name="_size_guides[names][]" class="widefat" value="{{data.name}}">
 					</label>
 				</p>
 
 				<p>
 					<label>
-						<?php esc_html_e( 'Description', 'razzi' ) ?>
+						<?php esc_html_e( 'Description', 'dimas' ) ?>
 						<textarea name="_size_guides[descriptions][]" class="widefat" rows="6">{{data.description}}</textarea>
 					</label>
 				</p>
 
-				<p><label><?php esc_html_e( 'Table', 'razzi' ) ?></label></p>
+				<p><label><?php esc_html_e( 'Table', 'dimas' ) ?></label></p>
 
-				<textarea name="_size_guides[tables][]" class="widefat razzi-size-guide-table hidden">{{{data.table}}}</textarea>
+				<textarea name="_size_guides[tables][]" class="widefat dimas-size-guide-table hidden">{{{data.table}}}</textarea>
 
 				<p>
 					<label>
-						<?php esc_html_e( 'Additional Information', 'razzi' ) ?>
+						<?php esc_html_e( 'Additional Information', 'dimas' ) ?>
 						<textarea name="_size_guides[information][]" class="widefat" rows="6">{{{data.information}}}</textarea>
 					</label>
 				</p>
 
 				<p class="delete-table-p">
-					<a href="#" class="delete-table"><?php esc_html_e( 'Delete Table', 'razzi' ) ?></a>
+					<a href="#" class="delete-table"><?php esc_html_e( 'Delete Table', 'dimas' ) ?></a>
 				</p>
 			</div>
 		</script>
@@ -528,10 +528,10 @@ class Settings  {
 	 * @return array
 	 */
 	public function product_data_tab( $tabs ) {
-		$tabs['razzi_size_guide'] = array(
-			'label'    => esc_html__( 'Size Guide', 'razzi' ),
-			'target'   => 'razzi-size-guide',
-			'class'    => array( 'razzi-size-guide', ),
+		$tabs['dimas_size_guide'] = array(
+			'label'    => esc_html__( 'Size Guide', 'dimas' ),
+			'target'   => 'dimas-size-guide',
+			'class'    => array( 'dimas-size-guide', ),
 			'priority' => 62,
 		);
 
@@ -554,19 +554,19 @@ class Settings  {
 		$default_positon = get_option( self::OPTION_NAME . '_button_position', 'bellow_summary' );
 
 		$display_options = array(
-			'tab'   => esc_html__( 'In product tabs', 'razzi' ),
-			'panel' => esc_html__( 'Panel by clicking on a button', 'razzi' ),
-			'popup' => esc_html__( 'Popup by clicking on a button', 'razzi' ),
+			'tab'   => esc_html__( 'In product tabs', 'dimas' ),
+			'panel' => esc_html__( 'Panel by clicking on a button', 'dimas' ),
+			'popup' => esc_html__( 'Popup by clicking on a button', 'dimas' ),
 		);
 
 		$button_options = array(
-			'bellow_summary'   => esc_html__( 'Bellow short description', 'razzi' ),
-			'bellow_price'     => esc_html__( 'Bellow price', 'razzi' ),
-			'above_button'     => esc_html__( 'Above Add To Cart button', 'razzi' ),
-			'bellow_attribute' => esc_html__( 'Bellow the Size attribute', 'razzi' ),
+			'bellow_summary'   => esc_html__( 'Bellow short description', 'dimas' ),
+			'bellow_price'     => esc_html__( 'Bellow price', 'dimas' ),
+			'above_button'     => esc_html__( 'Above Add To Cart button', 'dimas' ),
+			'bellow_attribute' => esc_html__( 'Bellow the Size attribute', 'dimas' ),
 		);
 
-		$product_size_guide = get_post_meta( $thepostid, 'razzi_size_guide', true );
+		$product_size_guide = get_post_meta( $thepostid, 'dimas_size_guide', true );
 		$product_size_guide = wp_parse_args( $product_size_guide, array(
 			'guide'           => '',
 			'display'         => '',
@@ -583,8 +583,8 @@ class Settings  {
 		) );
 
 		$guide_options = array(
-			'' => esc_html__( '--Default--', 'razzi' ),
-			'none' => esc_html__( '--No Size Guide--', 'razzi' ),
+			'' => esc_html__( '--Default--', 'dimas' ),
+			'none' => esc_html__( '--No Size Guide--', 'dimas' ),
 		);
 		foreach ( $guides as $guide ) {
 			$guide_options[ $guide ] = get_post_field( 'post_title', $guide );
@@ -609,14 +609,14 @@ class Settings  {
 		}
 		?>
 
-		<div id="razzi-size-guide" class="panel woocommerce_options_panel hidden" data-nonce="<?php echo esc_attr( wp_create_nonce( 'razzi_size_guide' ) ) ?>">
+		<div id="dimas-size-guide" class="panel woocommerce_options_panel hidden" data-nonce="<?php echo esc_attr( wp_create_nonce( 'dimas_size_guide' ) ) ?>">
 			<div class="options_group">
 				<?php
 				woocommerce_wp_select( array(
-					'id'      => 'razzi_size_guide-guide',
-					'name'    => 'razzi_size_guide[guide]',
+					'id'      => 'dimas_size_guide-guide',
+					'name'    => 'dimas_size_guide[guide]',
 					'value'   => $product_size_guide['guide'],
-					'label'   => esc_html__( 'Size Guide', 'razzi' ),
+					'label'   => esc_html__( 'Size Guide', 'dimas' ),
 					'options' => $guide_options,
 				) );
 				?>
@@ -625,27 +625,27 @@ class Settings  {
 			<div class="options_group">
 				<?php
 				woocommerce_wp_select( array(
-					'id'      => 'razzi_size_guide-display',
-					'name'    => 'razzi_size_guide[display]',
+					'id'      => 'dimas_size_guide-display',
+					'name'    => 'dimas_size_guide[display]',
 					'value'   => $product_size_guide['display'],
-					'label'   => esc_html__( 'Size Guide Display', 'razzi' ),
-					'options' => array_merge( array( '' => esc_html__( 'Default', 'razzi' ) . ' (' . $display_options[ $default_display ] . ')' ), $display_options ),
+					'label'   => esc_html__( 'Size Guide Display', 'dimas' ),
+					'options' => array_merge( array( '' => esc_html__( 'Default', 'dimas' ) . ' (' . $display_options[ $default_display ] . ')' ), $display_options ),
 				) );
 
 				woocommerce_wp_select( array(
-					'id'      => 'razzi_size_guide-button_position',
-					'name'    => 'razzi_size_guide[button_position]',
+					'id'      => 'dimas_size_guide-button_position',
+					'name'    => 'dimas_size_guide[button_position]',
 					'value'   => $product_size_guide['button_position'],
-					'label'   => esc_html__( 'Button Position', 'razzi' ),
-					'options' => array_merge( array( '' => esc_html__( 'Default', 'razzi' ) . ' (' . $button_options[ $default_positon ] . ')' ), $button_options ),
+					'label'   => esc_html__( 'Button Position', 'dimas' ),
+					'options' => array_merge( array( '' => esc_html__( 'Default', 'dimas' ) . ' (' . $button_options[ $default_positon ] . ')' ), $button_options ),
 				) );
 
 				if ( ! empty( $attribute_options ) ) {
 					woocommerce_wp_select( array(
-						'id'      => 'razzi_size_guide-attribute',
-						'name'    => 'razzi_size_guide[attribute]',
+						'id'      => 'dimas_size_guide-attribute',
+						'name'    => 'dimas_size_guide[attribute]',
 						'value'   => $product_size_guide['attribute'],
-						'label'   => esc_html__( 'Attribute', 'razzi' ),
+						'label'   => esc_html__( 'Attribute', 'dimas' ),
 						'options' => $attribute_options,
 					) );
 				}
@@ -666,8 +666,8 @@ class Settings  {
 	 * @return void
 	 */
 	public function process_product_meta( $post_id ) {
-		if ( isset( $_POST['razzi_size_guide'] ) ) {
-			update_post_meta( $post_id, 'razzi_size_guide', $_POST['razzi_size_guide'] );
+		if ( isset( $_POST['dimas_size_guide'] ) ) {
+			update_post_meta( $post_id, 'dimas_size_guide', $_POST['dimas_size_guide'] );
 		}
 	}
 
@@ -679,7 +679,7 @@ class Settings  {
 	 * @return void
 	 */
 	public function ajax_load_product_size_guide_attributes() {
-		check_ajax_referer( 'razzi_size_guide', 'security' );
+		check_ajax_referer( 'dimas_size_guide', 'security' );
 
 		if ( ! current_user_can( 'edit_products' ) || empty( $_POST['product_id'] ) ) {
 			wp_die( -1 );
@@ -692,7 +692,7 @@ class Settings  {
 		$post           = get_post( $product_id ); // phpcs:ignore
 		$product_object = wc_get_product( $product_id );
 
-		$product_size_guide = get_post_meta( $product_id, 'razzi_size_guide', true );
+		$product_size_guide = get_post_meta( $product_id, 'dimas_size_guide', true );
 		$product_size_guide = wp_parse_args( $product_size_guide, array(
 			'guide'           => '',
 			'display'         => '',
@@ -719,10 +719,10 @@ class Settings  {
 		}
 
 		woocommerce_wp_select( array(
-			'id'      => 'razzi_size_guide-attribute',
-			'name'    => 'razzi_size_guide[attribute]',
+			'id'      => 'dimas_size_guide-attribute',
+			'name'    => 'dimas_size_guide[attribute]',
 			'value'   => $product_size_guide['attribute'],
-			'label'   => esc_html__( 'Attribute', 'razzi' ),
+			'label'   => esc_html__( 'Attribute', 'dimas' ),
 			'options' => $attribute_options,
 		) );
 

@@ -33,8 +33,8 @@ class FrontEnd {
 		return self::$instance;
 	}
 
-	const POST_TYPE     = 'razzi_product_tab';
-	const TAXONOMY_TYPE   = 'razzi_product_tab_type';
+	const POST_TYPE     = 'dimas_product_tab';
+	const TAXONOMY_TYPE   = 'dimas_product_tab_type';
 
 
 	/**
@@ -234,7 +234,7 @@ class FrontEnd {
 	 * @return void
 	 */
 	public function get_product_tabs() {
-		$transient_name = 'razzi_wc_product_tabs';
+		$transient_name = 'dimas_wc_product_tabs';
 		$transient     = get_transient( $transient_name );
 		$post_ids = $transient ? $transient : false;
 		if ( false === $post_ids) {

@@ -19,7 +19,7 @@ class Contact_Form_7 extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-contact-form-7';
+		return 'dimas-contact-form-7';
 	}
 
 	/**
@@ -28,7 +28,7 @@ class Contact_Form_7 extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Contact Form 7', 'razzi' );
+		return __( 'Dimas - Contact Form 7', 'dimas' );
 	}
 
 	/**
@@ -46,7 +46,7 @@ class Contact_Form_7 extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	/**
@@ -65,13 +65,13 @@ class Contact_Form_7 extends Widget_Base {
 
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Content', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Content', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'form',
 			[
-				'label'   => esc_html__( 'Contact Form 7', 'razzi' ),
+				'label'   => esc_html__( 'Contact Form 7', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => $this->get_contact_form(),
 			]
@@ -80,7 +80,7 @@ class Contact_Form_7 extends Widget_Base {
 		$this->add_responsive_control(
 			'height',
 			[
-				'label' => __( 'Textarea Field Height', 'razzi' ),
+				'label' => __( 'Textarea Field Height', 'dimas' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -90,7 +90,7 @@ class Contact_Form_7 extends Widget_Base {
 				],
 				'default' => [],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-contact-form-7 textarea' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-contact-form-7 textarea' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -105,7 +105,7 @@ class Contact_Form_7 extends Widget_Base {
 		$this->start_controls_section(
 			'style_general',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -113,26 +113,26 @@ class Contact_Form_7 extends Widget_Base {
 		$this->add_control(
 			'content_align',
 			[
-				'label'       => esc_html__( 'Align', 'razzi' ),
+				'label'       => esc_html__( 'Align', 'dimas' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => [
 					'left'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'default'   => 'left',
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-contact-form-7 .wpcf7' => '{{VALUE}}',
+					'{{WRAPPER}} .dimas-contact-form-7 .wpcf7' => '{{VALUE}}',
 				],
 				'selectors_dictionary' => [
 					'left' => '',
@@ -145,11 +145,11 @@ class Contact_Form_7 extends Widget_Base {
 		$this->add_responsive_control(
 			'item_spacing',
 			[
-				'label'      => __( 'Form Width', 'razzi' ),
+				'label'      => __( 'Form Width', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-contact-form-7 .wpcf7' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-contact-form-7 .wpcf7' => 'max-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -158,7 +158,7 @@ class Contact_Form_7 extends Widget_Base {
 		$this->add_control(
 			'padding',
 			[
-				'label' => esc_html__( 'Padding', 'razzi' ),
+				'label' => esc_html__( 'Padding', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -167,11 +167,11 @@ class Contact_Form_7 extends Widget_Base {
 		$this->add_responsive_control(
 			'general_padding',
 			[
-				'label'      => __( 'Input Field', 'razzi' ),
+				'label'      => __( 'Input Field', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-contact-form-7 input:not([type="submit"]), {{WRAPPER}} .razzi-contact-form-7 textarea' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-contact-form-7 input:not([type="submit"]), {{WRAPPER}} .dimas-contact-form-7 textarea' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -179,11 +179,11 @@ class Contact_Form_7 extends Widget_Base {
 		$this->add_responsive_control(
 			'general_padding_2',
 			[
-				'label'      => __( 'Submit Field', 'razzi' ),
+				'label'      => __( 'Submit Field', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-contact-form-7 input[type="submit"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-contact-form-7 input[type="submit"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -191,11 +191,11 @@ class Contact_Form_7 extends Widget_Base {
 		$this->add_responsive_control(
 			'general_padding_3',
 			[
-				'label'      => __( 'Textarea Field', 'razzi' ),
+				'label'      => __( 'Textarea Field', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-contact-form-7 textarea' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-contact-form-7 textarea' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -213,7 +213,7 @@ class Contact_Form_7 extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-contact-form-7'
+			'dimas-contact-form-7'
 		];
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );
@@ -233,7 +233,7 @@ class Contact_Form_7 extends Widget_Base {
 	protected function get_contact_form() {
 		$mail_forms    = get_posts( 'post_type=wpcf7_contact_form&posts_per_page=-1' );
 		$mail_form_ids = array(
-			'' => esc_html__( 'Select Form', 'razzi' ),
+			'' => esc_html__( 'Select Form', 'dimas' ),
 		);
 		foreach ( $mail_forms as $form ) {
 			$mail_form_ids[$form->ID] = $form->post_title;

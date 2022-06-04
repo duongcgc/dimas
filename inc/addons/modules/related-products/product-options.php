@@ -59,10 +59,10 @@ class Product_Options  {
 	public function enqueue_scripts( $hook ) {
 		$screen = get_current_screen();
 		if ( in_array( $hook, array( 'post.php', 'post-new.php' ) ) && $screen->post_type == 'product' ) {
-			wp_enqueue_script( 'razzi_wc_modules_js', DIMAS_ADDONS_URL . '/assets/js/admin/modules.js', array( 'jquery' ), '20211219', true );
+			wp_enqueue_script( 'dimas_wc_modules_js', DIMAS_ADDONS_URL . '/assets/js/admin/modules.js', array( 'jquery' ), '20211219', true );
 			wp_localize_script(
-				'razzi_wc_modules_js',
-				'razzi_wc_modules',
+				'dimas_wc_modules_js',
+				'dimas_wc_modules',
 				array(
 					'search_tags_nonce'   => wp_create_nonce( 'search-tags' ),
 				)
@@ -82,14 +82,14 @@ class Product_Options  {
 		$post_id = $post->ID;
 		?>
 
-		<h2><strong><?php esc_html_e('Custom Related Products', 'razzi'); ?> </strong></h2>
+		<h2><strong><?php esc_html_e('Custom Related Products', 'dimas'); ?> </strong></h2>
 
 		<div class="options_group">
 			<p class="form-field">
-				<label for="related_categories"><?php esc_html_e( 'Related categories', 'razzi' ); ?></label>
-				<select class="wc-category-search" multiple="multiple" style="width: 50%;" id="related_categories" name="razzi_related_cat_slugs[]" data-sortable="true" data-placeholder="<?php esc_attr_e( 'Search for a category&hellip;', 'razzi' ); ?>" data-action="woocommerce_json_search_categories">
+				<label for="related_categories"><?php esc_html_e( 'Related categories', 'dimas' ); ?></label>
+				<select class="wc-category-search" multiple="multiple" style="width: 50%;" id="related_categories" name="dimas_related_cat_slugs[]" data-sortable="true" data-placeholder="<?php esc_attr_e( 'Search for a category&hellip;', 'dimas' ); ?>" data-action="woocommerce_json_search_categories">
 					<?php
-					$cat_slugs = maybe_unserialize( get_post_meta( $post_id, 'razzi_related_cat_slugs', true ) );
+					$cat_slugs = maybe_unserialize( get_post_meta( $post_id, 'dimas_related_cat_slugs', true ) );
 
 					if ( $cat_slugs && is_array( $cat_slugs ) ) {
 						foreach ( $cat_slugs as $cat_slug ) {
@@ -100,13 +100,13 @@ class Product_Options  {
 						}
 					}
 					?>
-				</select> <?php echo wc_help_tip( __( 'This lets you choose which categories are chosen to show related products.', 'razzi' ) ); // WPCS: XSS ok. ?>
+				</select> <?php echo wc_help_tip( __( 'This lets you choose which categories are chosen to show related products.', 'dimas' ) ); // WPCS: XSS ok. ?>
 			</p>
 			<p class="form-field">
-				<label for="related_tags"><?php esc_html_e( 'Related tags', 'razzi' ); ?></label>
-				<select class="razzi-tag-search" multiple="multiple" style="width: 50%;" id="related_tags" name="razzi_related_tag_ids[]" data-sortable="true" data-placeholder="<?php esc_attr_e( 'Search for a tag&hellip;', 'razzi' ); ?>" data-action="razzi_json_search_tags">
+				<label for="related_tags"><?php esc_html_e( 'Related tags', 'dimas' ); ?></label>
+				<select class="dimas-tag-search" multiple="multiple" style="width: 50%;" id="related_tags" name="dimas_related_tag_ids[]" data-sortable="true" data-placeholder="<?php esc_attr_e( 'Search for a tag&hellip;', 'dimas' ); ?>" data-action="dimas_json_search_tags">
 					<?php
-					$tag_ids = maybe_unserialize( get_post_meta( $post_id, 'razzi_related_tag_ids', true ) );
+					$tag_ids = maybe_unserialize( get_post_meta( $post_id, 'dimas_related_tag_ids', true ) );
 
 					if ( $tag_ids && is_array( $tag_ids ) ) {
 						foreach ( $tag_ids as $tag_id ) {
@@ -117,13 +117,13 @@ class Product_Options  {
 						}
 					}
 					?>
-				</select> <?php echo wc_help_tip( __( 'This lets you choose which tags are chosen to show related products.', 'razzi' ) ); // WPCS: XSS ok. ?>
+				</select> <?php echo wc_help_tip( __( 'This lets you choose which tags are chosen to show related products.', 'dimas' ) ); // WPCS: XSS ok. ?>
 			</p>
 			<p class="form-field">
-				<label for="related_products"><?php esc_html_e( 'Related products', 'razzi' ); ?></label>
-				<select class="wc-product-search" multiple="multiple" style="width: 50%;" id="related_products" name="razzi_related_product_ids[]" data-sortable="true" data-placeholder="<?php esc_attr_e( 'Search for a product&hellip;', 'razzi' ); ?>" data-action="woocommerce_json_search_products" data-exclude="<?php echo intval( $post_id ); ?>">
+				<label for="related_products"><?php esc_html_e( 'Related products', 'dimas' ); ?></label>
+				<select class="wc-product-search" multiple="multiple" style="width: 50%;" id="related_products" name="dimas_related_product_ids[]" data-sortable="true" data-placeholder="<?php esc_attr_e( 'Search for a product&hellip;', 'dimas' ); ?>" data-action="woocommerce_json_search_products" data-exclude="<?php echo intval( $post_id ); ?>">
 					<?php
-					$product_ids = maybe_unserialize( get_post_meta( $post_id, 'razzi_related_product_ids', true ) );
+					$product_ids = maybe_unserialize( get_post_meta( $post_id, 'dimas_related_product_ids', true ) );
 
 					if ( $product_ids && is_array( $product_ids ) ) {
 						foreach ( $product_ids as $product_id ) {
@@ -134,7 +134,7 @@ class Product_Options  {
 						}
 					}
 					?>
-				</select> <?php echo wc_help_tip( __( 'This lets you choose which products are part of related products.', 'razzi' ) ); // WPCS: XSS ok. ?>
+				</select> <?php echo wc_help_tip( __( 'This lets you choose which products are part of related products.', 'dimas' ) ); // WPCS: XSS ok. ?>
 			</p>
 		</div>
 	<?php
@@ -150,25 +150,25 @@ class Product_Options  {
 	 * @return void
 	 */
 	public function product_meta_fields_save( $post_id ) {
-		if ( isset( $_POST['razzi_related_cat_slugs'] ) ) {
-			$woo_data = $_POST['razzi_related_cat_slugs'];
-			update_post_meta( $post_id, 'razzi_related_cat_slugs', $woo_data );
+		if ( isset( $_POST['dimas_related_cat_slugs'] ) ) {
+			$woo_data = $_POST['dimas_related_cat_slugs'];
+			update_post_meta( $post_id, 'dimas_related_cat_slugs', $woo_data );
 		} else {
-			update_post_meta( $post_id, 'razzi_related_cat_slugs', '' );
+			update_post_meta( $post_id, 'dimas_related_cat_slugs', '' );
 		}
 
-		if ( isset( $_POST['razzi_related_tag_ids'] ) ) {
-			$woo_data = $_POST['razzi_related_tag_ids'];
-			update_post_meta( $post_id, 'razzi_related_tag_ids', $woo_data );
+		if ( isset( $_POST['dimas_related_tag_ids'] ) ) {
+			$woo_data = $_POST['dimas_related_tag_ids'];
+			update_post_meta( $post_id, 'dimas_related_tag_ids', $woo_data );
 		} else {
-			update_post_meta( $post_id, 'razzi_related_tag_ids', 0 );
+			update_post_meta( $post_id, 'dimas_related_tag_ids', 0 );
 		}
 
-		if ( isset( $_POST['razzi_related_product_ids'] ) ) {
-			$woo_data = $_POST['razzi_related_product_ids'];
-			update_post_meta( $post_id, 'razzi_related_product_ids', $woo_data );
+		if ( isset( $_POST['dimas_related_product_ids'] ) ) {
+			$woo_data = $_POST['dimas_related_product_ids'];
+			update_post_meta( $post_id, 'dimas_related_product_ids', $woo_data );
 		} else {
-			update_post_meta( $post_id, 'razzi_related_product_ids', 0 );
+			update_post_meta( $post_id, 'dimas_related_product_ids', 0 );
 		}
 
 	}

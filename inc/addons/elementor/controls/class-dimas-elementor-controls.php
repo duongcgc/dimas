@@ -59,8 +59,8 @@ class Controls {
 	 */
 	public function includes() {
 		\Dimas\Addons\Auto_Loader::register( [
-				'Dimas\Addons\Elementor\Controls\AjaxLoader'  => DIMAS_ADDONS_DIR . 'inc/elementor/controls/class-razzi-elementor-controls-ajaxloader.php',
-				'Dimas\Addons\Elementor\Control\Autocomplete' => DIMAS_ADDONS_DIR . 'inc/elementor/controls/class-razzi-elementor-autocomplete.php',
+				'Dimas\Addons\Elementor\Controls\AjaxLoader'  => DIMAS_ADDONS_DIR . 'inc/elementor/controls/class-dimas-elementor-controls-ajaxloader.php',
+				'Dimas\Addons\Elementor\Control\Autocomplete' => DIMAS_ADDONS_DIR . 'inc/elementor/controls/class-dimas-elementor-autocomplete.php',
 			]
 		);
 

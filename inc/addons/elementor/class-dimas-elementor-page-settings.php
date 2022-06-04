@@ -102,7 +102,7 @@ class Page_Settings {
 		$page->start_controls_section(
 			'section_header_settings',
 			[
-				'label' => esc_html__( 'Header Settings', 'razzi' ),
+				'label' => esc_html__( 'Header Settings', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_SETTINGS,
 			]
 		);
@@ -111,7 +111,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_hide_header_section',
 			[
-				'label'        => esc_html__( 'Hide Header Section', 'razzi' ),
+				'label'        => esc_html__( 'Hide Header Section', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => '1',
 				'default'      => ''
@@ -122,21 +122,21 @@ class Page_Settings {
 		$page->add_control(
 			'rz_header_layout',
 			[
-				'label'       => esc_html__( 'Header Layout', 'razzi' ),
+				'label'       => esc_html__( 'Header Layout', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => [
-					'default' => esc_html__( 'Default', 'razzi' ),
-					'v1'      => esc_html__('Header v1', 'razzi'),
-					'v2'      => esc_html__('Header v2', 'razzi'),
-					'v3'      => esc_html__('Header v3', 'razzi'),
-					'v4'      => esc_html__('Header v4', 'razzi'),
-					'v5'      => esc_html__('Header v5', 'razzi'),
-					'v6'      => esc_html__('Header v6', 'razzi'),
-					'v7'      => esc_html__('Header v7', 'razzi'),
-					'v8'      => esc_html__('Header v8', 'razzi'),
-					'v9'      => esc_html__('Header v9', 'razzi'),
-					'v10'     => esc_html__('Header v10', 'razzi'),
-					'v11'     => esc_html__('Header v11', 'razzi'),
+					'default' => esc_html__( 'Default', 'dimas' ),
+					'v1'      => esc_html__('Header v1', 'dimas'),
+					'v2'      => esc_html__('Header v2', 'dimas'),
+					'v3'      => esc_html__('Header v3', 'dimas'),
+					'v4'      => esc_html__('Header v4', 'dimas'),
+					'v5'      => esc_html__('Header v5', 'dimas'),
+					'v6'      => esc_html__('Header v6', 'dimas'),
+					'v7'      => esc_html__('Header v7', 'dimas'),
+					'v8'      => esc_html__('Header v8', 'dimas'),
+					'v9'      => esc_html__('Header v9', 'dimas'),
+					'v10'     => esc_html__('Header v10', 'dimas'),
+					'v11'     => esc_html__('Header v11', 'dimas'),
 				],
 				'default'     => 'default',
 				'label_block' => true,
@@ -146,11 +146,11 @@ class Page_Settings {
 		$page->add_control(
 			'rz_header_background',
 			[
-				'label'       => esc_html__( 'Header Background', 'razzi' ),
+				'label'       => esc_html__( 'Header Background', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => [
-					'default'     => esc_html__( 'Default', 'razzi' ),
-					'transparent' => esc_html__( 'Transparent', 'razzi' ),
+					'default'     => esc_html__( 'Default', 'dimas' ),
+					'transparent' => esc_html__( 'Transparent', 'dimas' ),
 				],
 				'default'     => 'default',
 				'label_block' => true,
@@ -160,12 +160,12 @@ class Page_Settings {
 		$page->add_control(
 			'rz_header_text_color',
 			[
-				'label'       => esc_html__( 'Text Color', 'razzi' ),
+				'label'       => esc_html__( 'Text Color', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => array(
-					'default' => esc_html__( 'Default', 'razzi' ),
-					'dark'    => esc_html__( 'Dark', 'razzi' ),
-					'light'   => esc_html__( 'Light', 'razzi' ),
+					'default' => esc_html__( 'Default', 'dimas' ),
+					'dark'    => esc_html__( 'Dark', 'dimas' ),
+					'light'   => esc_html__( 'Light', 'dimas' ),
 				),
 				'default'     => 'default',
 				'label_block' => true,
@@ -178,7 +178,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_hide_header_border',
 			[
-				'label'        => esc_html__( 'Hide Border Bottom', 'razzi' ),
+				'label'        => esc_html__( 'Hide Border Bottom', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => '1',
 				'default'      => ''
@@ -189,11 +189,11 @@ class Page_Settings {
 		$page->add_control(
 			'rz_header_v4_bottom_spacing_bottom',
 			[
-				'label'       => esc_html__( 'Header V4 Spacing', 'razzi' ),
+				'label'       => esc_html__( 'Header V4 Spacing', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => array(
-					'default' => esc_html__( 'Default', 'razzi' ),
-					'custom'    => esc_html__( 'Custom', 'razzi' ),
+					'default' => esc_html__( 'Default', 'dimas' ),
+					'custom'    => esc_html__( 'Custom', 'dimas' ),
 				),
 				'default'     => 'default',
 				'label_block' => true,
@@ -203,7 +203,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_header_bottom_spacing_bottom',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -227,7 +227,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_header_primary_menu',
 			[
-				'label'       => esc_html__( 'Primary Menu', 'razzi' ),
+				'label'       => esc_html__( 'Primary Menu', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => $this->get_menus(),
 				'default'     => '0',
@@ -238,11 +238,11 @@ class Page_Settings {
 		$page->add_control(
 			'rz_department_menu_display',
 			[
-				'label'       => esc_html__( 'Department Menu Display', 'razzi' ),
+				'label'       => esc_html__( 'Department Menu Display', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => array(
-					'default'    => esc_html__( 'On Hover', 'razzi' ),
-					'onpageload' => esc_html__( 'On Page Load', 'razzi' ),
+					'default'    => esc_html__( 'On Hover', 'dimas' ),
+					'onpageload' => esc_html__( 'On Page Load', 'dimas' ),
 				),
 				'default'     => 'default',
 				'label_block' => true,
@@ -252,7 +252,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_department_menu_display_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -279,7 +279,7 @@ class Page_Settings {
 		$page->start_controls_section(
 			'section_content_settings',
 			[
-				'label' => esc_html__( 'Content Settings', 'razzi' ),
+				'label' => esc_html__( 'Content Settings', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_SETTINGS,
 			]
 		);
@@ -287,11 +287,11 @@ class Page_Settings {
 		$page->add_control(
 			'rz_content_width',
 			[
-				'label'       => esc_html__( 'Content Width', 'razzi' ),
+				'label'       => esc_html__( 'Content Width', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => array(
-					''      => esc_html__( 'Normal', 'razzi' ),
-					'large' => esc_html__( 'Large', 'razzi' ),
+					''      => esc_html__( 'Normal', 'dimas' ),
+					'large' => esc_html__( 'Large', 'dimas' ),
 				),
 				'default'     => '',
 				'label_block' => true,
@@ -301,12 +301,12 @@ class Page_Settings {
 		$page->add_control(
 			'rz_content_top_spacing',
 			[
-				'label'       => esc_html__( 'Top Spacing', 'razzi' ),
+				'label'       => esc_html__( 'Top Spacing', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => array(
-					'default' => esc_html__( 'Default', 'razzi' ),
-					'no'      => esc_html__( 'No spacing', 'razzi' ),
-					'custom'  => esc_html__( 'Custom', 'razzi' ),
+					'default' => esc_html__( 'Default', 'dimas' ),
+					'no'      => esc_html__( 'No spacing', 'dimas' ),
+					'custom'  => esc_html__( 'Custom', 'dimas' ),
 				),
 				'default'     => 'default',
 				'label_block' => true,
@@ -316,7 +316,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_content_top_padding',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -339,12 +339,12 @@ class Page_Settings {
 		$page->add_control(
 			'rz_content_bottom_spacing',
 			[
-				'label'       => esc_html__( 'Bottom Spacing', 'razzi' ),
+				'label'       => esc_html__( 'Bottom Spacing', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => array(
-					'default' => esc_html__( 'Default', 'razzi' ),
-					'no'      => esc_html__( 'No spacing', 'razzi' ),
-					'custom'  => esc_html__( 'Custom', 'razzi' ),
+					'default' => esc_html__( 'Default', 'dimas' ),
+					'no'      => esc_html__( 'No spacing', 'dimas' ),
+					'custom'  => esc_html__( 'Custom', 'dimas' ),
 				),
 				'default'     => 'default',
 				'label_block' => true,
@@ -354,7 +354,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_content_bottom_padding',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -381,7 +381,7 @@ class Page_Settings {
 		$page->start_controls_section(
 			'section_page_header_settings',
 			[
-				'label' => esc_html__( 'Page Header Settings', 'razzi' ),
+				'label' => esc_html__( 'Page Header Settings', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_SETTINGS,
 			]
 		);
@@ -389,7 +389,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_hide_page_header',
 			[
-				'label'        => esc_html__( 'Hide Page Header', 'razzi' ),
+				'label'        => esc_html__( 'Hide Page Header', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => '1',
 				'default'      => ''
@@ -400,7 +400,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_hide_title',
 			[
-				'label'        => esc_html__( 'Hide Title', 'razzi' ),
+				'label'        => esc_html__( 'Hide Title', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => '1',
 				'default'      => ''
@@ -410,7 +410,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_hide_breadcrumb',
 			[
-				'label'        => esc_html__( 'Hide Breadcrumb', 'razzi' ),
+				'label'        => esc_html__( 'Hide Breadcrumb', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => '1',
 				'default'      => ''
@@ -420,11 +420,11 @@ class Page_Settings {
 		$page->add_control(
 			'rz_page_header_spacing',
 			[
-				'label'       => esc_html__( 'Title Spacing', 'razzi' ),
+				'label'       => esc_html__( 'Title Spacing', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => array(
-					'default' => esc_html__( 'Default', 'razzi' ),
-					'custom'  => esc_html__( 'Custom', 'razzi' ),
+					'default' => esc_html__( 'Default', 'dimas' ),
+					'custom'  => esc_html__( 'Custom', 'dimas' ),
 				),
 				'default'     => 'default',
 				'label_block' => true,
@@ -434,7 +434,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_page_header_top_padding',
 			[
-				'label'     => esc_html__( 'Top Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Top Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -458,7 +458,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_page_header_bottom_padding',
 			[
-				'label'     => esc_html__( 'Bottom Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Bottom Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -485,14 +485,14 @@ class Page_Settings {
 		$page->start_controls_section(
 			'section_boxed_layout_settings',
 			[
-				'label' => esc_html__( 'Boxed Layout Settings', 'razzi' ),
+				'label' => esc_html__( 'Boxed Layout Settings', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_SETTINGS,
 			]
 		);
 		$page->add_control(
 			'rz_disable_page_boxed',
 			[
-				'label'        => esc_html__( 'Disable Boxed Layout', 'razzi' ),
+				'label'        => esc_html__( 'Disable Boxed Layout', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => '1',
 				'default'      => ''
@@ -502,11 +502,11 @@ class Page_Settings {
 		$page->add_control(
 			'rz_page_boxed_bg_color',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}}.razzi-boxed-layout' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}}.dimas-boxed-layout' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -514,11 +514,11 @@ class Page_Settings {
 		$page->add_control(
 			'rz_page_boxed_bg_image',
 			[
-				'label'     => esc_html__( 'Background Image', 'razzi' ),
+				'label'     => esc_html__( 'Background Image', 'dimas' ),
 				'type'      => Controls_Manager::MEDIA,
 				'default'   => [],
 				'selectors' => [
-					'{{WRAPPER}}.razzi-boxed-layout' => 'background-image: url("{{URL}}");',
+					'{{WRAPPER}}.dimas-boxed-layout' => 'background-image: url("{{URL}}");',
 				],
 			]
 		);
@@ -526,18 +526,18 @@ class Page_Settings {
 		$page->add_control(
 			'rz_page_boxed_bg_horizontal',
 			[
-				'label'       => esc_html__( 'Background Horizontal', 'razzi' ),
+				'label'       => esc_html__( 'Background Horizontal', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => array(
-					''       => esc_html__( 'Default', 'razzi' ),
-					'left'   => esc_html__( 'Left', 'razzi' ),
-					'center' => esc_html__( 'Center', 'razzi' ),
-					'right'  => esc_html__( 'Right', 'razzi' ),
+					''       => esc_html__( 'Default', 'dimas' ),
+					'left'   => esc_html__( 'Left', 'dimas' ),
+					'center' => esc_html__( 'Center', 'dimas' ),
+					'right'  => esc_html__( 'Right', 'dimas' ),
 				),
 				'default'     => '',
 				'label_block' => true,
 				'selectors'   => [
-					'{{WRAPPER}}.razzi-boxed-layout' => 'background-position-x:  {{VALUE}};',
+					'{{WRAPPER}}.dimas-boxed-layout' => 'background-position-x:  {{VALUE}};',
 				],
 			]
 		);
@@ -545,18 +545,18 @@ class Page_Settings {
 		$page->add_control(
 			'rz_page_boxed_bg_vertical',
 			[
-				'label'       => esc_html__( 'Background Vertical', 'razzi' ),
+				'label'       => esc_html__( 'Background Vertical', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => array(
-					''       => esc_html__( 'Default', 'razzi' ),
-					'top'    => esc_html__( 'Top', 'razzi' ),
-					'center' => esc_html__( 'Center', 'razzi' ),
-					'bottom' => esc_html__( 'Bottom', 'razzi' ),
+					''       => esc_html__( 'Default', 'dimas' ),
+					'top'    => esc_html__( 'Top', 'dimas' ),
+					'center' => esc_html__( 'Center', 'dimas' ),
+					'bottom' => esc_html__( 'Bottom', 'dimas' ),
 				),
 				'default'     => '',
 				'label_block' => true,
 				'selectors'   => [
-					'{{WRAPPER}}.razzi-boxed-layout' => 'background-position-y:  {{VALUE}};',
+					'{{WRAPPER}}.dimas-boxed-layout' => 'background-position-y:  {{VALUE}};',
 				],
 			]
 		);
@@ -564,19 +564,19 @@ class Page_Settings {
 		$page->add_control(
 			'rz_page_boxed_bg_repeat',
 			[
-				'label'       => esc_html__( 'Background Repeat', 'razzi' ),
+				'label'       => esc_html__( 'Background Repeat', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => array(
-					''          => esc_html__( 'Default', 'razzi' ),
-					'no-repeat' => esc_html__( 'No Repeat', 'razzi' ),
-					'repeat'    => esc_html__( 'Repeat', 'razzi' ),
-					'repeat-y'  => esc_html__( 'Repeat Vertical', 'razzi' ),
-					'repeat-x'  => esc_html__( 'Repeat Horizontal', 'razzi' ),
+					''          => esc_html__( 'Default', 'dimas' ),
+					'no-repeat' => esc_html__( 'No Repeat', 'dimas' ),
+					'repeat'    => esc_html__( 'Repeat', 'dimas' ),
+					'repeat-y'  => esc_html__( 'Repeat Vertical', 'dimas' ),
+					'repeat-x'  => esc_html__( 'Repeat Horizontal', 'dimas' ),
 				),
 				'default'     => '',
 				'label_block' => true,
 				'selectors'   => [
-					'{{WRAPPER}}.razzi-boxed-layout' => 'background-repeat:  {{VALUE}};',
+					'{{WRAPPER}}.dimas-boxed-layout' => 'background-repeat:  {{VALUE}};',
 				],
 			]
 		);
@@ -584,17 +584,17 @@ class Page_Settings {
 		$page->add_control(
 			'rz_page_boxed_bg_attachment',
 			[
-				'label'       => esc_html__( 'Background Attachment', 'razzi' ),
+				'label'       => esc_html__( 'Background Attachment', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => array(
-					''       => esc_html__( 'Default', 'razzi' ),
-					'scroll' => esc_html__( 'Scroll', 'razzi' ),
-					'fixed'  => esc_html__( 'Fixed', 'razzi' ),
+					''       => esc_html__( 'Default', 'dimas' ),
+					'scroll' => esc_html__( 'Scroll', 'dimas' ),
+					'fixed'  => esc_html__( 'Fixed', 'dimas' ),
 				),
 				'default'     => '',
 				'label_block' => true,
 				'selectors'   => [
-					'{{WRAPPER}}.razzi-boxed-layout' => 'background-attachment:  {{VALUE}};',
+					'{{WRAPPER}}.dimas-boxed-layout' => 'background-attachment:  {{VALUE}};',
 				],
 			]
 		);
@@ -602,18 +602,18 @@ class Page_Settings {
 		$page->add_control(
 			'rz_page_boxed_bg_size',
 			[
-				'label'       => esc_html__( 'Background Size', 'razzi' ),
+				'label'       => esc_html__( 'Background Size', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => array(
-					''        => esc_html__( 'Default', 'razzi' ),
-					'auto'    => esc_html__( 'Auto', 'razzi' ),
-					'cover'   => esc_html__( 'Cover', 'razzi' ),
-					'contain' => esc_html__( 'Contain', 'razzi' ),
+					''        => esc_html__( 'Default', 'dimas' ),
+					'auto'    => esc_html__( 'Auto', 'dimas' ),
+					'cover'   => esc_html__( 'Cover', 'dimas' ),
+					'contain' => esc_html__( 'Contain', 'dimas' ),
 				),
 				'default'     => '',
 				'label_block' => true,
 				'selectors'   => [
-					'{{WRAPPER}}.razzi-boxed-layout' => 'background-size:  {{VALUE}};',
+					'{{WRAPPER}}.dimas-boxed-layout' => 'background-size:  {{VALUE}};',
 				],
 			]
 		);
@@ -623,7 +623,7 @@ class Page_Settings {
 		$page->start_controls_section(
 			'section_footer_settings',
 			[
-				'label' => esc_html__( 'Footer Settings', 'razzi' ),
+				'label' => esc_html__( 'Footer Settings', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_SETTINGS,
 			]
 		);
@@ -631,7 +631,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_hide_footer_section',
 			[
-				'label'        => esc_html__( 'Hide Footer Section', 'razzi' ),
+				'label'        => esc_html__( 'Hide Footer Section', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => '1',
 				'default'      => '',
@@ -642,12 +642,12 @@ class Page_Settings {
 		$page->add_control(
 			'rz_footer_section_border_top',
 			[
-				'label'        => esc_html__( 'Footer Border', 'razzi' ),
+				'label'        => esc_html__( 'Footer Border', 'dimas' ),
 				'type'         => Controls_Manager::SELECT,
 				'options'     => array(
-					'default' => esc_html__( 'Default', 'razzi' ),
-					'0'  => esc_html__( 'Hide', 'razzi' ),
-					'1'  => esc_html__( 'Show', 'razzi' ),
+					'default' => esc_html__( 'Default', 'dimas' ),
+					'0'  => esc_html__( 'Hide', 'dimas' ),
+					'1'  => esc_html__( 'Show', 'dimas' ),
 				),
 				'default'      => 'default',
 				'label_block' => true,
@@ -658,11 +658,11 @@ class Page_Settings {
 		$page->add_control(
 			'rz_footer_section_border_color',
 			[
-				'label'       => esc_html__( 'Footer Border Color', 'razzi' ),
+				'label'       => esc_html__( 'Footer Border Color', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => array(
-					'default' => esc_html__( 'Default', 'razzi' ),
-					'custom'  => esc_html__( 'Custom', 'razzi' ),
+					'default' => esc_html__( 'Default', 'dimas' ),
+					'custom'  => esc_html__( 'Custom', 'dimas' ),
 				),
 				'default'     => 'default',
 				'label_block' => true,
@@ -672,7 +672,7 @@ class Page_Settings {
 		$page->add_control(
 			'rz_footer_section_custom_border_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'condition' => [
@@ -997,7 +997,7 @@ class Page_Settings {
 		}
 
 		$output = array(
-			0 => esc_html__( 'Default', 'razzi' ),
+			0 => esc_html__( 'Default', 'dimas' ),
 		);
 		foreach ( $menus as $menu ) {
 			$output[ $menu->slug ] = $menu->name;

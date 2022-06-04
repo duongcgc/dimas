@@ -149,7 +149,7 @@ class Helper {
 
 			if ( $settings['cats_count'] == 'yes' ) {
 				$count = '<span class="cat-count">';
-				$count .= sprintf( _n( '(%s)', '(%s)', $term->count, 'razzi' ), number_format_i18n( $term->count ) );
+				$count .= sprintf( _n( '(%s)', '(%s)', $term->count, 'dimas' ), number_format_i18n( $term->count ) );
 				$count .= '</span>';
 			}
 
@@ -286,7 +286,7 @@ class Helper {
 				$date = '+1 month';
 			}
 			$query_args['meta_query'] = apply_filters(
-				'razzi_product_deals_meta_query', array_merge(
+				'dimas_product_deals_meta_query', array_merge(
 					WC()->query->get_meta_query(), array(
 						array(
 							'key'     => '_deal_quantity',
@@ -308,7 +308,7 @@ class Helper {
 			);
 		} elseif ( $type == 'deals' ) {
 			$query_args['meta_query'] = apply_filters(
-				'razzi_product_deals_meta_query', array_merge(
+				'dimas_product_deals_meta_query', array_merge(
 					WC()->query->get_meta_query(), array(
 						array(
 							'key'     => '_deal_quantity',
@@ -376,7 +376,7 @@ class Helper {
 	 * @return string
 	 */
 	public static function get_transient_name( $query_args, $type ) {
-		$transient_name = 'razzi_product_loop_' . md5( wp_json_encode( $query_args ) . $type );
+		$transient_name = 'dimas_product_loop_' . md5( wp_json_encode( $query_args ) . $type );
 
 		if ( 'rand' === $query_args['orderby'] ) {
 			// When using rand, we'll cache a number of random queries and pull those to avoid querying rand on each page load.
@@ -513,7 +513,7 @@ class Helper {
 				'<li class="text-center">%s <br> %s</li>' .
 				'</ul>',
 				wp_kses( $settings['desc'], wp_kses_allowed_html( 'post' ) ),
-				self::control_url( 'empty_button', $settings['button_link'], $settings['button_text'], [ 'class' => 'razzi-button' ] )
+				self::control_url( 'empty_button', $settings['button_link'], $settings['button_text'], [ 'class' => 'dimas-button' ] )
 			);
 
 		} else {
@@ -573,7 +573,7 @@ class Helper {
 	 */
 	public static function get_instagram_get_photos_by_token( $limit, $access_token ) {
 		if ( empty( $access_token ) ) {
-			return new \WP_Error( 'instagram_no_access_token', esc_html__( 'No access token', 'razzi' ) );
+			return new \WP_Error( 'instagram_no_access_token', esc_html__( 'No access token', 'dimas' ) );
 		}
 
 		$user = self::get_instagram_user( $access_token );
@@ -582,12 +582,12 @@ class Helper {
 		}
 
 		if ( isset( $user['error'] ) ) {
-			return new \WP_Error( 'instagram_no_images', esc_html__( 'Instagram did not return any images. Please check your access token', 'razzi' ) );
+			return new \WP_Error( 'instagram_no_images', esc_html__( 'Instagram did not return any images. Please check your access token', 'dimas' ) );
 
 		} else {
-			$transient_key = 'razzi_instagram_photos_' . sanitize_title_with_dashes( $user['username'] . '__' . $limit );
+			$transient_key = 'dimas_instagram_photos_' . sanitize_title_with_dashes( $user['username'] . '__' . $limit );
 			$images        = get_transient( $transient_key );
-			$images = apply_filters( 'razzi_get_instagram_photos', $images, $access_token );
+			$images = apply_filters( 'dimas_get_instagram_photos', $images, $access_token );
 
 			if ( false !== $images ) {
 				return $images;
@@ -612,7 +612,7 @@ class Helper {
 			if ( ! empty( $images ) ) {
 				set_transient( $transient_key, $images, 2 * 3600 ); // Cache for 2 hours.
 			} else {
-				return new \WP_Error( 'instagram_no_images', esc_html__( 'Instagram did not return any images.', 'razzi' ) );
+				return new \WP_Error( 'instagram_no_images', esc_html__( 'Instagram did not return any images.', 'dimas' ) );
 			}
 		}
 	}
@@ -677,11 +677,11 @@ class Helper {
 	 */
 	public static function get_instagram_user( $access_token ) {
 		if ( empty( $access_token ) ) {
-			return new \WP_Error( 'no_access_token', esc_html__( 'No access token', 'razzi' ) );
+			return new \WP_Error( 'no_access_token', esc_html__( 'No access token', 'dimas' ) );
 		}
-		$transient_key = 'razzi_instagram_user_' . $access_token;
+		$transient_key = 'dimas_instagram_user_' . $access_token;
 		$user = get_transient( $transient_key);
-		$user = apply_filters( 'razzi_get_instagram_user', $user );
+		$user = apply_filters( 'dimas_get_instagram_user', $user );
 		if ( false === $user ) {
 			$url  = add_query_arg( array(
 				'fields'       => 'id,username',
@@ -690,7 +690,7 @@ class Helper {
 			$data = wp_remote_get( $url );
 			$data = wp_remote_retrieve_body( $data );
 			if ( ! $data ) {
-				return new \WP_Error( 'no_user_data', esc_html__( 'No user data received', 'razzi' ) );
+				return new \WP_Error( 'no_user_data', esc_html__( 'No user data received', 'dimas' ) );
 			}
 			$user = json_decode( $data, true );
 			if ( ! empty( $data ) ) {

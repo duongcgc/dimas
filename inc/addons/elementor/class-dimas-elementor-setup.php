@@ -75,9 +75,9 @@ class Setup {
 	 */
 	public function add_category( $elements_manager ) {
 		$elements_manager->add_category(
-			'razzi',
+			'dimas',
 			[
-				'title' => esc_html__( 'Dimas', 'razzi' )
+				'title' => esc_html__( 'Dimas', 'dimas' )
 			]
 		);
 	}
@@ -144,7 +144,7 @@ class Setup {
 	 * @return void
 	 */
 	public function scripts() {
-		wp_register_script( 'razzi-coundown', DIMAS_ADDONS_URL  . '/assets/js/plugins/jquery.coundown.js', array(), '1.0', true );
+		wp_register_script( 'dimas-coundown', DIMAS_ADDONS_URL  . '/assets/js/plugins/jquery.coundown.js', array(), '1.0', true );
 		wp_register_script( 'mapbox', DIMAS_ADDONS_URL  . '/assets/js/plugins/mapbox.min.js', array(), '1.0', true );
 		wp_register_script( 'mapboxgl', DIMAS_ADDONS_URL  . '/assets/js/plugins/mapbox-gl.min.js', array(), '1.0', true );
 		wp_register_script( 'mapbox-sdk', DIMAS_ADDONS_URL  . '/assets/js/plugins/mapbox-sdk.min.js', array(), '1.0', true );
@@ -152,15 +152,15 @@ class Setup {
 		wp_register_script( 'magnific', DIMAS_ADDONS_URL . '/assets/js/plugins/jquery.magnific-popup.js', array(), '1.0', true );
 
 		wp_register_script( 'image-slide', DIMAS_ADDONS_URL . 'assets/js/plugins/image-slide.js', [], '1.0', true );
-		wp_register_script( 'razzi-masonry', DIMAS_ADDONS_URL . '/assets/js/plugins/jquery.masonryGrid.js', array( 'jquery' ), '1.0', true );
+		wp_register_script( 'dimas-masonry', DIMAS_ADDONS_URL . '/assets/js/plugins/jquery.masonryGrid.js', array( 'jquery' ), '1.0', true );
 
 		wp_register_script( 'jarallax', DIMAS_ADDONS_URL . 'assets/js/plugins/jarallax.min.js', [], '1.12.8', true );
-		wp_register_script( 'razzi-elementor-parallax', DIMAS_ADDONS_URL . 'assets/js/elementor-parallax-widgets.js', [], '1.0', true );
+		wp_register_script( 'dimas-elementor-parallax', DIMAS_ADDONS_URL . 'assets/js/elementor-parallax-widgets.js', [], '1.0', true );
 
 		wp_register_script( 'eventmove', DIMAS_ADDONS_URL . 'assets/js/plugins/jquery.event.move.js', [], '1.0', true );
 
-		wp_register_script( 'razzi-frontend', DIMAS_ADDONS_URL . '/assets/js/frontend.js', array( 'jquery', 'elementor-frontend' ), '20220310', true );
-		wp_register_script( 'razzi-product-shortcode', DIMAS_ADDONS_URL . '/assets/js/product-shortcode.js', array( 'jquery', 'elementor-frontend' ), '20220310', true );
+		wp_register_script( 'dimas-frontend', DIMAS_ADDONS_URL . '/assets/js/frontend.js', array( 'jquery', 'elementor-frontend' ), '20220310', true );
+		wp_register_script( 'dimas-product-shortcode', DIMAS_ADDONS_URL . '/assets/js/product-shortcode.js', array( 'jquery', 'elementor-frontend' ), '20220310', true );
 
 	}
 }

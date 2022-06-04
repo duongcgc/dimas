@@ -52,7 +52,7 @@ class Helper {
 	 */
 	public static function share_link( $social, $args = array() ) {
 		$url  = '';
-		$text = esc_html__( 'Share on', 'razzi' ) . ' ' . ucfirst( $social );
+		$text = esc_html__( 'Share on', 'dimas' ) . ' ' . ucfirst( $social );
 		$icon = $social;
 
 		switch ( $social ) {
@@ -78,7 +78,7 @@ class Helper {
 
 			case 'googleplus':
 				$url  = add_query_arg( array( 'url' => get_permalink() ), 'https://plus.google.com/share' );
-				$text = esc_html__( 'Share on Google+', 'razzi' );
+				$text = esc_html__( 'Share on Google+', 'dimas' );
 				$icon = 'google';
 				break;
 
@@ -124,7 +124,7 @@ class Helper {
 					'url'   => get_permalink(),
 					'title' => get_the_title()
 				), 'https://getpocket.com/save' );
-				$text = esc_html__( 'Save On Pocket', 'razzi' );
+				$text = esc_html__( 'Save On Pocket', 'dimas' );
 				break;
 
 			case 'digg':
@@ -136,8 +136,8 @@ class Helper {
 				break;
 
 			case 'email':
-				$url  = 'mailto:?subject=' . get_the_title() . '&body=' . __( 'Check out this site:', 'razzi' ) . ' ' . get_permalink();
-				$text = esc_html__( 'Share Via Email', 'razzi' );
+				$url  = 'mailto:?subject=' . get_the_title() . '&body=' . __( 'Check out this site:', 'dimas' ) . ' ' . get_permalink();
+				$text = esc_html__( 'Share Via Email', 'dimas' );
 				$icon = 'mail';
 				break;
 		}
@@ -163,11 +163,11 @@ class Helper {
 	 * @return array
 	 */
 	public static function get_countdown_texts() {
-		return apply_filters( 'razzi_get_countdown_texts', array(
-			'days'    => esc_html__( 'Days', 'razzi' ),
-			'hours'   => esc_html__( 'Hours', 'razzi' ),
-			'minutes' => esc_html__( 'Minutes', 'razzi' ),
-			'seconds' => esc_html__( 'Seconds', 'razzi' )
+		return apply_filters( 'dimas_get_countdown_texts', array(
+			'days'    => esc_html__( 'Days', 'dimas' ),
+			'hours'   => esc_html__( 'Hours', 'dimas' ),
+			'minutes' => esc_html__( 'Minutes', 'dimas' ),
+			'seconds' => esc_html__( 'Seconds', 'dimas' )
 		) );
 	}
 
@@ -213,7 +213,7 @@ class Helper {
 		// Strip tags and shortcodes so the content truncation count is done correctly
 		$content = strip_tags(
 			strip_shortcodes( $content ), apply_filters(
-				'razzi_content_limit_allowed_tags', '<script>,<style>'
+				'dimas_content_limit_allowed_tags', '<script>,<style>'
 			)
 		);
 
@@ -228,7 +228,7 @@ class Helper {
 				'<p>%s <a href="%s" class="more-link" title="%s">%s</a></p>',
 				$content,
 				get_permalink(),
-				sprintf( esc_html__( 'Continue reading &quot;%s&quot;', 'razzi' ), the_title_attribute( 'echo=0' ) ),
+				sprintf( esc_html__( 'Continue reading &quot;%s&quot;', 'dimas' ), the_title_attribute( 'echo=0' ) ),
 				esc_html( $more )
 			);
 		} else {

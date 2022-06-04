@@ -169,7 +169,7 @@
     margin-right: -4px;
 }
 
-.tamm-icon-selector .icons .razzi-svg {
+.tamm-icon-selector .icons .dimas-svg {
 	cursor: pointer;
     display: flex;
     align-items: center;
@@ -182,7 +182,7 @@
 }
 
 .tamm-selected-icon__inner svg,
-.tamm-icon-selector .icons .razzi-svg svg{
+.tamm-icon-selector .icons .dimas-svg svg{
 	vertical-align: -0.125em;
 	width: 1em;
 	height: 1em;
@@ -191,7 +191,7 @@
 	display: inline-block;
 }
 
-.tamm-icon-selector .razzi-svg .active {
+.tamm-icon-selector .dimas-svg .active {
 	background-color: #eee;
 }
 

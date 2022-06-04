@@ -22,7 +22,7 @@ class Promo_Box extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-promo-box';
+		return 'dimas-promo-box';
 	}
 
 	/**
@@ -31,7 +31,7 @@ class Promo_Box extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Promo Box', 'razzi' );
+		return esc_html__( 'Dimas - Promo Box', 'dimas' );
 	}
 
 	/**
@@ -49,12 +49,12 @@ class Promo_Box extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-elementor'
+			'dimas-elementor'
 		];
 	}
 
@@ -73,13 +73,13 @@ class Promo_Box extends Widget_Base {
 	protected function section_content() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Promo Box', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Promo Box', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'image',
 			[
-				'label'   => esc_html__( 'Image', 'razzi' ),
+				'label'   => esc_html__( 'Image', 'dimas' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => 'https://via.placeholder.com/1170X600/cccccc?text=Image',
@@ -99,19 +99,19 @@ class Promo_Box extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'This is title', 'razzi' ),
+				'default'     => esc_html__( 'This is title', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'description_text',
 			[
-				'label' => esc_html__( 'Description', 'razzi' ),
+				'label' => esc_html__( 'Description', 'dimas' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'default' => '',
-				'placeholder' => esc_html__( 'Enter your description', 'razzi' ),
+				'placeholder' => esc_html__( 'Enter your description', 'dimas' ),
 				'separator' => 'none',
 			]
 		);
@@ -119,19 +119,19 @@ class Promo_Box extends Widget_Base {
 		$this->add_control(
 			'button_text',
 			[
-				'label'       => esc_html__( 'Button Text', 'razzi' ),
+				'label'       => esc_html__( 'Button Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Button Text', 'razzi' ),
+				'default'     => esc_html__( 'Button Text', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'show_default_icon',
 			[
-				'label'     => esc_html__( 'Show Button Icon', 'razzi' ),
+				'label'     => esc_html__( 'Show Button Icon', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'razzi' ),
-				'label_on'  => __( 'On', 'razzi' ),
+				'label_off' => __( 'Off', 'dimas' ),
+				'label_on'  => __( 'On', 'dimas' ),
 				'return_value' => 'yes',
 				'default'   => 'yes'
 			]
@@ -139,10 +139,10 @@ class Promo_Box extends Widget_Base {
 
 		$this->add_control(
 			'link', [
-				'label'         => esc_html__( 'Button Link', 'razzi' ),
+				'label'         => esc_html__( 'Button Link', 'dimas' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => esc_html__( 'https://your-link.com', 'razzi' ),
-				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'razzi' ),
+				'placeholder'   => esc_html__( 'https://your-link.com', 'dimas' ),
+				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'dimas' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '#',
@@ -155,46 +155,46 @@ class Promo_Box extends Widget_Base {
 		$this->add_control(
 			'regular_price',
 			[
-				'label'       => esc_html__( 'Before Text', 'razzi' ),
+				'label'       => esc_html__( 'Before Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter your text', 'razzi' ),
+				'placeholder' => esc_html__( 'Enter your text', 'dimas' ),
 				'label_block' => true,
-				'default'     => __( '$99.00', 'razzi' ),
+				'default'     => __( '$99.00', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'sale_price',
 			[
-				'label'       => esc_html__( 'Text', 'razzi' ),
+				'label'       => esc_html__( 'Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter your text', 'razzi' ),
+				'placeholder' => esc_html__( 'Enter your text', 'dimas' ),
 				'label_block' => true,
-				'default'     => __( '$59.00', 'razzi' ),
+				'default'     => __( '$59.00', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'content_position',
 			[
-				'label'        => esc_html__( 'Position Content', 'razzi' ),
+				'label'        => esc_html__( 'Position Content', 'dimas' ),
 				'type'         => Controls_Manager::CHOOSE,
 				'default'      => 'bottom',
 				'options'      => [
 					'left'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'bottom' => [
-						'title' => esc_html__( 'Bottom', 'razzi' ),
+						'title' => esc_html__( 'Bottom', 'dimas' ),
 						'icon'  => 'eicon-v-align-bottom',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
-				'prefix_class' => 'razzi-promo-box__content-position--',
+				'prefix_class' => 'dimas-promo-box__content-position--',
 				'separator'    => 'before',
 			]
 		);
@@ -202,31 +202,31 @@ class Promo_Box extends Widget_Base {
 		$this->add_control(
 			'price_box_position',
 			[
-				'label'     => esc_html__( 'Position Sale', 'razzi' ),
+				'label'     => esc_html__( 'Position Sale', 'dimas' ),
 				'type'         => Controls_Manager::CHOOSE,
 				'options' => [
 					'left'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
 				'default' => 'left',
-				'prefix_class' => 'razzi-promo-box__price-position--',
+				'prefix_class' => 'dimas-promo-box__price-position--',
 			]
 		);
 
 		$this->add_control(
 			'link_type',
 			[
-				'label'   => esc_html__( 'Link Type', 'razzi' ),
+				'label'   => esc_html__( 'Link Type', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'only'   => esc_html__( 'Only button text', 'razzi' ),
-					'all' 	 => esc_html__( 'All banner', 'razzi' ),
+					'only'   => esc_html__( 'Only button text', 'dimas' ),
+					'all' 	 => esc_html__( 'All banner', 'dimas' ),
 				],
 				'default' => 'only',
 				'toggle'  => false,
@@ -249,7 +249,7 @@ class Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_banner',
 			[
-				'label' => esc_html__( 'Promo Box', 'razzi' ),
+				'label' => esc_html__( 'Promo Box', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -257,7 +257,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_min_width',
 			[
-				'label'     => esc_html__( 'Width (%)', 'razzi' ),
+				'label'     => esc_html__( 'Width (%)', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'size_units' => ['%' ],
 				'range'     => [
@@ -270,7 +270,7 @@ class Promo_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box' => 'width: {{SIZE}}%',
+					'{{WRAPPER}} .dimas-promo-box' => 'width: {{SIZE}}%',
 				],
 			]
 		);
@@ -278,12 +278,12 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_margin',
 			[
-				'label'      => esc_html__( 'Margin', 'razzi' ),
+				'label'      => esc_html__( 'Margin', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-promo-box' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-promo-box' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -296,7 +296,7 @@ class Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -304,26 +304,26 @@ class Promo_Box extends Widget_Base {
 		$this->add_control(
 			'banner_text_align',
 			[
-				'label'       => esc_html__( 'Vertical Align', 'razzi' ),
+				'label'       => esc_html__( 'Vertical Align', 'dimas' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => [
 					'flex-start'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'flex-end'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'default'     => '',
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-promo-box__content' => 'align-items: {{VALUE}}',
+					'{{WRAPPER}} .dimas-promo-box__content' => 'align-items: {{VALUE}}',
 				],
 			]
 		);
@@ -331,26 +331,26 @@ class Promo_Box extends Widget_Base {
 		$this->add_control(
 			'banner_content_align',
 			[
-				'label'       => esc_html__( 'Text Align', 'razzi' ),
+				'label'       => esc_html__( 'Text Align', 'dimas' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => [
 					'left'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'default'     => '',
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-promo-box__content' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} .dimas-promo-box__content' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
@@ -358,11 +358,11 @@ class Promo_Box extends Widget_Base {
 		$this->add_control(
 			'content_bg_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__content' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-promo-box__content' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -370,12 +370,12 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-promo-box__content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-promo-box__content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -383,7 +383,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_spacing_top',
 			[
-				'label'     => esc_html__( 'Spacing Top', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Top', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [],
 				'range'     => [
@@ -394,7 +394,7 @@ class Promo_Box extends Widget_Base {
 				],
 				'size_units'         => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__content' => 'top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-promo-box__content' => 'top: {{SIZE}}{{UNIT}};',
 				],
 				'conditions' => [
 					'relation' => 'or',
@@ -417,7 +417,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_spacing_bottom',
 			[
-				'label'     => esc_html__( 'Spacing Bottom', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Bottom', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [],
 				'range'     => [
@@ -428,7 +428,7 @@ class Promo_Box extends Widget_Base {
 				],
 				'size_units'         => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__content' => 'bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-promo-box__content' => 'bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -436,7 +436,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_spacing_left',
 			[
-				'label'     => esc_html__( 'Spacing Left', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Left', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [],
 				'range'     => [
@@ -447,7 +447,7 @@ class Promo_Box extends Widget_Base {
 				],
 				'size_units'         => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__content' => 'left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-promo-box__content' => 'left: {{SIZE}}{{UNIT}};',
 				],
 				'conditions' => [
 					'relation' => 'or',
@@ -470,7 +470,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_spacing_right',
 			[
-				'label'     => esc_html__( 'Spacing Right', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Right', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [],
 				'range'     => [
@@ -481,7 +481,7 @@ class Promo_Box extends Widget_Base {
 				],
 				'size_units'         => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__content' => 'right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-promo-box__content' => 'right: {{SIZE}}{{UNIT}};',
 				],
 				'conditions' => [
 					'relation' => 'or',
@@ -505,7 +505,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_control(
 			'heading_content_style_title',
 			[
-				'label' => esc_html__( 'Title', 'razzi' ),
+				'label' => esc_html__( 'Title', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -514,7 +514,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -523,7 +523,7 @@ class Promo_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-promo-box__title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -532,18 +532,18 @@ class Promo_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-promo-box__title',
+				'selector' => '{{WRAPPER}} .dimas-promo-box__title',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box .razzi-promo-box__title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-promo-box .dimas-promo-box__title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -552,7 +552,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_control(
 			'heading_description',
 			[
-				'label' => esc_html__( 'Description', 'razzi' ),
+				'label' => esc_html__( 'Description', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -561,7 +561,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'description_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -570,7 +570,7 @@ class Promo_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__description' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-promo-box__description' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -579,18 +579,18 @@ class Promo_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'description_typography',
-				'selector' => '{{WRAPPER}} .razzi-promo-box__description',
+				'selector' => '{{WRAPPER}} .dimas-promo-box__description',
 			]
 		);
 
 		$this->add_control(
 			'description_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box .razzi-promo-box__description' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-promo-box .dimas-promo-box__description' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -599,7 +599,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_control(
 			'heading_content_btn_style',
 			[
-				'label' => esc_html__( 'Button', 'razzi' ),
+				'label' => esc_html__( 'Button', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -609,18 +609,18 @@ class Promo_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'note_typography',
-				'selector' => '{{WRAPPER}} .razzi-promo-box__button',
+				'selector' => '{{WRAPPER}} .dimas-promo-box__button',
 			]
 		);
 
 		$this->add_control(
 			'desc_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-promo-box__button' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -633,7 +633,7 @@ class Promo_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_sale',
 			[
-				'label' => esc_html__( 'Sale', 'razzi' ),
+				'label' => esc_html__( 'Sale', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -641,28 +641,28 @@ class Promo_Box extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'label'     => esc_html__( 'Before Text', 'razzi' ),
+				'label'     => esc_html__( 'Before Text', 'dimas' ),
 				'name'     => 'regular_typography',
-				'selector' => '{{WRAPPER}} .razzi-promo-box__sale .regular-price',
+				'selector' => '{{WRAPPER}} .dimas-promo-box__sale .regular-price',
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'label'     => esc_html__( 'Text', 'razzi' ),
+				'label'     => esc_html__( 'Text', 'dimas' ),
 				'name'     => 'sale_price_typography',
-				'selector' => '{{WRAPPER}} .razzi-promo-box__sale .sale-price',
+				'selector' => '{{WRAPPER}} .dimas-promo-box__sale .sale-price',
 			]
 		);
 
 		$this->add_control(
 			'sale_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__sale' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-promo-box__sale' => 'color: {{VALUE}}',
 				],
 				'separator' => 'before',
 			]
@@ -671,10 +671,10 @@ class Promo_Box extends Widget_Base {
 		$this->add_control(
 			'sale_bg_color',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__sale' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-promo-box__sale' => 'background-color: {{VALUE}}',
 
 				],
 			]
@@ -683,7 +683,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'price_box_position_top',
 			[
-				'label'     => esc_html__( 'Spacing Top', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Top', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'     => [
@@ -697,7 +697,7 @@ class Promo_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__sale' => 'top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-promo-box__sale' => 'top: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -705,7 +705,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'price_box_position_left',
 			[
-				'label'     => esc_html__( 'Spacing Left', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Left', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'     => [
@@ -719,7 +719,7 @@ class Promo_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__sale' => 'left: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-promo-box__sale' => 'left: {{SIZE}}{{UNIT}}',
 				],
 				'conditions' => [
 					'terms' => [
@@ -735,7 +735,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'price_box_position_right',
 			[
-				'label'     => esc_html__( 'Spacing Right', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Right', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'     => [
@@ -749,7 +749,7 @@ class Promo_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__sale' => 'right: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-promo-box__sale' => 'right: {{SIZE}}{{UNIT}}',
 				],
 				'conditions' => [
 					'terms' => [
@@ -765,7 +765,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'price_box_width',
 			[
-				'label'     => esc_html__( 'Width (px)', 'razzi' ),
+				'label'     => esc_html__( 'Width (px)', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'     => [
@@ -775,7 +775,7 @@ class Promo_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__sale' => 'width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-promo-box__sale' => 'width: {{SIZE}}{{UNIT}}',
 				],
 				'separator' => 'before',
 			]
@@ -784,7 +784,7 @@ class Promo_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'price_box_height',
 			[
-				'label'     => esc_html__( 'Height (px)', 'razzi' ),
+				'label'     => esc_html__( 'Height (px)', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'     => [
@@ -794,7 +794,7 @@ class Promo_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-promo-box__sale' => 'height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-promo-box__sale' => 'height: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -813,36 +813,36 @@ class Promo_Box extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-promo-box',
+			'dimas-promo-box',
 		];
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );
 
-		$link_icon = $settings['show_default_icon'] ? \Dimas\Addons\Helper::get_svg('arrow-right', 'razzi-icon') : '';
+		$link_icon = $settings['show_default_icon'] ? \Dimas\Addons\Helper::get_svg('arrow-right', 'dimas-icon') : '';
 
 		$button_text = $settings['button_text'] ? sprintf('%s%s',$settings['button_text'], $link_icon) : '';
 
 		$btn_full ='';
 		if ( $settings['link']['url'] ) :
-			$btn_full = $settings['link_type'] == 'all' ? Helper::control_url( 'btn_full', $settings['link'], '', [ 'class' => 'razzi-promo-box__link' ] ) : '';
-			$button_text = Helper::control_url( 'btn', $settings['link'], $button_text, ['class' => 'razzi-promo-box__button razzi-button button-normal'] );
+			$btn_full = $settings['link_type'] == 'all' ? Helper::control_url( 'btn_full', $settings['link'], '', [ 'class' => 'dimas-promo-box__link' ] ) : '';
+			$button_text = Helper::control_url( 'btn', $settings['link'], $button_text, ['class' => 'dimas-promo-box__button dimas-button button-normal'] );
 		endif;
 
-		$title = $settings['title'] ? sprintf('<h3 class="razzi-promo-box__title">%s</h3>',$settings['title']) : '';
+		$title = $settings['title'] ? sprintf('<h3 class="dimas-promo-box__title">%s</h3>',$settings['title']) : '';
 
-		$description = $settings['description_text'] ? sprintf('<p class="razzi-promo-box__description">%s</p>',$settings['description_text']) : '';
+		$description = $settings['description_text'] ? sprintf('<p class="dimas-promo-box__description">%s</p>',$settings['description_text']) : '';
 
 		// Sale
 		$regular_price = $settings['regular_price'] ? sprintf('<div class="regular-price">%s</div>',$settings['regular_price']) : '';
 		$sale_price = $settings['sale_price'] ? sprintf('<div class="sale-price">%s</div>',$settings['sale_price']) : '';
 
-		$html_sale =  $regular_price == '' && $sale_price == '' ? '' : sprintf('<div class="razzi-promo-box__sale">%s %s</div>',$regular_price,$sale_price);
+		$html_sale =  $regular_price == '' && $sale_price == '' ? '' : sprintf('<div class="dimas-promo-box__sale">%s %s</div>',$regular_price,$sale_price);
 
 		$image = Group_Control_Image_Size::get_attachment_image_html( $settings );
-		$image = $image ? sprintf('<div class="razzi-promo-box__image image-zoom">%s</div>',$image) : '';
+		$image = $image ? sprintf('<div class="dimas-promo-box__image image-zoom">%s</div>',$image) : '';
 
 		$output  = $image;
-		$output .= '<div class="razzi-promo-box__content">';
+		$output .= '<div class="dimas-promo-box__content">';
 		$output .= $title;
 		$output .= $description;
 		$output .= $button_text;

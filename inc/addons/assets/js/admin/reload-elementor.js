@@ -133,12 +133,12 @@ jQuery(document).ready(function ($) {
     elementor.settings.page.addChangeCallback('rz_disable_page_boxed', function (newValue) {
         var $body = $('#elementor-preview-iframe').contents().find('body');
 
-        $has_boxed = $has_boxed === 0 ? $body.hasClass('razzi-boxed-layout') : $has_boxed;
+        $has_boxed = $has_boxed === 0 ? $body.hasClass('dimas-boxed-layout') : $has_boxed;
         if($has_boxed){
             if (newValue === '1') {
-                $body.removeClass('razzi-boxed-layout');
+                $body.removeClass('dimas-boxed-layout');
             } else {
-                $body.addClass('razzi-boxed-layout');
+                $body.addClass('dimas-boxed-layout');
             }
         };
 

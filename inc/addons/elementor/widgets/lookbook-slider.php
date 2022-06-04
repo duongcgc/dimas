@@ -22,7 +22,7 @@ class Lookbook_slider extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-lookbook-slider';
+		return 'dimas-lookbook-slider';
 	}
 
 	/**
@@ -31,7 +31,7 @@ class Lookbook_slider extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Lookbook Slider', 'razzi' );
+		return esc_html__( 'Dimas - Lookbook Slider', 'dimas' );
 	}
 
 	/**
@@ -49,12 +49,12 @@ class Lookbook_slider extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-frontend'
+			'dimas-frontend'
 		];
 	}
 
@@ -80,7 +80,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_slides',
 			[
-				'label' => esc_html__( 'Slides', 'razzi' ),
+				'label' => esc_html__( 'Slides', 'dimas' ),
 			]
 		);
 
@@ -88,18 +88,18 @@ class Lookbook_slider extends Widget_Base {
 
 		$repeater->start_controls_tabs( 'slides_repeater' );
 
-		$repeater->start_controls_tab( 'background', [ 'label' => esc_html__( 'Content', 'razzi' ) ] );
+		$repeater->start_controls_tab( 'background', [ 'label' => esc_html__( 'Content', 'dimas' ) ] );
 
 		$repeater->add_responsive_control(
 			'banner_background_img',
 			[
-				'label'     => __( 'Background Image', 'razzi' ),
+				'label'     => __( 'Background Image', 'dimas' ),
 				'type'      => Controls_Manager::MEDIA,
 				'default'   => [
 					'url' => 'https://via.placeholder.com/1920X600/cccccc?text=Image',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-block__img:not(.swiper-lazy)' => 'background-image: url("{{URL}}");',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-block__img:not(.swiper-lazy)' => 'background-image: url("{{URL}}");',
 				],
 			]
 		);
@@ -107,16 +107,16 @@ class Lookbook_slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'background_size',
 			[
-				'label'     => esc_html__( 'Background Size', 'razzi' ),
+				'label'     => esc_html__( 'Background Size', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'cover',
 				'options'   => [
-					'cover'   => esc_html__( 'Cover', 'razzi' ),
-					'contain' => esc_html__( 'Contain', 'razzi' ),
-					'auto'    => esc_html__( 'Auto', 'razzi' ),
+					'cover'   => esc_html__( 'Cover', 'dimas' ),
+					'contain' => esc_html__( 'Contain', 'dimas' ),
+					'auto'    => esc_html__( 'Auto', 'dimas' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-block__img' => 'background-size: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-block__img' => 'background-size: {{VALUE}}',
 				],
 				'condition' => [
 					'banner_background_img[url]!' => '',
@@ -127,24 +127,24 @@ class Lookbook_slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'background_position',
 			[
-				'label'     => esc_html__( 'Background Position', 'razzi' ),
+				'label'     => esc_html__( 'Background Position', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''              => esc_html__( 'Default', 'razzi' ),
-					'left top'      => esc_html__( 'Left Top', 'razzi' ),
-					'left center'   => esc_html__( 'Left Center', 'razzi' ),
-					'left bottom'   => esc_html__( 'Left Bottom', 'razzi' ),
-					'right top'     => esc_html__( 'Right Top', 'razzi' ),
-					'right center'  => esc_html__( 'Right Center', 'razzi' ),
-					'right bottom'  => esc_html__( 'Right Bottom', 'razzi' ),
-					'center top'    => esc_html__( 'Center Top', 'razzi' ),
-					'center center' => esc_html__( 'Center Center', 'razzi' ),
-					'center bottom' => esc_html__( 'Center Bottom', 'razzi' ),
-					'initial'       => esc_html__( 'Custom', 'razzi' ),
+					''              => esc_html__( 'Default', 'dimas' ),
+					'left top'      => esc_html__( 'Left Top', 'dimas' ),
+					'left center'   => esc_html__( 'Left Center', 'dimas' ),
+					'left bottom'   => esc_html__( 'Left Bottom', 'dimas' ),
+					'right top'     => esc_html__( 'Right Top', 'dimas' ),
+					'right center'  => esc_html__( 'Right Center', 'dimas' ),
+					'right bottom'  => esc_html__( 'Right Bottom', 'dimas' ),
+					'center top'    => esc_html__( 'Center Top', 'dimas' ),
+					'center center' => esc_html__( 'Center Center', 'dimas' ),
+					'center bottom' => esc_html__( 'Center Bottom', 'dimas' ),
+					'initial'       => esc_html__( 'Custom', 'dimas' ),
 				],
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-block__img' => 'background-position: {{VALUE}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-block__img' => 'background-position: {{VALUE}};',
 				],
 				'condition' => [
 					'banner_background_img[url]!' => '',
@@ -156,13 +156,13 @@ class Lookbook_slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'background_position_xy',
 			[
-				'label'              => esc_html__( 'Custom Background Position', 'razzi' ),
+				'label'              => esc_html__( 'Custom Background Position', 'dimas' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'allowed_dimensions' => [ 'top', 'left' ],
 				'size_units'         => [ 'px', '%' ],
 				'default'            => [],
 				'selectors'          => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-block__img' => 'background-position: {{LEFT}}{{UNIT}} {{TOP}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-block__img' => 'background-position: {{LEFT}}{{UNIT}} {{TOP}}{{UNIT}};',
 				],
 				'condition'          => [
 					'background_position'         => [ 'initial' ],
@@ -187,9 +187,9 @@ class Lookbook_slider extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'Slide Heading', 'razzi' ),
+				'default'     => esc_html__( 'Slide Heading', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -197,10 +197,10 @@ class Lookbook_slider extends Widget_Base {
 		$repeater->add_control(
 			'show_default_icon',
 			[
-				'label'        => esc_html__( 'Show Default Icon', 'razzi' ),
+				'label'        => esc_html__( 'Show Default Icon', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_off'    => __( 'Off', 'razzi' ),
-				'label_on'     => __( 'On', 'razzi' ),
+				'label_off'    => __( 'Off', 'dimas' ),
+				'label_on'     => __( 'On', 'dimas' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -209,41 +209,41 @@ class Lookbook_slider extends Widget_Base {
 		$repeater->add_control(
 			'button_text',
 			[
-				'label'   => esc_html__( 'Button Text', 'razzi' ),
+				'label'   => esc_html__( 'Button Text', 'dimas' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Click Here', 'razzi' ),
+				'default' => esc_html__( 'Click Here', 'dimas' ),
 			]
 		);
 
 		$repeater->add_control(
 			'link',
 			[
-				'label'       => esc_html__( 'Link', 'razzi' ),
+				'label'       => esc_html__( 'Link', 'dimas' ),
 				'type'        => Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-link.com', 'razzi' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'dimas' ),
 			]
 		);
 
 		$repeater->end_controls_tab();
 
-		$repeater->start_controls_tab( 'product_lookbooks', [ 'label' => esc_html__( 'Lookbooks', 'razzi' ) ] );
+		$repeater->start_controls_tab( 'product_lookbooks', [ 'label' => esc_html__( 'Lookbooks', 'dimas' ) ] );
 
-		$control = apply_filters( 'razzi_slider_section_product_number', 3 );
+		$control = apply_filters( 'dimas_slider_section_product_number', 3 );
 		for ( $i = 1; $i <= $control; $i ++ ) {
 
 			$repeater->add_control(
 				'product_lookbooks_heading_' . $i,
 				[
 					'type'  => Controls_Manager::HEADING,
-					'label' => esc_html__( 'Lookbook', 'razzi' ) . ' ' . $i,
+					'label' => esc_html__( 'Lookbook', 'dimas' ) . ' ' . $i,
 				]
 			);
 
 			$repeater->add_control(
 				'product_lookbooks_ids_' . $i,
 				[
-					'label'       => esc_html__( 'Product', 'razzi' ),
-					'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+					'label'       => esc_html__( 'Product', 'dimas' ),
+					'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 					'type'        => 'rzautocomplete',
 					'default'     => '',
 					'label_block' => true,
@@ -257,7 +257,7 @@ class Lookbook_slider extends Widget_Base {
 			$repeater->add_responsive_control(
 				'product_lookbooks_position_x_' . $i,
 				[
-					'label'      => esc_html__( 'Point Position X', 'razzi' ),
+					'label'      => esc_html__( 'Point Position X', 'dimas' ),
 					'type'       => Controls_Manager::SLIDER,
 					'range'      => [
 						'px' => [
@@ -275,7 +275,7 @@ class Lookbook_slider extends Widget_Base {
 					],
 					'size_units' => [ '%', 'px' ],
 					'selectors'  => [
-						'{{WRAPPER}} .razzi-lookbook-slider-elementor {{CURRENT_ITEM}} .razzi-lookbook-item.item-' . $i . '' => 'left: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .dimas-lookbook-slider-elementor {{CURRENT_ITEM}} .dimas-lookbook-item.item-' . $i . '' => 'left: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -283,7 +283,7 @@ class Lookbook_slider extends Widget_Base {
 			$repeater->add_responsive_control(
 				'product_lookbooks_position_y_' . $i,
 				[
-					'label'      => esc_html__( 'Point Position Y', 'razzi' ),
+					'label'      => esc_html__( 'Point Position Y', 'dimas' ),
 					'type'       => Controls_Manager::SLIDER,
 					'range'      => [
 						'px' => [
@@ -301,7 +301,7 @@ class Lookbook_slider extends Widget_Base {
 					],
 					'size_units' => [ '%', 'px' ],
 					'selectors'  => [
-						'{{WRAPPER}} .razzi-lookbook-slider-elementor {{CURRENT_ITEM}} .razzi-lookbook-item.item-' . $i . ' ' => 'top: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .dimas-lookbook-slider-elementor {{CURRENT_ITEM}} .dimas-lookbook-item.item-' . $i . ' ' => 'top: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -310,7 +310,7 @@ class Lookbook_slider extends Widget_Base {
 			$repeater->add_responsive_control(
 				'product_content_lookbooks_position_x_' . $i,
 				[
-					'label'      => esc_html__( 'Product Position X', 'razzi' ),
+					'label'      => esc_html__( 'Product Position X', 'dimas' ),
 					'type'       => Controls_Manager::SLIDER,
 					'range'      => [
 						'px' => [
@@ -325,7 +325,7 @@ class Lookbook_slider extends Widget_Base {
 					'default'    => [],
 					'size_units' => [ 'px' ],
 					'selectors'  => [
-						'{{WRAPPER}} .razzi-lookbook-slider-elementor {{CURRENT_ITEM}} .razzi-lookbook-item.item-' . $i . ' .product-item' => 'left: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .dimas-lookbook-slider-elementor {{CURRENT_ITEM}} .dimas-lookbook-item.item-' . $i . ' .product-item' => 'left: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -333,7 +333,7 @@ class Lookbook_slider extends Widget_Base {
 			$repeater->add_responsive_control(
 				'product_content_lookbooks_position_y_' . $i,
 				[
-					'label'      => esc_html__( 'Product Position Y', 'razzi' ),
+					'label'      => esc_html__( 'Product Position Y', 'dimas' ),
 					'type'       => Controls_Manager::SLIDER,
 					'range'      => [
 						'px' => [
@@ -348,7 +348,7 @@ class Lookbook_slider extends Widget_Base {
 					'default'    => [],
 					'size_units' => [ 'px' ],
 					'selectors'  => [
-						'{{WRAPPER}} .razzi-lookbook-slider-elementor {{CURRENT_ITEM}} .razzi-lookbook-item.item-' . $i . ' .product-item' => 'top: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .dimas-lookbook-slider-elementor {{CURRENT_ITEM}} .dimas-lookbook-item.item-' . $i . ' .product-item' => 'top: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -364,40 +364,40 @@ class Lookbook_slider extends Widget_Base {
 
 		$repeater->end_controls_tab();
 
-		$repeater->start_controls_tab( 'style', [ 'label' => esc_html__( 'Style', 'razzi' ) ] );
+		$repeater->start_controls_tab( 'style', [ 'label' => esc_html__( 'Style', 'dimas' ) ] );
 
 		$repeater->add_control(
 			'custom_style',
 			[
-				'label'       => esc_html__( 'Custom', 'razzi' ),
+				'label'       => esc_html__( 'Custom', 'dimas' ),
 				'type'        => Controls_Manager::SWITCHER,
-				'description' => esc_html__( 'Set custom style that will only affect this specific slide.', 'razzi' ),
+				'description' => esc_html__( 'Set custom style that will only affect this specific slide.', 'dimas' ),
 			]
 		);
 
 		$repeater->add_responsive_control(
 			'horizontal_position',
 			[
-				'label'                => esc_html__( 'Horizontal Position', 'razzi' ),
+				'label'                => esc_html__( 'Horizontal Position', 'dimas' ),
 				'type'                 => Controls_Manager::CHOOSE,
 				'label_block'          => false,
 				'options'              => [
 					'left'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-h-align-center',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
 				'default'              => '',
 				'selectors'            => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-inner' => 'justify-content: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-inner' => 'justify-content: {{VALUE}}',
 				],
 				'selectors_dictionary' => [
 					'left'   => 'flex-start',
@@ -418,25 +418,25 @@ class Lookbook_slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'vertical_position',
 			[
-				'label'                => esc_html__( 'Vertical Position', 'razzi' ),
+				'label'                => esc_html__( 'Vertical Position', 'dimas' ),
 				'type'                 => Controls_Manager::CHOOSE,
 				'label_block'          => false,
 				'options'              => [
 					'top'    => [
-						'title' => esc_html__( 'Top', 'razzi' ),
+						'title' => esc_html__( 'Top', 'dimas' ),
 						'icon'  => 'eicon-v-align-top',
 					],
 					'middle' => [
-						'title' => esc_html__( 'Middle', 'razzi' ),
+						'title' => esc_html__( 'Middle', 'dimas' ),
 						'icon'  => 'eicon-v-align-middle',
 					],
 					'bottom' => [
-						'title' => esc_html__( 'Bottom', 'razzi' ),
+						'title' => esc_html__( 'Bottom', 'dimas' ),
 						'icon'  => 'eicon-v-align-bottom',
 					],
 				],
 				'selectors'            => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-inner' => 'align-items: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-inner' => 'align-items: {{VALUE}}',
 				],
 				'selectors_dictionary' => [
 					'top'    => 'flex-start',
@@ -457,25 +457,25 @@ class Lookbook_slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'text_align',
 			[
-				'label'       => esc_html__( 'Text Align', 'razzi' ),
+				'label'       => esc_html__( 'Text Align', 'dimas' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => [
 					'left'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-inner' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-inner' => 'text-align: {{VALUE}}',
 				],
 				'conditions'  => [
 					'terms' => [
@@ -491,23 +491,23 @@ class Lookbook_slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'blank_position',
 			[
-				'label'                => esc_html__( 'Blank Position', 'razzi' ),
+				'label'                => esc_html__( 'Blank Position', 'dimas' ),
 				'type'                 => Controls_Manager::CHOOSE,
 				'label_block'          => false,
 				'options'              => [
 					'left'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
 				'default'              => '',
 				'selectors'            => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-block__blank' => 'order: {{VALUE}}',
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-block__img' => 'order: 1',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-block__blank' => 'order: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor {{CURRENT_ITEM}} .slick-slide-block__img' => 'order: 1',
 				],
 				'selectors_dictionary' => [
 					'left'   => '1',
@@ -532,25 +532,25 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'slides',
 			[
-				'label'      => esc_html__( 'Slides Items', 'razzi' ),
+				'label'      => esc_html__( 'Slides Items', 'dimas' ),
 				'type'       => Controls_Manager::REPEATER,
 				'show_label' => true,
 				'fields'     => $repeater->get_controls(),
 				'default'    => [
 					[
-						'title'       => esc_html__( 'Slide 1 Heading', 'razzi' ),
-						'description' => esc_html__( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'razzi' ),
-						'button_text' => esc_html__( 'Click Here', 'razzi' ),
+						'title'       => esc_html__( 'Slide 1 Heading', 'dimas' ),
+						'description' => esc_html__( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'dimas' ),
+						'button_text' => esc_html__( 'Click Here', 'dimas' ),
 					],
 					[
-						'title'       => esc_html__( 'Slide 2 Heading', 'razzi' ),
-						'description' => esc_html__( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'razzi' ),
-						'button_text' => esc_html__( 'Click Here', 'razzi' ),
+						'title'       => esc_html__( 'Slide 2 Heading', 'dimas' ),
+						'description' => esc_html__( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'dimas' ),
+						'button_text' => esc_html__( 'Click Here', 'dimas' ),
 					],
 					[
-						'title'       => esc_html__( 'Slide 3 Heading', 'razzi' ),
-						'description' => esc_html__( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'razzi' ),
-						'button_text' => esc_html__( 'Click Here', 'razzi' ),
+						'title'       => esc_html__( 'Slide 3 Heading', 'dimas' ),
+						'description' => esc_html__( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'dimas' ),
+						'button_text' => esc_html__( 'Click Here', 'dimas' ),
 					],
 				],
 			]
@@ -559,7 +559,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_responsive_control(
 			'slides_height',
 			[
-				'label'      => esc_html__( 'Height', 'razzi' ),
+				'label'      => esc_html__( 'Height', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => [
 					'px' => [
@@ -576,7 +576,7 @@ class Lookbook_slider extends Widget_Base {
 				],
 				'size_units' => [ 'px', 'vh', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .item-slider' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .item-slider' => 'height: {{SIZE}}{{UNIT}};',
 				],
 				'separator'  => 'before',
 			]
@@ -585,10 +585,10 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'lazyload',
 			[
-				'label'              => esc_html__( 'Lazy load for images', 'razzi' ),
+				'label'              => esc_html__( 'Lazy load for images', 'dimas' ),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_off'          => __( 'Off', 'razzi' ),
-				'label_on'           => __( 'On', 'razzi' ),
+				'label_off'          => __( 'Off', 'dimas' ),
+				'label_on'           => __( 'On', 'dimas' ),
 				'return_value'       => 'yes',
 				'default'            => 'yes',
 				'frontend_available' => true,
@@ -598,11 +598,11 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'link_type',
 			[
-				'label'   => esc_html__( 'Link Type', 'razzi' ),
+				'label'   => esc_html__( 'Link Type', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'only' => esc_html__( 'Only button text', 'razzi' ),
-					'all'  => esc_html__( 'All slider', 'razzi' ),
+					'only' => esc_html__( 'Only button text', 'dimas' ),
+					'all'  => esc_html__( 'All slider', 'dimas' ),
 				],
 				'default' => 'only',
 				'toggle'  => false,
@@ -616,7 +616,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_slider_options',
 			[
-				'label' => esc_html__( 'Slider Options', 'razzi' ),
+				'label' => esc_html__( 'Slider Options', 'dimas' ),
 				'type'  => Controls_Manager::SECTION,
 			]
 		);
@@ -624,13 +624,13 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'effect',
 			[
-				'label'              => esc_html__( 'Effect', 'razzi' ),
+				'label'              => esc_html__( 'Effect', 'dimas' ),
 				'type'               => Controls_Manager::SELECT,
 				'options'            => [
-					'fade'      => esc_html__( 'Fade', 'razzi' ),
-					'slide'     => esc_html__( 'Slide', 'razzi' ),
-					'cube'      => esc_html__( 'Cube', 'razzi' ),
-					'coverflow' => esc_html__( 'Coverflow', 'razzi' ),
+					'fade'      => esc_html__( 'Fade', 'dimas' ),
+					'slide'     => esc_html__( 'Slide', 'dimas' ),
+					'cube'      => esc_html__( 'Cube', 'dimas' ),
+					'coverflow' => esc_html__( 'Coverflow', 'dimas' ),
 				],
 				'default'            => 'fade',
 				'toggle'             => false,
@@ -641,12 +641,12 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_responsive_control(
 			'navigation',
 			[
-				'label'   => esc_html__( 'Navigation', 'razzi' ),
+				'label'   => esc_html__( 'Navigation', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'none'   => esc_html__( 'None', 'razzi' ),
-					'arrows' => esc_html__( 'Arrows', 'razzi' ),
-					'dots'   => esc_html__( 'Dots', 'razzi' ),
+					'none'   => esc_html__( 'None', 'dimas' ),
+					'arrows' => esc_html__( 'Arrows', 'dimas' ),
+					'dots'   => esc_html__( 'Dots', 'dimas' ),
 				],
 				'default' => 'arrows',
 			]
@@ -655,10 +655,10 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			[
-				'label'              => esc_html__( 'Autoplay', 'razzi' ),
+				'label'              => esc_html__( 'Autoplay', 'dimas' ),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_off'          => __( 'Off', 'razzi' ),
-				'label_on'           => __( 'On', 'razzi' ),
+				'label_off'          => __( 'Off', 'dimas' ),
+				'label_on'           => __( 'On', 'dimas' ),
 				'return_value'       => 'yes',
 				'default'            => 'yes',
 				'frontend_available' => true,
@@ -668,10 +668,10 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'delay',
 			[
-				'label'              => esc_html__( 'Delay', 'razzi' ),
+				'label'              => esc_html__( 'Delay', 'dimas' ),
 				'type'               => Controls_Manager::NUMBER,
 				'default'            => 3000,
-				'description'        => esc_html__( 'Delay between transitions (in ms). If this parameter is not specified, auto play will be disabled', 'razzi' ),
+				'description'        => esc_html__( 'Delay between transitions (in ms). If this parameter is not specified, auto play will be disabled', 'dimas' ),
 				'conditions'         => [
 					'terms' => [
 						[
@@ -687,7 +687,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'autoplay_speed',
 			[
-				'label'              => esc_html__( 'Autoplay Speed', 'razzi' ),
+				'label'              => esc_html__( 'Autoplay Speed', 'dimas' ),
 				'type'               => Controls_Manager::NUMBER,
 				'default'            => 1000,
 				'frontend_available' => true,
@@ -697,10 +697,10 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'infinite',
 			[
-				'label'              => esc_html__( 'Infinite Loop', 'razzi' ),
+				'label'              => esc_html__( 'Infinite Loop', 'dimas' ),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_off'          => __( 'Off', 'razzi' ),
-				'label_on'           => __( 'On', 'razzi' ),
+				'label_off'          => __( 'Off', 'dimas' ),
+				'label_on'           => __( 'On', 'dimas' ),
 				'return_value'       => 'yes',
 				'default'            => '',
 				'frontend_available' => true,
@@ -717,7 +717,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_content',
 			[
-				'label' => esc_html__( 'Content', 'razzi' ),
+				'label' => esc_html__( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -725,7 +725,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_responsive_control(
 			'blank_max_width',
 			[
-				'label'      => esc_html__( 'Blank Width', 'razzi' ),
+				'label'      => esc_html__( 'Blank Width', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ '%' ],
 				'range'      => [
@@ -735,8 +735,8 @@ class Lookbook_slider extends Widget_Base {
 					],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .slick-slide-block__blank' => 'flex:0 0 {{SIZE}}%;max-width: {{SIZE}}%',
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .slick-slide-block__img'   => 'flex:0 0 calc(100% - {{SIZE}}%);max-width: calc(100% - {{SIZE}}%)',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .slick-slide-block__blank' => 'flex:0 0 {{SIZE}}%;max-width: {{SIZE}}%',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .slick-slide-block__img'   => 'flex:0 0 calc(100% - {{SIZE}}%);max-width: calc(100% - {{SIZE}}%)',
 				],
 			]
 		);
@@ -745,7 +745,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'section_style_title',
 			[
-				'label'     => esc_html__( 'Title', 'razzi' ),
+				'label'     => esc_html__( 'Title', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -753,15 +753,15 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_responsive_control(
 			'title_display',
 			[
-				'label'     => esc_html__( 'Display', 'razzi' ),
+				'label'     => esc_html__( 'Display', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => '',
 				'options'   => [
-					'block' => esc_html__( 'Show', 'razzi' ),
-					'none'  => esc_html__( 'Hidden', 'razzi' ),
+					'block' => esc_html__( 'Show', 'dimas' ),
+					'none'  => esc_html__( 'Hidden', 'dimas' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .slick-slide-inner .razzi-slide-heading' => 'display: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .slick-slide-inner .dimas-slide-heading' => 'display: {{VALUE}}',
 				],
 			]
 		);
@@ -769,7 +769,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_responsive_control(
 			'heading_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -778,7 +778,7 @@ class Lookbook_slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .slick-slide-inner .razzi-slide-heading' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .slick-slide-inner .dimas-slide-heading' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -786,10 +786,10 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'heading_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'razzi' ),
+				'label'     => esc_html__( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .razzi-slide-heading' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .dimas-slide-heading' => 'color: {{VALUE}}',
 
 				],
 			]
@@ -799,14 +799,14 @@ class Lookbook_slider extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'heading_typography',
-				'selector' => '{{WRAPPER}} .razzi-lookbook-slider-elementor .razzi-slide-heading',
+				'selector' => '{{WRAPPER}} .dimas-lookbook-slider-elementor .dimas-slide-heading',
 			]
 		);
 
 		$this->add_control(
 			'section_style_button',
 			[
-				'label'     => esc_html__( 'Button', 'razzi' ),
+				'label'     => esc_html__( 'Button', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -814,15 +814,15 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_display',
 			[
-				'label'     => esc_html__( 'Display', 'razzi' ),
+				'label'     => esc_html__( 'Display', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => '',
 				'options'   => [
-					'block' => esc_html__( 'Show', 'razzi' ),
-					'none'  => esc_html__( 'Hidden', 'razzi' ),
+					'block' => esc_html__( 'Show', 'dimas' ),
+					'none'  => esc_html__( 'Hidden', 'dimas' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .button-text' => 'display: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .button-text' => 'display: {{VALUE}}',
 				],
 			]
 		);
@@ -830,11 +830,11 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .button-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .button-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -843,17 +843,17 @@ class Lookbook_slider extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'btn_typography',
-				'selector' => '{{WRAPPER}} .razzi-lookbook-slider-elementor .button-text',
+				'selector' => '{{WRAPPER}} .dimas-lookbook-slider-elementor .button-text',
 			]
 		);
 
 		$this->add_control(
 			'btn_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .button-text' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .button-text' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -861,10 +861,10 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'btn_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .button-text' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .button-text' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -883,7 +883,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_lookbook',
 			[
-				'label' => esc_html__( 'LookBook', 'razzi' ),
+				'label' => esc_html__( 'LookBook', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -891,10 +891,10 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'lookbook_bgcolor',
 			[
-				'label'     => esc_html__( 'Dot Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Dot Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .razzi-lookbook-item' => ' --rz-lookbook-color-primary: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .dimas-lookbook-item' => ' --rz-lookbook-color-primary: {{VALUE}}',
 				],
 			]
 		);
@@ -902,7 +902,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'lookbook_title_heading',
 			[
-				'label'     => esc_html__( 'Title', 'razzi' ),
+				'label'     => esc_html__( 'Title', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -912,17 +912,17 @@ class Lookbook_slider extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'lookbook_title_typography',
-				'selector' => '{{WRAPPER}} .razzi-lookbook-slider-elementor .product-item .product-name',
+				'selector' => '{{WRAPPER}} .dimas-lookbook-slider-elementor .product-item .product-name',
 			]
 		);
 
 		$this->add_control(
 			'lookbook_title_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .product-item .product-name' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .product-item .product-name' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -930,7 +930,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'lookbook_price_heading',
 			[
-				'label'     => esc_html__( 'Price', 'razzi' ),
+				'label'     => esc_html__( 'Price', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -940,17 +940,17 @@ class Lookbook_slider extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'lookbook_price_typography',
-				'selector' => '{{WRAPPER}} .razzi-lookbook-slider-elementor .product-item .product-price',
+				'selector' => '{{WRAPPER}} .dimas-lookbook-slider-elementor .product-item .product-price',
 			]
 		);
 
 		$this->add_control(
 			'lookbook_price_color',
 			[
-				'label'     => esc_html__( 'Regular Color', 'razzi' ),
+				'label'     => esc_html__( 'Regular Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .product-item .product-price' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .product-item .product-price' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -958,10 +958,10 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'lookbook_price_color_1',
 			[
-				'label'     => esc_html__( 'Sale Color', 'razzi' ),
+				'label'     => esc_html__( 'Sale Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .product-item .product-price ins' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .product-item .product-price ins' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -974,7 +974,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_slider',
 			[
-				'label' => esc_html__( 'Slider Options', 'razzi' ),
+				'label' => esc_html__( 'Slider Options', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -983,7 +983,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'arrow_style_heading',
 			[
-				'label' => esc_html__( 'Arrows', 'razzi' ),
+				'label' => esc_html__( 'Arrows', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 			]
 		);
@@ -991,27 +991,27 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'arrow_position',
 			[
-				'label'                => esc_html__( 'Arrow Position', 'razzi' ),
+				'label'                => esc_html__( 'Arrow Position', 'dimas' ),
 				'type'                 => Controls_Manager::CHOOSE,
 				'label_block'          => false,
 				'options'              => [
 					'bottom'    => [
-						'title' => esc_html__( 'Top', 'razzi' ),
+						'title' => esc_html__( 'Top', 'dimas' ),
 						'icon'  => 'eicon-v-align-bottom',
 					],
 					'both' => [
-						'title' => esc_html__( 'Middle', 'razzi' ),
+						'title' => esc_html__( 'Middle', 'dimas' ),
 						'icon'  => 'eicon-h-align-stretch',
 					],
 				],
-				'prefix_class' => 'razzi-lookbook-slider-nav-position-',
+				'prefix_class' => 'dimas-lookbook-slider-nav-position-',
 			]
 		);
 
 		$this->add_responsive_control(
 			'sliders_arrows_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1020,7 +1020,7 @@ class Lookbook_slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1028,7 +1028,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_width',
 			[
-				'label'     => __( 'Width', 'razzi' ),
+				'label'     => __( 'Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1037,7 +1037,7 @@ class Lookbook_slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .rz-swiper-button' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .rz-swiper-button' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1045,7 +1045,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_height',
 			[
-				'label'     => __( 'Height', 'razzi' ),
+				'label'     => __( 'Height', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1054,7 +1054,7 @@ class Lookbook_slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .rz-swiper-button' => 'height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .rz-swiper-button' => 'height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1062,16 +1062,16 @@ class Lookbook_slider extends Widget_Base {
 
 		$this->start_controls_tabs( 'sliders_normal_settings' );
 
-		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .rz-swiper-button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .rz-swiper-button' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1079,27 +1079,27 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .rz-swiper-button' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .rz-swiper-button' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_hover_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .rz-swiper-button:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .rz-swiper-button:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1107,11 +1107,11 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_hover_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1124,7 +1124,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'dots_style_heading',
 			[
-				'label'     => esc_html__( 'Dots', 'razzi' ),
+				'label'     => esc_html__( 'Dots', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1133,10 +1133,10 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_control(
 			'dots_style',
 			[
-				'label'        => __( 'Options', 'razzi' ),
+				'label'        => __( 'Options', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -1146,7 +1146,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_gap',
 			[
-				'label'     => __( 'Gap', 'razzi' ),
+				'label'     => __( 'Gap', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1155,7 +1155,7 @@ class Lookbook_slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .swiper-pagination-bullet' => 'margin: 0 {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .swiper-pagination-bullet' => 'margin: 0 {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -1163,7 +1163,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1172,7 +1172,7 @@ class Lookbook_slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1180,7 +1180,7 @@ class Lookbook_slider extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_offset_ver',
 			[
-				'label'     => esc_html__( 'Spacing Top', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Top', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1189,7 +1189,7 @@ class Lookbook_slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -1198,32 +1198,32 @@ class Lookbook_slider extends Widget_Base {
 
 		$this->start_controls_tabs( 'sliders_dots_normal_settings' );
 
-		$this->start_controls_tab( 'sliders_dots_normal', [ 'label' => esc_html__( 'Normal', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_dots_normal', [ 'label' => esc_html__( 'Normal', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_dots_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'sliders_dots_active', [ 'label' => esc_html__( 'Active', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_dots_active', [ 'label' => esc_html__( 'Active', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_dots_ac_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-slider-elementor .swiper-pagination-bullet-active:before, {{WRAPPER}} .razzi-lookbook-slider-elementor .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-lookbook-slider-elementor .swiper-pagination-bullet-active:before, {{WRAPPER}} .dimas-lookbook-slider-elementor .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1252,8 +1252,8 @@ class Lookbook_slider extends Widget_Base {
 		$nav_mobile = empty( $settings['navigation_mobile'] ) ? $nav : $settings['navigation_mobile'];
 
 		$classes = [
-			'razzi-lookbook-slider-elementor swiper-container',
-			'razzi-swiper-carousel-elementor',
+			'dimas-lookbook-slider-elementor swiper-container',
+			'dimas-swiper-carousel-elementor',
 			'navigation-' . $nav,
 			'navigation-tablet-' . $nav_tablet,
 			'navigation-mobile-' . $nav_mobile,
@@ -1269,16 +1269,16 @@ class Lookbook_slider extends Widget_Base {
 			$slide_element    = 'div';
 			$btn_element      = 'div';
 
-			$slide_html .= '<div class="razzi-slide-content">';
+			$slide_html .= '<div class="dimas-slide-content">';
 
 			if ( $slide['title'] ) {
-				$slide_html .= '<div class="razzi-slide-heading">' . $slide['title'] . '</div>';
+				$slide_html .= '<div class="dimas-slide-heading">' . $slide['title'] . '</div>';
 			}
 
 			// Button
-			$link_icon = $slide['show_default_icon'] ? \Dimas\Addons\Helper::get_svg( 'arrow-right', 'razzi-icon' ) : '';
+			$link_icon = $slide['show_default_icon'] ? \Dimas\Addons\Helper::get_svg( 'arrow-right', 'dimas-icon' ) : '';
 
-			$button_text = $slide['button_text'] ? sprintf( '<span class="button-text razzi-button">%s %s</span>', $slide['button_text'], $link_icon ) : '';
+			$button_text = $slide['button_text'] ? sprintf( '<span class="button-text dimas-button">%s %s</span>', $slide['button_text'], $link_icon ) : '';
 
 			$key_btn   = 'btn_' . $slide_count;
 			$key_btn_2 = 'btn2_' . $slide_count;
@@ -1297,7 +1297,7 @@ class Lookbook_slider extends Widget_Base {
 
 			$slide_html .= '</div>';
 
-			$control = apply_filters( 'razzi_slider_section_product_number', 3 );
+			$control = apply_filters( 'dimas_slider_section_product_number', 3 );
 
 			for ( $i = 1; $i <= $control; $i ++ ) {
 
@@ -1319,7 +1319,7 @@ class Lookbook_slider extends Widget_Base {
 								<h6 class="product-name">%s</h6>
 								<div class="product-price">%s</div>
 							</div>
-							<a class="razzi-slide-button" href="%s"></a>
+							<a class="dimas-slide-button" href="%s"></a>
 						</div>',
 						$product->get_image( 'single_product_archive_thumbnail_size' ),
 						$product->get_name(),
@@ -1329,7 +1329,7 @@ class Lookbook_slider extends Widget_Base {
 				}
 
 				$slide_html .= $product_id ? sprintf(
-					'<div class="razzi-lookbook-item item-%s">%s</div>',
+					'<div class="dimas-lookbook-item item-%s">%s</div>',
 					esc_attr( $i ),
 					implode( '', $products_html )
 				) : '';
@@ -1366,7 +1366,7 @@ class Lookbook_slider extends Widget_Base {
 
 		echo sprintf(
 			'<div %s>
-				<div class="razzi-lookbook-slider-elementor__inner swiper-wrapper">%s</div>
+				<div class="dimas-lookbook-slider-elementor__inner swiper-wrapper">%s</div>
 				<div class="swiper-pagination"></div>
 			</div>',
 			$this->get_render_attribute_string( 'wrapper' ),

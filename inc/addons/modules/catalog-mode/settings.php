@@ -58,7 +58,7 @@ class Settings {
 	 * @return array
 	 */
 	public function catalog_mode_section( $sections ) {
-		$sections['rz_catalog_mode'] = esc_html__( 'Catalog Mode', 'razzi' );
+		$sections['rz_catalog_mode'] = esc_html__( 'Catalog Mode', 'dimas' );
 
 		return $sections;
 	}
@@ -79,23 +79,23 @@ class Settings {
 
 			$settings[] = array(
 				'id'    => 'rz_catalog_mode_options',
-				'title' => esc_html__( 'Catalog Mode', 'razzi' ),
+				'title' => esc_html__( 'Catalog Mode', 'dimas' ),
 				'type'  => 'title',
 			);
 
 			$settings[] = array(
 				'id'      => 'rz_catalog_mode',
-				'title'   => esc_html__( 'Catalog Mode', 'razzi' ),
-				'desc'    => esc_html__( 'Enable Catalog Mode', 'razzi' ),
+				'title'   => esc_html__( 'Catalog Mode', 'dimas' ),
+				'desc'    => esc_html__( 'Enable Catalog Mode', 'dimas' ),
 				'type'    => 'checkbox',
 				'default' => 'no',
 			);
 
 			// Price
 			$settings[] = array(
-				'name'          => esc_html__( 'Price', 'razzi' ),
-				'desc'          => esc_html__( 'Hide in the product loop', 'razzi' ),
-				'id'            => 'razzi_product_loop_hide_price',
+				'name'          => esc_html__( 'Price', 'dimas' ),
+				'desc'          => esc_html__( 'Hide in the product loop', 'dimas' ),
+				'id'            => 'dimas_product_loop_hide_price',
 				'default'       => 'yes',
 				'type'          => 'checkbox',
 				'checkboxgroup' => 'start',
@@ -103,8 +103,8 @@ class Settings {
 
 			if ( function_exists( 'YITH_WCWL' ) ) {
 				$settings[] = array(
-					'desc'          => esc_html__( 'Hide in the wishlist page', 'razzi' ),
-					'id'            => 'razzi_wishlist_hide_price',
+					'desc'          => esc_html__( 'Hide in the wishlist page', 'dimas' ),
+					'id'            => 'dimas_wishlist_hide_price',
 					'default'       => 'yes',
 					'type'          => 'checkbox',
 					'checkboxgroup' => '',
@@ -112,8 +112,8 @@ class Settings {
 			}
 
 			$settings[] = array(
-				'desc'          => esc_html__( 'Hide in the product page', 'razzi' ),
-				'id'            => 'razzi_product_hide_price',
+				'desc'          => esc_html__( 'Hide in the product page', 'dimas' ),
+				'id'            => 'dimas_product_hide_price',
 				'default'       => 'yes',
 				'type'          => 'checkbox',
 				'checkboxgroup' => 'end',
@@ -121,9 +121,9 @@ class Settings {
 
 			// Add to Cart
 			$settings[] = array(
-				'name'          => esc_html__( 'Add to Cart', 'razzi' ),
-				'desc'          => esc_html__( 'Hide in the product loop', 'razzi' ),
-				'id'            => 'razzi_product_loop_hide_atc',
+				'name'          => esc_html__( 'Add to Cart', 'dimas' ),
+				'desc'          => esc_html__( 'Hide in the product loop', 'dimas' ),
+				'id'            => 'dimas_product_loop_hide_atc',
 				'default'       => 'yes',
 				'type'          => 'checkbox',
 				'checkboxgroup' => 'start',
@@ -131,8 +131,8 @@ class Settings {
 
 			if ( function_exists( 'YITH_WCWL' ) ) {
 				$settings[] = array(
-					'desc'          => esc_html__( 'Hide in the wishlist page', 'razzi' ),
-					'id'            => 'razzi_wishlist_hide_atc',
+					'desc'          => esc_html__( 'Hide in the wishlist page', 'dimas' ),
+					'id'            => 'dimas_wishlist_hide_atc',
 					'default'       => 'yes',
 					'type'          => 'checkbox',
 					'checkboxgroup' => '',
@@ -140,8 +140,8 @@ class Settings {
 			}
 
 			$settings[] = array(
-				'desc'          => esc_html__( 'Hide in the product page', 'razzi' ),
-				'id'            => 'razzi_product_hide_atc',
+				'desc'          => esc_html__( 'Hide in the product page', 'dimas' ),
+				'id'            => 'dimas_product_hide_atc',
 				'default'       => 'yes',
 				'type'          => 'checkbox',
 				'checkboxgroup' => 'end',
@@ -149,17 +149,17 @@ class Settings {
 
 			// Page
 			$settings[] = array(
-				'name'          => esc_html__( 'Page', 'razzi' ),
-				'desc'          => esc_html__( 'Hide in the woocommerce cart page', 'razzi' ),
-				'id'            => 'razzi_hide_cart_page',
+				'name'          => esc_html__( 'Page', 'dimas' ),
+				'desc'          => esc_html__( 'Hide in the woocommerce cart page', 'dimas' ),
+				'id'            => 'dimas_hide_cart_page',
 				'default'       => 'yes',
 				'type'          => 'checkbox',
 				'checkboxgroup' => 'start',
 			);
 
 			$settings[] = array(
-				'desc'          => esc_html__( 'Hide in the woocommerce checkout page', 'razzi' ),
-				'id'            => 'razzi_hide_checkout_page',
+				'desc'          => esc_html__( 'Hide in the woocommerce checkout page', 'dimas' ),
+				'id'            => 'dimas_hide_checkout_page',
 				'default'       => 'yes',
 				'type'          => 'checkbox',
 				'checkboxgroup' => 'end',
@@ -167,13 +167,13 @@ class Settings {
 
 			// User
 			$settings[] = array(
-				'name'    => esc_html__( 'Apply catalog mode to', 'razzi' ),
+				'name'    => esc_html__( 'Apply catalog mode to', 'dimas' ),
 				'id'      => 'rz_catalog_mode_user',
 				'default' => 'all_user',
 				'type'    => 'radio',
 				'options' => array(
-					'all_user'   => esc_html__( 'All User', 'razzi' ),
-					'guest_user' => esc_html__( 'Only guest user', 'razzi' ),
+					'all_user'   => esc_html__( 'All User', 'dimas' ),
+					'guest_user' => esc_html__( 'Only guest user', 'dimas' ),
 				),
 			);
 

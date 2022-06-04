@@ -21,7 +21,7 @@ class Before_After_Images extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-before-after-images';
+		return 'dimas-before-after-images';
 	}
 
 	/**
@@ -30,7 +30,7 @@ class Before_After_Images extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Image Comparison', 'razzi' );
+		return esc_html__( 'Dimas - Image Comparison', 'dimas' );
 	}
 
 	/**
@@ -48,14 +48,14 @@ class Before_After_Images extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
 			'image-slide',
 			'eventmove',
-			'razzi-frontend'
+			'dimas-frontend'
 		];
 	}
 
@@ -84,7 +84,7 @@ class Before_After_Images extends Widget_Base {
 	protected function section_content() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Content', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Content', 'dimas' ) ]
 		);
 
 		$repeater = new \Elementor\Repeater();
@@ -92,7 +92,7 @@ class Before_After_Images extends Widget_Base {
 		$repeater->add_control(
 			'be_image',
 			[
-				'label'   => esc_html__( 'Before Image', 'razzi' ),
+				'label'   => esc_html__( 'Before Image', 'dimas' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => 'https://via.placeholder.com/970x530/f1f1f1?text=Image',
@@ -103,7 +103,7 @@ class Before_After_Images extends Widget_Base {
 		$repeater->add_control(
 			'af_image',
 			[
-				'label'   => esc_html__( 'After Image', 'razzi' ),
+				'label'   => esc_html__( 'After Image', 'dimas' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => 'https://via.placeholder.com/970x530/f1f1f1?text=Image',
@@ -147,7 +147,7 @@ class Before_After_Images extends Widget_Base {
 		$this->start_controls_section(
 			'section_slider_options',
 			[
-				'label' => esc_html__( 'Slider Options', 'razzi' ),
+				'label' => esc_html__( 'Slider Options', 'dimas' ),
 				'type'  => Controls_Manager::SECTION,
 			]
 		);
@@ -155,12 +155,12 @@ class Before_After_Images extends Widget_Base {
 		$this->add_responsive_control(
 			'navigation',
 			[
-				'label'     => esc_html__( 'Navigation', 'razzi' ),
+				'label'     => esc_html__( 'Navigation', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options' => [
-					'none'   => esc_html__( 'None', 'razzi' ),
-					'arrows' => esc_html__( 'Arrows', 'razzi' ),
-					'dots' 	 => esc_html__( 'Dots', 'razzi' ),
+					'none'   => esc_html__( 'None', 'dimas' ),
+					'arrows' => esc_html__( 'Arrows', 'dimas' ),
+					'dots' 	 => esc_html__( 'Dots', 'dimas' ),
 				],
 				'default' => 'arrows',
 			]
@@ -169,10 +169,10 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'infinite',
 			[
-				'label'     => __( 'Infinite', 'razzi' ),
+				'label'     => __( 'Infinite', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'razzi' ),
-				'label_on'  => __( 'On', 'razzi' ),
+				'label_off' => __( 'Off', 'dimas' ),
+				'label_on'  => __( 'On', 'dimas' ),
 				'return_value' => 'yes',
 				'default'   => '',
 				'frontend_available' => true,
@@ -182,7 +182,7 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			[
-				'label'   => esc_html__( 'Autoplay', 'razzi' ),
+				'label'   => esc_html__( 'Autoplay', 'dimas' ),
 				'type'    => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 				'frontend_available' => true,
@@ -192,10 +192,10 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'delay',
 			[
-				'label'     => esc_html__( 'Delay', 'razzi' ),
+				'label'     => esc_html__( 'Delay', 'dimas' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => 3000,
-				'description' => esc_html__('Delay between transitions (in ms). If this parameter is not specified, auto play will be disabled', 'razzi'),
+				'description' => esc_html__('Delay between transitions (in ms). If this parameter is not specified, auto play will be disabled', 'dimas'),
 				'conditions' => [
 					'terms' => [
 						[
@@ -211,7 +211,7 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'autoplay_speed',
 			[
-				'label'     => esc_html__( 'Autoplay Speed', 'razzi' ),
+				'label'     => esc_html__( 'Autoplay Speed', 'dimas' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => 1000,
 				'frontend_available' => true,
@@ -231,7 +231,7 @@ class Before_After_Images extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -239,12 +239,12 @@ class Before_After_Images extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-before-after-images' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-before-after-images' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -252,7 +252,7 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'badges_style',
 			[
-				'label' => esc_html__( 'Badges', 'razzi' ),
+				'label' => esc_html__( 'Badges', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -261,7 +261,7 @@ class Before_After_Images extends Widget_Base {
 		$this->add_responsive_control(
 			'badges_spacing',
 			[
-				'label'     => esc_html__( 'Spacing Vertical', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Vertical', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -270,7 +270,7 @@ class Before_After_Images extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .imageslide-label' => 'top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-before-after-images .imageslide-label' => 'top: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -279,18 +279,18 @@ class Before_After_Images extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'badges_typography',
-				'selector' => '{{WRAPPER}} .razzi-before-after-images .imageslide-label',
+				'selector' => '{{WRAPPER}} .dimas-before-after-images .imageslide-label',
 			]
 		);
 
 		$this->add_control(
 			'badges_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .imageslide-label' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-before-after-images .imageslide-label' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -298,11 +298,11 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'badges_bgcolor',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .imageslide-label' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-before-after-images .imageslide-label' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -310,12 +310,12 @@ class Before_After_Images extends Widget_Base {
 		$this->add_responsive_control(
 			'badges_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-before-after-images .imageslide-label' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-before-after-images .imageslide-label' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -323,7 +323,7 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'line_control_style',
 			[
-				'label' => esc_html__( 'Line Control', 'razzi' ),
+				'label' => esc_html__( 'Line Control', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -332,11 +332,11 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'line_control_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .imageslide-container' => '--rz-image-slide-bg-control: {{VALUE}};',
+					'{{WRAPPER}} .dimas-before-after-images .imageslide-container' => '--rz-image-slide-bg-control: {{VALUE}};',
 				],
 			]
 		);
@@ -344,11 +344,11 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'line_control_icon_color',
 			[
-				'label'     => __( 'Icon Color', 'razzi' ),
+				'label'     => __( 'Icon Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .imageslide-handle .razzi-icon' => '--rz-stroke-svg-dark: {{VALUE}};',
+					'{{WRAPPER}} .dimas-before-after-images .imageslide-handle .dimas-icon' => '--rz-stroke-svg-dark: {{VALUE}};',
 				],
 			]
 		);
@@ -363,7 +363,7 @@ class Before_After_Images extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_arrows',
 			[
-				'label' => esc_html__( 'Slider Option', 'razzi' ),
+				'label' => esc_html__( 'Slider Option', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -372,7 +372,7 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'arrow_style_heading',
 			[
-				'label' => esc_html__( 'Arrows', 'razzi' ),
+				'label' => esc_html__( 'Arrows', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -381,10 +381,10 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'arrows_style',
 			[
-				'label'        => __( 'Options', 'razzi' ),
+				'label'        => __( 'Options', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -394,7 +394,7 @@ class Before_After_Images extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -403,7 +403,7 @@ class Before_After_Images extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-before-after-images .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -411,7 +411,7 @@ class Before_After_Images extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_spacing',
 			[
-				'label'      => esc_html__( 'Horizontal Position', 'razzi' ),
+				'label'      => esc_html__( 'Horizontal Position', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => [
 					'px' => [
@@ -421,8 +421,8 @@ class Before_After_Images extends Widget_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-before-after-images .rz-swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-before-after-images .rz-swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-before-after-images .rz-swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-before-after-images .rz-swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -431,16 +431,16 @@ class Before_After_Images extends Widget_Base {
 
 		$this->start_controls_tabs( 'sliders_normal_settings' );
 
-		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .rz-swiper-button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-before-after-images .rz-swiper-button' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -448,27 +448,27 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .rz-swiper-button' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-before-after-images .rz-swiper-button' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_hover_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .rz-swiper-button:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-before-after-images .rz-swiper-button:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -476,11 +476,11 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_hover_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-before-after-images .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -493,7 +493,7 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'dots_style_heading',
 			[
-				'label' => esc_html__( 'Dots', 'razzi' ),
+				'label' => esc_html__( 'Dots', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -502,10 +502,10 @@ class Before_After_Images extends Widget_Base {
 		$this->add_control(
 			'dots_style',
 			[
-				'label'        => __( 'Options', 'razzi' ),
+				'label'        => __( 'Options', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -515,7 +515,7 @@ class Before_After_Images extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_gap',
 			[
-				'label'     => __( 'Gap', 'razzi' ),
+				'label'     => __( 'Gap', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -524,7 +524,7 @@ class Before_After_Images extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .swiper-pagination-bullet' => 'margin: 0 {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-before-after-images .swiper-pagination-bullet' => 'margin: 0 {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -532,7 +532,7 @@ class Before_After_Images extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -541,7 +541,7 @@ class Before_After_Images extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-before-after-images .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -549,7 +549,7 @@ class Before_After_Images extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_offset_ver',
 			[
-				'label'     => esc_html__( 'Spacing Top', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Top', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -558,7 +558,7 @@ class Before_After_Images extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-before-after-images .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -567,32 +567,32 @@ class Before_After_Images extends Widget_Base {
 
 		$this->start_controls_tabs( 'sliders_dots_normal_settings' );
 
-		$this->start_controls_tab( 'sliders_dots_normal', [ 'label' => esc_html__( 'Normal', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_dots_normal', [ 'label' => esc_html__( 'Normal', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_dots_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-before-after-images .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'sliders_dots_active', [ 'label' => esc_html__( 'Active', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_dots_active', [ 'label' => esc_html__( 'Active', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_dots_ac_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-before-after-images .swiper-pagination-bullet-active:before, {{WRAPPER}} .razzi-before-after-images .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-before-after-images .swiper-pagination-bullet-active:before, {{WRAPPER}} .dimas-before-after-images .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -617,8 +617,8 @@ class Before_After_Images extends Widget_Base {
 		$nav_mobile = empty( $settings['navigation_mobile'] ) ? $nav : $settings['navigation_mobile'];
 
 		$classes = [
-			'razzi-before-after-images swiper-container',
-			'razzi-swiper-carousel-elementor',
+			'dimas-before-after-images swiper-container',
+			'dimas-swiper-carousel-elementor',
 			'navigation-' . $nav,
 			'navigation-tablet-' . $nav_tablet,
 			'navigation-mobile-' . $nav_mobile,
@@ -630,10 +630,10 @@ class Before_After_Images extends Widget_Base {
 
 		$els = $settings['elements'];
 
-		$overlay = sprintf('<div class="imageslide-label imageslide-before-label">'.esc_html__('Before', 'razzi').'</div>
-							<div class="imageslide-label imageslide-after-label">'.esc_html__('After', 'razzi').'</div>');
+		$overlay = sprintf('<div class="imageslide-label imageslide-before-label">'.esc_html__('Before', 'dimas').'</div>
+							<div class="imageslide-label imageslide-after-label">'.esc_html__('After', 'dimas').'</div>');
 
-		$handler = '<div class="imageslide-handle">'.\Dimas\Addons\Helper::get_svg('move-left-right', 'razzi-icon', 'widget').'</div>';
+		$handler = '<div class="imageslide-handle">'.\Dimas\Addons\Helper::get_svg('move-left-right', 'dimas-icon', 'widget').'</div>';
 
 		if ( ! empty ( $els ) ) {
 			foreach ( $els as $index => $item ) {
@@ -660,7 +660,7 @@ class Before_After_Images extends Widget_Base {
 
 		echo sprintf(
 			'<div %s>
-				<div class="razzi-before-after-images__inner swiper-wrapper"> %s</div>  %s<div class="swiper-pagination"></div>
+				<div class="dimas-before-after-images__inner swiper-wrapper"> %s</div>  %s<div class="swiper-pagination"></div>
 			</div>',
 			$this->get_render_attribute_string( 'wrapper' ),
 			implode('', $output),

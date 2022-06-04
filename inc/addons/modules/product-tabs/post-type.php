@@ -33,8 +33,8 @@ class Post_Type  {
 		return self::$instance;
 	}
 
-	const POST_TYPE     = 'razzi_product_tab';
-	const TAXONOMY_TAB_TYPE     = 'razzi_product_tab_type';
+	const POST_TYPE     = 'dimas_product_tab';
+	const TAXONOMY_TAB_TYPE     = 'dimas_product_tab_type';
 
 
 	/**
@@ -64,23 +64,23 @@ class Post_Type  {
 		}
 
 		register_post_type( self::POST_TYPE, array(
-			'description'         => esc_html__( 'Product tabs', 'razzi' ),
+			'description'         => esc_html__( 'Product tabs', 'dimas' ),
 			'labels'              => array(
-				'name'                  => esc_html__( 'Product Tabs', 'razzi' ),
-				'singular_name'         => esc_html__( 'Product Tabs', 'razzi' ),
-				'menu_name'             => esc_html__( 'Product Tabs', 'razzi' ),
-				'all_items'             => esc_html__( 'Product Tabs', 'razzi' ),
-				'add_new'               => esc_html__( 'Add New', 'razzi' ),
-				'add_new_item'          => esc_html__( 'Add New Product Tabs', 'razzi' ),
-				'edit_item'             => esc_html__( 'Edit Product Tabs', 'razzi' ),
-				'new_item'              => esc_html__( 'New Product Tabs', 'razzi' ),
-				'view_item'             => esc_html__( 'View Product Tabs', 'razzi' ),
-				'search_items'          => esc_html__( 'Search product tabs', 'razzi' ),
-				'not_found'             => esc_html__( 'No product tabs found', 'razzi' ),
-				'not_found_in_trash'    => esc_html__( 'No product tabs found in Trash', 'razzi' ),
-				'filter_items_list'     => esc_html__( 'Filter product tabss list', 'razzi' ),
-				'items_list_navigation' => esc_html__( 'Product tabs list navigation', 'razzi' ),
-				'items_list'            => esc_html__( 'Product tabs list', 'razzi' ),
+				'name'                  => esc_html__( 'Product Tabs', 'dimas' ),
+				'singular_name'         => esc_html__( 'Product Tabs', 'dimas' ),
+				'menu_name'             => esc_html__( 'Product Tabs', 'dimas' ),
+				'all_items'             => esc_html__( 'Product Tabs', 'dimas' ),
+				'add_new'               => esc_html__( 'Add New', 'dimas' ),
+				'add_new_item'          => esc_html__( 'Add New Product Tabs', 'dimas' ),
+				'edit_item'             => esc_html__( 'Edit Product Tabs', 'dimas' ),
+				'new_item'              => esc_html__( 'New Product Tabs', 'dimas' ),
+				'view_item'             => esc_html__( 'View Product Tabs', 'dimas' ),
+				'search_items'          => esc_html__( 'Search product tabs', 'dimas' ),
+				'not_found'             => esc_html__( 'No product tabs found', 'dimas' ),
+				'not_found_in_trash'    => esc_html__( 'No product tabs found in Trash', 'dimas' ),
+				'filter_items_list'     => esc_html__( 'Filter product tabss list', 'dimas' ),
+				'items_list_navigation' => esc_html__( 'Product tabs list navigation', 'dimas' ),
+				'items_list'            => esc_html__( 'Product tabs list', 'dimas' ),
 			),
 			'supports'            => array( 'title', 'editor' ),
 			'rewrite'             => false,
@@ -108,7 +108,7 @@ class Post_Type  {
 				'query_var'         => is_admin(),
 				'rewrite'           => false,
 				'public'            => true,
-				'label'             => _x( 'Product Tabs Type', 'Taxonomy name', 'razzi' ),
+				'label'             => _x( 'Product Tabs Type', 'Taxonomy name', 'dimas' ),
 			)
 		);
 	}

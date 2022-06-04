@@ -40,8 +40,8 @@ class Product_Meta  {
 		return self::$instance;
 	}
 
-	const POST_TYPE     = 'razzi_product_tab';
-	const TAXONOMY_TYPE   = 'razzi_product_tab_type';
+	const POST_TYPE     = 'dimas_product_tab';
+	const TAXONOMY_TYPE   = 'dimas_product_tab_type';
 
 	/**
 	 * Instantiate the object.
@@ -71,10 +71,10 @@ class Product_Meta  {
 			return $tabs ;
 		}
 
-		$tabs['razzi_product_tabs'] = array(
-			'label'    => esc_html__( 'Product Tabs', 'razzi' ),
-			'target'   => 'razzi-product-tabs',
-			'class'    => array( 'razzi-product-tabs', ),
+		$tabs['dimas_product_tabs'] = array(
+			'label'    => esc_html__( 'Product Tabs', 'dimas' ),
+			'target'   => 'dimas-product-tabs',
+			'class'    => array( 'dimas-product-tabs', ),
 			'priority' => 62,
 		);
 
@@ -94,18 +94,18 @@ class Product_Meta  {
 		}
 		global $post;
 		?>
-		<div id="razzi-product-tabs" class="panel wc-metaboxes-wrapper woocommerce_options_panel">
+		<div id="dimas-product-tabs" class="panel wc-metaboxes-wrapper woocommerce_options_panel">
 			<div class="wc-metaboxes">
 				<?php foreach($this->product_tab_ids as $tab_id) : ?>
 				<?php
 					$tab_disable = get_post_meta( $post->ID, '_product_tab_disable_' . $tab_id, true );
 					$tab_title = get_the_title($tab_id);
-					$tab_title = $tab_disable ? $tab_title . '(' . esc_html__( 'Disabled', 'razzi' ) . ')' : $tab_title;
+					$tab_title = $tab_disable ? $tab_title . '(' . esc_html__( 'Disabled', 'dimas' ) . ')' : $tab_title;
 					$tab_class = $tab_disable ? 'tab-disabled' : '';
 				?>
 				<div class="wc-metabox postbox">
 					<h3 class="<?php echo esc_attr($tab_class); ?>" style="border-bottom: 1px solid #ccc">
-						<div class="handlediv" title="<?php esc_html_e('Click to toggle', 'razzi'); ?>"></div>
+						<div class="handlediv" title="<?php esc_html_e('Click to toggle', 'dimas'); ?>"></div>
 						<strong class="attribute_name"><?php echo $tab_title; ?></strong>
 					</h3>
 					<div class="wc-metabox-content" style="padding: 20px">
@@ -114,12 +114,12 @@ class Product_Meta  {
 						woocommerce_wp_checkbox(
 							array(
 								'id'          => '_product_tab_disable_' . $tab_id,
-								'label'       => esc_html__('Tab Disable', 'razzi' ),
+								'label'       => esc_html__('Tab Disable', 'dimas' ),
 								'value'       => wc_bool_to_string( $tab_disable ),
 							)
 						);?>
 						<fieldset class="form-field">
-							<label><?php esc_html_e( 'Tab Content', 'razzi' ); ?></label>
+							<label><?php esc_html_e( 'Tab Content', 'dimas' ); ?></label>
 							<?php
 							$tab_content = get_post_meta( $post->ID, '_product_tab_content_' . $tab_id, true );
 							wp_editor( $tab_content, '_product_tab_content_' . $tab_id );

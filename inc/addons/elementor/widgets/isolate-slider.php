@@ -32,7 +32,7 @@ class Isolate_Slider extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-isolate-slides';
+		return 'dimas-isolate-slides';
 	}
 
 	/**
@@ -46,7 +46,7 @@ class Isolate_Slider extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Isolate Slider', 'razzi' );
+		return __( 'Dimas - Isolate Slider', 'dimas' );
 	}
 
 	/**
@@ -76,7 +76,7 @@ class Isolate_Slider extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	/**
@@ -95,7 +95,7 @@ class Isolate_Slider extends Widget_Base {
 
 	public function get_script_depends() {
 		return [
-			'razzi-frontend'
+			'dimas-frontend'
 		];
 	}
 
@@ -121,7 +121,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_slides',
 			[
-				'label' => esc_html__( 'Slides', 'razzi' ),
+				'label' => esc_html__( 'Slides', 'dimas' ),
 			]
 		);
 
@@ -129,18 +129,18 @@ class Isolate_Slider extends Widget_Base {
 
 		$repeater->start_controls_tabs( 'slides_repeater' );
 
-		$repeater->start_controls_tab( 'background', [ 'label' => esc_html__( 'Background', 'razzi' ) ] );
+		$repeater->start_controls_tab( 'background', [ 'label' => esc_html__( 'Background', 'dimas' ) ] );
 
 		$repeater->add_responsive_control(
 			'banner_background_img',
 			[
-				'label'    => __( 'Background Slider', 'razzi' ),
+				'label'    => __( 'Background Slider', 'dimas' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => 'https://via.placeholder.com/768X535/cccccc?text=768x535',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides {{CURRENT_ITEM}}:not(.swiper-lazy) .razzi-isolate-slides__image' => 'background-image: url("{{URL}}");',
+					'{{WRAPPER}} .dimas-isolate-slides {{CURRENT_ITEM}}:not(.swiper-lazy) .dimas-isolate-slides__image' => 'background-image: url("{{URL}}");',
 				],
 			]
 		);
@@ -148,16 +148,16 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'background_size',
 			[
-				'label'     => esc_html__( 'Background Size', 'razzi' ),
+				'label'     => esc_html__( 'Background Size', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'cover',
 				'options'   => [
-					'cover'   => esc_html__( 'Cover', 'razzi' ),
-					'contain' => esc_html__( 'Contain', 'razzi' ),
-					'auto'    => esc_html__( 'Auto', 'razzi' ),
+					'cover'   => esc_html__( 'Cover', 'dimas' ),
+					'contain' => esc_html__( 'Contain', 'dimas' ),
+					'auto'    => esc_html__( 'Auto', 'dimas' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides {{CURRENT_ITEM}} .razzi-isolate-slides__image' => 'background-size: {{VALUE}}',
+					'{{WRAPPER}} .dimas-isolate-slides {{CURRENT_ITEM}} .dimas-isolate-slides__image' => 'background-size: {{VALUE}}',
 				],
 				'condition' => [
 					'banner_background_img[url]!' => '',
@@ -168,24 +168,24 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'background_position',
 			[
-				'label'     => esc_html__( 'Background Position', 'razzi' ),
+				'label'     => esc_html__( 'Background Position', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''              => esc_html__( 'Default', 'razzi' ),
-					'left top'      => esc_html__( 'Left Top', 'razzi' ),
-					'left center'   => esc_html__( 'Left Center', 'razzi' ),
-					'left bottom'   => esc_html__( 'Left Bottom', 'razzi' ),
-					'right top'     => esc_html__( 'Right Top', 'razzi' ),
-					'right center'  => esc_html__( 'Right Center', 'razzi' ),
-					'right bottom'  => esc_html__( 'Right Bottom', 'razzi' ),
-					'center top'    => esc_html__( 'Center Top', 'razzi' ),
-					'center center' => esc_html__( 'Center Center', 'razzi' ),
-					'center bottom' => esc_html__( 'Center Bottom', 'razzi' ),
-					'initial' 		=> esc_html__( 'Custom', 'razzi' ),
+					''              => esc_html__( 'Default', 'dimas' ),
+					'left top'      => esc_html__( 'Left Top', 'dimas' ),
+					'left center'   => esc_html__( 'Left Center', 'dimas' ),
+					'left bottom'   => esc_html__( 'Left Bottom', 'dimas' ),
+					'right top'     => esc_html__( 'Right Top', 'dimas' ),
+					'right center'  => esc_html__( 'Right Center', 'dimas' ),
+					'right bottom'  => esc_html__( 'Right Bottom', 'dimas' ),
+					'center top'    => esc_html__( 'Center Top', 'dimas' ),
+					'center center' => esc_html__( 'Center Center', 'dimas' ),
+					'center bottom' => esc_html__( 'Center Bottom', 'dimas' ),
+					'initial' 		=> esc_html__( 'Custom', 'dimas' ),
 				],
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides {{CURRENT_ITEM}} .razzi-isolate-slides__image' => 'background-position: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides {{CURRENT_ITEM}} .dimas-isolate-slides__image' => 'background-position: {{VALUE}};',
 				],
 				'condition' => [
 					'banner_background_img[url]!' => '',
@@ -197,13 +197,13 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'background_position_xy',
 			[
-				'label'              => esc_html__( 'Custom Background Position', 'razzi' ),
+				'label'              => esc_html__( 'Custom Background Position', 'dimas' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'allowed_dimensions' => [ 'top', 'left' ],
 				'size_units'         => [ 'px', '%' ],
 				'default'            => [ ],
 				'selectors'          => [
-					'{{WRAPPER}} .razzi-isolate-slides {{CURRENT_ITEM}} .razzi-isolate-slides__image' => 'background-position: {{LEFT}}{{UNIT}} {{TOP}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides {{CURRENT_ITEM}} .dimas-isolate-slides__image' => 'background-position: {{LEFT}}{{UNIT}} {{TOP}}{{UNIT}};',
 				],
 				'condition' => [
 					'background_position' => [ 'initial' ],
@@ -228,11 +228,11 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'banner_background_content',
 			[
-				'label'    => __( 'Background Content', 'razzi' ),
+				'label'    => __( 'Background Content', 'dimas' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides {{CURRENT_ITEM}} .razzi-isolate-slides__wrapper' => 'background-image: url("{{URL}}");',
+					'{{WRAPPER}} .dimas-isolate-slides {{CURRENT_ITEM}} .dimas-isolate-slides__wrapper' => 'background-image: url("{{URL}}");',
 				],
 				'separator'    => 'before',
 			]
@@ -241,16 +241,16 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'background_size_content',
 			[
-				'label'     => esc_html__( 'Background Size', 'razzi' ),
+				'label'     => esc_html__( 'Background Size', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'cover',
 				'options'   => [
-					'cover'   => esc_html__( 'Cover', 'razzi' ),
-					'contain' => esc_html__( 'Contain', 'razzi' ),
-					'auto'    => esc_html__( 'Auto', 'razzi' ),
+					'cover'   => esc_html__( 'Cover', 'dimas' ),
+					'contain' => esc_html__( 'Contain', 'dimas' ),
+					'auto'    => esc_html__( 'Auto', 'dimas' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides {{CURRENT_ITEM}} .razzi-isolate-slides__wrapper' => 'background-size: {{VALUE}}',
+					'{{WRAPPER}} .dimas-isolate-slides {{CURRENT_ITEM}} .dimas-isolate-slides__wrapper' => 'background-size: {{VALUE}}',
 				],
 				'condition' => [
 					'banner_background_content[url]!' => '',
@@ -261,24 +261,24 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'background_position_content',
 			[
-				'label'     => esc_html__( 'Background Position', 'razzi' ),
+				'label'     => esc_html__( 'Background Position', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''              => esc_html__( 'Default', 'razzi' ),
-					'left top'      => esc_html__( 'Left Top', 'razzi' ),
-					'left center'   => esc_html__( 'Left Center', 'razzi' ),
-					'left bottom'   => esc_html__( 'Left Bottom', 'razzi' ),
-					'right top'     => esc_html__( 'Right Top', 'razzi' ),
-					'right center'  => esc_html__( 'Right Center', 'razzi' ),
-					'right bottom'  => esc_html__( 'Right Bottom', 'razzi' ),
-					'center top'    => esc_html__( 'Center Top', 'razzi' ),
-					'center center' => esc_html__( 'Center Center', 'razzi' ),
-					'center bottom' => esc_html__( 'Center Bottom', 'razzi' ),
-					'initial' 		=> esc_html__( 'Custom', 'razzi' ),
+					''              => esc_html__( 'Default', 'dimas' ),
+					'left top'      => esc_html__( 'Left Top', 'dimas' ),
+					'left center'   => esc_html__( 'Left Center', 'dimas' ),
+					'left bottom'   => esc_html__( 'Left Bottom', 'dimas' ),
+					'right top'     => esc_html__( 'Right Top', 'dimas' ),
+					'right center'  => esc_html__( 'Right Center', 'dimas' ),
+					'right bottom'  => esc_html__( 'Right Bottom', 'dimas' ),
+					'center top'    => esc_html__( 'Center Top', 'dimas' ),
+					'center center' => esc_html__( 'Center Center', 'dimas' ),
+					'center bottom' => esc_html__( 'Center Bottom', 'dimas' ),
+					'initial' 		=> esc_html__( 'Custom', 'dimas' ),
 				],
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides {{CURRENT_ITEM}} .razzi-isolate-slides__wrapper' => 'background-position: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides {{CURRENT_ITEM}} .dimas-isolate-slides__wrapper' => 'background-position: {{VALUE}};',
 				],
 				'condition' => [
 					'banner_background_content[url]!' => '',
@@ -290,13 +290,13 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'background_position_xy_content',
 			[
-				'label'              => esc_html__( 'Custom Background Position', 'razzi' ),
+				'label'              => esc_html__( 'Custom Background Position', 'dimas' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'allowed_dimensions' => [ 'top', 'left' ],
 				'size_units'         => [ 'px', '%' ],
 				'default'            => [ ],
 				'selectors'          => [
-					'{{WRAPPER}} .razzi-isolate-slides {{CURRENT_ITEM}} .razzi-isolate-slides__wrapper' => 'background-position: {{LEFT}}{{UNIT}} {{TOP}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides {{CURRENT_ITEM}} .dimas-isolate-slides__wrapper' => 'background-position: {{LEFT}}{{UNIT}} {{TOP}}{{UNIT}};',
 				],
 				'condition' => [
 					'background_position_content' => [ 'initial' ],
@@ -321,11 +321,11 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'banner_background_title',
 			[
-				'label'    => __( 'Background Title', 'razzi' ),
+				'label'    => __( 'Background Title', 'dimas' ),
 				'type' => Controls_Manager::MEDIA,
 				'default' => [],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides {{CURRENT_ITEM}} .razzi-isolate-slides__title' => 'background-image: url("{{URL}}");',
+					'{{WRAPPER}} .dimas-isolate-slides {{CURRENT_ITEM}} .dimas-isolate-slides__title' => 'background-image: url("{{URL}}");',
 				],
 				'separator'    => 'before',
 			]
@@ -334,16 +334,16 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'background_size_title',
 			[
-				'label'     => esc_html__( 'Background Size', 'razzi' ),
+				'label'     => esc_html__( 'Background Size', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'cover',
 				'options'   => [
-					'cover'   => esc_html__( 'Cover', 'razzi' ),
-					'contain' => esc_html__( 'Contain', 'razzi' ),
-					'auto'    => esc_html__( 'Auto', 'razzi' ),
+					'cover'   => esc_html__( 'Cover', 'dimas' ),
+					'contain' => esc_html__( 'Contain', 'dimas' ),
+					'auto'    => esc_html__( 'Auto', 'dimas' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides {{CURRENT_ITEM}} .razzi-isolate-slides__title' => 'background-size: {{VALUE}}',
+					'{{WRAPPER}} .dimas-isolate-slides {{CURRENT_ITEM}} .dimas-isolate-slides__title' => 'background-size: {{VALUE}}',
 				],
 				'condition' => [
 					'banner_background_title[url]!' => '',
@@ -354,24 +354,24 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'background_position_title',
 			[
-				'label'     => esc_html__( 'Background Position', 'razzi' ),
+				'label'     => esc_html__( 'Background Position', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''              => esc_html__( 'Default', 'razzi' ),
-					'left top'      => esc_html__( 'Left Top', 'razzi' ),
-					'left center'   => esc_html__( 'Left Center', 'razzi' ),
-					'left bottom'   => esc_html__( 'Left Bottom', 'razzi' ),
-					'right top'     => esc_html__( 'Right Top', 'razzi' ),
-					'right center'  => esc_html__( 'Right Center', 'razzi' ),
-					'right bottom'  => esc_html__( 'Right Bottom', 'razzi' ),
-					'center top'    => esc_html__( 'Center Top', 'razzi' ),
-					'center center' => esc_html__( 'Center Center', 'razzi' ),
-					'center bottom' => esc_html__( 'Center Bottom', 'razzi' ),
-					'initial' 		=> esc_html__( 'Custom', 'razzi' ),
+					''              => esc_html__( 'Default', 'dimas' ),
+					'left top'      => esc_html__( 'Left Top', 'dimas' ),
+					'left center'   => esc_html__( 'Left Center', 'dimas' ),
+					'left bottom'   => esc_html__( 'Left Bottom', 'dimas' ),
+					'right top'     => esc_html__( 'Right Top', 'dimas' ),
+					'right center'  => esc_html__( 'Right Center', 'dimas' ),
+					'right bottom'  => esc_html__( 'Right Bottom', 'dimas' ),
+					'center top'    => esc_html__( 'Center Top', 'dimas' ),
+					'center center' => esc_html__( 'Center Center', 'dimas' ),
+					'center bottom' => esc_html__( 'Center Bottom', 'dimas' ),
+					'initial' 		=> esc_html__( 'Custom', 'dimas' ),
 				],
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides {{CURRENT_ITEM}} .razzi-isolate-slides__title' => 'background-position: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides {{CURRENT_ITEM}} .dimas-isolate-slides__title' => 'background-position: {{VALUE}};',
 				],
 				'condition' => [
 					'banner_background_title[url]!' => '',
@@ -383,13 +383,13 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_responsive_control(
 			'background_position_xy_title',
 			[
-				'label'              => esc_html__( 'Custom Background Position', 'razzi' ),
+				'label'              => esc_html__( 'Custom Background Position', 'dimas' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'allowed_dimensions' => [ 'top', 'left' ],
 				'size_units'         => [ 'px', '%' ],
 				'default'            => [ ],
 				'selectors'          => [
-					'{{WRAPPER}} .razzi-isolate-slides {{CURRENT_ITEM}} .razzi-isolate-slides__title' => 'background-position: {{LEFT}}{{UNIT}} {{TOP}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides {{CURRENT_ITEM}} .dimas-isolate-slides__title' => 'background-position: {{LEFT}}{{UNIT}} {{TOP}}{{UNIT}};',
 				],
 				'condition' => [
 					'background_position_title' => [ 'initial' ],
@@ -413,14 +413,14 @@ class Isolate_Slider extends Widget_Base {
 
 		$repeater->end_controls_tab();
 
-		$repeater->start_controls_tab( 'text_content', [ 'label' => esc_html__( 'Content', 'razzi' ) ] );
+		$repeater->start_controls_tab( 'text_content', [ 'label' => esc_html__( 'Content', 'dimas' ) ] );
 
 		$repeater->add_control(
 			'before_title',
 			[
-				'label'       => esc_html__( 'Before Title', 'razzi' ),
+				'label'       => esc_html__( 'Before Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'Before Title', 'razzi' ),
+				'default'     => esc_html__( 'Before Title', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -428,9 +428,9 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'Title', 'razzi' ),
+				'default'     => esc_html__( 'Title', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -438,9 +438,9 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_control(
 			'after_title',
 			[
-				'label'       => esc_html__( 'After Title', 'razzi' ),
+				'label'       => esc_html__( 'After Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'After Title', 'razzi' ),
+				'default'     => esc_html__( 'After Title', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -448,27 +448,27 @@ class Isolate_Slider extends Widget_Base {
 		$repeater->add_control(
 			'description',
 			[
-				'label'   => esc_html__( 'Description', 'razzi' ),
+				'label'   => esc_html__( 'Description', 'dimas' ),
 				'type'    => Controls_Manager::WYSIWYG,
-				'default' => esc_html__( 'I am slide content. Click edit button to change this text. ', 'razzi' ),
+				'default' => esc_html__( 'I am slide content. Click edit button to change this text. ', 'dimas' ),
 			]
 		);
 
 		$repeater->add_control(
 			'button_text',
 			[
-				'label'   => esc_html__( 'Button Text', 'razzi' ),
+				'label'   => esc_html__( 'Button Text', 'dimas' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Click Here', 'razzi' ),
+				'default' => esc_html__( 'Click Here', 'dimas' ),
 			]
 		);
 
 		$repeater->add_control(
 			'link',
 			[
-				'label'       => esc_html__( 'Button Link', 'razzi' ),
+				'label'       => esc_html__( 'Button Link', 'dimas' ),
 				'type'        => Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-link.com', 'razzi' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'dimas' ),
 			]
 		);
 
@@ -479,22 +479,22 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'slides',
 			[
-				'label'      => esc_html__( 'Slides', 'razzi' ),
+				'label'      => esc_html__( 'Slides', 'dimas' ),
 				'type'       => Controls_Manager::REPEATER,
 				'show_label' => true,
 				'fields'     => $repeater->get_controls(),
 				'default'    => [
 					[
-						'title'            => esc_html__( 'Slide 1 Heading', 'razzi' ),
-						'description'      => esc_html__( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'razzi' ),
+						'title'            => esc_html__( 'Slide 1 Heading', 'dimas' ),
+						'description'      => esc_html__( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'dimas' ),
 					],
 					[
-						'title'            => esc_html__( 'Slide 2 Heading', 'razzi' ),
-						'description'      => esc_html__( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'razzi' ),
+						'title'            => esc_html__( 'Slide 2 Heading', 'dimas' ),
+						'description'      => esc_html__( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'dimas' ),
 					],
 					[
-						'title'            => esc_html__( 'Slide 3 Heading', 'razzi' ),
-						'description'      => esc_html__( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'razzi' ),
+						'title'            => esc_html__( 'Slide 3 Heading', 'dimas' ),
+						'description'      => esc_html__( 'Click edit button to change this text. Lorem ipsum dolor sit amet consectetur adipiscing elit dolor', 'dimas' ),
 					],
 				],
 			]
@@ -503,7 +503,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'slides_height',
 			[
-				'label'      => esc_html__( 'Height', 'razzi' ),
+				'label'      => esc_html__( 'Height', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => [
 					'px' => [
@@ -520,7 +520,7 @@ class Isolate_Slider extends Widget_Base {
 				],
 				'size_units' => [ 'px', 'vh', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-isolate-slides .item-slider' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides .item-slider' => 'height: {{SIZE}}{{UNIT}};',
 				],
 				'separator'  => 'before',
 			]
@@ -529,10 +529,10 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'lazyload',
 			[
-				'label'     => esc_html__( 'Show Lazyload', 'razzi' ),
+				'label'     => esc_html__( 'Show Lazyload', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'razzi' ),
-				'label_on'  => __( 'On', 'razzi' ),
+				'label_off' => __( 'Off', 'dimas' ),
+				'label_on'  => __( 'On', 'dimas' ),
 				'return_value' => 'yes',
 				'default'   => '',
 				'frontend_available' => true,
@@ -546,7 +546,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_slider_options',
 			[
-				'label' => esc_html__( 'Slider Options', 'razzi' ),
+				'label' => esc_html__( 'Slider Options', 'dimas' ),
 				'type'  => Controls_Manager::SECTION,
 			]
 		);
@@ -554,13 +554,13 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'effect',
 			[
-				'label'   => esc_html__( 'Effect', 'razzi' ),
+				'label'   => esc_html__( 'Effect', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'fade'   	 => esc_html__( 'Fade', 'razzi' ),
-					'slide' 	 => esc_html__( 'Slide', 'razzi' ),
-					'cube' 	 	 => esc_html__( 'Cube', 'razzi' ),
-					'coverflow'	 => esc_html__( 'Coverflow', 'razzi' ),
+					'fade'   	 => esc_html__( 'Fade', 'dimas' ),
+					'slide' 	 => esc_html__( 'Slide', 'dimas' ),
+					'cube' 	 	 => esc_html__( 'Cube', 'dimas' ),
+					'coverflow'	 => esc_html__( 'Coverflow', 'dimas' ),
 				],
 				'default' => 'fade',
 				'toggle'  => false,
@@ -571,12 +571,12 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'navigation',
 			[
-				'label'     => esc_html__( 'Navigation', 'razzi' ),
+				'label'     => esc_html__( 'Navigation', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options' => [
-					'none'   => esc_html__( 'None', 'razzi' ),
-					'arrows' => esc_html__( 'Arrows', 'razzi' ),
-					'dots' 	 => esc_html__( 'Dots', 'razzi' ),
+					'none'   => esc_html__( 'None', 'dimas' ),
+					'arrows' => esc_html__( 'Arrows', 'dimas' ),
+					'dots' 	 => esc_html__( 'Dots', 'dimas' ),
 				],
 				'default' => 'dots',
 			]
@@ -585,10 +585,10 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			[
-				'label'   => esc_html__( 'Autoplay', 'razzi' ),
+				'label'   => esc_html__( 'Autoplay', 'dimas' ),
 				'type'    => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'razzi' ),
-				'label_off'    => __( 'No', 'razzi' ),
+				'label_on'     => __( 'Yes', 'dimas' ),
+				'label_off'    => __( 'No', 'dimas' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 				'frontend_available' => true,
@@ -598,10 +598,10 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'delay',
 			[
-				'label'     => esc_html__( 'Delay', 'razzi' ),
+				'label'     => esc_html__( 'Delay', 'dimas' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => 3000,
-				'description' => esc_html__('Delay between transitions (in ms). If this parameter is not specified, auto play will be disabled', 'razzi'),
+				'description' => esc_html__('Delay between transitions (in ms). If this parameter is not specified, auto play will be disabled', 'dimas'),
 				'conditions' => [
 					'terms' => [
 						[
@@ -617,7 +617,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'autoplay_speed',
 			[
-				'label'     => esc_html__( 'Autoplay Speed', 'razzi' ),
+				'label'     => esc_html__( 'Autoplay Speed', 'dimas' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => 1000,
 				'frontend_available' => true,
@@ -627,10 +627,10 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'infinite',
 			[
-				'label'   => esc_html__( 'Infinite Loop', 'razzi' ),
+				'label'   => esc_html__( 'Infinite Loop', 'dimas' ),
 				'type'    => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'razzi' ),
-				'label_off'    => __( 'No', 'razzi' ),
+				'label_on'     => __( 'Yes', 'dimas' ),
+				'label_off'    => __( 'No', 'dimas' ),
 				'return_value' => 'yes',
 				'default'      => '',
 				'frontend_available' => true,
@@ -651,7 +651,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_content',
 			[
-				'label' => esc_html__( 'Content', 'razzi' ),
+				'label' => esc_html__( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -659,26 +659,26 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'slides_vertical_position',
 			[
-				'label'        => esc_html__( 'Vertical Position', 'razzi' ),
+				'label'        => esc_html__( 'Vertical Position', 'dimas' ),
 				'type'         => Controls_Manager::CHOOSE,
 				'label_block'  => false,
 				'default'      => 'center',
 				'options'      => [
 					'flex-start'    => [
-						'title' => esc_html__( 'Top', 'razzi' ),
+						'title' => esc_html__( 'Top', 'dimas' ),
 						'icon'  => 'eicon-v-align-top',
 					],
 					'center' => [
-						'title' => esc_html__( 'Middle', 'razzi' ),
+						'title' => esc_html__( 'Middle', 'dimas' ),
 						'icon'  => 'eicon-v-align-middle',
 					],
 					'flex-end' => [
-						'title' => esc_html__( 'Bottom', 'razzi' ),
+						'title' => esc_html__( 'Bottom', 'dimas' ),
 						'icon'  => 'eicon-v-align-bottom',
 					],
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-isolate-slides__wrapper' => 'align-items: {{VALUE}}',
+					'{{WRAPPER}} .dimas-isolate-slides__wrapper' => 'align-items: {{VALUE}}',
 				],
 			]
 		);
@@ -686,26 +686,26 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'slides_text_align',
 			[
-				'label'       => esc_html__( 'Text Align', 'razzi' ),
+				'label'       => esc_html__( 'Text Align', 'dimas' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => [
 					'left'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'default'     => 'center',
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-isolate-slides__wrapper' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} .dimas-isolate-slides__wrapper' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
@@ -713,7 +713,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'content_width',
 			[
-				'label'     => esc_html__( 'Content Width', 'razzi' ),
+				'label'     => esc_html__( 'Content Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range' => [
@@ -728,8 +728,8 @@ class Isolate_Slider extends Widget_Base {
 				],
 				'default' 	=> [],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides__wrapper' => 'flex: 1 1 {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} .razzi-isolate-slides__image' => 'flex: 1 1 calc( 100% - {{SIZE}}{{UNIT}} )',
+					'{{WRAPPER}} .dimas-isolate-slides__wrapper' => 'flex: 1 1 {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-isolate-slides__image' => 'flex: 1 1 calc( 100% - {{SIZE}}{{UNIT}} )',
 				],
 			]
 		);
@@ -737,11 +737,11 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'content_bg_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides__wrapper:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides__wrapper:before' => 'background-color: {{VALUE}};',
 				],
 				'separator'  => 'before',
 			]
@@ -750,12 +750,12 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'slides_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-isolate-slides__content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-isolate-slides__wrapper:before' => 'top: {{TOP}}{{UNIT}}; left: {{LEFT}}{{UNIT}}; width: calc( 100% - ( {{RIGHT}}{{UNIT}} + {{LEFT}}{{UNIT}} ) ); height: calc( 100% - ( {{TOP}}{{UNIT}} + {{BOTTOM}}{{UNIT}} ) );',
+					'{{WRAPPER}} .dimas-isolate-slides__content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides__wrapper:before' => 'top: {{TOP}}{{UNIT}}; left: {{LEFT}}{{UNIT}}; width: calc( 100% - ( {{RIGHT}}{{UNIT}} + {{LEFT}}{{UNIT}} ) ); height: calc( 100% - ( {{TOP}}{{UNIT}} + {{BOTTOM}}{{UNIT}} ) );',
 				],
 			]
 		);
@@ -763,7 +763,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'content_before_title',
 			[
-				'label'     => esc_html__( 'Before Title', 'razzi' ),
+				'label'     => esc_html__( 'Before Title', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator'  => 'before',
 			]
@@ -772,10 +772,10 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'content_before_title_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'razzi' ),
+				'label'     => esc_html__( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides__before-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-isolate-slides__before-title' => 'color: {{VALUE}}',
 
 				],
 			]
@@ -785,14 +785,14 @@ class Isolate_Slider extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'content_before_title_typography',
-				'selector' => '{{WRAPPER}} .razzi-isolate-slides__before-title',
+				'selector' => '{{WRAPPER}} .dimas-isolate-slides__before-title',
 			]
 		);
 
 		$this->add_responsive_control(
 			'content_before_title_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -801,7 +801,7 @@ class Isolate_Slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides__before-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-isolate-slides__before-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -809,7 +809,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'content_title',
 			[
-				'label'     => esc_html__( 'Title', 'razzi' ),
+				'label'     => esc_html__( 'Title', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator'  => 'before',
 			]
@@ -818,10 +818,10 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'content_title_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'razzi' ),
+				'label'     => esc_html__( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides__title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-isolate-slides__title' => 'color: {{VALUE}}',
 
 				],
 			]
@@ -831,14 +831,14 @@ class Isolate_Slider extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'content_title_typography',
-				'selector' => '{{WRAPPER}} .razzi-isolate-slides__title',
+				'selector' => '{{WRAPPER}} .dimas-isolate-slides__title',
 			]
 		);
 
 		$this->add_responsive_control(
 			'content_title_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -847,7 +847,7 @@ class Isolate_Slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides__title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-isolate-slides__title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -855,7 +855,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'content_after_title',
 			[
-				'label'     => esc_html__( 'After Title', 'razzi' ),
+				'label'     => esc_html__( 'After Title', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator'  => 'before',
 			]
@@ -864,10 +864,10 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'content_after_title_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'razzi' ),
+				'label'     => esc_html__( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides__after-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-isolate-slides__after-title' => 'color: {{VALUE}}',
 
 				],
 			]
@@ -877,14 +877,14 @@ class Isolate_Slider extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'content_after_title_typography',
-				'selector' => '{{WRAPPER}} .razzi-isolate-slides__after-title',
+				'selector' => '{{WRAPPER}} .dimas-isolate-slides__after-title',
 			]
 		);
 
 		$this->add_responsive_control(
 			'content_after_title_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -893,7 +893,7 @@ class Isolate_Slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides__after-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-isolate-slides__after-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -901,7 +901,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'content_description',
 			[
-				'label'     => esc_html__( 'Description', 'razzi' ),
+				'label'     => esc_html__( 'Description', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator'  => 'before',
 			]
@@ -910,10 +910,10 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'content_description_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'razzi' ),
+				'label'     => esc_html__( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides__description' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-isolate-slides__description' => 'color: {{VALUE}}',
 
 				],
 			]
@@ -923,14 +923,14 @@ class Isolate_Slider extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'content_description_typography',
-				'selector' => '{{WRAPPER}} .razzi-isolate-slides__description',
+				'selector' => '{{WRAPPER}} .dimas-isolate-slides__description',
 			]
 		);
 
 		$this->add_control(
 			'content_buton',
 			[
-				'label'     => esc_html__( 'Button', 'razzi' ),
+				'label'     => esc_html__( 'Button', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator'  => 'before',
 			]
@@ -939,11 +939,11 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-isolate-slides__button .button-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides__button .button-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -952,17 +952,17 @@ class Isolate_Slider extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'btn_typography',
-				'selector' => '{{WRAPPER}} .razzi-isolate-slides__button .button-text',
+				'selector' => '{{WRAPPER}} .dimas-isolate-slides__button .button-text',
 			]
 		);
 
 		$this->add_control(
 			'btn_color',
 			[
-				'label'      => esc_html__( 'Color', 'razzi' ),
+				'label'      => esc_html__( 'Color', 'dimas' ),
 				'type'       => Controls_Manager::COLOR,
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-isolate-slides__button .button-text' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-isolate-slides__button .button-text' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -970,10 +970,10 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'btn_bgcolor',
 			[
-				'label'      => esc_html__( 'Background Color', 'razzi' ),
+				'label'      => esc_html__( 'Background Color', 'dimas' ),
 				'type'       => Controls_Manager::COLOR,
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-isolate-slides__button .button-text' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-isolate-slides__button .button-text' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -981,10 +981,10 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'border_style',
 			[
-				'label'        => __( 'Border', 'razzi' ),
+				'label'        => __( 'Border', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -993,18 +993,18 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'content_border_style',
 			[
-				'label'     => esc_html__( 'Border Style', 'razzi' ),
+				'label'     => esc_html__( 'Border Style', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'dotted' => esc_html__( 'Dotted', 'razzi' ),
-					'dashed' => esc_html__( 'Dashed', 'razzi' ),
-					'solid'  => esc_html__( 'Solid', 'razzi' ),
-					'none'   => esc_html__( 'None', 'razzi' ),
+					'dotted' => esc_html__( 'Dotted', 'dimas' ),
+					'dashed' => esc_html__( 'Dashed', 'dimas' ),
+					'solid'  => esc_html__( 'Solid', 'dimas' ),
+					'none'   => esc_html__( 'None', 'dimas' ),
 				],
 				'default'   => '',
 				'toggle'    => false,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides__button .button-text' => 'border-style: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides__button .button-text' => 'border-style: {{VALUE}};',
 				],
 			]
 		);
@@ -1012,7 +1012,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'content_border_width',
 			[
-				'label'     => __( 'Border Width', 'razzi' ),
+				'label'     => __( 'Border Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1022,7 +1022,7 @@ class Isolate_Slider extends Widget_Base {
 				],
 				'default'   => [ ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides__button .button-text' => 'border-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides__button .button-text' => 'border-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1030,11 +1030,11 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'content_border_color',
 			[
-				'label'     => __( 'Border Color', 'razzi' ),
+				'label'     => __( 'Border Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides__button .button-text' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides__button .button-text' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1050,7 +1050,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_arrows',
 			[
-				'label' => esc_html__( 'Slider Options', 'razzi' ),
+				'label' => esc_html__( 'Slider Options', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -1059,7 +1059,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'arrow_style_heading',
 			[
-				'label' => esc_html__( 'Arrows', 'razzi' ),
+				'label' => esc_html__( 'Arrows', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1068,10 +1068,10 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'arrows_style',
 			[
-				'label'        => __( 'Options', 'razzi' ),
+				'label'        => __( 'Options', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -1081,7 +1081,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1090,7 +1090,7 @@ class Isolate_Slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1098,7 +1098,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_width',
 			[
-				'label'     => __( 'Width', 'razzi' ),
+				'label'     => __( 'Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1107,7 +1107,7 @@ class Isolate_Slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1115,7 +1115,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_height',
 			[
-				'label'     => __( 'Height', 'razzi' ),
+				'label'     => __( 'Height', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1124,7 +1124,7 @@ class Isolate_Slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button' => 'height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button' => 'height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1132,7 +1132,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_spacing',
 			[
-				'label'      => esc_html__( 'Horizontal Position', 'razzi' ),
+				'label'      => esc_html__( 'Horizontal Position', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => [
 					'px' => [
@@ -1142,8 +1142,8 @@ class Isolate_Slider extends Widget_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1151,7 +1151,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_spacing_vertical',
 			[
-				'label'      => esc_html__( 'Vertical Position', 'razzi' ),
+				'label'      => esc_html__( 'Vertical Position', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => [
 					'px' => [
@@ -1161,8 +1161,8 @@ class Isolate_Slider extends Widget_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button-prev' => 'top: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button-next' => 'top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button-prev' => 'top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button-next' => 'top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1171,16 +1171,16 @@ class Isolate_Slider extends Widget_Base {
 
 		$this->start_controls_tabs( 'sliders_normal_settings' );
 
-		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1188,27 +1188,27 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_hover_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1216,11 +1216,11 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_hover_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1230,10 +1230,10 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_border',
 			[
-				'label'        => __( 'Border', 'razzi' ),
+				'label'        => __( 'Border', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -1242,18 +1242,18 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'arrow_border_style',
 			[
-				'label'     => esc_html__( 'Border Style', 'razzi' ),
+				'label'     => esc_html__( 'Border Style', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'dotted' => esc_html__( 'Dotted', 'razzi' ),
-					'dashed' => esc_html__( 'Dashed', 'razzi' ),
-					'solid'  => esc_html__( 'Solid', 'razzi' ),
-					'none'   => esc_html__( 'None', 'razzi' ),
+					'dotted' => esc_html__( 'Dotted', 'dimas' ),
+					'dashed' => esc_html__( 'Dashed', 'dimas' ),
+					'solid'  => esc_html__( 'Solid', 'dimas' ),
+					'none'   => esc_html__( 'None', 'dimas' ),
 				],
 				'default'   => '',
 				'toggle'    => false,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button' => 'border-style: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button' => 'border-style: {{VALUE}};',
 				],
 			]
 		);
@@ -1261,7 +1261,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'arrow_border_width',
 			[
-				'label'     => __( 'Border Width', 'razzi' ),
+				'label'     => __( 'Border Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1271,7 +1271,7 @@ class Isolate_Slider extends Widget_Base {
 				],
 				'default'   => [ ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button' => 'border-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button' => 'border-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1279,11 +1279,11 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'arrow_content_border_color',
 			[
-				'label'     => __( 'Border Color', 'razzi' ),
+				'label'     => __( 'Border Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .rz-swiper-button' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides .rz-swiper-button' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1296,7 +1296,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'dots_style_heading',
 			[
-				'label' => esc_html__( 'Dots', 'razzi' ),
+				'label' => esc_html__( 'Dots', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1305,10 +1305,10 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_control(
 			'dots_style',
 			[
-				'label'        => __( 'Options', 'razzi' ),
+				'label'        => __( 'Options', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -1318,11 +1318,11 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_position',
 			[
-				'label'     => esc_html__( 'Position', 'razzi' ),
+				'label'     => esc_html__( 'Position', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'right' => esc_html__( 'Right', 'razzi' ),
-					'bottom' => esc_html__( 'Bottom', 'razzi' ),
+					'right' => esc_html__( 'Right', 'dimas' ),
+					'bottom' => esc_html__( 'Bottom', 'dimas' ),
 				],
 				'default'   => 'right',
 				'toggle'    => false,
@@ -1332,7 +1332,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_gap',
 			[
-				'label'     => __( 'Gap', 'razzi' ),
+				'label'     => __( 'Gap', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1341,7 +1341,7 @@ class Isolate_Slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .swiper-pagination-bullet' => 'margin: {{SIZE}}{{UNIT}} 0',
+					'{{WRAPPER}} .dimas-isolate-slides .swiper-pagination-bullet' => 'margin: {{SIZE}}{{UNIT}} 0',
 				],
 			]
 		);
@@ -1349,7 +1349,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1358,7 +1358,7 @@ class Isolate_Slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .swiper-pagination-bullet:before' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-isolate-slides .swiper-pagination-bullet:before' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1366,7 +1366,7 @@ class Isolate_Slider extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_offset_ver',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1375,12 +1375,12 @@ class Isolate_Slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides.dots-position-right .swiper-pagination,
-					{{WRAPPER}} .razzi-isolate-slides.dots-position-tablet-right .swiper-pagination,
-					{{WRAPPER}} .razzi-isolate-slides.dots-position-mobile-right .swiper-pagination' => 'right: {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} .razzi-isolate-slides.dots-position-bottom .swiper-pagination,
-					{{WRAPPER}} .razzi-isolate-slides.dots-position-tablet-bottom .swiper-pagination,
-					{{WRAPPER}} .razzi-isolate-slides.dots-position-mobile-bottom .swiper-pagination' => 'bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-isolate-slides.dots-position-right .swiper-pagination,
+					{{WRAPPER}} .dimas-isolate-slides.dots-position-tablet-right .swiper-pagination,
+					{{WRAPPER}} .dimas-isolate-slides.dots-position-mobile-right .swiper-pagination' => 'right: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-isolate-slides.dots-position-bottom .swiper-pagination,
+					{{WRAPPER}} .dimas-isolate-slides.dots-position-tablet-bottom .swiper-pagination,
+					{{WRAPPER}} .dimas-isolate-slides.dots-position-mobile-bottom .swiper-pagination' => 'bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -1389,32 +1389,32 @@ class Isolate_Slider extends Widget_Base {
 
 		$this->start_controls_tabs( 'sliders_dots_normal_settings' );
 
-		$this->start_controls_tab( 'sliders_dots_normal', [ 'label' => esc_html__( 'Normal', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_dots_normal', [ 'label' => esc_html__( 'Normal', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_dots_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'sliders_dots_active', [ 'label' => esc_html__( 'Active', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_dots_active', [ 'label' => esc_html__( 'Active', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_dots_ac_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-isolate-slides .swiper-pagination-bullet-active:before, {{WRAPPER}} .razzi-isolate-slides .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-isolate-slides .swiper-pagination-bullet-active:before, {{WRAPPER}} .dimas-isolate-slides .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1450,9 +1450,9 @@ class Isolate_Slider extends Widget_Base {
 		$dots_mobile 	= empty( $settings['sliders_dots_position_mobile'] ) ? $dots_position : $settings['sliders_dots_position_mobile'];
 
 		$classes = [
-			'razzi-isolate-slides',
-			'razzi-swiper-carousel-elementor',
-			'razzi-swiper-slider-elementor',
+			'dimas-isolate-slides',
+			'dimas-swiper-carousel-elementor',
+			'dimas-swiper-slider-elementor',
 			'navigation-' . $nav,
 			'navigation-tablet-' . $nav_tablet,
 			'navigation-mobile-' . $nav_mobile,
@@ -1467,34 +1467,34 @@ class Isolate_Slider extends Widget_Base {
 		foreach ( $settings['slides'] as $slide ) {
 			$slide_html       = '';
 
-			$slide_html .= '<div class="razzi-isolate-slides__wrapper">';
-			$slide_html .= '<div class="razzi-isolate-slides__content">';
+			$slide_html .= '<div class="dimas-isolate-slides__wrapper">';
+			$slide_html .= '<div class="dimas-isolate-slides__content">';
 
 			if ( $slide['before_title'] ) {
-				$slide_html .= '<div class="razzi-isolate-slides__before-title">' . $slide['before_title'] . '</div>';
+				$slide_html .= '<div class="dimas-isolate-slides__before-title">' . $slide['before_title'] . '</div>';
 			}
 
 			if ( $slide['title'] ) {
 				$img_active = $slide['banner_background_title']['url'] != '' ? 'has-background' : '';
-				$slide_html .= '<div class="razzi-isolate-slides__title '. esc_attr( $img_active ) .'">' . $slide['title'] . '</div>';
+				$slide_html .= '<div class="dimas-isolate-slides__title '. esc_attr( $img_active ) .'">' . $slide['title'] . '</div>';
 			}
 
 			if ( $slide['after_title'] ) {
-				$slide_html .= '<div class="razzi-isolate-slides__after-title">' . $slide['after_title'] . '</div>';
+				$slide_html .= '<div class="dimas-isolate-slides__after-title">' . $slide['after_title'] . '</div>';
 			}
 
 			if ( $slide['description'] ) {
-				$slide_html .= '<div class="razzi-isolate-slides__description">' . $slide['description'] . '</div>';
+				$slide_html .= '<div class="dimas-isolate-slides__description">' . $slide['description'] . '</div>';
 			}
 
 			// Button
-			$button_text = $slide['button_text'] ? sprintf('<span class="button-text razzi-button">%s %s</span>', $slide['button_text'], \Dimas\Addons\Helper::get_svg('arrow-right', 'razzi-icon') ) : '';
+			$button_text = $slide['button_text'] ? sprintf('<span class="button-text dimas-button">%s %s</span>', $slide['button_text'], \Dimas\Addons\Helper::get_svg('arrow-right', 'dimas-icon') ) : '';
 
 			$key_btn = 'btn_' . $slide_count;
 
 			$button_text = $slide['link']['url'] ? Helper::control_url( $key_btn, $slide['link'], $button_text, ['class' => 'button-link'] ) : $button_text;
 
-			$slide_html .= '<div class="razzi-isolate-slides__button">';
+			$slide_html .= '<div class="dimas-isolate-slides__button">';
 			if ( $slide['button_text'] ) {
 				$slide_html .= $button_text;
 			}
@@ -1505,7 +1505,7 @@ class Isolate_Slider extends Widget_Base {
 			$slide_html .= '</div>';
 
 			if ( $slide['banner_background_img'] ) {
-				$slide_html .= '<div class="razzi-isolate-slides__image"></div>';
+				$slide_html .= '<div class="dimas-isolate-slides__image"></div>';
 			}
 
 			$slide_html = '<div class="slick-slide-inner">' . $slide_html . '</div>';
@@ -1537,8 +1537,8 @@ class Isolate_Slider extends Widget_Base {
 
 		echo sprintf(
 			'<div %s>
-				<div class="razzi-isolate-slides__content-wrapper swiper-container">
-					<div class="razzi-isolate-slides__inner swiper-wrapper">%s</div>
+				<div class="dimas-isolate-slides__content-wrapper swiper-container">
+					<div class="dimas-isolate-slides__inner swiper-wrapper">%s</div>
 				</div>
 				%s
 			</div>',

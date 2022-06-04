@@ -4,14 +4,14 @@
         <label>
             <input type="checkbox" name="{{ taMegaMenu.getFieldName( 'mega', itemId ) }}" value="1" {{
                    data.megaData.mega ? 'checked="checked"' : '' }} >
-			<?php esc_html_e( 'Mega Menu', 'razzi' ) ?>
+			<?php esc_html_e( 'Mega Menu', 'dimas' ) ?>
         </label>
     </p>
 
     <p class="rz-tamm-panel-box-large mega-setting">
 		<span class="setting-field setting-field-custom">
 			<label>
-				<?php esc_html_e( 'Mega Menu Width', 'razzi' ) ?><br>
+				<?php esc_html_e( 'Mega Menu Width', 'dimas' ) ?><br>
 				<input type="text" name="{{ taMegaMenu.getFieldName( 'mega_width', itemId ) }}" placeholder="1170px"
                        value="{{ data.megaData.mega_width }}">
 			</label>
@@ -20,19 +20,19 @@
     <p class="rz-tamm-panel-box-large mega-setting">
 		<span class="setting-field setting-field-custom">
 			<label>
-				<?php esc_html_e( 'Mega Menu Align(use horizontal menu only)', 'razzi' ) ?><br>
+				<?php esc_html_e( 'Mega Menu Align(use horizontal menu only)', 'dimas' ) ?><br>
 				<select name="{{ taMegaMenu.getFieldName( 'mega_align', itemId ) }}">
                     <option value="center" {{
                     'center' == data.megaData.mega_align ? 'selected="selected"' : ''
-                    }}><?php esc_html_e( 'Center', 'razzi' ) ?>
+                    }}><?php esc_html_e( 'Center', 'dimas' ) ?>
                     </option>
                     <option value="left"
                             {{ 'left' == data.megaData.mega_align ? 'selected="selected"' : ''
-                    }}><?php esc_html_e( 'Left', 'razzi' ) ?>
+                    }}><?php esc_html_e( 'Left', 'dimas' ) ?>
                     </option>
                     <option value="right"
                             {{ 'right' == data.megaData.mega_align ? 'selected="selected"' : ''
-                   }}><?php esc_html_e( 'Right', 'razzi' ) ?>
+                   }}><?php esc_html_e( 'Right', 'dimas' ) ?>
                     </option>
                 </select>
 			</label>

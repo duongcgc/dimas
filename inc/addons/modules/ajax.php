@@ -46,7 +46,7 @@ class Ajax {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'wp_ajax_razzi_json_search_tags', array( $this, 'json_search_tags' ) );
+		add_action( 'wp_ajax_dimas_json_search_tags', array( $this, 'json_search_tags' ) );
 	}
 
 	/**
@@ -84,6 +84,6 @@ class Ajax {
 			}
 		}
 
-		wp_send_json( apply_filters( 'razzi_json_search_found_tags', $found_tags ) );
+		wp_send_json( apply_filters( 'dimas_json_search_found_tags', $found_tags ) );
 	}
 }

@@ -60,13 +60,13 @@ class Edit {
 			return;
 		}
 
-		wp_register_style( 'razzi-mega-menu', DIMAS_ADDONS_URL . 'modules/mega-menu/assets/mega-menu.css', array(
+		wp_register_style( 'dimas-mega-menu', DIMAS_ADDONS_URL . 'modules/mega-menu/assets/mega-menu.css', array(
 			'media-views',
 			'wp-color-picker',
 		), '20160530' );
-		wp_enqueue_style( 'razzi-mega-menu' );
+		wp_enqueue_style( 'dimas-mega-menu' );
 
-		wp_register_script( 'razzi-mega-menu', DIMAS_ADDONS_URL . 'modules/mega-menu/assets/mega-menu.js', array(
+		wp_register_script( 'dimas-mega-menu', DIMAS_ADDONS_URL . 'modules/mega-menu/assets/mega-menu.js', array(
 			'jquery',
 			'jquery-ui-resizable',
 			'wp-util',
@@ -75,7 +75,7 @@ class Edit {
 			'wp-color-picker'
 		), '20160530', true );
 		wp_enqueue_media();
-		wp_enqueue_script( 'razzi-mega-menu' );
+		wp_enqueue_script( 'dimas-mega-menu' );
 	}
 
 	/**
@@ -91,7 +91,7 @@ class Edit {
             <div class="tamm-modal media-modal wp-core-ui">
                 <button type="button" class="button-link media-modal-close tamm-modal-close">
                     <span class="media-modal-icon"><span
-                                class="screen-reader-text"><?php esc_html_e( 'Close', 'razzi' ) ?></span></span>
+                                class="screen-reader-text"><?php esc_html_e( 'Close', 'dimas' ) ?></span></span>
                 </button>
                 <div class="media-modal-content">
                     <div class="tamm-frame-menu media-frame-menu">
@@ -107,9 +107,9 @@ class Edit {
                         <div class="tamm-toolbar media-toolbar">
                             <div class="tamm-toolbar-primary media-toolbar-primary search-form">
                                 <button type="button"
-                                        class="button tamm-button tamm-button-save media-button button-primary button-large"><?php esc_html_e( 'Save Changes', 'razzi' ) ?></button>
+                                        class="button tamm-button tamm-button-save media-button button-primary button-large"><?php esc_html_e( 'Save Changes', 'dimas' ) ?></button>
                                 <button type="button"
-                                        class="button tamm-button tamm-button-cancel media-button button-secondary button-large"><?php esc_html_e( 'Cancel', 'razzi' ) ?></button>
+                                        class="button tamm-button tamm-button-cancel media-button button-secondary button-large"><?php esc_html_e( 'Cancel', 'dimas' ) ?></button>
                                 <span class="spinner"></span>
                             </div>
                         </div>
@@ -202,7 +202,7 @@ class Edit {
 			$i ++;
 		}
 
-		do_action( 'razzi_save_menu_item_data', $data );
+		do_action( 'dimas_save_menu_item_data', $data );
 
 		wp_send_json_success( $data );
 	}

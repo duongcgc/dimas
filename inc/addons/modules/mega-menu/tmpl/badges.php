@@ -3,20 +3,20 @@
 	<p class="rz-tamm-panel-box-large mega-setting">
 		<span class="setting-field setting-field-custom">
 			<label>
-				<?php esc_html_e( 'Text', 'razzi' ) ?><br>
+				<?php esc_html_e( 'Text', 'dimas' ) ?><br>
 				<input type="text" name="{{ taMegaMenu.getFieldName( 'badges_text', itemId ) }}"
                        value="{{ data.megaData.badges_text }}">
 			</label>
 		</span>
     </p>
 	<p class="background-color">
-        <label><?php esc_html_e( 'Background Color', 'razzi' ) ?></label><br>
+        <label><?php esc_html_e( 'Background Color', 'dimas' ) ?></label><br>
         <input type="text" class="background-color-picker"
                name="{{ taMegaMenu.getFieldName( 'badges_bg_color', itemId ) }}"
                value="{{ data.megaData.badges_bg_color }}">
     </p>
 	<p class="color">
-        <label><?php esc_html_e( 'Color', 'razzi' ) ?></label><br>
+        <label><?php esc_html_e( 'Color', 'dimas' ) ?></label><br>
         <input type="text" class="background-color-picker"
                name="{{ taMegaMenu.getFieldName( 'badges_color', itemId ) }}"
                value="{{ data.megaData.badges_color }}">

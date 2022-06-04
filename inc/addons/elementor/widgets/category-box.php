@@ -23,7 +23,7 @@ class Category_Box extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-category-box';
+		return 'dimas-category-box';
 	}
 
 	/**
@@ -32,7 +32,7 @@ class Category_Box extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Category Box', 'razzi' );
+		return esc_html__( 'Dimas - Category Box', 'dimas' );
 	}
 
 	/**
@@ -50,12 +50,12 @@ class Category_Box extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-elementor'
+			'dimas-elementor'
 		];
 	}
 
@@ -74,13 +74,13 @@ class Category_Box extends Widget_Base {
 	protected function section_content() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Category Box', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Category Box', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'image',
 			[
-				'label'   => esc_html__( 'Image', 'razzi' ),
+				'label'   => esc_html__( 'Image', 'dimas' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => 'https://via.placeholder.com/585x650/f5f5f5?text=Image',
@@ -99,7 +99,7 @@ class Category_Box extends Widget_Base {
 		$this->add_control(
 			'content_heading',
 			[
-				'label' => esc_html__( 'Content', 'razzi' ),
+				'label' => esc_html__( 'Content', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -108,18 +108,18 @@ class Category_Box extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'This is title', 'razzi' ),
+				'default'     => esc_html__( 'This is title', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'link', [
-				'label'         => esc_html__( 'Link', 'razzi' ),
+				'label'         => esc_html__( 'Link', 'dimas' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => esc_html__( 'https://your-link.com', 'razzi' ),
-				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'razzi' ),
+				'placeholder'   => esc_html__( 'https://your-link.com', 'dimas' ),
+				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'dimas' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '#',
@@ -134,18 +134,18 @@ class Category_Box extends Widget_Base {
 		$repeater->add_control(
 			'sub_cat',
 			[
-				'label'       => esc_html__( 'Category Name', 'razzi' ),
+				'label'       => esc_html__( 'Category Name', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'This is cat name', 'razzi' ),
+				'default'     => esc_html__( 'This is cat name', 'dimas' ),
 			]
 		);
 
 		$repeater->add_control(
 			'sub_link', [
-				'label'         => esc_html__( 'Link', 'razzi' ),
+				'label'         => esc_html__( 'Link', 'dimas' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => esc_html__( 'https://your-link.com', 'razzi' ),
-				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'razzi' ),
+				'placeholder'   => esc_html__( 'https://your-link.com', 'dimas' ),
+				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'dimas' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '#',
@@ -158,21 +158,21 @@ class Category_Box extends Widget_Base {
 		$this->add_control(
 			'sub_categories',
 			[
-				'label'         => esc_html__( 'Sub Categories', 'razzi' ),
+				'label'         => esc_html__( 'Sub Categories', 'dimas' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'default'       => [
 					[
-						'sub_cat' => esc_html__( 'This is cat name 1', 'razzi' ),
+						'sub_cat' => esc_html__( 'This is cat name 1', 'dimas' ),
 
 					],[
-						'sub_cat' => esc_html__( 'This is cat name 2', 'razzi' ),
+						'sub_cat' => esc_html__( 'This is cat name 2', 'dimas' ),
 
 					],[
-						'sub_cat' => esc_html__( 'This is cat name 3', 'razzi' ),
+						'sub_cat' => esc_html__( 'This is cat name 3', 'dimas' ),
 
 					],[
-						'sub_cat' => esc_html__( 'This is cat name 4', 'razzi' ),
+						'sub_cat' => esc_html__( 'This is cat name 4', 'dimas' ),
 
 					],
 				],
@@ -199,7 +199,7 @@ class Category_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_category',
 			[
-				'label' => __( 'Category Box', 'razzi' ),
+				'label' => __( 'Category Box', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -208,20 +208,20 @@ class Category_Box extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'content_box_shadow',
-				'label' => __( 'Box Shadow', 'razzi' ),
-				'selector' => '{{WRAPPER}} .razzi-category-box',
+				'label' => __( 'Box Shadow', 'dimas' ),
+				'selector' => '{{WRAPPER}} .dimas-category-box',
 			]
 		);
 
 		$this->add_control(
 			'content_bg_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}}.razzi-position-next-image .razzi-category-box' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}}.razzi-position-under-image .razzi-category-box__content' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}}.dimas-position-next-image .dimas-category-box' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}}.dimas-position-under-image .dimas-category-box__content' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -233,7 +233,7 @@ class Category_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_image',
 			[
-				'label' => __( 'Image', 'razzi' ),
+				'label' => __( 'Image', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -241,7 +241,7 @@ class Category_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'image_max_width',
 			[
-				'label'     => esc_html__( 'Max Width', 'razzi' ),
+				'label'     => esc_html__( 'Max Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'     => [
@@ -255,7 +255,7 @@ class Category_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}}.razzi-position-next-image .razzi-category-box__img' => 'max-width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}}.dimas-position-next-image .dimas-category-box__img' => 'max-width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -263,7 +263,7 @@ class Category_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'image_spacing_bottom',
 			[
-				'label'     => esc_html__( 'Spacing Bottom', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Bottom', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'     => [
@@ -273,7 +273,7 @@ class Category_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}}.razzi-position-under-image .razzi-category-box__img' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}}.dimas-position-under-image .dimas-category-box__img' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 				'condition' => [
 					'content_box_position' => 'under-image',
@@ -289,7 +289,7 @@ class Category_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -297,14 +297,14 @@ class Category_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_box_position',
 			[
-				'label' => __( 'Content Position', 'razzi' ),
+				'label' => __( 'Content Position', 'dimas' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'next-image',
 				'options' => [
-					'under-image' 	=> __( 'Under Image', 'razzi' ),
-					'next-image' 	=> __( 'Next To Image', 'razzi' ),
+					'under-image' 	=> __( 'Under Image', 'dimas' ),
+					'next-image' 	=> __( 'Next To Image', 'dimas' ),
 				],
-				'prefix_class' 	=> 'razzi-position%s-',
+				'prefix_class' 	=> 'dimas-position%s-',
 				'device_args' => [
 					Controls_Stack::RESPONSIVE_TABLET => [
 						'default' => 'next-image',
@@ -319,25 +319,25 @@ class Category_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_box_align',
 			[
-				'label'   => esc_html__( 'Alignment', 'razzi' ),
+				'label'   => esc_html__( 'Alignment', 'dimas' ),
 				'type'    => Controls_Manager::CHOOSE,
 				'default' => '',
 				'options' => [
 					'flex-start'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'flex-end'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-category-box' => 'align-items: {{VALUE}};',
+					'{{WRAPPER}} .dimas-category-box' => 'align-items: {{VALUE}};',
 				],
 			]
 		);
@@ -345,12 +345,12 @@ class Category_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-category-box__content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-category-box__content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' 	=> 'before',
 			]
@@ -364,14 +364,14 @@ class Category_Box extends Widget_Base {
 		$this->start_controls_tab(
 			'content_style_title',
 			[
-				'label' => __( 'Title', 'razzi' ),
+				'label' => __( 'Title', 'dimas' ),
 			]
 		);
 
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label'     => esc_html__( 'Spacing Bottom', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Bottom', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -380,7 +380,7 @@ class Category_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-category-box__content .category-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-category-box__content .category-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -389,18 +389,18 @@ class Category_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-category-box__content .category-title',
+				'selector' => '{{WRAPPER}} .dimas-category-box__content .category-title',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-category-box__content .category-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-category-box__content .category-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -411,7 +411,7 @@ class Category_Box extends Widget_Base {
 		$this->start_controls_tab(
 			'content_subcat',
 			[
-				'label' => __( 'Sub Cat', 'razzi' ),
+				'label' => __( 'Sub Cat', 'dimas' ),
 			]
 		);
 
@@ -419,18 +419,18 @@ class Category_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'subcat_typography',
-				'selector' => '{{WRAPPER}} .razzi-category-box__content .sub-cat',
+				'selector' => '{{WRAPPER}} .dimas-category-box__content .sub-cat',
 			]
 		);
 
 		$this->add_control(
 			'subcat_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-category-box__content .sub-cat' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-category-box__content .sub-cat' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -438,7 +438,7 @@ class Category_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'subcat_spacing',
 			[
-				'label'     => esc_html__( 'Spacing Bottom', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Bottom', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -447,7 +447,7 @@ class Category_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-category-box__content .sub-cat:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-category-box__content .sub-cat:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -469,7 +469,7 @@ class Category_Box extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-category-box',
+			'dimas-category-box',
 		];
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );
@@ -483,13 +483,13 @@ class Category_Box extends Widget_Base {
 			$settings['title'] = $settings['title'] ? '<a ' . $this->get_render_attribute_string( 'link' ) . '>' . $settings['title'] . '</a>' : '';
 		}
 
-		$image = $image ? sprintf('<div class="razzi-category-box__img">%s</div>',$image) : '';
+		$image = $image ? sprintf('<div class="dimas-category-box__img">%s</div>',$image) : '';
 		$title = $settings['title'] ? sprintf('<h4 class="category-title">%s</h4>',$settings['title']) : '';
 
 		$els = $settings['sub_categories'];
 		$output =  array();
 
-		$icon = \Dimas\Addons\Helper::get_svg('arrow-right', 'razzi-icon');
+		$icon = \Dimas\Addons\Helper::get_svg('arrow-right', 'dimas-icon');
 
 		if ( ! empty ( $els ) ) {
 			$output[] = '<ul class ="sub-cats">';
@@ -506,7 +506,7 @@ class Category_Box extends Widget_Base {
 			$output[] = '</ul>';
 		}
 
-	 	$content = sprintf('<div class="razzi-category-box__content">%s %s</div>', $title, implode('', $output));
+	 	$content = sprintf('<div class="dimas-category-box__content">%s %s</div>', $title, implode('', $output));
 
 		echo sprintf(
 			'<div %s> %s %s</div>',

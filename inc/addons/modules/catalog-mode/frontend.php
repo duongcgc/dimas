@@ -79,21 +79,21 @@ class Frontend {
 	 */
 	public function hide_price() {
 		// Hide price in the product loop
-		if ( get_option( 'razzi_product_loop_hide_price' ) == 'yes' ) {
+		if ( get_option( 'dimas_product_loop_hide_price' ) == 'yes' ) {
 			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
-			add_filter( 'razzi_product_loop_show_price', '__return_false' );
+			add_filter( 'dimas_product_loop_show_price', '__return_false' );
 		}
 
 		// Hide price in the product page && quick view
-		if ( get_option( 'razzi_product_hide_price' ) == 'yes' ) {
+		if ( get_option( 'dimas_product_hide_price' ) == 'yes' ) {
 			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-			remove_action( 'razzi_woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-			add_filter( 'razzi_product_show_price', '__return_false' );
+			remove_action( 'dimas_woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+			add_filter( 'dimas_product_show_price', '__return_false' );
 		}
 
 		// Hide price in the wishlist page
-		if ( get_option( 'razzi_wishlist_hide_price' ) ) {
-			add_filter( 'yith_wcwl_wishlist_params', array( $this, 'razzi_wishlist_hice_price' ) );
+		if ( get_option( 'dimas_wishlist_hide_price' ) ) {
+			add_filter( 'yith_wcwl_wishlist_params', array( $this, 'dimas_wishlist_hice_price' ) );
 		}
 	}
 
@@ -104,7 +104,7 @@ class Frontend {
 	 *
 	 * @return array
 	 */
-	public function razzi_wishlist_hice_price( $params ) {
+	public function dimas_wishlist_hice_price( $params ) {
 		if ( isset( $params['show_price'] ) ) {
 			$params['show_price'] = false;
 		}
@@ -121,13 +121,13 @@ class Frontend {
 	 */
 	public function hide_add_to_cart() {
 		// Hide Add to Cart in the product loop
-		if ( get_option( 'razzi_product_loop_hide_atc' ) == 'yes' ) {
-			add_filter( 'razzi_get_product_loop_featured_icons', array( $this, 'product_loop_featured_icons' ) );
-			add_filter( 'razzi_product_loop_show_atc', '__return_false' );
+		if ( get_option( 'dimas_product_loop_hide_atc' ) == 'yes' ) {
+			add_filter( 'dimas_get_product_loop_featured_icons', array( $this, 'product_loop_featured_icons' ) );
+			add_filter( 'dimas_product_loop_show_atc', '__return_false' );
 		}
 
 		// Hide Add to Cart in the product page & quick view
-		if ( get_option( 'razzi_product_hide_atc' ) == 'yes' ) {
+		if ( get_option( 'dimas_product_hide_atc' ) == 'yes' ) {
 			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 			remove_action( 'woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 30 );
 			remove_action( 'woocommerce_grouped_add_to_cart', 'woocommerce_grouped_add_to_cart', 30 );
@@ -135,12 +135,12 @@ class Frontend {
 			remove_action( 'woocommerce_external_add_to_cart', 'woocommerce_external_add_to_cart', 30 );
 
 			add_action( 'woocommerce_single_product_summary', array( $this, 'add_to_wishlist_button' ), 30 );
-			add_action( 'razzi_woocommerce_product_quickview_summary', array( $this, 'add_to_wishlist_button' ), 80 );
+			add_action( 'dimas_woocommerce_product_quickview_summary', array( $this, 'add_to_wishlist_button' ), 80 );
 
 		}
 
 		// Hide add to cart in the wishlist page
-		if ( get_option( 'razzi_wishlist_hide_atc' ) ) {
+		if ( get_option( 'dimas_wishlist_hide_atc' ) ) {
 			add_filter( 'yith_wcwl_table_product_show_add_to_cart', '__return_false' );
 		}
 	}
@@ -157,7 +157,7 @@ class Frontend {
 			return;
 		}
 
-		echo '<div class="rz-wishlist-button razzi-button button-outline show-wishlist-title">';
+		echo '<div class="rz-wishlist-button dimas-button button-outline show-wishlist-title">';
 		echo do_shortcode( '[yith_wcwl_add_to_wishlist]' );
 		echo '</div>';
 	}
@@ -189,7 +189,7 @@ class Frontend {
 
 		wp_reset_postdata();
 
-		if ( ( $cart && get_option( 'razzi_hide_cart_page' ) == 'yes' ) || ( $checkout && get_option( 'razzi_hide_checkout_page' ) == 'yes' ) ) {
+		if ( ( $cart && get_option( 'dimas_hide_cart_page' ) == 'yes' ) || ( $checkout && get_option( 'dimas_hide_checkout_page' ) == 'yes' ) ) {
 			wp_safe_redirect( home_url() );
 			exit;
 		}
@@ -203,8 +203,8 @@ class Frontend {
 	 * @return array
 	 */
 	public function remove_woo_page_links( $pages ) {
-		$cart     = get_option( 'razzi_hide_cart_page' ) == 'yes' ? wc_get_page_id( 'cart' ) : '';
-		$checkout = get_option( 'razzi_hide_checkout_page' ) == 'yes' ? wc_get_page_id( 'checkout' ) : '';
+		$cart     = get_option( 'dimas_hide_cart_page' ) == 'yes' ? wc_get_page_id( 'cart' ) : '';
+		$checkout = get_option( 'dimas_hide_checkout_page' ) == 'yes' ? wc_get_page_id( 'checkout' ) : '';
 
 		$excluded_pages = array(
 			$cart,
@@ -237,12 +237,12 @@ class Frontend {
 	 */
 	public function remove_woo_action_buttons() {
 
-		if ( get_option( 'razzi_hide_cart_page' ) == 'yes' ) {
-			add_filter( 'razzi_mini_cart_button_view_cart', '__return_false' );
+		if ( get_option( 'dimas_hide_cart_page' ) == 'yes' ) {
+			add_filter( 'dimas_mini_cart_button_view_cart', '__return_false' );
 		}
 
-		if ( get_option( 'razzi_hide_checkout_page' ) == 'yes' ) {
-			add_filter( 'razzi_mini_cart_button_proceed_to_checkout', '__return_false' );
+		if ( get_option( 'dimas_hide_checkout_page' ) == 'yes' ) {
+			add_filter( 'dimas_mini_cart_button_proceed_to_checkout', '__return_false' );
 		}
 	}
 

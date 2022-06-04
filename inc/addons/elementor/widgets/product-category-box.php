@@ -24,7 +24,7 @@ class Product_Category_Box extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-product-category-box';
+		return 'dimas-product-category-box';
 	}
 
 	/**
@@ -33,7 +33,7 @@ class Product_Category_Box extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Product Category Box', 'razzi' );
+		return __( 'Dimas - Product Category Box', 'dimas' );
 	}
 
 	/**
@@ -51,12 +51,12 @@ class Product_Category_Box extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-product-shortcode'
+			'dimas-product-shortcode'
 		];
 	}
 
@@ -85,17 +85,17 @@ class Product_Category_Box extends Widget_Base {
 	protected function section_products_settings_controls() {
 		$this->start_controls_section(
 			'section_products',
-			[ 'label' => esc_html__( 'Products', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Products', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'source',
 			[
-				'label'       => esc_html__( 'Source', 'razzi' ),
+				'label'       => esc_html__( 'Source', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => [
-					'default' => esc_html__( 'Default', 'razzi' ),
-					'custom'  => esc_html__( 'Custom', 'razzi' ),
+					'default' => esc_html__( 'Default', 'dimas' ),
+					'custom'  => esc_html__( 'Custom', 'dimas' ),
 				],
 				'default'     => 'default',
 				'label_block' => true,
@@ -105,8 +105,8 @@ class Product_Category_Box extends Widget_Base {
 		$this->add_control(
 			'product_cat',
 			[
-				'label'       => esc_html__( 'Product Categories', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Product Categories', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -122,7 +122,7 @@ class Product_Category_Box extends Widget_Base {
 		$this->add_control(
 			'number',
 			[
-				'label'           => esc_html__( 'Limit', 'razzi' ),
+				'label'           => esc_html__( 'Limit', 'dimas' ),
 				'type'            => Controls_Manager::NUMBER,
 				'min'             => 1,
 				'max'             => 50,
@@ -137,14 +137,14 @@ class Product_Category_Box extends Widget_Base {
 		$this->add_control(
 			'orderby',
 			[
-				'label'     => esc_html__( 'Order By', 'razzi' ),
+				'label'     => esc_html__( 'Order By', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''           => esc_html__( 'Default', 'razzi' ),
-					'date'       => esc_html__( 'Date', 'razzi' ),
-					'title'      => esc_html__( 'Title', 'razzi' ),
-					'count'      => esc_html__( 'Count', 'razzi' ),
-					'menu_order' => esc_html__( 'Menu Order', 'razzi' ),
+					''           => esc_html__( 'Default', 'dimas' ),
+					'date'       => esc_html__( 'Date', 'dimas' ),
+					'title'      => esc_html__( 'Title', 'dimas' ),
+					'count'      => esc_html__( 'Count', 'dimas' ),
+					'menu_order' => esc_html__( 'Menu Order', 'dimas' ),
 				],
 				'default'   => '',
 				'condition'   => [
@@ -165,11 +165,11 @@ class Product_Category_Box extends Widget_Base {
 		$this->add_control(
 			'link_type',
 			[
-				'label'   => esc_html__( 'Link Type', 'razzi' ),
+				'label'   => esc_html__( 'Link Type', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'only' => esc_html__( 'Only button text', 'razzi' ),
-					'all'  => esc_html__( 'All banner', 'razzi' ),
+					'only' => esc_html__( 'Only button text', 'dimas' ),
+					'all'  => esc_html__( 'All banner', 'dimas' ),
 				],
 				'default' => 'all',
 				'toggle'  => false,
@@ -183,7 +183,7 @@ class Product_Category_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => esc_html__( 'Product', 'razzi' ),
+				'label' => esc_html__( 'Product', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -191,7 +191,7 @@ class Product_Category_Box extends Widget_Base {
 		$this->add_control(
 			'heading_content_style',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 			]
 		);
@@ -199,11 +199,11 @@ class Product_Category_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-product-category-box .razzi-product-category-box__content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-category-box .dimas-product-category-box__content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -220,16 +220,16 @@ class Product_Category_Box extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-product-category-box',
+			'dimas-product-category-box',
 		];
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );
 
-		$category_box = sprintf( '<div class="razzi-product-category-box__items">%s</div>', $this->get_categories_content( $settings ) );
+		$category_box = sprintf( '<div class="dimas-product-category-box__items">%s</div>', $this->get_categories_content( $settings ) );
 
 		echo sprintf(
 			'<div %s>
-				<div class="razzi-product-category-box__inner ">%s</div>
+				<div class="dimas-product-category-box__inner ">%s</div>
 			</div>',
 			$this->get_render_attribute_string( 'wrapper' ),
 			$category_box
@@ -243,7 +243,7 @@ class Product_Category_Box extends Widget_Base {
 	 */
 	protected function get_categories_content( $settings ) {
 
-		$link_icon =  \Dimas\Addons\Helper::get_svg( 'arrow-right', 'razzi-icon' ) ;
+		$link_icon =  \Dimas\Addons\Helper::get_svg( 'arrow-right', 'dimas-icon' ) ;
 
 
 		$output = [];
@@ -259,27 +259,27 @@ class Product_Category_Box extends Widget_Base {
 					continue;
 				}
 
-				$btn_full = $settings['link_type'] == 'all' ? sprintf( '<a href="%s" class="razzi-product-category-box__button-link"></a>',esc_url( get_term_link( $term->term_id, 'product_cat' ) ) ) : '';
+				$btn_full = $settings['link_type'] == 'all' ? sprintf( '<a href="%s" class="dimas-product-category-box__button-link"></a>',esc_url( get_term_link( $term->term_id, 'product_cat' ) ) ) : '';
 
-				$button_text = sprintf( '<a href="%s" class="button-text razzi-button">%s %s</a>',esc_url( get_term_link( $term->term_id, 'product_cat' ) ), esc_html__('Shop Now', 'razzi'), $link_icon ) ;
+				$button_text = sprintf( '<a href="%s" class="button-text dimas-button">%s %s</a>',esc_url( get_term_link( $term->term_id, 'product_cat' ) ), esc_html__('Shop Now', 'dimas'), $link_icon ) ;
 
 				$thumbnail_id = absint( get_term_meta( $term->term_id, 'thumbnail_id', true ) );
 				$settings['image']['url'] = wp_get_attachment_image_src( $thumbnail_id );
 				$settings['image']['id']  = $thumbnail_id;
 				$image = Group_Control_Image_Size::get_attachment_image_html( $settings );
-				$image = $image ? '<div class="razzi-product-category-box__image"> '.$image.'</div>' : '';
+				$image = $image ? '<div class="dimas-product-category-box__image"> '.$image.'</div>' : '';
 
-				$cat_html = '<div class="razzi-product-category-box__cat-count">';
+				$cat_html = '<div class="dimas-product-category-box__cat-count">';
 				$count = (int) $term->count;
-				$product_text = $count > 1 ? esc_html__('products', 'razzi')  : esc_html__('product', 'razzi');
+				$product_text = $count > 1 ? esc_html__('products', 'dimas')  : esc_html__('product', 'dimas');
 				$cat_html .= sprintf( '%s %s', $count, $product_text );
 				$cat_html .= '</div>';
 
 				$output[] = sprintf(
-					'<div class="razzi-product-category-box__item">
-						<div class="razzi-product-category-box__item-box">
-							<div class="razzi-product-category-box__content">
-								<a href="%s" class="razzi-product-category-box__cat-name">%s</a>
+					'<div class="dimas-product-category-box__item">
+						<div class="dimas-product-category-box__item-box">
+							<div class="dimas-product-category-box__content">
+								<a href="%s" class="dimas-product-category-box__cat-name">%s</a>
 								%s %s
 							</div>
 							%s
@@ -313,24 +313,24 @@ class Product_Category_Box extends Widget_Base {
 				$settings['image']['url'] = wp_get_attachment_image_src( $thumbnail_id );
 				$settings['image']['id']  = $thumbnail_id;
 				$image = Group_Control_Image_Size::get_attachment_image_html( $settings );
-				$image = $image ? '<div class="razzi-product-category-box__image"> '.$image.'</div>' : '';
+				$image = $image ? '<div class="dimas-product-category-box__image"> '.$image.'</div>' : '';
 
-				$btn_full = $settings['link_type'] == 'all' ? sprintf( '<a href="%s" class="razzi-product-category-box__button-link"></a>',esc_url( get_term_link( $term->term_id, 'product_cat' ) ) ) : '';
+				$btn_full = $settings['link_type'] == 'all' ? sprintf( '<a href="%s" class="dimas-product-category-box__button-link"></a>',esc_url( get_term_link( $term->term_id, 'product_cat' ) ) ) : '';
 
-				$button_text = sprintf( '<a href="%s" class="button-text razzi-button">%s %s</a>',esc_url( get_term_link( $term->term_id, 'product_cat' ) ), esc_html__('Shop Now', 'razzi'), $link_icon ) ;
+				$button_text = sprintf( '<a href="%s" class="button-text dimas-button">%s %s</a>',esc_url( get_term_link( $term->term_id, 'product_cat' ) ), esc_html__('Shop Now', 'dimas'), $link_icon ) ;
 
 
-				$cat_html = '<div class="razzi-product-category-box__cat-count">';
+				$cat_html = '<div class="dimas-product-category-box__cat-count">';
 				$count = (int) $term->count;
-				$product_text = $count > 1 ? esc_html__('products', 'razzi')  : esc_html__('product', 'razzi');
+				$product_text = $count > 1 ? esc_html__('products', 'dimas')  : esc_html__('product', 'dimas');
 				$cat_html .= sprintf( '%s %s', $count, $product_text );
 				$cat_html .= '</div>';
 
 				$output[] = sprintf(
-					'<div class="razzi-product-category-box__item">
-						<div class="razzi-product-category-box__item-box">
-							<div class="razzi-product-category-box__content">
-								<a href="%s" class="razzi-product-category-box__cat-name">%s</a>
+					'<div class="dimas-product-category-box__item">
+						<div class="dimas-product-category-box__item-box">
+							<div class="dimas-product-category-box__content">
+								<a href="%s" class="dimas-product-category-box__cat-name">%s</a>
 								%s %s
 							</div>
 							%s

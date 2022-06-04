@@ -110,7 +110,7 @@ class Mobile_Walker extends \Walker_Nav_Menu {
 		$item_icon_html = '';
 		if ( $item_icon_type === 'svg' ) {
 			$item_icon_color = $item_icon_color ? 'style="color:' . $item_icon_color . '"' : '';
-			$item_icon_html  = ! empty( $item_icon_svg ) ? '<span ' . $item_icon_color . ' class="razzi-svg-icon">' . \Dimas\Icon::sanitize_svg( $item_icon_svg ) . '</span> ' : '';
+			$item_icon_html  = ! empty( $item_icon_svg ) ? '<span ' . $item_icon_color . ' class="dimas-svg-icon">' . \Dimas\Icon::sanitize_svg( $item_icon_svg ) . '</span> ' : '';
 		} elseif ( ! empty( $item_icon_image ) ) {
 			$item_icon_html = '<img src="' . esc_attr( $item_icon_image ) . '">';
 		}

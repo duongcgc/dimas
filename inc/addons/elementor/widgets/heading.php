@@ -32,7 +32,7 @@ class Heading extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-heading';
+		return 'dimas-heading';
 	}
 
 	/**
@@ -46,7 +46,7 @@ class Heading extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Heading', 'razzi' );
+		return __( 'Dimas - Heading', 'dimas' );
 	}
 
 	/**
@@ -76,7 +76,7 @@ class Heading extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	/**
@@ -95,7 +95,7 @@ class Heading extends Widget_Base {
 
 	public function get_script_depends() {
 		return [
-			'razzi-frontend'
+			'dimas-frontend'
 		];
 	}
 
@@ -111,14 +111,14 @@ class Heading extends Widget_Base {
 		$this->start_controls_section(
 			'section_title',
 			[
-				'label' => __( 'Heading', 'razzi' ),
+				'label' => __( 'Heading', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'subtitle',
 			[
-				'label'   => __( 'SubTitle', 'razzi' ),
+				'label'   => __( 'SubTitle', 'dimas' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => '',
 			]
@@ -127,17 +127,17 @@ class Heading extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label'       => __( 'Title', 'razzi' ),
+				'label'       => __( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'placeholder' => __( 'Enter your title', 'razzi' ),
-				'default'     => __( 'Add Your Heading Text Here', 'razzi' ),
+				'placeholder' => __( 'Enter your title', 'dimas' ),
+				'default'     => __( 'Add Your Heading Text Here', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'link',
 			[
-				'label'     => __( 'Link', 'razzi' ),
+				'label'     => __( 'Link', 'dimas' ),
 				'type'      => Controls_Manager::URL,
 				'dynamic'   => [
 					'active' => true,
@@ -152,7 +152,7 @@ class Heading extends Widget_Base {
 		$this->add_control(
 			'header_size',
 			[
-				'label'   => __( 'HTML Tag', 'razzi' ),
+				'label'   => __( 'HTML Tag', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
 					'h1'   => 'H1',
@@ -172,23 +172,23 @@ class Heading extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label'     => __( 'Alignment', 'razzi' ),
+				'label'     => __( 'Alignment', 'dimas' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => [
 					'left'    => [
-						'title' => __( 'Left', 'razzi' ),
+						'title' => __( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center'  => [
-						'title' => __( 'Center', 'razzi' ),
+						'title' => __( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'   => [
-						'title' => __( 'Right', 'razzi' ),
+						'title' => __( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 					'justify' => [
-						'title' => __( 'Justified', 'razzi' ),
+						'title' => __( 'Justified', 'dimas' ),
 						'icon'  => 'eicon-text-align-justify',
 					],
 				],
@@ -202,10 +202,10 @@ class Heading extends Widget_Base {
 		$this->add_control(
 			'shape',
 			[
-				'label'     => __( 'Shape', 'razzi' ),
+				'label'     => __( 'Shape', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'razzi' ),
-				'label_on'  => __( 'On', 'razzi' ),
+				'label_off' => __( 'Off', 'dimas' ),
+				'label_on'  => __( 'On', 'dimas' ),
 				'default'   => '',
 				'frontend_available' => true,
 			]
@@ -214,7 +214,7 @@ class Heading extends Widget_Base {
 		$this->add_responsive_control(
 			'shape_position',
 			[
-				'label'           => esc_html__( 'Position', 'razzi' ),
+				'label'           => esc_html__( 'Position', 'dimas' ),
 				'type'            => Controls_Manager::NUMBER,
 				'min'             => 0,
 				'max'             => 50,
@@ -235,9 +235,9 @@ class Heading extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'shape_background',
-				'label' => esc_html__( 'Background', 'razzi' ),
+				'label' => esc_html__( 'Background', 'dimas' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .razzi-heading-title .razzi-shape-background',
+				'selector' => '{{WRAPPER}} .dimas-heading-title .dimas-shape-background',
 				'conditions' => [
 					'terms' => [
 						[
@@ -254,7 +254,7 @@ class Heading extends Widget_Base {
 		$this->start_controls_section(
 			'section_title_style',
 			[
-				'label' => __( 'Heading', 'razzi' ),
+				'label' => __( 'Heading', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -262,10 +262,10 @@ class Heading extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Text Color', 'razzi' ),
+				'label'     => __( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-heading-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-heading-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -274,14 +274,14 @@ class Heading extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'typography',
-				'selector' => '{{WRAPPER}} .razzi-heading-title',
+				'selector' => '{{WRAPPER}} .dimas-heading-title',
 			]
 		);
 
 		$this->add_control(
 			'subtitle_heading',
 			[
-				'label'     => __( 'SubTitle', 'razzi' ),
+				'label'     => __( 'SubTitle', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -290,10 +290,10 @@ class Heading extends Widget_Base {
 		$this->add_control(
 			'subtitle_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-heading-title small' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-heading-title small' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -302,14 +302,14 @@ class Heading extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'subtitle_typography',
-				'selector' => '{{WRAPPER}} .razzi-heading-title small',
+				'selector' => '{{WRAPPER}} .dimas-heading-title small',
 			]
 		);
 
 		$this->add_responsive_control(
 			'subtitle_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -318,7 +318,7 @@ class Heading extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-heading-title small' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-heading-title small' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -326,7 +326,7 @@ class Heading extends Widget_Base {
 		$this->add_control(
 			'shape_heading',
 			[
-				'label'     => __( 'Shape', 'razzi' ),
+				'label'     => __( 'Shape', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'conditions' => [
@@ -344,7 +344,7 @@ class Heading extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'shape_typography',
-				'selector' => '{{WRAPPER}} .razzi-heading-title .razzi-shape-background',
+				'selector' => '{{WRAPPER}} .dimas-heading-title .dimas-shape-background',
 				'conditions' => [
 					'terms' => [
 						[
@@ -359,10 +359,10 @@ class Heading extends Widget_Base {
 		$this->add_control(
 			'shape_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-heading-title .razzi-shape-background' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-heading-title .dimas-shape-background' => 'color: {{VALUE}};',
 				],
 				'conditions' => [
 					'terms' => [
@@ -378,11 +378,11 @@ class Heading extends Widget_Base {
 		$this->add_responsive_control(
 			'shape_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-heading-title .razzi-shape-background' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-heading-title .dimas-shape-background' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'conditions' => [
 					'terms' => [
@@ -398,11 +398,11 @@ class Heading extends Widget_Base {
 		$this->add_responsive_control(
 			'shape_margin',
 			[
-				'label'      => esc_html__( 'Margin', 'razzi' ),
+				'label'      => esc_html__( 'Margin', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-heading-title .razzi-shape-background' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-heading-title .dimas-shape-background' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'conditions' => [
 					'terms' => [
@@ -429,7 +429,7 @@ class Heading extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		$this->add_render_attribute( 'title', 'class', 'razzi-heading-title' );
+		$this->add_render_attribute( 'title', 'class', 'dimas-heading-title' );
 
 		$title = $settings['title'];
 
@@ -437,7 +437,7 @@ class Heading extends Widget_Base {
 			if( $settings['shape_position'] ) {
 				$shape_position = $settings['shape_position']-1;
 				$title = preg_split("/\s+(?=[^>]*(<|$))/", $title);
-				$title[$shape_position] = '<span class="razzi-shape-background">' . $title[$shape_position] . '</span>';
+				$title[$shape_position] = '<span class="dimas-shape-background">' . $title[$shape_position] . '</span>';
 				$title = join(" ", $title);
 			}
 		}

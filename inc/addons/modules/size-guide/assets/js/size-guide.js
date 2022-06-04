@@ -11,36 +11,36 @@ jQuery(document).ready(function ($) {
 	}).filter(':checked').trigger('change');
 
 	// Render tabs.
-	var $tabs = $( '#razzi-size-guide-tabs' ),
-		$tabsNav = $( '.razzi-size-guide-tabs--tabs', $tabs ),
+	var $tabs = $( '#dimas-size-guide-tabs' ),
+		$tabsNav = $( '.dimas-size-guide-tabs--tabs', $tabs ),
 		$addTab = $( '.add-new-tab', $tabsNav ),
 		templates = {
-			tab: wp.template( 'razzi-size-guide-tab' ),
-			panel: wp.template( 'razzi-size-guide-panel' )
+			tab: wp.template( 'dimas-size-guide-tab' ),
+			panel: wp.template( 'dimas-size-guide-panel' )
 		};
 
-	if ( ! _.isUndefined( razziSizeGuideTables ) ) {
-		for ( var i = 0; i < razziSizeGuideTables.tables.length; i++ ) {
+	if ( ! _.isUndefined( dimasSizeGuideTables ) ) {
+		for ( var i = 0; i < dimasSizeGuideTables.tables.length; i++ ) {
 			$addTab.before( templates.tab( {
 				index: i,
-				tab: razziSizeGuideTables.tabs[i]
+				tab: dimasSizeGuideTables.tabs[i]
 			} ) );
 
 			$tabs.append( templates.panel( {
 				index: i,
-				name: razziSizeGuideTables.names[i],
-				description: razziSizeGuideTables.descriptions[i],
-				table: razziSizeGuideTables.tables[i],
-				information: razziSizeGuideTables.information[i]
+				name: dimasSizeGuideTables.names[i],
+				description: dimasSizeGuideTables.descriptions[i],
+				table: dimasSizeGuideTables.tables[i],
+				information: dimasSizeGuideTables.information[i]
 			} ) );
 
-			$tabs.find( '.razzi-size-guide-table-editor[data-tab='+ i +']' ).find( '.razzi-size-guide-table' ).razziEditTable();
+			$tabs.find( '.dimas-size-guide-table-editor[data-tab='+ i +']' ).find( '.dimas-size-guide-table' ).dimasEditTable();
 
 			$addTab.data( 'index', i );
 
 			if ( 0 === i ) {
 				$tabsNav.children( ':eq(0)' ).addClass( 'active' );
-				$tabs.find( '.razzi-size-guide-table-editor[data-tab='+ i +']' ).addClass( 'active' );
+				$tabs.find( '.dimas-size-guide-table-editor[data-tab='+ i +']' ).addClass( 'active' );
 			}
 
 			$tabs.trigger( 'tab_added' );
@@ -48,7 +48,7 @@ jQuery(document).ready(function ($) {
 	}
 
 	// Change active tab.
-	$tabsNav.on( 'click', '.razzi-size-guide-table-tabs--tab', function() {
+	$tabsNav.on( 'click', '.dimas-size-guide-table-tabs--tab', function() {
 		var $el = $( this );
 
 		if ( $el.hasClass( 'active' ) ) {
@@ -56,19 +56,19 @@ jQuery(document).ready(function ($) {
 		}
 
 		$el.addClass( 'active' ).siblings( '.active' ).removeClass( 'active' );
-		$tabs.find( '.razzi-size-guide-table-editor[data-tab='+ $el.data( 'tab' ) +']' ).addClass( 'active' ).siblings( '.active' ).removeClass( 'active' );
+		$tabs.find( '.dimas-size-guide-table-editor[data-tab='+ $el.data( 'tab' ) +']' ).addClass( 'active' ).siblings( '.active' ).removeClass( 'active' );
 	} );
 
 	// Edit tab title.
 	$tabsNav
 		.on( 'click', '.edit-button', function() {
-			$( this ).closest( '.razzi-size-guide-table-tabs--tab' ).addClass( 'editting' ).children( 'input' ).removeClass( 'hidden' );
+			$( this ).closest( '.dimas-size-guide-table-tabs--tab' ).addClass( 'editting' ).children( 'input' ).removeClass( 'hidden' );
 		} )
 		.on( 'click', '.confirm-button', function() {
-			$( this ).closest( '.razzi-size-guide-table-tabs--tab' ).removeClass( 'editting' ).children( 'input' ).addClass( 'hidden' );
+			$( this ).closest( '.dimas-size-guide-table-tabs--tab' ).removeClass( 'editting' ).children( 'input' ).addClass( 'hidden' );
 		} )
 		.on( 'input', 'input', function() {
-			$( this ).siblings( '.razzi-size-guide-table-tabs--tab-text' ).text( this.value );
+			$( this ).siblings( '.dimas-size-guide-table-tabs--tab-text' ).text( this.value );
 		} );
 
 	// Add new tab.
@@ -89,7 +89,7 @@ jQuery(document).ready(function ($) {
 			information: ''
 		} ) );
 
-		$tabs.find( '.razzi-size-guide-table-editor[data-tab='+ index +']' ).find( '.razzi-size-guide-table' ).razziEditTable();
+		$tabs.find( '.dimas-size-guide-table-editor[data-tab='+ index +']' ).find( '.dimas-size-guide-table' ).dimasEditTable();
 		$addTab.data( 'index', index );
 
 		$addTab.prev().click();
@@ -101,7 +101,7 @@ jQuery(document).ready(function ($) {
 	$tabs.on( 'click', '.delete-table', function( event ) {
 		event.preventDefault();
 
-		var $deletedPanel = $( this ).closest( '.razzi-size-guide-table-editor' ),
+		var $deletedPanel = $( this ).closest( '.dimas-size-guide-table-editor' ),
 			index = $deletedPanel.data( 'tab' );
 
 		$deletedPanel.remove();
@@ -114,7 +114,7 @@ jQuery(document).ready(function ($) {
 
 	// Always keep 1 tab
 	$tabs.on( 'tab_added tab_removed', function() {
-		if ( $tabs.children( '.razzi-size-guide-table-editor' ).length <= 1 ) {
+		if ( $tabs.children( '.dimas-size-guide-table-editor' ).length <= 1 ) {
 			$tabs.addClass( 'has-one-tab' );
 		} else {
 			$tabs.removeClass( 'has-one-tab' );
@@ -127,12 +127,12 @@ jQuery(document).ready(function ($) {
 
 	'use strict';
 
-	$.fn.razziEditTable = function (options) {
+	$.fn.dimasEditTable = function (options) {
 
 		// Settings
 		var s = $.extend({
 				data: [ ['']],
-				tableClass: 'razzi-table-edit',
+				tableClass: 'dimas-table-edit',
 				jsonData: false,
 				headerCols: false,
 				maxRows: 999,

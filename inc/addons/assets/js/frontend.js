@@ -39,7 +39,7 @@ class DimasTestimonialsCarouselWidgetHandler extends elementorModules.frontend.h
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-testimonials-carousel'
+				container: '.dimas-testimonials-carousel'
 			},
 		};
 	}
@@ -61,7 +61,7 @@ class DimasTestimonialsCarouselWidgetHandler extends elementorModules.frontend.h
 	}
 
 	getSwiperInit() {
-		new Swiper( this.elements.$container.find('.razzi-testimonials-carousel__wrapper'), this.getSwiperOption() );
+		new Swiper( this.elements.$container.find('.dimas-testimonials-carousel__wrapper'), this.getSwiperOption() );
 	}
 
 	onInit() {
@@ -80,7 +80,7 @@ class DimasCountDownWidgetHandler extends elementorModules.frontend.handlers.Bas
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-countdown'
+				container: '.dimas-countdown'
 			},
 		};
 	}
@@ -108,7 +108,7 @@ class DimasBannerWidgetHandler extends elementorModules.frontend.handlers.Base {
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-banner'
+				container: '.dimas-banner'
 			},
 		};
 	}
@@ -122,7 +122,7 @@ class DimasBannerWidgetHandler extends elementorModules.frontend.handlers.Base {
 	}
 
 	getCountDownInit() {
-		this.elements.$container.find('.razzi-countdown').rz_countdown();
+		this.elements.$container.find('.dimas-countdown').rz_countdown();
 	}
 
 	onInit() {
@@ -135,7 +135,7 @@ class DimasFaqsWidgetHandler extends elementorModules.frontend.handlers.Base {
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-faq'
+				container: '.dimas-faq'
 			},
 		};
 	}
@@ -183,7 +183,7 @@ class DimasMapWidgetHandler extends elementorModules.frontend.handlers.Base {
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-map'
+				container: '.dimas-map'
 			},
 		};
 	}
@@ -204,7 +204,7 @@ class DimasMapWidgetHandler extends elementorModules.frontend.handlers.Base {
 			elsMap = el.data('map'),
 			local = elsMap.local,
 			mapboxClient = mapboxSdk( { accessToken: elsMap.token } ),
-			wrapper = el.find('.razzi-map__content').attr('id');
+			wrapper = el.find('.dimas-map__content').attr('id');
 
 		mapboxgl.accessToken = elsMap.token;
 
@@ -218,7 +218,7 @@ class DimasMapWidgetHandler extends elementorModules.frontend.handlers.Base {
 				.then( function ( response ) {
 					if ( response && response.body && response.body.features && response.body.features.length ) {
 						var feature = response.body.features[0],
-							tab = el.find('.razzi-map__table .box-item');
+							tab = el.find('.dimas-map__table .box-item');
 
 						tab.eq(i).attr("data-latitude",feature.center[0]);
 						tab.eq(i).attr("data-longitude",feature.center[1]);
@@ -356,7 +356,7 @@ class DimasBannerCarouselWidgetHandler extends elementorModules.frontend.handler
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-banner-carousel'
+				container: '.dimas-banner-carousel'
 			},
 		};
 	}
@@ -396,7 +396,7 @@ class DimasTestimonialsCarousel2WidgetHandler extends elementorModules.frontend.
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-testimonials-carousel-2'
+				container: '.dimas-testimonials-carousel-2'
 			},
 		};
 	}
@@ -482,7 +482,7 @@ class DimasBrandsCarouselWidgetHandler extends elementorModules.frontend.handler
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-brands-carousel'
+				container: '.dimas-brands-carousel'
 			},
 		};
 	}
@@ -522,7 +522,7 @@ class DimasSlidesWidgetHandler extends elementorModules.frontend.handlers.Base {
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-slides-elementor'
+				container: '.dimas-slides-elementor'
 			},
 		};
 	}
@@ -570,18 +570,18 @@ class DimasSlidesWidgetHandler extends elementorModules.frontend.handlers.Base {
 							container.css( 'opacity', 1 );
 							var index = this.activeIndex,
 								currentSlide =   jQuery(this.slides[index]),
-							  	currentSlideType = currentSlide.find('.razzi-slide-banner__video');
+							  	currentSlideType = currentSlide.find('.dimas-slide-banner__video');
 
 							if( index == 0 && currentSlideType.length == 1 ) {
 								if( currentSlideType.attr('data-type') == 'youtube' ) {
-									jQuery('#razzi-slide-banner__video--0')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+									jQuery('#dimas-slide-banner__video--0')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
 								} else if (currentSlideType.attr('data-type') == 'self_hosted') {
-									document.getElementById("razzi-slide-banner__video--0").play();
+									document.getElementById("dimas-slide-banner__video--0").play();
 								}
 							}
 						},
 						slideChange: function() {
-							var video = document.getElementsByClassName("razzi-slide-banner__video"),
+							var video = document.getElementsByClassName("dimas-slide-banner__video"),
 								video_id = [];
 
 							for (var i = 0; i < video.length; i++) {
@@ -597,13 +597,13 @@ class DimasSlidesWidgetHandler extends elementorModules.frontend.handlers.Base {
 
 							var index         = this.activeIndex,
 								currentSlide     = jQuery(this.slides[index]),
-								currentSlideType = currentSlide.find('.razzi-slide-banner__video');
+								currentSlideType = currentSlide.find('.dimas-slide-banner__video');
 
 							if( currentSlideType.length == 1 ) {
 								if( currentSlideType.attr('data-type') == 'youtube' ) {
-									jQuery('#razzi-slide-banner__video--'+index)[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+									jQuery('#dimas-slide-banner__video--'+index)[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
 								} else if (currentSlideType.attr('data-type') == 'self_hosted') {
-									document.getElementById("razzi-slide-banner__video--"+index).play();
+									document.getElementById("dimas-slide-banner__video--"+index).play();
 								}
 							}
 						}
@@ -629,7 +629,7 @@ class DimasSlidesWidgetHandler extends elementorModules.frontend.handlers.Base {
 	}
 
 	getSwiperInit() {
-		new Swiper( this.elements.$container.find('.razzi-slides-elementor__wrapper'), this.getSwiperOption() );
+		new Swiper( this.elements.$container.find('.dimas-slides-elementor__wrapper'), this.getSwiperOption() );
 	}
 
 	onInit() {
@@ -646,7 +646,7 @@ class DimasIsolateSlidesWidgetHandler extends elementorModules.frontend.handlers
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-isolate-slides'
+				container: '.dimas-isolate-slides'
 			},
 		};
 	}
@@ -697,7 +697,7 @@ class DimasIsolateSlidesWidgetHandler extends elementorModules.frontend.handlers
 	}
 
 	getSwiperInit() {
-		new Swiper( this.elements.$container.find('.razzi-isolate-slides__content-wrapper'), this.getSwiperOption() );
+		new Swiper( this.elements.$container.find('.dimas-isolate-slides__content-wrapper'), this.getSwiperOption() );
 	}
 
 	onInit() {
@@ -714,7 +714,7 @@ class DimasPostCarouselWidgetHandler extends elementorModules.frontend.handlers.
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-posts-carousel'
+				container: '.dimas-posts-carousel'
 			},
 		};
 	}
@@ -757,7 +757,7 @@ class DimasPostCarousel2WidgetHandler extends elementorModules.frontend.handlers
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-posts-carousel-2'
+				container: '.dimas-posts-carousel-2'
 			},
 		};
 	}
@@ -798,7 +798,7 @@ class DimasBannerVideoWidgetHandler extends elementorModules.frontend.handlers.B
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-banner-video'
+				container: '.dimas-banner-video'
 			},
 		};
 	}
@@ -845,7 +845,7 @@ class DimasBannerVideoWidgetHandler extends elementorModules.frontend.handlers.B
 	}
 
 	getPopupInit() {
-		this.elements.$container.find('.razzi-banner-video__play').magnificPopup( this.getPopupOption() )
+		this.elements.$container.find('.dimas-banner-video__play').magnificPopup( this.getPopupOption() )
 	}
 
 	onInit() {
@@ -858,7 +858,7 @@ class DimasLookbookBannerWidgetHandler extends elementorModules.frontend.handler
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-lookbook-banner'
+				container: '.dimas-lookbook-banner'
 			},
 		};
 	}
@@ -873,9 +873,9 @@ class DimasLookbookBannerWidgetHandler extends elementorModules.frontend.handler
 
 	lookBookHandle(){
 		const 	container = this.elements.$container;
-		const 	item = container.find('.razzi-lookbook-item');
+		const 	item = container.find('.dimas-lookbook-item');
 
-        container.on('click', '.razzi-lookbook-item', function (e) {
+        container.on('click', '.dimas-lookbook-item', function (e) {
             var el = jQuery(this),
                 siblings = el.siblings();
 
@@ -908,7 +908,7 @@ class DimasLookbookSliderWidgetHandler extends elementorModules.frontend.handler
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-lookbook-slider-elementor'
+				container: '.dimas-lookbook-slider-elementor'
 			},
 		};
 	}
@@ -967,9 +967,9 @@ class DimasLookbookSliderWidgetHandler extends elementorModules.frontend.handler
 
 	lookBookHandle(){
 		const 	container = this.elements.$container;
-		const 	item = container.find('.razzi-lookbook-item');
+		const 	item = container.find('.dimas-lookbook-item');
 
-        container.on('click', '.razzi-lookbook-item', function (e) {
+        container.on('click', '.dimas-lookbook-item', function (e) {
             var el = jQuery(this),
                 siblings = el.siblings();
 
@@ -1003,7 +1003,7 @@ class DimasBeforeAfterImagesWidgetHandler extends elementorModules.frontend.hand
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-before-after-images'
+				container: '.dimas-before-after-images'
 			},
 		};
 	}
@@ -1057,7 +1057,7 @@ class DimasTestimonialsGridFlexibleWidgetHandler extends elementorModules.fronte
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-testimonials-grid'
+				container: '.dimas-testimonials-grid'
 			},
 		};
 	}
@@ -1095,7 +1095,7 @@ class DimasIconBoxCarouselWidgetHandler extends elementorModules.frontend.handle
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-icons-box-carousel'
+				container: '.dimas-icons-box-carousel'
 			},
 		};
 	}
@@ -1130,7 +1130,7 @@ class DimasIconBoxCarouselWidgetHandler extends elementorModules.frontend.handle
 					},
 					on              : {
 						init: function() {
-							container.find('.razzi-icons-box-carousel__wrapper').css( 'opacity', 1 );
+							container.find('.dimas-icons-box-carousel__wrapper').css( 'opacity', 1 );
 						}
 					},
 					breakpoints     : {
@@ -1163,7 +1163,7 @@ class DimasIconBoxCarouselWidgetHandler extends elementorModules.frontend.handle
 	}
 
 	getSwiperInit() {
-		new Swiper( this.elements.$container.find('.razzi-icons-box-carousel__wrapper'), this.getSwiperOption() );
+		new Swiper( this.elements.$container.find('.dimas-icons-box-carousel__wrapper'), this.getSwiperOption() );
 	}
 
 	onInit() {
@@ -1180,7 +1180,7 @@ class DimasImagesCarouselWidgetHandler extends elementorModules.frontend.handler
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-images-carousel'
+				container: '.dimas-images-carousel'
 			},
 		};
 	}
@@ -1222,12 +1222,12 @@ class DimasImagesCarouselWidgetHandler extends elementorModules.frontend.handler
             },
             breakpoints: {
                 300: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                 },
                 480: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                 },
                 768: {
                     slidesPerView: settings.slidesToShow_tablet ? settings.slidesToShow_tablet : 3,
@@ -1265,7 +1265,7 @@ class DimasImagesCarousel2WidgetHandler extends elementorModules.frontend.handle
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-images-carousel-2'
+				container: '.dimas-images-carousel-2'
 			},
 		};
 	}
@@ -1287,8 +1287,8 @@ class DimasImagesCarousel2WidgetHandler extends elementorModules.frontend.handle
             autoplay: settings.autoplay == 'yes' ? true : false,
             speed: settings.autoplay_speed,
             navigation: {
-                nextEl: this.elements.$container.find('.razzi-swiper-button-next'),
-                prevEl: this.elements.$container.find('.razzi-swiper-button-prev'),
+                nextEl: this.elements.$container.find('.dimas-swiper-button-next'),
+                prevEl: this.elements.$container.find('.dimas-swiper-button-prev'),
             },
             pagination: {
                 el: this.elements.$container.find('.swiper-pagination'),
@@ -1301,12 +1301,12 @@ class DimasImagesCarousel2WidgetHandler extends elementorModules.frontend.handle
             },
             breakpoints: {
                 300: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                 },
                 480: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                 },
                 768: {
                     slidesPerView: settings.slidesToShow_tablet ? settings.slidesToShow_tablet : 3,
@@ -1345,7 +1345,7 @@ class DimasAdvancedTabsWidgetHandler extends elementorModules.frontend.handlers.
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-advanced-tabs'
+				container: '.dimas-advanced-tabs'
 			},
 		};
 	}
@@ -1361,10 +1361,10 @@ class DimasAdvancedTabsWidgetHandler extends elementorModules.frontend.handlers.
 	getTabs($selector, settings) {
         var $list = $selector.find('.swiper-wrapper');
 
-        $list.find('.razzi-advanced-tabs__item').addClass('swiper-slide');
+        $list.find('.dimas-advanced-tabs__item').addClass('swiper-slide');
         $list.after('<div class="swiper-pagination"></div>');
-        $list.before('<span class="razzi-svg-icon rz-swiper-button-prev rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></span>');
-        $list.before('<span class="razzi-svg-icon rz-swiper-button-next rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>');
+        $list.before('<span class="dimas-svg-icon rz-swiper-button-prev rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></span>');
+        $list.before('<span class="dimas-svg-icon rz-swiper-button-next rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>');
 
         var options = {
             watchOverflow: true,
@@ -1387,13 +1387,13 @@ class DimasAdvancedTabsWidgetHandler extends elementorModules.frontend.handlers.
             },
             breakpoints: {
                 300: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                     spaceBetween: 15,
                 },
                 480: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                     spaceBetween: 15,
                 },
                 768: {
@@ -1420,9 +1420,9 @@ class DimasAdvancedTabsWidgetHandler extends elementorModules.frontend.handlers.
     };
 
     navTabs($tabs, $el, $currentTab) {
-        $tabs.find('.razzi-advanced-tabs__nav a').removeClass('active');
+        $tabs.find('.dimas-advanced-tabs__nav a').removeClass('active');
         $el.addClass('active');
-        $tabs.find('.razzi-advanced-tabs__panel').removeClass('active');
+        $tabs.find('.dimas-advanced-tabs__panel').removeClass('active');
         $currentTab.addClass('active');
     }
 
@@ -1456,7 +1456,7 @@ class DimasAdvancedTabsWidgetHandler extends elementorModules.frontend.handlers.
 
 
         self.getTabs($panels, settings);
-        $selector.find('.razzi-advanced-tabs__nav').on('click', 'a', function (e) {
+        $selector.find('.dimas-advanced-tabs__nav').on('click', 'a', function (e) {
             e.preventDefault();
             self.getTabsAJAXHandler(jQuery(this), $selector);
         });
@@ -1468,7 +1468,7 @@ class DimasImagesBoxCarousel2WidgetHandler extends elementorModules.frontend.han
 	getDefaultSettings() {
 		return {
 			selectors: {
-				container: '.razzi-images-box-carousel-2'
+				container: '.dimas-images-box-carousel-2'
 			},
 		};
 	}
@@ -1504,12 +1504,12 @@ class DimasImagesBoxCarousel2WidgetHandler extends elementorModules.frontend.han
             },
             breakpoints: {
                 300: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                 },
                 480: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                 },
                 768: {
                     slidesPerView: settings.slidesToShow_tablet ? settings.slidesToShow_tablet : 3,
@@ -1545,91 +1545,91 @@ class DimasImagesBoxCarousel2WidgetHandler extends elementorModules.frontend.han
 }
 
 jQuery( window ).on( 'elementor/frontend/init', () => {
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-testimonials-carousel.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-testimonials-carousel.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasTestimonialsCarouselWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-countdown.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-countdown.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasCountDownWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-banner.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-banner.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasBannerWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-faq.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-faq.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasFaqsWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-map.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-map.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasMapWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-banner-carousel.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-banner-carousel.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasBannerCarouselWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-testimonials-carousel-2.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-testimonials-carousel-2.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasTestimonialsCarousel2WidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-brands-carousel.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-brands-carousel.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasBrandsCarouselWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-slides.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-slides.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasSlidesWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-isolate-slides.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-isolate-slides.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasIsolateSlidesWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-posts-carousel.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-posts-carousel.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasPostCarouselWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-posts-carousel-2.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-posts-carousel-2.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasPostCarousel2WidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-banner-video.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-banner-video.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasBannerVideoWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-lookbook-banner.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-lookbook-banner.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasLookbookBannerWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-lookbook-slider.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-lookbook-slider.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasLookbookSliderWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-before-after-images.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-before-after-images.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasBeforeAfterImagesWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-testimonials-grid.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-testimonials-grid.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasTestimonialsGridFlexibleWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-icons-box-carousel.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-icons-box-carousel.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasIconBoxCarouselWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-images-carousel.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-images-carousel.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasImagesCarouselWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-images-carousel-2.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-images-carousel-2.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasImagesCarousel2WidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-advanced-tabs.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-advanced-tabs.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasAdvancedTabsWidgetHandler, { $element } );
 	} );
 
-	elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-images-box-carousel-2.default', ( $element ) => {
+	elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-images-box-carousel-2.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasImagesBoxCarousel2WidgetHandler, { $element } );
 	} );
 

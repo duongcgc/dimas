@@ -21,7 +21,7 @@ class Featured_Content extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-featured-content';
+		return 'dimas-featured-content';
 	}
 
 	/**
@@ -30,7 +30,7 @@ class Featured_Content extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Featured Content', 'razzi' );
+		return esc_html__( 'Dimas - Featured Content', 'dimas' );
 	}
 
 	/**
@@ -48,7 +48,7 @@ class Featured_Content extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	/**
@@ -70,7 +70,7 @@ class Featured_Content extends Widget_Base {
 	protected function section_content() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Content', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Content', 'dimas' ) ]
 		);
 
 
@@ -78,7 +78,7 @@ class Featured_Content extends Widget_Base {
 		$this->add_control(
 			'image',
 			[
-				'label'   => esc_html__( 'Image', 'razzi' ),
+				'label'   => esc_html__( 'Image', 'dimas' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => 'https://via.placeholder.com/443x566/f1f1f1?text=Image',
@@ -106,14 +106,14 @@ class Featured_Content extends Widget_Base {
 
 		$repeater->start_controls_tabs( 'featureds_repeater' );
 
-		$repeater->start_controls_tab( 'text_content', [ 'label' => esc_html__( 'Line Text', 'razzi' ) ] );
+		$repeater->start_controls_tab( 'text_content', [ 'label' => esc_html__( 'Line Text', 'dimas' ) ] );
 
 		$repeater->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'This is the title', 'razzi' ),
+				'default'     => esc_html__( 'This is the title', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -121,20 +121,20 @@ class Featured_Content extends Widget_Base {
 		$repeater->add_control(
 			'desc',
 			[
-				'label'       => esc_html__( 'Description', 'razzi' ),
+				'label'       => esc_html__( 'Description', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'This is the desc', 'razzi' ),
+				'default'     => esc_html__( 'This is the desc', 'dimas' ),
 			]
 		);
 
 		$repeater->end_controls_tab();
 
-		$repeater->start_controls_tab( 'featured_position_content', [ 'label' => esc_html__( 'Line Position', 'razzi' ) ] );
+		$repeater->start_controls_tab( 'featured_position_content', [ 'label' => esc_html__( 'Line Position', 'dimas' ) ] );
 
 		$repeater->add_responsive_control(
 			'featured_content_position_top',
 			[
-				'label'          => esc_html__( 'Spacing Top', 'razzi' ),
+				'label'          => esc_html__( 'Spacing Top', 'dimas' ),
 				'type'           => Controls_Manager::SLIDER,
 				'range'          => [
 					'px' => [
@@ -152,7 +152,7 @@ class Featured_Content extends Widget_Base {
 				],
 				'size_units'     => [ '%', 'px' ],
 				'selectors'      => [
-					'{{WRAPPER}} .razzi-featured-content {{CURRENT_ITEM}}.featured-box' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-featured-content {{CURRENT_ITEM}}.featured-box' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -160,7 +160,7 @@ class Featured_Content extends Widget_Base {
 		$repeater->add_responsive_control(
 			'featured_content_position_bottom',
 			[
-				'label'          => esc_html__( 'Spacing Bottom', 'razzi' ),
+				'label'          => esc_html__( 'Spacing Bottom', 'dimas' ),
 				'type'           => Controls_Manager::SLIDER,
 				'range'          => [
 					'px' => [
@@ -178,7 +178,7 @@ class Featured_Content extends Widget_Base {
 				],
 				'size_units'     => [ '%', 'px' ],
 				'selectors'      => [
-					'{{WRAPPER}} .razzi-featured-content {{CURRENT_ITEM}}.featured-box' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-featured-content {{CURRENT_ITEM}}.featured-box' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -186,7 +186,7 @@ class Featured_Content extends Widget_Base {
 		$repeater->add_responsive_control(
 			'featured_content_width',
 			[
-				'label'          => esc_html__( 'Line Width', 'razzi' ),
+				'label'          => esc_html__( 'Line Width', 'dimas' ),
 				'type'           => Controls_Manager::SLIDER,
 				'range'          => [
 					'px' => [
@@ -204,7 +204,7 @@ class Featured_Content extends Widget_Base {
 				],
 				'size_units'     => [ '%', 'px' ],
 				'selectors'      => [
-					'{{WRAPPER}} .razzi-featured-content {{CURRENT_ITEM}} .featured-control' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-featured-content {{CURRENT_ITEM}} .featured-control' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -214,19 +214,19 @@ class Featured_Content extends Widget_Base {
 		$this->add_control(
 			'featureds_el',
 			[
-				'label'      => esc_html__( 'Lines Lists', 'razzi' ),
+				'label'      => esc_html__( 'Lines Lists', 'dimas' ),
 				'type'       => Controls_Manager::REPEATER,
 				'show_label' => true,
 				'fields'     => $repeater->get_controls(),
 				'default'    => [
 					[
-						'title'          => esc_html__( 'This is title 1', 'razzi' ),
+						'title'          => esc_html__( 'This is title 1', 'dimas' ),
 					],[
-						'title'          => esc_html__( 'This is title 2', 'razzi' ),
+						'title'          => esc_html__( 'This is title 2', 'dimas' ),
 					],[
-						'title'          => esc_html__( 'This is title 3', 'razzi' ),
+						'title'          => esc_html__( 'This is title 3', 'dimas' ),
 					],[
-						'title'          => esc_html__( 'This is title 4', 'razzi' ),
+						'title'          => esc_html__( 'This is title 4', 'dimas' ),
 					],
 				],
 			]
@@ -244,7 +244,7 @@ class Featured_Content extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -253,7 +253,7 @@ class Featured_Content extends Widget_Base {
 		$this->add_control(
 			'featured_heading_style',
 			[
-				'label' => esc_html__( 'Line', 'razzi' ),
+				'label' => esc_html__( 'Line', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 			]
 		);
@@ -261,11 +261,11 @@ class Featured_Content extends Widget_Base {
 		$this->add_control(
 			'featured_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-featured-content .featured-control' => '--rz-background-color-primary: {{VALUE}};',
+					'{{WRAPPER}} .dimas-featured-content .featured-control' => '--rz-background-color-primary: {{VALUE}};',
 				],
 			]
 		);
@@ -273,7 +273,7 @@ class Featured_Content extends Widget_Base {
 		$this->add_control(
 			'title_heading_style',
 			[
-				'label' => esc_html__( 'Title', 'razzi' ),
+				'label' => esc_html__( 'Title', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -282,7 +282,7 @@ class Featured_Content extends Widget_Base {
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -291,7 +291,7 @@ class Featured_Content extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-featured-content .featured-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-featured-content .featured-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -300,18 +300,18 @@ class Featured_Content extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-featured-content .featured-title',
+				'selector' => '{{WRAPPER}} .dimas-featured-content .featured-title',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-featured-content .featured-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-featured-content .featured-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -319,7 +319,7 @@ class Featured_Content extends Widget_Base {
 		$this->add_control(
 			'desc_heading_style',
 			[
-				'label' => esc_html__( 'Desc', 'razzi' ),
+				'label' => esc_html__( 'Desc', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -329,18 +329,18 @@ class Featured_Content extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'desc_typography',
-				'selector' => '{{WRAPPER}} .razzi-featured-content .featured-desc',
+				'selector' => '{{WRAPPER}} .dimas-featured-content .featured-desc',
 			]
 		);
 
 		$this->add_control(
 			'desc_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-featured-content .featured-desc' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-featured-content .featured-desc' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -358,7 +358,7 @@ class Featured_Content extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-featured-content',
+			'dimas-featured-content',
 		];
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );

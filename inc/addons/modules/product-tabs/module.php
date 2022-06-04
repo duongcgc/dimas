@@ -76,7 +76,7 @@ class Module {
 	 * @return void
 	 */
 	public function product_single() {
-		if ( get_option( 'razzi_product_tab' ) == 'yes' && is_singular('product') ) {
+		if ( get_option( 'dimas_product_tab' ) == 'yes' && is_singular('product') ) {
 			\Dimas\Addons\Modules\Product_Tabs\FrontEnd::instance();
 		}
 	}
@@ -89,7 +89,7 @@ class Module {
 	 * @return void
 	 */
 	public function actions() {
-		if ( get_option( 'razzi_product_tab' ) == 'yes' ) {
+		if ( get_option( 'dimas_product_tab' ) == 'yes' ) {
 			\Dimas\Addons\Modules\Product_Tabs\Post_Type::instance();
 		}
 
@@ -111,7 +111,7 @@ class Module {
 			return;
 		}
 
-		if ( get_option( 'razzi_product_tab' ) != 'yes' ) {
+		if ( get_option( 'dimas_product_tab' ) != 'yes' ) {
 			return;
 		}
 

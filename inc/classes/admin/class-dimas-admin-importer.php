@@ -61,10 +61,10 @@ class Importer {
 		return array(
 			array(
 				'name'       => 'Home v1 - Minimal',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev1-minimal/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev1-minimal/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev1-minimal/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev1-minimal/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev1-minimal/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev1-minimal/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev1-minimal/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev1-minimal/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 1',
 					'blog'       => 'Blog',
@@ -101,10 +101,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v2 - Classic',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev2-classic/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev2-classic/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev2-classic/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev2-classic/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev2-classic/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev2-classic/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev2-classic/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev2-classic/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 2',
 					'blog'       => 'Blog',
@@ -141,10 +141,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v3 - Fashion',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev3-fashion/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev3-fashion/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev3-fashion/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev3-fashion/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev3-fashion/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev3-fashion/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev3-fashion/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev3-fashion/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 3',
 					'blog'       => 'Blog',
@@ -181,10 +181,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v4 - Boxes',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev4-boxes/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev4-boxes/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev4-boxes/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev4-boxes/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev4-boxes/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev4-boxes/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev4-boxes/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev4-boxes/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 4',
 					'blog'       => 'Blog',
@@ -221,10 +221,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v5 - Simple',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev5-simple/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev5-simple/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev5-simple/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev5-simple/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev5-simple/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev5-simple/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev5-simple/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev5-simple/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 5',
 					'blog'       => 'Blog',
@@ -261,10 +261,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v6 - Asymmetric',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev6-asymmetric/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev6-asymmetric/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev6-asymmetric/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev6-asymmetric/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev6-asymmetric/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev6-asymmetric/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev6-asymmetric/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev6-asymmetric/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 6',
 					'blog'       => 'Blog',
@@ -301,10 +301,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v7 - Masonry',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev7-masonry/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev7-masonry/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev7-masonry/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev7-masonry/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev7-masonry/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev7-masonry/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev7-masonry/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev7-masonry/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 7',
 					'blog'       => 'Blog',
@@ -341,10 +341,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v8 - Landing',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev8-landing/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev8-landing/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev8-landing/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev8-landing/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev8-landing/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev8-landing/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev8-landing/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev8-landing/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 8',
 					'blog'       => 'Blog',
@@ -381,10 +381,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v9 - Fashion',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev9-fashion/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev9-fashion/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev9-fashion/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev9-fashion/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev9-fashion/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev9-fashion/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev9-fashion/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev9-fashion/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 10',
 					'blog'       => 'Blog',
@@ -421,10 +421,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v10 - Cases',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev10-cases/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev10-cases/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev10-cases/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev10-cases/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev10-cases/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev10-cases/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev10-cases/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev10-cases/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 11',
 					'blog'       => 'Blog',
@@ -461,10 +461,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v11 - Furniture',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev11-furniture/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev11-furniture/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev11-furniture/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev11-furniture/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev11-furniture/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev11-furniture/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev11-furniture/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev11-furniture/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 1',
 					'blog'       => 'Blog',
@@ -501,10 +501,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v12 - Furniture',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev12-furniture/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev12-furniture/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev12-furniture/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev12-furniture/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev12-furniture/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev12-furniture/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev12-furniture/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev12-furniture/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 12',
 					'blog'       => 'Blog',
@@ -541,10 +541,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v13 - Furniture',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev13-furniture/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev13-furniture/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev13-furniture/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev13-furniture/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev13-furniture/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev13-furniture/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev13-furniture/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev13-furniture/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 13',
 					'blog'       => 'Blog',
@@ -581,10 +581,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v14 - Furniture',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev14-furniture/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev14-furniture/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev14-furniture/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev14-furniture/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev14-furniture/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev14-furniture/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev14-furniture/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev14-furniture/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 2',
 					'blog'       => 'Blog',
@@ -621,10 +621,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v15 - Furniture',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev15-furniture/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev15-furniture/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev15-furniture/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev15-furniture/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev15-furniture/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev15-furniture/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev15-furniture/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev15-furniture/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 3',
 					'blog'       => 'Blog',
@@ -661,10 +661,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v16 Instagram',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev16-instagram/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev16-instagram/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev16-instagram/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev16-instagram/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev16-instagram/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev16-instagram/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev16-instagram/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev16-instagram/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home Instagram',
 					'blog'       => 'Blog',
@@ -701,10 +701,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v17 - Interior Decor',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev17-interior/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev17-interior/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev17-interior/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev17-interior/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev17-interior/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev17-interior/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev17-interior/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev17-interior/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 17',
 					'blog'       => 'Blog',
@@ -741,10 +741,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v18 - Food',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev18-food/preview.jpg',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev18-food/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev18-food/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev18-food/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev18-food/preview.jpg',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev18-food/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev18-food/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev18-food/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 18',
 					'blog'       => 'Blog',
@@ -781,10 +781,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v19 - Electronic',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev19-electronic/preview.jpg',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev19-electronic/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev19-electronic/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev19-electronic/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev19-electronic/preview.jpg',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev19-electronic/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev19-electronic/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev19-electronic/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 19',
 					'blog'       => 'Blog',
@@ -821,10 +821,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v20 - Parallax',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev20-parallax/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev20-parallax/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev20-parallax/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev20-parallax/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev20-parallax/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev20-parallax/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev20-parallax/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev20-parallax/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home 20',
 					'blog'       => 'Blog',
@@ -861,10 +861,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v21 - Cosmetic',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev21-cosmetic/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev21-cosmetic/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev21-cosmetic/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev21-cosmetic/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev21-cosmetic/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev21-cosmetic/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev21-cosmetic/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev21-cosmetic/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home Cosmetics',
 					'blog'       => 'Our Blogs',
@@ -901,10 +901,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v22 - Full Width',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev22-fullwidth/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev22-fullwidth/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev22-fullwidth/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev22-fullwidth/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev22-fullwidth/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev22-fullwidth/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev22-fullwidth/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev22-fullwidth/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home Fashion',
 					'blog'       => 'Our Blogs',
@@ -937,10 +937,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v23 - Jewelry',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev23-jewelry/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev23-jewelry/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev23-jewelry/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev23-jewelry/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev23-jewelry/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev23-jewelry/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev23-jewelry/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev23-jewelry/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home Jewelry',
 					'blog'       => 'Our Blogs',
@@ -975,10 +975,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v24 - Baby',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev24-baby/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev24-baby/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev24-baby/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev24-baby/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev24-baby/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev24-baby/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev24-baby/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev24-baby/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home Baby',
 					'blog'       => 'Our Blogs',
@@ -1014,10 +1014,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v25 - Furniture',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev25-furniture/preview.png',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev25-furniture/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev25-furniture/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev25-furniture/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev25-furniture/preview.png',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev25-furniture/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev25-furniture/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev25-furniture/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home Furniture',
 					'blog'       => 'Our Blogs',
@@ -1054,10 +1054,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v26 - Pharmacy',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev26-pharmacy/preview.jpg',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev26-pharmacy/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev26-pharmacy/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev26-pharmacy/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev26-pharmacy/preview.jpg',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev26-pharmacy/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev26-pharmacy/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev26-pharmacy/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home Pharmacy',
 					'blog'       => 'Our Blogs',
@@ -1092,10 +1092,10 @@ class Importer {
 			),
 			array(
 				'name'       => 'Home v27 - Tools',
-				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev27-tools/preview.jpg',
-				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev27-tools/demo-content.xml',
-				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev27-tools/customizer.dat',
-				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev27-tools/widgets.wie',
+				'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev27-tools/preview.jpg',
+				'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev27-tools/demo-content.xml',
+				'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev27-tools/customizer.dat',
+				'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev27-tools/widgets.wie',
 				'pages'      => array(
 					'front_page' => 'Home Tools',
 					'blog'       => 'Our Blogs',
@@ -1130,10 +1130,10 @@ class Importer {
 			),
 			// array(
 			// 	'name'       => 'Home v28 - Nails',
-			// 	'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev28-nails/preview.jpg',
-			// 	'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev28-nails/demo-content.xml',
-			// 	'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev28-nails/customizer.dat',
-			// 	'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev28-nails/widgets.wie',
+			// 	'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev28-nails/preview.jpg',
+			// 	'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev28-nails/demo-content.xml',
+			// 	'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev28-nails/customizer.dat',
+			// 	'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev28-nails/widgets.wie',
 			// 	'pages'      => array(
 			// 		'front_page' => 'Home Nails',
 			// 		'blog'       => 'Our Blogs',
@@ -1170,10 +1170,10 @@ class Importer {
 			// ),
 			// array(
 			// 	'name'       => 'Home v29 - Fashion Sport',
-			// 	'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev29-fashion/preview.jpg',
-			// 	'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev29-fashion/demo-content.xml',
-			// 	'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev29-fashion/customizer.dat',
-			// 	'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev29-fashion/widgets.wie',
+			// 	'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev29-fashion/preview.jpg',
+			// 	'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev29-fashion/demo-content.xml',
+			// 	'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev29-fashion/customizer.dat',
+			// 	'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev29-fashion/widgets.wie',
 			// 	'pages'      => array(
 			// 		'front_page' => 'Home Fashion Sport',
 			// 		'blog'       => 'Our Blogs',
@@ -1207,10 +1207,10 @@ class Importer {
 			// ),
 			// array(
 			// 	'name'       => 'Home v30 - Books',
-			// 	'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev30-books/preview.jpg',
-			// 	'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev30-books/demo-content.xml',
-			// 	'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev30-books/customizer.dat',
-			// 	'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev30-books/widgets.wie',
+			// 	'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev30-books/preview.jpg',
+			// 	'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev30-books/demo-content.xml',
+			// 	'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev30-books/customizer.dat',
+			// 	'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev30-books/widgets.wie',
 			// 	'pages'      => array(
 			// 		'front_page' => 'Home Books',
 			// 		'blog'       => 'Our Blogs',
@@ -1245,10 +1245,10 @@ class Importer {
 			// ),
 			// array(
 			// 	'name'       => 'Home v31 - Grocery',
-			// 	'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev31-grocery/preview.jpg',
-			// 	'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev31-grocery/demo-content.xml',
-			// 	'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev31-grocery/customizer.dat',
-			// 	'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/razzi/homev31-grocery/widgets.wie',
+			// 	'preview'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev31-grocery/preview.jpg',
+			// 	'content'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev31-grocery/demo-content.xml',
+			// 	'customizer' => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev31-grocery/customizer.dat',
+			// 	'widgets'    => 'https://drfuri-demo-images.s3.us-west-1.amazonaws.com/dimas/homev31-grocery/widgets.wie',
 			// 	'pages'      => array(
 			// 		'front_page' => 'Home Grocery',
 			// 		'blog'       => 'Our Blogs',
@@ -1304,13 +1304,13 @@ class Importer {
 
 	function setup_options($demo) {
 		if ( isset( $demo['front_page'] ) && $demo['front_page'] == 'Home Nails' ) {
-			update_option( 'razzi_product_tab', 'yes' );
+			update_option( 'dimas_product_tab', 'yes' );
 		} elseif ( isset( $demo['front_page'] ) && $demo['front_page'] == 'Home Books' ) {
 			update_option( 'product_author_slug', true );
 			update_option( 'product_brand_slug', true );
-			update_option( 'razzi_product_tab', 'yes' );
+			update_option( 'dimas_product_tab', 'yes' );
 		} elseif ( isset( $demo['front_page'] ) && $demo['front_page'] == 'Home Fashion Sport' ) {
-			update_option( 'razzi_product_tab', 'yes' );
+			update_option( 'dimas_product_tab', 'yes' );
 		}
 
 	}

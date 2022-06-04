@@ -138,7 +138,7 @@ class AjaxLoader {
 		$data_text    = 'data-text=""';
 		if ( $results['current_page'] >= $results['total_pages'] ) {
 			$current_page = 0;
-			$data_text    = esc_html__( 'No products were found', 'razzi' );
+			$data_text    = esc_html__( 'No products were found', 'dimas' );
 		}
 
 		$products = '<div class="products-grid">';

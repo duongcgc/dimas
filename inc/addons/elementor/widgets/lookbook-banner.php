@@ -21,7 +21,7 @@ class Lookbook_Banner extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-lookbook-banner';
+		return 'dimas-lookbook-banner';
 	}
 
 	/**
@@ -30,7 +30,7 @@ class Lookbook_Banner extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Lookbook Banner', 'razzi' );
+		return esc_html__( 'Dimas - Lookbook Banner', 'dimas' );
 	}
 
 	/**
@@ -48,12 +48,12 @@ class Lookbook_Banner extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-frontend'
+			'dimas-frontend'
 		];
 	}
 
@@ -78,14 +78,14 @@ class Lookbook_Banner extends Widget_Base {
 		$this->start_controls_section(
 			'section_slides',
 			[
-				'label' => esc_html__( 'Content', 'razzi' ),
+				'label' => esc_html__( 'Content', 'dimas' ),
 			]
 		);
 
 		$this->add_responsive_control(
 			'image',
 			[
-				'label'     => __( 'Image', 'razzi' ),
+				'label'     => __( 'Image', 'dimas' ),
 				'type'      => Controls_Manager::MEDIA,
 			]
 		);
@@ -98,7 +98,7 @@ class Lookbook_Banner extends Widget_Base {
 			]
 		);
 
-		$control = apply_filters( 'razzi_banner_section_product_number', 2 );
+		$control = apply_filters( 'dimas_banner_section_product_number', 2 );
 		for ( $i = 1; $i <= $control; $i ++ ) {
 
 			$this->add_control(
@@ -112,15 +112,15 @@ class Lookbook_Banner extends Widget_Base {
 				'product_lookbooks_heading_' . $i,
 				[
 					'type'  => Controls_Manager::HEADING,
-					'label' => esc_html__( 'Lookbook', 'razzi' ) . ' ' . $i,
+					'label' => esc_html__( 'Lookbook', 'dimas' ) . ' ' . $i,
 				]
 			);
 
 			$this->add_control(
 				'product_lookbooks_ids_' . $i,
 				[
-					'label'       => esc_html__( 'Product', 'razzi' ),
-					'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+					'label'       => esc_html__( 'Product', 'dimas' ),
+					'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 					'type'        => 'rzautocomplete',
 					'default'     => '',
 					'label_block' => true,
@@ -134,7 +134,7 @@ class Lookbook_Banner extends Widget_Base {
 			$this->add_responsive_control(
 				'product_lookbooks_position_x_' . $i,
 				[
-					'label'      => esc_html__( 'Point Position X', 'razzi' ),
+					'label'      => esc_html__( 'Point Position X', 'dimas' ),
 					'type'       => Controls_Manager::SLIDER,
 					'range'      => [
 						'px' => [
@@ -152,7 +152,7 @@ class Lookbook_Banner extends Widget_Base {
 					],
 					'size_units' => [ '%', 'px' ],
 					'selectors'  => [
-						'{{WRAPPER}} .razzi-lookbook-banner .razzi-lookbook-item.item-' . $i . '' => 'left: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .dimas-lookbook-banner .dimas-lookbook-item.item-' . $i . '' => 'left: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -160,7 +160,7 @@ class Lookbook_Banner extends Widget_Base {
 			$this->add_responsive_control(
 				'product_lookbooks_position_y_' . $i,
 				[
-					'label'      => esc_html__( 'Point Position Y', 'razzi' ),
+					'label'      => esc_html__( 'Point Position Y', 'dimas' ),
 					'type'       => Controls_Manager::SLIDER,
 					'range'      => [
 						'px' => [
@@ -178,7 +178,7 @@ class Lookbook_Banner extends Widget_Base {
 					],
 					'size_units' => [ '%', 'px' ],
 					'selectors'  => [
-						'{{WRAPPER}} .razzi-lookbook-banner .razzi-lookbook-item.item-' . $i . ' ' => 'top: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .dimas-lookbook-banner .dimas-lookbook-item.item-' . $i . ' ' => 'top: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -187,7 +187,7 @@ class Lookbook_Banner extends Widget_Base {
 			$this->add_responsive_control(
 				'product_content_lookbooks_position_x_' . $i,
 				[
-					'label'      => esc_html__( 'Product Position X', 'razzi' ),
+					'label'      => esc_html__( 'Product Position X', 'dimas' ),
 					'type'       => Controls_Manager::SLIDER,
 					'range'      => [
 						'px' => [
@@ -202,7 +202,7 @@ class Lookbook_Banner extends Widget_Base {
 					'default'    => [],
 					'size_units' => [ 'px' ],
 					'selectors'  => [
-						'{{WRAPPER}} .razzi-lookbook-banner .razzi-lookbook-item.item-' . $i . ' .product-item' => 'left: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .dimas-lookbook-banner .dimas-lookbook-item.item-' . $i . ' .product-item' => 'left: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -210,7 +210,7 @@ class Lookbook_Banner extends Widget_Base {
 			$this->add_responsive_control(
 				'product_content_lookbooks_position_y_' . $i,
 				[
-					'label'      => esc_html__( 'Product Position Y', 'razzi' ),
+					'label'      => esc_html__( 'Product Position Y', 'dimas' ),
 					'type'       => Controls_Manager::SLIDER,
 					'range'      => [
 						'px' => [
@@ -225,7 +225,7 @@ class Lookbook_Banner extends Widget_Base {
 					'default'    => [],
 					'size_units' => [ 'px' ],
 					'selectors'  => [
-						'{{WRAPPER}} .razzi-lookbook-banner .razzi-lookbook-item.item-' . $i . ' .product-item' => 'top: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .dimas-lookbook-banner .dimas-lookbook-item.item-' . $i . ' .product-item' => 'top: {{SIZE}}{{UNIT}};',
 					],
 				]
 			);
@@ -240,7 +240,7 @@ class Lookbook_Banner extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_lookbook',
 			[
-				'label' => esc_html__( 'LookBook', 'razzi' ),
+				'label' => esc_html__( 'LookBook', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -248,10 +248,10 @@ class Lookbook_Banner extends Widget_Base {
 		$this->add_control(
 			'lookbook_bgcolor',
 			[
-				'label'     => esc_html__( 'Dot Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Dot Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-banner .razzi-lookbook-item' => ' --rz-lookbook-color-primary: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-banner .dimas-lookbook-item' => ' --rz-lookbook-color-primary: {{VALUE}}',
 				],
 			]
 		);
@@ -259,7 +259,7 @@ class Lookbook_Banner extends Widget_Base {
 		$this->add_control(
 			'lookbook_title_heading',
 			[
-				'label'     => esc_html__( 'Title', 'razzi' ),
+				'label'     => esc_html__( 'Title', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -269,17 +269,17 @@ class Lookbook_Banner extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'lookbook_title_typography',
-				'selector' => '{{WRAPPER}} .razzi-lookbook-banner .product-item .product-name',
+				'selector' => '{{WRAPPER}} .dimas-lookbook-banner .product-item .product-name',
 			]
 		);
 
 		$this->add_control(
 			'lookbook_title_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-banner .product-item .product-name' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-banner .product-item .product-name' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -287,7 +287,7 @@ class Lookbook_Banner extends Widget_Base {
 		$this->add_control(
 			'lookbook_price_heading',
 			[
-				'label'     => esc_html__( 'Price', 'razzi' ),
+				'label'     => esc_html__( 'Price', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -297,17 +297,17 @@ class Lookbook_Banner extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'lookbook_price_typography',
-				'selector' => '{{WRAPPER}} .razzi-lookbook-banner .product-item .product-price',
+				'selector' => '{{WRAPPER}} .dimas-lookbook-banner .product-item .product-price',
 			]
 		);
 
 		$this->add_control(
 			'lookbook_price_color',
 			[
-				'label'     => esc_html__( 'Regular Color', 'razzi' ),
+				'label'     => esc_html__( 'Regular Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-banner .product-item .product-price' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-banner .product-item .product-price' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -315,10 +315,10 @@ class Lookbook_Banner extends Widget_Base {
 		$this->add_control(
 			'lookbook_price_color_1',
 			[
-				'label'     => esc_html__( 'Sale Color', 'razzi' ),
+				'label'     => esc_html__( 'Sale Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-lookbook-banner .product-item .product-price ins' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-lookbook-banner .product-item .product-price ins' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -335,7 +335,7 @@ class Lookbook_Banner extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-lookbook-banner',
+			'dimas-lookbook-banner',
 		];
 
 		$content_html      = [];
@@ -347,7 +347,7 @@ class Lookbook_Banner extends Widget_Base {
 			$content_html[] = $image;
 		}
 
-		$control = apply_filters( 'razzi_banner_section_product_number', 2 );
+		$control = apply_filters( 'dimas_banner_section_product_number', 2 );
 
 		for ( $i = 1; $i <= $control; $i ++ ) {
 
@@ -369,7 +369,7 @@ class Lookbook_Banner extends Widget_Base {
 							<h6 class="product-name">%s</h6>
 							<div class="product-price">%s</div>
 						</div>
-						<a class="razzi-slide-button" href="%s"></a>
+						<a class="dimas-slide-button" href="%s"></a>
 					</div>',
 					$product->get_image( 'thumbnail' ),
 					$product->get_name(),
@@ -379,13 +379,13 @@ class Lookbook_Banner extends Widget_Base {
 			}
 
 			$banner_html .= $product_id ? sprintf(
-				'<div class="razzi-lookbook-item item-%s">%s</div>',
+				'<div class="dimas-lookbook-item item-%s">%s</div>',
 				esc_attr( $i ),
 				implode( '', $products_html )
 			) : '';
 		}
 
-		$content_html[] = '<div class="razzi-lookbook-banner__item">' . $banner_html . '</div>';
+		$content_html[] = '<div class="dimas-lookbook-banner__item">' . $banner_html . '</div>';
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );
 

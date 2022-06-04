@@ -20,7 +20,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-products-recently-viewed-carousel';
+		return 'dimas-products-recently-viewed-carousel';
 	}
 
 	/**
@@ -29,7 +29,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Products Recently Viewed Carousel', 'razzi' );
+		return __( 'Dimas - Products Recently Viewed Carousel', 'dimas' );
 	}
 
 	/**
@@ -47,12 +47,12 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-product-shortcode'
+			'dimas-product-shortcode'
 		];
 	}
 
@@ -82,17 +82,17 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 	protected function section_products_settings_controls() {
 		$this->start_controls_section(
 			'section_products',
-			[ 'label' => esc_html__( 'Products', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Products', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'layout',
 			[
-				'label'   => esc_html__( 'Layout', 'razzi' ),
+				'label'   => esc_html__( 'Layout', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'default'      => esc_html__( 'Default', 'razzi' ),
-					'effect_hover' => esc_html__( 'Effect Hover', 'razzi' ),
+					'default'      => esc_html__( 'Default', 'dimas' ),
+					'effect_hover' => esc_html__( 'Effect Hover', 'dimas' ),
 				],
 				'default' => 'default',
 			]
@@ -101,7 +101,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'limit',
 			[
-				'label'   => esc_html__( 'Limit', 'razzi' ),
+				'label'   => esc_html__( 'Limit', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 8,
 				'min'     => 2,
@@ -113,10 +113,10 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'load_ajax',
 			[
-				'label'        => __( 'Load With Ajax', 'razzi' ),
+				'label'        => __( 'Load With Ajax', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_off'    => __( 'Off', 'razzi' ),
-				'label_on'     => __( 'On', 'razzi' ),
+				'label_off'    => __( 'Off', 'dimas' ),
+				'label_on'     => __( 'On', 'dimas' ),
 				'default'      => '',
 				'return_value' => 'yes',
 			]
@@ -125,10 +125,10 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'hide_empty',
 			[
-				'label'              => __( 'Hide Recently Viewed Empty', 'razzi' ),
+				'label'              => __( 'Hide Recently Viewed Empty', 'dimas' ),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_off'          => __( 'Off', 'razzi' ),
-				'label_on'           => __( 'On', 'razzi' ),
+				'label_off'          => __( 'Off', 'dimas' ),
+				'label_on'           => __( 'On', 'dimas' ),
 				'return_value'       => 'yes',
 				'default'            => '',
 				'frontend_available' => true,
@@ -138,7 +138,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'section_empty_heading',
 			[
-				'label'     => esc_html__( 'Empty Product', 'razzi' ),
+				'label'     => esc_html__( 'Empty Product', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -147,31 +147,31 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'empty_product_description',
 			[
-				'label'       => esc_html__( 'Description', 'razzi' ),
+				'label'       => esc_html__( 'Description', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'placeholder' => esc_html__( 'Enter your text', 'razzi' ),
+				'placeholder' => esc_html__( 'Enter your text', 'dimas' ),
 				'label_block' => true,
-				'default'     => esc_html__( 'Recently Viewed Products is a function which helps you keep track of your recent viewing history.', 'razzi' ),
+				'default'     => esc_html__( 'Recently Viewed Products is a function which helps you keep track of your recent viewing history.', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'empty_product_text',
 			[
-				'label'       => esc_html__( 'Button Text', 'razzi' ),
+				'label'       => esc_html__( 'Button Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter your text', 'razzi' ),
+				'placeholder' => esc_html__( 'Enter your text', 'dimas' ),
 				'label_block' => true,
-				'default'     => esc_html__( 'Shop Now', 'razzi' ),
+				'default'     => esc_html__( 'Shop Now', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'empty_product_link',
 			[
-				'label'       => esc_html__( 'Button Link', 'razzi' ),
+				'label'       => esc_html__( 'Button Link', 'dimas' ),
 				'type'        => Controls_Manager::URL,
-				'placeholder' => esc_html__( 'Enter your link', 'razzi' ),
+				'placeholder' => esc_html__( 'Enter your link', 'dimas' ),
 				'label_block' => true,
 				'default'     => [
 					'url'         => '#',
@@ -187,13 +187,13 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 	protected function section_carousel_settings_controls() {
 		$this->start_controls_section(
 			'section_carousel_settings',
-			[ 'label' => esc_html__( 'Carousel Settings', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Carousel Settings', 'dimas' ) ]
 		);
 
 		$this->add_responsive_control(
 			'slidesToShow',
 			[
-				'label'              => esc_html__( 'Slides to show', 'razzi' ),
+				'label'              => esc_html__( 'Slides to show', 'dimas' ),
 				'type'               => Controls_Manager::NUMBER,
 				'min'                => 2,
 				'max'                => 10,
@@ -206,7 +206,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'slidesToScroll',
 			[
-				'label'              => esc_html__( 'Slides to scroll', 'razzi' ),
+				'label'              => esc_html__( 'Slides to scroll', 'dimas' ),
 				'type'               => Controls_Manager::NUMBER,
 				'min'                => 1,
 				'max'                => 7,
@@ -217,13 +217,13 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'navigation',
 			[
-				'label'              => esc_html__( 'Navigation', 'razzi' ),
+				'label'              => esc_html__( 'Navigation', 'dimas' ),
 				'type'               => Controls_Manager::SELECT,
 				'options'            => [
-					'none'      => esc_html__( 'None', 'razzi' ),
-					'scrollbar' => esc_html__( 'Scrollbar', 'razzi' ),
-					'arrows'    => esc_html__( 'Arrows', 'razzi' ),
-					'dots'      => esc_html__( 'Dots', 'razzi' ),
+					'none'      => esc_html__( 'None', 'dimas' ),
+					'scrollbar' => esc_html__( 'Scrollbar', 'dimas' ),
+					'arrows'    => esc_html__( 'Arrows', 'dimas' ),
+					'dots'      => esc_html__( 'Dots', 'dimas' ),
 				],
 				'default'            => 'arrows',
 				'frontend_available' => true,
@@ -232,10 +232,10 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'infinite',
 			[
-				'label'              => __( 'Infinite Loop', 'razzi' ),
+				'label'              => __( 'Infinite Loop', 'dimas' ),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_off'          => __( 'Off', 'razzi' ),
-				'label_on'           => __( 'On', 'razzi' ),
+				'label_off'          => __( 'Off', 'dimas' ),
+				'label_on'           => __( 'On', 'dimas' ),
 				'return_value'       => 'yes',
 				'default'            => '',
 				'frontend_available' => true,
@@ -245,10 +245,10 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			[
-				'label'              => __( 'Autoplay', 'razzi' ),
+				'label'              => __( 'Autoplay', 'dimas' ),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_off'          => __( 'Off', 'razzi' ),
-				'label_on'           => __( 'On', 'razzi' ),
+				'label_off'          => __( 'Off', 'dimas' ),
+				'label_on'           => __( 'On', 'dimas' ),
 				'return_value'       => 'yes',
 				'default'            => '',
 				'frontend_available' => true,
@@ -258,7 +258,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'autoplay_speed',
 			[
-				'label'              => __( 'Autoplay Speed (in ms)', 'razzi' ),
+				'label'              => __( 'Autoplay Speed (in ms)', 'dimas' ),
 				'type'               => Controls_Manager::NUMBER,
 				'default'            => 1000,
 				'min'                => 100,
@@ -275,7 +275,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_carousel_style',
 			[
-				'label' => esc_html__( 'Carousel Settings', 'razzi' ),
+				'label' => esc_html__( 'Carousel Settings', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -283,7 +283,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'carousel_style_divider',
 			[
-				'label'     => __( 'Scrollbar', 'razzi' ),
+				'label'     => __( 'Scrollbar', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -292,7 +292,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'scrollbar_spacing',
 			[
-				'label'     => __( 'Spacing', 'razzi' ),
+				'label'     => __( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -301,7 +301,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .swiper-scrollbar' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .swiper-scrollbar' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -309,11 +309,11 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'scrollbar_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .swiper-scrollbar' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .swiper-scrollbar' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -321,11 +321,11 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'scrollbar_active_color',
 			[
-				'label'     => esc_html__( 'Active Color', 'razzi' ),
+				'label'     => esc_html__( 'Active Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .swiper-scrollbar-drag' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .swiper-scrollbar-drag' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -333,7 +333,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'carousel_divider',
 			[
-				'label'     => __( 'Arrows', 'razzi' ),
+				'label'     => __( 'Arrows', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -342,7 +342,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_font_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -351,7 +351,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -359,12 +359,12 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_spacing_horizontal',
 			[
-				'label'      => __( 'Horizontal Position', 'razzi' ),
+				'label'      => __( 'Horizontal Position', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .rz-swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .rz-swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .rz-swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .rz-swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -372,27 +372,27 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_spacing_vertical ',
 			[
-				'label'      => __( 'Vertical Position', 'razzi' ),
+				'label'      => __( 'Vertical Position', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .rz-swiper-button' => 'top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .rz-swiper-button' => 'top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->start_controls_tabs( 'sliders_normal_settings' );
 
-		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .rz-swiper-button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .rz-swiper-button' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -400,27 +400,27 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .rz-swiper-button' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .rz-swiper-button' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_hover_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .rz-swiper-button:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .rz-swiper-button:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -428,11 +428,11 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_hover_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -445,7 +445,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'carousel_style_divider_2',
 			[
-				'label'     => __( 'Dots', 'razzi' ),
+				'label'     => __( 'Dots', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -454,7 +454,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_font_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -463,7 +463,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .swiper-pagination .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .swiper-pagination .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -471,22 +471,22 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_control(
 			'dots_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .swiper-pagination .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .swiper-pagination .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
 			'dots_active_color',
 			[
-				'label'     => esc_html__( 'Active Color', 'razzi' ),
+				'label'     => esc_html__( 'Active Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:before, {{WRAPPER}} .razzi-products-recently-viewed-carousel .swiper-pagination .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:before, {{WRAPPER}} .dimas-products-recently-viewed-carousel .swiper-pagination .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -494,22 +494,22 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_spacing_item',
 			[
-				'label'      => __( 'Item Space', 'razzi' ),
+				'label'      => __( 'Item Space', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .swiper-pagination-bullets .swiper-pagination-bullet' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .swiper-pagination-bullets .swiper-pagination-bullet' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 		$this->add_responsive_control(
 			'dots_spacing',
 			[
-				'label'      => __( 'Space', 'razzi' ),
+				'label'      => __( 'Space', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-recently-viewed-carousel .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-recently-viewed-carousel .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -530,7 +530,7 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 		$nav_mobile = empty( $settings['navigation_mobile'] ) ? $nav : $settings['navigation_mobile'];
 
 		$classes = [
-			'razzi-products-recently-viewed-carousel razzi-swiper-carousel-elementor razzi-swiper-slider-elementor razzi-history-products',
+			'dimas-products-recently-viewed-carousel dimas-swiper-carousel-elementor dimas-swiper-slider-elementor dimas-history-products',
 			'navigation-' . $nav,
 			'navigation-tablet-' . $nav_tablet,
 			'navigation-mobile-' . $nav_mobile,
@@ -565,8 +565,8 @@ class Products_Recently_Viewed_Carousel extends Widget_Base {
 					Helper::get_recently_viewed_products( $atts );
 				} else {
 					?>
-                    <div class="razzi-posts__loading">
-                        <div class="razzi-loading"></div>
+                    <div class="dimas-posts__loading">
+                        <div class="dimas-loading"></div>
                     </div>
 					<?php
 				}

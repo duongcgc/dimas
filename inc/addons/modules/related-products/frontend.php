@@ -105,7 +105,7 @@ class Frontend {
 	 * @return array
 	 */
 	public function related_product_cat_terms( $term_ids, $product_id ) {
-		$custom_slugs = get_post_meta( get_the_ID(), 'razzi_related_cat_slugs', true );
+		$custom_slugs = get_post_meta( get_the_ID(), 'dimas_related_cat_slugs', true );
 		if( $custom_slugs && is_array($custom_slugs) ) {
 			$term_ids = array();
 			foreach( $custom_slugs as $slug ) {
@@ -158,7 +158,7 @@ class Frontend {
 	 * @return string
 	 */
 	public function related_product_tag_terms($term_ids) {
-		$tag_ids = maybe_unserialize( get_post_meta( get_the_ID(), 'razzi_related_tag_ids', true ) );
+		$tag_ids = maybe_unserialize( get_post_meta( get_the_ID(), 'dimas_related_tag_ids', true ) );
 		$term_ids = $tag_ids ? $tag_ids : $term_ids;
 		return $term_ids;
 	}
@@ -171,7 +171,7 @@ class Frontend {
 	 * @return string
 	 */
 	public function related_products_heading() {
-		return get_option( 'rz_related_products_title', esc_html__('Related Products', 'razzi') );
+		return get_option( 'rz_related_products_title', esc_html__('Related Products', 'dimas') );
 	}
 
 	/**
@@ -199,7 +199,7 @@ class Frontend {
 	 * @return array
 	 */
 	public function related_posts_query( $query ) {
-		$product_ids = maybe_unserialize( get_post_meta( get_the_ID(), 'razzi_related_product_ids', true ) );
+		$product_ids = maybe_unserialize( get_post_meta( get_the_ID(), 'dimas_related_product_ids', true ) );
 
 		if( $product_ids && is_array( $product_ids ) ) {
 			$query['where'] .= ' AND p.ID IN ( ' . implode( ',', array_map( 'absint', $product_ids ) ) . ' )';

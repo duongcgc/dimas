@@ -22,7 +22,7 @@ class Testimonials_Grid extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-testimonials-grid';
+		return 'dimas-testimonials-grid';
 	}
 
 	/**
@@ -31,7 +31,7 @@ class Testimonials_Grid extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Testimonials Grid', 'razzi' );
+		return esc_html__( 'Dimas - Testimonials Grid', 'dimas' );
 	}
 
 	/**
@@ -49,14 +49,14 @@ class Testimonials_Grid extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
 			'imagesloaded',
-			'razzi-masonry',
-			'razzi-frontend'
+			'dimas-masonry',
+			'dimas-frontend'
 		];
 	}
 
@@ -80,7 +80,7 @@ class Testimonials_Grid extends Widget_Base {
 		// Brands Settings
 		$this->start_controls_section(
 			'section_blogs',
-			[ 'label' => esc_html__( 'Testimonials', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Testimonials', 'dimas' ) ]
 		);
 
 
@@ -89,7 +89,7 @@ class Testimonials_Grid extends Widget_Base {
 		$repeater->add_control(
 			'image',
 			[
-				'label'   => esc_html__( 'Image', 'razzi' ),
+				'label'   => esc_html__( 'Image', 'dimas' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => 'https://via.placeholder.com/100x100/f5f5f5?text=100x100',
@@ -100,16 +100,16 @@ class Testimonials_Grid extends Widget_Base {
 		$repeater->add_control(
 			'desc',
 			[
-				'label'   => esc_html__( 'Description', 'razzi' ),
+				'label'   => esc_html__( 'Description', 'dimas' ),
 				'type'    => Controls_Manager::TEXTAREA,
-				'default' => esc_html__( 'This is desc', 'razzi' ),
+				'default' => esc_html__( 'This is desc', 'dimas' ),
 			]
 		);
 
 		$repeater->add_control(
 			'rate',
 			[
-				'label'   => __( 'Rate', 'razzi' ),
+				'label'   => __( 'Rate', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'min'     => 1,
 				'max'     => 5,
@@ -121,18 +121,18 @@ class Testimonials_Grid extends Widget_Base {
 		$repeater->add_control(
 			'customer',
 			[
-				'label'   => esc_html__( 'Customer', 'razzi' ),
+				'label'   => esc_html__( 'Customer', 'dimas' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Customer Name', 'razzi' ),
+				'default' => esc_html__( 'Customer Name', 'dimas' ),
 			]
 		);
 
 		$repeater->add_control(
 			'date',
 			[
-				'label'   => esc_html__( 'Date', 'razzi' ),
+				'label'   => esc_html__( 'Date', 'dimas' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'This is Date', 'razzi' ),
+				'default' => esc_html__( 'This is Date', 'dimas' ),
 			]
 		);
 
@@ -140,27 +140,27 @@ class Testimonials_Grid extends Widget_Base {
 		$this->add_control(
 			'elements',
 			[
-				'label'         => esc_html__( 'Testimonials Lists', 'razzi' ),
+				'label'         => esc_html__( 'Testimonials Lists', 'dimas' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'default'       => [
 					[
-						'desc' => esc_html__( 'This is the desc', 'razzi' ),
+						'desc' => esc_html__( 'This is the desc', 'dimas' ),
 					],
 					[
-						'desc' => esc_html__( 'This is the desc', 'razzi' ),
+						'desc' => esc_html__( 'This is the desc', 'dimas' ),
 					],
 					[
-						'desc' => esc_html__( 'This is the desc', 'razzi' ),
+						'desc' => esc_html__( 'This is the desc', 'dimas' ),
 					],
 					[
-						'desc' => esc_html__( 'This is the desc', 'razzi' ),
+						'desc' => esc_html__( 'This is the desc', 'dimas' ),
 					],
 					[
-						'desc' => esc_html__( 'This is the desc', 'razzi' ),
+						'desc' => esc_html__( 'This is the desc', 'dimas' ),
 					],
 					[
-						'desc' => esc_html__( 'This is the desc', 'razzi' ),
+						'desc' => esc_html__( 'This is the desc', 'dimas' ),
 					]
 				],
 				'title_field'   => '{{{ customer }}}',
@@ -171,7 +171,7 @@ class Testimonials_Grid extends Widget_Base {
 		$this->add_control(
 			'columns',
 			[
-				'label'              => esc_html__( 'Columns', 'razzi' ),
+				'label'              => esc_html__( 'Columns', 'dimas' ),
 				'type'               => Controls_Manager::NUMBER,
 				'min'                => 1,
 				'max'                => 8,
@@ -189,7 +189,7 @@ class Testimonials_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_styles',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -197,12 +197,12 @@ class Testimonials_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'summary_header_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-testimonials-grid' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-testimonials-grid' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -210,11 +210,11 @@ class Testimonials_Grid extends Widget_Base {
 		$this->add_control(
 			'content_bg_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-grid  .testimonial-item__inner' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-grid  .testimonial-item__inner' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -223,7 +223,7 @@ class Testimonials_Grid extends Widget_Base {
 		$this->add_control(
 			'content_style_img',
 			[
-				'label'     => __( 'Image', 'razzi' ),
+				'label'     => __( 'Image', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -232,7 +232,7 @@ class Testimonials_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'img_border_ra',
 			[
-				'label'     => esc_html__( 'Border Radius', 'razzi' ),
+				'label'     => esc_html__( 'Border Radius', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -241,14 +241,14 @@ class Testimonials_Grid extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-grid .testi-image img' => 'border-radius: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-testimonials-grid .testi-image img' => 'border-radius: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
 		$this->add_control(
 			'content_style_desc',
 			[
-				'label'     => __( 'Description', 'razzi' ),
+				'label'     => __( 'Description', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -258,18 +258,18 @@ class Testimonials_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'desc_typography',
-				'selector' => '{{WRAPPER}} .razzi-testimonials-grid .testi-desc',
+				'selector' => '{{WRAPPER}} .dimas-testimonials-grid .testi-desc',
 			]
 		);
 
 		$this->add_control(
 			'desc_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-grid .testi-desc' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-grid .testi-desc' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -277,7 +277,7 @@ class Testimonials_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -286,7 +286,7 @@ class Testimonials_Grid extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-grid .testi-desc' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-testimonials-grid .testi-desc' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -294,7 +294,7 @@ class Testimonials_Grid extends Widget_Base {
 		$this->add_control(
 			'content_style_rating',
 			[
-				'label'     => __( 'Rating', 'razzi' ),
+				'label'     => __( 'Rating', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -303,7 +303,7 @@ class Testimonials_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'rate_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -312,7 +312,7 @@ class Testimonials_Grid extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-grid .testi-rate' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-testimonials-grid .testi-rate' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -320,7 +320,7 @@ class Testimonials_Grid extends Widget_Base {
 		$this->add_control(
 			'staring_font',
 			[
-				'label'     => esc_html__( 'Font Size', 'razzi' ),
+				'label'     => esc_html__( 'Font Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -329,7 +329,7 @@ class Testimonials_Grid extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-grid .razzi-svg-icon' => 'font-size: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-testimonials-grid .dimas-svg-icon' => 'font-size: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -337,11 +337,11 @@ class Testimonials_Grid extends Widget_Base {
 		$this->add_control(
 			'staring_color',
 			[
-				'label'     => __( 'Normal Color', 'razzi' ),
+				'label'     => __( 'Normal Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-grid .razzi-svg-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-grid .dimas-svg-icon' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -349,11 +349,11 @@ class Testimonials_Grid extends Widget_Base {
 		$this->add_control(
 			'staring_color_ac',
 			[
-				'label'     => __( 'Active Color', 'razzi' ),
+				'label'     => __( 'Active Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-grid .razzi-svg-icon.rate-active' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-grid .dimas-svg-icon.rate-active' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -361,7 +361,7 @@ class Testimonials_Grid extends Widget_Base {
 		$this->add_control(
 			'content_style_meta',
 			[
-				'label'     => __( 'Meta', 'razzi' ),
+				'label'     => __( 'Meta', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -370,18 +370,18 @@ class Testimonials_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'meta_typography',
-				'selector' => '{{WRAPPER}} .razzi-testimonials-grid .testi-meta',
+				'selector' => '{{WRAPPER}} .dimas-testimonials-grid .testi-meta',
 			]
 		);
 
 		$this->add_control(
 			'meta_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-grid .testi-meta' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-grid .testi-meta' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -399,7 +399,7 @@ class Testimonials_Grid extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-testimonials-grid',
+			'dimas-testimonials-grid',
 		];
 
 		$els         = $settings['elements'];

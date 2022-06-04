@@ -21,7 +21,7 @@ class Map extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-map';
+		return 'dimas-map';
 	}
 
 	/**
@@ -30,7 +30,7 @@ class Map extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Map', 'razzi' );
+		return esc_html__( 'Dimas - Map', 'dimas' );
 	}
 
 	/**
@@ -48,7 +48,7 @@ class Map extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
@@ -56,7 +56,7 @@ class Map extends Widget_Base {
 			'mapbox',
 			'mapboxgl',
 			'mapbox-sdk',
-			'razzi-frontend'
+			'dimas-frontend'
 		];
 	}
 
@@ -85,24 +85,24 @@ class Map extends Widget_Base {
 	protected function section_content() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Content', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Content', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'access_token',
 			[
-				'label'       => esc_html__( 'Access Token', 'razzi' ),
+				'label'       => esc_html__( 'Access Token', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'Enter your access token', 'razzi' ),
+				'default'     => esc_html__( 'Enter your access token', 'dimas' ),
 				'label_block' => true,
-				'description' => sprintf(__('Please go to <a href="%s" target="_blank">Maps Box APIs</a> to get a key', 'razzi'), esc_url('https://www.mapbox.com')),
+				'description' => sprintf(__('Please go to <a href="%s" target="_blank">Maps Box APIs</a> to get a key', 'dimas'), esc_url('https://www.mapbox.com')),
 			]
 		);
 
 		$this->add_control(
 			'marker_heading',
 			[
-				'label' => esc_html__( 'Marker', 'razzi' ),
+				'label' => esc_html__( 'Marker', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -121,7 +121,7 @@ class Map extends Widget_Base {
 		$this->add_control(
 			'image',
 			[
-				'label'   => esc_html__( 'Choose Image', 'razzi' ),
+				'label'   => esc_html__( 'Choose Image', 'dimas' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => 'https://via.placeholder.com/40x40/f5f5f5?text=40x40',
@@ -143,7 +143,7 @@ class Map extends Widget_Base {
 		$repeater->add_control(
 			'local',
 			[
-				'label'       => esc_html__( 'Local', 'razzi' ),
+				'label'       => esc_html__( 'Local', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => '',
 				'label_block' => true,
@@ -153,9 +153,9 @@ class Map extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'This is title', 'razzi' ),
+				'default'     => esc_html__( 'This is title', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -163,9 +163,9 @@ class Map extends Widget_Base {
 		$repeater -> add_control(
 			'desc',
 			[
-				'label'       => esc_html__( 'Content', 'razzi' ),
+				'label'       => esc_html__( 'Content', 'dimas' ),
 				'type'        => Controls_Manager::WYSIWYG ,
-				'default'     => esc_html__( 'Enter your content', 'razzi' ),
+				'default'     => esc_html__( 'Enter your content', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -173,19 +173,19 @@ class Map extends Widget_Base {
 		$this->add_control(
 			'elements',
 			[
-				'label' => esc_html__( 'Location List', 'razzi' ),
+				'label' => esc_html__( 'Location List', 'dimas' ),
 				'type'    => Controls_Manager::REPEATER,
 				'fields'  => $repeater->get_controls(),
 				'default' => [
 					[
-						'local'                 => esc_html__( 'New York', 'razzi' ),
-						'title'                 => esc_html__( 'This is title', 'razzi' ),
-						'desc'                  => esc_html__( 'This is description', 'razzi' ),
+						'local'                 => esc_html__( 'New York', 'dimas' ),
+						'title'                 => esc_html__( 'This is title', 'dimas' ),
+						'desc'                  => esc_html__( 'This is description', 'dimas' ),
 					],
 					[
-						'local'                 => esc_html__( 'London', 'razzi' ),
-						'title'         => esc_html__( 'This is title', 'razzi' ),
-						'desc'                  => esc_html__( 'This is description', 'razzi' ),
+						'local'                 => esc_html__( 'London', 'dimas' ),
+						'title'         => esc_html__( 'This is title', 'dimas' ),
+						'desc'                  => esc_html__( 'This is description', 'dimas' ),
 					]
 				],
 				'title_field'   => '{{{ title }}}',
@@ -204,7 +204,7 @@ class Map extends Widget_Base {
 		$this->add_control(
 			'show_tab',
 			[
-				'label'        => esc_html__( 'Show Location', 'razzi' ),
+				'label'        => esc_html__( 'Show Location', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'default'      => 'yes',
 				'return_value' => 'yes',
@@ -214,7 +214,7 @@ class Map extends Widget_Base {
 		$this->add_control(
 			'show_search',
 			[
-				'label'        => esc_html__( 'Show Search', 'razzi' ),
+				'label'        => esc_html__( 'Show Search', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'default'      => 'yes',
 				'return_value' => 'yes',
@@ -224,7 +224,7 @@ class Map extends Widget_Base {
 		$this->add_control(
 			'zoom',
 			[
-				'label'       => esc_html__( 'Zoom', 'razzi' ),
+				'label'       => esc_html__( 'Zoom', 'dimas' ),
 				'type'        => Controls_Manager::NUMBER,
 				'default'     => '13',
 			]
@@ -233,13 +233,13 @@ class Map extends Widget_Base {
 		$this->add_control(
 			'mode',
 			[
-				'label'       => esc_html__( 'Mode', 'razzi' ),
+				'label'       => esc_html__( 'Mode', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => [
-					'streets-v11' 	=> esc_html__( 'Streets', 'razzi' ),
-					'light-v10' 	=> esc_html__( 'Light', 'razzi' ),
-					'dark-v10'  	=> esc_html__( 'Dark', 'razzi' ),
-					'outdoors-v11'  => esc_html__( 'Outdoors', 'razzi' ),
+					'streets-v11' 	=> esc_html__( 'Streets', 'dimas' ),
+					'light-v10' 	=> esc_html__( 'Light', 'dimas' ),
+					'dark-v10'  	=> esc_html__( 'Dark', 'dimas' ),
+					'outdoors-v11'  => esc_html__( 'Outdoors', 'dimas' ),
 				],
 				'default'     => 'light-v10',
 			]
@@ -262,7 +262,7 @@ class Map extends Widget_Base {
 		$this->start_controls_section(
 			'style_general',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -270,7 +270,7 @@ class Map extends Widget_Base {
 		$this->add_control(
 			'content_bk_color',
 			[
-				'label'        => esc_html__( 'Background Color', 'razzi' ),
+				'label'        => esc_html__( 'Background Color', 'dimas' ),
 				'type'         => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -282,11 +282,11 @@ class Map extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label'      => __( 'Padding', 'razzi' ),
+				'label'      => __( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-map' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-map' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'after',
 			]
@@ -295,7 +295,7 @@ class Map extends Widget_Base {
 		$this->add_control(
 			'color_1',
 			[
-				'label'     => esc_html__( 'Color water', 'razzi' ),
+				'label'     => esc_html__( 'Color water', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 			]
 		);
@@ -303,7 +303,7 @@ class Map extends Widget_Base {
 		$this->add_control(
 			'color_2',
 			[
-				'label'     => esc_html__( 'Color building', 'razzi' ),
+				'label'     => esc_html__( 'Color building', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 			]
 		);
@@ -311,11 +311,11 @@ class Map extends Widget_Base {
 		$this->add_responsive_control(
 			'height',
 			[
-				'label'     => esc_html__( 'Map Height', 'razzi' ),
+				'label'     => esc_html__( 'Map Height', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-map > *' => 'height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-map > *' => 'height: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -327,7 +327,7 @@ class Map extends Widget_Base {
 		$this->start_controls_section(
 			'style_box',
 			[
-				'label' => __( 'Location Content', 'razzi' ),
+				'label' => __( 'Location Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -335,11 +335,11 @@ class Map extends Widget_Base {
 		$this->add_responsive_control(
 			'box_padding',
 			[
-				'label'      => __( 'Padding', 'razzi' ),
+				'label'      => __( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-map .box-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-map .box-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -348,11 +348,11 @@ class Map extends Widget_Base {
 		$this->add_control(
 			'box_bk_color',
 			[
-				'label'        => esc_html__( 'Background Color', 'razzi' ),
+				'label'        => esc_html__( 'Background Color', 'dimas' ),
 				'type'         => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-map .box-item' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-map .box-item' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -360,11 +360,11 @@ class Map extends Widget_Base {
 		$this->add_control(
 			'box_border_color',
 			[
-				'label'        => esc_html__( 'Border Color', 'razzi' ),
+				'label'        => esc_html__( 'Border Color', 'dimas' ),
 				'type'         => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-map .box-item' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-map .box-item' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -377,7 +377,7 @@ class Map extends Widget_Base {
 		$this->start_controls_tab(
 			'box_title',
 			[
-				'label' => __( 'Title', 'razzi' ),
+				'label' => __( 'Title', 'dimas' ),
 			]
 		);
 
@@ -385,18 +385,18 @@ class Map extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-map__table .map-title',
+				'selector' => '{{WRAPPER}} .dimas-map__table .map-title',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-map__table .map-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-map__table .map-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -404,7 +404,7 @@ class Map extends Widget_Base {
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label'     => __( 'Spacing', 'razzi' ),
+				'label'     => __( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -414,7 +414,7 @@ class Map extends Widget_Base {
 				],
 				'default'   => [ ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-map__table .map-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-map__table .map-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -424,7 +424,7 @@ class Map extends Widget_Base {
 		$this->start_controls_tab(
 			'box_local',
 			[
-				'label' => __( 'Local', 'razzi' ),
+				'label' => __( 'Local', 'dimas' ),
 			]
 		);
 
@@ -432,18 +432,18 @@ class Map extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'local_typography',
-				'selector' => '{{WRAPPER}} .razzi-map__table .map-local',
+				'selector' => '{{WRAPPER}} .dimas-map__table .map-local',
 			]
 		);
 
 		$this->add_control(
 			'local_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-map__table .map-local' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-map__table .map-local' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -451,7 +451,7 @@ class Map extends Widget_Base {
 		$this->add_responsive_control(
 			'local_spacing',
 			[
-				'label'     => __( 'Spacing', 'razzi' ),
+				'label'     => __( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -461,7 +461,7 @@ class Map extends Widget_Base {
 				],
 				'default'   => [ ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-map__table .map-local' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-map__table .map-local' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -471,7 +471,7 @@ class Map extends Widget_Base {
 		$this->start_controls_tab(
 			'box_desc',
 			[
-				'label' => __( 'Desc', 'razzi' ),
+				'label' => __( 'Desc', 'dimas' ),
 			]
 		);
 
@@ -479,18 +479,18 @@ class Map extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'desc_typography',
-				'selector' => '{{WRAPPER}} .razzi-map__table .map-desc',
+				'selector' => '{{WRAPPER}} .dimas-map__table .map-desc',
 			]
 		);
 
 		$this->add_control(
 			'desc_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-map__table .map-desc' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-map__table .map-desc' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -510,13 +510,13 @@ class Map extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		$id     = uniqid( 'razzi-map-' );
+		$id     = uniqid( 'dimas-map-' );
 
 		$this->add_render_attribute(
 			'wrapper', 'class', [
-				'razzi-map',
-				$settings['show_tab'] ? 'razzi-map__has-tab' : '',
-				$settings['show_search'] ? 'razzi-map__has-search' : ''
+				'dimas-map',
+				$settings['show_tab'] ? 'dimas-map__has-tab' : '',
+				$settings['show_search'] ? 'dimas-map__has-search' : ''
 			]
 		);
 
@@ -533,7 +533,7 @@ class Map extends Widget_Base {
 		$this->add_render_attribute('attr_tab','data-longitude', '' );
 
 		if ($settings["elements"]) {
-			$output_tab[] = '<div class="razzi-map__table">';
+			$output_tab[] = '<div class="dimas-map__table">';
 
 		 	foreach (  $settings["elements"]  as $index => $item ) {
 				$locals[] = $item["local"];
@@ -561,7 +561,7 @@ class Map extends Widget_Base {
 		$this->add_render_attribute('map','data-map',wp_json_encode($output_map) );
 
 		echo sprintf(
-			'<div %s %s>%s<div class="razzi-map__content" id="%s"></div></div>',
+			'<div %s %s>%s<div class="dimas-map__content" id="%s"></div></div>',
 			$this->get_render_attribute_string( 'wrapper' ),
 			$this->get_render_attribute_string( 'map' ),
 			implode( '', $output_tab ),

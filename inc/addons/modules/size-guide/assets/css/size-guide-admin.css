@@ -1,11 +1,11 @@
 /** Tabs */
-.razzi-size-guide-tabs--tabs {
+.dimas-size-guide-tabs--tabs {
 	overflow: hidden;
 	margin: 7px -12px;
 	padding: 0 12px;
 }
 
-.razzi-size-guide-tabs--tabs:after {
+.dimas-size-guide-tabs--tabs:after {
 	content: "";
 	display: block;
 	border-bottom: 1px solid #ddd;
@@ -14,7 +14,7 @@
 	top: -1px;
 }
 
-.razzi-size-guide-table-tabs--tab {
+.dimas-size-guide-table-tabs--tab {
 	float: left;
 	position: relative;
 	padding: 5px 25px 5px 15px;
@@ -24,13 +24,13 @@
 	border: 1px solid #ddd;
 }
 
-.razzi-size-guide-table-tabs--tab.active {
+.dimas-size-guide-table-tabs--tab.active {
 	border-bottom-color: #fff;
 	z-index: 1;
 }
 
 
-.razzi-size-guide-table-tabs--tab input {
+.dimas-size-guide-table-tabs--tab input {
 	font-size: 13px;
 	position: absolute;
 	max-width: calc(100% - 30px);
@@ -39,69 +39,69 @@
 	right: 25px;
 }
 
-.razzi-size-guide-table-tabs--tab-text {
+.dimas-size-guide-table-tabs--tab-text {
 	font-weight: 600;
 	display: block;
 	padding: 5px;
 }
 
-.razzi-size-guide-table-tabs--tab .edit-button,
-.razzi-size-guide-table-tabs--tab .confirm-button {
+.dimas-size-guide-table-tabs--tab .edit-button,
+.dimas-size-guide-table-tabs--tab .confirm-button {
 	position: absolute;
 	right: 5px;
 	top: 10px;
 }
 
-.razzi-size-guide-table-tabs--tab .edit-button {
+.dimas-size-guide-table-tabs--tab .edit-button {
 	opacity: 0.5;
 }
 
-.razzi-size-guide-table-tabs--tab:hover .edit-button {
+.dimas-size-guide-table-tabs--tab:hover .edit-button {
 	opacity: 1;
 }
 
-.razzi-size-guide-table-tabs--tab .confirm-button {
+.dimas-size-guide-table-tabs--tab .confirm-button {
 	display: none;
 }
 
-.razzi-size-guide-tabs--tabs .add-new-tab {
+.dimas-size-guide-tabs--tabs .add-new-tab {
 	padding-right: 5px;
 }
 
-.razzi-size-guide-tabs--tabs .add-new-tab .dashicons {
+.dimas-size-guide-tabs--tabs .add-new-tab .dashicons {
 	padding: 4px;
 }
 
-.razzi-size-guide-table-tabs--tab.editting input {
+.dimas-size-guide-table-tabs--tab.editting input {
 	z-index: 1;
 }
 
-.razzi-size-guide-table-tabs--tab.editting .edit-button {
+.dimas-size-guide-table-tabs--tab.editting .edit-button {
 	display: none;
 }
 
-.razzi-size-guide-table-tabs--tab.editting .confirm-button {
+.dimas-size-guide-table-tabs--tab.editting .confirm-button {
 	display: block;
 }
 
-.razzi-size-guide-table-tabs--tab.editting .razzi-size-guide-table-tabs--tab-text {
+.dimas-size-guide-table-tabs--tab.editting .dimas-size-guide-table-tabs--tab-text {
 	visibility: hidden;
 }
 
-.razzi-size-guide-table-editor {
+.dimas-size-guide-table-editor {
 	display: none;
 }
 
-.razzi-size-guide-table-editor.active {
+.dimas-size-guide-table-editor.active {
 	display: block;
 }
 
-.has-one-tab .razzi-size-guide-table-editor .delete-table-p {
+.has-one-tab .dimas-size-guide-table-editor .delete-table-p {
 	display: none;
 }
 
 /* Table */
-table.razzi-table-edit {
+table.dimas-table-edit {
 	width: 100%;
 	margin: 15px 0;
 	border: 1px solid #ddd;
@@ -112,7 +112,7 @@ table.razzi-table-edit {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, .075)
 }
 
-table.razzi-table-edit a.icon-button {
+table.dimas-table-edit a.icon-button {
 	background-color: #ccc;
 	display: inline-block;
 	width: 18px;
@@ -131,29 +131,29 @@ table.razzi-table-edit a.icon-button {
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
-table.razzi-table-edit a.icon-button.addcol,
-table.razzi-table-edit a.icon-button.addrow {
+table.dimas-table-edit a.icon-button.addcol,
+table.dimas-table-edit a.icon-button.addrow {
 	background-color: #81b71a;
 }
 
-table.razzi-table-edit a.icon-button.delcol,
-table.razzi-table-edit a.icon-button.delrow {
+table.dimas-table-edit a.icon-button.delcol,
+table.dimas-table-edit a.icon-button.delrow {
 	background-color: #db4a39;
 }
 
-table.razzi-table-edit a.icon-button.disabled {
+table.dimas-table-edit a.icon-button.disabled {
 	background-color: #eee;
 }
 
-table.razzi-table-edit td:last-child,
-table.razzi-table-edit th:last-child {
+table.dimas-table-edit td:last-child,
+table.dimas-table-edit th:last-child {
 	background-color: #f8f8f8;
 	width: 54px;
 	border: none;
 }
 
-table.razzi-table-edit td,
-table.razzi-table-edit th {
+table.dimas-table-edit td,
+table.dimas-table-edit th {
 	border: 1px solid #eee;
 	text-align: center;
 	height: 40px;
@@ -161,14 +161,14 @@ table.razzi-table-edit th {
 	font-size: 14px;
 }
 
-table.razzi-table-edit th {
+table.dimas-table-edit th {
 	background-color: #f1f1f1;
 	border-color: #ddd;
 	border-top: none;
 	border-bottom: 2px solid #ddd;
 }
 
-table.razzi-table-edit td input[type=text] {
+table.dimas-table-edit td input[type=text] {
 	border: 0;
 	width: 90%;
 	height: 100%;
@@ -177,34 +177,34 @@ table.razzi-table-edit td input[type=text] {
 	box-shadow: none;
 }
 
-table.razzi-table-edit tr td input:focus {
+table.dimas-table-edit tr td input:focus {
 	background-color: #fafafa;
 	outline: 0;
 }
 
-table.razzi-table-edit.wh tbody tr:first-child,
-table.razzi-table-edit.wh tbody tr:first-child input {
+table.dimas-table-edit.wh tbody tr:first-child,
+table.dimas-table-edit.wh tbody tr:first-child input {
 	background-color: #fdfdfd;
 	font-weight: 700;
 }
 
-table.razzi-table-edit th:first-child,
-table.razzi-table-edit td:first-child {
+table.dimas-table-edit th:first-child,
+table.dimas-table-edit td:first-child {
 	border-left: none;
 }
 
-table.razzi-table-edit tr:last-child td {
+table.dimas-table-edit tr:last-child td {
 	border-bottom: none;
 }
 
 @media only screen and (max-width : 480px) {
-	table.razzi-table-edit td,
-	table.razzi-table-edit th {
+	table.dimas-table-edit td,
+	table.dimas-table-edit th {
 		min-width: 40px;
 		height: 80px;
 	}
 
-	table.razzi-table-edit a.icon-button {
+	table.dimas-table-edit a.icon-button {
 		width: 40px;
 		height: 40px;
 		font-size: 18px;
@@ -213,7 +213,7 @@ table.razzi-table-edit tr:last-child td {
 		margin: 3px 0;
 	}
 
-	table.razzi-table-edit td input {
+	table.dimas-table-edit td input {
 		height: 80px;
 	}
 }

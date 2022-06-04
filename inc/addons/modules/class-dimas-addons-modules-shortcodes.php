@@ -35,7 +35,7 @@ class Shortcodes {
 	 * @return void
 	 */
 	public function __construct() {
-		add_shortcode( 'razzi_product_taxonomy_info', array( __CLASS__, 'product_taxonomy_info' ) );
+		add_shortcode( 'dimas_product_taxonomy_info', array( __CLASS__, 'product_taxonomy_info' ) );
 	}
 
 	/**
@@ -54,10 +54,10 @@ class Shortcodes {
 			'show_thumbnail'        => 'yes',
 			'show_description'      => 'yes',
 			'classes'      			=> '',
-		), $atts, 'razzi_' . __FUNCTION__ );
+		), $atts, 'dimas_' . __FUNCTION__ );
 
 		$css_class = array(
-			'razzi-product-taxonomy-infor',
+			'dimas-product-taxonomy-infor',
 			$atts['classes'],
 		);
 
@@ -96,22 +96,22 @@ class Shortcodes {
 			$image = wp_get_attachment_image( $thumbnail_id );
 
 			if ( ! empty( $image ) ) {
-				$image = '<div class="razzi-product-taxonomy-infor__image"><a href="'. esc_url( get_term_link( $term->term_id, $atts['taxonomy'] ) ) .'">'. $image .'</a></div>';
+				$image = '<div class="dimas-product-taxonomy-infor__image"><a href="'. esc_url( get_term_link( $term->term_id, $atts['taxonomy'] ) ) .'">'. $image .'</a></div>';
 			}
 		}
 
 		if ( $atts['show_title'] != 'no' ) {
-			$title = '<h4 class="razzi-product-taxonomy-infor__title"><a href="'. esc_url( get_term_link( $term->term_id, $atts['taxonomy'] ) ) .'">'. $term->name .'</a></h4>';
+			$title = '<h4 class="dimas-product-taxonomy-infor__title"><a href="'. esc_url( get_term_link( $term->term_id, $atts['taxonomy'] ) ) .'">'. $term->name .'</a></h4>';
 		}
 
 		if ( $atts['show_description'] != 'no' ) {
-			$description = '<div class="razzi-product-taxonomy-infor__description">'. $term->description .'</div>';
+			$description = '<div class="dimas-product-taxonomy-infor__description">'. $term->description .'</div>';
 		}
 
 		return sprintf(
 			'<div class="%s">
 			%s
-			<div class="razzi-product-taxonomy-infor__content">%s%s</div>
+			<div class="dimas-product-taxonomy-infor__content">%s%s</div>
 			</div>',
 			esc_attr( implode( ' ', $css_class ) ),
 			$image,

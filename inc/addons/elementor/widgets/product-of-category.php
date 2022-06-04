@@ -22,7 +22,7 @@ class Product_Of_Category extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-product-of-category';
+		return 'dimas-product-of-category';
 	}
 
 	/**
@@ -31,7 +31,7 @@ class Product_Of_Category extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Product Of Category', 'razzi' );
+		return __( 'Dimas - Product Of Category', 'dimas' );
 	}
 
 	/**
@@ -49,12 +49,12 @@ class Product_Of_Category extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-product-shortcode'
+			'dimas-product-shortcode'
 		];
 	}
 
@@ -87,19 +87,19 @@ class Product_Of_Category extends Widget_Base {
 	protected function section_categories_settings_controls() {
 		$this->start_controls_section(
 			'section_categories',
-			[ 'label' => esc_html__( 'Categories', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Categories', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'bg_image',
 			[
-				'label'   => esc_html__( 'Background Image', 'razzi' ),
+				'label'   => esc_html__( 'Background Image', 'dimas' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => 'https://via.placeholder.com/170x413/f1f1f1',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category__categories' => 'background-image: url("{{URL}}");',
+					'{{WRAPPER}} .dimas-product-of-category__categories' => 'background-image: url("{{URL}}");',
 				],
 			]
 		);
@@ -107,15 +107,15 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'background_repeate',
 			[
-				'label'     => esc_html__( 'Background Repeat', 'razzi' ),
+				'label'     => esc_html__( 'Background Repeat', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'no-repeat',
 				'options'   => [
-					'no-repeat'   => esc_html__( 'No Repeat', 'razzi' ),
-					'repeat' => esc_html__( 'Repeat', 'razzi' ),
+					'no-repeat'   => esc_html__( 'No Repeat', 'dimas' ),
+					'repeat' => esc_html__( 'Repeat', 'dimas' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category__categories' => 'background-repeat: {{VALUE}}',
+					'{{WRAPPER}} .dimas-product-of-category__categories' => 'background-repeat: {{VALUE}}',
 				],
 				'condition' => [
 					'bg_image[url]!' => '',
@@ -126,16 +126,16 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'background_size',
 			[
-				'label'     => esc_html__( 'Background Size', 'razzi' ),
+				'label'     => esc_html__( 'Background Size', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'cover',
 				'options'   => [
-					'cover'   => esc_html__( 'Cover', 'razzi' ),
-					'contain' => esc_html__( 'Contain', 'razzi' ),
-					'auto'    => esc_html__( 'Auto', 'razzi' ),
+					'cover'   => esc_html__( 'Cover', 'dimas' ),
+					'contain' => esc_html__( 'Contain', 'dimas' ),
+					'auto'    => esc_html__( 'Auto', 'dimas' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category__categories' => 'background-size: {{VALUE}}',
+					'{{WRAPPER}} .dimas-product-of-category__categories' => 'background-size: {{VALUE}}',
 				],
 				'condition' => [
 					'bg_image[url]!' => '',
@@ -146,24 +146,24 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'background_position',
 			[
-				'label'     => esc_html__( 'Background Position', 'razzi' ),
+				'label'     => esc_html__( 'Background Position', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''              => esc_html__( 'Default', 'razzi' ),
-					'left top'      => esc_html__( 'Left Top', 'razzi' ),
-					'left center'   => esc_html__( 'Left Center', 'razzi' ),
-					'left bottom'   => esc_html__( 'Left Bottom', 'razzi' ),
-					'right top'     => esc_html__( 'Right Top', 'razzi' ),
-					'right center'  => esc_html__( 'Right Center', 'razzi' ),
-					'right bottom'  => esc_html__( 'Right Bottom', 'razzi' ),
-					'center top'    => esc_html__( 'Center Top', 'razzi' ),
-					'center center' => esc_html__( 'Center Center', 'razzi' ),
-					'center bottom' => esc_html__( 'Center Bottom', 'razzi' ),
-					'initial' 		=> esc_html__( 'Custom', 'razzi' ),
+					''              => esc_html__( 'Default', 'dimas' ),
+					'left top'      => esc_html__( 'Left Top', 'dimas' ),
+					'left center'   => esc_html__( 'Left Center', 'dimas' ),
+					'left bottom'   => esc_html__( 'Left Bottom', 'dimas' ),
+					'right top'     => esc_html__( 'Right Top', 'dimas' ),
+					'right center'  => esc_html__( 'Right Center', 'dimas' ),
+					'right bottom'  => esc_html__( 'Right Bottom', 'dimas' ),
+					'center top'    => esc_html__( 'Center Top', 'dimas' ),
+					'center center' => esc_html__( 'Center Center', 'dimas' ),
+					'center bottom' => esc_html__( 'Center Bottom', 'dimas' ),
+					'initial' 		=> esc_html__( 'Custom', 'dimas' ),
 				],
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category__categories' => 'background-position: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-of-category__categories' => 'background-position: {{VALUE}};',
 				],
 				'condition' => [
 					'bg_image[url]!' => '',
@@ -175,13 +175,13 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'background_position_xy',
 			[
-				'label'              => esc_html__( 'Custom Background Position', 'razzi' ),
+				'label'              => esc_html__( 'Custom Background Position', 'dimas' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'allowed_dimensions' => [ 'top', 'left' ],
 				'size_units'         => [ 'px', '%' ],
 				'default'            => [ ],
 				'selectors'          => [
-					'{{WRAPPER}} .razzi-product-of-category__categories' => 'background-position: {{LEFT}}{{UNIT}} {{TOP}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category__categories' => 'background-position: {{LEFT}}{{UNIT}} {{TOP}}{{UNIT}};',
 				],
 				'condition' => [
 					'background_position' => [ 'initial' ],
@@ -206,10 +206,10 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'background_overlay',
 			[
-				'label'      => esc_html__( 'Background Overlay', 'razzi' ),
+				'label'      => esc_html__( 'Background Overlay', 'dimas' ),
 				'type'       => Controls_Manager::COLOR,
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-product-of-category__categories.item-slider::before' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-product-of-category__categories.item-slider::before' => 'background-color: {{VALUE}}',
 				]
 			]
 		);
@@ -219,7 +219,7 @@ class Product_Of_Category extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
 			]
 		);
@@ -227,16 +227,16 @@ class Product_Of_Category extends Widget_Base {
 		$repeater->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'razzi' ),
+				'label' => __( 'Link', 'dimas' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'razzi' ),
+				'placeholder' => __( 'https://your-link.com', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'category_lists',
 			[
-				'label'         => esc_html__( 'Category Lists', 'razzi' ),
+				'label'         => esc_html__( 'Category Lists', 'dimas' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'title_field'   => '{{{ title }}}',
@@ -250,13 +250,13 @@ class Product_Of_Category extends Widget_Base {
 	protected function section_products_settings_controls() {
 		$this->start_controls_section(
 			'section_products',
-			[ 'label' => esc_html__( 'Products', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Products', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'heading',
 			[
-				'label'     => esc_html__( 'Title', 'razzi' ),
+				'label'     => esc_html__( 'Title', 'dimas' ),
 				'type'      => Controls_Manager::TEXT,
 			]
 		);
@@ -264,20 +264,20 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'link_heading',
 			[
-				'label' => __( 'Link', 'razzi' ),
+				'label' => __( 'Link', 'dimas' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'razzi' ),
+				'placeholder' => __( 'https://your-link.com', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'source',
 			[
-				'label'       => esc_html__( 'Source', 'razzi' ),
+				'label'       => esc_html__( 'Source', 'dimas' ),
 				'type'        => Controls_Manager::SELECT,
 				'options'     => [
-					'default' => esc_html__( 'Default', 'razzi' ),
-					'custom'  => esc_html__( 'Custom', 'razzi' ),
+					'default' => esc_html__( 'Default', 'dimas' ),
+					'custom'  => esc_html__( 'Custom', 'dimas' ),
 				],
 				'default'     => 'default',
 				'label_block' => true,
@@ -287,8 +287,8 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'ids',
 			[
-				'label'       => esc_html__( 'Products', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -304,8 +304,8 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'product_cats',
 			[
-				'label'       => esc_html__( 'Product Categories', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Product Categories', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -322,8 +322,8 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'product_tags',
 			[
-				'label'       => esc_html__( 'Products Tags', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products Tags', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -339,8 +339,8 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'product_brands',
 			[
-				'label'       => esc_html__( 'Products Brands', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products Brands', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -357,8 +357,8 @@ class Product_Of_Category extends Widget_Base {
 			$this->add_control(
 				'product_authors',
 				[
-					'label'       => esc_html__( 'Products Authors', 'razzi' ),
-					'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+					'label'       => esc_html__( 'Products Authors', 'dimas' ),
+					'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 					'type'        => 'rzautocomplete',
 					'default'     => '',
 					'label_block' => true,
@@ -375,7 +375,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'per_page',
 			[
-				'label'   => esc_html__( 'Total Products', 'razzi' ),
+				'label'   => esc_html__( 'Total Products', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 8,
 				'min'     => 1,
@@ -390,14 +390,14 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'products',
 			[
-				'label'     => esc_html__( 'Product', 'razzi' ),
+				'label'     => esc_html__( 'Product', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'recent'       => esc_html__( 'Recent', 'razzi' ),
-					'featured'     => esc_html__( 'Featured', 'razzi' ),
-					'best_selling' => esc_html__( 'Best Selling', 'razzi' ),
-					'top_rated'    => esc_html__( 'Top Rated', 'razzi' ),
-					'sale'         => esc_html__( 'On Sale', 'razzi' ),
+					'recent'       => esc_html__( 'Recent', 'dimas' ),
+					'featured'     => esc_html__( 'Featured', 'dimas' ),
+					'best_selling' => esc_html__( 'Best Selling', 'dimas' ),
+					'top_rated'    => esc_html__( 'Top Rated', 'dimas' ),
+					'sale'         => esc_html__( 'On Sale', 'dimas' ),
 				],
 				'default'   => 'recent',
 				'toggle'    => false,
@@ -410,14 +410,14 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'orderby',
 			[
-				'label'     => esc_html__( 'Order By', 'razzi' ),
+				'label'     => esc_html__( 'Order By', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''           => esc_html__( 'Default', 'razzi' ),
-					'date'       => esc_html__( 'Date', 'razzi' ),
-					'title'      => esc_html__( 'Title', 'razzi' ),
-					'menu_order' => esc_html__( 'Menu Order', 'razzi' ),
-					'rand'       => esc_html__( 'Random', 'razzi' ),
+					''           => esc_html__( 'Default', 'dimas' ),
+					'date'       => esc_html__( 'Date', 'dimas' ),
+					'title'      => esc_html__( 'Title', 'dimas' ),
+					'menu_order' => esc_html__( 'Menu Order', 'dimas' ),
+					'rand'       => esc_html__( 'Random', 'dimas' ),
 				],
 				'default'   => '',
 				'conditions' => [
@@ -434,12 +434,12 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'order',
 			[
-				'label'     => esc_html__( 'Order', 'razzi' ),
+				'label'     => esc_html__( 'Order', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''     => esc_html__( 'Default', 'razzi' ),
-					'asc'  => esc_html__( 'Ascending', 'razzi' ),
-					'desc' => esc_html__( 'Descending', 'razzi' ),
+					''     => esc_html__( 'Default', 'dimas' ),
+					'asc'  => esc_html__( 'Ascending', 'dimas' ),
+					'desc' => esc_html__( 'Descending', 'dimas' ),
 				],
 				'default'   => '',
 				'conditions' => [
@@ -459,13 +459,13 @@ class Product_Of_Category extends Widget_Base {
 	protected function section_carousel_settings_controls() {
 		$this->start_controls_section(
 			'section_carousel_settings',
-			[ 'label' => esc_html__( 'Carousel Settings', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Carousel Settings', 'dimas' ) ]
 		);
 
 		$this->add_responsive_control(
 			'slidesToShow',
 			[
-				'label'           => esc_html__( 'Slides to show', 'razzi' ),
+				'label'           => esc_html__( 'Slides to show', 'dimas' ),
 				'type'            => Controls_Manager::NUMBER,
 				'min'             => 1,
 				'max'             => 7,
@@ -476,7 +476,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'slidesToScroll',
 			[
-				'label'           => esc_html__( 'Slides to scroll', 'razzi' ),
+				'label'           => esc_html__( 'Slides to scroll', 'dimas' ),
 				'type'            => Controls_Manager::NUMBER,
 				'min'             => 1,
 				'max'             => 7,
@@ -487,14 +487,14 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'navigation',
 			[
-				'label'     => esc_html__( 'Navigation', 'razzi' ),
+				'label'     => esc_html__( 'Navigation', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'none'     => esc_html__( 'None', 'razzi' ),
-					'scrollbar'  => esc_html__( 'Scrollbar', 'razzi' ),
-					'arrows' => esc_html__( 'Arrows', 'razzi' ),
-					'dots' => esc_html__( 'Dots', 'razzi' ),
-					'dots-arrows' => esc_html__( 'Dots and Arrows', 'razzi' ),
+					'none'     => esc_html__( 'None', 'dimas' ),
+					'scrollbar'  => esc_html__( 'Scrollbar', 'dimas' ),
+					'arrows' => esc_html__( 'Arrows', 'dimas' ),
+					'dots' => esc_html__( 'Dots', 'dimas' ),
+					'dots-arrows' => esc_html__( 'Dots and Arrows', 'dimas' ),
 				],
 				'default'   => 'arrows',
 				'frontend_available' => true,
@@ -503,10 +503,10 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'infinite',
 			[
-				'label'     => __( 'Infinite Loop', 'razzi' ),
+				'label'     => __( 'Infinite Loop', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'razzi' ),
-				'label_on'  => __( 'On', 'razzi' ),
+				'label_off' => __( 'Off', 'dimas' ),
+				'label_on'  => __( 'On', 'dimas' ),
 				'default'   => '',
 				'frontend_available' => true,
 			]
@@ -515,10 +515,10 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			[
-				'label'     => __( 'Autoplay', 'razzi' ),
+				'label'     => __( 'Autoplay', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'razzi' ),
-				'label_on'  => __( 'On', 'razzi' ),
+				'label_off' => __( 'Off', 'dimas' ),
+				'label_on'  => __( 'On', 'dimas' ),
 				'default'   => '',
 				'frontend_available' => true,
 			]
@@ -527,12 +527,12 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'speed',
 			[
-				'label'       => __( 'Speed', 'razzi' ),
+				'label'       => __( 'Speed', 'dimas' ),
 				'type'        => Controls_Manager::NUMBER,
 				'default'     => 800,
 				'min'         => 100,
 				'step'        => 50,
-				'description' => esc_html__( 'Slide animation speed (in ms)', 'razzi' ),
+				'description' => esc_html__( 'Slide animation speed (in ms)', 'dimas' ),
 				'frontend_available' => true,
 			]
 		);
@@ -544,7 +544,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->start_controls_section(
 			'section_categories_style',
 			[
-				'label' => esc_html__( 'Categories', 'razzi' ),
+				'label' => esc_html__( 'Categories', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -552,11 +552,11 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'categories_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__categories' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__categories' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -565,19 +565,19 @@ class Product_Of_Category extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__categories li a',
+				'selector' => '{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__categories li a',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__categories li a' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__categories li a:after' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__categories li a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__categories li a:after' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -585,12 +585,12 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'title_color_hover',
 			[
-				'label'     => esc_html__( 'Color Hover', 'razzi' ),
+				'label'     => esc_html__( 'Color Hover', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__categories li a:hover' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__categories li a:hover:after' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__categories li a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__categories li a:hover:after' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -598,7 +598,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label'     => __( 'Spacing', 'razzi' ),
+				'label'     => __( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -607,7 +607,7 @@ class Product_Of_Category extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__categories li' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__categories li' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -620,7 +620,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->start_controls_section(
 			'section_product_style',
 			[
-				'label' => esc_html__( 'Product', 'razzi' ),
+				'label' => esc_html__( 'Product', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -628,11 +628,11 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'product_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product > .woocommerce' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product > .woocommerce' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -640,7 +640,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'heading_style_divider',
 			[
-				'label' => __( 'Title', 'razzi' ),
+				'label' => __( 'Title', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -649,26 +649,26 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'heading_text_align',
 			[
-				'label'       => esc_html__( 'Text Align', 'razzi' ),
+				'label'       => esc_html__( 'Text Align', 'dimas' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => [
 					'left'       => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'default'     => '',
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-products-carousel__heading' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} .dimas-products-carousel__heading' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
@@ -677,18 +677,18 @@ class Product_Of_Category extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'heading_typography',
-				'selector' => '{{WRAPPER}} .razzi-products-carousel__heading',
+				'selector' => '{{WRAPPER}} .dimas-products-carousel__heading',
 			]
 		);
 
 		$this->add_control(
 			'heading_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-carousel__heading' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-carousel__heading' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -696,7 +696,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'heading_spacing',
 			[
-				'label'     => __( 'Spacing', 'razzi' ),
+				'label'     => __( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -705,7 +705,7 @@ class Product_Of_Category extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-carousel__heading' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-carousel__heading' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 				'conditions' => [
 					'terms' => [
@@ -721,7 +721,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'heading_arrows_spacing',
 			[
-				'label'     => __( 'Spacing', 'razzi' ),
+				'label'     => __( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -730,8 +730,8 @@ class Product_Of_Category extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-carousel__heading' => 'margin-bottom: 0;',
-					'{{WRAPPER}} .razzi-products-carousel__heading--arrows' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-carousel__heading' => 'margin-bottom: 0;',
+					'{{WRAPPER}} .dimas-products-carousel__heading--arrows' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 				'conditions' => [
 					'terms' => [
@@ -752,7 +752,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->start_controls_section(
 			'section_carousel_style',
 			[
-				'label' => esc_html__( 'Carousel Settings', 'razzi' ),
+				'label' => esc_html__( 'Carousel Settings', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -760,7 +760,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'carousel_style_divider',
 			[
-				'label' => __( 'Scrollbar', 'razzi' ),
+				'label' => __( 'Scrollbar', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -769,7 +769,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'scrollbar_spacing',
 			[
-				'label'     => __( 'Spacing', 'razzi' ),
+				'label'     => __( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -778,7 +778,7 @@ class Product_Of_Category extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .swiper-scrollbar' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .swiper-scrollbar' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -786,11 +786,11 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'scrollbar_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .swiper-scrollbar' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .swiper-scrollbar' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -798,11 +798,11 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'scrollbar_active_color',
 			[
-				'label'     => esc_html__( 'Active Color', 'razzi' ),
+				'label'     => esc_html__( 'Active Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .swiper-scrollbar-drag' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .swiper-scrollbar-drag' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -810,7 +810,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'carousel_divider',
 			[
-				'label' => __( 'Arrows', 'razzi' ),
+				'label' => __( 'Arrows', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -819,11 +819,11 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'arrows_type',
 			[
-				'label' => esc_html__( 'Arrows type', 'razzi' ),
+				'label' => esc_html__( 'Arrows type', 'dimas' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'' 			=> esc_html__( 'Style 1', 'razzi' ),
-					'style_2' 	=> esc_html__( 'Style 2', 'razzi' ),
+					'' 			=> esc_html__( 'Style 1', 'dimas' ),
+					'style_2' 	=> esc_html__( 'Style 2', 'dimas' ),
 				],
 				'default' => '',
 			]
@@ -832,7 +832,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_font_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -841,7 +841,7 @@ class Product_Of_Category extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -849,7 +849,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_width',
 			[
-				'label'     => __( 'Width', 'razzi' ),
+				'label'     => __( 'Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -858,7 +858,7 @@ class Product_Of_Category extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .rz-swiper-button' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .rz-swiper-button' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -866,7 +866,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_height',
 			[
-				'label'     => __( 'Height', 'razzi' ),
+				'label'     => __( 'Height', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -875,7 +875,7 @@ class Product_Of_Category extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .rz-swiper-button' => 'height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .rz-swiper-button' => 'height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -883,7 +883,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_spacing_horizontal',
 			[
-				'label'      => __( 'Horizontal Position', 'razzi' ),
+				'label'      => __( 'Horizontal Position', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => [
 					'px' => [
@@ -893,9 +893,9 @@ class Product_Of_Category extends Widget_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .rz-swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .rz-swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-product-of-category__product .razzi-products-carousel__heading--arrows .razzi-products-carousel__arrows' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .rz-swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .rz-swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category__product .dimas-products-carousel__heading--arrows .dimas-products-carousel__arrows' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -903,11 +903,11 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_spacing_vertical ',
 			[
-				'label'      => __( 'Vertical Position', 'razzi' ),
+				'label'      => __( 'Vertical Position', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-product-of-category .rz-swiper-button' => 'top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category .rz-swiper-button' => 'top: {{SIZE}}{{UNIT}};',
 				],
 				'conditions' => [
 					'terms' => [
@@ -923,7 +923,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_spacing_button',
 			[
-				'label'      => __( 'Spacing Button', 'razzi' ),
+				'label'      => __( 'Spacing Button', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => [
 					'px' => [
@@ -933,7 +933,7 @@ class Product_Of_Category extends Widget_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-product-of-category__product .razzi-products-carousel__heading--arrows .razzi-products-carousel__arrows .rz-swiper-button-prev' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category__product .dimas-products-carousel__heading--arrows .dimas-products-carousel__arrows .rz-swiper-button-prev' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
 				'conditions' => [
 					'terms' => [
@@ -948,16 +948,16 @@ class Product_Of_Category extends Widget_Base {
 
 		$this->start_controls_tabs( 'sliders_normal_settings' );
 
-		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .rz-swiper-button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .rz-swiper-button' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -965,27 +965,27 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .rz-swiper-button' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .rz-swiper-button' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_hover_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .rz-swiper-button:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .rz-swiper-button:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -993,11 +993,11 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_hover_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1010,7 +1010,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'carousel_style_divider_2',
 			[
-				'label' => __( 'Dots', 'razzi' ),
+				'label' => __( 'Dots', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -1019,7 +1019,7 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_font_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -1028,7 +1028,7 @@ class Product_Of_Category extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .swiper-pagination .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .swiper-pagination .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1036,22 +1036,22 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_control(
 			'dots_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .swiper-pagination .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .swiper-pagination .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
 			'dots_active_color',
 			[
-				'label'     => esc_html__( 'Active Color', 'razzi' ),
+				'label'     => esc_html__( 'Active Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:before, {{WRAPPER}} .razzi-product-of-category .swiper-pagination .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:before, {{WRAPPER}} .dimas-product-of-category .swiper-pagination .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -1059,22 +1059,22 @@ class Product_Of_Category extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_spacing_item',
 			[
-				'label'      => __( 'Item Space', 'razzi' ),
+				'label'      => __( 'Item Space', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 		$this->add_responsive_control(
 			'dots_spacing',
 			[
-				'label'      => __( 'Space', 'razzi' ),
+				'label'      => __( 'Space', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-product-of-category .razzi-product-of-category__product .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-of-category .dimas-product-of-category__product .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1097,7 +1097,7 @@ class Product_Of_Category extends Widget_Base {
 		$has_categories = $settings['category_lists'] ? 'has-categories' : '';
 
 		$classes = [
-			'razzi-product-of-category razzi-products-carousel razzi-swiper-carousel-elementor woocommerce razzi-swiper-slider-elementor',
+			'dimas-product-of-category dimas-products-carousel dimas-swiper-carousel-elementor woocommerce dimas-swiper-slider-elementor',
 			'navigation-' . $nav,
 			'navigation-tablet-' . $nav_tablet,
 			'navigation-mobile-' . $nav_mobile,
@@ -1110,7 +1110,7 @@ class Product_Of_Category extends Widget_Base {
 		$el = $settings['category_lists'];
 
 		if( $el ) {
-			$output[] = '<div class="razzi-product-of-category__categories"><ul>';
+			$output[] = '<div class="dimas-product-of-category__categories"><ul>';
 
 			foreach ( $el as $index => $item ) {
 				$output[] = sprintf( '<li><a href="%s">%s</a></li>', $item['link']['url'], $item['title'] );
@@ -1124,9 +1124,9 @@ class Product_Of_Category extends Widget_Base {
 			$target = $settings['link_heading']['is_external'] ? ' target="_blank"' : '';
 			$nofollow = $settings['link_heading']['nofollow'] ? ' rel="nofollow"' : '';
 
-			$title = $settings['heading'] ? sprintf('<div class="razzi-products-carousel__heading"><a href="%s" %s %s %s>%s</a></div>', $settings['link_heading']['url'], $target, $nofollow, $this->get_render_attribute_string( 'link-heading' ), $settings['heading'] ) : '';
+			$title = $settings['heading'] ? sprintf('<div class="dimas-products-carousel__heading"><a href="%s" %s %s %s>%s</a></div>', $settings['link_heading']['url'], $target, $nofollow, $this->get_render_attribute_string( 'link-heading' ), $settings['heading'] ) : '';
 		} else {
-			$title = $settings['heading'] ? sprintf('<div class="razzi-products-carousel__heading">%s</div>', $settings['heading'] ) : '';
+			$title = $settings['heading'] ? sprintf('<div class="dimas-products-carousel__heading">%s</div>', $settings['heading'] ) : '';
 		}
 
 		$settings['columns'] = intval( $settings['slidesToShow'] );
@@ -1141,7 +1141,7 @@ class Product_Of_Category extends Widget_Base {
 		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
 			<?php
 			if ( $settings['arrows_type'] === 'style_2' ) {
-				printf( '<div class="razzi-products-carousel__heading--arrows hidden-md hidden-lg">%s</div>', $title );
+				printf( '<div class="dimas-products-carousel__heading--arrows hidden-md hidden-lg">%s</div>', $title );
 			} else {
 				printf( '%s', $title );
 			}
@@ -1151,9 +1151,9 @@ class Product_Of_Category extends Widget_Base {
 			}
 
 			if ( $settings['arrows_type'] === 'style_2' ) {
-				printf( '<div class="razzi-product-of-category__product"><div class="razzi-products-carousel__heading--arrows hidden-sm hidden-xs">%s<div class="razzi-products-carousel__arrows">%s</div></div>%s</div>', $title, $arrows, $products );
+				printf( '<div class="dimas-product-of-category__product"><div class="dimas-products-carousel__heading--arrows hidden-sm hidden-xs">%s<div class="dimas-products-carousel__arrows">%s</div></div>%s</div>', $title, $arrows, $products );
 			} else {
-				printf( '<div class="razzi-product-of-category__product">%s%s%s</div>', $title, $products, $arrows );
+				printf( '<div class="dimas-product-of-category__product">%s%s%s</div>', $title, $products, $arrows );
 			}
 
 			?>

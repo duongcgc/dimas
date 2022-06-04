@@ -267,13 +267,13 @@ class AjaxLoader {
 			foreach ( $post_meta_infos as $value ) {
 				$data          = array();
 				$data['value'] = $value['slug'];
-				$data['label'] = esc_html__( 'Id', 'razzi' ) . ': ' . $value['id'] . ' - ' . esc_html__( 'Name', 'razzi' ) . ': ' . $value['name'];
+				$data['label'] = esc_html__( 'Id', 'dimas' ) . ': ' . $value['id'] . ' - ' . esc_html__( 'Name', 'dimas' ) . ': ' . $value['name'];
 				$result[]      = $data;
 			}
 		} else {
 			$result[] = array(
 				'value' => 'nothing-found',
-				'label' => esc_html__( 'Nothing Found', 'razzi' )
+				'label' => esc_html__( 'Nothing Found', 'dimas' )
 			);
 		}
 
@@ -307,13 +307,13 @@ class AjaxLoader {
 			foreach ( $posts as $post ) {
 				$data          = array();
 				$data['value'] = $post->ID;
-				$data['label'] = esc_html__( 'Id', 'razzi' ) . ': ' . $post->ID . ' - ' . esc_html__( 'Title', 'razzi' ) . ': ' . $post->post_title;
+				$data['label'] = esc_html__( 'Id', 'dimas' ) . ': ' . $post->ID . ' - ' . esc_html__( 'Title', 'dimas' ) . ': ' . $post->post_title;
 				$result[]      = $data;
 			}
 		} else {
 			$result[] = array(
 				'value' => 'nothing-found',
-				'label' => esc_html__( 'Nothing Found', 'razzi' )
+				'label' => esc_html__( 'Nothing Found', 'dimas' )
 			);
 		}
 
@@ -358,9 +358,9 @@ class AjaxLoader {
 					<a href="#" class="ra_autocomplete-remove">&times;</a>
 				</li>',
 				esc_attr( $term->slug ),
-				esc_html__( 'Id: ', 'razzi' ),
+				esc_html__( 'Id: ', 'dimas' ),
 				esc_html( $term->term_id ),
-				esc_html__( 'Name: ', 'razzi' ),
+				esc_html__( 'Name: ', 'dimas' ),
 				esc_html( $term->name )
 			);
 		}
@@ -404,9 +404,9 @@ class AjaxLoader {
 					<a href="#" class="ra_autocomplete-remove">&times;</a>
 				</li>',
 				esc_attr( get_the_ID() ),
-				esc_html__( 'Id: ', 'razzi' ),
+				esc_html__( 'Id: ', 'dimas' ),
 				esc_html( get_the_ID() ),
-				esc_html__( 'Title: ', 'razzi' ),
+				esc_html__( 'Title: ', 'dimas' ),
 				esc_html( get_the_title() )
 			);
 		endwhile;

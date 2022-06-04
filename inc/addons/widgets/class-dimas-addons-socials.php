@@ -33,25 +33,25 @@ class Social_Links extends \WP_Widget {
 	 */
 	function __construct() {
 		$socials = array(
-			'facebook'    => esc_html__( 'Facebook', 'razzi' ),
-			'twitter'     => esc_html__( 'Twitter', 'razzi' ),
-			'google-plus' => esc_html__( 'Google Plus', 'razzi' ),
-			'tumblr'      => esc_html__( 'Tumblr', 'razzi' ),
-			'linkedin'    => esc_html__( 'Linkedin', 'razzi' ),
-			'pinterest'   => esc_html__( 'Pinterest', 'razzi' ),
-			'flickr'      => esc_html__( 'Flickr', 'razzi' ),
-			'instagram'   => esc_html__( 'Instagram', 'razzi' ),
-			'dribbble'    => esc_html__( 'Dribbble', 'razzi' ),
-			'behance'     => esc_html__( 'Behance', 'razzi' ),
-			'github'      => esc_html__( 'Github', 'razzi' ),
-			'youtube'     => esc_html__( 'Youtube', 'razzi' ),
-			'vimeo'       => esc_html__( 'Vimeo', 'razzi' ),
-			'rss'         => esc_html__( 'RSS', 'razzi' ),
-			'tiktok'         => esc_html__( 'Tiktok', 'razzi' ),
-			'telegram' => esc_html__( 'Telegram', 'razzi' ),
+			'facebook'    => esc_html__( 'Facebook', 'dimas' ),
+			'twitter'     => esc_html__( 'Twitter', 'dimas' ),
+			'google-plus' => esc_html__( 'Google Plus', 'dimas' ),
+			'tumblr'      => esc_html__( 'Tumblr', 'dimas' ),
+			'linkedin'    => esc_html__( 'Linkedin', 'dimas' ),
+			'pinterest'   => esc_html__( 'Pinterest', 'dimas' ),
+			'flickr'      => esc_html__( 'Flickr', 'dimas' ),
+			'instagram'   => esc_html__( 'Instagram', 'dimas' ),
+			'dribbble'    => esc_html__( 'Dribbble', 'dimas' ),
+			'behance'     => esc_html__( 'Behance', 'dimas' ),
+			'github'      => esc_html__( 'Github', 'dimas' ),
+			'youtube'     => esc_html__( 'Youtube', 'dimas' ),
+			'vimeo'       => esc_html__( 'Vimeo', 'dimas' ),
+			'rss'         => esc_html__( 'RSS', 'dimas' ),
+			'tiktok'         => esc_html__( 'Tiktok', 'dimas' ),
+			'telegram' => esc_html__( 'Telegram', 'dimas' ),
 		);
 
-		$this->socials = apply_filters( 'razzi_social_media', $socials );
+		$this->socials = apply_filters( 'dimas_social_media', $socials );
 		$this->default = array(
 			'title' => '',
 		);
@@ -63,10 +63,10 @@ class Social_Links extends \WP_Widget {
 
 		parent::__construct(
 			'social-links-widget',
-			esc_html__( 'Dimas - Social Links', 'razzi' ),
+			esc_html__( 'Dimas - Social Links', 'dimas' ),
 			array(
-				'classname'                   => 'razzi-widget__social-links',
-				'description'                 => esc_html__( 'Display links to social media networks.', 'razzi' ),
+				'classname'                   => 'dimas-widget__social-links',
+				'description'                 => esc_html__( 'Display links to social media networks.', 'dimas' ),
 				'customize_selective_refresh' => true,
 			),
 			array( 'width' => 600 )
@@ -133,7 +133,7 @@ class Social_Links extends \WP_Widget {
 		?>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'razzi' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'dimas' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 
@@ -146,7 +146,7 @@ class Social_Links extends \WP_Widget {
 				</div>',
 				$label,
 				$this->get_field_name( $social . '_url' ),
-				esc_html__( 'URL', 'razzi' ),
+				esc_html__( 'URL', 'dimas' ),
 				$instance[ $social . '_url' ]
 			);
 		}

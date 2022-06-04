@@ -48,7 +48,7 @@ class Frontend {
 	}
 
 	public function scripts() {
-		wp_enqueue_script( 'razzi-buy-now-script', DIMAS_ADDONS_URL . 'modules/buy-now/assets/buy-now.js' );
+		wp_enqueue_script( 'dimas-buy-now-script', DIMAS_ADDONS_URL . 'modules/buy-now/assets/buy-now.js' );
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Frontend {
 			return;
 		}
 
-		echo '<button type="submit" class="rz-buy-now-button razzi-button button-outline">';
+		echo '<button type="submit" class="rz-buy-now-button dimas-button button-outline">';
 		echo get_option( 'rz_buy_now_button_text' );
 		echo '</button>';
 	}

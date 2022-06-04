@@ -22,7 +22,7 @@ class Image_Button extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-image-button';
+		return 'dimas-image-button';
 	}
 
 	/**
@@ -31,7 +31,7 @@ class Image_Button extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Image Button', 'razzi' );
+		return esc_html__( 'Dimas - Image Button', 'dimas' );
 	}
 
 	/**
@@ -49,12 +49,12 @@ class Image_Button extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-elementor'
+			'dimas-elementor'
 		];
 	}
 
@@ -77,13 +77,13 @@ class Image_Button extends Widget_Base {
 	protected function section_content() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Image Button', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Image Button', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'image',
 			[
-				'label'   => esc_html__( 'Image', 'razzi' ),
+				'label'   => esc_html__( 'Image', 'dimas' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => 'https://via.placeholder.com/370x370/f5f5f5?text=Image',
@@ -102,19 +102,19 @@ class Image_Button extends Widget_Base {
 		$this->add_control(
 			'button_text',
 			[
-				'label'   => esc_html__( 'Button text', 'razzi' ),
+				'label'   => esc_html__( 'Button text', 'dimas' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Button Text', 'razzi' ),
+				'default' => esc_html__( 'Button Text', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'show_default_icon',
 			[
-				'label'        => esc_html__( 'Show Button Icon', 'razzi' ),
+				'label'        => esc_html__( 'Show Button Icon', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_off'    => __( 'Off', 'razzi' ),
-				'label_on'     => __( 'On', 'razzi' ),
+				'label_off'    => __( 'Off', 'dimas' ),
+				'label_on'     => __( 'On', 'dimas' ),
 				'return_value' => 'yes',
 				'default'      => 'yes'
 			]
@@ -122,10 +122,10 @@ class Image_Button extends Widget_Base {
 
 		$this->add_control(
 			'link', [
-				'label'         => esc_html__( 'Button Link', 'razzi' ),
+				'label'         => esc_html__( 'Button Link', 'dimas' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => esc_html__( 'https://your-link.com', 'razzi' ),
-				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'razzi' ),
+				'placeholder'   => esc_html__( 'https://your-link.com', 'dimas' ),
+				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'dimas' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '#',
@@ -138,11 +138,11 @@ class Image_Button extends Widget_Base {
 		$this->add_control(
 			'link_type',
 			[
-				'label'   => esc_html__( 'Link Type', 'razzi' ),
+				'label'   => esc_html__( 'Link Type', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'only' => esc_html__( 'Only button text', 'razzi' ),
-					'all'  => esc_html__( 'All banner', 'razzi' ),
+					'only' => esc_html__( 'Only button text', 'dimas' ),
+					'all'  => esc_html__( 'All banner', 'dimas' ),
 				],
 				'default' => 'all',
 				'toggle'  => false,
@@ -162,7 +162,7 @@ class Image_Button extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Button', 'razzi' ),
+				'label' => __( 'Button', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -170,11 +170,11 @@ class Image_Button extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_position',
 			[
-				'label'   => esc_html__( 'Button Position', 'razzi' ),
+				'label'   => esc_html__( 'Button Position', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					''       => esc_html__( 'Center', 'razzi' ),
-					'bottom' => esc_html__( 'Bottom', 'razzi' ),
+					''       => esc_html__( 'Center', 'dimas' ),
+					'bottom' => esc_html__( 'Bottom', 'dimas' ),
 				],
 				'default' => '',
 				'toggle'  => false,
@@ -185,7 +185,7 @@ class Image_Button extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_min_width',
 			[
-				'label'     => esc_html__( 'Min Width', 'razzi' ),
+				'label'     => esc_html__( 'Min Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -194,7 +194,7 @@ class Image_Button extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-button__button' => 'min-width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-image-button__button' => 'min-width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -203,18 +203,18 @@ class Image_Button extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'note_typography',
-				'selector' => '{{WRAPPER}} .razzi-image-button__button',
+				'selector' => '{{WRAPPER}} .dimas-image-button__button',
 			]
 		);
 
 		$this->add_control(
 			'btn_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-button__button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-image-button__button' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -222,11 +222,11 @@ class Image_Button extends Widget_Base {
 		$this->add_control(
 			'btn_bg_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-button__button' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-image-button__button' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -242,7 +242,7 @@ class Image_Button extends Widget_Base {
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-		$classes  = [ 'razzi-image-button' ];
+		$classes  = [ 'dimas-image-button' ];
 
 		$output = '';
 
@@ -251,10 +251,10 @@ class Image_Button extends Widget_Base {
 		$button_text = $settings['button_text'] ? sprintf( '%s %s', $settings['button_text'], $link_icon ) : '';
 
 		if ( $settings['link']['url'] ) :
-			$output .= $settings['link_type'] == 'all' ? Helper::control_url( 'link_all', $settings['link'], '', [ 'class' => 'razzi-image-button__link' ] ) : '';
-			$output .= Helper::control_url( 'link_button', $settings['link'], $button_text, [ 'class' => 'razzi-image-button__position razzi-image-button__button' ] );
+			$output .= $settings['link_type'] == 'all' ? Helper::control_url( 'link_all', $settings['link'], '', [ 'class' => 'dimas-image-button__link' ] ) : '';
+			$output .= Helper::control_url( 'link_button', $settings['link'], $button_text, [ 'class' => 'dimas-image-button__position dimas-image-button__button' ] );
 		else:
-			$output .= sprintf( '<span class="razzi-image-button__position razzi-image-button__button razzi-button">%s</span>', $button_text );
+			$output .= sprintf( '<span class="dimas-image-button__position dimas-image-button__button dimas-button">%s</span>', $button_text );
 		endif;
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );

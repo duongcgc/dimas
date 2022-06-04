@@ -44,7 +44,7 @@
     $(function () {
         buyNow();
 
-        $('body').on('razzi_product_quick_view_loaded', function () {
+        $('body').on('dimas_product_quick_view_loaded', function () {
             buyNow();
         });
     });

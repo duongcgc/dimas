@@ -95,7 +95,7 @@ class DimasProductShortcodeWidgetHandler extends elementorModules.frontend.handl
             $variations.find('td.value select').each(function () {
                 jQuery(this).on('change', function () {
                     var value = jQuery(this).find('option:selected').text();
-                    jQuery(this).closest('tr').find('td.label .razzi-attr-value').html(value);
+                    jQuery(this).closest('tr').find('td.label .dimas-attr-value').html(value);
                 }).trigger('change');
             });
         }
@@ -106,8 +106,8 @@ class DimasProductShortcodeWidgetHandler extends elementorModules.frontend.handl
         $thumbnail.wrap('<div class="woocommerce-product-gallery__thumbs-carousel swiper-container linked-gallery-carousel"></div>');
         $thumbnail.addClass('swiper-wrapper');
         $thumbnail.find('li').addClass('swiper-slide');
-        $thumbnail.after('<span class="razzi-svg-icon rz-gallery-button-prev rz-swiper-button"><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.467723 13.1881L10.2737 23.5074C10.8975 24.1642 11.9089 24.1642 12.5324 23.5074C13.1559 22.8512 13.1559 21.787 12.5324 21.1308L3.85554 11.9998L12.5321 2.86914C13.1556 2.21269 13.1556 1.14853 12.5321 0.492339C11.9086 -0.164113 10.8973 -0.164113 10.2735 0.492339L0.46747 10.8118C0.155705 11.14 0 11.5698 0 11.9998C0 12.43 0.156009 12.86 0.467723 13.1881Z"></path></svg></span>');
-        $thumbnail.after('<span class="razzi-svg-icon rz-gallery-button-next rz-swiper-button"><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.5323 13.1881L2.72626 23.5074C2.10248 24.1642 1.09112 24.1642 0.467647 23.5074C-0.155882 22.8512 -0.155882 21.787 0.467647 21.1308L9.14446 11.9998L0.467899 2.86914C-0.15563 2.21269 -0.15563 1.14853 0.467899 0.492339C1.09143 -0.164113 2.10273 -0.164113 2.72651 0.492339L12.5325 10.8118C12.8443 11.14 13 11.5698 13 11.9998C13 12.43 12.844 12.86 12.5323 13.1881Z"></path></svg></span>');
+        $thumbnail.after('<span class="dimas-svg-icon rz-gallery-button-prev rz-swiper-button"><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.467723 13.1881L10.2737 23.5074C10.8975 24.1642 11.9089 24.1642 12.5324 23.5074C13.1559 22.8512 13.1559 21.787 12.5324 21.1308L3.85554 11.9998L12.5321 2.86914C13.1556 2.21269 13.1556 1.14853 12.5321 0.492339C11.9086 -0.164113 10.8973 -0.164113 10.2735 0.492339L0.46747 10.8118C0.155705 11.14 0 11.5698 0 11.9998C0 12.43 0.156009 12.86 0.467723 13.1881Z"></path></svg></span>');
+        $thumbnail.after('<span class="dimas-svg-icon rz-gallery-button-next rz-swiper-button"><svg class="svg-icon" aria-hidden="true" role="img" focusable="false" width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.5323 13.1881L2.72626 23.5074C2.10248 24.1642 1.09112 24.1642 0.467647 23.5074C-0.155882 22.8512 -0.155882 21.787 0.467647 21.1308L9.14446 11.9998L0.467899 2.86914C-0.15563 2.21269 -0.15563 1.14853 0.467899 0.492339C1.09143 -0.164113 2.10273 -0.164113 2.72651 0.492339L12.5325 10.8118C12.8443 11.14 13 11.5698 13 11.9998C13 12.43 12.844 12.86 12.5323 13.1881Z"></path></svg></span>');
 
         jQuery('li', $thumbnail).append('<span/>');
 
@@ -154,7 +154,7 @@ class DimasProductShortcodeWidgetHandler extends elementorModules.frontend.handl
             return;
         }
 
-        this.$element.find('.razzi-countdown').rz_countdown();
+        this.$element.find('.dimas-countdown').rz_countdown();
     }
 
 
@@ -186,7 +186,7 @@ class DimasProductsMasonryWidgetHandler extends elementorModules.frontend.handle
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-products-masonry'
+                container: '.dimas-products-masonry'
             },
         };
     }
@@ -201,7 +201,7 @@ class DimasProductsMasonryWidgetHandler extends elementorModules.frontend.handle
     }
 
     productsFound() {
-        var $found = this.elements.$container.find('.razzi-posts__found-inner'),
+        var $found = this.elements.$container.find('.dimas-posts__found-inner'),
             $foundEls = $found.find('.count-bar'),
             $current = $found.find('.current-post').html(),
             $total = $found.find('.found-post').html(),
@@ -220,28 +220,28 @@ class DimasProductsMasonryWidgetHandler extends elementorModules.frontend.handle
             var $el = jQuery(this),
                 $nav = $el.closest('.woocommerce-pagination'),
                 url = $el.attr('href'),
-                $products = $el.closest('.razzi-products-masonry').find('ul.products'),
+                $products = $el.closest('.dimas-products-masonry').find('ul.products'),
                 $currentPosts = $products.find('li.product:not(.has-banner)').length,
-                $found = $el.closest('.razzi-products-masonry').find('.razzi-posts__found');
+                $found = $el.closest('.dimas-products-masonry').find('.dimas-posts__found');
 
             $nav.addClass('loading');
 
             jQuery.get(url, function (response) {
-                var $content = jQuery(response).find('.razzi-products-masonry ul.products li.product'),
-                    $navNew = jQuery(response).find('.razzi-products-masonry .woocommerce-pagination'),
-                    $foundItem = jQuery(response).find('.razzi-products-masonry ul.products li.product:not(.has-banner)'),
+                var $content = jQuery(response).find('.dimas-products-masonry ul.products li.product'),
+                    $navNew = jQuery(response).find('.dimas-products-masonry .woocommerce-pagination'),
+                    $foundItem = jQuery(response).find('.dimas-products-masonry ul.products li.product:not(.has-banner)'),
                     $numberPosts = $foundItem.length + $currentPosts;
 
                 // Add animation class
                 for (var index = 0; index < $content.length; index++) {
                     jQuery($content[index]).css('animation-delay', index * 100 + 'ms');
                 }
-                $content.addClass('razziFadeInUp');
+                $content.addClass('dimasFadeInUp');
 
                 $products.append($content);
                 $nav.replaceWith($navNew);
 
-                jQuery(document.body).trigger('razzi_products_masonry_loaded', [$content, true]);
+                jQuery(document.body).trigger('dimas_products_masonry_loaded', [$content, true]);
 
                 $found.find('.current-post').html(' ' + $numberPosts);
                 self.productsFound();
@@ -267,7 +267,7 @@ class DimasProductsDealWidgetHandler extends elementorModules.frontend.handlers.
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-products-deal'
+                container: '.dimas-products-deal'
             },
         };
     }
@@ -311,13 +311,13 @@ class DimasProductsDealWidgetHandler extends elementorModules.frontend.handlers.
             },
             breakpoints: {
                 300: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                     spaceBetween: 15,
                 },
                 480: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                     spaceBetween: 15,
                 },
                 768: {
@@ -347,7 +347,7 @@ class DimasProductsDealWidgetHandler extends elementorModules.frontend.handlers.
         var self = this;
         super.onInit();
 
-        this.elements.$container.find('.razzi-countdown').rz_countdown();
+        this.elements.$container.find('.dimas-countdown').rz_countdown();
 
         this.elements.$container.imagesLoaded(function () {
             setTimeout(function () {
@@ -362,7 +362,7 @@ class DimasProductsDeal2WidgetHandler extends elementorModules.frontend.handlers
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-products-deal-2'
+                container: '.dimas-products-deal-2'
             },
         };
     }
@@ -436,7 +436,7 @@ class DimasProductsDeal2WidgetHandler extends elementorModules.frontend.handlers
         var self = this;
         super.onInit();
 
-        this.elements.$container.find('.razzi-countdown').rz_countdown();
+        this.elements.$container.find('.dimas-countdown').rz_countdown();
 
         this.elements.$container.imagesLoaded(function () {
             setTimeout(function () {
@@ -451,7 +451,7 @@ class DimasProductsShowcaseWidgetHandler extends elementorModules.frontend.handl
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-products-showcase'
+                container: '.dimas-products-showcase'
             },
         };
     }
@@ -510,7 +510,7 @@ class DimasProductsCarouselWidgetHandler extends elementorModules.frontend.handl
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-products-carousel'
+                container: '.dimas-products-carousel'
             },
         };
     }
@@ -543,7 +543,7 @@ class DimasProductsCarouselWidgetHandler extends elementorModules.frontend.handl
         var slidesPerView = settings.slidesPerViewAuto == 'yes' ? 'auto' : settings.slidesToShow,
             slidesRows = settings.slidesPerViewAuto == 'yes' ? 1 : settings.slidesRows;
 
-        var spaceBetween = jQuery(document.body).hasClass('razzi-product-card-solid') ? false : true;
+        var spaceBetween = jQuery(document.body).hasClass('dimas-product-card-solid') ? false : true;
 
         var options = {
             watchOverflow: true,
@@ -572,14 +572,14 @@ class DimasProductsCarouselWidgetHandler extends elementorModules.frontend.handl
             },
             breakpoints: {
                 300: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                     slidesPerColumn: settings.slidesPerViewAuto !== 'yes' && settings.slidesRows_mobile ? settings.slidesRows_mobile : slidesRows,
                     spaceBetween: spaceBetween == true ? 15 : 0,
                 },
                 480: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                     slidesPerColumn: settings.slidesPerViewAuto !== 'yes' && settings.slidesRows_mobile ? settings.slidesRows_mobile : slidesRows,
                     spaceBetween: spaceBetween == true ? 15 : 0,
                 },
@@ -634,7 +634,7 @@ class DimasProductOfCategoryWidgetHandler extends elementorModules.frontend.hand
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-product-of-category'
+                container: '.dimas-product-of-category'
             },
         };
     }
@@ -652,7 +652,7 @@ class DimasProductOfCategoryWidgetHandler extends elementorModules.frontend.hand
         const settings = this.getElementSettings();
 
         var $products = this.elements.$container.find('ul.products');
-        var spaceBetween = jQuery(document.body).hasClass('razzi-product-card-solid') ? false : true;
+        var spaceBetween = jQuery(document.body).hasClass('dimas-product-card-solid') ? false : true;
 
         $products.wrap('<div class="swiper-container linked-elementor-product-carousel" style="opacity: 0;"></div>');
         $products.addClass('swiper-wrapper');
@@ -686,13 +686,13 @@ class DimasProductOfCategoryWidgetHandler extends elementorModules.frontend.hand
             },
             breakpoints: {
                 300: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                     spaceBetween: spaceBetween == true ? 15 : 0,
                 },
                 480: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                 },
                 768: {
                     slidesPerView: settings.slidesToShow_tablet ? settings.slidesToShow_tablet : 3,
@@ -749,7 +749,7 @@ class DimasProductsCategorytabsWidgetHandler extends elementorModules.frontend.h
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-product-category-tabs'
+                container: '.dimas-product-category-tabs'
             },
         };
     }
@@ -768,8 +768,8 @@ class DimasProductsCategorytabsWidgetHandler extends elementorModules.frontend.h
 
         $list.find('li.cat-item').addClass('swiper-slide');
         $list.after('<div class="swiper-pagination"></div>');
-        $list.after('<span class="razzi-svg-icon rz-category-arrow-prev rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></span>');
-        $list.after('<span class="razzi-svg-icon rz-category-arrow-next rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>');
+        $list.after('<span class="dimas-svg-icon rz-category-arrow-prev rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></span>');
+        $list.after('<span class="dimas-svg-icon rz-category-arrow-next rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>');
 
         var options = {
             watchOverflow: true,
@@ -792,13 +792,13 @@ class DimasProductsCategorytabsWidgetHandler extends elementorModules.frontend.h
             },
             breakpoints: {
                 300: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                     spaceBetween: 15,
                 },
                 480: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                     spaceBetween: 15,
                 },
                 768: {
@@ -846,7 +846,7 @@ class DimasProductsCategorytabsWidgetHandler extends elementorModules.frontend.h
 
         var data = {},
             elementSettings = $currentTab.data('settings'),
-            ajax_url = razziData.ajax_url.toString().replace('%%endpoint%%', 'ra_elementor_load_category');
+            ajax_url = dimasData.ajax_url.toString().replace('%%endpoint%%', 'ra_elementor_load_category');
 
         jQuery.each(elementSettings, function (key, value) {
             data[key] = value;
@@ -896,7 +896,7 @@ class DimasProductstabWidgetHandler extends elementorModules.frontend.handlers.B
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-products-tabs'
+                container: '.dimas-products-tabs'
             },
         };
     }
@@ -912,7 +912,7 @@ class DimasProductstabWidgetHandler extends elementorModules.frontend.handlers.B
 
     getProductCarousel($selector, settings) {
         var $products = $selector.find('ul.products');
-        var spaceBetween = jQuery(document.body).hasClass('razzi-product-card-solid') ? false : true;
+        var spaceBetween = jQuery(document.body).hasClass('dimas-product-card-solid') ? false : true;
 
         $products.wrap('<div class="swiper-container linked-products-carousel" style="opacity: 0;"></div>');
         $products.addClass('swiper-wrapper');
@@ -941,13 +941,13 @@ class DimasProductstabWidgetHandler extends elementorModules.frontend.handlers.B
             },
             breakpoints: {
                 300: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                     spaceBetween: spaceBetween == true ? 15 : 0,
                 },
                 480: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                     spaceBetween: spaceBetween == true ? 15 : 0,
                 },
                 768: {
@@ -992,7 +992,7 @@ class DimasProductstabWidgetHandler extends elementorModules.frontend.handlers.B
 
         var data = {},
             elementSettings = $currentTab.data('settings'),
-            ajax_url = razziData.ajax_url.toString().replace('%%endpoint%%', 'ra_elementor_load_products_grid');
+            ajax_url = dimasData.ajax_url.toString().replace('%%endpoint%%', 'ra_elementor_load_products_grid');
 
         const settings = this.getElementSettings();
 
@@ -1026,7 +1026,7 @@ class DimasProductstabWidgetHandler extends elementorModules.frontend.handlers.B
 
                 $tabContent.removeClass('loading');
 
-                jQuery(document.body).trigger('razzi_products_loaded', [jQuery(content), true]);
+                jQuery(document.body).trigger('dimas_products_loaded', [jQuery(content), true]);
             }
         );
     };
@@ -1059,7 +1059,7 @@ class DimasProductstabGridWidgetHandler extends elementorModules.frontend.handle
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-products-tabs-grid'
+                container: '.dimas-products-tabs-grid'
             },
         };
     }
@@ -1092,7 +1092,7 @@ class DimasProductstabGridWidgetHandler extends elementorModules.frontend.handle
 
         var data = {},
             elementSettings = $currentTab.data('settings'),
-            ajax_url = razziData.ajax_url.toString().replace('%%endpoint%%', 'ra_elementor_load_products_grid');
+            ajax_url = dimasData.ajax_url.toString().replace('%%endpoint%%', 'ra_elementor_load_products_grid');
 
         const settings = this.getElementSettings();
 
@@ -1124,7 +1124,7 @@ class DimasProductstabGridWidgetHandler extends elementorModules.frontend.handle
 
                 $tabContent.removeClass('loading');
 
-                jQuery(document.body).trigger('razzi_products_loaded', [jQuery(content), true]);
+                jQuery(document.body).trigger('dimas_products_loaded', [jQuery(content), true]);
             }
         );
     };
@@ -1137,7 +1137,7 @@ class DimasProductstabGridWidgetHandler extends elementorModules.frontend.handle
     }
 
     loadMoreProducts() {
-        var ajax_url = razziData.ajax_url.toString().replace('%%endpoint%%', 'ra_elementor_load_products_grid');
+        var ajax_url = dimasData.ajax_url.toString().replace('%%endpoint%%', 'ra_elementor_load_products_grid');
 
         // Load Products
         this.elements.$container.on('click', 'a.ajax-load-products', function (e) {
@@ -1173,7 +1173,7 @@ class DimasProductstabGridWidgetHandler extends elementorModules.frontend.handle
 
                     // If has products
                     if ($products.length) {
-                        $products.addClass('razziFadeInUp');
+                        $products.addClass('dimasFadeInUp');
 
                         $grid.append($products);
 
@@ -1184,7 +1184,7 @@ class DimasProductstabGridWidgetHandler extends elementorModules.frontend.handle
                         }
                     }
 
-                    jQuery(document.body).trigger('razzi_products_loaded', [$products, true]);
+                    jQuery(document.body).trigger('dimas_products_loaded', [$products, true]);
                 }
             );
         });
@@ -1209,7 +1209,7 @@ class DimasDealsCarouselWidgetHandler extends elementorModules.frontend.handlers
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-deals-carousel'
+                container: '.dimas-deals-carousel'
             },
         };
     }
@@ -1226,11 +1226,11 @@ class DimasDealsCarouselWidgetHandler extends elementorModules.frontend.handlers
     getProductSwiperInit() {
         const settings = this.getElementSettings();
 
-        var $wrapper = this.elements.$container.find('.razzi-deals-carousel__inner');
+        var $wrapper = this.elements.$container.find('.dimas-deals-carousel__inner');
 
         $wrapper.after('<div class="swiper-pagination"></div>');
-        $wrapper.after('<span class="razzi-svg-icon rz-swiper-button-prev rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></span>');
-        $wrapper.after('<span class="razzi-svg-icon rz-swiper-button-next rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>');
+        $wrapper.after('<span class="dimas-svg-icon rz-swiper-button-prev rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></span>');
+        $wrapper.after('<span class="dimas-svg-icon rz-swiper-button-next rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>');
 
         var options = {
             loop: settings.infinite == 'yes' ? true : false,
@@ -1265,7 +1265,7 @@ class DimasDealsCarouselWidgetHandler extends elementorModules.frontend.handlers
         var self = this;
         super.onInit();
 
-        this.elements.$container.find('.razzi-countdown').rz_countdown();
+        this.elements.$container.find('.dimas-countdown').rz_countdown();
         self.getProductSwiperInit();
     }
 }
@@ -1273,7 +1273,7 @@ class DimasDealsCarousel2WidgetHandler extends elementorModules.frontend.handler
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-deals-carousel-2'
+                container: '.dimas-deals-carousel-2'
             },
         };
     }
@@ -1290,11 +1290,11 @@ class DimasDealsCarousel2WidgetHandler extends elementorModules.frontend.handler
     getProductSwiperInit() {
         const settings = this.getElementSettings();
 
-        var $wrapper = this.elements.$container.find('.razzi-deals-carousel-2__inner');
+        var $wrapper = this.elements.$container.find('.dimas-deals-carousel-2__inner');
 
         $wrapper.after('<div class="swiper-pagination"></div>');
-        $wrapper.after('<span class="razzi-svg-icon rz-swiper-button-prev rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></span>');
-        $wrapper.after('<span class="razzi-svg-icon rz-swiper-button-next rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>');
+        $wrapper.after('<span class="dimas-svg-icon rz-swiper-button-prev rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></span>');
+        $wrapper.after('<span class="dimas-svg-icon rz-swiper-button-next rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>');
 
         var options = {
             loop: settings.infinite == 'yes' ? true : false,
@@ -1349,7 +1349,7 @@ class DimasDealsCarousel2WidgetHandler extends elementorModules.frontend.handler
         var self = this;
         super.onInit();
 
-        this.elements.$container.find('.razzi-countdown').rz_countdown();
+        this.elements.$container.find('.dimas-countdown').rz_countdown();
         self.getProductSwiperInit();
     }
 }
@@ -1358,7 +1358,7 @@ class DimasProductsGridWidgetHandler extends elementorModules.frontend.handlers.
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-products-grid'
+                container: '.dimas-products-grid'
             },
         };
     }
@@ -1373,7 +1373,7 @@ class DimasProductsGridWidgetHandler extends elementorModules.frontend.handlers.
     }
 
     loadProductsGrid() {
-        var ajax_url = razziData.ajax_url.toString().replace('%%endpoint%%', 'ra_elementor_load_products_grid');
+        var ajax_url = dimasData.ajax_url.toString().replace('%%endpoint%%', 'ra_elementor_load_products_grid');
         const settings = this.getElementSettings();
 
         // Load Products
@@ -1403,13 +1403,13 @@ class DimasProductsGridWidgetHandler extends elementorModules.frontend.handlers.
 
                     var $data = jQuery(response.data),
                         $products = $data.find('li.product'),
-                        $container = $el.closest('.razzi-products-grid'),
+                        $container = $el.closest('.dimas-products-grid'),
                         $grid = $container.find('ul.products'),
                         $page_number = $data.find('.page-number').data('page');
 
                     // If has products
                     if ($products.length) {
-                        $products.addClass('razziFadeInUp');
+                        $products.addClass('dimasFadeInUp');
 
                         $grid.append($products);
 
@@ -1420,7 +1420,7 @@ class DimasProductsGridWidgetHandler extends elementorModules.frontend.handlers.
                         }
                     }
 
-                    jQuery(document.body).trigger('razzi_products_loaded', [$products, true]);
+                    jQuery(document.body).trigger('dimas_products_loaded', [$products, true]);
                 }
             );
         });
@@ -1434,18 +1434,18 @@ class DimasProductsGridWidgetHandler extends elementorModules.frontend.handlers.
             var $el = jQuery(this),
                 $nav = $el.closest('.woocommerce-pagination'),
                 url = $el.attr('href'),
-                $products = $el.closest('.razzi-products-grid').find('ul.products');
+                $products = $el.closest('.dimas-products-grid').find('ul.products');
 
             $nav.addClass('loading');
 
             jQuery.get(url, function (response) {
-                var $content = jQuery(response).find('.razzi-products-grid ul.products li.product'),
-                    $navNew = jQuery(response).find('.razzi-products-grid .woocommerce-pagination');
+                var $content = jQuery(response).find('.dimas-products-grid ul.products li.product'),
+                    $navNew = jQuery(response).find('.dimas-products-grid .woocommerce-pagination');
 
                 $products.html($content);
                 $nav.replaceWith($navNew);
 
-                jQuery(document.body).trigger('razzi_products_loaded', [$content, true]);
+                jQuery(document.body).trigger('dimas_products_loaded', [$content, true]);
 
                 $navNew.removeClass('loading');
             });
@@ -1567,7 +1567,7 @@ class DimasProductsRecentlyViewedWidgetHandler extends elementorModules.frontend
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-products-recently-viewed-carousel'
+                container: '.dimas-products-recently-viewed-carousel'
             },
         };
     }
@@ -1673,7 +1673,7 @@ class DimasProductsRecentlyViewedWidgetHandler extends elementorModules.frontend
         }
 
         jQuery(window).on('scroll', function () {
-            if (jQuery(document.body).find('.razzi-products-recently-viewed-carousel').is(':in-viewport')) {
+            if (jQuery(document.body).find('.dimas-products-recently-viewed-carousel').is(':in-viewport')) {
                 self.getProductsAJAXHandler();
             }
         }).trigger('scroll');
@@ -1694,7 +1694,7 @@ class DimasProductsRecentlyViewedWidgetHandler extends elementorModules.frontend
         $selector.data('requestRunning', true);
 
         var elementSettings = $selector.data('settings'),
-            ajax_url = razziData.ajax_url.toString().replace('%%endpoint%%', 'ra_elementor_load_recently_viewed_products');
+            ajax_url = dimasData.ajax_url.toString().replace('%%endpoint%%', 'ra_elementor_load_recently_viewed_products');
 
         jQuery.post(
             ajax_url,
@@ -1717,7 +1717,7 @@ class DimasProductsRecentlyViewedWidgetHandler extends elementorModules.frontend
                 $selector.addClass('loaded');
                 $selector.data('requestRunning', false);
 
-                jQuery(document.body).trigger('razzi_products_loaded', [$content, true]);
+                jQuery(document.body).trigger('dimas_products_loaded', [$content, true]);
             }
         );
     };
@@ -1733,7 +1733,7 @@ class DimasProductsRecentlyViewedWidgetGridHandler extends elementorModules.fron
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-products-recently-viewed-grid'
+                container: '.dimas-products-recently-viewed-grid'
             },
         };
     }
@@ -1772,7 +1772,7 @@ class DimasProductsRecentlyViewedWidgetGridHandler extends elementorModules.fron
             e.preventDefault();
             document.cookie = "woocommerce_recently_viewed=null;expires=365;path=/";
 
-            jQuery(this).closest('.razzi-products-recently-viewed-grid').removeClass('has-products').find('.products-content, .woocommerce-pagination').remove();
+            jQuery(this).closest('.dimas-products-recently-viewed-grid').removeClass('has-products').find('.products-content, .woocommerce-pagination').remove();
 
         });
     }
@@ -1788,7 +1788,7 @@ class DimasProductsCarouselWithThumbnailsWidgetHandler extends elementorModules.
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-products-carousel-with-thumbnails'
+                container: '.dimas-products-carousel-with-thumbnails'
             },
         };
     }
@@ -1850,8 +1850,8 @@ class DimasProductsCarouselWithThumbnailsWidgetHandler extends elementorModules.
         $products.addClass('swiper-wrapper');
         $products.find('li.product').addClass('swiper-slide');
         $products.after('<div class="swiper-pagination"></div>');
-        $products.after('<span class="razzi-svg-icon rz-swiper-button-prev rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></span>');
-        $products.after('<span class="razzi-svg-icon rz-swiper-button-next rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>');
+        $products.after('<span class="dimas-svg-icon rz-swiper-button-prev rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></span>');
+        $products.after('<span class="dimas-svg-icon rz-swiper-button-next rz-swiper-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>');
 
         var options = {
             watchOverflow: true,
@@ -1874,8 +1874,8 @@ class DimasProductsCarouselWithThumbnailsWidgetHandler extends elementorModules.
             },
             breakpoints: {
                 300: {
-                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : razziData.mobile_portrait,
-                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : razziData.mobile_portrait,
+                    slidesPerView: settings.slidesToShow_mobile ? settings.slidesToShow_mobile : dimasData.mobile_portrait,
+                    slidesPerGroup: settings.slidesToScroll_mobile ? settings.slidesToScroll_mobile : dimasData.mobile_portrait,
                     spaceBetween: 15,
                 },
                 768: {
@@ -1904,7 +1904,7 @@ class DimasProductsSliderWidgetHandler extends elementorModules.frontend.handler
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-products-slider'
+                container: '.dimas-products-slider'
             },
         };
     }
@@ -1936,7 +1936,7 @@ class DimasProductsSliderWidgetHandler extends elementorModules.frontend.handler
             speed: settings.speed,
         };
 
-        new Swiper(this.elements.$container.find('.razzi-products-slider__wrapper'), options);
+        new Swiper(this.elements.$container.find('.dimas-products-slider__wrapper'), options);
     }
 
     onInit() {
@@ -1952,7 +1952,7 @@ class DimasProductsListingWidgetHandler extends elementorModules.frontend.handle
     getDefaultSettings() {
         return {
             selectors: {
-                container: '.razzi-products-listing'
+                container: '.dimas-products-listing'
             },
         };
     }
@@ -2069,74 +2069,74 @@ jQuery(window).on('elementor/frontend/init', () => {
         elementorFrontend.elementsHandler.addHandler(DimasProductLoopHandler, {$element});
     });
 
-    elementorFrontend.hooks.addAction('frontend/element_ready/razzi-product-shortcode.default', ($element) => {
+    elementorFrontend.hooks.addAction('frontend/element_ready/dimas-product-shortcode.default', ($element) => {
         elementorFrontend.elementsHandler.addHandler(DimasProductShortcodeWidgetHandler, {$element});
     });
 
-    elementorFrontend.hooks.addAction('frontend/element_ready/razzi-products-masonry.default', ($element) => {
+    elementorFrontend.hooks.addAction('frontend/element_ready/dimas-products-masonry.default', ($element) => {
         elementorFrontend.elementsHandler.addHandler(DimasProductsMasonryWidgetHandler, {$element});
     });
 
-    elementorFrontend.hooks.addAction('frontend/element_ready/razzi-products-deal.default', ($element) => {
+    elementorFrontend.hooks.addAction('frontend/element_ready/dimas-products-deal.default', ($element) => {
         elementorFrontend.elementsHandler.addHandler(DimasProductsDealWidgetHandler, {$element});
     });
 
-    elementorFrontend.hooks.addAction('frontend/element_ready/razzi-products-deal-2.default', ($element) => {
+    elementorFrontend.hooks.addAction('frontend/element_ready/dimas-products-deal-2.default', ($element) => {
         elementorFrontend.elementsHandler.addHandler(DimasProductsDeal2WidgetHandler, {$element});
     });
 
-    elementorFrontend.hooks.addAction('frontend/element_ready/razzi-products-showcase.default', ($element) => {
+    elementorFrontend.hooks.addAction('frontend/element_ready/dimas-products-showcase.default', ($element) => {
         elementorFrontend.elementsHandler.addHandler(DimasProductsShowcaseWidgetHandler, {$element});
     });
 
-    elementorFrontend.hooks.addAction('frontend/element_ready/razzi-product-carousel.default', ($element) => {
+    elementorFrontend.hooks.addAction('frontend/element_ready/dimas-product-carousel.default', ($element) => {
         elementorFrontend.elementsHandler.addHandler(DimasProductsCarouselWidgetHandler, {$element});
     });
 
-    elementorFrontend.hooks.addAction('frontend/element_ready/razzi-product-of-category.default', ($element) => {
+    elementorFrontend.hooks.addAction('frontend/element_ready/dimas-product-of-category.default', ($element) => {
         elementorFrontend.elementsHandler.addHandler(DimasProductOfCategoryWidgetHandler, {$element});
     });
 
-    elementorFrontend.hooks.addAction('frontend/element_ready/razzi-product-category-tabs.default', ($element) => {
+    elementorFrontend.hooks.addAction('frontend/element_ready/dimas-product-category-tabs.default', ($element) => {
         elementorFrontend.elementsHandler.addHandler(DimasProductsCategorytabsWidgetHandler, {$element});
     });
 
-    elementorFrontend.hooks.addAction('frontend/element_ready/razzi-product-tab.default', ($element) => {
+    elementorFrontend.hooks.addAction('frontend/element_ready/dimas-product-tab.default', ($element) => {
         elementorFrontend.elementsHandler.addHandler(DimasProductstabWidgetHandler, {$element});
     });
-    elementorFrontend.hooks.addAction('frontend/element_ready/razzi-product-tab-grid.default', ($element) => {
+    elementorFrontend.hooks.addAction('frontend/element_ready/dimas-product-tab-grid.default', ($element) => {
         elementorFrontend.elementsHandler.addHandler(DimasProductstabGridWidgetHandler, {$element});
     });
 
-    elementorFrontend.hooks.addAction('frontend/element_ready/razzi-deals-carousel.default', ($element) => {
+    elementorFrontend.hooks.addAction('frontend/element_ready/dimas-deals-carousel.default', ($element) => {
         elementorFrontend.elementsHandler.addHandler(DimasDealsCarouselWidgetHandler, {$element});
     });
 
-    elementorFrontend.hooks.addAction('frontend/element_ready/razzi-deals-carousel-2.default', ($element) => {
+    elementorFrontend.hooks.addAction('frontend/element_ready/dimas-deals-carousel-2.default', ($element) => {
         elementorFrontend.elementsHandler.addHandler(DimasDealsCarousel2WidgetHandler, {$element});
     });
 
-    elementorFrontend.hooks.addAction('frontend/element_ready/razzi-products-grid.default', ($element) => {
+    elementorFrontend.hooks.addAction('frontend/element_ready/dimas-products-grid.default', ($element) => {
         elementorFrontend.elementsHandler.addHandler(DimasProductsGridWidgetHandler, {$element});
     });
 
-    elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-products-recently-viewed-carousel.default', ( $element ) => {
+    elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-products-recently-viewed-carousel.default', ( $element ) => {
         elementorFrontend.elementsHandler.addHandler( DimasProductsRecentlyViewedWidgetHandler, { $element } );
     } );
 
-    elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-products-recently-viewed-grid.default', ( $element ) => {
+    elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-products-recently-viewed-grid.default', ( $element ) => {
         elementorFrontend.elementsHandler.addHandler( DimasProductsRecentlyViewedWidgetGridHandler, { $element } );
     } );
 
-    elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-products-carousel-with-thumbnails.default', ( $element ) => {
+    elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-products-carousel-with-thumbnails.default', ( $element ) => {
         elementorFrontend.elementsHandler.addHandler( DimasProductsCarouselWithThumbnailsWidgetHandler, { $element } );
     } );
 
-    elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-products-slider.default', ( $element ) => {
+    elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-products-slider.default', ( $element ) => {
         elementorFrontend.elementsHandler.addHandler( DimasProductsSliderWidgetHandler, { $element } );
     } );
 
-    elementorFrontend.hooks.addAction( 'frontend/element_ready/razzi-products-listing.default', ( $element ) => {
+    elementorFrontend.hooks.addAction( 'frontend/element_ready/dimas-products-listing.default', ( $element ) => {
 		elementorFrontend.elementsHandler.addHandler( DimasProductsListingWidgetHandler, { $element } );
 	} );
 

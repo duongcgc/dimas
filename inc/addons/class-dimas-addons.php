@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: Dimas Addons
- * Plugin URI: http://drfuri.com/plugins/razzi-addons.zip
+ * Plugin URI: http://drfuri.com/plugins/dimas-addons.zip
  * Description: Extra elements for Elementor. It was built for Dimas theme.
  * Version: 1.4.0
  * Author: Drfuri
  * Author URI: http://drfuri.com/
  * License: GPL2+
- * Text Domain: razzi
+ * Text Domain: dimas
  * Domain Path: /lang/
  */
 if ( ! defined( 'ABSPATH' ) ) {
@@ -22,6 +22,6 @@ if ( ! defined( 'DIMAS_ADDONS_URL' ) ) {
 	define( 'DIMAS_ADDONS_URL', plugin_dir_url( __FILE__ ) );
 }
 
-require_once DIMAS_ADDONS_DIR . 'class-razzi-addons-plugin.php';
+require_once DIMAS_ADDONS_DIR . 'class-dimas-addons-plugin.php';
 
 \Dimas\Addons::instance();

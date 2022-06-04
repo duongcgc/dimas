@@ -48,11 +48,11 @@ class Widget extends \WP_Widget {
 		}
 
 		parent::__construct(
-			'razzi-products-filter',
-			esc_html__( 'Dimas - Products Filter', 'razzi' ),
+			'dimas-products-filter',
+			esc_html__( 'Dimas - Products Filter', 'dimas' ),
 			array(
 				'classname'                   => 'products-filter-widget woocommerce',
-				'description'                 => esc_html__( 'WooCommerce products filter.', 'razzi' ),
+				'description'                 => esc_html__( 'WooCommerce products filter.', 'dimas' ),
 				'customize_selective_refresh' => true,
 			),
 			array( 'width' => 560 )
@@ -155,8 +155,8 @@ class Widget extends \WP_Widget {
 			echo '<input type="hidden" name="filter" value="1">';
 
 			echo '<div class="products-filter__filters-buttons products-filter__control-buttons">';
-			echo '<button type="submit" value="' . esc_attr__( 'Filter', 'razzi' ) . '" class="button filter-button">' . esc_html__( 'Filter', 'razzi' ) . '</button>';
-			echo '<button type="reset" value="' . esc_attr__( 'Reset Filter', 'razzi' ) . '" class="button alt reset-button button-lg">' . esc_html__( 'Reset Filter', 'razzi' ) . '</button>';
+			echo '<button type="submit" value="' . esc_attr__( 'Filter', 'dimas' ) . '" class="button filter-button">' . esc_html__( 'Filter', 'dimas' ) . '</button>';
+			echo '<button type="reset" value="' . esc_attr__( 'Reset Filter', 'dimas' ) . '" class="button alt reset-button button-lg">' . esc_html__( 'Reset Filter', 'dimas' ) . '</button>';
 			echo '</div>';
 
 			if ( $instance['ajax'] ) {
@@ -215,7 +215,7 @@ class Widget extends \WP_Widget {
 						$list[] = sprintf(
 							'<a href="#" class="remove-filtered" data-name="price" data-value="%s">%s: %s%s</a>',
 							esc_attr( $price ),
-							esc_html__('Price', 'razzi'),
+							esc_html__('Price', 'dimas'),
 							$price,
 							Helper::get_svg( 'close' )
 						);
@@ -228,7 +228,7 @@ class Widget extends \WP_Widget {
 						break;
 
 					case 'rating':
-						$text = _n( 'Rated %d star', 'Rated %d stars', $term, 'razzi' );
+						$text = _n( 'Rated %d star', 'Rated %d stars', $term, 'dimas' );
 						$text = sprintf( $text, $term );
 						break;
 
@@ -329,15 +329,15 @@ class Widget extends \WP_Widget {
 				return;
 			}
 
-			$args['all']        = sprintf( esc_html__( 'Any %s', 'razzi' ), wc_attribute_label( $attr->attribute_label ) );
+			$args['all']        = sprintf( esc_html__( 'Any %s', 'dimas' ), wc_attribute_label( $attr->attribute_label ) );
 			$args['type']       = $attr->attribute_type;
 			$args['query_type'] = $filter['query_type'];
 			$args['attribute']  = $filter['attribute'];
 		} elseif ( taxonomy_exists( $filter['source'] ) ) {
 			$taxonomy    = get_taxonomy( $filter['source'] );
-			$args['all'] = sprintf( esc_html__( 'Select a %s', 'razzi' ), $taxonomy->labels->singular_name );
+			$args['all'] = sprintf( esc_html__( 'Select a %s', 'dimas' ), $taxonomy->labels->singular_name );
 		} else {
-			$args['all'] = esc_html__( 'All Products', 'razzi' );
+			$args['all'] = esc_html__( 'All Products', 'dimas' );
 		}
 
 		// Correct the "current" argument.
@@ -432,10 +432,10 @@ class Widget extends \WP_Widget {
 				}
 				?>
                 <div class="products-filter__control-buttons">
-                    <button type="button" value="<?php esc_attr_e( 'Clear', 'razzi' ); ?>"
-                            class="button alt clear-button"><?php esc_html_e( 'Clear', 'razzi' ); ?></button>
-                    <button type="submit" value="<?php esc_attr_e( 'Show Results', 'razzi' ) ?>"
-                            class="button filter-button button-lg"><?php esc_html_e( 'Show Results', 'razzi' ); ?></button>
+                    <button type="button" value="<?php esc_attr_e( 'Clear', 'dimas' ); ?>"
+                            class="button alt clear-button"><?php esc_html_e( 'Clear', 'dimas' ); ?></button>
+                    <button type="submit" value="<?php esc_attr_e( 'Show Results', 'dimas' ) ?>"
+                            class="button filter-button button-lg"><?php esc_html_e( 'Show Results', 'dimas' ); ?></button>
                 </div>
             </div>
         </div>
@@ -530,16 +530,16 @@ class Widget extends \WP_Widget {
 				break;
 
 			case 'products_group':
-				$filter_groups = apply_filters( 'razzi_products_filter_groups', array(
-					'best_sellers' => esc_html__( 'Best Sellers', 'razzi' ),
-					'new'          => esc_html__( 'New Products', 'razzi' ),
-					'sale'         => esc_html__( 'Sale Products', 'razzi' ),
-					'featured'     => esc_html__( 'Hot Products', 'razzi' ),
+				$filter_groups = apply_filters( 'dimas_products_filter_groups', array(
+					'best_sellers' => esc_html__( 'Best Sellers', 'dimas' ),
+					'new'          => esc_html__( 'New Products', 'dimas' ),
+					'sale'         => esc_html__( 'Sale Products', 'dimas' ),
+					'featured'     => esc_html__( 'Hot Products', 'dimas' ),
 				) );
 
 				if ( 'dropdown' != $filter['display'] ) {
 					$options[''] = array(
-						'name'  => esc_html__( 'All Products', 'razzi' ),
+						'name'  => esc_html__( 'All Products', 'dimas' ),
 						'count' => 0,
 						'id'    => 0,
 						'level' => 0,
@@ -556,13 +556,13 @@ class Widget extends \WP_Widget {
 				break;
 
 			case 'orderby':
-				$orderby = apply_filters( 'razzi_products_filter_orderby', array(
-					'menu_order' => esc_html__( 'Default sorting', 'razzi' ),
-					'popularity' => esc_html__( 'Sort by popularity', 'razzi' ),
-					'rating'     => esc_html__( 'Sort by average rating', 'razzi' ),
-					'date'       => esc_html__( 'Sort by latest', 'razzi' ),
-					'price'      => esc_html__( 'Sort by price: low to high', 'razzi' ),
-					'price-desc' => esc_html__( 'Sort by price: high to low', 'razzi' ),
+				$orderby = apply_filters( 'dimas_products_filter_orderby', array(
+					'menu_order' => esc_html__( 'Default sorting', 'dimas' ),
+					'popularity' => esc_html__( 'Sort by popularity', 'dimas' ),
+					'rating'     => esc_html__( 'Sort by average rating', 'dimas' ),
+					'date'       => esc_html__( 'Sort by latest', 'dimas' ),
+					'price'      => esc_html__( 'Sort by price: low to high', 'dimas' ),
+					'price-desc' => esc_html__( 'Sort by price: high to low', 'dimas' ),
 				) );
 
 				foreach ( $orderby as $name => $label ) {
@@ -596,7 +596,7 @@ class Widget extends \WP_Widget {
 			case 'product_status':
 				if(! isset($filter['disable_onsale'])) {
 					$options[ 'on_sale' ] = array(
-						'name'  => esc_html__( 'On Sale', 'razzi' ),
+						'name'  => esc_html__( 'On Sale', 'dimas' ),
 						'count' => 0,
 						'id'    => 'on_sale',
 						'level' => 0,
@@ -605,7 +605,7 @@ class Widget extends \WP_Widget {
 
 				if(! isset($filter['disable_in_stock'])) {
 					$options[ 'in_stock' ] = array(
-						'name'  => esc_html__( 'In Stock', 'razzi' ),
+						'name'  => esc_html__( 'In Stock', 'dimas' ),
 						'count' => 0,
 						'id'    => 'in_stock',
 						'level' => 0,
@@ -701,10 +701,10 @@ class Widget extends \WP_Widget {
 	protected function filter_search_box( $filter ) {
 		if ( 'attribute' == $filter['source'] ) {
 			$attributes  = $this->get_filter_attribute_options();
-			$placeholder = __( 'Search', 'razzi' ) . ' ' . strtolower( $attributes[ $filter['attribute'] ] );
+			$placeholder = __( 'Search', 'dimas' ) . ' ' . strtolower( $attributes[ $filter['attribute'] ] );
 		} else {
 			$sources     = $this->get_filter_source_options();
-			$placeholder = __( 'Search', 'razzi' ) . ' ' . strtolower( $sources[ $filter['source'] ] );
+			$placeholder = __( 'Search', 'dimas' ) . ' ' . strtolower( $sources[ $filter['source'] ] );
 		}
 
 		if ( 'dropdown' == $filter['display'] ) {
@@ -923,7 +923,7 @@ class Widget extends \WP_Widget {
 			'name'        => '',
 			'current'     => array(),
 			'options'     => array(),
-			'all'         => esc_html__( 'Any', 'razzi' ),
+			'all'         => esc_html__( 'Any', 'dimas' ),
 			'show_counts' => false,
 		) );
 
@@ -1261,53 +1261,53 @@ class Widget extends \WP_Widget {
 		$this->setting_field( array(
 			'type'  => 'text',
 			'name'  => 'title',
-			'label' => esc_html__( 'Title', 'razzi' ),
+			'label' => esc_html__( 'Title', 'dimas' ),
 			'value' => $instance['title'],
 		) );
 		?>
 
-        <div class="razzi-products-filter-form__sub-nav">
+        <div class="dimas-products-filter-form__sub-nav">
             <button type="button" data-section="filters"
-                    class="button-link active"><?php esc_html_e( 'Filters', 'razzi' ); ?></button>
+                    class="button-link active"><?php esc_html_e( 'Filters', 'dimas' ); ?></button>
             |
             <button type="button" data-section="options"
-                    class="button-link"><?php esc_html_e( 'Options', 'razzi' ); ?></button>
+                    class="button-link"><?php esc_html_e( 'Options', 'dimas' ); ?></button>
         </div>
 
         <p>
         <hr/></p>
 
-        <div class="razzi-products-filter-form__section active" data-section="filters">
-            <p class="razzi-products-filter-form__message <?php echo ! empty( $instance['filter'] ) ? 'hidden' : '' ?>"><?php esc_html_e( 'There is no filter yet.', 'razzi' ) ?></p>
+        <div class="dimas-products-filter-form__section active" data-section="filters">
+            <p class="dimas-products-filter-form__message <?php echo ! empty( $instance['filter'] ) ? 'hidden' : '' ?>"><?php esc_html_e( 'There is no filter yet.', 'dimas' ) ?></p>
 
-            <div class="razzi-products-filter-form__filter-fields">
+            <div class="dimas-products-filter-form__filter-fields">
 				<?php $this->filter_setting_fields( $instance['filter'] ); ?>
             </div>
 
-            <p class="razzi-products-filter-form__section-actions">
-                <button type="button" class="razzi-products-filter-form__add-new button-link"
+            <p class="dimas-products-filter-form__section-actions">
+                <button type="button" class="dimas-products-filter-form__add-new button-link"
                         data-name="<?php echo esc_attr( $this->get_field_name( 'filter' ) ); ?>"
                         data-count="<?php echo count( $instance['filter'] ) ?>">
-                    + <?php esc_html_e( 'Add a new filter', 'razzi' ) ?></button>
+                    + <?php esc_html_e( 'Add a new filter', 'dimas' ) ?></button>
             </p>
         </div>
 
-        <div class="razzi-products-filter-form__section" data-section="design">
+        <div class="dimas-products-filter-form__section" data-section="design">
         </div>
 
-        <div class="razzi-products-filter-form__section" data-section="options">
+        <div class="dimas-products-filter-form__section" data-section="options">
 			<?php
 			$this->setting_field( array(
 				'type'  => 'checkbox',
 				'name'  => 'ajax',
-				'label' => esc_html__( 'Use ajax for filtering', 'razzi' ),
+				'label' => esc_html__( 'Use ajax for filtering', 'dimas' ),
 				'value' => $instance['ajax'],
 			) );
 
 			$this->setting_field( array(
 				'type'      => 'checkbox',
 				'name'      => 'instant',
-				'label'     => esc_html__( 'Filtering products instantly (no buttons required)', 'razzi' ),
+				'label'     => esc_html__( 'Filtering products instantly (no buttons required)', 'dimas' ),
 				'value'     => $instance['instant'],
 				'condition' => array(
 					'ajax' => true,
@@ -1317,11 +1317,11 @@ class Widget extends \WP_Widget {
 			$this->setting_field( array(
 				'type'      => 'select',
 				'name'      => 'filter_buttons',
-				'label'     => esc_html__( 'Filter buttons position', 'razzi' ),
+				'label'     => esc_html__( 'Filter buttons position', 'dimas' ),
 				'value'     => $instance['filter_buttons'],
 				'options'   => array(
-					'form'   => __( 'Bottom of form', 'razzi' ),
-					'fitems' => __( 'Bottom of filter items', 'razzi' ),
+					'form'   => __( 'Bottom of form', 'dimas' ),
+					'fitems' => __( 'Bottom of filter items', 'dimas' ),
 				),
 				'condition' => array(
 					'instant' => false,
@@ -1331,7 +1331,7 @@ class Widget extends \WP_Widget {
 			$this->setting_field( array(
 				'type'      => 'checkbox',
 				'name'      => 'change_url',
-				'label'     => esc_html__( 'Update URL', 'razzi' ),
+				'label'     => esc_html__( 'Update URL', 'dimas' ),
 				'value'     => $instance['change_url'],
 				'condition' => array(
 					'ajax' => true,
@@ -1358,28 +1358,28 @@ class Widget extends \WP_Widget {
 			$title = 'display' == $context ? $field['name'] : current( array_values( $filter_settings['source']['options'] ) );
 			$title       = $title ? $title : $filter_settings['source']['options'][ $field['source'] ];
 			?>
-            <div class="razzi-products-filter-form__filter">
-                <div class="razzi-products-filter-form__filter-top">
-                    <div class="razzi-products-filter-form__filter-actions">
+            <div class="dimas-products-filter-form__filter">
+                <div class="dimas-products-filter-form__filter-top">
+                    <div class="dimas-products-filter-form__filter-actions">
                         <button type="button"
-                                class="razzi-products-filter-form__remove-filter button-link button-link-delete">
-                            <span class="screen-reader-text"><?php esc_html_e( 'Remove filter', 'razzi' ) ?></span>
+                                class="dimas-products-filter-form__remove-filter button-link button-link-delete">
+                            <span class="screen-reader-text"><?php esc_html_e( 'Remove filter', 'dimas' ) ?></span>
                             <span class="dashicons dashicons-no-alt"></span>
                         </button>
                     </div>
 
-                    <button type="button" class="razzi-products-filter-form__filter-toggle">
-                        <span class="razzi-products-filter-form__filter-toggle-indicator" aria-hidden="true"></span>
+                    <button type="button" class="dimas-products-filter-form__filter-toggle">
+                        <span class="dimas-products-filter-form__filter-toggle-indicator" aria-hidden="true"></span>
                     </button>
 
-                    <div class="razzi-products-filter-form__filter-title"><?php echo $title; ?></div>
+                    <div class="dimas-products-filter-form__filter-title"><?php echo $title; ?></div>
                 </div>
-                <div class="razzi-products-filter-form__filter-options">
+                <div class="dimas-products-filter-form__filter-options">
 					<?php
 					foreach ( $filter_settings as $name => $options ) {
 						$options['name']       = 'display' == $context ? "filter[$index][$name]" : '{{data.name}}[{{data.count}}][' . $name . ']';
 						$options['value']      = ! empty( $field[ $name ] ) ? $field[ $name ] : '';
-						$options['class']      = 'razzi-products-filter-form__filter-option';
+						$options['class']      = 'dimas-products-filter-form__filter-option';
 						$options['attributes'] = array( 'data-option' => 'filter:' . $name );
 						$options['__instance'] = $field;
 
@@ -1436,12 +1436,12 @@ class Widget extends \WP_Widget {
 	 */
 	protected function get_filter_source_options() {
 		$sources = array(
-			'orderby'        => esc_html__( 'Order By', 'razzi' ),
-			'products_group' => esc_html__( 'Group', 'razzi' ),
-			'price'          => esc_html__( 'Price', 'razzi' ),
-			'attribute'      => esc_html__( 'Attributes', 'razzi' ),
-			'rating'         => esc_html__( 'Rating', 'razzi' ),
-			'product_status' => esc_html__( 'Product Status', 'razzi' ),
+			'orderby'        => esc_html__( 'Order By', 'dimas' ),
+			'products_group' => esc_html__( 'Group', 'dimas' ),
+			'price'          => esc_html__( 'Price', 'dimas' ),
+			'attribute'      => esc_html__( 'Attributes', 'dimas' ),
+			'rating'         => esc_html__( 'Rating', 'dimas' ),
+			'product_status' => esc_html__( 'Product Status', 'dimas' ),
 		);
 
 		// Getting other taxonomies.
@@ -1494,25 +1494,25 @@ class Widget extends \WP_Widget {
 	protected function get_filter_display_options( $source = 'product_cat' ) {
 		$options = array(
 			'price'     => array(
-				'slider' => esc_html__( 'Slider', 'razzi' ),
-				'ranges' => esc_html__( 'Ranges', 'razzi' ),
+				'slider' => esc_html__( 'Slider', 'dimas' ),
+				'ranges' => esc_html__( 'Ranges', 'dimas' ),
 			),
 			'attribute' => array(
-				'auto'       => esc_html__( 'Auto', 'razzi' ),
-				'dropdown'   => esc_html__( 'Dropdown', 'razzi' ),
-				'list'       => esc_html__( 'Vertical List', 'razzi' ),
-				'h-list'     => esc_html__( 'Horizontal List', 'razzi' ),
-				'checkboxes' => esc_html__( 'Checkbox List', 'razzi' ),
+				'auto'       => esc_html__( 'Auto', 'dimas' ),
+				'dropdown'   => esc_html__( 'Dropdown', 'dimas' ),
+				'list'       => esc_html__( 'Vertical List', 'dimas' ),
+				'h-list'     => esc_html__( 'Horizontal List', 'dimas' ),
+				'checkboxes' => esc_html__( 'Checkbox List', 'dimas' ),
 			),
 			'rating'    => array(
-				'dropdown'   => esc_html__( 'Dropdown', 'razzi' ),
-				'checkboxes' => esc_html__( 'Checkbox List', 'razzi' ),
+				'dropdown'   => esc_html__( 'Dropdown', 'dimas' ),
+				'checkboxes' => esc_html__( 'Checkbox List', 'dimas' ),
 			),
 			'default'   => array(
-				'dropdown'   => esc_html__( 'Dropdown', 'razzi' ),
-				'list'       => esc_html__( 'Vertical List', 'razzi' ),
-				'h-list'     => esc_html__( 'Horizontal List', 'razzi' ),
-				'checkboxes' => esc_html__( 'Checkbox List', 'razzi' ),
+				'dropdown'   => esc_html__( 'Dropdown', 'dimas' ),
+				'list'       => esc_html__( 'Vertical List', 'dimas' ),
+				'h-list'     => esc_html__( 'Horizontal List', 'dimas' ),
+				'checkboxes' => esc_html__( 'Checkbox List', 'dimas' ),
 			),
 		);
 
@@ -1542,17 +1542,17 @@ class Widget extends \WP_Widget {
 		$this->filter_settings = array(
 			'name'        => array(
 				'type'  => 'text',
-				'label' => __( 'Filter Name', 'razzi' ),
+				'label' => __( 'Filter Name', 'dimas' ),
 			),
 			'source'      => array(
 				'type'    => 'select',
-				'label'   => __( 'Filter By', 'razzi' ),
+				'label'   => __( 'Filter By', 'dimas' ),
 				'options' => $this->get_filter_source_options(),
 			),
 			'attribute'   => array(
 				'type'      => 'select',
 				'name'      => 'attribute',
-				'label'     => __( 'Attribute', 'razzi' ),
+				'label'     => __( 'Attribute', 'dimas' ),
 				'options'   => $this->get_filter_attribute_options(),
 				'condition' => array(
 					'source' => 'attribute',
@@ -1560,13 +1560,13 @@ class Widget extends \WP_Widget {
 			),
 			'display'     => array(
 				'type'    => 'select',
-				'label'   => __( 'Display Type', 'razzi' ),
+				'label'   => __( 'Display Type', 'dimas' ),
 				'options' => $this->get_filter_display_options(),
 			),
 			'ranges'      => array(
 				'type'      => 'textarea',
-				'label'     => __( 'Ranges', 'razzi' ),
-				'desc'      => __( 'Each range on a line, separate by the <code>-</code> symbol. Do not include the currency symbol.', 'razzi' ),
+				'label'     => __( 'Ranges', 'dimas' ),
+				'desc'      => __( 'Each range on a line, separate by the <code>-</code> symbol. Do not include the currency symbol.', 'dimas' ),
 				'condition' => array(
 					'display' => 'ranges',
 					'source'  => 'price',
@@ -1574,10 +1574,10 @@ class Widget extends \WP_Widget {
 			),
 			'multiple'    => array(
 				'type'      => 'select',
-				'label'     => __( 'Selection Type', 'razzi' ),
+				'label'     => __( 'Selection Type', 'dimas' ),
 				'options'   => array(
-					0 => __( 'Single select', 'razzi' ),
-					1 => __( 'Multiple select', 'razzi' ),
+					0 => __( 'Single select', 'dimas' ),
+					1 => __( 'Multiple select', 'dimas' ),
 				),
 				'condition' => array(
 					'source!'  => [ 'products_group', 'price', 'orderby' ],
@@ -1586,10 +1586,10 @@ class Widget extends \WP_Widget {
 			),
 			'query_type'  => array(
 				'type'      => 'select',
-				'label'     => __( 'Query Type', 'razzi' ),
+				'label'     => __( 'Query Type', 'dimas' ),
 				'options'   => array(
-					'and' => __( 'AND', 'razzi' ),
-					'or'  => __( 'OR', 'razzi' ),
+					'and' => __( 'AND', 'dimas' ),
+					'or'  => __( 'OR', 'dimas' ),
 				),
 				'condition' => array(
 					'source' => 'attribute',
@@ -1597,7 +1597,7 @@ class Widget extends \WP_Widget {
 			),
 			'collapsible' => array(
 				'type'      => 'checkbox',
-				'label'     => __( 'Collapsible', 'razzi' ),
+				'label'     => __( 'Collapsible', 'dimas' ),
 				'condition' => array(
 					'source'  => array( 'product_cat' ),
 					'display' => array( 'list', 'checkboxes' ),
@@ -1605,14 +1605,14 @@ class Widget extends \WP_Widget {
 			),
 			'show_counts' => array(
 				'type'      => 'checkbox',
-				'label'     => __( 'Show product counts', 'razzi' ),
+				'label'     => __( 'Show product counts', 'dimas' ),
 				'condition' => array(
 					'source!' => array( 'price', 'products_group', 'orderby', 'product_status' ),
 				),
 			),
 			'searchable'  => array(
 				'type'      => 'checkbox',
-				'label'     => __( 'Show the search box', 'razzi' ),
+				'label'     => __( 'Show the search box', 'dimas' ),
 				'condition' => array(
 					'source!'  => array( 'product_status' ),
 					'display!' => array( 'slider', 'ranges' ),
@@ -1620,7 +1620,7 @@ class Widget extends \WP_Widget {
 			),
 			'scrollable'  => array(
 				'type'      => 'checkbox',
-				'label'     => __( 'Limit the height of items list (scrollable)', 'razzi' ),
+				'label'     => __( 'Limit the height of items list (scrollable)', 'dimas' ),
 				'condition' => array(
 					'source!'  => array( 'product_status' ),
 					'display' => array( 'list', 'checkboxes', 'auto', ),
@@ -1628,21 +1628,21 @@ class Widget extends \WP_Widget {
 			),
 			'show_empty_cats'  => array(
 				'type'      => 'checkbox',
-				'label'     => __( 'Show empty categories', 'razzi' ),
+				'label'     => __( 'Show empty categories', 'dimas' ),
 				'condition' => array(
 					'source'  => array( 'product_cat' ),
 				),
 			),
 			'disable_onsale'  => array(
 				'type'      => 'checkbox',
-				'label'     => __( 'Disable on sale', 'razzi' ),
+				'label'     => __( 'Disable on sale', 'dimas' ),
 				'condition' => array(
 					'source'  => array( 'product_status' ),
 				),
 			),
 			'disable_in_stock'  => array(
 				'type'      => 'checkbox',
-				'label'     => __( 'Disable in stock', 'razzi' ),
+				'label'     => __( 'Disable in stock', 'dimas' ),
 				'condition' => array(
 					'source'  => array( 'product_status' ),
 				),
@@ -1845,11 +1845,11 @@ class Widget extends \WP_Widget {
 			return;
 		}
 
-		wp_enqueue_style( 'razzi-products-filter-admin', DIMAS_ADDONS_URL . 'modules/products-filter/assets/css/products-filter-admin.css', array(), '20210311' );
-		wp_enqueue_script( 'razzi-products-filter-admin', DIMAS_ADDONS_URL . 'modules/products-filter/assets/js/products-filter-admin.js', array( 'wp-util' ), '20210311', true );
+		wp_enqueue_style( 'dimas-products-filter-admin', DIMAS_ADDONS_URL . 'modules/products-filter/assets/css/products-filter-admin.css', array(), '20210311' );
+		wp_enqueue_script( 'dimas-products-filter-admin', DIMAS_ADDONS_URL . 'modules/products-filter/assets/js/products-filter-admin.js', array( 'wp-util' ), '20210311', true );
 
 		wp_localize_script(
-			'razzi-products-filter-admin', 'razzi_products_filter_params', array(
+			'dimas-products-filter-admin', 'dimas_products_filter_params', array(
 				'sources'    => $this->get_filter_source_options(),
 				'display'    => $this->get_filter_display_options( 'all' ),
 				'attributes' => $this->get_filter_attribute_options(),
@@ -1873,7 +1873,7 @@ class Widget extends \WP_Widget {
 			wp_enqueue_style( 'select2' );
 		}
 
-		wp_enqueue_script( 'razzi-products-filter', DIMAS_ADDONS_URL . 'modules/products-filter/assets/js/products-filter.js', array(
+		wp_enqueue_script( 'dimas-products-filter', DIMAS_ADDONS_URL . 'modules/products-filter/assets/js/products-filter.js', array(
 			'jquery',
 			'wp-util',
 			'select2',
@@ -1896,7 +1896,7 @@ class Widget extends \WP_Widget {
 		}
 		?>
 
-        <script type="text/template" id="tmpl-razzi-products-filter">
+        <script type="text/template" id="tmpl-dimas-products-filter">
 			<?php $this->filter_setting_fields( array(), 'template' ); ?>
         </script>
 

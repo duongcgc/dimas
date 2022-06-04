@@ -114,7 +114,7 @@ class Walker_Edit extends \Walker_Nav_Menu_Edit {
 
 		if ( $cancel ) {
 			$link            = $dom->createElement( 'a' );
-			$link->nodeValue = esc_html__( 'Settings', 'razzi' );
+			$link->nodeValue = esc_html__( 'Settings', 'dimas' );
 			$link->setAttribute( 'class', 'item-config-mega opensettings submitcancel hide-if-no-js' );
 			$link->setAttribute( 'href', '#' );
 			$sep            = $dom->createElement( 'span' );

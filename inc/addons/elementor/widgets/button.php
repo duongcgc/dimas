@@ -34,7 +34,7 @@ class Button extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-button';
+		return 'dimas-button';
 	}
 
 	/**
@@ -48,7 +48,7 @@ class Button extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Button', 'razzi' );
+		return __( 'Dimas - Button', 'dimas' );
 	}
 
 	/**
@@ -78,7 +78,7 @@ class Button extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	/**
@@ -94,10 +94,10 @@ class Button extends Widget_Base {
 	 */
 	public static function get_button_sizes() {
 		return [
-			''        => __( 'Default', 'razzi' ),
-			'smaller' => __( 'Small', 'razzi' ),
-			'medium'  => __( 'Medium', 'razzi' ),
-			'larger'  => __( 'Large', 'razzi' ),
+			''        => __( 'Default', 'dimas' ),
+			'smaller' => __( 'Small', 'dimas' ),
+			'medium'  => __( 'Medium', 'dimas' ),
+			'larger'  => __( 'Large', 'dimas' ),
 		];
 	}
 
@@ -113,20 +113,20 @@ class Button extends Widget_Base {
 		$this->start_controls_section(
 			'section_button',
 			[
-				'label' => __( 'Button', 'razzi' ),
+				'label' => __( 'Button', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'button_style',
 			[
-				'label'   => __( 'Style', 'razzi' ),
+				'label'   => __( 'Style', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => '',
 				'options' => [
-					''          => __( 'Normal', 'razzi' ),
-					'outline'   => __( 'Outline', 'razzi' ),
-					'underline' => __( 'Underline', 'razzi' ),
+					''          => __( 'Normal', 'dimas' ),
+					'outline'   => __( 'Outline', 'dimas' ),
+					'underline' => __( 'Underline', 'dimas' ),
 				],
 			]
 		);
@@ -134,25 +134,25 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'text',
 			[
-				'label'       => __( 'Text', 'razzi' ),
+				'label'       => __( 'Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
 				'dynamic'     => [
 					'active' => true,
 				],
-				'default'     => __( 'Click here', 'razzi' ),
-				'placeholder' => __( 'Click here', 'razzi' ),
+				'default'     => __( 'Click here', 'dimas' ),
+				'placeholder' => __( 'Click here', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'link',
 			[
-				'label'       => __( 'Link', 'razzi' ),
+				'label'       => __( 'Link', 'dimas' ),
 				'type'        => Controls_Manager::URL,
 				'dynamic'     => [
 					'active' => true,
 				],
-				'placeholder' => __( 'https://your-link.com', 'razzi' ),
+				'placeholder' => __( 'https://your-link.com', 'dimas' ),
 				'default'     => [
 					'url' => '#',
 				],
@@ -162,23 +162,23 @@ class Button extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			[
-				'label'   => __( 'Alignment', 'razzi' ),
+				'label'   => __( 'Alignment', 'dimas' ),
 				'type'    => Controls_Manager::CHOOSE,
 				'options' => [
 					'left'    => [
-						'title' => __( 'Left', 'razzi' ),
+						'title' => __( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center'  => [
-						'title' => __( 'Center', 'razzi' ),
+						'title' => __( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'   => [
-						'title' => __( 'Right', 'razzi' ),
+						'title' => __( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 					'justify' => [
-						'title' => __( 'Justified', 'razzi' ),
+						'title' => __( 'Justified', 'dimas' ),
 						'icon'  => 'eicon-text-align-justify',
 					],
 				],
@@ -190,7 +190,7 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'size',
 			[
-				'label'          => __( 'Size', 'razzi' ),
+				'label'          => __( 'Size', 'dimas' ),
 				'type'           => Controls_Manager::SELECT,
 				'default'        => '',
 				'options'        => self::get_button_sizes(),
@@ -201,7 +201,7 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'selected_icon',
 			[
-				'label'            => __( 'Icon', 'razzi' ),
+				'label'            => __( 'Icon', 'dimas' ),
 				'type'             => Controls_Manager::ICONS,
 				'fa4compatibility' => 'icon',
 				'skin'             => 'inline',
@@ -212,12 +212,12 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'icon_align',
 			[
-				'label'     => __( 'Icon Position', 'razzi' ),
+				'label'     => __( 'Icon Position', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'left',
 				'options'   => [
-					'left'  => __( 'Before', 'razzi' ),
-					'right' => __( 'After', 'razzi' ),
+					'left'  => __( 'Before', 'dimas' ),
+					'right' => __( 'After', 'dimas' ),
 				],
 				'condition' => [
 					'selected_icon[value]!' => '',
@@ -228,7 +228,7 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'icon_indent',
 			[
-				'label'     => __( 'Icon Spacing', 'razzi' ),
+				'label'     => __( 'Icon Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -236,8 +236,8 @@ class Button extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-button .razzi-align-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-button .razzi-align-icon-left'  => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-button .dimas-align-icon-right' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-button .dimas-align-icon-left'  => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -245,14 +245,14 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'button_css_id',
 			[
-				'label'       => __( 'Button ID', 'razzi' ),
+				'label'       => __( 'Button ID', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
 				'dynamic'     => [
 					'active' => true,
 				],
 				'default'     => '',
-				'title'       => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'razzi' ),
-				'description' => __( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'razzi' ),
+				'title'       => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'dimas' ),
+				'description' => __( 'Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows <code>A-z 0-9</code> & underscore chars without spaces.', 'dimas' ),
 				'separator'   => 'before',
 
 			]
@@ -263,7 +263,7 @@ class Button extends Widget_Base {
 		$this->start_controls_section(
 			'section_style',
 			[
-				'label' => __( 'Button', 'razzi' ),
+				'label' => __( 'Button', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -272,7 +272,7 @@ class Button extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'typography',
-				'selector' => '{{WRAPPER}} .razzi-button',
+				'selector' => '{{WRAPPER}} .dimas-button',
 			]
 		);
 
@@ -282,18 +282,18 @@ class Button extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_normal',
 			[
-				'label' => __( 'Normal', 'razzi' ),
+				'label' => __( 'Normal', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'button_text_color',
 			[
-				'label'     => __( 'Text Color', 'razzi' ),
+				'label'     => __( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-button' => 'fill: {{VALUE}};color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-button' => 'fill: {{VALUE}};color: {{VALUE}};',
 				],
 			]
 		);
@@ -301,10 +301,10 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'background_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-button' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-button' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -314,18 +314,18 @@ class Button extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_button_hover',
 			[
-				'label' => __( 'Hover', 'razzi' ),
+				'label' => __( 'Hover', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_color',
 			[
-				'label'     => __( 'Text Color', 'razzi' ),
+				'label'     => __( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-button:hover, {{WRAPPER}} .razzi-button:focus'         => 'color: {{VALUE}};',
-					'{{WRAPPER}} .razzi-button:hover svg, {{WRAPPER}} .razzi-button:focus svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .dimas-button:hover, {{WRAPPER}} .dimas-button:focus'         => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-button:hover svg, {{WRAPPER}} .dimas-button:focus svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -333,10 +333,10 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'button_background_hover_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-button:hover, {{WRAPPER}} .razzi-button:focus' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-button:hover, {{WRAPPER}} .dimas-button:focus' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -344,13 +344,13 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'button_hover_border_color',
 			[
-				'label'     => __( 'Border Color', 'razzi' ),
+				'label'     => __( 'Border Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => [
 					'border_border!' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-button:hover, {{WRAPPER}} .razzi-button:focus' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-button:hover, {{WRAPPER}} .dimas-button:focus' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -363,7 +363,7 @@ class Button extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'      => 'border',
-				'selector'  => '{{WRAPPER}} .razzi-button',
+				'selector'  => '{{WRAPPER}} .dimas-button',
 				'separator' => 'before',
 			]
 		);
@@ -371,11 +371,11 @@ class Button extends Widget_Base {
 		$this->add_control(
 			'border_radius',
 			[
-				'label'      => __( 'Border Radius', 'razzi' ),
+				'label'      => __( 'Border Radius', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -383,11 +383,11 @@ class Button extends Widget_Base {
 		$this->add_responsive_control(
 			'text_padding',
 			[
-				'label'      => __( 'Padding', 'razzi' ),
+				'label'      => __( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator'  => 'before',
 			]
@@ -410,10 +410,10 @@ class Button extends Widget_Base {
 
 		if ( ! empty( $settings['link']['url'] ) ) {
 			$this->add_link_attributes( 'button', $settings['link'] );
-			$this->add_render_attribute( 'button', 'class', 'razzi-button-link' );
+			$this->add_render_attribute( 'button', 'class', 'dimas-button-link' );
 		}
 
-		$this->add_render_attribute( 'button', 'class', 'razzi-button' );
+		$this->add_render_attribute( 'button', 'class', 'dimas-button' );
 
 		if ( ! empty( $settings['button_css_id'] ) ) {
 			$this->add_render_attribute( 'button', 'id', $settings['button_css_id'] );
@@ -458,16 +458,16 @@ class Button extends Widget_Base {
 		$is_new   = Icons_Manager::is_migration_allowed();
 		$this->add_render_attribute( [
 			'content-wrapper' => [
-				'class' => 'razzi-button-content-wrapper',
+				'class' => 'dimas-button-content-wrapper',
 			],
 			'icon-align'      => [
 				'class' => [
-					'razzi-svg-icon',
-					'razzi-align-icon-' . $settings['icon_align'],
+					'dimas-svg-icon',
+					'dimas-align-icon-' . $settings['icon_align'],
 				],
 			],
 			'text'            => [
-				'class' => 'razzi-button-text',
+				'class' => 'dimas-button-text',
 			],
 		] );
 

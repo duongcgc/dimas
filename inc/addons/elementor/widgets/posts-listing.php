@@ -22,7 +22,7 @@ class Posts_Listing extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-posts-listing';
+		return 'dimas-posts-listing';
 	}
 
 	/**
@@ -31,7 +31,7 @@ class Posts_Listing extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Posts Listing', 'razzi' );
+		return esc_html__( 'Dimas - Posts Listing', 'dimas' );
 	}
 
 	/**
@@ -49,12 +49,12 @@ class Posts_Listing extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-frontend'
+			'dimas-frontend'
 		];
 	}
 
@@ -82,13 +82,13 @@ class Posts_Listing extends Widget_Base {
 		// Brands Settings
 		$this->start_controls_section(
 			'section_blogs',
-			[ 'label' => esc_html__( 'Posts', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Posts', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'blog_cats',
 			[
-				'label'       => esc_html__( 'Categories', 'razzi' ),
+				'label'       => esc_html__( 'Categories', 'dimas' ),
 				'type'        => Controls_Manager::SELECT2,
 				'options'     => Helper::taxonomy_list( 'category' ),
 				'default'     => '',
@@ -100,7 +100,7 @@ class Posts_Listing extends Widget_Base {
 		$this->add_control(
 			'limit',
 			[
-				'label'   => esc_html__( 'Total', 'razzi' ),
+				'label'   => esc_html__( 'Total', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 8,
 				'min'     => 2,
@@ -112,13 +112,13 @@ class Posts_Listing extends Widget_Base {
 		$this->add_control(
 			'orderby',
 			[
-				'label'   => esc_html__( 'Order By', 'razzi' ),
+				'label'   => esc_html__( 'Order By', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'date' => esc_html__( 'Date', 'razzi' ),
-					'name' => esc_html__( 'Name', 'razzi' ),
-					'id'   => esc_html__( 'Ids', 'razzi' ),
-					'rand' => esc_html__( 'Random', 'razzi' ),
+					'date' => esc_html__( 'Date', 'dimas' ),
+					'name' => esc_html__( 'Name', 'dimas' ),
+					'id'   => esc_html__( 'Ids', 'dimas' ),
+					'rand' => esc_html__( 'Random', 'dimas' ),
 				],
 				'default' => 'date',
 			]
@@ -127,12 +127,12 @@ class Posts_Listing extends Widget_Base {
 		$this->add_control(
 			'order',
 			[
-				'label'   => esc_html__( 'Order', 'razzi' ),
+				'label'   => esc_html__( 'Order', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					''     => esc_html__( 'Default', 'razzi' ),
-					'ASC'  => esc_html__( 'Ascending', 'razzi' ),
-					'DESC' => esc_html__( 'Descending', 'razzi' ),
+					''     => esc_html__( 'Default', 'dimas' ),
+					'ASC'  => esc_html__( 'Ascending', 'dimas' ),
+					'DESC' => esc_html__( 'Descending', 'dimas' ),
 				],
 				'default' => '',
 			]
@@ -167,7 +167,7 @@ class Posts_Listing extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -175,7 +175,7 @@ class Posts_Listing extends Widget_Base {
 		$this->add_control(
 			'content_style_img',
 			[
-				'label' => __( 'Image', 'razzi' ),
+				'label' => __( 'Image', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 			]
 		);
@@ -183,7 +183,7 @@ class Posts_Listing extends Widget_Base {
 		$this->add_responsive_control(
 			'img_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -192,7 +192,7 @@ class Posts_Listing extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-posts-listing .entry-header' => 'margin-right: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-posts-listing .entry-header' => 'margin-right: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -202,7 +202,7 @@ class Posts_Listing extends Widget_Base {
 		$this->add_control(
 			'content_style_title',
 			[
-				'label' => __( 'Title', 'razzi' ),
+				'label' => __( 'Title', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 
@@ -212,7 +212,7 @@ class Posts_Listing extends Widget_Base {
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -221,7 +221,7 @@ class Posts_Listing extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-posts-listing .entry-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-posts-listing .entry-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -230,18 +230,18 @@ class Posts_Listing extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-posts-listing .entry-title',
+				'selector' => '{{WRAPPER}} .dimas-posts-listing .entry-title',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-posts-listing .entry-title a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-posts-listing .entry-title a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -250,7 +250,7 @@ class Posts_Listing extends Widget_Base {
 		$this->add_control(
 			'content_style_desc',
 			[
-				'label' => __( 'Desc', 'razzi' ),
+				'label' => __( 'Desc', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -259,7 +259,7 @@ class Posts_Listing extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -268,7 +268,7 @@ class Posts_Listing extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-posts-listing .entry-content' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-posts-listing .entry-content' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -277,18 +277,18 @@ class Posts_Listing extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'desc_typography',
-				'selector' => '{{WRAPPER}} .razzi-posts-listing .entry-content',
+				'selector' => '{{WRAPPER}} .dimas-posts-listing .entry-content',
 			]
 		);
 
 		$this->add_control(
 			'desc_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-posts-listing .entry-content' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-posts-listing .entry-content' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -296,7 +296,7 @@ class Posts_Listing extends Widget_Base {
 		$this->add_control(
 			'content_style_button_2',
 			[
-				'label' => __( 'Button', 'razzi' ),
+				'label' => __( 'Button', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -314,7 +314,7 @@ class Posts_Listing extends Widget_Base {
 					'' => 'display: none',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-posts-listing .razzi-button' => '{{VALUE}};',
+					'{{WRAPPER}} .dimas-posts-listing .dimas-button' => '{{VALUE}};',
 				],
 			]
 		);
@@ -323,7 +323,7 @@ class Posts_Listing extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'btn_2_typography',
-				'selector' => '{{WRAPPER}} .razzi-posts-listing .razzi-button',
+				'selector' => '{{WRAPPER}} .dimas-posts-listing .dimas-button',
 			]
 		);
 
@@ -331,11 +331,11 @@ class Posts_Listing extends Widget_Base {
 		$this->add_control(
 			'btn_2_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-posts-listing .razzi-button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-posts-listing .dimas-button' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -353,7 +353,7 @@ class Posts_Listing extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-posts-listing',
+			'dimas-posts-listing',
 		];
 
 		$atts = [
@@ -423,7 +423,7 @@ class Posts_Listing extends Widget_Base {
 			$html[] = '<div class="entry-content">';
 			$html[] = \Dimas\Addons\Helper::get_content_limit( 15, '' );
 			$html[] = '</div>';
-			$html[] = '<a class="razzi-button button-normal" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read more', 'razzi' ) . \Dimas\Addons\Helper::get_svg( 'arrow-right',  'razzi-icon' ) . '</a>';
+			$html[] = '<a class="dimas-button button-normal" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read more', 'dimas' ) . \Dimas\Addons\Helper::get_svg( 'arrow-right',  'dimas-icon' ) . '</a>';
 			$html[] = '</div>';
 			$html[] = '</article>';
 

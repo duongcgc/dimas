@@ -23,7 +23,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-images-box-carousel-2';
+		return 'dimas-images-box-carousel-2';
 	}
 
 	/**
@@ -32,7 +32,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Images Box Carousel 2', 'razzi' );
+		return esc_html__( 'Dimas - Images Box Carousel 2', 'dimas' );
 	}
 
 	/**
@@ -50,12 +50,12 @@ class Images_Box_Carousel_2 extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-frontend'
+			'dimas-frontend'
 		];
 	}
 
@@ -83,7 +83,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 	protected function content_settings_controls() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Content', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Content', 'dimas' ) ]
 		);
 
 		$repeater = new \Elementor\Repeater();
@@ -91,7 +91,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$repeater->add_control(
 			'image',
 			[
-				'label'   => esc_html__( 'Image', 'razzi' ),
+				'label'   => esc_html__( 'Image', 'dimas' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => 'https://via.placeholder.com/170x140/f5f5f5?text=Image',
@@ -102,27 +102,27 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'This is title', 'razzi' ),
+				'default'     => esc_html__( 'This is title', 'dimas' ),
 			]
 		);
 
 		$repeater->add_control(
 			'desc',
 			[
-				'label'   => esc_html__( 'Description', 'razzi' ),
+				'label'   => esc_html__( 'Description', 'dimas' ),
 				'type'    => Controls_Manager::TEXTAREA,
-				'default' => esc_html__( 'This is description', 'razzi' ),
+				'default' => esc_html__( 'This is description', 'dimas' ),
 			]
 		);
 
 		$repeater->add_control(
 			'link', [
-				'label'         => esc_html__( 'Link', 'razzi' ),
+				'label'         => esc_html__( 'Link', 'dimas' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => esc_html__( 'https://your-link.com', 'razzi' ),
-				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'razzi' ),
+				'placeholder'   => esc_html__( 'https://your-link.com', 'dimas' ),
+				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'dimas' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '#',
@@ -135,32 +135,32 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'elements',
 			[
-				'label'         => esc_html__( 'Items', 'razzi' ),
+				'label'         => esc_html__( 'Items', 'dimas' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'default'       => [
 					[
-						'title' => esc_html__( 'This is the title', 'razzi' ),
+						'title' => esc_html__( 'This is the title', 'dimas' ),
 						'image' => [
 							'url' => 'https://via.placeholder.com/170x140/f5f5f5?text=Image',
 						],
 					],[
-						'title' => esc_html__( 'This is the title', 'razzi' ),
+						'title' => esc_html__( 'This is the title', 'dimas' ),
 						'image' => [
 							'url' => 'https://via.placeholder.com/170x140/f5f5f5?text=Image',
 						],
 					],[
-						'title' => esc_html__( 'This is the title', 'razzi' ),
+						'title' => esc_html__( 'This is the title', 'dimas' ),
 						'image' => [
 							'url' => 'https://via.placeholder.com/170x140/f5f5f5?text=Image',
 						],
 					],[
-						'title' => esc_html__( 'This is the title', 'razzi' ),
+						'title' => esc_html__( 'This is the title', 'dimas' ),
 						'image' => [
 							'url' => 'https://via.placeholder.com/170x140/f5f5f5?text=Image',
 						],
 					],[
-						'title' => esc_html__( 'This is the title', 'razzi' ),
+						'title' => esc_html__( 'This is the title', 'dimas' ),
 						'image' => [
 							'url' => 'https://via.placeholder.com/170x140/f5f5f5?text=Image',
 						],
@@ -187,12 +187,12 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		// Carousel Settings
 		$this->start_controls_section(
 			'section_carousel_settings',
-			[ 'label' => esc_html__( 'Carousel Settings', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Carousel Settings', 'dimas' ) ]
 		);
 		$this->add_responsive_control(
 			'slidesToShow',
 			[
-				'label'   => esc_html__( 'Slides to show', 'razzi' ),
+				'label'   => esc_html__( 'Slides to show', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'min'     => 1,
 				'max'     => 7,
@@ -205,7 +205,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'slidesToScroll',
 			[
-				'label'   => esc_html__( 'Slides to scroll', 'razzi' ),
+				'label'   => esc_html__( 'Slides to scroll', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'min'     => 1,
 				'max'     => 5,
@@ -219,12 +219,12 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'navigation',
 			[
-				'label'     => esc_html__( 'Navigation', 'razzi' ),
+				'label'     => esc_html__( 'Navigation', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options' => [
-					'none'   => esc_html__( 'None', 'razzi' ),
-					'arrows' => esc_html__( 'Arrows', 'razzi' ),
-					'dots' 	 => esc_html__( 'Dots', 'razzi' ),
+					'none'   => esc_html__( 'None', 'dimas' ),
+					'arrows' => esc_html__( 'Arrows', 'dimas' ),
+					'dots' 	 => esc_html__( 'Dots', 'dimas' ),
 				],
 				'default' => 'arrows',
 			]
@@ -233,10 +233,10 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'infinite',
 			[
-				'label'     => __( 'Infinite', 'razzi' ),
+				'label'     => __( 'Infinite', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'razzi' ),
-				'label_on'  => __( 'On', 'razzi' ),
+				'label_off' => __( 'Off', 'dimas' ),
+				'label_on'  => __( 'On', 'dimas' ),
 				'return_value' => 'yes',
 				'default'   => '',
 				'frontend_available' => true,
@@ -246,10 +246,10 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			[
-				'label'     => __( 'Autoplay', 'razzi' ),
+				'label'     => __( 'Autoplay', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'razzi' ),
-				'label_on'  => __( 'On', 'razzi' ),
+				'label_off' => __( 'Off', 'dimas' ),
+				'label_on'  => __( 'On', 'dimas' ),
 				'return_value' => 'yes',
 				'default'   => 'yes',
 				'frontend_available' => true,
@@ -259,7 +259,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'autoplay_speed',
 			[
-				'label'   => __( 'Autoplay Speed (in ms)', 'razzi' ),
+				'label'   => __( 'Autoplay Speed (in ms)', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 1000,
 				'min'     => 100,
@@ -289,7 +289,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -297,7 +297,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'img_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [
 					'unit' => 'px',
@@ -309,7 +309,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .image-item' => 'padding-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .image-item' => 'padding-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -317,11 +317,11 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label'      => __( 'Padding', 'razzi' ),
+				'label'      => __( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .content-summary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .content-summary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -329,11 +329,11 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'content_background_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .content-summary' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .content-summary' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -341,7 +341,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'img_border_ra',
 			[
-				'label'     => esc_html__( 'Border Radius', 'razzi' ),
+				'label'     => esc_html__( 'Border Radius', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -351,7 +351,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .content-img img' => 'border-radius: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .content-img img' => 'border-radius: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -359,10 +359,10 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'hover_image',
 			[
-				'label'        => __( 'Hover Image Animation', 'razzi' ),
+				'label'        => __( 'Hover Image Animation', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'On', 'razzi' ),
-				'label_off'    => __( 'Off', 'razzi' ),
+				'label_on'     => __( 'On', 'dimas' ),
+				'label_off'    => __( 'Off', 'dimas' ),
 				'return_value' => 'on',
 				'default'      => 'on',
 				'prefix_class' => 'hover-image-',
@@ -373,7 +373,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'content_style_title',
 			[
-				'label'     => esc_html__( 'Title', 'razzi' ),
+				'label'     => esc_html__( 'Title', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -382,7 +382,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label'     => esc_html__( 'Spacing Top', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Top', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -391,7 +391,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .content-summary' => 'padding-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .content-summary' => 'padding-top: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -400,18 +400,18 @@ class Images_Box_Carousel_2 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-images-box-carousel-2 .content-title',
+				'selector' => '{{WRAPPER}} .dimas-images-box-carousel-2 .content-title',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .content-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .content-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -420,7 +420,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'desc_style',
 			[
-				'label'     => esc_html__( 'Description', 'razzi' ),
+				'label'     => esc_html__( 'Description', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -430,18 +430,18 @@ class Images_Box_Carousel_2 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'desc_typography',
-				'selector' => '{{WRAPPER}} .razzi-images-box-carousel-2 .content-desc',
+				'selector' => '{{WRAPPER}} .dimas-images-box-carousel-2 .content-desc',
 			]
 		);
 
 		$this->add_control(
 			'desc_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .content-desc' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .content-desc' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -454,7 +454,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->start_controls_section(
 			'section_carousel_style',
 			[
-				'label' => esc_html__( 'Carousel Settings', 'razzi' ),
+				'label' => esc_html__( 'Carousel Settings', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -462,7 +462,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'arrows_style_divider',
 			[
-				'label' => esc_html__( 'Arrows', 'razzi' ),
+				'label' => esc_html__( 'Arrows', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 			]
 		);
@@ -471,10 +471,10 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'arrows_style',
 			[
-				'label'        => __( 'Options', 'razzi' ),
+				'label'        => __( 'Options', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -484,7 +484,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -493,7 +493,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -501,7 +501,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_width',
 			[
-				'label'     => __( 'Width', 'razzi' ),
+				'label'     => __( 'Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -510,7 +510,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .rz-swiper-button' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .rz-swiper-button' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -518,7 +518,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_height',
 			[
-				'label'     => __( 'Height', 'razzi' ),
+				'label'     => __( 'Height', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -527,7 +527,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2              .rz-swiper-button' => 'height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2              .rz-swiper-button' => 'height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -535,7 +535,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_spacing',
 			[
-				'label'      => esc_html__( 'Horizontal Position', 'razzi' ),
+				'label'      => esc_html__( 'Horizontal Position', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => [
 					'px' => [
@@ -545,8 +545,8 @@ class Images_Box_Carousel_2 extends Widget_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .rz-swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .rz-swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .rz-swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .rz-swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -554,7 +554,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_vertical_position',
 			[
-				'label'      => esc_html__( 'Vertical Position', 'razzi' ),
+				'label'      => esc_html__( 'Vertical Position', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => [
 					'px' => [
@@ -564,7 +564,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .rz-swiper-button' => 'top: {{SIZE}}{{UNIT}};transform:none;',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .rz-swiper-button' => 'top: {{SIZE}}{{UNIT}};transform:none;',
 				],
 			]
 		);
@@ -573,16 +573,16 @@ class Images_Box_Carousel_2 extends Widget_Base {
 
 		$this->start_controls_tabs( 'sliders_normal_settings' );
 
-		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .rz-swiper-button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .rz-swiper-button' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -590,27 +590,27 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .rz-swiper-button' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .rz-swiper-button' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_hover_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .rz-swiper-button:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .rz-swiper-button:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -618,11 +618,11 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_hover_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -635,7 +635,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'dots_style_divider',
 			[
-				'label' => esc_html__( 'Dots', 'razzi' ),
+				'label' => esc_html__( 'Dots', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -644,10 +644,10 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_control(
 			'dots_style',
 			[
-				'label'        => __( 'Options', 'razzi' ),
+				'label'        => __( 'Options', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -657,7 +657,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_gap',
 			[
-				'label'     => __( 'Gap', 'razzi' ),
+				'label'     => __( 'Gap', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -666,7 +666,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .swiper-pagination-bullet' => 'margin: 0 {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .swiper-pagination-bullet' => 'margin: 0 {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -674,7 +674,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -683,7 +683,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .swiper-pagination-bullet:before' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .swiper-pagination-bullet:before' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -691,7 +691,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_offset_ver',
 			[
-				'label'     => esc_html__( 'Spacing Top', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Top', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -700,7 +700,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -709,32 +709,32 @@ class Images_Box_Carousel_2 extends Widget_Base {
 
 		$this->start_controls_tabs( 'sliders_dots_normal_settings' );
 
-		$this->start_controls_tab( 'sliders_dots_normal', [ 'label' => esc_html__( 'Normal', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_dots_normal', [ 'label' => esc_html__( 'Normal', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_dots_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'sliders_dots_active', [ 'label' => esc_html__( 'Active', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_dots_active', [ 'label' => esc_html__( 'Active', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_dots_ac_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-images-box-carousel-2 .swiper-pagination-bullet-active:before, {{WRAPPER}} .razzi-images-box-carousel-2 .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-images-box-carousel-2 .swiper-pagination-bullet-active:before, {{WRAPPER}} .dimas-images-box-carousel-2 .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -759,15 +759,15 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		$nav_mobile = empty( $settings['navigation_mobile'] ) ? $nav : $settings['navigation_mobile'];
 
 		$classes = [
-			'razzi-images-box-carousel-2',
-			'razzi-swiper-carousel-elementor',
+			'dimas-images-box-carousel-2',
+			'dimas-swiper-carousel-elementor',
 			'navigation-' . $nav,
 			'navigation-tablet-' . $nav_tablet,
 			'navigation-mobile-' . $nav_mobile,
 		];
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );
-		$this->add_render_attribute( 'icon', 'class', 'razzi-products-slider__icon' );
+		$this->add_render_attribute( 'icon', 'class', 'dimas-products-slider__icon' );
 
 		$output =  array();
 
@@ -775,7 +775,7 @@ class Images_Box_Carousel_2 extends Widget_Base {
 		?>
 		<div <?php echo $this->get_render_attribute_string( 'wrapper' ); ?>>
 			<div class="swiper-container">
-				<div class="razzi-images-box-carousel-2__inner swiper-wrapper">
+				<div class="dimas-images-box-carousel-2__inner swiper-wrapper">
 		<?php
 				if ( ! empty ( $els ) ) {
 					foreach ( $els as $index => $item ) {

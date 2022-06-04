@@ -58,7 +58,7 @@ class Product_Authors {
 
 		add_action( 'admin_init', array( $this, 'settings_api_init' ) );
 		add_action( 'current_screen', array( $this, 'settings_save' ) );
-		$this->active_author = apply_filters( 'razzi_register_author', true );
+		$this->active_author = apply_filters( 'dimas_register_author', true );
 		if ( ! $this->active_author ) {
 			return;
 		}
@@ -98,27 +98,27 @@ class Product_Authors {
 		}
 
 		$labels = array(
-			'name'                       => __( 'Product Authors', 'razzi' ),
-			'singular_name'              => __( 'Author', 'razzi' ),
-			'menu_name'                  => __( 'Authors', 'razzi' ),
-			'all_items'                  => __( 'All Authors', 'razzi' ),
-			'edit_item'                  => __( 'Edit Author', 'razzi' ),
-			'view_item'                  => __( 'View Author', 'razzi' ),
-			'update_item'                => __( 'Update Author', 'razzi' ),
-			'add_new_item'               => __( 'Add New Author', 'razzi' ),
-			'new_item_name'              => __( 'New Author Name', 'razzi' ),
-			'parent_item'                => __( 'Parent Author', 'razzi' ),
-			'parent_item_colon'          => __( 'Parent Author:', 'razzi' ),
-			'search_items'               => __( 'Search Authors', 'razzi' ),
-			'popular_items'              => __( 'Popular Authors', 'razzi' ),
-			'separate_items_with_commas' => __( 'Separate Authors with commas', 'razzi' ),
-			'add_or_remove_items'        => __( 'Add or remove Authors', 'razzi' ),
-			'choose_from_most_used'      => __( 'Choose from the most used Authors', 'razzi' ),
-			'not_found'                  => __( 'No Authors found', 'razzi' )
+			'name'                       => __( 'Product Authors', 'dimas' ),
+			'singular_name'              => __( 'Author', 'dimas' ),
+			'menu_name'                  => __( 'Authors', 'dimas' ),
+			'all_items'                  => __( 'All Authors', 'dimas' ),
+			'edit_item'                  => __( 'Edit Author', 'dimas' ),
+			'view_item'                  => __( 'View Author', 'dimas' ),
+			'update_item'                => __( 'Update Author', 'dimas' ),
+			'add_new_item'               => __( 'Add New Author', 'dimas' ),
+			'new_item_name'              => __( 'New Author Name', 'dimas' ),
+			'parent_item'                => __( 'Parent Author', 'dimas' ),
+			'parent_item_colon'          => __( 'Parent Author:', 'dimas' ),
+			'search_items'               => __( 'Search Authors', 'dimas' ),
+			'popular_items'              => __( 'Popular Authors', 'dimas' ),
+			'separate_items_with_commas' => __( 'Separate Authors with commas', 'dimas' ),
+			'add_or_remove_items'        => __( 'Add or remove Authors', 'dimas' ),
+			'choose_from_most_used'      => __( 'Choose from the most used Authors', 'dimas' ),
+			'not_found'                  => __( 'No Authors found', 'dimas' )
 		);
 
 		$permalinks         = get_option( 'product_author_permalinks' );
-		$product_author_base = empty( $permalinks['product_author_base'] ) ? _x( 'product-author', 'slug', 'razzi' ) : $permalinks['product_author_base'];
+		$product_author_base = empty( $permalinks['product_author_base'] ) ? _x( 'product-author', 'slug', 'dimas' ) : $permalinks['product_author_base'];
 
 		$args = array(
 			'hierarchical'          => true,
@@ -176,18 +176,18 @@ class Product_Authors {
 	 */
 	public function settings_api_init() {
 		add_settings_section(
-			'razzi_author_section',
-			'<span id="author-options">' . esc_html__( 'Product author', 'razzi' ) . '</span>',
+			'dimas_author_section',
+			'<span id="author-options">' . esc_html__( 'Product author', 'dimas' ) . '</span>',
 			array( $this, 'writing_section_html' ),
 			'writing'
 		);
 
 		add_settings_field(
 			$this->option,
-			'<span class="author-options">' . esc_html__( 'Product author', 'razzi' ) . '</span>',
+			'<span class="author-options">' . esc_html__( 'Product author', 'dimas' ) . '</span>',
 			array( $this, 'disable_field_html' ),
 			'writing',
-			'razzi_author_section'
+			'dimas_author_section'
 		);
 		register_setting(
 			'writing',
@@ -197,7 +197,7 @@ class Product_Authors {
 
 		add_settings_field(
 			'product_author_slug',
-			'<label for="product_author_slug">' . esc_html__( 'Product author base', 'razzi' ) . '</label>',
+			'<label for="product_author_slug">' . esc_html__( 'Product author base', 'dimas' ) . '</label>',
 			array( $this, 'product_author_slug_input' ),
 			'permalink',
 			'optional'
@@ -223,7 +223,7 @@ class Product_Authors {
 		?>
         <input name="product_author_slug" type="text" class="regular-text code"
                value="<?php echo esc_attr( $author_base ); ?>"
-               placeholder="<?php echo esc_attr_x( 'product-author', 'slug', 'razzi' ) ?>"/>
+               placeholder="<?php echo esc_attr_x( 'product-author', 'slug', 'dimas' ) ?>"/>
 		<?php
 	}
 
@@ -288,7 +288,7 @@ class Product_Authors {
 	public function add_category_fields() {
 		?>
         <div class="form-field" id="product-author-thumb-box">
-            <label><?php esc_html_e( 'Thumbnail', 'razzi' ); ?></label>
+            <label><?php esc_html_e( 'Thumbnail', 'dimas' ); ?></label>
 
             <div id="product_author_thumb" class="product-author-thumb"
                  data-rel="<?php echo esc_url( $this->placeholder_img_src ); ?>">
@@ -296,9 +296,9 @@ class Product_Authors {
             <div class="product-author-thumb-box">
                 <input type="hidden" id="product_author_thumb_id" name="product_author_thumb_id"/>
                 <button type="button"
-                        class="upload_image_button button"><?php esc_html_e( 'Upload/Add image', 'razzi' ); ?></button>
+                        class="upload_image_button button"><?php esc_html_e( 'Upload/Add image', 'dimas' ); ?></button>
                 <button type="button"
-                        class="remove_image_button button"><?php esc_html_e( 'Remove image', 'razzi' ); ?></button>
+                        class="remove_image_button button"><?php esc_html_e( 'Remove image', 'dimas' ); ?></button>
             </div>
             <div class="clear"></div>
         </div>
@@ -327,7 +327,7 @@ class Product_Authors {
 		}
 		?>
         <tr class="form-field product-author-thumb" id="product-author-thumb-box">
-            <th scope="row" valign="top"><label><?php esc_html_e( 'Thumbnail', 'razzi' ); ?></label></th>
+            <th scope="row" valign="top"><label><?php esc_html_e( 'Thumbnail', 'dimas' ); ?></label></th>
             <td>
                 <div id="product_author_thumb" class="product-author-thumb"
                      data-rel="<?php echo esc_url( $this->placeholder_img_src ); ?>">
@@ -337,9 +337,9 @@ class Product_Authors {
                     <input type="hidden" id="product_author_thumb_id" name="product_author_thumb_id"
                            value="<?php echo esc_attr( $thumbnail_id ); ?>"/>
                     <button type="button"
-                            class="upload_image_button button"><?php esc_html_e( 'Upload/Add image', 'razzi' ); ?></button>
+                            class="upload_image_button button"><?php esc_html_e( 'Upload/Add image', 'dimas' ); ?></button>
                     <button type="button"
-                            class="remove_image_button button"><?php esc_html_e( 'Remove image', 'razzi' ); ?></button>
+                            class="remove_image_button button"><?php esc_html_e( 'Remove image', 'dimas' ); ?></button>
                 </div>
                 <div class="clear"></div>
             </td>
@@ -381,7 +381,7 @@ class Product_Authors {
 			unset( $columns['cb'] );
 		}
 
-		$new_columns['thumb'] = esc_html__( 'Image', 'razzi' );
+		$new_columns['thumb'] = esc_html__( 'Image', 'dimas' );
 
 		return array_merge( $new_columns, $columns );
 	}
@@ -412,7 +412,7 @@ class Product_Authors {
 			// Ref: https://core.trac.wordpress.org/ticket/23605
 			$image = str_replace( ' ', '%20', $image );
 
-			$columns .= '<img src="' . esc_url( $image ) . '" alt="' . esc_attr__( 'Thumbnail', 'razzi' ) . '" class="wp-post-image" height="48" width="48" />';
+			$columns .= '<img src="' . esc_url( $image ) . '" alt="' . esc_attr__( 'Thumbnail', 'dimas' ) . '" class="wp-post-image" height="48" width="48" />';
 
 		}
 
@@ -429,7 +429,7 @@ class Product_Authors {
 	public function writing_section_html() {
 		?>
         <p>
-			<?php esc_html_e( 'Use these settings to disable custom types of content on your site', 'razzi' ); ?>
+			<?php esc_html_e( 'Use these settings to disable custom types of content on your site', 'dimas' ); ?>
         </p>
 		<?php
 	}
@@ -449,7 +449,7 @@ class Product_Authors {
             <input name="<?php echo esc_attr( $this->option ); ?>"
                    id="<?php echo esc_attr( $this->option ); ?>" <?php checked( get_option( $this->option ), true ); ?>
                    type="checkbox" value="1"/>
-			<?php esc_html_e( 'Enable Author for this site.', 'razzi' ); ?>
+			<?php esc_html_e( 'Enable Author for this site.', 'dimas' ); ?>
         </label>
 
 		<?php

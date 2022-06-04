@@ -1,44 +1,44 @@
 jQuery( document ).ready( function( $ ) {
-	$( '#razzi_size_guide-display' ).on( 'change', function() {
+	$( '#dimas_size_guide-display' ).on( 'change', function() {
 		var $select = $( this );
 
 		if ( 'panel' === $select.val() ) {
-			$select.closest( '.form-field' ).nextAll( '.razzi_size_guide-button_position_field, .razzi_size_guide-attribute_field' ).show();
+			$select.closest( '.form-field' ).nextAll( '.dimas_size_guide-button_position_field, .dimas_size_guide-attribute_field' ).show();
 
-			$( '#razzi_size_guide-button_position' ).trigger( 'change' );
+			$( '#dimas_size_guide-button_position' ).trigger( 'change' );
 		} else {
-			$select.closest( '.form-field' ).nextAll( '.razzi_size_guide-button_position_field, .razzi_size_guide-attribute_field' ).hide();
+			$select.closest( '.form-field' ).nextAll( '.dimas_size_guide-button_position_field, .dimas_size_guide-attribute_field' ).hide();
 		}
 	} ).trigger( 'change' );
 
-	$( '#razzi_size_guide-button_position' ).on( 'change', function() {
+	$( '#dimas_size_guide-button_position' ).on( 'change', function() {
 		var $select = $( this );
 
 		if ( 'bellow_attribute' === $select.val() ) {
-			$select.closest( '.form-field' ).next( '.razzi_size_guide-attribute_field' ).show();
+			$select.closest( '.form-field' ).next( '.dimas_size_guide-attribute_field' ).show();
 		} else {
-			$select.closest( '.form-field' ).next( '.razzi_size_guide-attribute_field' ).hide();
+			$select.closest( '.form-field' ).next( '.dimas_size_guide-attribute_field' ).hide();
 		}
 	} ).trigger( 'change' );
 
 	// Reload the size guide tab when attributes updated
 	$( '#variable_product_options' ).on( 'reload', function() {
-		var wrapper = $( '#razzi-size-guide' );
+		var wrapper = $( '#dimas-size-guide' );
 
 		block();
 
 		$.ajax({
 			url: ajaxurl,
 			data: {
-				action:     'razzi_addons_load_product_size_guide_attributes',
+				action:     'dimas_addons_load_product_size_guide_attributes',
 				security:   wrapper.data( 'nonce' ),
 				product_id: woocommerce_admin_meta_boxes_variations.post_id,
 			},
 			type: 'POST',
 			success: function( response ) {
-				$( 'select#razzi_size_guide-attribute', wrapper ).closest( 'p.form-field' ).replaceWith( response );
+				$( 'select#dimas_size_guide-attribute', wrapper ).closest( 'p.form-field' ).replaceWith( response );
 
-				$( 'select#razzi_size_guide-display' ).trigger( 'change' );
+				$( 'select#dimas_size_guide-display' ).trigger( 'change' );
 
 				unblock();
 			}

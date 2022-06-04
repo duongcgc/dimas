@@ -20,7 +20,7 @@ class Brands_Grid extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-brands-grid';
+		return 'dimas-brands-grid';
 	}
 
 	/**
@@ -29,7 +29,7 @@ class Brands_Grid extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Brands Grid', 'razzi' );
+		return esc_html__( 'Dimas - Brands Grid', 'dimas' );
 	}
 
 	/**
@@ -47,7 +47,7 @@ class Brands_Grid extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	/**
@@ -70,13 +70,13 @@ class Brands_Grid extends Widget_Base {
 		// Brands Settings
 		$this->start_controls_section(
 			'section_blogs',
-			[ 'label' => esc_html__( 'Content', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Content', 'dimas' ) ]
 		);
 
 		$this->add_responsive_control(
 			'columns',
 			[
-				'label'   => esc_html__( 'Columns', 'razzi' ),
+				'label'   => esc_html__( 'Columns', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'min'     => 1,
 				'max'     => 6,
@@ -99,7 +99,7 @@ class Brands_Grid extends Widget_Base {
 		$this->add_control(
 			'limit',
 			[
-				'label'     => esc_html__( 'Total', 'razzi' ),
+				'label'     => esc_html__( 'Total', 'dimas' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => 8,
 				'min'       => 2,
@@ -111,14 +111,14 @@ class Brands_Grid extends Widget_Base {
 		$this->add_control(
 			'orderby',
 			[
-				'label'      => esc_html__( 'Order By', 'razzi' ),
+				'label'      => esc_html__( 'Order By', 'dimas' ),
 				'type'       => Controls_Manager::SELECT,
 				'options'    => [
-					'date'       => esc_html__( 'Date', 'razzi' ),
-					'count'      => esc_html__( 'Count', 'razzi' ),
-					'name'       => esc_html__( 'Name', 'razzi' ),
-					'id'         => esc_html__( 'Ids', 'razzi' ),
-					'menu_order' => esc_html__( 'Menu Order', 'razzi' ),
+					'date'       => esc_html__( 'Date', 'dimas' ),
+					'count'      => esc_html__( 'Count', 'dimas' ),
+					'name'       => esc_html__( 'Name', 'dimas' ),
+					'id'         => esc_html__( 'Ids', 'dimas' ),
+					'menu_order' => esc_html__( 'Menu Order', 'dimas' ),
 				],
 				'default'    => 'date',
 			]
@@ -127,12 +127,12 @@ class Brands_Grid extends Widget_Base {
 		$this->add_control(
 			'order',
 			[
-				'label'      => esc_html__( 'Order', 'razzi' ),
+				'label'      => esc_html__( 'Order', 'dimas' ),
 				'type'       => Controls_Manager::SELECT,
 				'options'    => [
-					''     => esc_html__( 'Default', 'razzi' ),
-					'ASC'  => esc_html__( 'Ascending', 'razzi' ),
-					'DESC' => esc_html__( 'Descending', 'razzi' ),
+					''     => esc_html__( 'Default', 'dimas' ),
+					'ASC'  => esc_html__( 'Ascending', 'dimas' ),
+					'DESC' => esc_html__( 'Descending', 'dimas' ),
 				],
 				'default'    => '',
 				'conditions' => [
@@ -161,7 +161,7 @@ class Brands_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_styles',
 			[
-				'label' => __( 'Brands', 'razzi' ),
+				'label' => __( 'Brands', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -169,12 +169,12 @@ class Brands_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'items_spacing',
 			[
-				'label'      => __( 'Padding', 'razzi' ),
+				'label'      => __( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-brands-grid .brand-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-brands-grid.razzi-brands-grid__border-none .list-brands' => 'margin-left: -{{LEFT}}{{UNIT}}; margin-right: -{{RIGHT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-brands-grid .brand-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-brands-grid.dimas-brands-grid__border-none .list-brands' => 'margin-left: -{{LEFT}}{{UNIT}}; margin-right: -{{RIGHT}}{{UNIT}};',
 				],
 			]
 		);
@@ -182,7 +182,7 @@ class Brands_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'item_min_height',
 			[
-				'label'     => esc_html__( 'Min Height', 'razzi' ),
+				'label'     => esc_html__( 'Min Height', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -191,7 +191,7 @@ class Brands_Grid extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-brands-grid .brand-item a' => 'min-height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-brands-grid .brand-item a' => 'min-height: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -199,11 +199,11 @@ class Brands_Grid extends Widget_Base {
 		$this->add_control(
 			'items_background',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-brands-grid .brand-item a' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-brands-grid .brand-item a' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -211,10 +211,10 @@ class Brands_Grid extends Widget_Base {
 		$this->add_control(
 			'border_style',
 			[
-				'label'        => __( 'Border', 'razzi' ),
+				'label'        => __( 'Border', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -223,19 +223,19 @@ class Brands_Grid extends Widget_Base {
 		$this->add_control(
 			'content_border_style',
 			[
-				'label'     => esc_html__( 'Border Style', 'razzi' ),
+				'label'     => esc_html__( 'Border Style', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'dotted' => esc_html__( 'Dotted', 'razzi' ),
-					'dashed' => esc_html__( 'Dashed', 'razzi' ),
-					'solid'  => esc_html__( 'Solid', 'razzi' ),
-					'none'   => esc_html__( 'None', 'razzi' ),
+					'dotted' => esc_html__( 'Dotted', 'dimas' ),
+					'dashed' => esc_html__( 'Dashed', 'dimas' ),
+					'solid'  => esc_html__( 'Solid', 'dimas' ),
+					'none'   => esc_html__( 'None', 'dimas' ),
 				],
 				'default'   => '',
 				'toggle'    => false,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-brands-grid .brand-item' => 'border-style: {{VALUE}};',
-					'{{WRAPPER}} .razzi-brands-grid .list-brands' => 'border-style: {{VALUE}};',
+					'{{WRAPPER}} .dimas-brands-grid .brand-item' => 'border-style: {{VALUE}};',
+					'{{WRAPPER}} .dimas-brands-grid .list-brands' => 'border-style: {{VALUE}};',
 				],
 			]
 		);
@@ -243,7 +243,7 @@ class Brands_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'content_border_width',
 			[
-				'label'     => __( 'Border Width', 'razzi' ),
+				'label'     => __( 'Border Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -253,8 +253,8 @@ class Brands_Grid extends Widget_Base {
 				],
 				'default'   => [ ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-brands-grid .brand-item' => 'border-width: 0 {{SIZE}}{{UNIT}} {{SIZE}}{{UNIT}} 0;',
-					'{{WRAPPER}} .razzi-brands-grid .list-brands' => 'border-width: {{SIZE}}{{UNIT}} 0 0 {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-brands-grid .brand-item' => 'border-width: 0 {{SIZE}}{{UNIT}} {{SIZE}}{{UNIT}} 0;',
+					'{{WRAPPER}} .dimas-brands-grid .list-brands' => 'border-width: {{SIZE}}{{UNIT}} 0 0 {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -262,12 +262,12 @@ class Brands_Grid extends Widget_Base {
 		$this->add_control(
 			'content_border_color',
 			[
-				'label'     => __( 'Border Color', 'razzi' ),
+				'label'     => __( 'Border Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-brands-grid .brand-item' => 'border-color: {{VALUE}};',
-					'{{WRAPPER}} .razzi-brands-grid .list-brands' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-brands-grid .brand-item' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-brands-grid .list-brands' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -277,13 +277,13 @@ class Brands_Grid extends Widget_Base {
 		$this->add_control(
 			'show_box_shadow',
 			[
-				'label'        => esc_html__( 'Show Box Shadow', 'razzi' ),
+				'label'        => esc_html__( 'Show Box Shadow', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_off'    => __( 'Off', 'razzi' ),
-				'label_on'     => __( 'On', 'razzi' ),
+				'label_off'    => __( 'Off', 'dimas' ),
+				'label_on'     => __( 'On', 'dimas' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
-				'prefix_class' => 'razzi-brands-grid-box-shadow-'
+				'prefix_class' => 'dimas-brands-grid-box-shadow-'
 			]
 		);
 
@@ -301,8 +301,8 @@ class Brands_Grid extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-brands-grid',
-			$settings['content_border_style'] == 'none' ? 'razzi-brands-grid__border-none' : ''
+			'dimas-brands-grid',
+			$settings['content_border_style'] == 'none' ? 'dimas-brands-grid__border-none' : ''
 		];
 
 		$atts = [

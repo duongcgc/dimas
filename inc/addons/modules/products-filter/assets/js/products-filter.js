@@ -26,11 +26,11 @@
 
         $(document.body)
             .on('price_slider_create', self.addListenerToSlider)
-            .on('razzi_products_filter_change', {widget: self}, self.instantSearch)
-            .on('razzi_products_filter_request_success', self.updateURL)
-            .on('razzi_products_filter_request_success', {widget: self}, self.updateForm)
-            .on('razzi_products_filter_widget_updated', {widget: self}, self.initDropdowns)
-            .on('razzi_products_filter_widget_updated', {widget: self}, self.initSliders);
+            .on('dimas_products_filter_change', {widget: self}, self.instantSearch)
+            .on('dimas_products_filter_request_success', self.updateURL)
+            .on('dimas_products_filter_request_success', {widget: self}, self.updateForm)
+            .on('dimas_products_filter_widget_updated', {widget: self}, self.initDropdowns)
+            .on('dimas_products_filter_widget_updated', {widget: self}, self.initSliders);
     };
 
     DimasProductsFilterWidget.prototype.init = function () {
@@ -158,12 +158,12 @@
             }
         }
 
-        $(document.body).trigger('razzi_products_filter_change', [form]);
+        $(document.body).trigger('dimas_products_filter_change', [form]);
     }
 
     DimasProductsFilterWidget.prototype.triggerItemChange = function () {
         var form = $(this).closest('form').get(0);
-        $(document.body).trigger('razzi_products_filter_change', [form]);
+        $(document.body).trigger('dimas_products_filter_change', [form]);
     }
 
     DimasProductsFilterWidget.prototype.addListenerToSlider = function () {
@@ -177,7 +177,7 @@
             $el.slider('option', 'change', function (event, ui) {
                 onChange(event, ui);
 
-                $(document.body).trigger('razzi_products_filter_change', [form]);
+                $(document.body).trigger('dimas_products_filter_change', [form]);
             });
         });
     }
@@ -193,7 +193,7 @@
             .filter('[type="hidden"],[name="min_price"], [name="max_price"]').prop('disabled', true);
 
         $form.trigger('submit');
-        $(document.body).trigger('razzi_products_filter_reseted');
+        $(document.body).trigger('dimas_products_filter_reseted');
     }
 
     DimasProductsFilterWidget.prototype.clearFilters = function () {
@@ -206,7 +206,7 @@
             .trigger('change')
             .filter('[type="hidden"]').prop('disabled', true);
         $form.trigger('submit');
-        $(document.body).trigger('razzi_products_filter_cleared');
+        $(document.body).trigger('dimas_products_filter_cleared');
     }
 
     DimasProductsFilterWidget.prototype.removeFiltered = function (event) {
@@ -298,7 +298,7 @@
         $('.filters', form).html($('.filters', $newWidget).html());
         $('.products-filter__activated', $widget).html($('.products-filter__activated', $newWidget).html());
 
-        $(document.body).trigger('razzi_products_filter_widget_updated', [form]);
+        $(document.body).trigger('dimas_products_filter_widget_updated', [form]);
     }
 
     DimasProductsFilterWidget.prototype.sendAjaxRequest = function (form) {
@@ -339,9 +339,9 @@
         }
 
         $form.addClass('filtering');
-        $container.addClass('loading').append('<li class="razzi-posts__loading"><span class="razzi-loading"></span> </li>');
+        $container.addClass('loading').append('<li class="dimas-posts__loading"><span class="dimas-loading"></span> </li>');
 
-        $(document.body).trigger('razzi_products_filter_before_send_request', $container);
+        $(document.body).trigger('dimas_products_filter_before_send_request', $container);
 
         self.ajax = $.get(url, function (response) {
             var $html = $(response),
@@ -399,13 +399,13 @@
                 });
 
                 $container.replaceWith($products);
-                $products.find('li.product').addClass('animated razziFadeInUp');
+                $products.find('li.product').addClass('animated dimasFadeInUp');
 
-                $(document.body).trigger('razzi_products_loaded', [$products.children(), false]); // appended = false
+                $(document.body).trigger('dimas_products_loaded', [$products.children(), false]); // appended = false
             }
 
             $form.removeClass('filtering');
-            $(document.body).trigger('razzi_products_filter_request_success', [response, url, form]);
+            $(document.body).trigger('dimas_products_filter_request_success', [response, url, form]);
         });
     }
 

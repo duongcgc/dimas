@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
 	"use strict";
 
 	// Ajax category search boxes
-	$( ':input.razzi-tag-search' ).filter( ':not(.enhanced)' ).each( function() {
+	$( ':input.dimas-tag-search' ).filter( ':not(.enhanced)' ).each( function() {
 		if(typeof(wc_enhanced_select_params) === 'undefined') {
 			return;
 		}
@@ -23,8 +23,8 @@ jQuery(document).ready(function ($) {
 				data:        function( params ) {
 					return {
 						term:     params.term,
-						action:   'razzi_json_search_tags',
-						security: razzi_wc_modules.search_tags_nonce
+						action:   'dimas_json_search_tags',
+						security: dimas_wc_modules.search_tags_nonce
 					};
 				},
 				processResults: function( data ) {

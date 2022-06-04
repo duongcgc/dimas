@@ -42,7 +42,7 @@ class Frontend {
 		add_filter( 'woocommerce_quantity_input_args', array( $this, 'quantity_input_args' ), 10, 2 );
 
 		add_action( 'woocommerce_single_product_summary', array( $this, 'single_product_template' ), 25 );
-		add_action( 'razzi_woocommerce_product_quickview_summary', array( $this, 'single_product_template' ), 75 );
+		add_action( 'dimas_woocommerce_product_quickview_summary', array( $this, 'single_product_template' ), 75 );
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 	}
@@ -55,7 +55,7 @@ class Frontend {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_style( 'razzi-deals', DIMAS_ADDONS_URL . 'modules/product-deals/assets/deals.css', array(), '1.0.0' );
+		wp_enqueue_style( 'dimas-deals', DIMAS_ADDONS_URL . 'modules/product-deals/assets/deals.css', array(), '1.0.0' );
 		wp_enqueue_script( 'coundown', DIMAS_ADDONS_URL . '/assets/js/plugins/jquery.coundown.js', array(), '1.0', true );
 	}
 
@@ -117,7 +117,7 @@ class Frontend {
 		}
 
 		$expire_date = ! empty( $product->get_date_on_sale_to() ) ? $product->get_date_on_sale_to()->getOffsetTimestamp() : '';
-		$expire_date = apply_filters( 'razzi_product_deals_expire_timestamp', $expire_date, $product );
+		$expire_date = apply_filters( 'dimas_product_deals_expire_timestamp', $expire_date, $product );
 
 		if ( empty( $expire_date ) ) {
 			return;

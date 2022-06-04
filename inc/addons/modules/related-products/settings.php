@@ -55,7 +55,7 @@ class Settings  {
 	 * @return array
 	 */
 	public function related_products_section( $sections ) {
-		$sections['rz_related_products'] = esc_html__( 'Related Products', 'razzi' );
+		$sections['rz_related_products'] = esc_html__( 'Related Products', 'dimas' );
 
 		return $sections;
 	}
@@ -76,76 +76,76 @@ class Settings  {
 
 			$settings[] = array(
 				'id'    => 'rz_related_products_options',
-				'title' => esc_html__( 'Related Products', 'razzi' ),
+				'title' => esc_html__( 'Related Products', 'dimas' ),
 				'type'  => 'title',
 			);
 
 			$settings[] = array(
 				'id'      => 'rz_related_products',
-				'title'   => esc_html__( 'Related Products', 'razzi' ),
-				'desc'    => esc_html__( 'Enable Related Products', 'razzi' ),
+				'title'   => esc_html__( 'Related Products', 'dimas' ),
+				'desc'    => esc_html__( 'Enable Related Products', 'dimas' ),
 				'type'    => 'checkbox',
 				'default' => 'yes',
 			);
 
 			$settings[] = array(
 				'id'      => 'rz_custom_related_products',
-				'title'   => esc_html__( 'Custom Related Products', 'razzi' ),
-				'desc'    => esc_html__( 'Enable', 'razzi' ),
+				'title'   => esc_html__( 'Custom Related Products', 'dimas' ),
+				'desc'    => esc_html__( 'Enable', 'dimas' ),
 				'type'    => 'checkbox',
-				'desc_tip' => esc_html__( 'Display custom related products options for individual products (by categories, tags, or products)', 'razzi' ),
+				'desc_tip' => esc_html__( 'Display custom related products options for individual products (by categories, tags, or products)', 'dimas' ),
 				'default' => 'no',
 			);
 
 			$settings[] = array(
-				'name'    => esc_html__( 'Related Products Title', 'razzi' ),
+				'name'    => esc_html__( 'Related Products Title', 'dimas' ),
 				'id'      => 'rz_related_products_title',
 				'type'    => 'text',
-				'default' => esc_html__( 'Related Products', 'razzi' ),
+				'default' => esc_html__( 'Related Products', 'dimas' ),
 			);
 
 			$settings[] = array(
 				'id'      => 'rz_related_products_by_categories',
-				'title'   => esc_html__( 'Related Products By Categories', 'razzi' ),
-				'desc'    => esc_html__( 'Enable', 'razzi' ),
+				'title'   => esc_html__( 'Related Products By Categories', 'dimas' ),
+				'desc'    => esc_html__( 'Enable', 'dimas' ),
 				'type'    => 'checkbox',
 				'default' => 'yes',
 			);
 
 			$settings[] = array(
 				'id'      => 'rz_related_products_by_parent_category',
-				'title'   => esc_html__( 'Related Products By Parent Category', 'razzi' ),
-				'desc'    => esc_html__( 'Enable', 'razzi' ),
+				'title'   => esc_html__( 'Related Products By Parent Category', 'dimas' ),
+				'desc'    => esc_html__( 'Enable', 'dimas' ),
 				'type'    => 'checkbox',
 				'default' => 'no',
 			);
 
 			$settings[] = array(
 				'id'      => 'rz_related_products_by_tags',
-				'title'   => esc_html__( 'Related Products By Tags', 'razzi' ),
-				'desc'    => esc_html__( 'Enable', 'razzi' ),
+				'title'   => esc_html__( 'Related Products By Tags', 'dimas' ),
+				'desc'    => esc_html__( 'Enable', 'dimas' ),
 				'type'    => 'checkbox',
 				'default' => 'yes',
 			);
 
 			$settings[] = array(
-				'name'    => esc_html__( 'Related Products Numbers', 'razzi' ),
+				'name'    => esc_html__( 'Related Products Numbers', 'dimas' ),
 				'id'      => 'rz_related_products_number',
 				'type'    => 'text',
 				'default' => '6',
-				'desc_tip' => esc_html__( 'Enter the number of products to display. Default value is 6.', 'razzi' ),
+				'desc_tip' => esc_html__( 'Enter the number of products to display. Default value is 6.', 'dimas' ),
 			);
 
 			$settings[] = array(
-				'name'    => esc_html__( 'Related Products Navigation', 'razzi' ),
+				'name'    => esc_html__( 'Related Products Navigation', 'dimas' ),
 				'id'      => 'rz_related_products_navigation',
 				'default' => 'scrollbar',
 				'class'   => 'wc-enhanced-select',
 				'type'    => 'select',
 				'options' => array(
-					'scrollbar'   => esc_html__( 'Scrollbar', 'razzi' ),
-					'arrows' => esc_html__( 'Arrows', 'razzi' ),
-					'dots' => esc_html__( 'Dots', 'razzi' ),
+					'scrollbar'   => esc_html__( 'Scrollbar', 'dimas' ),
+					'arrows' => esc_html__( 'Arrows', 'dimas' ),
+					'dots' => esc_html__( 'Dots', 'dimas' ),
 				),
 			);
 

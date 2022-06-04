@@ -20,7 +20,7 @@ class Dimas_Product extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-product-shortcode';
+		return 'dimas-product-shortcode';
 	}
 
 	/**
@@ -29,7 +29,7 @@ class Dimas_Product extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Product Summary', 'razzi' );
+		return __( 'Dimas - Product Summary', 'dimas' );
 	}
 
 	/**
@@ -47,7 +47,7 @@ class Dimas_Product extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
@@ -57,7 +57,7 @@ class Dimas_Product extends Widget_Base {
 			'swiper',
 			'imagesLoaded',
 			'tawcvs-frontend',
-			'razzi-product-shortcode'
+			'dimas-product-shortcode'
 		];
 
 		if ( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
@@ -92,13 +92,13 @@ class Dimas_Product extends Widget_Base {
 	protected function section_products_settings_controls() {
 		$this->start_controls_section(
 			'section_products',
-			[ 'label' => esc_html__( 'Products', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Products', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'products_divider',
 			[
-				'label' => esc_html__( 'Products', 'razzi' ),
+				'label' => esc_html__( 'Products', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -107,8 +107,8 @@ class Dimas_Product extends Widget_Base {
 		$this->add_control(
 			'product_id',
 			[
-				'label'       => esc_html__( 'Product', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Product', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -121,7 +121,7 @@ class Dimas_Product extends Widget_Base {
 		$this->add_control(
 			'attribute_divider',
 			[
-				'label' => esc_html__( 'Attributes', 'razzi' ),
+				'label' => esc_html__( 'Attributes', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -130,10 +130,10 @@ class Dimas_Product extends Widget_Base {
 		$this->add_control(
 			'show_image_zoom',
 			[
-				'label'     => esc_html__( 'Image Zoom', 'razzi' ),
+				'label'     => esc_html__( 'Image Zoom', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 				'frontend_available' => true,
@@ -143,10 +143,10 @@ class Dimas_Product extends Widget_Base {
 		$this->add_control(
 			'show_lightbox',
 			[
-				'label'     => esc_html__( 'Lightbox', 'razzi' ),
+				'label'     => esc_html__( 'Lightbox', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 				'frontend_available' => true,
@@ -156,10 +156,10 @@ class Dimas_Product extends Widget_Base {
 		$this->add_control(
 			'show_size_chart',
 			[
-				'label'     => esc_html__( 'Size Chart', 'razzi' ),
+				'label'     => esc_html__( 'Size Chart', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 			]
@@ -168,10 +168,10 @@ class Dimas_Product extends Widget_Base {
 		$this->add_control(
 			'show_description',
 			[
-				'label'     => esc_html__( 'Description', 'razzi' ),
+				'label'     => esc_html__( 'Description', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => '',
 			]
@@ -185,7 +185,7 @@ class Dimas_Product extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => esc_html__( 'Content', 'razzi' ),
+				'label' => esc_html__( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -193,7 +193,7 @@ class Dimas_Product extends Widget_Base {
 		$this->add_control(
 			'content_divider',
 			[
-				'label' => esc_html__( 'Content Wrapper', 'razzi' ),
+				'label' => esc_html__( 'Content Wrapper', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 			]
 		);
@@ -201,11 +201,11 @@ class Dimas_Product extends Widget_Base {
 		$this->add_responsive_control(
 			'content_style_padding',
 			[
-				'label'      => __( 'Padding', 'razzi' ),
+				'label'      => __( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-product-shortcode' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-shortcode' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -213,11 +213,11 @@ class Dimas_Product extends Widget_Base {
 		$this->add_control(
 			'content_style_background_color',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-shortcode' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-shortcode' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -225,7 +225,7 @@ class Dimas_Product extends Widget_Base {
 		$this->add_control(
 			'content_divider_2',
 			[
-				'label' => esc_html__( 'Content Inner', 'razzi' ),
+				'label' => esc_html__( 'Content Inner', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -234,11 +234,11 @@ class Dimas_Product extends Widget_Base {
 		$this->add_responsive_control(
 			'content_inner_style_padding',
 			[
-				'label'      => __( 'Padding', 'razzi' ),
+				'label'      => __( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-product-shortcode .rz-product-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-product-shortcode .rz-product-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -246,11 +246,11 @@ class Dimas_Product extends Widget_Base {
 		$this->add_control(
 			'content_inner_style_background_color',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-product-shortcode .rz-product-wrapper' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-product-shortcode .rz-product-wrapper' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -267,7 +267,7 @@ class Dimas_Product extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-product-shortcode single-product woocommerce razzi-swiper-carousel-elementor'
+			'dimas-product-shortcode single-product woocommerce dimas-swiper-carousel-elementor'
 		];
 
 		$product_id = intval($settings['product_id']);
@@ -285,7 +285,7 @@ class Dimas_Product extends Widget_Base {
 		$product = wc_get_product($product_id);
 
 		if ( empty( $product ) ) {
-			echo esc_html__( 'No products were found matching your selection.', 'razzi' );
+			echo esc_html__( 'No products were found matching your selection.', 'dimas' );
 		} else{
 			add_filter( 'woocommerce_single_product_flexslider_enabled', '__return_true' );
 
@@ -300,12 +300,12 @@ class Dimas_Product extends Widget_Base {
 			}
 
 			if ( $settings['show_size_chart'] != '' && class_exists('\Dimas\Addons\Modules\Size_Guide') ) {
-				add_action( 'razzi_woocommerce_single_product_summary', array( \Dimas\Addons\Modules\Size_Guide::instance(), 'size_guide_button' ), 25 );
-				add_action( 'razzi_woocommerce_single_product_summary', array( \Dimas\Addons\Modules\Size_Guide::instance(), 'size_guide_panel' ), 25 );
+				add_action( 'dimas_woocommerce_single_product_summary', array( \Dimas\Addons\Modules\Size_Guide::instance(), 'size_guide_button' ), 25 );
+				add_action( 'dimas_woocommerce_single_product_summary', array( \Dimas\Addons\Modules\Size_Guide::instance(), 'size_guide_panel' ), 25 );
 			}
 
 			if ( $settings['show_description'] != '' ) {
-				add_action( 'razzi_woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+				add_action( 'dimas_woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 			}
 
 			$original_post = $GLOBALS['post'];

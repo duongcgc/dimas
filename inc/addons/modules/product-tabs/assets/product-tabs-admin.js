@@ -1,9 +1,9 @@
 jQuery(document).ready(function ($) {
 	//	Remove fields in product tab type default
-	var $tab_default = $('.wp-list-table .razzi_product_tab_type-default');
+	var $tab_default = $('.wp-list-table .dimas_product_tab_type-default');
 	$tab_default.find('.check-column input[type="checkbox"]').remove();
 
-	$( '#the-list' ).find('.razzi_product_tab_type-default').each(function() {
+	$( '#the-list' ).find('.dimas_product_tab_type-default').each(function() {
 		var $row_actions = $(this).find('.column-title .row-actions'), 
 			$edit = $row_actions.find('button.editinline');
 
@@ -34,10 +34,10 @@ jQuery(document).ready(function ($) {
 	);
 
 	// Change field product tab type
-	var $tab_settings = $('#razzi-product-tabs-settings'),
-		$tab_type = $tab_settings.find('.razzi-product-tab--input'),
-		$tab_product = $tab_settings.find('.razzi-product-tabs--product'),
-		$tab_categories = $tab_settings.find('.razzi-product-tabs--categories');
+	var $tab_settings = $('#dimas-product-tabs-settings'),
+		$tab_type = $tab_settings.find('.dimas-product-tab--input'),
+		$tab_product = $tab_settings.find('.dimas-product-tabs--product'),
+		$tab_categories = $tab_settings.find('.dimas-product-tabs--categories');
 	$tab_type.on('change', function(){
 		var type = $(this).filter(':checked').val();
 		$tab_product.hide();
@@ -89,7 +89,7 @@ jQuery(document).ready(function ($) {
 			// Go do the sorting stuff via ajax
 			$.post(
 				ajaxurl,
-				{ action: 'razzi_product_tab_ordering', id: postid, previd: prevpostid, nextid: nextpostid },
+				{ action: 'dimas_product_tab_ordering', id: postid, previd: prevpostid, nextid: nextpostid },
 				function( response ) {
 					ui.item.find( '.check-column img' ).remove();
 					$( 'table.widefat tbody th, table.widefat tbody td' ).css( 'cursor', 'move' );

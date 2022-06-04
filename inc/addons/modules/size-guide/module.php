@@ -77,7 +77,7 @@ class Module {
 			return \Dimas\Addons\Modules\Size_Guide\Settings::instance();
 		}
 
-		if ( get_option( 'razzi_size_guide' ) == 'yes' ) {
+		if ( get_option( 'dimas_size_guide' ) == 'yes' ) {
 			return \Dimas\Addons\Modules\Size_Guide\Frontend::instance();
 		}
 	}

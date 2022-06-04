@@ -2,12 +2,12 @@ jQuery( document ).ready( function( $ ) {
 	'use strict';
 
 	var wp = window.wp,
-		data = window.razzi_products_filter_params,
+		data = window.dimas_products_filter_params,
 		$body = $( document.body ),
-		template = wp.template( 'razzi-products-filter' );
+		template = wp.template( 'dimas-products-filter' );
 
 	// Change the active section.
-	$body.on( 'click', '.razzi-products-filter-form__sub-nav button', function( event ) {
+	$body.on( 'click', '.dimas-products-filter-form__sub-nav button', function( event ) {
 		event.preventDefault();
 
 		var $button = $( this );
@@ -21,9 +21,9 @@ jQuery( document ).ready( function( $ ) {
 			.siblings()
 			.removeClass( 'active' )
 			.parent()
-			.siblings( '.razzi-products-filter-form__section[data-section="' + $button.data( 'section' ) + '"]' )
+			.siblings( '.dimas-products-filter-form__section[data-section="' + $button.data( 'section' ) + '"]' )
 			.addClass( 'active' )
-			.siblings( '.razzi-products-filter-form__section' )
+			.siblings( '.dimas-products-filter-form__section' )
 			.removeClass( 'active' );
 
 		$button.closest( '.widget' ).data( 'active_section', $button.data( 'section' ) );
@@ -38,35 +38,35 @@ jQuery( document ).ready( function( $ ) {
 		}
 
 		widgetContainer
-			.find( '.razzi-products-filter-form__sub-nav button[data-section="' + activeSection + '"]' )
+			.find( '.dimas-products-filter-form__sub-nav button[data-section="' + activeSection + '"]' )
 			.addClass( 'active' )
 			.siblings()
 			.removeClass( 'active' );
 
 		widgetContainer
-			.find( '.razzi-products-filter-form__section[data-section="' + activeSection + '"]' )
+			.find( '.dimas-products-filter-form__section[data-section="' + activeSection + '"]' )
 			.addClass( 'active' )
-			.siblings( '.razzi-products-filter-form__section' )
+			.siblings( '.dimas-products-filter-form__section' )
 			.removeClass( 'active' );
 	} );
 
 	// Toggle a filter's fields.
-	$body.on( 'click', '.razzi-products-filter-form__filter-title, .razzi-products-filter-form__filter-toggle', function( event ) {
+	$body.on( 'click', '.dimas-products-filter-form__filter-title, .dimas-products-filter-form__filter-toggle', function( event ) {
 		event.preventDefault();
 
 		$( this )
-			.closest( '.razzi-products-filter-form__filter' )
+			.closest( '.dimas-products-filter-form__filter' )
 			.toggleClass( 'open' )
-			.children( '.razzi-products-filter-form__filter-options' )
+			.children( '.dimas-products-filter-form__filter-options' )
 			.toggle();
 	} );
 
 	// Add a new filter.
-	$body.on( 'click', '.razzi-products-filter-form__add-new', function( event ) {
+	$body.on( 'click', '.dimas-products-filter-form__add-new', function( event ) {
 		event.preventDefault();
 
 		var $button = $( this ),
-			$filters = $button.closest( '.razzi-products-filter-form__section' ).children( '.razzi-products-filter-form__filter-fields' ),
+			$filters = $button.closest( '.dimas-products-filter-form__section' ).children( '.dimas-products-filter-form__filter-fields' ),
 			$title = $button.closest( '.widget-content' ).find( 'input' ).first();
 
 		data.name = $button.data( 'name' );
@@ -79,14 +79,14 @@ jQuery( document ).ready( function( $ ) {
 	} );
 
 	// Remove a filter.
-	$body.on( 'click', '.razzi-products-filter-form__remove-filter', function( event ) {
+	$body.on( 'click', '.dimas-products-filter-form__remove-filter', function( event ) {
 		event.preventDefault();
 
 		var $button = $( this ),
-			$filters = $button.closest( '.razzi-products-filter-form__filter-fields' );
+			$filters = $button.closest( '.dimas-products-filter-form__filter-fields' );
 
 		$button
-			.closest( '.razzi-products-filter-form__filter' )
+			.closest( '.dimas-products-filter-form__filter' )
 			.hide()
 			.remove();
 
@@ -99,35 +99,35 @@ jQuery( document ).ready( function( $ ) {
 	} );
 
 	// Toggle the message.
-	$body.on( 'appended truncated', '.razzi-products-filter-form__filter-fields', function( event ) {
+	$body.on( 'appended truncated', '.dimas-products-filter-form__filter-fields', function( event ) {
 		var $filters = $( this ).children();
 
 		if ( $filters.length ) {
-			$( this ).siblings( '.razzi-products-filter-form__message' ).addClass( 'hidden' );
+			$( this ).siblings( '.dimas-products-filter-form__message' ).addClass( 'hidden' );
 		} else {
-			$( this ).siblings( '.razzi-products-filter-form__message' ).removeClass( 'hidden' );
+			$( this ).siblings( '.dimas-products-filter-form__message' ).removeClass( 'hidden' );
 		}
 	} );
 
 	// Live update for the filter title.
-	$body.on( 'input', '.razzi-products-filter-form__filter-option[data-option="filter:name"] input', function() {
-		$( this ).closest( '.razzi-products-filter-form__filter' ).find( '.razzi-products-filter-form__filter-title' ).text( this.value );
-	} ).on( 'change', '.razzi-products-filter-form__filter-option[data-option="filter:source"] select', function() {
-		var $filter = $( this ).closest( '.razzi-products-filter-form__filter' );
+	$body.on( 'input', '.dimas-products-filter-form__filter-option[data-option="filter:name"] input', function() {
+		$( this ).closest( '.dimas-products-filter-form__filter' ).find( '.dimas-products-filter-form__filter-title' ).text( this.value );
+	} ).on( 'change', '.dimas-products-filter-form__filter-option[data-option="filter:source"] select', function() {
+		var $filter = $( this ).closest( '.dimas-products-filter-form__filter' );
 
-		if ( ! $( '.razzi-products-filter-form__filter-option[data-option="filter:name"] input', $filter ).val() ) {
-			$( '.razzi-products-filter-form__filter-title', $filter ).text( this.options[ this.selectedIndex ].innerHTML );
+		if ( ! $( '.dimas-products-filter-form__filter-option[data-option="filter:name"] input', $filter ).val() ) {
+			$( '.dimas-products-filter-form__filter-title', $filter ).text( this.options[ this.selectedIndex ].innerHTML );
 		}
 	} );
 
 	// Change display options.
-	$body.on( 'change', '.razzi-products-filter-form__filter-options [data-option="filter:source"] select', function() {
+	$body.on( 'change', '.dimas-products-filter-form__filter-options [data-option="filter:source"] select', function() {
 		var $input = $( this ),
 			source = $input.val();
 
 		var options = source in data.display ? data.display[source] : data.display.default;
 
-		$input.closest( '.razzi-products-filter-form__filter-options' ).find( '[data-option="filter:display"] select' ).html( function() {
+		$input.closest( '.dimas-products-filter-form__filter-options' ).find( '[data-option="filter:display"] select' ).html( function() {
 			var html = '';
 
 			for ( var option in options ) {
@@ -145,14 +145,14 @@ jQuery( document ).ready( function( $ ) {
 	 *
 	 * @todo Improve the performance.
 	 */
-	$body.on( 'change', '.razzi-products-filter-form__section :input', function() {
+	$body.on( 'change', '.dimas-products-filter-form__section :input', function() {
 		var $input = $( this ),
 			$container = $input.closest( '.widget-content' ),
 			optionName = $input.closest( '[data-option]' ).data( 'option' ),
 			optionPrefix = '';
 
 		if ( optionName.indexOf( 'filter:' ) === 0 ) {
-			$container = $input.closest( '.razzi-products-filter-form__filter-options' );
+			$container = $input.closest( '.dimas-products-filter-form__filter-options' );
 			optionName = optionName.replace( 'filter:', '' );
 			optionPrefix = 'filter:';
 		}

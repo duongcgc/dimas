@@ -33,8 +33,8 @@ class Frontend {
 		return self::$instance;
 	}
 
-	const POST_TYPE     = 'razzi_size_guide';
-	const OPTION_NAME   = 'razzi_size_guide';
+	const POST_TYPE     = 'dimas_size_guide';
+	const OPTION_NAME   = 'dimas_size_guide';
 
 
 	/**
@@ -56,8 +56,8 @@ class Frontend {
 	}
 
 	public function scripts() {
-		wp_enqueue_style( 'razzi-size-guide-content', DIMAS_ADDONS_URL . 'modules/size-guide/assets/css/size-guide.css', array(), '1.0' );
-		wp_enqueue_script('razzi-size-guide-content', DIMAS_ADDONS_URL . 'modules/size-guide/assets/js/size-guide-tab.js');
+		wp_enqueue_style( 'dimas-size-guide-content', DIMAS_ADDONS_URL . 'modules/size-guide/assets/css/size-guide.css', array(), '1.0' );
+		wp_enqueue_script('dimas-size-guide-content', DIMAS_ADDONS_URL . 'modules/size-guide/assets/js/size-guide-tab.js');
 	}
 
 	/**
@@ -102,7 +102,7 @@ class Frontend {
 			return;
 		}
 
-		$guide_settings = get_post_meta( $product->get_id(), 'razzi_size_guide', true );
+		$guide_settings = get_post_meta( $product->get_id(), 'dimas_size_guide', true );
 		$display = ( is_array( $guide_settings ) && ! empty( $guide_settings['display'] ) ) ? $guide_settings['display'] : $this->get_option( 'display' );
 
 		if ( 'tab' == $display ) {
@@ -171,10 +171,10 @@ class Frontend {
 
 		$text = $this->get_option( 'button_text' );
 
-		$button_text = $text ? $text : esc_html__('Size Chart' , 'razzi');
+		$button_text = $text ? $text : esc_html__('Size Chart' , 'dimas');
 
 		if ( $guide ) {
-			$tabs['razzi_size_guide'] = array(
+			$tabs['dimas_size_guide'] = array(
 				'title' 	=> $button_text,
 				'priority' 	=> 50,
 				'callback' 	=> array( $this, 'size_guide_content' ),
@@ -195,10 +195,10 @@ class Frontend {
 
 		$text = $this->get_option( 'button_text' );
 
-		$button_text = $text ? $text : esc_html__('Size Chart' , 'razzi');
+		$button_text = $text ? $text : esc_html__('Size Chart' , 'dimas');
 
 		return apply_filters(
-			'razzi_size_guide_button',
+			'dimas_size_guide_button',
 			sprintf(
 				'<p class="product-size-guide"><a href="#" data-toggle="modal" data-target="size-guide-modal" class="size-guide-button">%s %s</a></p>',
 				\Dimas\Addons\Helper::get_svg( 'size-chart', '', 'widget' ),
@@ -231,7 +231,7 @@ class Frontend {
 		global $product;
 
 		$attribute = $this->get_option( 'attribute' );
-		$guide_settings = get_post_meta( $product->get_id(), 'razzi_size_guide', true );
+		$guide_settings = get_post_meta( $product->get_id(), 'dimas_size_guide', true );
 
 		if ( is_array( $guide_settings ) && 'panel' == $guide_settings['display'] && 'bellow_attribute' == $guide_settings['button_position'] ) {
 			$attribute = $guide_settings['attribute'];
@@ -253,7 +253,7 @@ class Frontend {
 	 */
 	public function size_guide_panel() {
 		global $product;
-		$guide_settings = get_post_meta( $product->get_id(), 'razzi_size_guide', true );
+		$guide_settings = get_post_meta( $product->get_id(), 'dimas_size_guide', true );
 		$display = ( is_array( $guide_settings ) && ! empty( $guide_settings['display'] ) ) ? $guide_settings['display'] : $this->get_option( 'display' );
 		$classes = $display == 'panel' ? 'rz-panel' : '';
 		?>
@@ -261,10 +261,10 @@ class Frontend {
 			<div class="off-modal-layer"></div>
 			<div class="modal-content container">
 				<div class="modal-header">
-                    <h3 class="title"><?php esc_html_e( 'Size Chart', 'razzi' ) ?></h3>
+                    <h3 class="title"><?php esc_html_e( 'Size Chart', 'dimas' ) ?></h3>
                    <span class="button-close"><?php echo \Dimas\Addons\Helper::get_svg( 'close' ) ?></span>
                 </div>
-				<div class="modal-size-chart razzi-scrollbar">
+				<div class="modal-size-chart dimas-scrollbar">
 					<?php $this->size_guide_content(); ?>
 				</div>
 			</div>
@@ -288,10 +288,10 @@ class Frontend {
 
 		$guide = get_post( $guide_id );
 
-		echo '<div class="razzi-size-guide">';
+		echo '<div class="dimas-size-guide">';
 
 		if ( ! empty( $guide->post_content ) ) {
-			echo '<div class="razzi-size-guide--global-content">' . apply_filters( 'the_content', $guide->post_content ) . '</div>';
+			echo '<div class="dimas-size-guide--global-content">' . apply_filters( 'the_content', $guide->post_content ) . '</div>';
 		}
 
 		$size_guides = get_post_meta( $guide_id, 'size_guides', true );
@@ -309,26 +309,26 @@ class Frontend {
 				$tabs[] = sprintf( '<li data-target="%s" class="%s">%s</li>', esc_attr( $index + 1 ), ( $index ? '' : 'active' ), esc_html( $tab ) );
 			}
 
-			echo '<div class="razzi-size-guide-tabs">';
-			echo '<ul class="razzi-size-guide-tabs__nav">' . implode( '', $tabs ) . '</ul>';
-			echo '<div class="razzi-size-guide-tabs__panels">';
+			echo '<div class="dimas-size-guide-tabs">';
+			echo '<ul class="dimas-size-guide-tabs__nav">' . implode( '', $tabs ) . '</ul>';
+			echo '<div class="dimas-size-guide-tabs__panels">';
 		}
 
 		foreach ( $size_guides['tables'] as $index => $table ) {
-			echo '<div class="razzi-size-guide-tabs__panel ' . ( $index ? '' : 'active' ) . '" data-panel="' . esc_attr( $index + 1 ) . '">';
+			echo '<div class="dimas-size-guide-tabs__panel ' . ( $index ? '' : 'active' ) . '" data-panel="' . esc_attr( $index + 1 ) . '">';
 
 			if ( ! empty( $size_guides['names'][ $index ] ) ) {
-				echo '<h4 class="razzi-size-guide__name">' . wp_kses_post( $size_guides['names'][ $index ] ) . '</h4>';
+				echo '<h4 class="dimas-size-guide__name">' . wp_kses_post( $size_guides['names'][ $index ] ) . '</h4>';
 			}
 
 			if ( ! empty( $size_guides['descriptions'][ $index ] ) ) {
-				echo '<div class="razzi-size-guide__description">' . wp_kses_post( $size_guides['descriptions'][ $index ] ) . '</div>';
+				echo '<div class="dimas-size-guide__description">' . wp_kses_post( $size_guides['descriptions'][ $index ] ) . '</div>';
 			}
 
 			if ( ! empty( $table ) ) {
 				$table = json_decode( $table, true );
 
-				echo '<table class="razzi-size-guide__table">';
+				echo '<table class="dimas-size-guide__table">';
 
 				foreach ( $table as $row => $columns ) {
 					if ( 0 === $row ) {
@@ -353,7 +353,7 @@ class Frontend {
 			}
 
 			if ( ! empty( $size_guides['information'][ $index ] ) ) {
-				echo '<div class="razzi-size-guide__info">' . wp_kses_post( $size_guides['information'][ $index ] ) . '</div>';
+				echo '<div class="dimas-size-guide__info">' . wp_kses_post( $size_guides['information'][ $index ] ) . '</div>';
 			}
 
 			echo '</div>';
@@ -383,7 +383,7 @@ class Frontend {
 			return false;
 		}
 
-		$size_guide = get_post_meta( $_product->get_id(), 'razzi_size_guide', true );
+		$size_guide = get_post_meta( $_product->get_id(), 'dimas_size_guide', true );
 
 		// Return selected guide.
 		if ( is_array( $size_guide ) ) {
@@ -461,10 +461,10 @@ class Frontend {
 	 * @return array
 	 */
 	public function product_data_tab( $tabs ) {
-		$tabs['razzi_size_guide'] = array(
-			'label'    => esc_html__( 'Size Guide', 'razzi' ),
-			'target'   => 'razzi-size-guide',
-			'class'    => array( 'razzi-size-guide', ),
+		$tabs['dimas_size_guide'] = array(
+			'label'    => esc_html__( 'Size Guide', 'dimas' ),
+			'target'   => 'dimas-size-guide',
+			'class'    => array( 'dimas-size-guide', ),
 			'priority' => 62,
 		);
 

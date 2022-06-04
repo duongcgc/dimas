@@ -7,7 +7,7 @@ global $wp_widget_factory;
             <label>
                 <input type="checkbox" name="{{ taMegaMenu.getFieldName( 'isLabel', data.data['menu-item-db-id'] ) }}"
                        value="1" {{ data.megaData.isLabel ? 'checked="checked"' : '' }} >
-				<?php esc_html_e( 'Is Label', 'razzi' ) ?>
+				<?php esc_html_e( 'Is Label', 'dimas' ) ?>
             </label>
         </p>
     </div>

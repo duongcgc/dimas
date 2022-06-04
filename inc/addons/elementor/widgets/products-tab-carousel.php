@@ -21,7 +21,7 @@ class Products_Tab_Carousel extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-product-tab';
+		return 'dimas-product-tab';
 	}
 
 	/**
@@ -30,7 +30,7 @@ class Products_Tab_Carousel extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Product Tabs Carousel', 'razzi' );
+		return __( 'Dimas - Product Tabs Carousel', 'dimas' );
 	}
 
 	/**
@@ -48,12 +48,12 @@ class Products_Tab_Carousel extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-product-shortcode'
+			'dimas-product-shortcode'
 		];
 	}
 
@@ -85,13 +85,13 @@ class Products_Tab_Carousel extends Widget_Base {
 	protected function section_products_settings_controls() {
 		$this->start_controls_section(
 			'section_products',
-			[ 'label' => esc_html__( 'Products', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Products', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'per_page',
 			[
-				'label'   => esc_html__( 'Total Products', 'razzi' ),
+				'label'   => esc_html__( 'Total Products', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 8,
 				'min'     => 1,
@@ -103,11 +103,11 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'product_tabs_source',
 			[
-				'label'   => esc_html__( 'Source', 'razzi' ),
+				'label'   => esc_html__( 'Source', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'special_products' => esc_html__( 'Special Products', 'razzi' ),
-					'product_cats'     => esc_html__( 'Product Categories', 'razzi' ),
+					'special_products' => esc_html__( 'Special Products', 'dimas' ),
+					'product_cats'     => esc_html__( 'Product Categories', 'dimas' ),
 				],
 				'default' => 'special_products',
 				'toggle'  => false,
@@ -119,9 +119,9 @@ class Products_Tab_Carousel extends Widget_Base {
 
 		$repeater->add_control(
 			'title', [
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'This is heading', 'razzi' ),
+				'default'     => esc_html__( 'This is heading', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -129,14 +129,14 @@ class Products_Tab_Carousel extends Widget_Base {
 		$repeater->add_control(
 			'tab_products',
 			[
-				'label'   => esc_html__( 'Products', 'razzi' ),
+				'label'   => esc_html__( 'Products', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'recent'       => esc_html__( 'Recent', 'razzi' ),
-					'featured'     => esc_html__( 'Featured', 'razzi' ),
-					'best_selling' => esc_html__( 'Best Selling', 'razzi' ),
-					'top_rated'    => esc_html__( 'Top Rated', 'razzi' ),
-					'sale'         => esc_html__( 'On Sale', 'razzi' ),
+					'recent'       => esc_html__( 'Recent', 'dimas' ),
+					'featured'     => esc_html__( 'Featured', 'dimas' ),
+					'best_selling' => esc_html__( 'Best Selling', 'dimas' ),
+					'top_rated'    => esc_html__( 'Top Rated', 'dimas' ),
+					'sale'         => esc_html__( 'On Sale', 'dimas' ),
 				],
 				'default' => 'recent',
 				'toggle'  => false,
@@ -146,14 +146,14 @@ class Products_Tab_Carousel extends Widget_Base {
 		$repeater->add_control(
 			'tab_orderby',
 			[
-				'label'     => esc_html__( 'Order By', 'razzi' ),
+				'label'     => esc_html__( 'Order By', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''           => esc_html__( 'Default', 'razzi' ),
-					'date'       => esc_html__( 'Date', 'razzi' ),
-					'title'      => esc_html__( 'Title', 'razzi' ),
-					'menu_order' => esc_html__( 'Menu Order', 'razzi' ),
-					'rand'       => esc_html__( 'Random', 'razzi' ),
+					''           => esc_html__( 'Default', 'dimas' ),
+					'date'       => esc_html__( 'Date', 'dimas' ),
+					'title'      => esc_html__( 'Title', 'dimas' ),
+					'menu_order' => esc_html__( 'Menu Order', 'dimas' ),
+					'rand'       => esc_html__( 'Random', 'dimas' ),
 				],
 				'default'   => '',
 				'toggle'    => false,
@@ -166,12 +166,12 @@ class Products_Tab_Carousel extends Widget_Base {
 		$repeater->add_control(
 			'tab_order',
 			[
-				'label'     => esc_html__( 'Order', 'razzi' ),
+				'label'     => esc_html__( 'Order', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''     => esc_html__( 'Default', 'razzi' ),
-					'asc'  => esc_html__( 'Ascending', 'razzi' ),
-					'desc' => esc_html__( 'Descending', 'razzi' ),
+					''     => esc_html__( 'Default', 'dimas' ),
+					'asc'  => esc_html__( 'Ascending', 'dimas' ),
+					'desc' => esc_html__( 'Descending', 'dimas' ),
 				],
 				'default'   => '',
 				'toggle'    => false,
@@ -184,7 +184,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$repeater->add_control(
 			'tab_button_text',
 			[
-				'label'       => esc_html__( 'Button Text', 'razzi' ),
+				'label'       => esc_html__( 'Button Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => '',
 			]
@@ -192,9 +192,9 @@ class Products_Tab_Carousel extends Widget_Base {
 
 		$repeater->add_control(
 			'tab_button_link', [
-				'label'         => esc_html__( 'Button Link', 'razzi' ),
+				'label'         => esc_html__( 'Button Link', 'dimas' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => esc_html__( 'https://your-link.com', 'razzi' ),
+				'placeholder'   => esc_html__( 'https://your-link.com', 'dimas' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '#',
@@ -212,17 +212,17 @@ class Products_Tab_Carousel extends Widget_Base {
 				'fields'        => $repeater->get_controls(),
 				'default'       => [
 					[
-						'title'        => esc_html__( 'New Arrivals', 'razzi' ),
+						'title'        => esc_html__( 'New Arrivals', 'dimas' ),
 						'tab_products' => 'recent',
 						'tab_button_text' => ''
 					],
 					[
-						'title'        => esc_html__( 'Features', 'razzi' ),
+						'title'        => esc_html__( 'Features', 'dimas' ),
 						'tab_products' => 'featured',
 						'tab_button_text' => ''
 					],
 					[
-						'title'        => esc_html__( 'Top Rated', 'razzi' ),
+						'title'        => esc_html__( 'Top Rated', 'dimas' ),
 						'tab_products' => 'top_rated',
 						'tab_button_text' => ''
 					]
@@ -238,10 +238,10 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'view_all_cats',
 			[
-				'label'        => esc_html__( 'View All Categories', 'razzi' ),
+				'label'        => esc_html__( 'View All Categories', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Show', 'razzi' ),
-				'label_off'    => esc_html__( 'Hide', 'razzi' ),
+				'label_on'     => esc_html__( 'Show', 'dimas' ),
+				'label_off'    => esc_html__( 'Hide', 'dimas' ),
 				'return_value' => 'yes',
 				'default'      => '',
 				'condition' => [
@@ -253,9 +253,9 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'view_all_cats_text',
 			[
-				'label'       => esc_html__( 'View All Text', 'razzi' ),
+				'label'       => esc_html__( 'View All Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'All', 'razzi' ),
+				'default'     => esc_html__( 'All', 'dimas' ),
 				'condition' => [
 					'product_tabs_source' => 'product_cats',
 					'view_all_cats' => 'yes',
@@ -268,7 +268,7 @@ class Products_Tab_Carousel extends Widget_Base {
 
 		$repeater->add_control(
 			'product_cat', [
-				'label'       => esc_html__( 'Category Tab', 'razzi' ),
+				'label'       => esc_html__( 'Category Tab', 'dimas' ),
 				'type'        => Controls_Manager::SELECT2,
 				'options'     => $product_cats,
 				'label_block' => true,
@@ -277,7 +277,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$repeater->add_control(
 			'product_cat_btn_text',
 			[
-				'label'       => esc_html__( 'Button Text', 'razzi' ),
+				'label'       => esc_html__( 'Button Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => '',
 			]
@@ -286,7 +286,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'product_cats_tabs',
 			[
-				'label'         => esc_html__( 'Category Tabs', 'razzi' ),
+				'label'         => esc_html__( 'Category Tabs', 'dimas' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'default'       => [ ],
@@ -301,8 +301,8 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'category',
 			[
-				'label'       => esc_html__( 'Products Category', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products Category', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -319,8 +319,8 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'product_tags',
 			[
-				'label'       => esc_html__( 'Products Tags', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products Tags', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -336,8 +336,8 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'product_brands',
 			[
-				'label'       => esc_html__( 'Products Brands', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products Brands', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -354,8 +354,8 @@ class Products_Tab_Carousel extends Widget_Base {
 			$this->add_control(
 				'product_authors',
 				[
-					'label'       => esc_html__( 'Products Authors', 'razzi' ),
-					'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+					'label'       => esc_html__( 'Products Authors', 'dimas' ),
+					'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 					'type'        => 'rzautocomplete',
 					'default'     => '',
 					'label_block' => true,
@@ -372,14 +372,14 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'products',
 			[
-				'label'     => esc_html__( 'Product', 'razzi' ),
+				'label'     => esc_html__( 'Product', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'recent'       => esc_html__( 'Recent', 'razzi' ),
-					'featured'     => esc_html__( 'Featured', 'razzi' ),
-					'best_selling' => esc_html__( 'Best Selling', 'razzi' ),
-					'top_rated'    => esc_html__( 'Top Rated', 'razzi' ),
-					'sale'         => esc_html__( 'On Sale', 'razzi' ),
+					'recent'       => esc_html__( 'Recent', 'dimas' ),
+					'featured'     => esc_html__( 'Featured', 'dimas' ),
+					'best_selling' => esc_html__( 'Best Selling', 'dimas' ),
+					'top_rated'    => esc_html__( 'Top Rated', 'dimas' ),
+					'sale'         => esc_html__( 'On Sale', 'dimas' ),
 				],
 				'default'   => 'recent',
 				'toggle'    => false,
@@ -392,14 +392,14 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'orderby',
 			[
-				'label'     => esc_html__( 'Order By', 'razzi' ),
+				'label'     => esc_html__( 'Order By', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''           => esc_html__( 'Default', 'razzi' ),
-					'date'       => esc_html__( 'Date', 'razzi' ),
-					'title'      => esc_html__( 'Title', 'razzi' ),
-					'menu_order' => esc_html__( 'Menu Order', 'razzi' ),
-					'rand'       => esc_html__( 'Random', 'razzi' ),
+					''           => esc_html__( 'Default', 'dimas' ),
+					'date'       => esc_html__( 'Date', 'dimas' ),
+					'title'      => esc_html__( 'Title', 'dimas' ),
+					'menu_order' => esc_html__( 'Menu Order', 'dimas' ),
+					'rand'       => esc_html__( 'Random', 'dimas' ),
 				],
 				'default'   => '',
 				'condition' => [
@@ -412,12 +412,12 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'order',
 			[
-				'label'     => esc_html__( 'Order', 'razzi' ),
+				'label'     => esc_html__( 'Order', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''     => esc_html__( 'Default', 'razzi' ),
-					'asc'  => esc_html__( 'Ascending', 'razzi' ),
-					'desc' => esc_html__( 'Descending', 'razzi' ),
+					''     => esc_html__( 'Default', 'dimas' ),
+					'asc'  => esc_html__( 'Ascending', 'dimas' ),
+					'desc' => esc_html__( 'Descending', 'dimas' ),
 				],
 				'default'   => '',
 				'condition' => [
@@ -433,13 +433,13 @@ class Products_Tab_Carousel extends Widget_Base {
 	protected function section_carousel_settings_controls() {
 		$this->start_controls_section(
 			'section_carousel_settings',
-			[ 'label' => esc_html__( 'Carousel Settings', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Carousel Settings', 'dimas' ) ]
 		);
 
 		$this->add_responsive_control(
 			'slidesToShow',
 			[
-				'label'           => esc_html__( 'Slides to show', 'razzi' ),
+				'label'           => esc_html__( 'Slides to show', 'dimas' ),
 				'type'            => Controls_Manager::NUMBER,
 				'min'             => 1,
 				'max'             => 7,
@@ -450,7 +450,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'slidesToScroll',
 			[
-				'label'           => esc_html__( 'Slides to scroll', 'razzi' ),
+				'label'           => esc_html__( 'Slides to scroll', 'dimas' ),
 				'type'            => Controls_Manager::NUMBER,
 				'min'             => 1,
 				'max'             => 7,
@@ -461,12 +461,12 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'navigation',
 			[
-				'label'     => esc_html__( 'Navigation', 'razzi' ),
+				'label'     => esc_html__( 'Navigation', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'none'     => esc_html__( 'None', 'razzi' ),
-					'scrollbar'  => esc_html__( 'Scrollbar', 'razzi' ),
-					'dots' => esc_html__( 'Dots', 'razzi' ),
+					'none'     => esc_html__( 'None', 'dimas' ),
+					'scrollbar'  => esc_html__( 'Scrollbar', 'dimas' ),
+					'dots' => esc_html__( 'Dots', 'dimas' ),
 				],
 				'default'   => 'scrollbar',
 				'frontend_available' => true,
@@ -475,10 +475,10 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'infinite',
 			[
-				'label'     => __( 'Infinite Loop', 'razzi' ),
+				'label'     => __( 'Infinite Loop', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'razzi' ),
-				'label_on'  => __( 'On', 'razzi' ),
+				'label_off' => __( 'Off', 'dimas' ),
+				'label_on'  => __( 'On', 'dimas' ),
 				'default'   => '',
 				'frontend_available' => true,
 			]
@@ -487,10 +487,10 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			[
-				'label'     => __( 'Autoplay', 'razzi' ),
+				'label'     => __( 'Autoplay', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'razzi' ),
-				'label_on'  => __( 'On', 'razzi' ),
+				'label_off' => __( 'Off', 'dimas' ),
+				'label_on'  => __( 'On', 'dimas' ),
 				'default'   => '',
 				'frontend_available' => true,
 			]
@@ -499,12 +499,12 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'speed',
 			[
-				'label'       => __( 'Speed', 'razzi' ),
+				'label'       => __( 'Speed', 'dimas' ),
 				'type'        => Controls_Manager::NUMBER,
 				'default'     => 800,
 				'min'         => 100,
 				'step'        => 50,
-				'description' => esc_html__( 'Slide animation speed (in ms)', 'razzi' ),
+				'description' => esc_html__( 'Slide animation speed (in ms)', 'dimas' ),
 				'frontend_available' => true,
 			]
 		);
@@ -516,7 +516,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_tab_header_style',
 			[
-				'label' => esc_html__( 'Tab Header', 'razzi' ),
+				'label' => esc_html__( 'Tab Header', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -524,7 +524,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_header_space',
 			[
-				'label'     => __( 'Space', 'razzi' ),
+				'label'     => __( 'Space', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -533,7 +533,7 @@ class Products_Tab_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-tabs .tabs-header' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-tabs .tabs-header' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -541,7 +541,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_header_space_left',
 			[
-				'label'     => __( 'Space Left', 'razzi' ),
+				'label'     => __( 'Space Left', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -550,7 +550,7 @@ class Products_Tab_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-tabs .tabs-header' => 'padding-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-tabs .tabs-header' => 'padding-left: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -558,7 +558,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_header_item_space',
 			[
-				'label'     => __( 'Item Space', 'razzi' ),
+				'label'     => __( 'Item Space', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -567,8 +567,8 @@ class Products_Tab_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-tabs ul.tabs li:not(:first-child)' => 'padding-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-products-tabs ul.tabs li:not(:last-child)' => 'padding-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-tabs ul.tabs li:not(:first-child)' => 'padding-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-tabs ul.tabs li:not(:last-child)' => 'padding-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -576,25 +576,25 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'tab_header_align',
 			[
-				'label'       => esc_html__( 'Align', 'razzi' ),
+				'label'       => esc_html__( 'Align', 'dimas' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => [
 					'flex-start'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'flex-end'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-products-tabs ul.tabs' => 'justify-content: {{VALUE}}',
+					'{{WRAPPER}} .dimas-products-tabs ul.tabs' => 'justify-content: {{VALUE}}',
 				],
 			]
 		);
@@ -611,29 +611,29 @@ class Products_Tab_Carousel extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'tab_header_title',
-				'selector' => '{{WRAPPER}} .razzi-products-tabs ul.tabs li a',
+				'selector' => '{{WRAPPER}} .dimas-products-tabs ul.tabs li a',
 			]
 		);
 		$this->add_control(
 			'tab_header_title_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'razzi' ),
+				'label'     => esc_html__( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-tabs ul.tabs li a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-tabs ul.tabs li a' => 'color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
 			'tab_header_active_color',
 			[
-				'label'     => esc_html__( 'Active Color', 'razzi' ),
+				'label'     => esc_html__( 'Active Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-tabs ul.tabs li a.active' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .razzi-products-tabs ul.tabs li a:after' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-tabs ul.tabs li a.active' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-tabs ul.tabs li a:after' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -646,7 +646,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_carousel_style',
 			[
-				'label' => esc_html__( 'Carousel Settings', 'razzi' ),
+				'label' => esc_html__( 'Carousel Settings', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -654,7 +654,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'carousel_style_divider',
 			[
-				'label' => __( 'Scrollbar', 'razzi' ),
+				'label' => __( 'Scrollbar', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -663,7 +663,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'scrollbar_spacing',
 			[
-				'label'     => __( 'Spacing', 'razzi' ),
+				'label'     => __( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -672,7 +672,7 @@ class Products_Tab_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-tabs .swiper-scrollbar' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-tabs .swiper-scrollbar' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -680,11 +680,11 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'scrollbar_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-tabs .swiper-scrollbar' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-tabs .swiper-scrollbar' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -692,11 +692,11 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'scrollbar_active_color',
 			[
-				'label'     => esc_html__( 'Active Color', 'razzi' ),
+				'label'     => esc_html__( 'Active Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-tabs .swiper-scrollbar-drag' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-tabs .swiper-scrollbar-drag' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -704,7 +704,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'carousel_style_divider_2',
 			[
-				'label' => __( 'Dots', 'razzi' ),
+				'label' => __( 'Dots', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -713,7 +713,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_font_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -722,7 +722,7 @@ class Products_Tab_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-tabs .swiper-pagination .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-tabs .swiper-pagination .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -730,22 +730,22 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_control(
 			'dots_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-tabs .swiper-pagination .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-tabs .swiper-pagination .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
 			'dots_active_color',
 			[
-				'label'     => esc_html__( 'Active Color', 'razzi' ),
+				'label'     => esc_html__( 'Active Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-tabs .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:before, {{WRAPPER}} .razzi-products-tabs .swiper-pagination .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-tabs .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:before, {{WRAPPER}} .dimas-products-tabs .swiper-pagination .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -753,22 +753,22 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_spacing_item',
 			[
-				'label'      => __( 'Item Space', 'razzi' ),
+				'label'      => __( 'Item Space', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-tabs .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-tabs .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 		$this->add_responsive_control(
 			'dots_spacing',
 			[
-				'label'      => __( 'Space', 'razzi' ),
+				'label'      => __( 'Space', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-tabs .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-tabs .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -781,7 +781,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_button_style',
 			[
-				'label' => esc_html__( 'Button', 'razzi' ),
+				'label' => esc_html__( 'Button', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -789,7 +789,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'button_spacing',
 			[
-				'label'     => __( 'Spacing', 'razzi' ),
+				'label'     => __( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -798,7 +798,7 @@ class Products_Tab_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-tabs .tabs-panel .razzi-tabs-button' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-tabs .tabs-panel .dimas-tabs-button' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -815,17 +815,17 @@ class Products_Tab_Carousel extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'button_text',
-				'selector' => '{{WRAPPER}} .razzi-products-tabs .tabs-panel .razzi-tabs-button a',
+				'selector' => '{{WRAPPER}} .dimas-products-tabs .tabs-panel .dimas-tabs-button a',
 			]
 		);
 		$this->add_control(
 			'button_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'razzi' ),
+				'label'     => esc_html__( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-tabs .tabs-panel .razzi-tabs-button a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-tabs .tabs-panel .dimas-tabs-button a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -846,7 +846,7 @@ class Products_Tab_Carousel extends Widget_Base {
 		$nav_mobile = empty( $settings['navigation_mobile'] ) ? $nav : $settings['navigation_mobile'];
 
 		$classes = [
-			'razzi-products-tabs razzi-tabs razzi-elementor-product-carousel razzi-swiper-carousel-elementor woocommerce',
+			'dimas-products-tabs dimas-tabs dimas-elementor-product-carousel dimas-swiper-carousel-elementor woocommerce',
 			'navigation-' . $nav,
 			'navigation-tablet-' . $nav_tablet,
 			'navigation-mobile-' . $nav_mobile,
@@ -885,7 +885,7 @@ class Products_Tab_Carousel extends Widget_Base {
 					}
 
 					if ( $item['tab_button_text'] ) {
-						$button_view = sprintf( '<div class="razzi-tabs-button">%s</div>', Helper::control_url( $index, $item['tab_button_link'], $item['tab_button_text'], [ 'class' => 'razzi-button--underlined' ] ) );
+						$button_view = sprintf( '<div class="dimas-tabs-button">%s</div>', Helper::control_url( $index, $item['tab_button_link'], $item['tab_button_text'], [ 'class' => 'dimas-button--underlined' ] ) );
 					}
 
 					$tab_atts = [
@@ -1008,7 +1008,7 @@ class Products_Tab_Carousel extends Widget_Base {
 					$button_view = '';
 
 					if ( $tab['product_cat_btn_text'] ) {
-						$button_view = sprintf( '<div class="razzi-tabs-button"><a class="razzi-button--underlined" href="%s">%s</a></div>', get_category_link( $term->term_id ), esc_html( $tab['product_cat_btn_text'] ) );
+						$button_view = sprintf( '<div class="dimas-tabs-button"><a class="dimas-button--underlined" href="%s">%s</a></div>', get_category_link( $term->term_id ), esc_html( $tab['product_cat_btn_text'] ) );
 					}
 
 					if ( $i == 0 && $settings['view_all_cats'] == '' ) {

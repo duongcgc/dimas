@@ -22,7 +22,7 @@ class Products_Masonry extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-products-masonry';
+		return 'dimas-products-masonry';
 	}
 
 	/**
@@ -31,7 +31,7 @@ class Products_Masonry extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Products Masonry', 'razzi' );
+		return __( 'Dimas - Products Masonry', 'dimas' );
 	}
 
 	/**
@@ -49,12 +49,12 @@ class Products_Masonry extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		$scripts = [
-			'razzi-product-shortcode'
+			'dimas-product-shortcode'
 		];
 
 		return $scripts;
@@ -88,19 +88,19 @@ class Products_Masonry extends Widget_Base {
 	protected function section_banner_settings_controls() {
 		$this->start_controls_section(
 			'section_banner',
-			[ 'label' => esc_html__( 'Banner', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Banner', 'dimas' ) ]
 		);
 
 		$repeater = new \Elementor\Repeater();
 
 		$repeater->start_controls_tabs( 'banners_repeater' );
 
-		$repeater->start_controls_tab( 'background', [ 'label' => esc_html__( 'Background', 'razzi' ) ] );
+		$repeater->start_controls_tab( 'background', [ 'label' => esc_html__( 'Background', 'dimas' ) ] );
 
 		$repeater->add_control(
 			'banner_image',
 			[
-				'label'   => esc_html__( 'Image', 'razzi' ),
+				'label'   => esc_html__( 'Image', 'dimas' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [],
 			]
@@ -109,24 +109,24 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_control(
 			'background_overlay',
 			[
-				'label'      => esc_html__( 'Background Overlay', 'razzi' ),
+				'label'      => esc_html__( 'Background Overlay', 'dimas' ),
 				'type'       => Controls_Manager::COLOR,
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .masonry-banner-content .banner-image:before' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .masonry-banner-content .banner-image:before' => 'background-color: {{VALUE}}',
 				]
 			]
 		);
 
 		$repeater->end_controls_tab();
 
-		$repeater->start_controls_tab( 'text_content', [ 'label' => esc_html__( 'Content', 'razzi' ) ] );
+		$repeater->start_controls_tab( 'text_content', [ 'label' => esc_html__( 'Content', 'dimas' ) ] );
 
 		$repeater->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'This is title', 'razzi' ),
+				'default'     => esc_html__( 'This is title', 'dimas' ),
 				'label_block' => true,
 				'separator' => 'before',
 			]
@@ -135,9 +135,9 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_control(
 			'sub_title',
 			[
-				'label'       => esc_html__( 'Sub Title', 'razzi' ),
+				'label'       => esc_html__( 'Sub Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'This is sub title', 'razzi' ),
+				'default'     => esc_html__( 'This is sub title', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -145,17 +145,17 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_control(
 			'description',
 			[
-				'label'       => esc_html__( 'Description', 'razzi' ),
+				'label'       => esc_html__( 'Description', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'This is description', 'razzi' ),
+				'default'     => esc_html__( 'This is description', 'dimas' ),
 			]
 		);
 
 		$repeater->add_control(
 			'banner_link', [
-				'label'         => esc_html__( 'Link', 'razzi' ),
+				'label'         => esc_html__( 'Link', 'dimas' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => esc_html__( 'https://your-link.com', 'razzi' ),
+				'placeholder'   => esc_html__( 'https://your-link.com', 'dimas' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '#',
@@ -171,10 +171,10 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_control(
 			'button_enable',
 			[
-				'label'        => __( 'Button', 'razzi' ),
+				'label'        => __( 'Button', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'razzi' ),
-				'label_off'    => __( 'Hide', 'razzi' ),
+				'label_on'     => __( 'Show', 'dimas' ),
+				'label_off'    => __( 'Hide', 'dimas' ),
 				'return_value' => 'yes',
 				'default'      => '',
 			]
@@ -183,7 +183,7 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_control(
 			'button_text',
 			[
-				'label'       => esc_html__( 'Button Text', 'razzi' ),
+				'label'       => esc_html__( 'Button Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => '',
 				'condition' => [
@@ -194,9 +194,9 @@ class Products_Masonry extends Widget_Base {
 
 		$repeater->add_control(
 			'button_link', [
-				'label'         => esc_html__( 'Button Link', 'razzi' ),
+				'label'         => esc_html__( 'Button Link', 'dimas' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => esc_html__( 'https://your-link.com', 'razzi' ),
+				'placeholder'   => esc_html__( 'https://your-link.com', 'dimas' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '#',
@@ -212,25 +212,25 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_responsive_control(
 			'vertical_position',
 			[
-				'label'                => esc_html__( 'Vertical Position', 'razzi' ),
+				'label'                => esc_html__( 'Vertical Position', 'dimas' ),
 				'type'                 => Controls_Manager::CHOOSE,
 				'label_block'          => false,
 				'options'              => [
 					'top'    => [
-						'title' => esc_html__( 'Top', 'razzi' ),
+						'title' => esc_html__( 'Top', 'dimas' ),
 						'icon'  => 'eicon-v-align-top',
 					],
 					'middle' => [
-						'title' => esc_html__( 'Middle', 'razzi' ),
+						'title' => esc_html__( 'Middle', 'dimas' ),
 						'icon'  => 'eicon-v-align-middle',
 					],
 					'bottom' => [
-						'title' => esc_html__( 'Bottom', 'razzi' ),
+						'title' => esc_html__( 'Bottom', 'dimas' ),
 						'icon'  => 'eicon-v-align-bottom',
 					],
 				],
 				'selectors'            => [
-					'{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .masonry-banner-content .banner-content' => 'justify-content: {{VALUE}}',
+					'{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .masonry-banner-content .banner-content' => 'justify-content: {{VALUE}}',
 				],
 				'selectors_dictionary' => [
 					'top'    => 'flex-start',
@@ -244,41 +244,41 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_responsive_control(
 			'text_align',
 			[
-				'label'       => esc_html__( 'Text Align', 'razzi' ),
+				'label'       => esc_html__( 'Text Align', 'dimas' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => [
 					'left'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .masonry-banner-content .banner-content' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .masonry-banner-content .banner-content' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
 
 		$repeater->end_controls_tab();
 
-		$repeater->start_controls_tab( 'style', [ 'label' => esc_html__( 'Style', 'razzi' ) ] );
+		$repeater->start_controls_tab( 'style', [ 'label' => esc_html__( 'Style', 'dimas' ) ] );
 
 		$repeater->add_responsive_control(
 			'content_padding_repeater',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .masonry-banner-content .banner-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .masonry-banner-content .banner-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -286,7 +286,7 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_control(
 			'title_heading_name',
 			[
-				'label' => esc_html__( 'Title', 'razzi' ),
+				'label' => esc_html__( 'Title', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -295,10 +295,10 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_control(
 			'title_color',
 			[
-				'label'      => esc_html__( ' Color', 'razzi' ),
+				'label'      => esc_html__( ' Color', 'dimas' ),
 				'type'       => Controls_Manager::COLOR,
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .razzi-banner__title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .dimas-banner__title' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -307,14 +307,14 @@ class Products_Masonry extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .razzi-banner__title',
+				'selector' => '{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .dimas-banner__title',
 			]
 		);
 
 		$repeater->add_responsive_control(
 			'title_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -323,7 +323,7 @@ class Products_Masonry extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .razzi-banner__title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .dimas-banner__title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -331,7 +331,7 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_control(
 			'sub_title_heading_name',
 			[
-				'label' => esc_html__( 'Sub Title', 'razzi' ),
+				'label' => esc_html__( 'Sub Title', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -340,10 +340,10 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_control(
 			'sub_title_color',
 			[
-				'label'      => esc_html__( 'Color', 'razzi' ),
+				'label'      => esc_html__( 'Color', 'dimas' ),
 				'type'       => Controls_Manager::COLOR,
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .razzi-banner__sub-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .dimas-banner__sub-title' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -352,14 +352,14 @@ class Products_Masonry extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'sub_title_typography',
-				'selector' => '{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .razzi-banner__sub-title',
+				'selector' => '{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .dimas-banner__sub-title',
 			]
 		);
 
 		$repeater->add_responsive_control(
 			'sub_title_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -368,7 +368,7 @@ class Products_Masonry extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .razzi-banner__sub-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .dimas-banner__sub-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -376,7 +376,7 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_control(
 			'desc_heading_name',
 			[
-				'label' => esc_html__( 'Description', 'razzi' ),
+				'label' => esc_html__( 'Description', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -385,10 +385,10 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_control(
 			'description_color',
 			[
-				'label'      => esc_html__( 'Color', 'razzi' ),
+				'label'      => esc_html__( 'Color', 'dimas' ),
 				'type'       => Controls_Manager::COLOR,
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .razzi-banner__description' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .dimas-banner__description' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -397,14 +397,14 @@ class Products_Masonry extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'description_typography',
-				'selector' => '{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .razzi-banner__description',
+				'selector' => '{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .dimas-banner__description',
 			]
 		);
 
 		$repeater->add_responsive_control(
 			'description_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -413,7 +413,7 @@ class Products_Masonry extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .razzi-banner__description' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .dimas-banner__description' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -421,7 +421,7 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_control(
 			'btn_heading_name',
 			[
-				'label' => esc_html__( 'Button', 'razzi' ),
+				'label' => esc_html__( 'Button', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -430,10 +430,10 @@ class Products_Masonry extends Widget_Base {
 		$repeater->add_control(
 			'btn_custom_color',
 			[
-				'label'      => esc_html__( 'Color', 'razzi' ),
+				'label'      => esc_html__( 'Color', 'dimas' ),
 				'type'       => Controls_Manager::COLOR,
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .razzi-banner__button a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .dimas-banner__button a' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -442,7 +442,7 @@ class Products_Masonry extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'btn_typography',
-				'selector' => '{{WRAPPER}} .razzi-products-masonry {{CURRENT_ITEM}} .razzi-banner__button a',
+				'selector' => '{{WRAPPER}} .dimas-products-masonry {{CURRENT_ITEM}} .dimas-banner__button a',
 			]
 		);
 
@@ -477,21 +477,21 @@ class Products_Masonry extends Widget_Base {
 	protected function section_products_settings_controls() {
 		$this->start_controls_section(
 			'section_products',
-			[ 'label' => esc_html__( 'Products', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Products', 'dimas' ) ]
 		);
 
 
 		$this->add_control(
 			'products',
 			[
-				'label'     => esc_html__( 'Product', 'razzi' ),
+				'label'     => esc_html__( 'Product', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'recent'       => esc_html__( 'Recent', 'razzi' ),
-					'featured'     => esc_html__( 'Featured', 'razzi' ),
-					'best_selling' => esc_html__( 'Best Selling', 'razzi' ),
-					'top_rated'    => esc_html__( 'Top Rated', 'razzi' ),
-					'sale'         => esc_html__( 'On Sale', 'razzi' ),
+					'recent'       => esc_html__( 'Recent', 'dimas' ),
+					'featured'     => esc_html__( 'Featured', 'dimas' ),
+					'best_selling' => esc_html__( 'Best Selling', 'dimas' ),
+					'top_rated'    => esc_html__( 'Top Rated', 'dimas' ),
+					'sale'         => esc_html__( 'On Sale', 'dimas' ),
 				],
 				'default'   => 'recent',
 				'toggle'    => false,
@@ -501,14 +501,14 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'orderby',
 			[
-				'label'     => esc_html__( 'Order By', 'razzi' ),
+				'label'     => esc_html__( 'Order By', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''           => esc_html__( 'Default', 'razzi' ),
-					'date'       => esc_html__( 'Date', 'razzi' ),
-					'title'      => esc_html__( 'Title', 'razzi' ),
-					'menu_order' => esc_html__( 'Menu Order', 'razzi' ),
-					'rand'       => esc_html__( 'Random', 'razzi' ),
+					''           => esc_html__( 'Default', 'dimas' ),
+					'date'       => esc_html__( 'Date', 'dimas' ),
+					'title'      => esc_html__( 'Title', 'dimas' ),
+					'menu_order' => esc_html__( 'Menu Order', 'dimas' ),
+					'rand'       => esc_html__( 'Random', 'dimas' ),
 				],
 				'default'   => '',
 			]
@@ -517,12 +517,12 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'order',
 			[
-				'label'     => esc_html__( 'Order', 'razzi' ),
+				'label'     => esc_html__( 'Order', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''     => esc_html__( 'Default', 'razzi' ),
-					'asc'  => esc_html__( 'Ascending', 'razzi' ),
-					'desc' => esc_html__( 'Descending', 'razzi' ),
+					''     => esc_html__( 'Default', 'dimas' ),
+					'asc'  => esc_html__( 'Ascending', 'dimas' ),
+					'desc' => esc_html__( 'Descending', 'dimas' ),
 				],
 				'default'   => '',
 			]
@@ -531,8 +531,8 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'product_category',
 			[
-				'label'       => esc_html__( 'Product Categories', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Product Categories', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -546,8 +546,8 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'product_tag',
 			[
-				'label'       => esc_html__( 'Products Tags', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products Tags', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -560,8 +560,8 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'product_brands',
 			[
-				'label'       => esc_html__( 'Products Brands', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products Brands', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -575,8 +575,8 @@ class Products_Masonry extends Widget_Base {
 			$this->add_control(
 				'product_authors',
 				[
-					'label'       => esc_html__( 'Products Authors', 'razzi' ),
-					'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+					'label'       => esc_html__( 'Products Authors', 'dimas' ),
+					'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 					'type'        => 'rzautocomplete',
 					'default'     => '',
 					'label_block' => true,
@@ -590,7 +590,7 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'attributes_divider',
 			[
-				'label' => esc_html__( 'Attributes', 'razzi' ),
+				'label' => esc_html__( 'Attributes', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -599,10 +599,10 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'show_category',
 			[
-				'label'     => esc_html__( 'Category', 'razzi' ),
+				'label'     => esc_html__( 'Category', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => '',
 			]
@@ -611,10 +611,10 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'show_rating',
 			[
-				'label'     => esc_html__( 'Rating', 'razzi' ),
+				'label'     => esc_html__( 'Rating', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => '',
 			]
@@ -623,10 +623,10 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'show_quickview',
 			[
-				'label'     => esc_html__( 'Quick View', 'razzi' ),
+				'label'     => esc_html__( 'Quick View', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 			]
@@ -635,10 +635,10 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'show_addtocart',
 			[
-				'label'     => esc_html__( 'Add To Cart', 'razzi' ),
+				'label'     => esc_html__( 'Add To Cart', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 			]
@@ -647,10 +647,10 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'show_wishlist',
 			[
-				'label'     => esc_html__( 'Wishlist', 'razzi' ),
+				'label'     => esc_html__( 'Wishlist', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 			]
@@ -659,10 +659,10 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'show_badges',
 			[
-				'label'     => esc_html__( 'Badges', 'razzi' ),
+				'label'     => esc_html__( 'Badges', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 			]
@@ -671,10 +671,10 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'show_atc_mobile',
 			[
-				'label'     => esc_html__( 'Show Add to Cart Button on Mobile', 'razzi' ),
+				'label'     => esc_html__( 'Show Add to Cart Button on Mobile', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 			]
@@ -683,10 +683,10 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'show_featured_icons_mobile',
 			[
-				'label'     => esc_html__( 'Show Featured Icons Mobile', 'razzi' ),
+				'label'     => esc_html__( 'Show Featured Icons Mobile', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 			]
@@ -700,16 +700,16 @@ class Products_Masonry extends Widget_Base {
 		$this->start_controls_section(
 			'section_pagination',
 			[
-				'label' => esc_html__( 'Pagination', 'razzi' ),
+				'label' => esc_html__( 'Pagination', 'dimas' ),
 			]
 		);
 		$this->add_control(
 			'product_found',
 			[
-				'label'        => __( 'Product Found', 'razzi' ),
+				'label'        => __( 'Product Found', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'razzi' ),
-				'label_off'    => __( 'Hide', 'razzi' ),
+				'label_on'     => __( 'Show', 'dimas' ),
+				'label_off'    => __( 'Hide', 'dimas' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -718,10 +718,10 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'load_more',
 			[
-				'label'        => __( 'Button', 'razzi' ),
+				'label'        => __( 'Button', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'razzi' ),
-				'label_off'    => __( 'Hide', 'razzi' ),
+				'label_on'     => __( 'Show', 'dimas' ),
+				'label_off'    => __( 'Hide', 'dimas' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -729,9 +729,9 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'load_more_text',
 			[
-				'label'       => esc_html__( 'Text', 'razzi' ),
+				'label'       => esc_html__( 'Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Show More', 'razzi' ),
+				'default'     => esc_html__( 'Show More', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -743,7 +743,7 @@ class Products_Masonry extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => esc_html__( 'Content', 'razzi' ),
+				'label' => esc_html__( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -751,11 +751,11 @@ class Products_Masonry extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-masonry' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-masonry' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -767,7 +767,7 @@ class Products_Masonry extends Widget_Base {
 		$this->start_controls_section(
 			'section_pagination_style',
 			[
-				'label' => __( 'Pagination', 'razzi' ),
+				'label' => __( 'Pagination', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -775,7 +775,7 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'found_divider',
 			[
-				'label' => __( 'Product Found', 'razzi' ),
+				'label' => __( 'Product Found', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -784,11 +784,11 @@ class Products_Masonry extends Widget_Base {
 		$this->add_responsive_control(
 			'found_space',
 			[
-				'label'      => __( 'Space', 'razzi' ),
+				'label'      => __( 'Space', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-masonry .razzi-posts__found' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-masonry .dimas-posts__found' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -797,18 +797,18 @@ class Products_Masonry extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'found_typography',
-				'selector' => '{{WRAPPER}} .razzi-products-masonry .razzi-posts__found-inner',
+				'selector' => '{{WRAPPER}} .dimas-products-masonry .dimas-posts__found-inner',
 			]
 		);
 
 		$this->add_control(
 			'found_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-masonry .razzi-posts__found-inner' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-masonry .dimas-posts__found-inner' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -816,11 +816,11 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'found_bg_color',
 			[
-				'label'     => esc_html__( 'Background Line', 'razzi' ),
+				'label'     => esc_html__( 'Background Line', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-masonry .razzi-posts__found-inner' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-masonry .dimas-posts__found-inner' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -828,11 +828,11 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'found_active_bg_color',
 			[
-				'label'     => esc_html__( 'Background Line Active', 'razzi' ),
+				'label'     => esc_html__( 'Background Line Active', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-masonry .razzi-posts__found-inner .count-bar' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-masonry .dimas-posts__found-inner .count-bar' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -840,7 +840,7 @@ class Products_Masonry extends Widget_Base {
 		$this->add_control(
 			'button_divider',
 			[
-				'label' => __( 'Button', 'razzi' ),
+				'label' => __( 'Button', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -849,7 +849,7 @@ class Products_Masonry extends Widget_Base {
 		$this->add_responsive_control(
 			'button_spacing',
 			[
-				'label'     => __( 'Spacing', 'razzi' ),
+				'label'     => __( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -858,7 +858,7 @@ class Products_Masonry extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-masonry .woocommerce-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-masonry .woocommerce-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -867,39 +867,39 @@ class Products_Masonry extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'button_text',
-				'selector' => '{{WRAPPER}} .razzi-products-masonry .woocommerce-pagination ul .btn-load-more a',
+				'selector' => '{{WRAPPER}} .dimas-products-masonry .woocommerce-pagination ul .btn-load-more a',
 			]
 		);
 		$this->add_control(
 			'button_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-masonry .woocommerce-pagination ul .btn-load-more a' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-masonry .woocommerce-pagination ul .btn-load-more a' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
 			'button_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'razzi' ),
+				'label'     => esc_html__( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-masonry .woocommerce-pagination ul .btn-load-more a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-masonry .woocommerce-pagination ul .btn-load-more a' => 'color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
 			'button_border_color',
 			[
-				'label'     => esc_html__( 'Border Color', 'razzi' ),
+				'label'     => esc_html__( 'Border Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-masonry .woocommerce-pagination ul .btn-load-more a' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-masonry .woocommerce-pagination ul .btn-load-more a' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -916,7 +916,7 @@ class Products_Masonry extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-products-masonry',
+			'dimas-products-masonry',
 			$settings['show_category'] != '' ? 'show-category' : '',
 			$settings['show_rating'] != '' ? 'show-rating' : '',
 			$settings['show_quickview'] != '' ? 'show-quickview' : '',
@@ -928,7 +928,7 @@ class Products_Masonry extends Widget_Base {
 
 		$this->add_render_attribute( 'wrapper', [
 			'class' 			=> $classes,
-			'data-nonce' 		=> wp_create_nonce( 'razzi_get_products' )
+			'data-nonce' 		=> wp_create_nonce( 'dimas_get_products' )
 		] );
 
 		$limit = 16;
@@ -997,7 +997,7 @@ class Products_Masonry extends Widget_Base {
 			}
 		}
 
-		echo '<ul class="products product-loop-layout-7 product-loop-center shortcode-element layout-masonry razzi-products-masonry__content '. esc_attr( $class_mobile ) .'">';
+		echo '<ul class="products product-loop-layout-7 product-loop-center shortcode-element layout-masonry dimas-products-masonry__content '. esc_attr( $class_mobile ) .'">';
 
 		$i  = 0;
 
@@ -1052,20 +1052,20 @@ class Products_Masonry extends Widget_Base {
 		$banner_html .= '<div class="banner-content">';
 
 		if ( $banner['sub_title'] ) {
-			$banner_html .= '<span class="razzi-banner__sub-title">' . $banner['sub_title'] . '</span>';
+			$banner_html .= '<span class="dimas-banner__sub-title">' . $banner['sub_title'] . '</span>';
 		}
 
 		if ( $banner['title'] ) {
-			$banner_html .= '<span class="razzi-banner__title">' . $banner['title'] . '</span>';
+			$banner_html .= '<span class="dimas-banner__title">' . $banner['title'] . '</span>';
 		}
 
 		if ( $banner['description'] ) {
-			$banner_html .= '<span class="razzi-banner__description">' . $banner['description'] . '</span>';
+			$banner_html .= '<span class="dimas-banner__description">' . $banner['description'] . '</span>';
 		}
 
 		if ( $banner['button_enable'] == 'yes' && $banner['button_text'] ) {
 			$button_text = $banner['button_text'] . \Dimas\Addons\Helper::get_svg('arrow-right');
-			$banner_html .= sprintf( '<span class="razzi-banner__button">%s</span>', Helper::control_url( $banner['_id'], $banner['button_link'], $button_text, [ 'class' => 'razzi-button button-normal' ] ) );
+			$banner_html .= sprintf( '<span class="dimas-banner__button">%s</span>', Helper::control_url( $banner['_id'], $banner['button_link'], $button_text, [ 'class' => 'dimas-button button-normal' ] ) );
 		}
 
 		$banner_html .= '</div>';
@@ -1076,7 +1076,7 @@ class Products_Masonry extends Widget_Base {
 			$banner_html .= '</div>';
 		}
 
-		echo '<li class="product has-banner"><div class="razzi-banner__masonry elementor-repeater-item-' . $banner['_id'] .'">' . $banner_html . '</div></li>';
+		echo '<li class="product has-banner"><div class="dimas-banner__masonry elementor-repeater-item-' . $banner['_id'] .'">' . $banner_html . '</div></li>';
 
 	}
 
@@ -1085,10 +1085,10 @@ class Products_Masonry extends Widget_Base {
 			return;
 		}
 
-		$product_text = $results['total'] > 1 ? esc_html( 'products', 'razzi' ) : esc_html( 'product', 'razzi' );
+		$product_text = $results['total'] > 1 ? esc_html( 'products', 'dimas' ) : esc_html( 'product', 'dimas' );
 
-		echo sprintf( '<div class="razzi-posts__found"><div class="razzi-posts__found-inner">%s<span class="current-post"> %s </span> %s <span class="found-post"> %s </span> %s <span class="count-bar"></span></div> </div>',
-			esc_html( 'Showing', 'razzi' ), count($results['ids']), esc_html( 'of', 'razzi' ), $results['total'], $product_text );
+		echo sprintf( '<div class="dimas-posts__found"><div class="dimas-posts__found-inner">%s<span class="current-post"> %s </span> %s <span class="found-post"> %s </span> %s <span class="count-bar"></span></div> </div>',
+			esc_html( 'Showing', 'dimas' ), count($results['ids']), esc_html( 'of', 'dimas' ), $results['total'], $product_text );
 
 	}
 
@@ -1100,8 +1100,8 @@ class Products_Masonry extends Widget_Base {
 
 		$next_html = sprintf(
 				'<span class="load-more-text">%s</span>
-					<div class="razzi-gooey-loading">
-						<div class="razzi-gooey">
+					<div class="dimas-gooey-loading">
+						<div class="dimas-gooey">
 							<div class="dots">
 								<span></span>
 								<span></span>

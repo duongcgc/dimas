@@ -119,7 +119,7 @@ class Walker extends \Walker_Nav_Menu {
 		$item_badges_bg_color = get_post_meta( $item->ID, 'tamm_menu_item_badges_bg_color', true );
 		$item_badges_color    = get_post_meta( $item->ID, 'tamm_menu_item_badges_color', true );
 		$item_content         = get_post_meta( $item->ID, 'tamm_menu_item_content', true );
-		$item_is_mega         = apply_filters( 'razzi_menu_item_mega', get_post_meta( $item->ID, 'tamm_menu_item_mega', true ), $item->ID );
+		$item_is_mega         = apply_filters( 'dimas_menu_item_mega', get_post_meta( $item->ID, 'tamm_menu_item_mega', true ), $item->ID );
 		$item_mega_width      = get_post_meta( $item->ID, 'tamm_menu_item_mega_width', true );
 		$item_mega_align      = get_post_meta( $item->ID, 'tamm_menu_item_mega_align', true );
 		$item_width           = get_post_meta( $item->ID, 'tamm_menu_item_width', true );
@@ -144,7 +144,7 @@ class Walker extends \Walker_Nav_Menu {
 		$item_icon_html = '';
 		if ( $item_icon_type === 'svg' ) {
 			$item_icon_color = $item_icon_color ? 'style="color:' . $item_icon_color . '"' : '';
-			$item_icon_html  = ! empty( $item_icon_svg ) ? '<span ' . $item_icon_color . ' class="razzi-svg-icon">' . \Dimas\Icon::sanitize_svg( $item_icon_svg ) . '</span> ' : '';
+			$item_icon_html  = ! empty( $item_icon_svg ) ? '<span ' . $item_icon_color . ' class="dimas-svg-icon">' . \Dimas\Icon::sanitize_svg( $item_icon_svg ) . '</span> ' : '';
 		} elseif ( ! empty( $item_icon_image ) ) {
 			$item_icon_html = '<img src="' . esc_attr( $item_icon_image ) . '">';
 		}
@@ -155,7 +155,7 @@ class Walker extends \Walker_Nav_Menu {
 			$item_badges_bg_color = $item_badges_bg_color ? '--rz-badges-bg-color:' . $item_badges_bg_color . '' : '';
 			$item_badges_color = $item_badges_color ? 'color:' . $item_badges_color . '' : '';
 			$item_badges_style = $item_badges_bg_color || $item_badges_color ? 'style="' . $item_badges_bg_color . ';' . $item_badges_color . '"' : '';
-			$item_badges_html = '<span ' . $item_badges_style . ' class="razzi-menu-badges">' . $item_badges_text . '</span>';
+			$item_badges_html = '<span ' . $item_badges_style . ' class="dimas-menu-badges">' . $item_badges_text . '</span>';
 		}
 
 		if ( $item_mega_background ) {

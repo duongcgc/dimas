@@ -81,18 +81,18 @@
 	font-size: 14px;
 }
 
-.woocommerce .deal-expire-countdown.razzi-countdown {
+.woocommerce .deal-expire-countdown.dimas-countdown {
 	justify-content: space-between;
 	overflow: inherit;
 }
 
-.woocommerce .deal-expire-countdown.razzi-countdown .timer {
+.woocommerce .deal-expire-countdown.dimas-countdown .timer {
 	display: flex;
 	flex-direction: column;
 	padding: 0;
 }
 
-.woocommerce .deal-expire-countdown.razzi-countdown .divider {
+.woocommerce .deal-expire-countdown.dimas-countdown .divider {
     font-size: 18px;
     width: auto;
 	padding-top: 20px;
@@ -100,7 +100,7 @@
     right: -13px;
 }
 
-.woocommerce .deal-expire-countdown.razzi-countdown .timer .text{
+.woocommerce .deal-expire-countdown.dimas-countdown .timer .text{
 	font-size: 13px;
 	font-weight: 400;
 	text-transform: capitalize;

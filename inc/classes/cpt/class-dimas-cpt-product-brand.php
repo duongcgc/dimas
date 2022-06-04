@@ -58,7 +58,7 @@ class Product_Brands {
 
 		add_action( 'admin_init', array( $this, 'settings_api_init' ) );
 		add_action( 'current_screen', array( $this, 'settings_save' ) );
-		$this->active_brand = apply_filters( 'razzi_register_brand', true );
+		$this->active_brand = apply_filters( 'dimas_register_brand', true );
 		if ( ! $this->active_brand ) {
 			return;
 		}
@@ -98,27 +98,27 @@ class Product_Brands {
 		}
 
 		$labels = array(
-			'name'                       => __( 'Product Brands', 'razzi' ),
-			'singular_name'              => __( 'Brand', 'razzi' ),
-			'menu_name'                  => __( 'Brands', 'razzi' ),
-			'all_items'                  => __( 'All Brands', 'razzi' ),
-			'edit_item'                  => __( 'Edit Brand', 'razzi' ),
-			'view_item'                  => __( 'View Brand', 'razzi' ),
-			'update_item'                => __( 'Update Brand', 'razzi' ),
-			'add_new_item'               => __( 'Add New Brand', 'razzi' ),
-			'new_item_name'              => __( 'New Brand Name', 'razzi' ),
-			'parent_item'                => __( 'Parent Brand', 'razzi' ),
-			'parent_item_colon'          => __( 'Parent Brand:', 'razzi' ),
-			'search_items'               => __( 'Search Brands', 'razzi' ),
-			'popular_items'              => __( 'Popular Brands', 'razzi' ),
-			'separate_items_with_commas' => __( 'Separate brands with commas', 'razzi' ),
-			'add_or_remove_items'        => __( 'Add or remove brands', 'razzi' ),
-			'choose_from_most_used'      => __( 'Choose from the most used brands', 'razzi' ),
-			'not_found'                  => __( 'No brands found', 'razzi' )
+			'name'                       => __( 'Product Brands', 'dimas' ),
+			'singular_name'              => __( 'Brand', 'dimas' ),
+			'menu_name'                  => __( 'Brands', 'dimas' ),
+			'all_items'                  => __( 'All Brands', 'dimas' ),
+			'edit_item'                  => __( 'Edit Brand', 'dimas' ),
+			'view_item'                  => __( 'View Brand', 'dimas' ),
+			'update_item'                => __( 'Update Brand', 'dimas' ),
+			'add_new_item'               => __( 'Add New Brand', 'dimas' ),
+			'new_item_name'              => __( 'New Brand Name', 'dimas' ),
+			'parent_item'                => __( 'Parent Brand', 'dimas' ),
+			'parent_item_colon'          => __( 'Parent Brand:', 'dimas' ),
+			'search_items'               => __( 'Search Brands', 'dimas' ),
+			'popular_items'              => __( 'Popular Brands', 'dimas' ),
+			'separate_items_with_commas' => __( 'Separate brands with commas', 'dimas' ),
+			'add_or_remove_items'        => __( 'Add or remove brands', 'dimas' ),
+			'choose_from_most_used'      => __( 'Choose from the most used brands', 'dimas' ),
+			'not_found'                  => __( 'No brands found', 'dimas' )
 		);
 
 		$permalinks         = get_option( 'product_brand_permalinks' );
-		$product_brand_base = empty( $permalinks['product_brand_base'] ) ? _x( 'product-brand', 'slug', 'razzi' ) : $permalinks['product_brand_base'];
+		$product_brand_base = empty( $permalinks['product_brand_base'] ) ? _x( 'product-brand', 'slug', 'dimas' ) : $permalinks['product_brand_base'];
 
 		$args = array(
 			'hierarchical'          => true,
@@ -176,18 +176,18 @@ class Product_Brands {
 	 */
 	public function settings_api_init() {
 		add_settings_section(
-			'razzi_brand_section',
-			'<span id="brand-options">' . esc_html__( 'Product brand', 'razzi' ) . '</span>',
+			'dimas_brand_section',
+			'<span id="brand-options">' . esc_html__( 'Product brand', 'dimas' ) . '</span>',
 			array( $this, 'writing_section_html' ),
 			'writing'
 		);
 
 		add_settings_field(
 			$this->option,
-			'<span class="brand-options">' . esc_html__( 'Product brand', 'razzi' ) . '</span>',
+			'<span class="brand-options">' . esc_html__( 'Product brand', 'dimas' ) . '</span>',
 			array( $this, 'disable_field_html' ),
 			'writing',
-			'razzi_brand_section'
+			'dimas_brand_section'
 		);
 		register_setting(
 			'writing',
@@ -197,7 +197,7 @@ class Product_Brands {
 
 		add_settings_field(
 			'product_brand_slug',
-			'<label for="product_brand_slug">' . esc_html__( 'Product brand base', 'razzi' ) . '</label>',
+			'<label for="product_brand_slug">' . esc_html__( 'Product brand base', 'dimas' ) . '</label>',
 			array( $this, 'product_brand_slug_input' ),
 			'permalink',
 			'optional'
@@ -223,7 +223,7 @@ class Product_Brands {
 		?>
         <input name="product_brand_slug" type="text" class="regular-text code"
                value="<?php echo esc_attr( $brand_base ); ?>"
-               placeholder="<?php echo esc_attr_x( 'product-brand', 'slug', 'razzi' ) ?>"/>
+               placeholder="<?php echo esc_attr_x( 'product-brand', 'slug', 'dimas' ) ?>"/>
 		<?php
 	}
 
@@ -288,7 +288,7 @@ class Product_Brands {
 	public function add_category_fields() {
 		?>
         <div class="form-field" id="product-brand-thumb-box">
-            <label><?php esc_html_e( 'Thumbnail', 'razzi' ); ?></label>
+            <label><?php esc_html_e( 'Thumbnail', 'dimas' ); ?></label>
 
             <div id="product_brand_thumb" class="product-brand-thumb"
                  data-rel="<?php echo esc_url( $this->placeholder_img_src ); ?>">
@@ -296,9 +296,9 @@ class Product_Brands {
             <div class="product-brand-thumb-box">
                 <input type="hidden" id="product_brand_thumb_id" name="product_brand_thumb_id"/>
                 <button type="button"
-                        class="upload_image_button button"><?php esc_html_e( 'Upload/Add image', 'razzi' ); ?></button>
+                        class="upload_image_button button"><?php esc_html_e( 'Upload/Add image', 'dimas' ); ?></button>
                 <button type="button"
-                        class="remove_image_button button"><?php esc_html_e( 'Remove image', 'razzi' ); ?></button>
+                        class="remove_image_button button"><?php esc_html_e( 'Remove image', 'dimas' ); ?></button>
             </div>
             <div class="clear"></div>
         </div>
@@ -327,7 +327,7 @@ class Product_Brands {
 		}
 		?>
         <tr class="form-field product-brand-thumb" id="product-brand-thumb-box">
-            <th scope="row" valign="top"><label><?php esc_html_e( 'Thumbnail', 'razzi' ); ?></label></th>
+            <th scope="row" valign="top"><label><?php esc_html_e( 'Thumbnail', 'dimas' ); ?></label></th>
             <td>
                 <div id="product_brand_thumb" class="product-brand-thumb"
                      data-rel="<?php echo esc_url( $this->placeholder_img_src ); ?>">
@@ -337,9 +337,9 @@ class Product_Brands {
                     <input type="hidden" id="product_brand_thumb_id" name="product_brand_thumb_id"
                            value="<?php echo esc_attr( $thumbnail_id ); ?>"/>
                     <button type="button"
-                            class="upload_image_button button"><?php esc_html_e( 'Upload/Add image', 'razzi' ); ?></button>
+                            class="upload_image_button button"><?php esc_html_e( 'Upload/Add image', 'dimas' ); ?></button>
                     <button type="button"
-                            class="remove_image_button button"><?php esc_html_e( 'Remove image', 'razzi' ); ?></button>
+                            class="remove_image_button button"><?php esc_html_e( 'Remove image', 'dimas' ); ?></button>
                 </div>
                 <div class="clear"></div>
             </td>
@@ -381,7 +381,7 @@ class Product_Brands {
 			unset( $columns['cb'] );
 		}
 
-		$new_columns['thumb'] = esc_html__( 'Image', 'razzi' );
+		$new_columns['thumb'] = esc_html__( 'Image', 'dimas' );
 
 		return array_merge( $new_columns, $columns );
 	}
@@ -412,7 +412,7 @@ class Product_Brands {
 			// Ref: https://core.trac.wordpress.org/ticket/23605
 			$image = str_replace( ' ', '%20', $image );
 
-			$columns .= '<img src="' . esc_url( $image ) . '" alt="' . esc_attr__( 'Thumbnail', 'razzi' ) . '" class="wp-post-image" height="48" width="120" />';
+			$columns .= '<img src="' . esc_url( $image ) . '" alt="' . esc_attr__( 'Thumbnail', 'dimas' ) . '" class="wp-post-image" height="48" width="120" />';
 
 		}
 
@@ -429,7 +429,7 @@ class Product_Brands {
 	public function writing_section_html() {
 		?>
         <p>
-			<?php esc_html_e( 'Use these settings to disable custom types of content on your site', 'razzi' ); ?>
+			<?php esc_html_e( 'Use these settings to disable custom types of content on your site', 'dimas' ); ?>
         </p>
 		<?php
 	}
@@ -449,7 +449,7 @@ class Product_Brands {
             <input name="<?php echo esc_attr( $this->option ); ?>"
                    id="<?php echo esc_attr( $this->option ); ?>" <?php checked( get_option( $this->option ), true ); ?>
                    type="checkbox" value="1"/>
-			<?php esc_html_e( 'Disable Brand for this site.', 'razzi' ); ?>
+			<?php esc_html_e( 'Disable Brand for this site.', 'dimas' ); ?>
         </label>
 
 		<?php

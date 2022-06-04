@@ -22,7 +22,7 @@ class Popular_Keywords extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-popular-keywords';
+		return 'dimas-popular-keywords';
 	}
 
 	/**
@@ -31,7 +31,7 @@ class Popular_Keywords extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Popular Keywords', 'razzi' );
+		return esc_html__( 'Dimas - Popular Keywords', 'dimas' );
 	}
 
 	/**
@@ -49,7 +49,7 @@ class Popular_Keywords extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	/**
@@ -71,15 +71,15 @@ class Popular_Keywords extends Widget_Base {
 	protected function section_content() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Content', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Content', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'This is title', 'razzi' ),
+				'default'     => esc_html__( 'This is title', 'dimas' ),
 				'separator' => 'after',
 			]
 		);
@@ -89,18 +89,18 @@ class Popular_Keywords extends Widget_Base {
 		$repeater->add_control(
 			'button_text',
 			[
-				'label'       => esc_html__( 'Button Text', 'razzi' ),
+				'label'       => esc_html__( 'Button Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Button Text', 'razzi' ),
+				'default'     => esc_html__( 'Button Text', 'dimas' ),
 			]
 		);
 
 		$repeater->add_control(
 			'link', [
-				'label'         => esc_html__( 'Button Link', 'razzi' ),
+				'label'         => esc_html__( 'Button Link', 'dimas' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => esc_html__( 'https://your-link.com', 'razzi' ),
-				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'razzi' ),
+				'placeholder'   => esc_html__( 'https://your-link.com', 'dimas' ),
+				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'dimas' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '#',
@@ -113,22 +113,22 @@ class Popular_Keywords extends Widget_Base {
 		$this->add_control(
 			'elements',
 			[
-				'label' 		=> esc_html__( 'Keywords', 'razzi' ),
+				'label' 		=> esc_html__( 'Keywords', 'dimas' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'default'       => [
 					[
-						'button_text' => esc_html__( 'Button Text 1', 'razzi' ),
+						'button_text' => esc_html__( 'Button Text 1', 'dimas' ),
 					],[
-						'button_text' => esc_html__( 'Button Text 2', 'razzi' ),
+						'button_text' => esc_html__( 'Button Text 2', 'dimas' ),
 					],[
-						'button_text' => esc_html__( 'Button Text 3', 'razzi' ),
+						'button_text' => esc_html__( 'Button Text 3', 'dimas' ),
 					],[
-						'button_text' => esc_html__( 'Button Text 4', 'razzi' ),
+						'button_text' => esc_html__( 'Button Text 4', 'dimas' ),
 					],[
-						'button_text' => esc_html__( 'Button Text 5', 'razzi' ),
+						'button_text' => esc_html__( 'Button Text 5', 'dimas' ),
 					],[
-						'button_text' => esc_html__( 'Button Text 6', 'razzi' ),
+						'button_text' => esc_html__( 'Button Text 6', 'dimas' ),
 					],
 				],
 				'title_field'   => '{{{ button_text }}}',
@@ -148,7 +148,7 @@ class Popular_Keywords extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -156,7 +156,7 @@ class Popular_Keywords extends Widget_Base {
 		$this->add_control(
 			'background_heading',
 			[
-				'label' => esc_html__( 'Background', 'razzi' ),
+				'label' => esc_html__( 'Background', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 			]
 		);
@@ -165,9 +165,9 @@ class Popular_Keywords extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'banners_background',
-				'label'    => __( 'Background', 'razzi' ),
+				'label'    => __( 'Background', 'dimas' ),
 				'types'    => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .razzi-popular-keywords',
+				'selector' => '{{WRAPPER}} .dimas-popular-keywords',
 				'fields_options'  => [
 					'background' => [
 						'default' => 'classic',
@@ -182,11 +182,11 @@ class Popular_Keywords extends Widget_Base {
 		$this->add_control(
 			'content_width',
 			[
-				'label'   => esc_html__( 'Content Width', 'razzi' ),
+				'label'   => esc_html__( 'Content Width', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'box'   => esc_html__( 'Box', 'razzi' ),
-					'full' 	 => esc_html__( 'Full Width', 'razzi' ),
+					'box'   => esc_html__( 'Box', 'dimas' ),
+					'full' 	 => esc_html__( 'Full Width', 'dimas' ),
 				],
 				'default' => 'box',
 				'separator' => 'before',
@@ -197,26 +197,26 @@ class Popular_Keywords extends Widget_Base {
 		$this->add_responsive_control(
 			'text_align',
 			[
-				'label'       => esc_html__( 'Text Align', 'razzi' ),
+				'label'       => esc_html__( 'Text Align', 'dimas' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => [
 					'left'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'default'     => '',
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-popular-keywords' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} .dimas-popular-keywords' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
@@ -224,12 +224,12 @@ class Popular_Keywords extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-popular-keywords' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-popular-keywords' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -240,7 +240,7 @@ class Popular_Keywords extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_els_title_style',
 			[
-				'label' => __( 'Title', 'razzi' ),
+				'label' => __( 'Title', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -248,7 +248,7 @@ class Popular_Keywords extends Widget_Base {
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -257,7 +257,7 @@ class Popular_Keywords extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-popular-keywords .heading-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-popular-keywords .heading-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -266,18 +266,18 @@ class Popular_Keywords extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-popular-keywords .heading-title',
+				'selector' => '{{WRAPPER}} .dimas-popular-keywords .heading-title',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-popular-keywords .heading-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-popular-keywords .heading-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -287,7 +287,7 @@ class Popular_Keywords extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_els_links_style',
 			[
-				'label' => __( 'Links', 'razzi' ),
+				'label' => __( 'Links', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -295,7 +295,7 @@ class Popular_Keywords extends Widget_Base {
 		$this->add_responsive_control(
 			'link_min_width',
 			[
-				'label'     => esc_html__( 'Min Width', 'razzi' ),
+				'label'     => esc_html__( 'Min Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -304,7 +304,7 @@ class Popular_Keywords extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-popular-keywords .button-text' => 'min-width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-popular-keywords .button-text' => 'min-width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -312,12 +312,12 @@ class Popular_Keywords extends Widget_Base {
 		$this->add_responsive_control(
 			'links_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-popular-keywords .button-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-popular-keywords .button-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -325,12 +325,12 @@ class Popular_Keywords extends Widget_Base {
 		$this->add_responsive_control(
 			'links_gap',
 			[
-				'label'      => __( 'Gap', 'razzi' ),
+				'label'      => __( 'Gap', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-popular-keywords .razzi-popular-keywords__inner' => 'margin: -{{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-popular-keywords .button-link' => 'padding: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-popular-keywords .dimas-popular-keywords__inner' => 'margin: -{{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-popular-keywords .button-link' => 'padding: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -339,7 +339,7 @@ class Popular_Keywords extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'link_typography',
-				'selector' => '{{WRAPPER}} .razzi-popular-keywords .button-text',
+				'selector' => '{{WRAPPER}} .dimas-popular-keywords .button-text',
 			]
 		);
 
@@ -350,18 +350,18 @@ class Popular_Keywords extends Widget_Base {
 		$this->start_controls_tab(
 			'normal_links_style',
 			[
-				'label' => __( 'Normal', 'razzi' ),
+				'label' => __( 'Normal', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'link_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-popular-keywords .button-text' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-popular-keywords .button-text' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -369,11 +369,11 @@ class Popular_Keywords extends Widget_Base {
 		$this->add_control(
 			'link_border_color',
 			[
-				'label'     => __( 'Border Color', 'razzi' ),
+				'label'     => __( 'Border Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-popular-keywords .button-text' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-popular-keywords .button-text' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -381,11 +381,11 @@ class Popular_Keywords extends Widget_Base {
 		$this->add_control(
 			'link_bg_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-popular-keywords .button-text' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-popular-keywords .button-text' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -395,18 +395,18 @@ class Popular_Keywords extends Widget_Base {
 		$this->start_controls_tab(
 			'hover_links_style',
 			[
-				'label' => __( 'Hover', 'razzi' ),
+				'label' => __( 'Hover', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'hover_link_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-popular-keywords .button-text:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-popular-keywords .button-text:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -414,11 +414,11 @@ class Popular_Keywords extends Widget_Base {
 		$this->add_control(
 			'hover_link_border_color',
 			[
-				'label'     => __( 'Border Color', 'razzi' ),
+				'label'     => __( 'Border Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-popular-keywords .button-text:hover' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-popular-keywords .button-text:hover' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -426,11 +426,11 @@ class Popular_Keywords extends Widget_Base {
 		$this->add_control(
 			'hover_link_bg_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-popular-keywords .button-text:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-popular-keywords .button-text:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -452,7 +452,7 @@ class Popular_Keywords extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-popular-keywords',
+			'dimas-popular-keywords',
 		];
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );
@@ -467,7 +467,7 @@ class Popular_Keywords extends Widget_Base {
 			foreach ( $els as $index => $item ) {
 
 				$key_btn = 'btn_' . $index;
-				$button_text = $item['button_text'] ? sprintf('<span class="button-text razzi-button button-outline">%s</span>',$item['button_text']) : '';
+				$button_text = $item['button_text'] ? sprintf('<span class="button-text dimas-button button-outline">%s</span>',$item['button_text']) : '';
 
 				$button_text = $item['link']['url'] ? Helper::control_url( $key_btn, $item['link'], $button_text, [ 'class' => 'button-link' ] ) : sprintf( '<div class="button-link">%s</div>', $button_text );
 
@@ -482,7 +482,7 @@ class Popular_Keywords extends Widget_Base {
 			'<div %s>
 				<div class="%s">
 					%s
-					<div class="razzi-popular-keywords__inner"> %s</div>
+					<div class="dimas-popular-keywords__inner"> %s</div>
 				</div>
 			</div>',
 			$this->get_render_attribute_string( 'wrapper' ),

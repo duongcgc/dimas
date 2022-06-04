@@ -81,18 +81,18 @@ class Settings {
 	 */
 	public function settings_api_init() {
 		add_settings_section(
-			'razzi_product_filter_section',
-			'<span id="product-filter-options">' . esc_html__( 'Products Filter', 'razzi' ) . '</span>',
+			'dimas_product_filter_section',
+			'<span id="product-filter-options">' . esc_html__( 'Products Filter', 'dimas' ) . '</span>',
 			array( $this, 'writing_section_html' ),
 			'writing'
 		);
 
 		add_settings_field(
 			$this->option,
-			'<span class="product-filter-options">' . esc_html__( 'Products Filter', 'razzi' ) . '</span>',
+			'<span class="product-filter-options">' . esc_html__( 'Products Filter', 'dimas' ) . '</span>',
 			array( $this, 'disable_field_html' ),
 			'writing',
-			'razzi_product_filter_section'
+			'dimas_product_filter_section'
 		);
 		register_setting(
 			'writing',
@@ -111,7 +111,7 @@ class Settings {
 	public function writing_section_html() {
 		?>
         <p>
-			<?php esc_html_e( 'Use these settings to disable product filter of widget on catalog page', 'razzi' ); ?>
+			<?php esc_html_e( 'Use these settings to disable product filter of widget on catalog page', 'dimas' ); ?>
         </p>
 		<?php
 	}
@@ -131,7 +131,7 @@ class Settings {
             <input name="<?php echo esc_attr( $this->option ); ?>"
                    id="<?php echo esc_attr( $this->option ); ?>" <?php checked( get_option( $this->option ), true ); ?>
                    type="checkbox" value="1"/>
-			<?php esc_html_e( 'Disable Product Filter for this site.', 'razzi' ); ?>
+			<?php esc_html_e( 'Disable Product Filter for this site.', 'dimas' ); ?>
         </label>
 
 		<?php

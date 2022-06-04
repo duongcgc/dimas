@@ -23,7 +23,7 @@ class Banner extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-banner';
+		return 'dimas-banner';
 	}
 
 	/**
@@ -32,7 +32,7 @@ class Banner extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Banner', 'razzi' );
+		return esc_html__( 'Dimas - Banner', 'dimas' );
 	}
 
 	/**
@@ -50,14 +50,14 @@ class Banner extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-coundown',
-			'razzi-frontend',
-			'razzi-elementor'
+			'dimas-coundown',
+			'dimas-frontend',
+			'dimas-elementor'
 		];
 	}
 
@@ -76,13 +76,13 @@ class Banner extends Widget_Base {
 	protected function section_content() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Banner', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Banner', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'image',
 			[
-				'label'   => esc_html__( 'Image', 'razzi' ),
+				'label'   => esc_html__( 'Image', 'dimas' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => 'https://via.placeholder.com/1056x521/f1f1f1?text=Banner Image',
@@ -93,7 +93,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'due_date',
 			[
-				'label'   => esc_html__( 'CountDown', 'razzi' ),
+				'label'   => esc_html__( 'CountDown', 'dimas' ),
 				'type'    => Controls_Manager::DATE_TIME,
 				'default' => '',
 			]
@@ -102,7 +102,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'sub_title',
 			[
-				'label'   => esc_html__( 'Sub Title', 'razzi' ),
+				'label'   => esc_html__( 'Sub Title', 'dimas' ),
 				'type'    => Controls_Manager::TEXTAREA,
 				'default' => '',
 				'separator' => 'before',
@@ -112,16 +112,16 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label'   => esc_html__( 'Title', 'razzi' ),
+				'label'   => esc_html__( 'Title', 'dimas' ),
 				'type'    => Controls_Manager::TEXTAREA,
-				'default' => esc_html__( 'This is title', 'razzi' ),
+				'default' => esc_html__( 'This is title', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'description',
 			[
-				'label'   => esc_html__( 'Description', 'razzi' ),
+				'label'   => esc_html__( 'Description', 'dimas' ),
 				'type'    => Controls_Manager::TEXTAREA,
 				'default' => '',
 			]
@@ -130,18 +130,18 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'button_text',
 			[
-				'label'   => esc_html__( 'Button text', 'razzi' ),
+				'label'   => esc_html__( 'Button text', 'dimas' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Button Text', 'razzi' ),
+				'default' => esc_html__( 'Button Text', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'link', [
-				'label'         => esc_html__( 'Link', 'razzi' ),
+				'label'         => esc_html__( 'Link', 'dimas' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => esc_html__( 'https://your-link.com', 'razzi' ),
-				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'razzi' ),
+				'placeholder'   => esc_html__( 'https://your-link.com', 'dimas' ),
+				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'dimas' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '#',
@@ -154,7 +154,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'button_text_2',
 			[
-				'label'   => esc_html__( 'Button text 2', 'razzi' ),
+				'label'   => esc_html__( 'Button text 2', 'dimas' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => '',
 			]
@@ -162,10 +162,10 @@ class Banner extends Widget_Base {
 
 		$this->add_control(
 			'link_2', [
-				'label'         => esc_html__( 'Link 2', 'razzi' ),
+				'label'         => esc_html__( 'Link 2', 'dimas' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => esc_html__( 'https://your-link.com', 'razzi' ),
-				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'razzi' ),
+				'placeholder'   => esc_html__( 'https://your-link.com', 'dimas' ),
+				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'dimas' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '#',
@@ -178,10 +178,10 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'show_default_icon',
 			[
-				'label'        => esc_html__( 'Show Button Icon', 'razzi' ),
+				'label'        => esc_html__( 'Show Button Icon', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_off'    => __( 'Off', 'razzi' ),
-				'label_on'     => __( 'On', 'razzi' ),
+				'label_off'    => __( 'Off', 'dimas' ),
+				'label_on'     => __( 'On', 'dimas' ),
 				'return_value' => 'yes',
 				'default'      => 'yes'
 			]
@@ -190,9 +190,9 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'text_box',
 			[
-				'label'       => esc_html__( 'Box Sale Before Text', 'razzi' ),
+				'label'       => esc_html__( 'Box Sale Before Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter your text', 'razzi' ),
+				'placeholder' => esc_html__( 'Enter your text', 'dimas' ),
 				'label_block' => true,
 				'default'     => '',
 				'separator' => 'before',
@@ -202,9 +202,9 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'price_box',
 			[
-				'label'       => esc_html__( 'Box Sale Text', 'razzi' ),
+				'label'       => esc_html__( 'Box Sale Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter your text', 'razzi' ),
+				'placeholder' => esc_html__( 'Enter your text', 'dimas' ),
 				'label_block' => true,
 				'default'     => '',
 			]
@@ -213,9 +213,9 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'unit_box',
 			[
-				'label'       => esc_html__( 'Box Sale Unit', 'razzi' ),
+				'label'       => esc_html__( 'Box Sale Unit', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter your text', 'razzi' ),
+				'placeholder' => esc_html__( 'Enter your text', 'dimas' ),
 				'label_block' => true,
 				'default'     => '',
 			]
@@ -224,11 +224,11 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'link_type',
 			[
-				'label'   => esc_html__( 'Link Type', 'razzi' ),
+				'label'   => esc_html__( 'Link Type', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'only' => esc_html__( 'Only button text', 'razzi' ),
-					'all'  => esc_html__( 'All banner', 'razzi' ),
+					'only' => esc_html__( 'Only button text', 'dimas' ),
+					'all'  => esc_html__( 'All banner', 'dimas' ),
 				],
 				'default' => 'all',
 				'toggle'  => false,
@@ -250,7 +250,7 @@ class Banner extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_banner',
 			[
-				'label' => esc_html__( 'Banner', 'razzi' ),
+				'label' => esc_html__( 'Banner', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -258,7 +258,7 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'height',
 			[
-				'label'     => esc_html__( 'Height', 'razzi' ),
+				'label'     => esc_html__( 'Height', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [],
 				'range'     => [
@@ -268,7 +268,7 @@ class Banner extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-banner-content' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -276,12 +276,12 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'banner_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-banner-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-banner-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -289,25 +289,25 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'banner_horizontal_position',
 			[
-				'label'        => esc_html__( 'Horizontal Position', 'razzi' ),
+				'label'        => esc_html__( 'Horizontal Position', 'dimas' ),
 				'type'         => Controls_Manager::CHOOSE,
 				'label_block'  => false,
 				'default'      => 'left',
 				'options'      => [
 					'left'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-h-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-h-align-center',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-h-align-right',
 					],
 				],
-				'prefix_class' => 'razzi--h-position-',
+				'prefix_class' => 'dimas--h-position-',
 				'separator'    => 'before',
 			]
 		);
@@ -315,51 +315,51 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'banner_vertical_position',
 			[
-				'label'        => esc_html__( 'Vertical Position', 'razzi' ),
+				'label'        => esc_html__( 'Vertical Position', 'dimas' ),
 				'type'         => Controls_Manager::CHOOSE,
 				'label_block'  => false,
 				'default'      => 'middle',
 				'options'      => [
 					'top'    => [
-						'title' => esc_html__( 'Top', 'razzi' ),
+						'title' => esc_html__( 'Top', 'dimas' ),
 						'icon'  => 'eicon-v-align-top',
 					],
 					'middle' => [
-						'title' => esc_html__( 'Middle', 'razzi' ),
+						'title' => esc_html__( 'Middle', 'dimas' ),
 						'icon'  => 'eicon-v-align-middle',
 					],
 					'bottom' => [
-						'title' => esc_html__( 'Bottom', 'razzi' ),
+						'title' => esc_html__( 'Bottom', 'dimas' ),
 						'icon'  => 'eicon-v-align-bottom',
 					],
 				],
-				'prefix_class' => 'razzi--v-position-',
+				'prefix_class' => 'dimas--v-position-',
 			]
 		);
 
 		$this->add_control(
 			'banner_text_align',
 			[
-				'label'       => esc_html__( 'Text Align', 'razzi' ),
+				'label'       => esc_html__( 'Text Align', 'dimas' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => [
 					''       => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'default'     => '',
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-banner-content-inner' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} .dimas-banner-content-inner' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
@@ -367,24 +367,24 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'background_position',
 			[
-				'label'     => esc_html__( 'Background Position', 'razzi' ),
+				'label'     => esc_html__( 'Background Position', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''              => esc_html__( 'Default', 'razzi' ),
-					'left top'      => esc_html__( 'Left Top', 'razzi' ),
-					'left center'   => esc_html__( 'Left Center', 'razzi' ),
-					'left bottom'   => esc_html__( 'Left Bottom', 'razzi' ),
-					'right top'     => esc_html__( 'Right Top', 'razzi' ),
-					'right center'  => esc_html__( 'Right Center', 'razzi' ),
-					'right bottom'  => esc_html__( 'Right Bottom', 'razzi' ),
-					'center top'    => esc_html__( 'Center Top', 'razzi' ),
-					'center center' => esc_html__( 'Center Center', 'razzi' ),
-					'center bottom' => esc_html__( 'Center Bottom', 'razzi' ),
-					'initial' 		=> esc_html__( 'Custom', 'razzi' ),
+					''              => esc_html__( 'Default', 'dimas' ),
+					'left top'      => esc_html__( 'Left Top', 'dimas' ),
+					'left center'   => esc_html__( 'Left Center', 'dimas' ),
+					'left bottom'   => esc_html__( 'Left Bottom', 'dimas' ),
+					'right top'     => esc_html__( 'Right Top', 'dimas' ),
+					'right center'  => esc_html__( 'Right Center', 'dimas' ),
+					'right bottom'  => esc_html__( 'Right Bottom', 'dimas' ),
+					'center top'    => esc_html__( 'Center Top', 'dimas' ),
+					'center center' => esc_html__( 'Center Center', 'dimas' ),
+					'center bottom' => esc_html__( 'Center Bottom', 'dimas' ),
+					'initial' 		=> esc_html__( 'Custom', 'dimas' ),
 				],
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner__featured-image' => 'background-position: {{VALUE}};',
+					'{{WRAPPER}} .dimas-banner__featured-image' => 'background-position: {{VALUE}};',
 				],
 				'separator' => 'before',
 			]
@@ -393,13 +393,13 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'background_position_xy',
 			[
-				'label'              => esc_html__( 'Custom Background Position', 'razzi' ),
+				'label'              => esc_html__( 'Custom Background Position', 'dimas' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'allowed_dimensions' => [ 'top', 'left' ],
 				'size_units'         => [ 'px', '%' ],
 				'default'            => [ ],
 				'selectors'          => [
-					'{{WRAPPER}} .razzi-banner__featured-image' => 'background-position: {{LEFT}}{{UNIT}} {{TOP}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-banner__featured-image' => 'background-position: {{LEFT}}{{UNIT}} {{TOP}}{{UNIT}};',
 				],
 				'condition' => [
 					'background_position' => [ 'initial' ],
@@ -423,17 +423,17 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'background_repeat',
 			[
-				'label'     => esc_html__( 'Background Repeat', 'razzi' ),
+				'label'     => esc_html__( 'Background Repeat', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'no-repeat',
 				'options'   => [
-					'no-repeat' => esc_html__( 'No-repeat', 'razzi' ),
-					'repeat' 	=> esc_html__( 'Repeat', 'razzi' ),
-					'repeat-x'  => esc_html__( 'Repeat-x', 'razzi' ),
-					'repeat-y'  => esc_html__( 'Repeat-y', 'razzi' ),
+					'no-repeat' => esc_html__( 'No-repeat', 'dimas' ),
+					'repeat' 	=> esc_html__( 'Repeat', 'dimas' ),
+					'repeat-x'  => esc_html__( 'Repeat-x', 'dimas' ),
+					'repeat-y'  => esc_html__( 'Repeat-y', 'dimas' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner__featured-image' => 'background-repeat: {{VALUE}}',
+					'{{WRAPPER}} .dimas-banner__featured-image' => 'background-repeat: {{VALUE}}',
 				],
 			]
 		);
@@ -441,16 +441,16 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'background_size',
 			[
-				'label'     => esc_html__( 'Background Size', 'razzi' ),
+				'label'     => esc_html__( 'Background Size', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'cover',
 				'options'   => [
-					'cover'   => esc_html__( 'Cover', 'razzi' ),
-					'contain' => esc_html__( 'Contain', 'razzi' ),
-					'auto'    => esc_html__( 'Auto', 'razzi' ),
+					'cover'   => esc_html__( 'Cover', 'dimas' ),
+					'contain' => esc_html__( 'Contain', 'dimas' ),
+					'auto'    => esc_html__( 'Auto', 'dimas' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner__featured-image' => 'background-size: {{VALUE}}',
+					'{{WRAPPER}} .dimas-banner__featured-image' => 'background-size: {{VALUE}}',
 				],
 			]
 		);
@@ -458,10 +458,10 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'background_overlay',
 			[
-				'label'      => esc_html__( 'Background Overlay', 'razzi' ),
+				'label'      => esc_html__( 'Background Overlay', 'dimas' ),
 				'type'       => Controls_Manager::COLOR,
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-banner__featured-image::before' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-banner__featured-image::before' => 'background-color: {{VALUE}}',
 				]
 			]
 		);
@@ -474,7 +474,7 @@ class Banner extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -482,12 +482,12 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'content_spacing',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-banner-content-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-banner-content-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -495,11 +495,11 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'content_bg',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content-inner' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-banner-content-inner' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -508,7 +508,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'content_style_subtitle',
 			[
-				'label' => __( 'Subtitle', 'razzi' ),
+				'label' => __( 'Subtitle', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -516,7 +516,7 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'subtitle_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -525,7 +525,7 @@ class Banner extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content__sub-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-banner-content__sub-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -534,18 +534,18 @@ class Banner extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'subtitle_typography',
-				'selector' => '{{WRAPPER}} .razzi-banner-content__sub-title',
+				'selector' => '{{WRAPPER}} .dimas-banner-content__sub-title',
 			]
 		);
 
 		$this->add_control(
 			'subtitle_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content__sub-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-banner-content__sub-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -554,7 +554,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'content_style_title',
 			[
-				'label' => __( 'Title', 'razzi' ),
+				'label' => __( 'Title', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -562,7 +562,7 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -571,7 +571,7 @@ class Banner extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content__title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-banner-content__title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -580,18 +580,18 @@ class Banner extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-banner-content__title',
+				'selector' => '{{WRAPPER}} .dimas-banner-content__title',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content__title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-banner-content__title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -600,7 +600,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'content_style_des',
 			[
-				'label' => __( 'Description', 'razzi' ),
+				'label' => __( 'Description', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -608,7 +608,7 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -617,7 +617,7 @@ class Banner extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content__description' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-banner-content__description' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -626,18 +626,18 @@ class Banner extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'desc_typography',
-				'selector' => '{{WRAPPER}} .razzi-banner-content__description',
+				'selector' => '{{WRAPPER}} .dimas-banner-content__description',
 			]
 		);
 
 		$this->add_control(
 			'desc_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content__description' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-banner-content__description' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -646,7 +646,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'content_style_button',
 			[
-				'label' => __( 'Button', 'razzi' ),
+				'label' => __( 'Button', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -655,11 +655,11 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'button_style',
 			[
-				'label'      => esc_html__( 'Button Style', 'razzi' ),
+				'label'      => esc_html__( 'Button Style', 'dimas' ),
 				'type'       => Controls_Manager::SELECT,
 				'options'    => [
-					'style_1' => esc_html__( 'Style 1', 'razzi' ),
-					'style_2'  => esc_html__( 'Style 2', 'razzi' ),
+					'style_1' => esc_html__( 'Style 1', 'dimas' ),
+					'style_2'  => esc_html__( 'Style 2', 'dimas' ),
 				],
 				'default'    => 'style_1',
 			]
@@ -668,12 +668,12 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-banner-content__button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-banner-content__button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -681,7 +681,7 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -690,7 +690,7 @@ class Banner extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner__button-2' => 'margin-left: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-banner__button-2' => 'margin-left: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -699,7 +699,7 @@ class Banner extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'btn_typography',
-				'selector' => '{{WRAPPER}} .razzi-banner-content__button',
+				'selector' => '{{WRAPPER}} .dimas-banner-content__button',
 			]
 		);
 
@@ -707,8 +707,8 @@ class Banner extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'btn_border',
-				'label' => __( 'Border', 'razzi' ),
-				'selector' => '{{WRAPPER}} .razzi-banner-content__button.button-normal',
+				'label' => __( 'Border', 'dimas' ),
+				'selector' => '{{WRAPPER}} .dimas-banner-content__button.button-normal',
 				'conditions' => [
 					'terms' => [
 						[
@@ -723,11 +723,11 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'btn_bg_color',
 			[
-				'label'     => __( 'background Color', 'razzi' ),
+				'label'     => __( 'background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content__button' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-banner-content__button' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -735,11 +735,11 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'btn_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content__button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-banner-content__button' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -747,7 +747,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'content_style_button_hover',
 			[
-				'label' => __( 'Button Hover', 'razzi' ),
+				'label' => __( 'Button Hover', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 			]
 		);
@@ -755,11 +755,11 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'btn_bg_color_hover',
 			[
-				'label'     => __( 'background Color', 'razzi' ),
+				'label'     => __( 'background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content__button:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-banner-content__button:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -767,11 +767,11 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'btn_color_hover',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content__button:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-banner-content__button:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -779,7 +779,7 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'section_style_countdown',
 			[
-				'label' => __( 'CountDown', 'razzi' ),
+				'label' => __( 'CountDown', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -788,7 +788,7 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'countdown_spacing',
 			[
-				'label'     => esc_html__( 'Spacing Bottom', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Bottom', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -797,7 +797,7 @@ class Banner extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner .razzi-banner-content__countdown' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-banner .dimas-banner-content__countdown' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -805,12 +805,12 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'countdown_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner .timer .digits' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .razzi-banner .timer .divider' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-banner .timer .digits' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-banner .timer .divider' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -823,7 +823,7 @@ class Banner extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_sale',
 			[
-				'label' => __( 'Sale', 'razzi' ),
+				'label' => __( 'Sale', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -831,28 +831,28 @@ class Banner extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'label'    => esc_html__( 'Before Text', 'razzi' ),
+				'label'    => esc_html__( 'Before Text', 'dimas' ),
 				'name'     => 'regular_typography',
-				'selector' => '{{WRAPPER}} .razzi-banner-content__sale--text',
+				'selector' => '{{WRAPPER}} .dimas-banner-content__sale--text',
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
-				'label'    => esc_html__( 'Text', 'razzi' ),
+				'label'    => esc_html__( 'Text', 'dimas' ),
 				'name'     => 'sale_price_typography',
-				'selector' => '{{WRAPPER}} .razzi-banner-content__sale--number',
+				'selector' => '{{WRAPPER}} .dimas-banner-content__sale--number',
 			]
 		);
 
 		$this->add_control(
 			'sale_color',
 			[
-				'label'     => esc_html__( 'Text Color', 'razzi' ),
+				'label'     => esc_html__( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content__sale' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-banner-content__sale' => 'color: {{VALUE}}',
 				],
 				'separator' => 'before',
 			]
@@ -861,10 +861,10 @@ class Banner extends Widget_Base {
 		$this->add_control(
 			'sale_bg_color',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-content__sale' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .dimas-banner-content__sale' => 'background-color: {{VALUE}}',
 
 				],
 			]
@@ -873,7 +873,7 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'price_box_position_top',
 			[
-				'label'      => esc_html__( 'Spacing Top', 'razzi' ),
+				'label'      => esc_html__( 'Spacing Top', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -887,7 +887,7 @@ class Banner extends Widget_Base {
 					],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-banner-content__sale' => 'top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-banner-content__sale' => 'top: {{SIZE}}{{UNIT}}',
 				],
 				'separator'  => 'before',
 			]
@@ -896,7 +896,7 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'price_box_position_right',
 			[
-				'label'      => esc_html__( 'Spacing Right', 'razzi' ),
+				'label'      => esc_html__( 'Spacing Right', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'      => [
@@ -910,7 +910,7 @@ class Banner extends Widget_Base {
 					],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-banner-content__sale' => 'right: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-banner-content__sale' => 'right: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -918,7 +918,7 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'price_box_width',
 			[
-				'label'      => esc_html__( 'Width (px)', 'razzi' ),
+				'label'      => esc_html__( 'Width (px)', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -928,7 +928,7 @@ class Banner extends Widget_Base {
 					],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-banner-content__sale' => 'width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-banner-content__sale' => 'width: {{SIZE}}{{UNIT}}',
 				],
 				'separator'  => 'before',
 			]
@@ -937,7 +937,7 @@ class Banner extends Widget_Base {
 		$this->add_responsive_control(
 			'price_box_height',
 			[
-				'label'      => esc_html__( 'Height (px)', 'razzi' ),
+				'label'      => esc_html__( 'Height (px)', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range'      => [
@@ -947,7 +947,7 @@ class Banner extends Widget_Base {
 					],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-banner-content__sale' => 'height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-banner-content__sale' => 'height: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -964,12 +964,12 @@ class Banner extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-banner',
+			'dimas-banner',
 		];
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );
 
-		$link_icon = $settings['show_default_icon'] ? \Dimas\Addons\Helper::get_svg( 'arrow-right', 'razzi-icon' ) : '';
+		$link_icon = $settings['show_default_icon'] ? \Dimas\Addons\Helper::get_svg( 'arrow-right', 'dimas-icon' ) : '';
 
 		$button_text = $settings['button_text'] ? sprintf('%s%s',$settings['button_text'], $link_icon) : '';
 
@@ -978,9 +978,9 @@ class Banner extends Widget_Base {
 		$btn_full = '';
 		if ( $settings['link']['url'] ) :
 
-			$button_class = $settings['button_style'] == 'style_2' ? 'razzi-banner-content__button razzi-button--underlined' : 'razzi-banner-content__button razzi-button button-normal';
+			$button_class = $settings['button_style'] == 'style_2' ? 'dimas-banner-content__button dimas-button--underlined' : 'dimas-banner-content__button dimas-button button-normal';
 
-			$btn_full = $settings['link_type'] == 'all' ? Helper::control_url( 'btn_full', $settings['link'], '', [ 'class' => 'razzi-banner-content__button-link' ] ) : '';
+			$btn_full = $settings['link_type'] == 'all' ? Helper::control_url( 'btn_full', $settings['link'], '', [ 'class' => 'dimas-banner-content__button-link' ] ) : '';
 
 			$button_text = ! empty($button_text  ) ? Helper::control_url( 'btn', $settings['link'], $button_text, [ 'class' => $button_class ] ) : '';
 		endif;
@@ -988,9 +988,9 @@ class Banner extends Widget_Base {
 		//btn-2
 		if ( $settings['link_2']['url'] ) :
 
-			$button_class = $settings['button_style'] == 'style_2' ? 'razzi-banner-content__button razzi-banner__button-2 razzi-button--underlined' : 'razzi-banner-content__button razzi-banner__button-2 razzi-button button-normal';
+			$button_class = $settings['button_style'] == 'style_2' ? 'dimas-banner-content__button dimas-banner__button-2 dimas-button--underlined' : 'dimas-banner-content__button dimas-banner__button-2 dimas-button button-normal';
 
-			$btn_full = $settings['link_type'] == 'all' ? Helper::control_url( 'btn_full', $settings['link_2'], '', [ 'class' => 'razzi-banner-content__button-link' ] ) : '';
+			$btn_full = $settings['link_type'] == 'all' ? Helper::control_url( 'btn_full', $settings['link_2'], '', [ 'class' => 'dimas-banner-content__button-link' ] ) : '';
 
 			$button_text_2 = ! empty($button_text_2  ) ? Helper::control_url( 'btn', $settings['link_2'], $button_text_2, [ 'class' => $button_class ] ) : '';
 		endif;
@@ -1004,7 +1004,7 @@ class Banner extends Widget_Base {
 				$second = $second_discount - $second_current;
 			}
 
-			$second = apply_filters( 'razzi_countdown_shortcode_second', $second );
+			$second = apply_filters( 'dimas_countdown_shortcode_second', $second );
 		}
 
 		$dataText = \Dimas\Addons\Helper::get_countdown_texts();
@@ -1012,17 +1012,17 @@ class Banner extends Widget_Base {
 		$this->add_render_attribute( 'countdown', 'data-expire', [$second] );
 		$this->add_render_attribute( 'countdown', 'data-text', wp_json_encode( $dataText ) );
 
-		$countdown = $settings['due_date'] ? sprintf( '<div class="razzi-banner-content__countdown razzi-countdown" %s></div>', $this->get_render_attribute_string( 'countdown' ) ) : '';
-		$sub_title = $settings['sub_title'] ? sprintf( '<h5 class="razzi-banner-content__sub-title">%s</h5>', $settings['sub_title'] ) : '';
-		$title = $settings['title'] ? sprintf( '<h4 class="razzi-banner-content__title">%s</h4>', $settings['title'] ) : '';
-		$description = $settings['description'] ? sprintf( '<div class="razzi-banner-content__description">%s</div>', $settings['description'] ) : '';
+		$countdown = $settings['due_date'] ? sprintf( '<div class="dimas-banner-content__countdown dimas-countdown" %s></div>', $this->get_render_attribute_string( 'countdown' ) ) : '';
+		$sub_title = $settings['sub_title'] ? sprintf( '<h5 class="dimas-banner-content__sub-title">%s</h5>', $settings['sub_title'] ) : '';
+		$title = $settings['title'] ? sprintf( '<h4 class="dimas-banner-content__title">%s</h4>', $settings['title'] ) : '';
+		$description = $settings['description'] ? sprintf( '<div class="dimas-banner-content__description">%s</div>', $settings['description'] ) : '';
 
 		// Sale
-		$text_sale = $settings['text_box'] ? sprintf( '<div class="razzi-banner-content__sale--text">%s</div>', $settings['text_box'] ) : '';
-		$unit_sale = $settings['unit_box'] ? sprintf( '<span class="razzi-banner-content__sale--unit">%s</span>', $settings['unit_box'] ) : '';
-		$num_sale  = $settings['price_box'] ? sprintf( '<div class="razzi-banner-content__sale--number">%s%s</div>', $settings['price_box'], $unit_sale ) : '';
+		$text_sale = $settings['text_box'] ? sprintf( '<div class="dimas-banner-content__sale--text">%s</div>', $settings['text_box'] ) : '';
+		$unit_sale = $settings['unit_box'] ? sprintf( '<span class="dimas-banner-content__sale--unit">%s</span>', $settings['unit_box'] ) : '';
+		$num_sale  = $settings['price_box'] ? sprintf( '<div class="dimas-banner-content__sale--number">%s%s</div>', $settings['price_box'], $unit_sale ) : '';
 
-		$html_sale = $text_sale == '' && $num_sale == '' ? '' : sprintf( '<div class="razzi-banner-content__sale">%s %s</div>', $text_sale, $num_sale );
+		$html_sale = $text_sale == '' && $num_sale == '' ? '' : sprintf( '<div class="dimas-banner-content__sale">%s %s</div>', $text_sale, $num_sale );
 
 		$bg_image = $settings['image'];
 		$output = '';
@@ -1031,16 +1031,16 @@ class Banner extends Widget_Base {
 			if (function_exists('jetpack_photon_url')) {
 				$image_bg = jetpack_photon_url($image_bg);
 			}
-			$output .= sprintf('<div class="razzi-banner__featured-image" style="background-image: url(%s)"></div>', esc_url( $image_bg ));
+			$output .= sprintf('<div class="dimas-banner__featured-image" style="background-image: url(%s)"></div>', esc_url( $image_bg ));
 		}
 
-		$output .= '<div class="razzi-banner-content">';
-		$output .= '<div class="razzi-banner-content-inner">';
+		$output .= '<div class="dimas-banner-content">';
+		$output .= '<div class="dimas-banner-content-inner">';
 		$output .= $countdown;
 		$output .= $sub_title;
 		$output .= $title;
 		$output .= $description;
-		$output .= '<div class="razzi-banner-button-group">';
+		$output .= '<div class="dimas-banner-button-group">';
 		$output .= $button_text;
 		$output .= $button_text_2;
 		$output .= '</div>';

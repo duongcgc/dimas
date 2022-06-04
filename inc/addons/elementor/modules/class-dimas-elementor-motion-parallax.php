@@ -21,17 +21,17 @@ class Motion_Parallax extends Module {
 
 	public function enqueue_frontend_scripts() {
 		wp_enqueue_script( 'jarallax' );
-		wp_enqueue_script( 'razzi-elementor-parallax' );
+		wp_enqueue_script( 'dimas-elementor-parallax' );
 	}
 
 	public function register_controls( $element ) {
 		$element->add_control(
 			'background_motion_fx_motion_fx_scrolling',
 			array(
-				'label'              => __( 'Parallax Scrolling', 'razzi' ),
+				'label'              => __( 'Parallax Scrolling', 'dimas' ),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_off'          => __( 'Off', 'razzi' ),
-				'label_on'           => __( 'On', 'razzi' ),
+				'label_off'          => __( 'Off', 'dimas' ),
+				'label_on'           => __( 'On', 'dimas' ),
 				'render_type'        => 'ui',
 				'frontend_available' => true,
 				'separator'          => 'before',

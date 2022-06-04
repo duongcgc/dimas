@@ -76,15 +76,15 @@ class Settings {
 		?>
 
         <p class="form-field _deal_quantity_field">
-            <label for="_sale_quantity"><?php esc_html_e( 'Sale quantity', 'razzi' ) ?></label>
-			<?php echo wc_help_tip( __( 'Set this quantity will make the product to be a deal. The sale will end when this quantity is sold out.', 'razzi' ) ); ?>
+            <label for="_sale_quantity"><?php esc_html_e( 'Sale quantity', 'dimas' ) ?></label>
+			<?php echo wc_help_tip( __( 'Set this quantity will make the product to be a deal. The sale will end when this quantity is sold out.', 'dimas' ) ); ?>
             <input type="number" min="<?php echo $min; ?>" class="short" name="_deal_quantity" id="_deal_quantity"
                    value="<?php echo esc_attr( $quantity ) ?>">
         </p>
 
         <p class="form-field _deal_sales_counts_field">
-            <label for="_sale_quantity"><?php esc_html_e( 'Sold Items', 'razzi' ) ?></label>
-			<?php echo wc_help_tip( __( 'Set this sold items should be less than the sale quantity.', 'razzi' ) ); ?>
+            <label for="_sale_quantity"><?php esc_html_e( 'Sold Items', 'dimas' ) ?></label>
+			<?php echo wc_help_tip( __( 'Set this sold items should be less than the sale quantity.', 'dimas' ) ); ?>
             <input type="number" class="short" name="_deal_sales_counts"
                    id="_deal_sales_counts" value="<?php echo esc_attr( $sales_counts ) ?>">
         </p>
@@ -222,7 +222,7 @@ class Settings {
 	}
 
 	public function product_deals_section( $sections ) {
-		$sections['rz_product_deals'] = esc_html__( 'Product Deals', 'razzi' );
+		$sections['rz_product_deals'] = esc_html__( 'Product Deals', 'dimas' );
 
 		return $sections;
 	}
@@ -243,37 +243,37 @@ class Settings {
 
 			$settings[] = array(
 				'id'    => 'rz_product_deals_options',
-				'title' => esc_html__( 'Product Deals', 'razzi' ),
+				'title' => esc_html__( 'Product Deals', 'dimas' ),
 				'type'  => 'title',
 			);
 
 			$settings[] = array(
 				'id'      => 'rz_product_deals',
-				'title'   => esc_html__( 'Product Deals', 'razzi' ),
-				'desc'    => esc_html__( 'Enable Product Deals', 'razzi' ),
+				'title'   => esc_html__( 'Product Deals', 'dimas' ),
+				'desc'    => esc_html__( 'Enable Product Deals', 'dimas' ),
 				'type'    => 'checkbox',
 				'default' => 'yes',
 			);
 
 			$settings[] = array(
 				'id'      => 'rz_product_deals_expire_text',
-				'title'   => esc_html__( 'Expire Text', 'razzi' ),
+				'title'   => esc_html__( 'Expire Text', 'dimas' ),
 				'type'    => 'text',
-				'default' => __( 'Hurry up!<br> Sales ends soon!', 'razzi' ),
+				'default' => __( 'Hurry up!<br> Sales ends soon!', 'dimas' ),
 			);
 
 			$settings[] = array(
 				'id'      => 'rz_product_deals_sold_items_text',
-				'title'   => esc_html__( 'Sold Items Text', 'razzi' ),
+				'title'   => esc_html__( 'Sold Items Text', 'dimas' ),
 				'type'    => 'text',
-				'default' => esc_html__( 'Sold Items', 'razzi' ),
+				'default' => esc_html__( 'Sold Items', 'dimas' ),
 			);
 
 			$settings[] = array(
 				'id'      => 'rz_product_deals_sold_text',
-				'title'   => esc_html__( 'Sold Text', 'razzi' ),
+				'title'   => esc_html__( 'Sold Text', 'dimas' ),
 				'type'    => 'text',
-				'default' => esc_html__( 'Sold', 'razzi' ),
+				'default' => esc_html__( 'Sold', 'dimas' ),
 			);
 
 			$settings[] = array(

@@ -14,11 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="razzi-product-deal deal">
+<div class="dimas-product-deal deal">
 	<?php if ( $expire ) : ?>
         <div class="deal-expire-date">
             <div class="deal-expire-text"><?php echo wp_kses_post( $expire_text ) ?></div>
-            <div class="deal-expire-countdown razzi-countdown" data-expire="<?php echo esc_attr( $expire ) ?>" data-text='<?php echo wp_json_encode( $countdown_texts ); ?>'></div>
+            <div class="deal-expire-countdown dimas-countdown" data-expire="<?php echo esc_attr( $expire ) ?>" data-text='<?php echo wp_json_encode( $countdown_texts ); ?>'></div>
         </div>
 	<?php endif; ?>
 

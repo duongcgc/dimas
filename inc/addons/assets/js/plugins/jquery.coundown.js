@@ -40,9 +40,9 @@
 
     /* Init tabs */
     $(function () {
-        $('.razzi-countdown').rz_countdown();
+        $('.dimas-countdown').rz_countdown();
 
-        $(document.body).on('razzi_countdown', function (e, $el) {
+        $(document.body).on('dimas_countdown', function (e, $el) {
             $el.rz_countdown();
         });
     });

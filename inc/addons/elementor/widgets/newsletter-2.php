@@ -21,7 +21,7 @@ class Newsletter_2 extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-newsletter-2';
+		return 'dimas-newsletter-2';
 	}
 
 	/**
@@ -30,7 +30,7 @@ class Newsletter_2 extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Newsletter 2', 'razzi' );
+		return __( 'Dimas - Newsletter 2', 'dimas' );
 	}
 
 	/**
@@ -48,7 +48,7 @@ class Newsletter_2 extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	/**
@@ -69,15 +69,15 @@ class Newsletter_2 extends Widget_Base {
 	protected function section_content() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Content', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Content', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'This is title', 'razzi' ),
+				'default'     => esc_html__( 'This is title', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -85,9 +85,9 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'desc',
 			[
-				'label'       => esc_html__( 'Desc', 'razzi' ),
+				'label'       => esc_html__( 'Desc', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'This is desc', 'razzi' ),
+				'default'     => esc_html__( 'This is desc', 'dimas' ),
 				'label_block' => true,
 			]
 		);
@@ -95,7 +95,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'form',
 			[
-				'label'   => esc_html__( 'Mailchimp Form', 'razzi' ),
+				'label'   => esc_html__( 'Mailchimp Form', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => $this->get_contact_form(),
 			]
@@ -104,7 +104,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'background_heading',
 			[
-				'label' => esc_html__( 'Background', 'razzi' ),
+				'label' => esc_html__( 'Background', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -114,9 +114,9 @@ class Newsletter_2 extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'banners_background',
-				'label'    => __( 'Background', 'razzi' ),
+				'label'    => __( 'Background', 'dimas' ),
 				'types'    => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .razzi-newsletter-2',
+				'selector' => '{{WRAPPER}} .dimas-newsletter-2',
 				'fields_options'  => [
 					'background' => [
 						'default' => 'classic',
@@ -143,7 +143,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -151,11 +151,11 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label'      => __( 'Padding', 'razzi' ),
+				'label'      => __( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-newsletter-2' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-newsletter-2' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -168,7 +168,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->start_controls_section(
 			'section_heading_style',
 			[
-				'label' => __( 'Heading', 'razzi' ),
+				'label' => __( 'Heading', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -176,11 +176,11 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'heading_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-newsletter-2__heading' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-newsletter-2__heading' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -193,7 +193,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->start_controls_tab(
 			'content_headin_style_title',
 			[
-				'label' => __( 'Title', 'razzi' ),
+				'label' => __( 'Title', 'dimas' ),
 			]
 		);
 
@@ -201,18 +201,18 @@ class Newsletter_2 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'heading_title_typography',
-				'selector' => '{{WRAPPER}} .razzi-newsletter-2__heading .newsletter-title',
+				'selector' => '{{WRAPPER}} .dimas-newsletter-2__heading .newsletter-title',
 			]
 		);
 
 		$this->add_control(
 			'heading_title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-newsletter-2__heading .newsletter-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-newsletter-2__heading .newsletter-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -223,7 +223,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->start_controls_tab(
 			'heading_desc',
 			[
-				'label' => __( 'Desc', 'razzi' ),
+				'label' => __( 'Desc', 'dimas' ),
 			]
 		);
 
@@ -231,7 +231,7 @@ class Newsletter_2 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'desc_typography',
-				'selector' => '{{WRAPPER}} .razzi-newsletter-2__heading .newsletter-desc',
+				'selector' => '{{WRAPPER}} .dimas-newsletter-2__heading .newsletter-desc',
 			]
 		);
 
@@ -240,11 +240,11 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'desc_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-newsletter-2__heading .newsletter-desc' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-newsletter-2__heading .newsletter-desc' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -265,7 +265,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->start_controls_section(
 			'section_form_style',
 			[
-				'label' => __( 'Form', 'razzi' ),
+				'label' => __( 'Form', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -273,11 +273,11 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'form_width',
 			[
-				'label'      => __( 'Width', 'razzi' ),
+				'label'      => __( 'Width', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-newsletter-2 .mc4wp-form'      => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-newsletter-2 .mc4wp-form'      => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -285,25 +285,25 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'text_align',
 			[
-				'label'       => esc_html__( 'Align', 'razzi' ),
+				'label'       => esc_html__( 'Align', 'dimas' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => [
 					'left'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-newsletter-2' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} .dimas-newsletter-2' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
@@ -320,7 +320,7 @@ class Newsletter_2 extends Widget_Base {
 					'yes' => 'flex-direction: column;',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-newsletter-2 .mc4wp-form-fields' => '{{VALUE}};',
+					'{{WRAPPER}} .dimas-newsletter-2 .mc4wp-form-fields' => '{{VALUE}};',
 				],
 			]
 		);
@@ -328,10 +328,10 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'field_border_toggle',
 			[
-				'label'        => __( 'Border', 'razzi' ),
+				'label'        => __( 'Border', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -340,14 +340,14 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'field_border_style',
 			[
-				'label'     => esc_html__( 'Border Style', 'razzi' ),
+				'label'     => esc_html__( 'Border Style', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'dotted' => esc_html__( 'Dotted', 'razzi' ),
-					'dashed' => esc_html__( 'Dashed', 'razzi' ),
-					'solid'  => esc_html__( 'Solid', 'razzi' ),
-					'none'   => esc_html__( 'None', 'razzi' ),
-					''       => esc_html__( 'Default', 'razzi' ),
+					'dotted' => esc_html__( 'Dotted', 'dimas' ),
+					'dashed' => esc_html__( 'Dashed', 'dimas' ),
+					'solid'  => esc_html__( 'Solid', 'dimas' ),
+					'none'   => esc_html__( 'None', 'dimas' ),
+					''       => esc_html__( 'Default', 'dimas' ),
 				],
 				'default'   => '',
 				'toggle'    => false,
@@ -360,7 +360,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'field_border_color',
 			[
-				'label'     => __( 'Border Color', 'razzi' ),
+				'label'     => __( 'Border Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .mc4wp-form-fields' => 'border-color: {{VALUE}};',
@@ -372,7 +372,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'field_border_width',
 			[
-				'label'       => __( 'Border Width', 'razzi' ),
+				'label'       => __( 'Border Width', 'dimas' ),
 				'type'        => Controls_Manager::DIMENSIONS,
 				'size_units'  => [ 'px' ],
 				'selectors'   => [
@@ -384,7 +384,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'field_border_radius',
 			[
-				'label'      => __( 'Border Radius', 'razzi' ),
+				'label'      => __( 'Border Radius', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
@@ -407,7 +407,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->start_controls_section(
 			'section_field_style',
 			[
-				'label' => __( 'Field', 'razzi' ),
+				'label' => __( 'Field', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -415,7 +415,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'email_heading',
 			[
-				'label' => esc_html__( 'Email Field', 'razzi' ),
+				'label' => esc_html__( 'Email Field', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 			]
 		);
@@ -423,11 +423,11 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'field_margin',
 			[
-				'label'      => __( 'Margin', 'razzi' ),
+				'label'      => __( 'Margin', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-newsletter-2  .mc4wp-form-fields input[type=text], {{WRAPPER}} .razzi-newsletter-2  .mc4wp-form-fields input[type=email]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-newsletter-2  .mc4wp-form-fields input[type=text], {{WRAPPER}} .dimas-newsletter-2  .mc4wp-form-fields input[type=email]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -435,11 +435,11 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'field_padding',
 			[
-				'label'      => __( 'Padding', 'razzi' ),
+				'label'      => __( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-newsletter-2  .mc4wp-form-fields input[type=text], {{WRAPPER}} .razzi-newsletter-2  .mc4wp-form-fields input[type=email]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-newsletter-2  .mc4wp-form-fields input[type=text], {{WRAPPER}} .dimas-newsletter-2  .mc4wp-form-fields input[type=email]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -447,10 +447,10 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'field_text_color',
 			[
-				'label'     => __( 'Text Color', 'razzi' ),
+				'label'     => __( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-newsletter-2 .mc4wp-form-fields input[type="email"], {{WRAPPER}} .razzi-newsletter-2 .mc4wp-form-fields input[type="email"]::-webkit-input-placeholder' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-newsletter-2 .mc4wp-form-fields input[type="email"], {{WRAPPER}} .dimas-newsletter-2 .mc4wp-form-fields input[type="email"]::-webkit-input-placeholder' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -466,7 +466,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'field_background_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
@@ -479,7 +479,7 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'submit_heading',
 			[
-				'label' => esc_html__( 'Submit Field', 'razzi' ),
+				'label' => esc_html__( 'Submit Field', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -488,11 +488,11 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'field_submit_padding',
 			[
-				'label'      => __( 'Padding', 'razzi' ),
+				'label'      => __( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-newsletter-2  .mc4wp-form-fields input[type=submit]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-newsletter-2  .mc4wp-form-fields input[type=submit]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -500,10 +500,10 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'button_background_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-newsletter-2 .mc4wp-form-fields input[type=submit]' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-newsletter-2 .mc4wp-form-fields input[type=submit]' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -511,11 +511,11 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_control(
 			'button_text_color',
 			[
-				'label'     => __( 'Text Color', 'razzi' ),
+				'label'     => __( 'Text Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-newsletter-2 .mc4wp-form-fields input[type=submit]' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-newsletter-2 .mc4wp-form-fields input[type=submit]' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -524,7 +524,7 @@ class Newsletter_2 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'button_typography',
-				'selector' => '{{WRAPPER}} .razzi-newsletter-2 .mc4wp-form-fields input[type=submit]',
+				'selector' => '{{WRAPPER}} .dimas-newsletter-2 .mc4wp-form-fields input[type=submit]',
 			]
 		);
 
@@ -540,13 +540,13 @@ class Newsletter_2 extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-newsletter-2'
+			'dimas-newsletter-2'
 		];
 
 		// heading
 		$title = $settings['title'] ? sprintf('<h3 class="newsletter-title">%s</h3>',$settings['title']) : '';
 		$desc = $settings['desc'] ? sprintf('<div class="newsletter-desc">%s</div>',$settings['desc']) : '';
-		$heading_html = $desc == '' && $title == '' ? '' : sprintf('<div class="razzi-newsletter-2__heading">%s %s</div>',$title,$desc );
+		$heading_html = $desc == '' && $title == '' ? '' : sprintf('<div class="dimas-newsletter-2__heading">%s %s</div>',$title,$desc );
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );
 
@@ -566,7 +566,7 @@ class Newsletter_2 extends Widget_Base {
 	protected function get_contact_form() {
 		$mail_forms    = get_posts( 'post_type=mc4wp-form&posts_per_page=-1' );
 		$mail_form_ids = array(
-			'' => esc_html__( 'Select Form', 'razzi' ),
+			'' => esc_html__( 'Select Form', 'dimas' ),
 		);
 		foreach ( $mail_forms as $form ) {
 			$mail_form_ids[$form->ID] = $form->post_title;

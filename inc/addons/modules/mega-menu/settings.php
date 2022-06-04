@@ -135,10 +135,10 @@ class Settings {
 		$mega_data .= sprintf(' data-background=%s', json_encode( $item_mega_background ));
 		?>
 		<fieldset class="field-menu-settings hide-if-no-js description-wide">
-			<span class="field-move-visual-label" aria-hidden="true"><?php esc_html_e( 'Mega Menu', 'razzi' ) ?></span>
+			<span class="field-move-visual-label" aria-hidden="true"><?php esc_html_e( 'Mega Menu', 'dimas' ) ?></span>
 			<span class="hidden tamm-data" <?php echo $mega_data; ?> aria-hidden="true"><?php echo trim( $item_content ); ?></span>
 			<span class="hidden tamm-data-icons"><?php echo \Dimas\Icon::sanitize_svg( $item_icon_svg ); ?></span>
-			<button type="button" class="item-config-mega opensettings button-link hide-if-no-js"><?php esc_html_e( 'Open Settings', 'razzi' ) ?></button>
+			<button type="button" class="item-config-mega opensettings button-link hide-if-no-js"><?php esc_html_e( 'Open Settings', 'dimas' ) ?></button>
 		</fieldset>
 		<?php
 	}
@@ -153,18 +153,18 @@ class Settings {
 	 */
 	public function settings_api_init() {
 		add_settings_section(
-			'razzi_mega_menu_section',
-			'<span id="mega-menu-options">' . esc_html__( 'Mega Menu', 'razzi' ) . '</span>',
+			'dimas_mega_menu_section',
+			'<span id="mega-menu-options">' . esc_html__( 'Mega Menu', 'dimas' ) . '</span>',
 			array( $this, 'writing_section_html' ),
 			'writing'
 		);
 
 		add_settings_field(
 			$this->option,
-			'<span class="mega-menu-options">' . esc_html__( 'Mega Menu', 'razzi' ) . '</span>',
+			'<span class="mega-menu-options">' . esc_html__( 'Mega Menu', 'dimas' ) . '</span>',
 			array( $this, 'disable_field_html' ),
 			'writing',
-			'razzi_mega_menu_section'
+			'dimas_mega_menu_section'
 		);
 		register_setting(
 			'writing',
@@ -183,7 +183,7 @@ class Settings {
 	public function writing_section_html() {
 		?>
         <p>
-			<?php esc_html_e( 'Use these settings to disable mega menu of navigation on your site', 'razzi' ); ?>
+			<?php esc_html_e( 'Use these settings to disable mega menu of navigation on your site', 'dimas' ); ?>
         </p>
 		<?php
 	}
@@ -203,7 +203,7 @@ class Settings {
             <input name="<?php echo esc_attr( $this->option ); ?>"
                    id="<?php echo esc_attr( $this->option ); ?>" <?php checked( get_option( $this->option ), true ); ?>
                    type="checkbox" value="1"/>
-			<?php esc_html_e( 'Disable Mega Menu for this site.', 'razzi' ); ?>
+			<?php esc_html_e( 'Disable Mega Menu for this site.', 'dimas' ); ?>
         </label>
 
 		<?php

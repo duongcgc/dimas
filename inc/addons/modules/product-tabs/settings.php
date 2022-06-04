@@ -33,9 +33,9 @@ class Settings  {
 		return self::$instance;
 	}
 
-	const POST_TYPE     = 'razzi_product_tab';
-	const OPTION_NAME   = 'razzi_product_tab';
-	const TAXONOMY_TAB_TYPE     = 'razzi_product_tab_type';
+	const POST_TYPE     = 'dimas_product_tab';
+	const OPTION_NAME   = 'dimas_product_tab';
+	const TAXONOMY_TAB_TYPE     = 'dimas_product_tab_type';
 
 
 	/**
@@ -49,7 +49,7 @@ class Settings  {
 		add_filter( 'woocommerce_get_sections_products', array( $this, 'product_tabs_section' ), 30, 2 );
 		add_filter( 'woocommerce_get_settings_products', array( $this, 'product_tabs_settings' ), 30, 2 );
 
-		if ( get_option( 'razzi_product_tab' ) != 'yes' ) {
+		if ( get_option( 'dimas_product_tab' ) != 'yes' ) {
 			return;
 		}
 
@@ -65,7 +65,7 @@ class Settings  {
 		add_action( 'save_post', array( $this, 'save_post' ), 10, 2 );
 		add_action( 'wp_trash_post', array( $this, 'clear_product_tabs_cache' ) );
 		add_action( 'before_delete_post', array( $this, 'clear_product_tabs_cache' ) );
-		add_action( 'razzi_after_product_tab_ordering', array( $this, 'clear_product_tabs_cache' ) );
+		add_action( 'dimas_after_product_tab_ordering', array( $this, 'clear_product_tabs_cache' ) );
 
 		// Enqueue style and javascript
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
@@ -76,7 +76,7 @@ class Settings  {
 		// Add custom fields to edit custom box
 		add_action('quick_edit_custom_box', array( $this, 'edit_custom_box' ), 20, 2 );
 
-		add_action( 'wp_ajax_razzi_product_tab_ordering', array( $this, 'product_tab_ordering' ) );
+		add_action( 'wp_ajax_dimas_product_tab_ordering', array( $this, 'product_tab_ordering' ) );
 
 		add_action( 'pre_get_posts', array( $this, 'product_tab_column_orderby' ) );
 
@@ -92,7 +92,7 @@ class Settings  {
 	 * @return array
 	 */
 	public function product_tabs_section( $sections ) {
-		$sections['razzi_addons_product_tabs'] = esc_html__( 'Product Tabs', 'razzi' );
+		$sections['dimas_addons_product_tabs'] = esc_html__( 'Product Tabs', 'dimas' );
 
 		return $sections;
 	}
@@ -107,19 +107,19 @@ class Settings  {
 	 * @return array
 	 */
 	public function product_tabs_settings( $settings, $section ) {
-		if ( 'razzi_addons_product_tabs' != $section ) {
+		if ( 'dimas_addons_product_tabs' != $section ) {
 			return $settings;
 		}
 
 		$settings_product_tabs = array(
 			array(
-				'name' => esc_html__( 'Product Tabs', 'razzi' ),
+				'name' => esc_html__( 'Product Tabs', 'dimas' ),
 				'type' => 'title',
 				'id'   => self::OPTION_NAME . '_options',
 			),
 			array(
-				'name'    => esc_html__( 'Product Tabs', 'razzi' ),
-				'desc'    => esc_html__( 'Enable product tabs manager', 'razzi' ),
+				'name'    => esc_html__( 'Product Tabs', 'dimas' ),
+				'desc'    => esc_html__( 'Enable product tabs manager', 'dimas' ),
 				'id'      => self::OPTION_NAME,
 				'default' => 'no',
 				'type'    => 'checkbox',
@@ -146,10 +146,10 @@ class Settings  {
 	 */
 	public function edit_admin_columns( $columns ) {
 		$columns = array_merge( $columns, array(
-			'product_tab_disable' => esc_html__( 'Disabled', 'razzi' ),
-			'product_tab_type' => esc_html__( 'Type', 'razzi' ),
-			'product_tab_products' => esc_html__( 'Products', 'razzi' ),
-			'product_tab_categories' => esc_html__( 'Categories', 'razzi' ),
+			'product_tab_disable' => esc_html__( 'Disabled', 'dimas' ),
+			'product_tab_type' => esc_html__( 'Type', 'dimas' ),
+			'product_tab_products' => esc_html__( 'Products', 'dimas' ),
+			'product_tab_categories' => esc_html__( 'Categories', 'dimas' ),
 		) );
 
 		return $columns;
@@ -168,7 +168,7 @@ class Settings  {
 		switch ( $column ) {
 			case 'product_tab_disable':
 				$tab_disable = get_post_meta( $post_id, '_product_tab_disable', true);
-				echo $tab_disable == 'yes' ? esc_html__( 'Yes', 'razzi' ) : esc_html__( 'No', 'razzi' );
+				echo $tab_disable == 'yes' ? esc_html__( 'Yes', 'dimas' ) : esc_html__( 'No', 'dimas' );
 				echo sprintf('<input type="hidden" id="product_tab_disable_%s" value="%s">', esc_attr($post_id), esc_attr($tab_disable));
 				break;
 			case 'product_tab_type':
@@ -177,20 +177,20 @@ class Settings  {
 					$type_name = $types[0]->name;
 					switch( $type_name ) {
 						case 'global':
-							esc_html_e('Global', 'razzi') ;
+							esc_html_e('Global', 'dimas') ;
 							break;
 						case 'product':
-							esc_html_e('Product', 'razzi') ;
+							esc_html_e('Product', 'dimas') ;
 							break;
 						case 'custom':
-							esc_html_e('Custom', 'razzi') ;
+							esc_html_e('Custom', 'dimas') ;
 							break;
 						default:
-							esc_html_e('Default', 'razzi') ;
+							esc_html_e('Default', 'dimas') ;
 							break;
 					}
 				} else {
-					esc_html_e( 'No Type', 'razzi' );
+					esc_html_e( 'No Type', 'dimas' );
 				}
 
 				break;
@@ -205,7 +205,7 @@ class Settings  {
 						}
 					}
 				} else {
-					$links[] = esc_html__( 'No Product', 'razzi' );
+					$links[] = esc_html__( 'No Product', 'dimas' );
 				}
 
 				echo implode( ', ', $links );
@@ -219,7 +219,7 @@ class Settings  {
 
 					}
 				} else {
-					$links[] = esc_html__( 'No Category', 'razzi' );
+					$links[] = esc_html__( 'No Category', 'dimas' );
 				}
 
 				echo implode( ', ', $links );
@@ -255,7 +255,7 @@ class Settings  {
 	 * @param object $post
 	 */
 	public function meta_boxes( $post ) {
-		add_meta_box( 'razzi-product-tabs', esc_html__( 'Tabs Settings', 'razzi' ), array( $this, 'tabs_meta_box' ), self::POST_TYPE, 'advanced', 'high' );
+		add_meta_box( 'dimas-product-tabs', esc_html__( 'Tabs Settings', 'dimas' ), array( $this, 'tabs_meta_box' ), self::POST_TYPE, 'advanced', 'high' );
 	}
 
 	/**
@@ -268,26 +268,26 @@ class Settings  {
 	 */
 	public function tabs_meta_box( $post ) {
 		?>
-		<div id="razzi-product-tabs-settings" class="razzi-product-tabs-settings">
+		<div id="dimas-product-tabs-settings" class="dimas-product-tabs-settings">
 			<p class="form-field">
-				<label><?php esc_html_e('Tab Type', 'razzi'); ?></label>
-				<span class="razzi-product-tabs--type">
+				<label><?php esc_html_e('Tab Type', 'dimas'); ?></label>
+				<span class="dimas-product-tabs--type">
 					<?php
 					$terms = get_the_terms( $post->ID, self::TAXONOMY_TAB_TYPE );
 					$tab_type = ! is_wp_error( $terms ) && $terms ? $terms[0]->name : 'global';
 					?>
-					<input type="radio" id="razzi-product-tab-global" <?php echo $tab_type == 'global' ? 'checked' : ''; ?> class="razzi-product-tab--input" checked name="_product_tab_type" value="global">
-					<label for="razzi-product-tab-global"><?php esc_html_e('Global', 'razzi'); ?></label>
-					<input type="radio" id="razzi-product-tab-product" <?php echo $tab_type == 'product' ? 'checked' : ''; ?> class="razzi-product-tab--input" name="_product_tab_type" value="product">
-					<label for="razzi-product-tab-product"><?php esc_html_e('Product', 'razzi'); ?></label>
-					<input type="radio" id="razzi-product-tab-custom" <?php echo $tab_type == 'custom' ? 'checked' : ''; ?> class="razzi-product-tab--input" name="_product_tab_type" value="custom">
-					<label for="razzi-product-tab-custom"><?php esc_html_e('Custom', 'razzi'); ?></label>
+					<input type="radio" id="dimas-product-tab-global" <?php echo $tab_type == 'global' ? 'checked' : ''; ?> class="dimas-product-tab--input" checked name="_product_tab_type" value="global">
+					<label for="dimas-product-tab-global"><?php esc_html_e('Global', 'dimas'); ?></label>
+					<input type="radio" id="dimas-product-tab-product" <?php echo $tab_type == 'product' ? 'checked' : ''; ?> class="dimas-product-tab--input" name="_product_tab_type" value="product">
+					<label for="dimas-product-tab-product"><?php esc_html_e('Product', 'dimas'); ?></label>
+					<input type="radio" id="dimas-product-tab-custom" <?php echo $tab_type == 'custom' ? 'checked' : ''; ?> class="dimas-product-tab--input" name="_product_tab_type" value="custom">
+					<label for="dimas-product-tab-custom"><?php esc_html_e('Custom', 'dimas'); ?></label>
 				</span>
 
 			</p>
-			<p class="form-field razzi-product-tabs--product">
-				<label for="product-tab-id"><?php esc_html_e( 'Products', 'razzi' ); ?></label>
-				<select class="wc-product-search" multiple="multiple" style="width: 50%;" id="product-tab-id" name="_product_tab_product_ids[]" data-sortable="true" data-placeholder="<?php esc_attr_e( 'Search for a product&hellip;', 'razzi' ); ?>" data-action="woocommerce_json_search_products">
+			<p class="form-field dimas-product-tabs--product">
+				<label for="product-tab-id"><?php esc_html_e( 'Products', 'dimas' ); ?></label>
+				<select class="wc-product-search" multiple="multiple" style="width: 50%;" id="product-tab-id" name="_product_tab_product_ids[]" data-sortable="true" data-placeholder="<?php esc_attr_e( 'Search for a product&hellip;', 'dimas' ); ?>" data-action="woocommerce_json_search_products">
 					<?php
 					$product_ids = maybe_unserialize( get_post_meta( $post->ID, '_product_tab_product_ids', true ) );
 					if ( $product_ids ) {
@@ -301,9 +301,9 @@ class Settings  {
 					?>
 				</select>
 			</p>
-			<p class="form-field razzi-product-tabs--categories">
-				<label for="product_tab_categories"><?php esc_html_e( 'Categories', 'razzi' ); ?></label>
-				<select class="wc-category-search" multiple="multiple" style="width: 50%;" id="product_tab_categories" name="_product_tab_cat_slugs[]" data-sortable="true" data-placeholder="<?php esc_attr_e( 'Search for a category&hellip;', 'razzi' ); ?>" data-action="woocommerce_json_search_categories">
+			<p class="form-field dimas-product-tabs--categories">
+				<label for="product_tab_categories"><?php esc_html_e( 'Categories', 'dimas' ); ?></label>
+				<select class="wc-category-search" multiple="multiple" style="width: 50%;" id="product_tab_categories" name="_product_tab_cat_slugs[]" data-sortable="true" data-placeholder="<?php esc_attr_e( 'Search for a category&hellip;', 'dimas' ); ?>" data-action="woocommerce_json_search_categories">
 					<?php
 					$terms = get_the_terms( $post->ID, 'product_cat' );
 					if ( ! is_wp_error($terms) && $terms && is_array( $terms ) ) {
@@ -343,9 +343,9 @@ class Settings  {
 	 */
 	public function create_post_type() {
 		$posts = array(
-			'description' 				=>	esc_html__('Description', 'razzi'),
-			'additional_information' 	=>	esc_html__('Additional Information', 'razzi'),
-			'reviews' 					=>	esc_html__('Reviews', 'razzi'),
+			'description' 				=>	esc_html__('Description', 'dimas'),
+			'additional_information' 	=>	esc_html__('Additional Information', 'dimas'),
+			'reviews' 					=>	esc_html__('Reviews', 'dimas'),
 		);
 		$term = get_term_by('name', 'default', self::TAXONOMY_TAB_TYPE);
 		if( is_wp_error( $term ) || empty( $term ) ) {
@@ -442,7 +442,7 @@ class Settings  {
 	 * @return array
 	 */
 	public static function wc_screen_ids($screen_ids) {
-		$screen_ids[] = 'razzi_product_tab';
+		$screen_ids[] = 'dimas_product_tab';
 
 		return $screen_ids;
 	}
@@ -464,7 +464,7 @@ class Settings  {
 		<fieldset class="inline-edit-col-left">
 			<div class="inline-edit-col">
 				<label>
-					<span class="title"><?php esc_html_e('Disable', 'razzi'); ?></span>
+					<span class="title"><?php esc_html_e('Disable', 'dimas'); ?></span>
 					<span class="input-text-wrap"><input type="checkbox" name="_product_tab_disable" class="inline-edit-checkbox" value=""></span>
 				</label>
 			</div>
@@ -488,7 +488,7 @@ class Settings  {
 		$sorting_id  = absint( $_POST['id'] );
 		$previd      = absint( isset( $_POST['previd'] ) ? $_POST['previd'] : 0 );
 		$nextid      = absint( isset( $_POST['nextid'] ) ? $_POST['nextid'] : 0 );
-		$menu_orders = wp_list_pluck( $wpdb->get_results( "SELECT ID, menu_order FROM {$wpdb->posts} WHERE post_type = 'razzi_product_tab' ORDER BY menu_order DESC" ), 'menu_order', 'ID' );
+		$menu_orders = wp_list_pluck( $wpdb->get_results( "SELECT ID, menu_order FROM {$wpdb->posts} WHERE post_type = 'dimas_product_tab' ORDER BY menu_order DESC" ), 'menu_order', 'ID' );
 		$index       = count( $menu_orders ) + 1;
 
 		foreach ( $menu_orders as $id => $menu_order ) {
@@ -509,7 +509,7 @@ class Settings  {
 			 * $id The product ID
 			 * $index The new menu order
 			*/
-			do_action( 'razzi_after_single_product_tab_ordering', $id, $index );
+			do_action( 'dimas_after_single_product_tab_ordering', $id, $index );
 		}
 
 		if ( isset( $menu_orders[ $previd ] ) ) {
@@ -523,7 +523,7 @@ class Settings  {
 
 		$wpdb->update( $wpdb->posts, array( 'menu_order' => $menu_orders[ $sorting_id ] ), array( 'ID' => $sorting_id ) );
 
-		do_action( 'razzi_after_product_tab_ordering', $sorting_id, $menu_orders );
+		do_action( 'dimas_after_product_tab_ordering', $sorting_id, $menu_orders );
 		wp_send_json( $menu_orders );
 	}
 
@@ -548,11 +548,11 @@ class Settings  {
 	 */
 	function product_tab_redirect() {
 		global $pagenow;
-		if($pagenow == 'post.php' && isset($_GET['post']) && get_post_type( $_GET['post'] ) == 'razzi_product_tab'){
+		if($pagenow == 'post.php' && isset($_GET['post']) && get_post_type( $_GET['post'] ) == 'dimas_product_tab'){
 			$terms = get_the_terms( $_GET['post'], self::TAXONOMY_TAB_TYPE );
 			$tab_type = ! is_wp_error( $terms ) && $terms ? $terms[0]->name : '';
 			if( $tab_type == 'default' ) {
-				wp_redirect(admin_url('/edit.php?post_type=razzi_product_tab' ));
+				wp_redirect(admin_url('/edit.php?post_type=dimas_product_tab' ));
 				exit;
 			}
 
@@ -567,7 +567,7 @@ class Settings  {
 	 * @return void
 	 */
 	public function clear_product_tabs_cache() {
-		delete_transient( 'razzi_wc_product_tabs' );
+		delete_transient( 'dimas_wc_product_tabs' );
 	}
 
 	/**
@@ -581,8 +581,8 @@ class Settings  {
 		$screen = get_current_screen();
 
 		if ( in_array( $hook, array('edit.php', 'post-new.php', 'post.php' ) ) && self::POST_TYPE == $screen->post_type ) {
-			wp_enqueue_style( 'razzi-product-tabs', DIMAS_ADDONS_URL . 'modules/product-tabs/assets/product-tabs-admin.css' );
-			wp_enqueue_script( 'razzi-product-tabs', DIMAS_ADDONS_URL . 'modules/product-tabs/assets/product-tabs-admin.js', array( 'jquery', 'jquery-ui-sortable' ),'1.0', true );
+			wp_enqueue_style( 'dimas-product-tabs', DIMAS_ADDONS_URL . 'modules/product-tabs/assets/product-tabs-admin.css' );
+			wp_enqueue_script( 'dimas-product-tabs', DIMAS_ADDONS_URL . 'modules/product-tabs/assets/product-tabs-admin.js', array( 'jquery', 'jquery-ui-sortable' ),'1.0', true );
 
 		}
 

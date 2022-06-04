@@ -20,7 +20,7 @@ class Testimonials_Carousel extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-testimonials-carousel';
+		return 'dimas-testimonials-carousel';
 	}
 
 	/**
@@ -29,7 +29,7 @@ class Testimonials_Carousel extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Testimonials Carousel', 'razzi' );
+		return esc_html__( 'Dimas - Testimonials Carousel', 'dimas' );
 	}
 
 	/**
@@ -47,12 +47,12 @@ class Testimonials_Carousel extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-frontend'
+			'dimas-frontend'
 		];
 	}
 
@@ -80,7 +80,7 @@ class Testimonials_Carousel extends Widget_Base {
 	protected function content_settings_controls() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Content', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Content', 'dimas' ) ]
 		);
 
 		$repeater = new \Elementor\Repeater();
@@ -88,35 +88,35 @@ class Testimonials_Carousel extends Widget_Base {
 		$repeater->add_control(
 			'text',
 			[
-				'label'   => esc_html__( 'Text', 'razzi' ),
+				'label'   => esc_html__( 'Text', 'dimas' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'This is title', 'razzi' ),
+				'default' => esc_html__( 'This is title', 'dimas' ),
 			]
 		);
 
 		$repeater->add_control(
 			'desc',
 			[
-				'label'   => esc_html__( 'Description', 'razzi' ),
+				'label'   => esc_html__( 'Description', 'dimas' ),
 				'type'    => Controls_Manager::WYSIWYG,
-				'default' => esc_html__( 'This is desc', 'razzi' ),
+				'default' => esc_html__( 'This is desc', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'elements',
 			[
-				'label'         => esc_html__( 'Testimonials List', 'razzi' ),
+				'label'         => esc_html__( 'Testimonials List', 'dimas' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'default'       => [
 					[
-						'name' => esc_html__( 'This is the name', 'razzi' ),
-						'desc' => esc_html__( 'This is the description', 'razzi' ),
+						'name' => esc_html__( 'This is the name', 'dimas' ),
+						'desc' => esc_html__( 'This is the description', 'dimas' ),
 					],
 					[
-						'name' => esc_html__( 'This is the name', 'razzi' ),
-						'desc' => esc_html__( 'This is the description', 'razzi' ),
+						'name' => esc_html__( 'This is the name', 'dimas' ),
+						'desc' => esc_html__( 'This is the description', 'dimas' ),
 					],
 
 				],
@@ -132,12 +132,12 @@ class Testimonials_Carousel extends Widget_Base {
 		// Carousel Settings
 		$this->start_controls_section(
 			'section_carousel_settings',
-			[ 'label' => esc_html__( 'Carousel Settings', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Carousel Settings', 'dimas' ) ]
 		);
 		$this->add_responsive_control(
 			'slidesToShow',
 			[
-				'label'              => esc_html__( 'Slides to show', 'razzi' ),
+				'label'              => esc_html__( 'Slides to show', 'dimas' ),
 				'type'               => Controls_Manager::NUMBER,
 				'min'                => 1,
 				'max'                => 7,
@@ -150,7 +150,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'slidesToScroll',
 			[
-				'label'              => esc_html__( 'Slides to scroll', 'razzi' ),
+				'label'              => esc_html__( 'Slides to scroll', 'dimas' ),
 				'type'               => Controls_Manager::NUMBER,
 				'min'                => 1,
 				'max'                => 5,
@@ -163,13 +163,13 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'navigation',
 			[
-				'label'              => esc_html__( 'Navigation', 'razzi' ),
+				'label'              => esc_html__( 'Navigation', 'dimas' ),
 				'type'               => Controls_Manager::SELECT,
 				'options'            => [
-					'both'   => esc_html__( 'Arrows and Dots', 'razzi' ),
-					'arrows' => esc_html__( 'Arrows', 'razzi' ),
-					'dots'   => esc_html__( 'Dots', 'razzi' ),
-					'none'   => esc_html__( 'None', 'razzi' ),
+					'both'   => esc_html__( 'Arrows and Dots', 'dimas' ),
+					'arrows' => esc_html__( 'Arrows', 'dimas' ),
+					'dots'   => esc_html__( 'Dots', 'dimas' ),
+					'none'   => esc_html__( 'None', 'dimas' ),
 				],
 				'default'            => 'both',
 				'toggle'             => false,
@@ -180,10 +180,10 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_control(
 			'infinite',
 			[
-				'label'              => __( 'Infinite', 'razzi' ),
+				'label'              => __( 'Infinite', 'dimas' ),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_off'          => __( 'Off', 'razzi' ),
-				'label_on'           => __( 'On', 'razzi' ),
+				'label_off'          => __( 'Off', 'dimas' ),
+				'label_on'           => __( 'On', 'dimas' ),
 				'return_value'       => 'yes',
 				'default'            => '',
 				'frontend_available' => true,
@@ -193,10 +193,10 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			[
-				'label'              => __( 'Autoplay', 'razzi' ),
+				'label'              => __( 'Autoplay', 'dimas' ),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_off'          => __( 'Off', 'razzi' ),
-				'label_on'           => __( 'On', 'razzi' ),
+				'label_off'          => __( 'Off', 'dimas' ),
+				'label_on'           => __( 'On', 'dimas' ),
 				'return_value'       => 'yes',
 				'default'            => 'yes',
 				'frontend_available' => true,
@@ -206,7 +206,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_control(
 			'autoplay_speed',
 			[
-				'label'              => __( 'Autoplay Speed (in ms)', 'razzi' ),
+				'label'              => __( 'Autoplay Speed (in ms)', 'dimas' ),
 				'type'               => Controls_Manager::NUMBER,
 				'default'            => 1000,
 				'min'                => 100,
@@ -237,7 +237,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -245,25 +245,25 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'position',
 			[
-				'label'     => esc_html__( 'Align Text', 'razzi' ),
+				'label'     => esc_html__( 'Align Text', 'dimas' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => [
 					'left'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -271,11 +271,11 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'general_padding',
 			[
-				'label'      => __( 'Padding', 'razzi' ),
+				'label'      => __( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .box-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .box-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -283,11 +283,11 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_control(
 			'content_bk_color',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .box-item' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .box-item' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -307,7 +307,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->start_controls_tab(
 			'content_style_title',
 			[
-				'label' => __( 'Text', 'razzi' ),
+				'label' => __( 'Text', 'dimas' ),
 			]
 		);
 
@@ -315,18 +315,18 @@ class Testimonials_Carousel extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-testimonials-carousel__text',
+				'selector' => '{{WRAPPER}} .dimas-testimonials-carousel__text',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel__text' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel__text' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -337,14 +337,14 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->start_controls_tab(
 			'content_desc',
 			[
-				'label' => __( 'Description', 'razzi' ),
+				'label' => __( 'Description', 'dimas' ),
 			]
 		);
 
 		$this->add_responsive_control(
 			'desc_spacing',
 			[
-				'label'     => __( 'Spacing', 'razzi' ),
+				'label'     => __( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -354,7 +354,7 @@ class Testimonials_Carousel extends Widget_Base {
 				],
 				'default'   => [],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel__content' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel__content' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -363,7 +363,7 @@ class Testimonials_Carousel extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'note_typography',
-				'selector' => '{{WRAPPER}} .razzi-testimonials-carousel__content',
+				'selector' => '{{WRAPPER}} .dimas-testimonials-carousel__content',
 			]
 		);
 
@@ -371,11 +371,11 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_control(
 			'desc_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel__content' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel__content' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -392,7 +392,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->start_controls_section(
 			'section_carousel_style',
 			[
-				'label' => esc_html__( 'Carousel Settings', 'razzi' ),
+				'label' => esc_html__( 'Carousel Settings', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -400,7 +400,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_control(
 			'arrows_style_divider',
 			[
-				'label' => esc_html__( 'Arrows', 'razzi' ),
+				'label' => esc_html__( 'Arrows', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 			]
 		);
@@ -409,10 +409,10 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_control(
 			'arrows_style',
 			[
-				'label'        => __( 'Options', 'razzi' ),
+				'label'        => __( 'Options', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -422,7 +422,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -431,7 +431,7 @@ class Testimonials_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -439,7 +439,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_width',
 			[
-				'label'     => __( 'Width', 'razzi' ),
+				'label'     => __( 'Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -448,7 +448,7 @@ class Testimonials_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .rz-swiper-button' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .rz-swiper-button' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -456,7 +456,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_height',
 			[
-				'label'     => __( 'Height', 'razzi' ),
+				'label'     => __( 'Height', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -465,7 +465,7 @@ class Testimonials_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .rz-swiper-button' => 'height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .rz-swiper-button' => 'height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -473,7 +473,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_horizontal_position',
 			[
-				'label'      => esc_html__( 'Horizontal Position', 'razzi' ),
+				'label'      => esc_html__( 'Horizontal Position', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => [
 					'px' => [
@@ -483,8 +483,8 @@ class Testimonials_Carousel extends Widget_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .rz-swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-testimonials-carousel .rz-swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .rz-swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .rz-swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -492,7 +492,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'arrows_vertical_position',
 			[
-				'label'      => esc_html__( 'Vertical Position', 'razzi' ),
+				'label'      => esc_html__( 'Vertical Position', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'range'      => [
 					'px' => [
@@ -502,7 +502,7 @@ class Testimonials_Carousel extends Widget_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .rz-swiper-button' => 'top: {{SIZE}}{{UNIT}};transform:none;',
+					'{{WRAPPER}} .dimas-testimonials-carousel .rz-swiper-button' => 'top: {{SIZE}}{{UNIT}};transform:none;',
 				],
 			]
 		);
@@ -511,16 +511,16 @@ class Testimonials_Carousel extends Widget_Base {
 
 		$this->start_controls_tabs( 'sliders_normal_settings' );
 
-		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .rz-swiper-button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .rz-swiper-button' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -528,27 +528,27 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .rz-swiper-button' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .rz-swiper-button' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_hover_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .rz-swiper-button:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .rz-swiper-button:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -556,11 +556,11 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_hover_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -574,7 +574,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_control(
 			'dots_style_divider',
 			[
-				'label'     => esc_html__( 'Dots', 'razzi' ),
+				'label'     => esc_html__( 'Dots', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -583,10 +583,10 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_control(
 			'dots_style',
 			[
-				'label'        => __( 'Options', 'razzi' ),
+				'label'        => __( 'Options', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -596,7 +596,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_gap',
 			[
-				'label'     => __( 'Gap', 'razzi' ),
+				'label'     => __( 'Gap', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -605,7 +605,7 @@ class Testimonials_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .swiper-pagination-bullet' => 'margin: 0 {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-testimonials-carousel .swiper-pagination-bullet' => 'margin: 0 {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -613,7 +613,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -622,7 +622,7 @@ class Testimonials_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -630,7 +630,7 @@ class Testimonials_Carousel extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_dots_offset_ver',
 			[
-				'label'     => esc_html__( 'Spacing Top', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Top', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -639,7 +639,7 @@ class Testimonials_Carousel extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-testimonials-carousel .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -648,32 +648,32 @@ class Testimonials_Carousel extends Widget_Base {
 
 		$this->start_controls_tabs( 'sliders_dots_normal_settings' );
 
-		$this->start_controls_tab( 'sliders_dots_normal', [ 'label' => esc_html__( 'Normal', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_dots_normal', [ 'label' => esc_html__( 'Normal', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_dots_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'sliders_dots_active', [ 'label' => esc_html__( 'Active', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_dots_active', [ 'label' => esc_html__( 'Active', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_dots_ac_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-testimonials-carousel .swiper-pagination-bullet-active:before, {{WRAPPER}} .razzi-testimonials-carousel .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-testimonials-carousel .swiper-pagination-bullet-active:before, {{WRAPPER}} .dimas-testimonials-carousel .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -698,8 +698,8 @@ class Testimonials_Carousel extends Widget_Base {
 		$nav_mobile = empty( $settings['navigation_mobile'] ) ? $nav : $settings['navigation_mobile'];
 
 		$classes = [
-			'razzi-testimonials-carousel',
-			'razzi-swiper-carousel-elementor',
+			'dimas-testimonials-carousel',
+			'dimas-swiper-carousel-elementor',
 			'navigation-' . $nav,
 			'navigation-tablet-' . $nav_tablet,
 			'navigation-mobile-' . $nav_mobile,
@@ -722,10 +722,10 @@ class Testimonials_Carousel extends Widget_Base {
 
 				$output_content = [];
 
-				$output_content[] = '<div class="razzi-testimonials-carousel__content">';
+				$output_content[] = '<div class="dimas-testimonials-carousel__content">';
 				$output_content[] = $item["desc"];
 				$output_content[] = '</div>';
-				$output_content[] = $item["text"] ? '<div class="razzi-testimonials-carousel__text">' . $item["text"] . '</div>' : '';
+				$output_content[] = $item["text"] ? '<div class="dimas-testimonials-carousel__text">' . $item["text"] . '</div>' : '';
 
 
 				$output[] = sprintf( '<div class="box-item swiper-slide">%s</div>', implode( '', $output_content ) );
@@ -738,7 +738,7 @@ class Testimonials_Carousel extends Widget_Base {
 
 		echo sprintf(
 			'<div %s>
-				<div class="razzi-testimonials-carousel__wrapper swiper-container">
+				<div class="dimas-testimonials-carousel__wrapper swiper-container">
 					<div class="list-testimonials__inner swiper-wrapper" >%s</div>
 				</div>
 				%s

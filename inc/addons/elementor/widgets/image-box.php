@@ -24,7 +24,7 @@ class Image_Box extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-image-box';
+		return 'dimas-image-box';
 	}
 
 	/**
@@ -33,7 +33,7 @@ class Image_Box extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Image Box', 'razzi' );
+		return esc_html__( 'Dimas - Image Box', 'dimas' );
 	}
 
 	/**
@@ -51,7 +51,7 @@ class Image_Box extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	/**
@@ -73,13 +73,13 @@ class Image_Box extends Widget_Base {
 	protected function section_content() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Image Box', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Image Box', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'image',
 			[
-				'label'   => esc_html__( 'Image', 'razzi' ),
+				'label'   => esc_html__( 'Image', 'dimas' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => 'https://via.placeholder.com/270x210/f1f1f1?text=Image',
@@ -98,21 +98,21 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'image_position',
 			[
-				'label' => esc_html__( 'Image Position', 'razzi' ),
+				'label' => esc_html__( 'Image Position', 'dimas' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'top' 	=> esc_html__( 'Top', 'razzi' ),
-					'left' 	=> esc_html__( 'Left', 'razzi' ),
+					'top' 	=> esc_html__( 'Top', 'dimas' ),
+					'left' 	=> esc_html__( 'Left', 'dimas' ),
 				],
 				'default' => 'top',
-				'prefix_class' => 'razzi-image-box-position--',
+				'prefix_class' => 'dimas-image-box-position--',
 			]
 		);
 
 		$this->add_control(
 			'icon_heading',
 			[
-				'label' => __( 'Icon', 'razzi' ),
+				'label' => __( 'Icon', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -121,12 +121,12 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'icon_position',
 			[
-				'label' => esc_html__( 'Icon Position', 'razzi' ),
+				'label' => esc_html__( 'Icon Position', 'dimas' ),
 				'type' => Controls_Manager::SELECT,
 
 				'options' => [
-					'left' => esc_html__( 'Left', 'razzi' ),
-					'right' 	=> esc_html__( 'Right', 'razzi' ),
+					'left' => esc_html__( 'Left', 'dimas' ),
+					'right' 	=> esc_html__( 'Right', 'dimas' ),
 				],
 				'default' => 'left',
 				'conditions' => [
@@ -143,12 +143,12 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'icon_type',
 			[
-				'label' => esc_html__( 'Icon type', 'razzi' ),
+				'label' => esc_html__( 'Icon type', 'dimas' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
-					'image' => esc_html__( 'Image', 'razzi' ),
-					'icon' 	=> esc_html__( 'Icon', 'razzi' ),
-					'external' 	=> esc_html__( 'External', 'razzi' ),
+					'image' => esc_html__( 'Image', 'dimas' ),
+					'icon' 	=> esc_html__( 'Icon', 'dimas' ),
+					'external' 	=> esc_html__( 'External', 'dimas' ),
 				],
 				'default' => 'icon',
 			]
@@ -157,7 +157,7 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'icon',
 			[
-				'label'   => esc_html__( 'Icon', 'razzi' ),
+				'label'   => esc_html__( 'Icon', 'dimas' ),
 				'type'    => Controls_Manager::ICONS,
 				'default' => [],
 				'conditions' => [
@@ -174,7 +174,7 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'image_icon',
 			[
-				'label' => esc_html__( 'Choose Image', 'razzi' ),
+				'label' => esc_html__( 'Choose Image', 'dimas' ),
 				'type' => Controls_Manager::MEDIA,
 				'dynamic' => [
 					'active' => true,
@@ -193,7 +193,7 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'external_url',
 			[
-				'label' => esc_html__( 'External URL', 'razzi' ),
+				'label' => esc_html__( 'External URL', 'dimas' ),
 				'type' => Controls_Manager::TEXT,
 				'label_block' => true,
 				'dynamic' => [
@@ -213,17 +213,17 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'text',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'separator' => 'before',
-				'default'     => esc_html__( 'This is the title', 'razzi' ),
+				'default'     => esc_html__( 'This is the title', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'desc',
 			[
-				'label'       => esc_html__( 'Description', 'razzi' ),
+				'label'       => esc_html__( 'Description', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'default'     => '',
 			]
@@ -232,7 +232,7 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'number',
 			[
-				'label'       => esc_html__( 'Badge Text', 'razzi' ),
+				'label'       => esc_html__( 'Badge Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => '',
 				'separator' => 'before',
@@ -242,7 +242,7 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'button_text',
 			[
-				'label'   => esc_html__( 'Button text', 'razzi' ),
+				'label'   => esc_html__( 'Button text', 'dimas' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => '',
 				'separator' => 'before',
@@ -252,20 +252,20 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'razzi' ),
+				'label' => __( 'Link', 'dimas' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'razzi' ),
+				'placeholder' => __( 'https://your-link.com', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'link_type',
 			[
-				'label'   => esc_html__( 'Link Type', 'razzi' ),
+				'label'   => esc_html__( 'Link Type', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'only' => esc_html__( 'Only Button Text', 'razzi' ),
-					'all'  => esc_html__( 'All Image Box', 'razzi' ),
+					'only' => esc_html__( 'Only Button Text', 'dimas' ),
+					'all'  => esc_html__( 'All Image Box', 'dimas' ),
 				],
 				'default' => 'only',
 				'toggle'  => false,
@@ -291,7 +291,7 @@ class Image_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_img_box_style',
 			[
-				'label' => __( 'Image Box', 'razzi' ),
+				'label' => __( 'Image Box', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -299,26 +299,26 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'img_box_text_align',
 			[
-				'label'       => esc_html__( 'Text Align', 'razzi' ),
+				'label'       => esc_html__( 'Text Align', 'dimas' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => [
 					'left'       => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'right'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'default'     => '',
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-image-box' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} .dimas-image-box' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
@@ -326,12 +326,12 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'img_box_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-image-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-image-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -340,19 +340,19 @@ class Image_Box extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'img_box_border',
-				'label' => __( 'Border', 'razzi' ),
-				'selector' => '{{WRAPPER}} .razzi-image-box',
+				'label' => __( 'Border', 'dimas' ),
+				'selector' => '{{WRAPPER}} .dimas-image-box',
 			]
 		);
 
 		$this->add_control(
 			'img_box_bg_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-image-box' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -361,8 +361,8 @@ class Image_Box extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'img_box_box_shadow',
-				'label' => __( 'Box Shadow', 'razzi' ),
-				'selector' => '{{WRAPPER}} .razzi-image-box',
+				'label' => __( 'Box Shadow', 'dimas' ),
+				'selector' => '{{WRAPPER}} .dimas-image-box',
 			]
 		);
 
@@ -370,8 +370,8 @@ class Image_Box extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'img_box_box_shadow_hover',
-				'label' => __( 'Box Shadow Hover', 'razzi' ),
-				'selector' => '{{WRAPPER}} .razzi-image-box:hover',
+				'label' => __( 'Box Shadow Hover', 'dimas' ),
+				'selector' => '{{WRAPPER}} .dimas-image-box:hover',
 			]
 		);
 
@@ -383,7 +383,7 @@ class Image_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_img_style',
 			[
-				'label' => __( 'Image', 'razzi' ),
+				'label' => __( 'Image', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -391,10 +391,10 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'image_zoom',
 			[
-				'label'        => esc_html__( 'Image Zoom', 'razzi' ),
+				'label'        => esc_html__( 'Image Zoom', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_off'    => __( 'Off', 'razzi' ),
-				'label_on'     => __( 'On', 'razzi' ),
+				'label_off'    => __( 'Off', 'dimas' ),
+				'label_on'     => __( 'On', 'dimas' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 				'conditions' => [
@@ -411,7 +411,7 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'image_max_width',
 			[
-				'label'     => esc_html__( 'Max Width', 'razzi' ),
+				'label'     => esc_html__( 'Max Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -420,7 +420,7 @@ class Image_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box .box-thumbnail' => 'max-width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-image-box .box-thumbnail' => 'max-width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -428,7 +428,7 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'img_spacing_top',
 			[
-				'label'     => esc_html__( 'Spacing Top', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Top', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -437,7 +437,7 @@ class Image_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}}.razzi-image-box-position--left .razzi-image-box .box-thumbnail' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}}.dimas-image-box-position--left .dimas-image-box .box-thumbnail' => 'margin-top: {{SIZE}}{{UNIT}}',
 				],
 				'conditions' => [
 					'terms' => [
@@ -453,7 +453,7 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'img_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -462,8 +462,8 @@ class Image_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}}.razzi-image-box-position--top .razzi-image-box .box-thumbnail' => 'margin-bottom: {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}}.razzi-image-box-position--left .razzi-image-box .box-thumbnail' => 'margin-right: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}}.dimas-image-box-position--top .dimas-image-box .box-thumbnail' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}}.dimas-image-box-position--left .dimas-image-box .box-thumbnail' => 'margin-right: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -471,7 +471,7 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'img_border_radius',
 			[
-				'label'     => esc_html__( 'Border Radius', 'razzi' ),
+				'label'     => esc_html__( 'Border Radius', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -481,7 +481,7 @@ class Image_Box extends Widget_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box .box-thumbnail .image-zoom' => 'border-radius: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-image-box .box-thumbnail .image-zoom' => 'border-radius: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -493,7 +493,7 @@ class Image_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => __( 'Content', 'razzi' ),
+				'label' => __( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -501,12 +501,12 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'summary_content_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-image-box .box-summary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-image-box .box-summary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -514,7 +514,7 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'icon_style',
 			[
-				'label' => __( 'Icon', 'razzi' ),
+				'label' => __( 'Icon', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -523,7 +523,7 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -532,9 +532,9 @@ class Image_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box .razzi-icon' => 'margin-left: {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} .razzi-image-box__icon-position--left .razzi-image-box .razzi-icon' => 'margin-right: {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} .razzi-image-box__icon-position--right .razzi-image-box .razzi-icon' => 'margin-left: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-image-box .dimas-icon' => 'margin-left: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-image-box__icon-position--left .dimas-image-box .dimas-icon' => 'margin-right: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-image-box__icon-position--right .dimas-image-box .dimas-icon' => 'margin-left: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -542,7 +542,7 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label'     => esc_html__( 'Size', 'razzi' ),
+				'label'     => esc_html__( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -551,8 +551,8 @@ class Image_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box .razzi-icon' => 'font-size: {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} .razzi-image-box .razzi-svg-image' => 'width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-image-box .dimas-icon' => 'font-size: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-image-box .dimas-svg-image' => 'width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -561,11 +561,11 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'icon_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box .razzi-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-image-box .dimas-icon' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -573,7 +573,7 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'text_box',
 			[
-				'label' => __( 'Text', 'razzi' ),
+				'label' => __( 'Text', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -582,7 +582,7 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'text_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -591,7 +591,7 @@ class Image_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}}.razzi-image-box-position--top .razzi-image-box .box-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}}.dimas-image-box-position--top .dimas-image-box .box-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -600,18 +600,18 @@ class Image_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-image-box .box-title',
+				'selector' => '{{WRAPPER}} .dimas-image-box .box-title',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box .box-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-image-box .box-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -619,7 +619,7 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'desc_box',
 			[
-				'label' => __( 'Description', 'razzi' ),
+				'label' => __( 'Description', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -629,18 +629,18 @@ class Image_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'desc_typography',
-				'selector' => '{{WRAPPER}} .razzi-image-box .box-desc',
+				'selector' => '{{WRAPPER}} .dimas-image-box .box-desc',
 			]
 		);
 
 		$this->add_control(
 			'desc_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box .box-desc' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-image-box .box-desc' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -649,7 +649,7 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'content_style_button',
 			[
-				'label' => __( 'Button', 'razzi' ),
+				'label' => __( 'Button', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -659,18 +659,18 @@ class Image_Box extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'btn_typography',
-				'selector' => '{{WRAPPER}} .razzi-image-box__button',
+				'selector' => '{{WRAPPER}} .dimas-image-box__button',
 			]
 		);
 
 		$this->add_control(
 			'btn_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box__button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-image-box__button' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -678,11 +678,11 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'btn_color_hover',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box__button:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-image-box__button:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -690,7 +690,7 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -699,7 +699,7 @@ class Image_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box__button' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-image-box__button' => 'margin-top: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -711,7 +711,7 @@ class Image_Box extends Widget_Base {
 		$this->start_controls_section(
 			'section_badge_style',
 			[
-				'label' => __( 'Badge', 'razzi' ),
+				'label' => __( 'Badge', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -719,7 +719,7 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_min_width',
 			[
-				'label'     => esc_html__( 'Min Width', 'razzi' ),
+				'label'     => esc_html__( 'Min Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'size_units' => [ 'px','%' ],
 				'range'     => [
@@ -732,7 +732,7 @@ class Image_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box .box-number' => 'min-width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-image-box .box-number' => 'min-width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -740,7 +740,7 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_min_height',
 			[
-				'label'     => esc_html__( 'Min Height', 'razzi' ),
+				'label'     => esc_html__( 'Min Height', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'size_units' => [ 'px','%' ],
 				'range'     => [
@@ -753,7 +753,7 @@ class Image_Box extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box .box-number' => 'min-height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-image-box .box-number' => 'min-height: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -761,11 +761,11 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'num_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box .box-number' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-image-box .box-number' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -773,11 +773,11 @@ class Image_Box extends Widget_Base {
 		$this->add_control(
 			'num_bg_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box .box-number' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-image-box .box-number' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -785,7 +785,7 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_spacing_bottom',
 			[
-				'label'     => esc_html__( 'Spacing Top', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Top', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [],
 				'range'     => [
@@ -796,7 +796,7 @@ class Image_Box extends Widget_Base {
 				],
 				'size_units'         => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box .box-number' => 'top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-image-box .box-number' => 'top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -804,7 +804,7 @@ class Image_Box extends Widget_Base {
 		$this->add_responsive_control(
 			'content_spacing_left',
 			[
-				'label'     => esc_html__( 'Spacing Right', 'razzi' ),
+				'label'     => esc_html__( 'Spacing Right', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [],
 				'range'     => [
@@ -815,7 +815,7 @@ class Image_Box extends Widget_Base {
 				],
 				'size_units'         => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-image-box .box-number' => 'right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-image-box .box-number' => 'right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -832,9 +832,9 @@ class Image_Box extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-image-box',
+			'dimas-image-box',
 			$settings['img_box_box_shadow_hover_box_shadow_type'] ? 'transition-y' : '',
-			$settings['image_position'] == 'top' ? 'razzi-image-box__icon-position--' . $settings['icon_position'] : ''
+			$settings['image_position'] == 'top' ? 'dimas-image-box__icon-position--' . $settings['icon_position'] : ''
 		];
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );
@@ -843,7 +843,7 @@ class Image_Box extends Widget_Base {
 
 		$number = $settings['number'] ? sprintf('<span class="box-number">%s</span>',$settings['number']) : '';
 
-		$text_val = ! empty( $settings['text'] ) ? $settings['text'] : esc_html__( 'Image Icon', 'razzi' );
+		$text_val = ! empty( $settings['text'] ) ? $settings['text'] : esc_html__( 'Image Icon', 'dimas' );
 
 
 		$btn_full = '';
@@ -853,7 +853,7 @@ class Image_Box extends Widget_Base {
 			$image = '<a ' . $this->get_render_attribute_string( 'link' ) . '>' . $image . '</a>';
 			$settings['text'] = '<a ' . $this->get_render_attribute_string( 'link' ) . '>' . $settings['text'] . '</a>';
 
-			$btn_full = $settings['link_type'] == 'all' ? Helper::control_url( 'btn_full', $settings['link'], '', [ 'class' => 'razzi-image-box__button-link' ] ) : '';
+			$btn_full = $settings['link_type'] == 'all' ? Helper::control_url( 'btn_full', $settings['link'], '', [ 'class' => 'dimas-image-box__button-link' ] ) : '';
 		}
 
 		$image_zoom = $settings['image_zoom'] && $settings['link_type'] == 'only' ? 'image-zoom' : '';
@@ -864,20 +864,20 @@ class Image_Box extends Widget_Base {
 
 		if ( $settings['icon_type'] === 'image' ) {
 			if ( $settings['image_icon']['url'] ) {
-				$icon =  sprintf( '<span class="razzi-icon razzi-svg-image"><img alt="%s" src="%s"></span>', esc_attr( $text_val ), esc_url( $settings['image_icon']['url'] ) );
+				$icon =  sprintf( '<span class="dimas-icon dimas-svg-image"><img alt="%s" src="%s"></span>', esc_attr( $text_val ), esc_url( $settings['image_icon']['url'] ) );
 			}
 		} if ( $settings['icon_type'] === 'external' ) {
 			if ( $settings['external_url'] ) {
-				$icon = '<span class="razzi-icon razzi-svg-image"><img src="' . $settings['external_url'] . '" alt="' . esc_attr( $text_val ) . '" /></span>';
+				$icon = '<span class="dimas-icon dimas-svg-image"><img src="' . $settings['external_url'] . '" alt="' . esc_attr( $text_val ) . '" /></span>';
 			}
 		} else {
 			if ( $settings['icon'] && ! empty( $settings['icon']['value'] ) && \Elementor\Icons_Manager::is_migration_allowed() ) {
 				ob_start();
 				\Elementor\Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] );
 
-				$add_class_icon = $settings['icon']['library'] == 'svg' ? 'razzi-svg-icon' : '';
+				$add_class_icon = $settings['icon']['library'] == 'svg' ? 'dimas-svg-icon' : '';
 
-				$icon = '<span class="razzi-icon '.$add_class_icon.'">' . ob_get_clean() . '</span>';
+				$icon = '<span class="dimas-icon '.$add_class_icon.'">' . ob_get_clean() . '</span>';
 			}
 		}
 
@@ -886,7 +886,7 @@ class Image_Box extends Widget_Base {
 		$desc = $settings['desc'] ? sprintf('<div class="box-desc">%s</div>',$settings['desc']) : '';
 
 		$button_text = $settings['button_text'] ? sprintf('%s%s',$settings['button_text'], \Dimas\Addons\Helper::get_svg( 'arrow-right' ) ) : '';
-		$button_text = ! empty( $button_text ) ? Helper::control_url( 'btn', $settings['link'], $button_text, [ 'class' => 'razzi-image-box__button razzi-button button-normal' ] ) : '';
+		$button_text = ! empty( $button_text ) ? Helper::control_url( 'btn', $settings['link'], $button_text, [ 'class' => 'dimas-image-box__button dimas-button button-normal' ] ) : '';
 
 		$box_summary = $text == '' && $desc == '' && $settings['button_text'] == '' ? '' : sprintf('<div class="box-summary">%s %s%s</div>', $text,$desc,$button_text) ;
 

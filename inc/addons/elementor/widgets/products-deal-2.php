@@ -23,7 +23,7 @@ class Products_Deal_2 extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-products-deal-2';
+		return 'dimas-products-deal-2';
 	}
 
 	/**
@@ -32,7 +32,7 @@ class Products_Deal_2 extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Products Deal 2', 'razzi' );
+		return __( 'Dimas - Products Deal 2', 'dimas' );
 	}
 
 	/**
@@ -50,15 +50,15 @@ class Products_Deal_2 extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
 			'swiper',
 			'imagesLoaded',
-			'razzi-coundown',
-			'razzi-product-shortcode'
+			'dimas-coundown',
+			'dimas-product-shortcode'
 		];
 	}
 
@@ -89,22 +89,22 @@ class Products_Deal_2 extends Widget_Base {
 	protected function section_products_settings_controls() {
 		$this->start_controls_section(
 			'section_products',
-			[ 'label' => esc_html__( 'Products', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Products', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'title',
 			[
-				'label'   => esc_html__( 'Title', 'razzi' ),
+				'label'   => esc_html__( 'Title', 'dimas' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Best Month Deal', 'razzi' ),
+				'default' => esc_html__( 'Best Month Deal', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'products_divider',
 			[
-				'label' => esc_html__( 'Products', 'razzi' ),
+				'label' => esc_html__( 'Products', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -113,7 +113,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'per_page',
 			[
-				'label'   => esc_html__( 'Total Products', 'razzi' ),
+				'label'   => esc_html__( 'Total Products', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 3,
 				'min'     => 1,
@@ -134,15 +134,15 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'products',
 			[
-				'label'     => esc_html__( 'Products', 'razzi' ),
+				'label'     => esc_html__( 'Products', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'day'   => esc_html__( 'Deals of the day', 'razzi' ),
-					'week'  => esc_html__( 'Deals of the week', 'razzi' ),
-					'month' => esc_html__( 'Deals of the month', 'razzi' ),
-					'sale'  => esc_html__( 'On Sale', 'razzi' ),
-					'deals' => esc_html__( 'Product Deals', 'razzi' ),
-					'custom' => esc_html__( 'Product Custom', 'razzi' ),
+					'day'   => esc_html__( 'Deals of the day', 'dimas' ),
+					'week'  => esc_html__( 'Deals of the week', 'dimas' ),
+					'month' => esc_html__( 'Deals of the month', 'dimas' ),
+					'sale'  => esc_html__( 'On Sale', 'dimas' ),
+					'deals' => esc_html__( 'Product Deals', 'dimas' ),
+					'custom' => esc_html__( 'Product Custom', 'dimas' ),
 				],
 				'default'   => 'deals',
 				'toggle'    => false,
@@ -152,8 +152,8 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'ids',
 			[
-				'label'       => esc_html__( 'Products', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -169,13 +169,13 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'orderby',
 			[
-				'label'     => esc_html__( 'Order By', 'razzi' ),
+				'label'     => esc_html__( 'Order By', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''           => esc_html__( 'Default', 'razzi' ),
-					'date'       => esc_html__( 'Date', 'razzi' ),
-					'title'      => esc_html__( 'Title', 'razzi' ),
-					'menu_order' => esc_html__( 'Menu Order', 'razzi' ),
+					''           => esc_html__( 'Default', 'dimas' ),
+					'date'       => esc_html__( 'Date', 'dimas' ),
+					'title'      => esc_html__( 'Title', 'dimas' ),
+					'menu_order' => esc_html__( 'Menu Order', 'dimas' ),
 				],
 				'default'   => '',
 				'conditions' => [
@@ -193,12 +193,12 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'order',
 			[
-				'label'     => esc_html__( 'Order', 'razzi' ),
+				'label'     => esc_html__( 'Order', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''     => esc_html__( 'Default', 'razzi' ),
-					'asc'  => esc_html__( 'Ascending', 'razzi' ),
-					'desc' => esc_html__( 'Descending', 'razzi' ),
+					''     => esc_html__( 'Default', 'dimas' ),
+					'asc'  => esc_html__( 'Ascending', 'dimas' ),
+					'desc' => esc_html__( 'Descending', 'dimas' ),
 				],
 				'default'   => '',
 				'conditions' => [
@@ -216,8 +216,8 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'product_category',
 			[
-				'label'       => esc_html__( 'Product Categories', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Product Categories', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -239,8 +239,8 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'product_tag',
 			[
-				'label'       => esc_html__( 'Products Tags', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products Tags', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -262,8 +262,8 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'product_brands',
 			[
-				'label'       => esc_html__( 'Products Brands', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products Brands', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -286,8 +286,8 @@ class Products_Deal_2 extends Widget_Base {
 			$this->add_control(
 				'product_authors',
 				[
-					'label'       => esc_html__( 'Products Authors', 'razzi' ),
-					'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+					'label'       => esc_html__( 'Products Authors', 'dimas' ),
+					'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 					'type'        => 'rzautocomplete',
 					'default'     => '',
 					'label_block' => true,
@@ -310,7 +310,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'attributes_divider',
 			[
-				'label' => esc_html__( 'Attributes', 'razzi' ),
+				'label' => esc_html__( 'Attributes', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -319,10 +319,10 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'show_category',
 			[
-				'label'     => esc_html__( 'Category', 'razzi' ),
+				'label'     => esc_html__( 'Category', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => '',
 			]
@@ -331,10 +331,10 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'show_rating',
 			[
-				'label'     => esc_html__( 'Rating', 'razzi' ),
+				'label'     => esc_html__( 'Rating', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 			]
@@ -343,10 +343,10 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'show_quickview',
 			[
-				'label'     => esc_html__( 'Quick View', 'razzi' ),
+				'label'     => esc_html__( 'Quick View', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 			]
@@ -355,10 +355,10 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'show_addtocart',
 			[
-				'label'     => esc_html__( 'Add To Cart', 'razzi' ),
+				'label'     => esc_html__( 'Add To Cart', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 			]
@@ -367,10 +367,10 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'show_wishlist',
 			[
-				'label'     => esc_html__( 'Wishlist', 'razzi' ),
+				'label'     => esc_html__( 'Wishlist', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 			]
@@ -379,10 +379,10 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'show_atc_mobile',
 			[
-				'label'     => esc_html__( 'Show Add to Cart Button on Mobile', 'razzi' ),
+				'label'     => esc_html__( 'Show Add to Cart Button on Mobile', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 			]
@@ -391,10 +391,10 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'show_featured_icons_mobile',
 			[
-				'label'     => esc_html__( 'Show Featured Icons Mobile', 'razzi' ),
+				'label'     => esc_html__( 'Show Featured Icons Mobile', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'razzi' ),
-				'label_on'  => __( 'Show', 'razzi' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'return_value' => 'show',
 				'default'   => 'show',
 			]
@@ -406,13 +406,13 @@ class Products_Deal_2 extends Widget_Base {
 	protected function section_carousel_settings_controls() {
 		$this->start_controls_section(
 			'section_carousel_settings',
-			[ 'label' => esc_html__( 'Carousel Settings', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Carousel Settings', 'dimas' ) ]
 		);
 
 		$this->add_responsive_control(
 			'slidesToShow',
 			[
-				'label'           => esc_html__( 'Slides to show', 'razzi' ),
+				'label'           => esc_html__( 'Slides to show', 'dimas' ),
 				'type'            => Controls_Manager::NUMBER,
 				'min'             => 1,
 				'max'             => 50,
@@ -423,7 +423,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'slidesToScroll',
 			[
-				'label'           => esc_html__( 'Slides to scroll', 'razzi' ),
+				'label'           => esc_html__( 'Slides to scroll', 'dimas' ),
 				'type'            => Controls_Manager::NUMBER,
 				'min'             => 1,
 				'max'             => 50,
@@ -434,12 +434,12 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'navigation',
 			[
-				'label'     => esc_html__( 'Navigation', 'razzi' ),
+				'label'     => esc_html__( 'Navigation', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'none'     => esc_html__( 'None', 'razzi' ),
-					'arrows' => esc_html__( 'Arrows', 'razzi' ),
-					'dots' => esc_html__( 'Dots', 'razzi' ),
+					'none'     => esc_html__( 'None', 'dimas' ),
+					'arrows' => esc_html__( 'Arrows', 'dimas' ),
+					'dots' => esc_html__( 'Dots', 'dimas' ),
 				],
 				'default'   => 'arrows',
 				'frontend_available' => true,
@@ -448,10 +448,10 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'infinite',
 			[
-				'label'     => __( 'Infinite Loop', 'razzi' ),
+				'label'     => __( 'Infinite Loop', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'razzi' ),
-				'label_on'  => __( 'On', 'razzi' ),
+				'label_off' => __( 'Off', 'dimas' ),
+				'label_on'  => __( 'On', 'dimas' ),
 				'default'   => '',
 				'frontend_available' => true,
 			]
@@ -460,10 +460,10 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			[
-				'label'     => __( 'Autoplay', 'razzi' ),
+				'label'     => __( 'Autoplay', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Off', 'razzi' ),
-				'label_on'  => __( 'On', 'razzi' ),
+				'label_off' => __( 'Off', 'dimas' ),
+				'label_on'  => __( 'On', 'dimas' ),
 				'default'   => '',
 				'frontend_available' => true,
 			]
@@ -472,12 +472,12 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'speed',
 			[
-				'label'       => __( 'Speed', 'razzi' ),
+				'label'       => __( 'Speed', 'dimas' ),
 				'type'        => Controls_Manager::NUMBER,
 				'default'     => 800,
 				'min'         => 100,
 				'step'        => 50,
-				'description' => esc_html__( 'Slide animation speed (in ms)', 'razzi' ),
+				'description' => esc_html__( 'Slide animation speed (in ms)', 'dimas' ),
 				'frontend_available' => true,
 			]
 		);
@@ -490,7 +490,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => esc_html__( 'Content', 'razzi' ),
+				'label' => esc_html__( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -499,19 +499,19 @@ class Products_Deal_2 extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name' => 'img_box_border',
-				'label' => __( 'Border', 'razzi' ),
-				'selector' => '{{WRAPPER}} .razzi-products-deal-2 .product-inner',
+				'label' => __( 'Border', 'dimas' ),
+				'selector' => '{{WRAPPER}} .dimas-products-deal-2 .product-inner',
 			]
 		);
 
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-deal-2 ul.products li.product .product-summary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-deal-2 ul.products li.product .product-summary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -519,7 +519,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'heading_heading',
 			[
-				'label' => __( 'Heading', 'razzi' ),
+				'label' => __( 'Heading', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -528,7 +528,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'heading_spacing',
 			[
-				'label'     => __( 'Spacing', 'razzi' ),
+				'label'     => __( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -537,7 +537,7 @@ class Products_Deal_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .products-deal-2__heading' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .products-deal-2__heading' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -545,7 +545,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'title_heading',
 			[
-				'label' => __( 'Title', 'razzi' ),
+				'label' => __( 'Title', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -555,18 +555,18 @@ class Products_Deal_2 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-products-deal-2 .products-deal-2__title',
+				'selector' => '{{WRAPPER}} .dimas-products-deal-2 .products-deal-2__title',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .products-deal-2__title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .products-deal-2__title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -574,7 +574,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'image_heading',
 			[
-				'label' => __( 'Image', 'razzi' ),
+				'label' => __( 'Image', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -583,7 +583,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'image_width',
 			[
-				'label'      => __( 'Max Width', 'razzi' ),
+				'label'      => __( 'Max Width', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%' ],
 				'range'     => [
@@ -593,7 +593,7 @@ class Products_Deal_2 extends Widget_Base {
 					],
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-deal-2 ul.products li.product .product-thumbnail .woocommerce-loop-product__link img' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-deal-2 ul.products li.product .product-thumbnail .woocommerce-loop-product__link img' => 'max-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -605,7 +605,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->start_controls_section(
 			'section_carousel_style',
 			[
-				'label' => __( 'Carousel Setting', 'razzi' ),
+				'label' => __( 'Carousel Setting', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -614,7 +614,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'arrow_style_heading',
 			[
-				'label' => esc_html__( 'Arrows', 'razzi' ),
+				'label' => esc_html__( 'Arrows', 'dimas' ),
 				'type'  => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -623,7 +623,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -632,7 +632,7 @@ class Products_Deal_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .rz-swiper-button' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -640,7 +640,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_width',
 			[
-				'label'     => __( 'Width', 'razzi' ),
+				'label'     => __( 'Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -649,7 +649,7 @@ class Products_Deal_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .rz-swiper-button' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .rz-swiper-button' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -657,7 +657,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'sliders_arrows_height',
 			[
-				'label'     => __( 'Height', 'razzi' ),
+				'label'     => __( 'Height', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -666,23 +666,23 @@ class Products_Deal_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .rz-swiper-button' => 'height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .rz-swiper-button' => 'height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->start_controls_tabs( 'sliders_normal_settings' );
 
-		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_normal', [ 'label' => esc_html__( 'Normal', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .rz-swiper-button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .rz-swiper-button' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -690,27 +690,27 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .rz-swiper-button' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .rz-swiper-button' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'razzi' ) ] );
+		$this->start_controls_tab( 'sliders_hover', [ 'label' => esc_html__( 'Hover', 'dimas' ) ] );
 
 		$this->add_control(
 			'sliders_arrow_hover_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .rz-swiper-button:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .rz-swiper-button:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -718,11 +718,11 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_hover_bgcolor',
 			[
-				'label'     => esc_html__( 'Background Color', 'razzi' ),
+				'label'     => esc_html__( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .rz-swiper-button:hover' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -732,10 +732,10 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'sliders_arrow_border',
 			[
-				'label'        => __( 'Border', 'razzi' ),
+				'label'        => __( 'Border', 'dimas' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'razzi' ),
-				'label_on'     => __( 'Custom', 'razzi' ),
+				'label_off'    => __( 'Default', 'dimas' ),
+				'label_on'     => __( 'Custom', 'dimas' ),
 				'return_value' => 'yes',
 			]
 		);
@@ -744,18 +744,18 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'arrow_border_style',
 			[
-				'label'     => esc_html__( 'Border Style', 'razzi' ),
+				'label'     => esc_html__( 'Border Style', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'dotted' => esc_html__( 'Dotted', 'razzi' ),
-					'dashed' => esc_html__( 'Dashed', 'razzi' ),
-					'solid'  => esc_html__( 'Solid', 'razzi' ),
-					'none'   => esc_html__( 'None', 'razzi' ),
+					'dotted' => esc_html__( 'Dotted', 'dimas' ),
+					'dashed' => esc_html__( 'Dashed', 'dimas' ),
+					'solid'  => esc_html__( 'Solid', 'dimas' ),
+					'none'   => esc_html__( 'None', 'dimas' ),
 				],
 				'default'   => '',
 				'toggle'    => false,
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .rz-swiper-button' => 'border-style: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .rz-swiper-button' => 'border-style: {{VALUE}};',
 				],
 			]
 		);
@@ -763,7 +763,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'arrow_border_width',
 			[
-				'label'     => __( 'Border Width', 'razzi' ),
+				'label'     => __( 'Border Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -773,7 +773,7 @@ class Products_Deal_2 extends Widget_Base {
 				],
 				'default'   => [ ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .rz-swiper-button' => 'border-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .rz-swiper-button' => 'border-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -781,11 +781,11 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'arrow_content_border_color',
 			[
-				'label'     => __( 'Border Color', 'razzi' ),
+				'label'     => __( 'Border Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .rz-swiper-button' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .rz-swiper-button' => 'border-color: {{VALUE}};',
 				],
 			]
 		);
@@ -797,7 +797,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'dots_divider',
 			[
-				'label' => __( 'Dots', 'razzi' ),
+				'label' => __( 'Dots', 'dimas' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -806,7 +806,7 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_font_size',
 			[
-				'label'     => __( 'Size', 'razzi' ),
+				'label'     => __( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -815,7 +815,7 @@ class Products_Deal_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .swiper-pagination .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .swiper-pagination .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -823,22 +823,22 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_control(
 			'dots_color',
 			[
-				'label'     => esc_html__( 'Color', 'razzi' ),
+				'label'     => esc_html__( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .swiper-pagination .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .swiper-pagination .swiper-pagination-bullet:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
 			'dots_active_color',
 			[
-				'label'     => esc_html__( 'Active Color', 'razzi' ),
+				'label'     => esc_html__( 'Active Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-deal-2 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:before, {{WRAPPER}} .razzi-products-deal-2 .swiper-pagination .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:before, {{WRAPPER}} .dimas-products-deal-2 .swiper-pagination .swiper-pagination-bullet:hover:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -846,22 +846,22 @@ class Products_Deal_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_spacing_item',
 			[
-				'label'      => __( 'Item Space', 'razzi' ),
+				'label'      => __( 'Item Space', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-deal-2 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 		$this->add_responsive_control(
 			'dots_spacing',
 			[
-				'label'      => __( 'Space', 'razzi' ),
+				'label'      => __( 'Space', 'dimas' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-products-deal-2 .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-deal-2 .swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -882,7 +882,7 @@ class Products_Deal_2 extends Widget_Base {
 		$nav_mobile = empty( $settings['navigation_mobile'] ) ? $nav : $settings['navigation_mobile'];
 
 		$classes = [
-			'razzi-products-deal-2 razzi-swiper-carousel-elementor',
+			'dimas-products-deal-2 dimas-swiper-carousel-elementor',
 			$settings['show_category'] != '' ? 'show-category' : '',
 			$settings['show_rating'] != '' ? 'show-rating' : '',
 			$settings['show_quickview'] != '' ? 'show-quickview' : '',

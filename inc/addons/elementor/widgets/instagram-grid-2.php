@@ -21,7 +21,7 @@ class Instagram_Grid_2 extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-instagram-grid-2';
+		return 'dimas-instagram-grid-2';
 	}
 
 	/**
@@ -30,7 +30,7 @@ class Instagram_Grid_2 extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Instagram Grid 2', 'razzi' );
+		return esc_html__( 'Dimas - Instagram Grid 2', 'dimas' );
 	}
 
 	/**
@@ -48,7 +48,7 @@ class Instagram_Grid_2 extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	/**
@@ -69,13 +69,13 @@ class Instagram_Grid_2 extends Widget_Base {
 	protected function section_content() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Instagram', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Instagram', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'instagram_type',
 			[
-				'label' => esc_html__( 'Instagram type', 'razzi' ),
+				'label' => esc_html__( 'Instagram type', 'dimas' ),
 				'type' => Controls_Manager::SELECT,
 				'options' => [
 					'token' 	=> 'Token',
@@ -88,9 +88,9 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_control(
 			'access_token',
 			[
-				'label'       => esc_html__( 'Access Token', 'razzi' ),
+				'label'       => esc_html__( 'Access Token', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'Enter your access token', 'razzi' ),
+				'default'     => esc_html__( 'Enter your access token', 'dimas' ),
 				'label_block' => true,
 				'conditions' => [
 					'terms' => [
@@ -108,7 +108,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$repeater->add_control(
 			'image',
 			[
-				'label' => esc_html__( 'Choose Image', 'razzi' ),
+				'label' => esc_html__( 'Choose Image', 'dimas' ),
 				'type' => Controls_Manager::MEDIA,
 				'dynamic' => [
 					'active' => true,
@@ -119,22 +119,22 @@ class Instagram_Grid_2 extends Widget_Base {
 		$repeater->add_control(
 			'link',
 			[
-				'label' => __( 'Link', 'razzi' ),
+				'label' => __( 'Link', 'dimas' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'https://your-link.com', 'razzi' ),
+				'placeholder' => __( 'https://your-link.com', 'dimas' ),
 			]
 		);
 
 		$repeater->add_control(
 			'caption',
 			[
-				'label' => esc_html__( 'Caption', 'razzi' ),
+				'label' => esc_html__( 'Caption', 'dimas' ),
 				'type' => Controls_Manager::TEXTAREA,
 				'dynamic' => [
 					'active' => true,
 				],
 				'default' => '',
-				'placeholder' => esc_html__( 'Enter your caption', 'razzi' ),
+				'placeholder' => esc_html__( 'Enter your caption', 'dimas' ),
 				'rows' => 4,
 			]
 		);
@@ -142,7 +142,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_control(
 			'image_list',
 			[
-				'label'         => esc_html__( 'Image List', 'razzi' ),
+				'label'         => esc_html__( 'Image List', 'dimas' ),
 				'type'          => Controls_Manager::REPEATER,
 				'fields'        => $repeater->get_controls(),
 				'prevent_empty' => false,
@@ -160,7 +160,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_control(
 			'limit',
 			[
-				'label'       => esc_html__( 'Limit', 'razzi' ),
+				'label'       => esc_html__( 'Limit', 'dimas' ),
 				'type'        => Controls_Manager::NUMBER,
 				'default'     => 8,
 				'conditions' => [
@@ -177,7 +177,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'columns',
 			[
-				'label'   => esc_html__( 'Columns', 'razzi' ),
+				'label'   => esc_html__( 'Columns', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'min'     => 1,
 				'max'     => 10,
@@ -191,7 +191,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_control(
 			'instagram_context_box',
 			[
-				'label'      => esc_html__( 'Content Box', 'razzi' ),
+				'label'      => esc_html__( 'Content Box', 'dimas' ),
 				'type'       => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -200,11 +200,11 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_control(
 			'instagram_icon_type',
 			[
-				'label'      => esc_html__( 'Icon Type', 'razzi' ),
+				'label'      => esc_html__( 'Icon Type', 'dimas' ),
 				'type'       => Controls_Manager::SELECT,
 				'options'    => [
-					'default'       => esc_html__( 'Default', 'razzi' ),
-					'custom'      	=> esc_html__( 'Custom', 'razzi' ),
+					'default'       => esc_html__( 'Default', 'dimas' ),
+					'custom'      	=> esc_html__( 'Custom', 'dimas' ),
 				],
 				'default'    => 'default',
 			]
@@ -213,7 +213,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_control(
 			'icon',
 			[
-				'label'   => esc_html__( 'Icons', 'razzi' ),
+				'label'   => esc_html__( 'Icons', 'dimas' ),
 				'type'    => Controls_Manager::ICONS,
 				'default' => [
 					'value'   => 'fas fa-chevron-down',
@@ -228,38 +228,38 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_control(
 			'title',
 			[
-				'label'       => esc_html__( 'Title', 'razzi' ),
+				'label'       => esc_html__( 'Title', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'This is title', 'razzi' ),
+				'default'     => esc_html__( 'This is title', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'desc',
 			[
-				'label'       => esc_html__( 'Desc', 'razzi' ),
+				'label'       => esc_html__( 'Desc', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'This is desc', 'razzi' ),
+				'default'     => esc_html__( 'This is desc', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'button_text',
 			[
-				'label'       => esc_html__( 'Button Text', 'razzi' ),
+				'label'       => esc_html__( 'Button Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Button Text', 'razzi' ),
+				'default'     => esc_html__( 'Button Text', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'link_type',
 			[
-				'label'   => esc_html__( 'Button Link Type', 'razzi' ),
+				'label'   => esc_html__( 'Button Link Type', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'default'   => esc_html__( 'Default user', 'razzi' ),
-					'custom' 	 => esc_html__( 'Custom', 'razzi' ),
+					'default'   => esc_html__( 'Default user', 'dimas' ),
+					'custom' 	 => esc_html__( 'Custom', 'dimas' ),
 				],
 				'default' => 'default',
 				'toggle'  => false,
@@ -268,10 +268,10 @@ class Instagram_Grid_2 extends Widget_Base {
 
 		$this->add_control(
 			'link', [
-				'label'         => esc_html__( 'Button Link', 'razzi' ),
+				'label'         => esc_html__( 'Button Link', 'dimas' ),
 				'type'          => Controls_Manager::URL,
-				'placeholder'   => esc_html__( 'https://your-link.com', 'razzi' ),
-				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'razzi' ),
+				'placeholder'   => esc_html__( 'https://your-link.com', 'dimas' ),
+				'description'   => esc_html__( 'Just works if the value of Lightbox is No', 'dimas' ),
 				'show_external' => true,
 				'default'       => [
 					'url'         => '#',
@@ -301,7 +301,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->start_controls_section(
 			'style_general',
 			[
-				'label' => __( 'Instagram Content Box', 'razzi' ),
+				'label' => __( 'Instagram Content Box', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -309,11 +309,11 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_control(
 			'box_bk_color',
 			[
-				'label'        => esc_html__( 'Background Color', 'razzi' ),
+				'label'        => esc_html__( 'Background Color', 'dimas' ),
 				'type'         => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-instagram-grid-2 .instagram-text-wrapper' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-instagram-grid-2 .instagram-text-wrapper' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -321,12 +321,12 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'razzi' ),
+				'label'      => esc_html__( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'default'    => [],
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-instagram-grid-2 .instagram-text-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-instagram-grid-2 .instagram-text-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -334,7 +334,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_control(
 			'style_tabs_icon',
 			[
-				'label'        => esc_html__( 'Icon', 'razzi' ),
+				'label'        => esc_html__( 'Icon', 'dimas' ),
 				'type'         => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -343,7 +343,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -352,7 +352,7 @@ class Instagram_Grid_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-instagram-grid-2 .razzi-icon' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-instagram-grid-2 .dimas-icon' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -360,7 +360,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label'     => esc_html__( 'Size', 'razzi' ),
+				'label'     => esc_html__( 'Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -369,7 +369,7 @@ class Instagram_Grid_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-instagram-grid-2 .razzi-icon' => 'font-size: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-instagram-grid-2 .dimas-icon' => 'font-size: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -378,11 +378,11 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_control(
 			'icon_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-instagram-grid-2 .razzi-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-instagram-grid-2 .dimas-icon' => 'color: {{VALUE}};',
 				],
 				'condition' => [
 					'instagram_icon_type' => ['custom'],
@@ -393,7 +393,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_control(
 			'style_tabs_title',
 			[
-				'label'        => esc_html__( 'Title', 'razzi' ),
+				'label'        => esc_html__( 'Title', 'dimas' ),
 				'type'         => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -402,7 +402,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'title_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -411,7 +411,7 @@ class Instagram_Grid_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-instagram-grid-2 .instagram-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-instagram-grid-2 .instagram-title' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -420,18 +420,18 @@ class Instagram_Grid_2 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} .razzi-instagram-grid-2 .instagram-title',
+				'selector' => '{{WRAPPER}} .dimas-instagram-grid-2 .instagram-title',
 			]
 		);
 
 		$this->add_control(
 			'title_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-instagram-grid-2 .instagram-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-instagram-grid-2 .instagram-title' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -439,7 +439,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_control(
 			'style_tabs_desc',
 			[
-				'label'        => esc_html__( 'Description', 'razzi' ),
+				'label'        => esc_html__( 'Description', 'dimas' ),
 				'type'         => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -448,7 +448,7 @@ class Instagram_Grid_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'desc_spacing',
 			[
-				'label'     => esc_html__( 'Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -457,7 +457,7 @@ class Instagram_Grid_2 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-instagram-grid-2 .instagram-desc' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-instagram-grid-2 .instagram-desc' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -466,25 +466,25 @@ class Instagram_Grid_2 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'desc_typography',
-				'selector' => '{{WRAPPER}} .razzi-instagram-grid-2 .instagram-desc',
+				'selector' => '{{WRAPPER}} .dimas-instagram-grid-2 .instagram-desc',
 			]
 		);
 
 		$this->add_control(
 			'desc_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-instagram-grid-2 .instagram-desc' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-instagram-grid-2 .instagram-desc' => 'color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
 			'style_tabs_button',
 			[
-				'label'        => esc_html__( 'Button', 'razzi' ),
+				'label'        => esc_html__( 'Button', 'dimas' ),
 				'type'         => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -494,18 +494,18 @@ class Instagram_Grid_2 extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'btn_typography',
-				'selector' => '{{WRAPPER}} .razzi-instagram-grid-2 .button-text',
+				'selector' => '{{WRAPPER}} .dimas-instagram-grid-2 .button-text',
 			]
 		);
 
 		$this->add_control(
 			'btn_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-instagram-grid-2 .button-text' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-instagram-grid-2 .button-text' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -523,8 +523,8 @@ class Instagram_Grid_2 extends Widget_Base {
 
 		$this->add_render_attribute(
 			'wrapper', 'class', [
-				'razzi-instagram-grid-2',
-				'razzi-element-columns',
+				'dimas-instagram-grid-2',
+				'dimas-element-columns',
 			]
 		);
 
@@ -598,18 +598,18 @@ class Instagram_Grid_2 extends Widget_Base {
 		}
 
 		// Box text
-		$instagram_icon = \Dimas\Addons\Helper::get_svg('instagram', 'razzi-icon', 'social');
+		$instagram_icon = \Dimas\Addons\Helper::get_svg('instagram', 'dimas-icon', 'social');
 
 		if ( $settings['instagram_icon_type'] == 'custom' && $settings['icon'] && ! empty( $settings['icon']['value'] ) && \Elementor\Icons_Manager::is_migration_allowed() ) {
 			ob_start();
 			\Elementor\Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] );
 
-			$add_class_icon = $settings['icon']['library'] == 'svg' ? 'razzi-svg-icon' : '';
+			$add_class_icon = $settings['icon']['library'] == 'svg' ? 'dimas-svg-icon' : '';
 
-			$instagram_icon = '<span class="razzi-icon '.$add_class_icon.'">' . ob_get_clean() . '</span>';
+			$instagram_icon = '<span class="dimas-icon '.$add_class_icon.'">' . ob_get_clean() . '</span>';
 		}
 
-		$button_text = $settings['button_text'] ? sprintf('<span class="button-text razzi-button--underlined">%s</span>',$settings['button_text']) : '';
+		$button_text = $settings['button_text'] ? sprintf('<span class="button-text dimas-button--underlined">%s</span>',$settings['button_text']) : '';
 
 		$settings['link']['url'] 		 = $settings['link_type'] == 'default' ? esc_url('https://www.instagram.com/'.$user['username'].'') : $settings['link']['url'];
 		$settings['link']['is_external'] = $settings['link_type'] == 'default' ? '' : $settings['link']['is_external'];

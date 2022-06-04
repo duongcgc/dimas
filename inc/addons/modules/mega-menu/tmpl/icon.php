@@ -1,17 +1,17 @@
 <div id="tamm-panel-icon" class="tamm-panel-icon tamm-panel">
 	<div class="rz-tamm-panel-box-large mega-setting">
 		<span class="setting-field rz-tamm-panel-select-field rz-tamm-panel-icon_type" data="{{data.megaData.icon_type}}">
-			<label><?php esc_html_e( 'Icon Type', 'razzi' ) ?></label>
+			<label><?php esc_html_e( 'Icon Type', 'dimas' ) ?></label>
 			<select name="{{ taMegaMenu.getFieldName( 'icon_type', data.data['menu-item-db-id'] ) }}">
-				<option value="none"><?php esc_html_e( 'None', 'razzi' ) ?></option>
-				<option value="svg" {{ 'svg' == data.megaData.icon_type ? 'selected="selected"' : '' }}><?php esc_html_e( 'SVG', 'razzi' ) ?></option>
-				<option value="image" {{ 'image' == data.megaData.icon_type ? 'selected="selected"' : '' }}><?php esc_html_e( 'Image', 'razzi' ) ?></option>
+				<option value="none"><?php esc_html_e( 'None', 'dimas' ) ?></option>
+				<option value="svg" {{ 'svg' == data.megaData.icon_type ? 'selected="selected"' : '' }}><?php esc_html_e( 'SVG', 'dimas' ) ?></option>
+				<option value="image" {{ 'image' == data.megaData.icon_type ? 'selected="selected"' : '' }}><?php esc_html_e( 'Image', 'dimas' ) ?></option>
 			</select>
 		</span>
 
 		<div class="setting-field setting-field-svg setting-field-select" style="{{ 'svg' == data.megaData.icon_type ? '' : 'display: none;' }}">
 			<p class="tamm-icon-color">
-				<label><?php esc_html_e( 'SVG Color', 'razzi' ) ?></label><br>
+				<label><?php esc_html_e( 'SVG Color', 'dimas' ) ?></label><br>
 				<input type="text" class="tamm-icon-color-picker"
 					name="{{ taMegaMenu.getFieldName( 'icon_color', data.data['menu-item-db-id'] ) }}"
 					value="{{ data.megaData.icon_color }}">
@@ -30,7 +30,7 @@
 		</div>
 		<div class="setting-field setting-field-image" style="{{ 'image' == data.megaData.icon_type ? '' : 'display: none;' }}">
 			<p class="background-image">
-				<label><?php esc_html_e( 'Image', 'razzi' ) ?></label><br>
+				<label><?php esc_html_e( 'Image', 'dimas' ) ?></label><br>
 				<span class="background-image-preview">
 					<# if ( data.megaData.icon_image ) { #>
 						<img src="{{ data.megaData.icon_image }}">
@@ -38,9 +38,9 @@
 				</span>
 
 				<button type="button"
-						class="button remove-button {{ ! data.megaData.icon_image ? 'hidden' : '' }}"><?php esc_html_e( 'Remove', 'razzi' ) ?></button>
+						class="button remove-button {{ ! data.megaData.icon_image ? 'hidden' : '' }}"><?php esc_html_e( 'Remove', 'dimas' ) ?></button>
 				<button type="button" class="button upload-button"
-						id="imageSVG-button"><?php esc_html_e( 'Select Image', 'razzi' ) ?></button>
+						id="imageSVG-button"><?php esc_html_e( 'Select Image', 'dimas' ) ?></button>
 
 				<input class="rz-tamm-panel-icon_image" type="hidden" name="{{ taMegaMenu.getFieldName( 'icon_image', data.data['menu-item-db-id'] ) }}"
 					value="{{ data.megaData.icon_image }}">

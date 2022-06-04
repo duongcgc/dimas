@@ -1,12 +1,12 @@
-.razzi-size-guide-tabs{
+.dimas-size-guide-tabs{
 	display: block;
 }
 
-.razzi-size-guide-tabs__panels {
+.dimas-size-guide-tabs__panels {
     position: relative;
 }
 
-.razzi-size-guide-tabs__panel.active {
+.dimas-size-guide-tabs__panel.active {
     opacity: 1;
     display: block;
     visibility: visible;
@@ -14,7 +14,7 @@
     transform: scaleY(1);
 }
 
-.razzi-size-guide-tabs__panel {
+.dimas-size-guide-tabs__panel {
     opacity: 0;
     visibility: hidden;
     position: absolute;
@@ -25,7 +25,7 @@
     transition: opacity 0.4s;
 }
 
-.razzi-size-guide-tabs__nav {
+.dimas-size-guide-tabs__nav {
 	list-style: none;
 	display: flex;
 	justify-content: flex-end;
@@ -36,7 +36,7 @@
     float: right;
 }
 
-.razzi-size-guide-tabs__nav li {
+.dimas-size-guide-tabs__nav li {
 	font-weight: 500;
 	font-size: 11px;
 	color: #111111;
@@ -53,44 +53,44 @@
 	cursor: pointer;
 }
 
-.razzi-size-guide-tabs__nav li.active {
+.dimas-size-guide-tabs__nav li.active {
 	color: #ffffff;
 	background-color: #1f1f1f;
 }
 
-.woocommerce-Tabs-panel--razzi_size_guide .razzi-size-guide-tabs {
+.woocommerce-Tabs-panel--dimas_size_guide .dimas-size-guide-tabs {
 	padding-bottom: 0;
 }
 
-.razzi-size-guide__name {
+.dimas-size-guide__name {
     padding-top: 3px;
 	margin: 0 0 28px;
 }
 
-.razzi-size-guide-tabs__panel {
+.dimas-size-guide-tabs__panel {
 	padding-bottom: 31px;
 }
 
-.razzi-size-guide-tabs__panel > *:not(:last-child) {
+.dimas-size-guide-tabs__panel > *:not(:last-child) {
 	margin-bottom: 30px;
 }
 
-.razzi-size-guide-tabs__panel > *:not(.razzi-size-guide__name) {
+.dimas-size-guide-tabs__panel > *:not(.dimas-size-guide__name) {
 	clear: both;
 }
 
-.razzi-size-guide__table{
+.dimas-size-guide__table{
 	margin-bottom: 0;
 	white-space: nowrap;
 }
 
-.razzi-size-guide__table thead th {
+.dimas-size-guide__table thead th {
 	color: #111111;
 	font-size: 14px;
 	padding: 14px 20px;
 }
 
-.razzi-size-guide__table tbody td {
+.dimas-size-guide__table tbody td {
 	color: #111111;
 	font-size: 15px;
 	padding: 19px 20px;
@@ -157,7 +157,7 @@
 	height: 2px;
 }
 
-.size-guide-modal .razzi-size-guide {
+.size-guide-modal .dimas-size-guide {
 	padding: 0 30px;
 }
 
@@ -171,15 +171,15 @@
 	text-decoration: underline;
 }
 
-.size-guide-button .razzi-svg-icon {
+.size-guide-button .dimas-svg-icon {
 	margin-right: 12px;
 }
 
-.single-product div.product.product-type-grouped table.razzi-size-guide__table {
+.single-product div.product.product-type-grouped table.dimas-size-guide__table {
 	border: 1px solid #cdcdcd;
 }
 
-.single-product div.product.product-type-grouped table.razzi-size-guide__table td {
+.single-product div.product.product-type-grouped table.dimas-size-guide__table td {
 	border: 1px solid #cdcdcd;
 	padding: 19px 20px;
 }
@@ -198,7 +198,7 @@
 		width: 100%;
 	}
 
-	.size-guide-modal .razzi-size-guide {
+	.size-guide-modal .dimas-size-guide {
 		display: inline-flex;
 		width: 100%;
 		padding-left: 15px;

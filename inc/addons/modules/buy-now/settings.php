@@ -53,7 +53,7 @@ class Settings {
 	 * @return array
 	 */
 	public function buy_now_section( $sections ) {
-		$sections['rz_buy_now'] = esc_html__( 'Buy Now', 'razzi' );
+		$sections['rz_buy_now'] = esc_html__( 'Buy Now', 'dimas' );
 
 		return $sections;
 	}
@@ -74,34 +74,34 @@ class Settings {
 
 			$settings[] = array(
 				'id'    => 'rz_buy_now_options',
-				'title' => esc_html__( 'Buy Now', 'razzi' ),
+				'title' => esc_html__( 'Buy Now', 'dimas' ),
 				'type'  => 'title',
 			);
 
 			$settings[] = array(
 				'id'      => 'rz_buy_now',
-				'title'   => esc_html__( 'Buy Now', 'razzi' ),
-				'desc'    => esc_html__( 'Enable Buy Now', 'razzi' ),
+				'title'   => esc_html__( 'Buy Now', 'dimas' ),
+				'desc'    => esc_html__( 'Enable Buy Now', 'dimas' ),
 				'type'    => 'checkbox',
 				'default' => 'no',
 			);
 
 			$settings[] = array(
-				'name'    => esc_html__( 'Button Text', 'razzi' ),
+				'name'    => esc_html__( 'Button Text', 'dimas' ),
 				'id'      => 'rz_buy_now_button_text',
 				'type'    => 'text',
-				'default' => esc_html__( 'Buy Now', 'razzi' ),
+				'default' => esc_html__( 'Buy Now', 'dimas' ),
 			);
 
 			$settings[] = array(
-				'name'    => esc_html__( 'Redirect Location', 'razzi' ),
+				'name'    => esc_html__( 'Redirect Location', 'dimas' ),
 				'id'      => 'rz_buy_now_redirect_location',
 				'type'    => 'single_select_page',
 				'default' => '',
 				'args'    => array( 'post_status' => 'publish,private' ),
 				'class'   => 'wc-enhanced-select-nostd',
 				'css'     => 'min-width:300px;',
-				'desc_tip' => esc_html__( 'Select the page where to redirect after buy now button pressed.', 'razzi' ),
+				'desc_tip' => esc_html__( 'Select the page where to redirect after buy now button pressed.', 'dimas' ),
 			);
 
 			$settings[] = array(

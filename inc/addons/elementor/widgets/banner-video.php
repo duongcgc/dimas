@@ -21,7 +21,7 @@ class Banner_Video extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-banner-video';
+		return 'dimas-banner-video';
 	}
 
 	/**
@@ -30,7 +30,7 @@ class Banner_Video extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Banner Video', 'razzi' );
+		return esc_html__( 'Dimas - Banner Video', 'dimas' );
 	}
 
 	/**
@@ -48,7 +48,7 @@ class Banner_Video extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	/**
@@ -68,7 +68,7 @@ class Banner_Video extends Widget_Base {
 	public function get_script_depends() {
 		return [
 			'magnific',
-			'razzi-frontend'
+			'dimas-frontend'
 		];
 	}
 
@@ -97,19 +97,19 @@ class Banner_Video extends Widget_Base {
 
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Content', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Content', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'video_type',
 			[
-				'label' => __( 'Source', 'razzi' ),
+				'label' => __( 'Source', 'dimas' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 'youtube',
 				'options' => [
-					'youtube' => __( 'YouTube', 'razzi' ),
-					'vimeo' => __( 'Vimeo', 'razzi' ),
-					'self_hosted' => __( 'Self Hosted', 'razzi' ),
+					'youtube' => __( 'YouTube', 'dimas' ),
+					'vimeo' => __( 'Vimeo', 'dimas' ),
+					'self_hosted' => __( 'Self Hosted', 'dimas' ),
 				],
 			]
 		);
@@ -117,9 +117,9 @@ class Banner_Video extends Widget_Base {
 		$this->add_control(
 			'youtube_url',
 			[
-				'label' => __( 'Link', 'razzi' ),
+				'label' => __( 'Link', 'dimas' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter your URL', 'razzi' ) . ' (YouTube)',
+				'placeholder' => __( 'Enter your URL', 'dimas' ) . ' (YouTube)',
 				'default' => 'https://www.youtube.com/watch?v=XHOmBV4js_E',
 				'label_block' => false,
 				'condition' => [
@@ -131,9 +131,9 @@ class Banner_Video extends Widget_Base {
 		$this->add_control(
 			'vimeo_url',
 			[
-				'label' => __( 'Link', 'razzi' ),
+				'label' => __( 'Link', 'dimas' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => __( 'Enter your URL', 'razzi' ) . ' (Vimeo)',
+				'placeholder' => __( 'Enter your URL', 'dimas' ) . ' (Vimeo)',
 				'default' => 'https://vimeo.com/235215203',
 				'label_block' => false,
 				'condition' => [
@@ -145,7 +145,7 @@ class Banner_Video extends Widget_Base {
 		$this->add_control(
 			'insert_url',
 			[
-				'label' => __( 'External URL', 'razzi' ),
+				'label' => __( 'External URL', 'dimas' ),
 				'type' => Controls_Manager::SWITCHER,
 				'condition' => [
 					'video_type' => 'self_hosted',
@@ -156,9 +156,9 @@ class Banner_Video extends Widget_Base {
 		$this->add_control(
 			'external_url',
 			[
-				'label' => __( 'Link', 'razzi' ),
+				'label' => __( 'Link', 'dimas' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => __( 'Enter your URL', 'razzi' ),
+				'placeholder' => __( 'Enter your URL', 'dimas' ),
 				'autocomplete' => false,
 				'options' => false,
 				'label_block' => true,
@@ -174,7 +174,7 @@ class Banner_Video extends Widget_Base {
 		$this->add_control(
 			'hosted_url',
 			[
-				'label' => __( 'Choose File', 'razzi' ),
+				'label' => __( 'Choose File', 'dimas' ),
 				'type' => Controls_Manager::MEDIA,
 				'media_type' => 'video',
 				'condition' => [
@@ -188,9 +188,9 @@ class Banner_Video extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name'     => 'banners_background',
-				'label'    => __( 'Background', 'razzi' ),
+				'label'    => __( 'Background', 'dimas' ),
 				'types'    => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .razzi-banner-video .banner-featured-image',
+				'selector' => '{{WRAPPER}} .dimas-banner-video .banner-featured-image',
 				'fields_options'  => [
 					'background' => [
 						'default' => 'classic',
@@ -208,7 +208,7 @@ class Banner_Video extends Widget_Base {
 		$this->add_responsive_control(
 			'height',
 			[
-				'label'     => esc_html__( 'Height', 'razzi' ),
+				'label'     => esc_html__( 'Height', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [
 					'unit' => 'px',
@@ -221,7 +221,7 @@ class Banner_Video extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-video' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-banner-video' => 'height: {{SIZE}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -230,11 +230,11 @@ class Banner_Video extends Widget_Base {
 		$this->add_control(
 			'link_type',
 			[
-				'label'   => esc_html__( 'Link Type', 'razzi' ),
+				'label'   => esc_html__( 'Link Type', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'only'   => esc_html__( 'Only marker', 'razzi' ),
-					'all' 	 => esc_html__( 'All banner', 'razzi' ),
+					'only'   => esc_html__( 'Only marker', 'dimas' ),
+					'all' 	 => esc_html__( 'All banner', 'dimas' ),
 				],
 				'default' => 'only',
 				'toggle'  => false,
@@ -253,7 +253,7 @@ class Banner_Video extends Widget_Base {
 		$this->start_controls_section(
 			'style_content',
 			[
-				'label' => __( 'Marker', 'razzi' ),
+				'label' => __( 'Marker', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -261,7 +261,7 @@ class Banner_Video extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			[
-				'label'     => __( 'Font Size', 'razzi' ),
+				'label'     => __( 'Font Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [],
 				'range'     => [
@@ -271,7 +271,7 @@ class Banner_Video extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-video__marker .razzi-icon'     => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-banner-video__marker .dimas-icon'     => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -279,11 +279,11 @@ class Banner_Video extends Widget_Base {
 		$this->add_control(
 			'icon_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-video__marker .razzi-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-banner-video__marker .dimas-icon' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -291,11 +291,11 @@ class Banner_Video extends Widget_Base {
 		$this->add_control(
 			'icon_bg_color',
 			[
-				'label'     => __( 'Background Color', 'razzi' ),
+				'label'     => __( 'Background Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-video__marker:after' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-banner-video__marker:after' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -303,7 +303,7 @@ class Banner_Video extends Widget_Base {
 		$this->add_control(
 			'icon_bg_width',
 			[
-				'label'     => __( 'Width', 'razzi' ),
+				'label'     => __( 'Width', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [],
 				'range'     => [
@@ -313,7 +313,7 @@ class Banner_Video extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-video__marker:after' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-banner-video__marker:after' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -321,7 +321,7 @@ class Banner_Video extends Widget_Base {
 		$this->add_control(
 			'icon_bg_height',
 			[
-				'label'     => __( 'Height', 'razzi' ),
+				'label'     => __( 'Height', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => [],
 				'range'     => [
@@ -331,7 +331,7 @@ class Banner_Video extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-banner-video__marker:after' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-banner-video__marker:after' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -349,13 +349,13 @@ class Banner_Video extends Widget_Base {
 
 		$this->add_render_attribute(
 			'wrapper', 'class', [
-				'razzi-banner-video'
+				'dimas-banner-video'
 			]
 		);
 
-		$icon =  \Dimas\Addons\Helper::get_svg('play', 'razzi-icon', 'widget');
+		$icon =  \Dimas\Addons\Helper::get_svg('play', 'dimas-icon', 'widget');
 
-		$marker_html =  sprintf('<span class="razzi-banner-video__marker">%s</span>', $icon) ;
+		$marker_html =  sprintf('<span class="dimas-banner-video__marker">%s</span>', $icon) ;
 
 		$video_url = array();
 
@@ -382,9 +382,9 @@ class Banner_Video extends Widget_Base {
 		$btn_full = '';
 		if ( $video_url['url']) :
 			if ( $settings['link_type'] == 'only') {
-				$marker_html = Helper::control_url( 'btn_1', $video_url, $marker_html, [ 'class' => 'razzi-banner-video__play' ] );
+				$marker_html = Helper::control_url( 'btn_1', $video_url, $marker_html, [ 'class' => 'dimas-banner-video__play' ] );
 			} else {
-				$btn_full =  Helper::control_url( 'btn_2', $video_url, '', [ 'class' => 'razzi-banner-video__play full-box-button' ] ) ;
+				$btn_full =  Helper::control_url( 'btn_2', $video_url, '', [ 'class' => 'dimas-banner-video__play full-box-button' ] ) ;
 			}
 		endif;
 

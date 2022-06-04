@@ -20,7 +20,7 @@ class Products_Grid extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-products-grid';
+		return 'dimas-products-grid';
 	}
 
 	/**
@@ -29,7 +29,7 @@ class Products_Grid extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Products Grid', 'razzi' );
+		return __( 'Dimas - Products Grid', 'dimas' );
 	}
 
 	/**
@@ -47,12 +47,12 @@ class Products_Grid extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-product-shortcode'
+			'dimas-product-shortcode'
 		];
 	}
 
@@ -82,13 +82,13 @@ class Products_Grid extends Widget_Base {
 	protected function section_products_settings_controls() {
 		$this->start_controls_section(
 			'section_products',
-			[ 'label' => esc_html__( 'Products', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Products', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'per_page',
 			[
-				'label'   => esc_html__( 'Total Products', 'razzi' ),
+				'label'   => esc_html__( 'Total Products', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 8,
 				'min'     => 1,
@@ -104,7 +104,7 @@ class Products_Grid extends Widget_Base {
 		$this->add_control(
 			'columns',
 			[
-				'label'   => esc_html__( 'Columns', 'razzi' ),
+				'label'   => esc_html__( 'Columns', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 4,
 				'min'     => 1,
@@ -117,15 +117,15 @@ class Products_Grid extends Widget_Base {
 		$this->add_control(
 			'products',
 			[
-				'label'     => esc_html__( 'Product', 'razzi' ),
+				'label'     => esc_html__( 'Product', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'recent'       => esc_html__( 'Recent', 'razzi' ),
-					'featured'     => esc_html__( 'Featured', 'razzi' ),
-					'best_selling' => esc_html__( 'Best Selling', 'razzi' ),
-					'top_rated'    => esc_html__( 'Top Rated', 'razzi' ),
-					'sale'         => esc_html__( 'On Sale', 'razzi' ),
-					'custom'       => esc_html__( 'Custom', 'razzi' ),
+					'recent'       => esc_html__( 'Recent', 'dimas' ),
+					'featured'     => esc_html__( 'Featured', 'dimas' ),
+					'best_selling' => esc_html__( 'Best Selling', 'dimas' ),
+					'top_rated'    => esc_html__( 'Top Rated', 'dimas' ),
+					'sale'         => esc_html__( 'On Sale', 'dimas' ),
+					'custom'       => esc_html__( 'Custom', 'dimas' ),
 				],
 				'default'   => 'recent',
 				'toggle'    => false,
@@ -136,8 +136,8 @@ class Products_Grid extends Widget_Base {
 		$this->add_control(
 			'ids',
 			[
-				'label'       => esc_html__( 'Products', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -153,14 +153,14 @@ class Products_Grid extends Widget_Base {
 		$this->add_control(
 			'orderby',
 			[
-				'label'     => esc_html__( 'Order By', 'razzi' ),
+				'label'     => esc_html__( 'Order By', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''           => esc_html__( 'Default', 'razzi' ),
-					'date'       => esc_html__( 'Date', 'razzi' ),
-					'title'      => esc_html__( 'Title', 'razzi' ),
-					'menu_order' => esc_html__( 'Menu Order', 'razzi' ),
-					'rand'       => esc_html__( 'Random', 'razzi' ),
+					''           => esc_html__( 'Default', 'dimas' ),
+					'date'       => esc_html__( 'Date', 'dimas' ),
+					'title'      => esc_html__( 'Title', 'dimas' ),
+					'menu_order' => esc_html__( 'Menu Order', 'dimas' ),
+					'rand'       => esc_html__( 'Random', 'dimas' ),
 				],
 				'default'   => '',
 				'condition' => [
@@ -173,12 +173,12 @@ class Products_Grid extends Widget_Base {
 		$this->add_control(
 			'order',
 			[
-				'label'     => esc_html__( 'Order', 'razzi' ),
+				'label'     => esc_html__( 'Order', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					''     => esc_html__( 'Default', 'razzi' ),
-					'asc'  => esc_html__( 'Ascending', 'razzi' ),
-					'desc' => esc_html__( 'Descending', 'razzi' ),
+					''     => esc_html__( 'Default', 'dimas' ),
+					'asc'  => esc_html__( 'Ascending', 'dimas' ),
+					'desc' => esc_html__( 'Descending', 'dimas' ),
 				],
 				'default'   => '',
 				'condition' => [
@@ -191,8 +191,8 @@ class Products_Grid extends Widget_Base {
 		$this->add_control(
 			'category',
 			[
-				'label'       => esc_html__( 'Products Category', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products Category', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -210,8 +210,8 @@ class Products_Grid extends Widget_Base {
 		$this->add_control(
 			'product_tags',
 			[
-				'label'       => esc_html__( 'Products Tags', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products Tags', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -228,8 +228,8 @@ class Products_Grid extends Widget_Base {
 		$this->add_control(
 			'product_brands',
 			[
-				'label'       => esc_html__( 'Products Brands', 'razzi' ),
-				'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+				'label'       => esc_html__( 'Products Brands', 'dimas' ),
+				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 				'type'        => 'rzautocomplete',
 				'default'     => '',
 				'label_block' => true,
@@ -247,8 +247,8 @@ class Products_Grid extends Widget_Base {
 			$this->add_control(
 				'product_authors',
 				[
-					'label'       => esc_html__( 'Products Authors', 'razzi' ),
-					'placeholder' => esc_html__( 'Click here and start typing...', 'razzi' ),
+					'label'       => esc_html__( 'Products Authors', 'dimas' ),
+					'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
 					'type'        => 'rzautocomplete',
 					'default'     => '',
 					'label_block' => true,
@@ -271,17 +271,17 @@ class Products_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_pagination',
 			[
-				'label' => esc_html__( 'Pagination', 'razzi' ),
+				'label' => esc_html__( 'Pagination', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'pagination_enable',
 			[
-				'label'        => esc_html__( 'Pagination', 'razzi' ),
+				'label'        => esc_html__( 'Pagination', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Show', 'razzi' ),
-				'label_off'    => esc_html__( 'Hide', 'razzi' ),
+				'label_on'     => esc_html__( 'Show', 'dimas' ),
+				'label_off'    => esc_html__( 'Hide', 'dimas' ),
 				'return_value' => 'yes',
 				'default'      => '',
 			]
@@ -289,12 +289,12 @@ class Products_Grid extends Widget_Base {
 		$this->add_control(
 			'pagination_type',
 			[
-				'label'     => esc_html__( 'Pagination Type', 'razzi' ),
+				'label'     => esc_html__( 'Pagination Type', 'dimas' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'numeric'  => esc_html__( 'Numeric', 'razzi' ),
-					'loadmore' => esc_html__( 'Load More', 'razzi' ),
-					'infinite' => esc_html__( 'Infinite Scroll', 'razzi' ),
+					'numeric'  => esc_html__( 'Numeric', 'dimas' ),
+					'loadmore' => esc_html__( 'Load More', 'dimas' ),
+					'infinite' => esc_html__( 'Infinite Scroll', 'dimas' ),
 				],
 				'default'   => 'loadmore',
 				'toggle'    => false,
@@ -304,9 +304,9 @@ class Products_Grid extends Widget_Base {
 		$this->add_control(
 			'button_text',
 			[
-				'label'   => esc_html__( 'Button text', 'razzi' ),
+				'label'   => esc_html__( 'Button text', 'dimas' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => esc_html__( 'Load More', 'razzi' ),
+				'default' => esc_html__( 'Load More', 'dimas' ),
 				'conditions' => [
 					'terms' => [
 						[
@@ -327,7 +327,7 @@ class Products_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			[
-				'label' => esc_html__( 'Content', 'razzi' ),
+				'label' => esc_html__( 'Content', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -335,7 +335,7 @@ class Products_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'button_spacing',
 			[
-				'label'     => esc_html__( 'Pagination Spacing', 'razzi' ),
+				'label'     => esc_html__( 'Pagination Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -344,8 +344,8 @@ class Products_Grid extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-products-grid .woocommerce-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .razzi-products-grid .razzi-load-more' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-grid .woocommerce-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-products-grid .dimas-load-more' => 'margin-top: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -353,14 +353,14 @@ class Products_Grid extends Widget_Base {
 		$this->add_control(
 			'button_type',
 			[
-				'label'   => esc_html__( 'Button Type', 'razzi' ),
+				'label'   => esc_html__( 'Button Type', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'button-smaller' => esc_html__( 'Smaller', 'razzi' ),
-					'button-medium' => esc_html__( 'Medium', 'razzi' ),
-					'button-larger'  => esc_html__( 'Larger', 'razzi' ),
-					'button-big'  => esc_html__( 'Big', 'razzi' ),
-					'button-outline'  => esc_html__( 'Outline', 'razzi' ),
+					'button-smaller' => esc_html__( 'Smaller', 'dimas' ),
+					'button-medium' => esc_html__( 'Medium', 'dimas' ),
+					'button-larger'  => esc_html__( 'Larger', 'dimas' ),
+					'button-big'  => esc_html__( 'Big', 'dimas' ),
+					'button-outline'  => esc_html__( 'Outline', 'dimas' ),
 				],
 				'default' => 'button-larger',
 				'toggle'  => false,
@@ -389,7 +389,7 @@ class Products_Grid extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-products-grid woocommerce'
+			'dimas-products-grid woocommerce'
 		];
 
 		$this->add_render_attribute( 'wrapper', 'class', $classes );
@@ -439,9 +439,9 @@ class Products_Grid extends Widget_Base {
 					} if ( $settings['pagination_type'] == 'loadmore' || $settings['pagination_type'] == 'infinite' ) {
 						if ( $results['current_page'] < $results['total_pages']  ) {
 							echo sprintf(
-								'<a href="#" class="ajax-load-products razzi-button %s %s" data-page="%s" rel="nofollow">
+								'<a href="#" class="ajax-load-products dimas-button %s %s" data-page="%s" rel="nofollow">
 									<span class="button-text">%s</span>
-									<span class="dots razzi-gooey">
+									<span class="dots dimas-gooey">
 										<span></span>
 										<span></span>
 										<span></span>

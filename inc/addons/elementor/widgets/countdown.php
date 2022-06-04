@@ -21,7 +21,7 @@ class Countdown extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-countdown';
+		return 'dimas-countdown';
 	}
 
 	/**
@@ -30,7 +30,7 @@ class Countdown extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Dimas - Countdown', 'razzi' );
+		return esc_html__( 'Dimas - Countdown', 'dimas' );
 	}
 
 	/**
@@ -48,13 +48,13 @@ class Countdown extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-coundown',
-			'razzi-frontend',
+			'dimas-coundown',
+			'dimas-frontend',
 		];
 	}
 
@@ -76,13 +76,13 @@ class Countdown extends Widget_Base {
 	protected function section_content() {
 		$this->start_controls_section(
 			'section_content',
-			[ 'label' => esc_html__( 'Content', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Content', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'due_date',
 			[
-				'label'   => esc_html__( 'Date', 'razzi' ),
+				'label'   => esc_html__( 'Date', 'dimas' ),
 				'type'    => Controls_Manager::DATE_TIME,
 				'default' => date( 'Y/m/d', strtotime( '+5 days' ) ),
 			]
@@ -110,7 +110,7 @@ class Countdown extends Widget_Base {
 		$this->start_controls_section(
 			'section_general_style',
 			[
-				'label' => __( 'General', 'razzi' ),
+				'label' => __( 'General', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -118,25 +118,25 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'form_align',
 			[
-				'label'       => esc_html__( 'Align', 'razzi' ),
+				'label'       => esc_html__( 'Align', 'dimas' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => [
 					'flex-start'   => [
-						'title' => esc_html__( 'Left', 'razzi' ),
+						'title' => esc_html__( 'Left', 'dimas' ),
 						'icon'  => 'eicon-text-align-left',
 					],
 					'center' => [
-						'title' => esc_html__( 'Center', 'razzi' ),
+						'title' => esc_html__( 'Center', 'dimas' ),
 						'icon'  => 'eicon-text-align-center',
 					],
 					'flex-end'  => [
-						'title' => esc_html__( 'Right', 'razzi' ),
+						'title' => esc_html__( 'Right', 'dimas' ),
 						'icon'  => 'eicon-text-align-right',
 					],
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .razzi-time-countdown' => 'justify-content: {{VALUE}}',
+					'{{WRAPPER}} .dimas-time-countdown' => 'justify-content: {{VALUE}}',
 				],
 			]
 		);
@@ -144,11 +144,11 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'general_padding',
 			[
-				'label'      => __( 'Padding', 'razzi' ),
+				'label'      => __( 'Padding', 'dimas' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .razzi-time-countdown .timer' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-time-countdown .timer' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -164,7 +164,7 @@ class Countdown extends Widget_Base {
 		$this->start_controls_section(
 			'section_digit_style',
 			[
-				'label' => __( 'Digit', 'razzi' ),
+				'label' => __( 'Digit', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -172,11 +172,11 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'digit_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-time-countdown .timer .digits' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-time-countdown .timer .digits' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -184,13 +184,13 @@ class Countdown extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'digit_typography',
-				'selector' => '{{WRAPPER}} .razzi-time-countdown .timer .digits',
+				'selector' => '{{WRAPPER}} .dimas-time-countdown .timer .digits',
 			]
 		);
 		$this->add_responsive_control(
 			'digit_spacing',
 			[
-				'label'     => __( 'Bottom Spacing', 'razzi' ),
+				'label'     => __( 'Bottom Spacing', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -200,7 +200,7 @@ class Countdown extends Widget_Base {
 				],
 				'default'   => [ ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-time-countdown .timer .digits' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-time-countdown .timer .digits' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -216,7 +216,7 @@ class Countdown extends Widget_Base {
 		$this->start_controls_section(
 			'section_text_style',
 			[
-				'label' => __( 'Text', 'razzi' ),
+				'label' => __( 'Text', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -224,11 +224,11 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'text_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-time-countdown .timer .text' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-time-countdown .timer .text' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -236,7 +236,7 @@ class Countdown extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'text_typography',
-				'selector' => '{{WRAPPER}} .razzi-time-countdown .timer .text',
+				'selector' => '{{WRAPPER}} .dimas-time-countdown .timer .text',
 			]
 		);
 		$this->end_controls_section();
@@ -251,7 +251,7 @@ class Countdown extends Widget_Base {
 		$this->start_controls_section(
 			'section_divider_style',
 			[
-				'label' => __( 'Divider', 'razzi' ),
+				'label' => __( 'Divider', 'dimas' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -259,11 +259,11 @@ class Countdown extends Widget_Base {
 		$this->add_control(
 			'divider_color',
 			[
-				'label'     => __( 'Color', 'razzi' ),
+				'label'     => __( 'Color', 'dimas' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .razzi-time-countdown .timer .divider' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dimas-time-countdown .timer .divider' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -271,7 +271,7 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'divider_font_size',
 			[
-				'label'     => __( 'Font Size', 'razzi' ),
+				'label'     => __( 'Font Size', 'dimas' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => [
 					'px' => [
@@ -281,7 +281,7 @@ class Countdown extends Widget_Base {
 				],
 				'default'   => [ ],
 				'selectors' => [
-					'{{WRAPPER}} .razzi-time-countdown .timer .divider' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .dimas-time-countdown .timer .divider' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -289,13 +289,13 @@ class Countdown extends Widget_Base {
 		$this->add_responsive_control(
 			'divider_position_left',
 			[
-				'label'              => esc_html__( 'Position ', 'razzi' ),
+				'label'              => esc_html__( 'Position ', 'dimas' ),
 				'type'               => Controls_Manager::DIMENSIONS,
 				'allowed_dimensions' => [ 'top', 'right' ],
 				'size_units'         => [ 'px', '%' ],
 				'default'            => [],
 				'selectors'          => [
-					'{{WRAPPER}} .razzi-time-countdown .timer .divider' => ' top:{{TOP}}{{UNIT}};right: {{RIGHT}}{{UNIT}}',
+					'{{WRAPPER}} .dimas-time-countdown .timer .divider' => ' top:{{TOP}}{{UNIT}};right: {{RIGHT}}{{UNIT}}',
 				],
 			]
 		);
@@ -313,7 +313,7 @@ class Countdown extends Widget_Base {
 
 		$this->add_render_attribute(
 			'wrapper', 'class', [
-				'razzi-time-countdown razzi-countdown',
+				'dimas-time-countdown dimas-countdown',
 			]
 		);
 
@@ -326,7 +326,7 @@ class Countdown extends Widget_Base {
 				$second = $second_discount - $second_current;
 			}
 
-			$second = apply_filters( 'razzi_countdown_shortcode_second', $second );
+			$second = apply_filters( 'dimas_countdown_shortcode_second', $second );
 		}
 
 

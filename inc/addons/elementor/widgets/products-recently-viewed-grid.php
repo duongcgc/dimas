@@ -20,7 +20,7 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'razzi-products-recently-viewed-grid';
+		return 'dimas-products-recently-viewed-grid';
 	}
 
 	/**
@@ -29,7 +29,7 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Dimas - Products Recently Viewed Grid', 'razzi' );
+		return __( 'Dimas - Products Recently Viewed Grid', 'dimas' );
 	}
 
 	/**
@@ -47,12 +47,12 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'razzi' ];
+		return [ 'dimas' ];
 	}
 
 	public function get_script_depends() {
 		return [
-			'razzi-product-shortcode'
+			'dimas-product-shortcode'
 		];
 	}
 
@@ -70,17 +70,17 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 	protected function section_content() {
 		$this->start_controls_section(
 			'section_products',
-			[ 'label' => esc_html__( 'Products', 'razzi' ) ]
+			[ 'label' => esc_html__( 'Products', 'dimas' ) ]
 		);
 
 		$this->add_control(
 			'layout',
 			[
-				'label'   => esc_html__( 'Layout', 'razzi' ),
+				'label'   => esc_html__( 'Layout', 'dimas' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => [
-					'default'      => esc_html__( 'Default', 'razzi' ),
-					'effect_hover' => esc_html__( 'Effect Hover', 'razzi' ),
+					'default'      => esc_html__( 'Default', 'dimas' ),
+					'effect_hover' => esc_html__( 'Effect Hover', 'dimas' ),
 				],
 				'default' => 'default',
 			]
@@ -89,7 +89,7 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 		$this->add_control(
 			'per_page',
 			[
-				'label'   => esc_html__( 'Per Page', 'razzi' ),
+				'label'   => esc_html__( 'Per Page', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 8,
 				'min'     => 2,
@@ -101,7 +101,7 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 		$this->add_control(
 			'columns',
 			[
-				'label'   => esc_html__( 'Columns', 'razzi' ),
+				'label'   => esc_html__( 'Columns', 'dimas' ),
 				'type'    => Controls_Manager::NUMBER,
 				'default' => 4,
 				'min'     => 1,
@@ -113,13 +113,13 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 		$this->add_control(
 			'orderby',
 			[
-				'label'              => esc_html__( 'Order By', 'razzi' ),
+				'label'              => esc_html__( 'Order By', 'dimas' ),
 				'type'               => Controls_Manager::SELECT,
 				'options'            => [
-					''      => esc_html__( 'Default', 'razzi' ),
-					'date'  => esc_html__( 'Date', 'razzi' ),
-					'title' => esc_html__( 'Title', 'razzi' ),
-					'rand'  => esc_html__( 'Random', 'razzi' ),
+					''      => esc_html__( 'Default', 'dimas' ),
+					'date'  => esc_html__( 'Date', 'dimas' ),
+					'title' => esc_html__( 'Title', 'dimas' ),
+					'rand'  => esc_html__( 'Random', 'dimas' ),
 				],
 				'default'            => '',
 				'frontend_available' => true,
@@ -129,12 +129,12 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 		$this->add_control(
 			'order',
 			[
-				'label'              => esc_html__( 'Order', 'razzi' ),
+				'label'              => esc_html__( 'Order', 'dimas' ),
 				'type'               => Controls_Manager::SELECT,
 				'options'            => [
-					''     => esc_html__( 'Default', 'razzi' ),
-					'asc'  => esc_html__( 'Ascending', 'razzi' ),
-					'desc' => esc_html__( 'Descending', 'razzi' ),
+					''     => esc_html__( 'Default', 'dimas' ),
+					'asc'  => esc_html__( 'Ascending', 'dimas' ),
+					'desc' => esc_html__( 'Descending', 'dimas' ),
 				],
 				'default'            => '',
 				'frontend_available' => true,
@@ -144,7 +144,7 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 		$this->add_control(
 			'section_empty_heading',
 			[
-				'label'     => esc_html__( 'Empty Product', 'razzi' ),
+				'label'     => esc_html__( 'Empty Product', 'dimas' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -153,31 +153,31 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 		$this->add_control(
 			'empty_product_description',
 			[
-				'label'       => esc_html__( 'Description', 'razzi' ),
+				'label'       => esc_html__( 'Description', 'dimas' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'placeholder' => esc_html__( 'Enter your text', 'razzi' ),
+				'placeholder' => esc_html__( 'Enter your text', 'dimas' ),
 				'label_block' => true,
-				'default'     => esc_html__( 'Recently Viewed Products is a function which helps you keep track of your recent viewing history.', 'razzi' ),
+				'default'     => esc_html__( 'Recently Viewed Products is a function which helps you keep track of your recent viewing history.', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'empty_product_text',
 			[
-				'label'       => esc_html__( 'Button Text', 'razzi' ),
+				'label'       => esc_html__( 'Button Text', 'dimas' ),
 				'type'        => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter your text', 'razzi' ),
+				'placeholder' => esc_html__( 'Enter your text', 'dimas' ),
 				'label_block' => true,
-				'default'     => esc_html__( 'Shop Now', 'razzi' ),
+				'default'     => esc_html__( 'Shop Now', 'dimas' ),
 			]
 		);
 
 		$this->add_control(
 			'empty_product_link',
 			[
-				'label'       => esc_html__( 'Button Link', 'razzi' ),
+				'label'       => esc_html__( 'Button Link', 'dimas' ),
 				'type'        => Controls_Manager::URL,
-				'placeholder' => esc_html__( 'Enter your link', 'razzi' ),
+				'placeholder' => esc_html__( 'Enter your link', 'dimas' ),
 				'label_block' => true,
 				'default'     => [
 					'url'         => '#',
@@ -190,10 +190,10 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 		$this->add_control(
 			'pagination_enable',
 			[
-				'label'        => esc_html__( 'Pagination', 'razzi' ),
+				'label'        => esc_html__( 'Pagination', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Show', 'razzi' ),
-				'label_off'    => esc_html__( 'Hide', 'razzi' ),
+				'label_on'     => esc_html__( 'Show', 'dimas' ),
+				'label_off'    => esc_html__( 'Hide', 'dimas' ),
 				'return_value' => 'yes',
 				'default'      => '',
 				'separator'    => 'before',
@@ -203,10 +203,10 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 		$this->add_control(
 			'toolbar_enable',
 			[
-				'label'        => esc_html__( 'Toolbar', 'razzi' ),
+				'label'        => esc_html__( 'Toolbar', 'dimas' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Show', 'razzi' ),
-				'label_off'    => esc_html__( 'Hide', 'razzi' ),
+				'label_on'     => esc_html__( 'Show', 'dimas' ),
+				'label_off'    => esc_html__( 'Hide', 'dimas' ),
 				'return_value' => 'yes',
 				'default'      => '',
 			]
@@ -224,7 +224,7 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$classes = [
-			'razzi-products-recently-viewed-grid razzi-history-products grid-type',
+			'dimas-products-recently-viewed-grid dimas-history-products grid-type',
 		];
 
 
@@ -276,7 +276,7 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 				'<li class="text-center">%s <br> %s</li>' .
 				'</ul>',
 				wp_kses( $settings['empty_product_description'], wp_kses_allowed_html( 'post' ) ),
-				Helper::control_url( 'empty_button', $settings['empty_product_link'], $settings['empty_product_text'], [ 'class' => 'razzi-button' ] )
+				Helper::control_url( 'empty_button', $settings['empty_product_link'], $settings['empty_product_text'], [ 'class' => 'dimas-button' ] )
 			);
 			?>
             <div class="products-content">
@@ -285,14 +285,14 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 				<?php
 				if ( 'yes' == $settings['toolbar_enable'] ) { ?>
                     <div class="products-tool">
-                        <div class="razzi-products__found">
-							<?php esc_html_e( 'Showing', 'razzi' ); ?>
+                        <div class="dimas-products__found">
+							<?php esc_html_e( 'Showing', 'dimas' ); ?>
                             <span class="current-post"> <?php echo $query->post_count; ?> </span>
-							<?php esc_html_e( 'of', 'razzi' ); ?>
+							<?php esc_html_e( 'of', 'dimas' ); ?>
                             <span class="found-post"> <?php echo $query->found_posts; ?>  </span>
-							<?php $results['total'] > 1 ? esc_html_e( 'Products', 'razzi' ) : esc_html_e( 'Product', 'razzi' ); ?>
+							<?php $results['total'] > 1 ? esc_html_e( 'Products', 'dimas' ) : esc_html_e( 'Product', 'dimas' ); ?>
                         </div>
-                        <a href="#" class="reset-button"><?php esc_html_e( 'Clear', 'razzi' ); ?></a>
+                        <a href="#" class="reset-button"><?php esc_html_e( 'Clear', 'dimas' ); ?></a>
                     </div>
 				<?php } ?>
 				<?php $this->get_recently_viewed_products( $settings, $query ); ?>

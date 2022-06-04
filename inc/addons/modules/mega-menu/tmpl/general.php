@@ -6,7 +6,7 @@ global $wp_widget_factory;
 		<p>
 			<label>
 				<input type="checkbox" name="{{ taMegaMenu.getFieldName( 'hideText', data.data['menu-item-db-id'] ) }}" value="1" {{ data.megaData.hideText ? 'checked="checked"' : '' }} >
-				<?php esc_html_e( 'Hide Text', 'razzi' ) ?>
+				<?php esc_html_e( 'Hide Text', 'dimas' ) ?>
 			</label>
 		</p>
 	</div>
