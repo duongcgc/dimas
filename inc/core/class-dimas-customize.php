@@ -121,7 +121,7 @@ if ( ! class_exists( 'Theme_Customize' ) ) {
 			include_once get_theme_file_path( 'inc/core/customizer/class-dimas-customize-color-control.php' ); // phpcs:ignore WPDimas_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 			// Register the custom control.
-			$wp_customize->register_control_type( 'Customize_Color_Control' );
+			$wp_customize->register_control_type( 'Dimas\Customize_Color_Control' );
 
 			// Get the palette from theme-supports.
 			$palette = get_theme_support( 'editor-color-palette' );
