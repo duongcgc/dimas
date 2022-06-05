@@ -529,4 +529,141 @@ class Helper {
 
 	}
 
+	/**
+	 * Check elementor actived.
+	 *
+	 * @return boolean
+	 */
+	public static function dimas_is_elementor_activated() {
+		return function_exists( 'elementor_load_plugin_textdomain' );
+	}
+
+	/**
+	 * Check contactform7 actived.
+	 *
+	 * @return boolean
+	 */
+	public static function dimas_is_contactform7_activated() {
+		return class_exists( 'WPCF7' );
+	}
+
+	/**
+	 * Check OCDI actived.
+	 *
+	 * @return boolean
+	 */
+	public static function dimas_is_one_click_import_activated() {
+		return class_exists( 'OCDI_Plugin' ) ? true : false;
+	}
+
+	/**
+	 * Check WooCommerce actived.
+	 *
+	 * @return boolean
+	 */
+	public static function dimas_is_woocommerce_activated() {
+		return class_exists( 'WooCommerce' ) ? true : false;
+	}
+
+	/**
+	 * Check WooCommerce Version.
+	 *
+	 * @return mixed
+	 */
+	public static function dimas_woocommerce_version_check( $version = '3.3' ) {
+		if ( self::dimas_is_woocommerce_activated() ) {
+			global $woocommerce;
+			if ( version_compare( $woocommerce->version, $version, '>=' ) ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Checks if the current page is a product archive
+	 *
+	 * @return mixed
+	 */
+	public static function dimas_is_product_archive() {
+		if ( dimas_is_woocommerce_activated() ) {
+			if ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Check WC_Bookings actived.
+	 *
+	 * @return boolean
+	 */
+	public static function dimas_is_woocommerce_extension_activated( $extension = 'WC_Bookings' ) {
+		return class_exists( $extension ) ? true : false;
+	}
+
+	/**
+	 * Check YITH actived.
+	 *
+	 * @return boolean
+	 */
+	public static function dimas_is_woocommerce_yith_activated( $extension = 'WC_Bookings' ) {
+		if ( $extension == 'YITH_WCQV' ) {
+			return class_exists( $extension ) && class_exists( 'YITH_WCQV_Frontend' ) ? true : false;
+		}
+
+		return class_exists( $extension ) ? true : false;
+	}
+
+	/**
+	 * Check Mailchimp actived.
+	 *
+	 * @return boolean
+	 */
+	public static function dimas_is_mailchimp_activated() {
+		return function_exists( '_mc4wp_load_plugin' );
+	}
+
+	/**
+	 * Check Ajaxloadmore actived.
+	 *
+	 * @return boolean
+	 */
+	public static function dimas_is_ajax_load_more_activated() {
+		return class_exists( 'AjaxLoadMore' );
+	}
+
+	/**
+	 * Check Revslider actived.
+	 *
+	 * @return boolean
+	 */
+	public static function dimas_is_revslider_activated() {
+		return class_exists( 'RevSliderBase' );
+	}
+
+	/**
+	 * Check Blog archive.
+	 *
+	 * @return boolean
+	 */
+	public static function dimas_is_blog_archive() {
+		return ( is_home() && is_front_page() ) || is_archive() || is_category() || is_tag() || is_home();
+	}
+
+	/**
+	 * Get placeholder image.
+	 *
+	 * @return string
+	 */
+	public static function dimas_get_placeholder_image() {
+		return get_parent_theme_file_uri( '/assets/images/placeholder.png' );
+	}
+
+
 }
