@@ -1,7 +1,7 @@
 <?php
 /**
- * Functions which enhance the theme by hooking into Custom Hooks this theme.
- * => all functions that return value or hang on into Custom Hooks this theme.
+ * Custom template tags for this theme
+ * => all functions that echo content to theme.
  *
  * @package Dimas
  */
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Hooks initial
  */
-class Hooks {
+class Template_Tags {
 	/**
 	 * Instance
 	 *

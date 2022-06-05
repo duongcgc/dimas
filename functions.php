@@ -543,7 +543,7 @@ require get_template_directory() . '/inc/menu-functions.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 // Customizer additions.
-require get_template_directory() . '/inc/classes/_class-dimas-customize.php';
+require get_template_directory() . '/inc/classes/class-dimas-customize-init.php';
 new \Dimas\Theme_Customize();
 
 // Block Patterns.

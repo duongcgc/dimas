@@ -1,7 +1,7 @@
 <?php
 /**
- * Functions which enhance the theme by hooking into Custom Hooks this theme.
- * => all functions that return value or hang on into Custom Hooks this theme.
+ * Functions which enhance the theme by hooking into WordPress hooks.
+ * => all functions that return value or hang on into WordPress hooks.
  *
  * @package Dimas
  */
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Hooks initial
  */
-class Hooks {
+class Template_Funs {
 	/**
 	 * Instance
 	 *

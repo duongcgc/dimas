@@ -48,7 +48,7 @@ add_filter( 'walker_nav_menu_start_el', 'dimas_add_sub_menu_toggle', 10, 4 );
  * @return string
  */
 function dimas_get_social_link_svg( $uri, $size = 24 ) {
-	return SVG_Icons::get_social_link_svg( $uri, $size );
+	return \Dimas\SVG_Icons::get_social_link_svg( $uri, $size );
 }
 
 /**

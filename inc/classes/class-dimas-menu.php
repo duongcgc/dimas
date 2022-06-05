@@ -1,6 +1,9 @@
 <?php
 /**
- * Menu functions and definitions.
+ * Functions and filters related to the menus.
+ *
+ * Makes the default WordPress navigation use an HTML structure similar
+ * to the Navigation block.
  *
  * @package Dimas
  */

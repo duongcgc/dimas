@@ -1,6 +1,7 @@
 <?php
 /**
  * Custom template tags for this theme
+ * => all functions that echo content to theme.
  *
  * @package WordPress
  * @subpackage Dimas

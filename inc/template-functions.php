@@ -1,6 +1,7 @@
 <?php
 /**
- * Functions which enhance the theme by hooking into WordPress
+ * Functions which enhance the theme by hooking into WordPress.
+ * => all functions that return value or hang on into WordPress hooks.
  *
  * @package WordPress
  * @subpackage Dimas
@@ -196,7 +197,7 @@ add_filter( 'the_title', 'dimas_post_title' );
  * @return string
  */
 function dimas_get_icon_svg( $group, $icon, $size = 24 ) {
-	return SVG_Icons::get_svg( $group, $icon, $size );
+	return \Dimas\SVG_Icons::get_svg( $group, $icon, $size );
 }
 
 /**
