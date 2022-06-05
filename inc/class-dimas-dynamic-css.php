@@ -57,7 +57,7 @@ class Dynamic_CSS {
 	 * @return string
 	 */
 	public function add_static_css() {
-		$parse_css = $this->topbar_static_css();
+		$parse_css  = $this->topbar_static_css();
 		$parse_css .= $this->header_static_css();
 		$parse_css .= $this->page_static_css();
 		$parse_css .= $this->page_boxed_static_css();
@@ -135,7 +135,6 @@ class Dynamic_CSS {
 			if ( $rz_header_bottom_spacing_bottom = get_post_meta( get_the_ID(), 'rz_header_bottom_spacing_bottom', true ) ) {
 				$static_css .= '.header-v4 .header-bottom { margin-bottom: ' . intval( $rz_header_bottom_spacing_bottom ) . 'px; }';
 			}
-
 		}
 
 		return $static_css;
@@ -300,7 +299,7 @@ class Dynamic_CSS {
 				$static_css .= '.header-search .border-color-dark { --rz-border-color-dark: ' . esc_attr( $header_search_border_hover ) . ';}';
 			}
 
-			if (Helper::get_option( 'header_search_style' ) == 'form-cat') {
+			if ( Helper::get_option( 'header_search_style' ) == 'form-cat' ) {
 				if ( $header_search_bg_button_color ) {
 					$static_css .= '#site-header .header-search .form-search .search-submit { background-color: ' . esc_attr( $header_search_bg_button_color ) . ';}';
 				}
@@ -309,7 +308,6 @@ class Dynamic_CSS {
 					$static_css .= '#site-header .header-search .form-search .search-submit { --rz-border-color-light: ' . esc_attr( $header_search_border_button_color ) . ';}';
 				}
 			}
-
 		}
 
 		// Header Department
@@ -343,7 +341,6 @@ class Dynamic_CSS {
 			$sticky_height    = Helper::get_option( 'sticky_header_main_height' );
 			$header_sticky_el = (array) Helper::get_option( 'header_sticky_el' );
 
-
 			if ( in_array( 'header_bottom', $header_sticky_el ) ) {
 				$sticky_height = Helper::get_option( 'sticky_header_bottom_height' );
 			}
@@ -361,8 +358,8 @@ class Dynamic_CSS {
 		}
 
 		// Primary menu Style
-		if( Helper::get_option('header_type') == 'default' && Helper::get_option('header_layout') == 'v9' ) {
-			$static_css .= '.header-v9 .main-navigation .nav-menu { justify-content: ' . Helper::get_option('primary_menu_style') . '; }';
+		if ( Helper::get_option( 'header_type' ) == 'default' && Helper::get_option( 'header_layout' ) == 'v9' ) {
+			$static_css .= '.header-v9 .main-navigation .nav-menu { justify-content: ' . Helper::get_option( 'primary_menu_style' ) . '; }';
 		}
 
 		return $static_css;
@@ -421,7 +418,7 @@ class Dynamic_CSS {
 	protected function footer_static_css() {
 		$static_css = '';
 
-		if( Helper::get_option( 'footer_background_scheme' ) == 'custom') {
+		if ( Helper::get_option( 'footer_background_scheme' ) == 'custom' ) {
 			if ( $footer_heading_color = Helper::get_option( 'footer_bg_heading_color' ) ) {
 				$static_css .= '.site-footer .newsletter-title, .site-footer .widget-title, .site-footer .logo .logo-text { --rz-color-lighter: ' . $footer_heading_color . ' }';
 			}
@@ -435,8 +432,8 @@ class Dynamic_CSS {
 			}
 
 			if ( $footer_bg = Helper::get_option( 'footer_bg' ) ) {
-				if (function_exists('jetpack_photon_url')) {
-					$footer_bg = jetpack_photon_url($footer_bg);
+				if ( function_exists( 'jetpack_photon_url' ) ) {
+					$footer_bg = jetpack_photon_url( $footer_bg );
 				}
 				$static_css .= '.site-footer { background-image: url(' . $footer_bg . '); }';
 			}
@@ -449,12 +446,11 @@ class Dynamic_CSS {
 				$static_css .= '.footer-main.has-divider, .footer-widgets .widget.dropdown { border-color:' . $footer_border_color . ' }';
 			}
 
-
 			// Newsletter
-			if( intval(Helper::get_option( 'footer_newsletter_bg_enable' ))) {
+			if ( intval( Helper::get_option( 'footer_newsletter_bg_enable' ) ) ) {
 				if ( $footer_newsletter_bg = Helper::get_option( 'footer_newsletter_bg' ) ) {
-					if (function_exists('jetpack_photon_url')) {
-						$footer_newsletter_bg = jetpack_photon_url($footer_newsletter_bg);
+					if ( function_exists( 'jetpack_photon_url' ) ) {
+						$footer_newsletter_bg = jetpack_photon_url( $footer_newsletter_bg );
 					}
 					$static_css .= '.footer-newsletter { background-image: url(' . $footer_newsletter_bg . '); }';
 				}
@@ -497,10 +493,10 @@ class Dynamic_CSS {
 			}
 
 			// Extra
-			if( intval(Helper::get_option( 'footer_extra_bg_enable' ))) {
+			if ( intval( Helper::get_option( 'footer_extra_bg_enable' ) ) ) {
 				if ( $footer_extra_bg = Helper::get_option( 'footer_extra_bg' ) ) {
-					if (function_exists('jetpack_photon_url')) {
-						$footer_extra_bg = jetpack_photon_url($footer_extra_bg);
+					if ( function_exists( 'jetpack_photon_url' ) ) {
+						$footer_extra_bg = jetpack_photon_url( $footer_extra_bg );
 					}
 					$static_css .= '.footer-extra { background-image: url(' . $footer_extra_bg . '); background-size: cover; }';
 				}
@@ -519,10 +515,10 @@ class Dynamic_CSS {
 			}
 
 			// Widgets
-			if( intval(Helper::get_option( 'footer_widgets_bg_enable' ))) {
+			if ( intval( Helper::get_option( 'footer_widgets_bg_enable' ) ) ) {
 				if ( $footer_widget_bg = Helper::get_option( 'footer_widget_bg' ) ) {
-					if (function_exists('jetpack_photon_url')) {
-						$footer_widget_bg = jetpack_photon_url($footer_widget_bg);
+					if ( function_exists( 'jetpack_photon_url' ) ) {
+						$footer_widget_bg = jetpack_photon_url( $footer_widget_bg );
 					}
 					$static_css .= '.footer-widgets { background-image: url(' . $footer_widget_bg . '); }';
 				}
@@ -548,10 +544,10 @@ class Dynamic_CSS {
 				}
 			}
 
-			if( intval(Helper::get_option( 'footer_main_bg_enable' ))) {
+			if ( intval( Helper::get_option( 'footer_main_bg_enable' ) ) ) {
 				if ( $footer_main_bg = Helper::get_option( 'footer_main_bg' ) ) {
-					if (function_exists('jetpack_photon_url')) {
-						$footer_main_bg = jetpack_photon_url($footer_main_bg);
+					if ( function_exists( 'jetpack_photon_url' ) ) {
+						$footer_main_bg = jetpack_photon_url( $footer_main_bg );
 					}
 					$static_css .= '.footer-main { background-image: url(' . $footer_main_bg . '); }';
 				}
@@ -603,32 +599,32 @@ class Dynamic_CSS {
 		}
 
 		// Border
-		$footer_section_border_color 	= Helper::get_option( 'footer_section_border_color' );
+		$footer_section_border_color = Helper::get_option( 'footer_section_border_color' );
 
-		$get_id = \Dimas\Helper::get_post_ID();
-		$footer_section_border_color_page 		 = get_post_meta( $get_id, 'rz_footer_section_border_color', true );
-		if( is_page() && $footer_section_border_color_page =='custom') {
+		$get_id                           = \Dimas\Helper::get_post_ID();
+		$footer_section_border_color_page = get_post_meta( $get_id, 'rz_footer_section_border_color', true );
+		if ( is_page() && $footer_section_border_color_page == 'custom' ) {
 			$footer_section_border_color = get_post_meta( $get_id, 'rz_footer_section_custom_border_color', true );
 		}
 
 		if ( $footer_section_border_color ) {
-			$static_css .= '.site-footer.has-divider { border-color: '. $footer_section_border_color .' }';
+			$static_css .= '.site-footer.has-divider { border-color: ' . $footer_section_border_color . ' }';
 		}
 
 		if ( Helper::get_option( 'footer_main_border' ) && $main_border_color = Helper::get_option( 'footer_main_border_color' ) ) {
-			$static_css .= '.footer-main.has-divider { --rz-footer-main-border-color: '. $main_border_color .' }';
+			$static_css .= '.footer-main.has-divider { --rz-footer-main-border-color: ' . $main_border_color . ' }';
 		}
 
 		if ( Helper::get_option( 'footer_widget_border' ) && $widget_border_color = Helper::get_option( 'footer_widget_border_color' ) ) {
-			$static_css .= '.footer-widgets.has-divider { --rz-footer-widget-border-color: '. $widget_border_color .' }';
+			$static_css .= '.footer-widgets.has-divider { --rz-footer-widget-border-color: ' . $widget_border_color . ' }';
 		}
 
 		if ( Helper::get_option( 'footer_extra_border' ) && $extra_border_color = Helper::get_option( 'footer_extra_border_color' ) ) {
-			$static_css .= '.footer-extra.has-divider { --rz-footer-extra-border-color: '. $extra_border_color .' }';
+			$static_css .= '.footer-extra.has-divider { --rz-footer-extra-border-color: ' . $extra_border_color . ' }';
 		}
 
 		if ( Helper::get_option( 'footer_newsletter_border' ) && $newsletter_border_color = Helper::get_option( 'footer_newsletter_border_color' ) ) {
-			$static_css .= '.footer-newsletter.has-divider { --rz-footer-newsletter-border-color: '. $newsletter_border_color .' }';
+			$static_css .= '.footer-newsletter.has-divider { --rz-footer-newsletter-border-color: ' . $newsletter_border_color . ' }';
 		}
 
 		return $static_css;
@@ -646,7 +642,7 @@ class Dynamic_CSS {
 
 		// Newsletter
 		if ( intval( Helper::get_option( 'mobile_footer_newsletter' ) ) ) {
-			$top_spacing = Helper::get_option( 'mobile_footer_newsletter_padding_top' );
+			$top_spacing    = Helper::get_option( 'mobile_footer_newsletter_padding_top' );
 			$bottom_spacing = Helper::get_option( 'mobile_footer_newsletter_padding_bottom' );
 
 			if ( $top_spacing != 30 ) {
@@ -660,7 +656,7 @@ class Dynamic_CSS {
 
 		// Widget
 		if ( intval( Helper::get_option( 'mobile_footer_widget' ) ) ) {
-			$top_spacing = Helper::get_option( 'mobile_footer_widget_padding_top' );
+			$top_spacing    = Helper::get_option( 'mobile_footer_widget_padding_top' );
 			$bottom_spacing = Helper::get_option( 'mobile_footer_widget_padding_bottom' );
 
 			if ( $top_spacing != 30 ) {
@@ -674,7 +670,7 @@ class Dynamic_CSS {
 
 		// Main
 		if ( intval( Helper::get_option( 'mobile_footer_main' ) ) ) {
-			$top_spacing = Helper::get_option( 'mobile_footer_main_padding_top' );
+			$top_spacing    = Helper::get_option( 'mobile_footer_main_padding_top' );
 			$bottom_spacing = Helper::get_option( 'mobile_footer_main_padding_bottom' );
 
 			if ( $top_spacing != 30 ) {
@@ -688,7 +684,7 @@ class Dynamic_CSS {
 
 		// Main
 		if ( intval( Helper::get_option( 'mobile_footer_extra' ) ) ) {
-			$top_spacing = Helper::get_option( 'mobile_footer_extra_padding_top' );
+			$top_spacing    = Helper::get_option( 'mobile_footer_extra_padding_top' );
 			$bottom_spacing = Helper::get_option( 'mobile_footer_extra_padding_bottom' );
 
 			if ( $top_spacing != 30 ) {
@@ -700,7 +696,7 @@ class Dynamic_CSS {
 			}
 		}
 
-		return '@media (max-width: 767px){' . $static_css .' }';
+		return '@media (max-width: 767px){' . $static_css . ' }';
 	}
 
 	/**
@@ -785,7 +781,7 @@ class Dynamic_CSS {
 	public function preloader_static_css() {
 		$static_css = '';
 		if ( Helper::get_option( 'preloader_enable' ) ) {
-			$color = Helper::get_option( 'preloader_background_color' );
+			$color      = Helper::get_option( 'preloader_background_color' );
 			$static_css = $color ? '.preloader { background-color: ' . $color . '; }' : '';
 		}
 
@@ -802,10 +798,10 @@ class Dynamic_CSS {
 	 */
 	public function colors_static_css() {
 		$static_css = '';
-		$color = Helper::get_option( 'color_scheme_custom' ) ? Helper::get_option( 'color_scheme_color' ) : Helper::get_option( 'color_scheme' );
-		$color = $color ? $color : '#ff6F61';
-		if( $color != '#ff6F61' ) {
-			$static_css .= 'body' . ' {--rz-color-primary:' . $color . ';--rz-color-hover-primary:'. $color .'; --rz-background-color-primary:'. $color .';--rz-border-color-primary:' . $color . '}';
+		$color      = Helper::get_option( 'color_scheme_custom' ) ? Helper::get_option( 'color_scheme_color' ) : Helper::get_option( 'color_scheme' );
+		$color      = $color ? $color : '#ff6F61';
+		if ( $color != '#ff6F61' ) {
+			$static_css .= 'body' . ' {--rz-color-primary:' . $color . ';--rz-color-hover-primary:' . $color . '; --rz-background-color-primary:' . $color . ';--rz-border-color-primary:' . $color . '}';
 		}
 
 		return $static_css;
@@ -817,23 +813,23 @@ class Dynamic_CSS {
 	 */
 	public function typography_static_css() {
 		$settings = array(
-			'typo_body'                  => 'body, body .hotspot-modal, button,input,select,optgroup,textarea',
-			'typo_h1'                    => 'h1, .h1',
-			'typo_h2'                    => 'h2, .h2',
-			'typo_h3'                    => 'h3, .h3',
-			'typo_h4'                    => 'h4, .h4',
-			'typo_h5'                    => 'h5, .h5',
-			'typo_h6'                    => 'h6, .h6',
-			'typo_menu'                  => '.main-navigation a, .hamburger-navigation a',
-			'typo_submenu'               => '.main-navigation li li a, .hamburger-navigation ul ul a',
-			'typo_page_title'            => '.page-header__title',
-			'typo_blog_header_title'     => '.blog .page-header__title',
-			'typo_blog_post_title'       => '.hentry .entry-title a',
-			'typo_blog_post_excerpt'     => '.blog-wrapper .entry-content',
-			'typo_widget_title'          => '.widget-title, .footer-widgets .widget-title',
-			'typo_footer_extra'          => '.footer-extra',
-			'typo_footer_widgets'        => '.footer-widgets',
-			'typo_footer_main'           => '.footer-main',
+			'typo_body'              => 'body, body .hotspot-modal, button,input,select,optgroup,textarea',
+			'typo_h1'                => 'h1, .h1',
+			'typo_h2'                => 'h2, .h2',
+			'typo_h3'                => 'h3, .h3',
+			'typo_h4'                => 'h4, .h4',
+			'typo_h5'                => 'h5, .h5',
+			'typo_h6'                => 'h6, .h6',
+			'typo_menu'              => '.main-navigation a, .hamburger-navigation a',
+			'typo_submenu'           => '.main-navigation li li a, .hamburger-navigation ul ul a',
+			'typo_page_title'        => '.page-header__title',
+			'typo_blog_header_title' => '.blog .page-header__title',
+			'typo_blog_post_title'   => '.hentry .entry-title a',
+			'typo_blog_post_excerpt' => '.blog-wrapper .entry-content',
+			'typo_widget_title'      => '.widget-title, .footer-widgets .widget-title',
+			'typo_footer_extra'      => '.footer-extra',
+			'typo_footer_widgets'    => '.footer-widgets',
+			'typo_footer_main'       => '.footer-main',
 		);
 
 		return $this->get_typography_css( $settings );
@@ -866,7 +862,7 @@ class Dynamic_CSS {
 				continue;
 			}
 
-			$selector   = is_array( $selector ) ? implode( ',', $selector ): $selector;
+			$selector   = is_array( $selector ) ? implode( ',', $selector ) : $selector;
 			$typography = Helper::get_option( $setting );
 			$default    = (array) Options::get_option_default( $setting );
 			$style      = '';

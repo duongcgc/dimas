@@ -24,6 +24,9 @@ if ( ! class_exists( 'Theme_Customize' ) ) {
 		 */
 		public function __construct() {
 			add_action( 'customize_register', array( $this, 'register' ) );
+			add_action( 'customize_preview_init', array( $this, 'dimas_customize_preview_init' ) );
+			add_action( 'customize_controls_enqueue_scripts', array( $this, 'dimas_customize_controls_enqueue_scripts' ) );
+
 		}
 
 		/**
@@ -115,7 +118,7 @@ if ( ! class_exists( 'Theme_Customize' ) ) {
 
 			// Background color.
 			// Include the custom control class.
-			include_once get_theme_file_path( 'inc/core/class-dimas-customize-color-control.php' ); // phpcs:ignore WPDimas_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+			include_once get_theme_file_path( 'inc/core/customizer/class-dimas-customize-color-control.php' ); // phpcs:ignore WPDimas_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 			// Register the custom control.
 			$wp_customize->register_control_type( 'Customize_Color_Control' );
@@ -142,6 +145,50 @@ if ( ! class_exists( 'Theme_Customize' ) ) {
 						'palette' => $colors,
 					)
 				)
+			);
+		}
+
+
+		/**
+		 * Enqueue scripts for the customizer preview.
+		 *
+		 * @since Dimas 1.0
+		 *
+		 * @return void
+		 */
+		public function dimas_customize_preview_init() {
+			wp_enqueue_script(
+				'dimas-customize-helpers',
+				get_theme_file_uri( '/assets/js/customize-helpers.js' ),
+				array(),
+				wp_get_theme()->get( 'Version' ),
+				true
+			);
+
+			wp_enqueue_script(
+				'dimas-customize-preview',
+				get_theme_file_uri( '/assets/js/customize-preview.js' ),
+				array( 'customize-preview', 'customize-selective-refresh', 'jquery', 'dimas-customize-helpers' ),
+				wp_get_theme()->get( 'Version' ),
+				true
+			);
+		}
+
+		/**
+		 * Enqueue scripts for the customizer.
+		 *
+		 * @since Dimas 1.0
+		 *
+		 * @return void
+		 */
+		public function dimas_customize_controls_enqueue_scripts() {
+
+			wp_enqueue_script(
+				'dimas-customize-helpers',
+				get_theme_file_uri( '/assets/js/customize-helpers.js' ),
+				array(),
+				wp_get_theme()->get( 'Version' ),
+				true
 			);
 		}
 

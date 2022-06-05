@@ -136,7 +136,7 @@ class Temp_Tags {
 
 				echo '<div class="post-taxonomies">';
 
-				$categories_list = get_the_category_list( wp_get_list_item_separator() );
+				$categories_list = get_the_category_list( Temp_Funs::wp_get_list_item_separator() );
 				if ( $categories_list ) {
 					printf(
 						/* translators: %s: List of categories. */
@@ -145,7 +145,7 @@ class Temp_Tags {
 					);
 				}
 
-				$tags_list = get_the_tag_list( '', wp_get_list_item_separator() );
+				$tags_list = get_the_tag_list( '', Temp_Funs::wp_get_list_item_separator() );
 				if ( $tags_list ) {
 					printf(
 						/* translators: %s: List of tags. */
@@ -178,7 +178,7 @@ class Temp_Tags {
 
 				echo '<div class="post-taxonomies">';
 
-				$categories_list = get_the_category_list( wp_get_list_item_separator() );
+				$categories_list = get_the_category_list( Temp_Funs::wp_get_list_item_separator() );
 				if ( $categories_list ) {
 					printf(
 						/* translators: %s: List of categories. */
@@ -187,7 +187,7 @@ class Temp_Tags {
 					);
 				}
 
-				$tags_list = get_the_tag_list( '', wp_get_list_item_separator() );
+				$tags_list = get_the_tag_list( '', Temp_Funs::wp_get_list_item_separator() );
 				if ( $tags_list ) {
 					printf(
 						/* translators: %s: List of tags. */

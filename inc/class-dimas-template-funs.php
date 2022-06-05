@@ -61,6 +61,9 @@ class Temp_Funs {
 		add_filter( 'get_calendar', array( $this, 'dimas_change_calendar_nav_arrows' ) );
 		add_filter( 'the_password_form', array( $this, 'dimas_password_form' ), 10, 2 );
 		add_filter( 'wp_get_attachment_image_attributes', array( $this, 'dimas_get_attachment_image_attributes' ), 10, 3 );
+
+		add_action( 'wp_footer', array( $this, 'dimas_add_ie_class' ) );
+
 	}
 	/**
 	 * Adds custom classes to the array of body classes.
@@ -512,5 +515,57 @@ class Temp_Funs {
 
 		return $attr;
 	}
+
+	/**
+	 * Add "is-IE" class to body if the user is on Internet Explorer.
+	 *
+	 * @since Dimas 1.0
+	 *
+	 * @return void
+	 */
+	public function dimas_add_ie_class() {
+		?>
+	<script>
+	if ( -1 !== navigator.userAgent.indexOf( 'MSIE' ) || -1 !== navigator.appVersion.indexOf( 'Trident/' ) ) {
+		document.body.classList.add( 'is-IE' );
+	}
+	</script>
+		<?php
+	}
+
+	/**
+	 * Retrieves the list item separator based on the locale.
+	 *
+	 * Added for backward compatibility to support pre-6.0.0 WordPress versions.
+	 *
+	 * @since 6.0.0
+	 */
+	public static function wp_get_list_item_separator() {
+		/* translators: Used between list items, there is a space after the comma. */
+		return __( ', ', 'dimas' );
+	}
+
+	/**
+	 * Calculate classes for the main <html> element.
+	 *
+	 * @since Dimas 1.0
+	 *
+	 * @return void
+	 */
+	public static function dimas_the_html_classes() {
+		/**
+		 * Filters the classes for the main <html> element.
+		 *
+		 * @since Dimas 1.0
+		 *
+		 * @param string The list of classes. Default empty string.
+		 */
+		$classes = apply_filters( 'dimas_html_classes', '' );
+		if ( ! $classes ) {
+			return;
+		}
+		echo 'class="' . esc_attr( $classes ) . '"';
+	}
+
 
 }
