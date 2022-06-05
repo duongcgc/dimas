@@ -178,7 +178,7 @@ if ( ! function_exists( 'dimas_post_thumbnail' ) ) {
 	 * @return void
 	 */
 	function dimas_post_thumbnail() {
-		if ( ! dimas_can_show_post_thumbnail() ) {
+		if ( ! \Dimas\Temp_Funs::instance()->dimas_can_show_post_thumbnail() ) {
 			return;
 		}
 		?>

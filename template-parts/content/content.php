@@ -19,13 +19,13 @@
 			<?php the_title( sprintf( '<h2 class="entry-title default-max-width"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 		<?php endif; ?>
 
-		<?php dimas_post_thumbnail(); ?>
+		<?php \Dimas\Temp_Tags::dimas_post_thumbnail(); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
 		the_content(
-			dimas_continue_reading_text()
+			\Dimas\Temp_Funs::instance()->dimas_continue_reading_text()
 		);
 
 		wp_link_pages(

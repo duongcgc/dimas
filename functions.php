@@ -518,7 +518,7 @@ add_action( 'wp_print_footer_scripts', 'dimas_skip_link_focus_fix' );
  * @return void
  */
 function dimas_non_latin_languages() {
-	$custom_css = dimas_get_non_latin_css( 'front-end' );
+	$custom_css = \Dimas\Temp_Funs::instance()->dimas_get_non_latin_css( 'front-end' );
 
 	if ( $custom_css ) {
 		wp_add_inline_style( 'dimas-style', $custom_css );
@@ -534,13 +534,13 @@ require get_template_directory() . '/inc/class-dimas-custom-colors.php';
 new \Dimas\Custom_Colors();
 
 // Enhance the theme by hooking into WordPress.
-require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/inc/class-dimas-template-funs.php';
 
 // Menu functions and filters.
 require get_template_directory() . '/inc/menu-functions.php';
 
 // Custom template tags for the theme.
-require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/class-dimas-template-tags.php';
 
 // Customizer additions.
 require get_template_directory() . '/inc/core/class-dimas-customize.php';

@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Hooks initial
  */
-class Template_Tags {
+class Temp_Tags {
 	/**
 	 * Instance
 	 *
@@ -45,220 +45,242 @@ class Template_Tags {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'dimas_after_close_post_content', array( $this, 'get_comment' ), 20 );
-
-		add_action( 'dimas_after_open_comments_content', array( $this, 'get_title' ), 10 );
-		add_action( 'dimas_after_open_comments_content', array( $this, 'comment_content' ), 20 );
-		add_action( 'dimas_after_open_comments_content', 'paginate_comments_links', 30 );
-		add_action( 'dimas_after_open_comments_content', array( $this, 'comment_fields' ), 40 );
-
-		add_filter( 'comment_form_default_fields', array( $this, 'comment_form_fields' ) );
+		// Hangon hooks here.
 	}
 
 	/**
-	 * If comments are open or we have at least one comment, load up the comment template.
+	 * Prints HTML with meta information for the current post-date/time.
 	 *
-	 * @since 1.0.0
+	 * @since Dimas 1.0
 	 *
 	 * @return void
 	 */
-	public function get_comment() {
-		if ( comments_open() || get_comments_number() ) :
-			comments_template();
-		endif;
+	public function dimas_posted_on() {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+
+		$time_string = sprintf(
+			$time_string,
+			esc_attr( get_the_date( DATE_W3C ) ),
+			esc_html( get_the_date() )
+		);
+		echo '<span class="posted-on">';
+		printf(
+			/* translators: %s: Publish date. */
+			esc_html__( 'Published %s', 'dimas' ),
+			$time_string // phpcs:ignore WordPress.Security.EscapeOutput
+		);
+		echo '</span>';
 	}
 
 	/**
-	 * Get title
+	 * Prints HTML with meta information about theme author.
 	 *
-	 * @since 1.0.0
+	 * @since Dimas 1.0
 	 *
 	 * @return void
 	 */
-	public function get_title() {
-		if ( ! have_comments() ) {
+	public function dimas_posted_by() {
+		if ( ! get_the_author_meta( 'description' ) && post_type_supports( get_post_type(), 'author' ) ) {
+			echo '<span class="byline">';
+			printf(
+				/* translators: %s: Author name. */
+				esc_html__( 'By %s', 'dimas' ),
+				'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">' . esc_html( get_the_author() ) . '</a>'
+			);
+			echo '</span>';
+		}
+	}
+
+	/**
+	 * Prints HTML with meta information for the categories, tags and comments.
+	 * Footer entry meta is displayed differently in archives and single posts.
+	 *
+	 * @since Dimas 1.0
+	 *
+	 * @return void
+	 */
+	public function dimas_entry_meta_footer() {
+
+		// Early exit if not a post.
+		if ( 'post' !== get_post_type() ) {
 			return;
 		}
 
-		$comments_number = get_comments_number();
-		$comments_class  = $comments_number ? 'has-comments' : '';
+		// Hide meta information on pages.
+		if ( ! is_single() ) {
 
-		echo '<h2 class="comments-title ' . esc_attr( $comments_class ) . '">';
-		printf( // WPCS: XSS OK.
-			esc_html( _nx( 'Hooks (%1$s)', 'Hooks (%1$s)', $comments_number, 'comments title', 'dimas' ) ),
-			number_format_i18n( $comments_number )
-		);
+			if ( is_sticky() ) {
+				echo '<p>' . esc_html_x( 'Featured post', 'Label for sticky posts', 'dimas' ) . '</p>';
+			}
 
-		echo '</h2>';
-	}
+			$post_format = get_post_format();
+			if ( 'aside' === $post_format || 'status' === $post_format ) {
+				echo '<p><a href="' . esc_url( get_permalink() ) . '">' . dimas_continue_reading_text() . '</a></p>'; // phpcs:ignore WordPress.Security.EscapeOutput
+			}
 
+			// Posted on.
+			$this->dimas_posted_on();
 
-	/**
-	 * No comment
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return void
-	 */
-	public function comment_fields() {
-		if ( ! comments_open() ) {
-			echo '<p class="no-comments">' . esc_html__( 'Hooks are closed.', 'dimas' ) . '</p>';
-		} else {
-			$comment_field = '<p class="comment-form-comment"><textarea required id="comment" placeholder="' . esc_attr__( 'Content', 'dimas' ) . '" name="comment" cols="45" rows="7" aria-required="true"></textarea></p>';
-			comment_form(
-				array(
-					'format'        => 'xhtml',
-					'comment_field' => $comment_field,
-				)
+			// Edit post link.
+			edit_post_link(
+				sprintf(
+					/* translators: %s: Post title. Only visible to screen readers. */
+					esc_html__( 'Edit %s', 'dimas' ),
+					'<span class="screen-reader-text">' . get_the_title() . '</span>'
+				),
+				'<span class="edit-link">',
+				'</span><br>'
 			);
-		}
 
+			if ( has_category() || has_tag() ) {
+
+				echo '<div class="post-taxonomies">';
+
+				$categories_list = get_the_category_list( wp_get_list_item_separator() );
+				if ( $categories_list ) {
+					printf(
+						/* translators: %s: List of categories. */
+						'<span class="cat-links">' . esc_html__( 'Categorized as %s', 'dimas' ) . ' </span>',
+						$categories_list // phpcs:ignore WordPress.Security.EscapeOutput
+					);
+				}
+
+				$tags_list = get_the_tag_list( '', wp_get_list_item_separator() );
+				if ( $tags_list ) {
+					printf(
+						/* translators: %s: List of tags. */
+						'<span class="tags-links">' . esc_html__( 'Tagged %s', 'dimas' ) . '</span>',
+						$tags_list // phpcs:ignore WordPress.Security.EscapeOutput
+					);
+				}
+				echo '</div>';
+			}
+		} else {
+
+			echo '<div class="posted-by">';
+			// Posted on.
+			self::instance()->dimas_posted_on();
+			// Posted by.
+			self::instance()->dimas_posted_by();
+			// Edit post link.
+			edit_post_link(
+				sprintf(
+					/* translators: %s: Post title. Only visible to screen readers. */
+					esc_html__( 'Edit %s', 'dimas' ),
+					'<span class="screen-reader-text">' . get_the_title() . '</span>'
+				),
+				'<span class="edit-link">',
+				'</span>'
+			);
+			echo '</div>';
+
+			if ( has_category() || has_tag() ) {
+
+				echo '<div class="post-taxonomies">';
+
+				$categories_list = get_the_category_list( wp_get_list_item_separator() );
+				if ( $categories_list ) {
+					printf(
+						/* translators: %s: List of categories. */
+						'<span class="cat-links">' . esc_html__( 'Categorized as %s', 'dimas' ) . ' </span>',
+						$categories_list // phpcs:ignore WordPress.Security.EscapeOutput
+					);
+				}
+
+				$tags_list = get_the_tag_list( '', wp_get_list_item_separator() );
+				if ( $tags_list ) {
+					printf(
+						/* translators: %s: List of tags. */
+						'<span class="tags-links">' . esc_html__( 'Tagged %s', 'dimas' ) . '</span>',
+						$tags_list // phpcs:ignore WordPress.Security.EscapeOutput
+					);
+				}
+				echo '</div>';
+			}
+		}
 	}
 
 	/**
-	 * Loop content
+	 * Displays an optional post thumbnail.
 	 *
-	 * @since 1.0.0
+	 * Wraps the post thumbnail in an anchor element on index views, or a div
+	 * element when on single views.
+	 *
+	 * @since Dimas 1.0
 	 *
 	 * @return void
 	 */
-	public function comment_content() {
-		echo '<ol class="comment-list ' . esc_attr( get_comments_number() ? 'has-comments' : '' ) . '">';
+	public function dimas_post_thumbnail() {
+		if ( ! \Dimas\Temp_Funs::instance()->dimas_can_show_post_thumbnail() ) {
+			return;
+		}
+		?>
 
-		wp_list_comments(
+		<?php if ( is_singular() ) : ?>
+
+			<figure class="post-thumbnail">
+				<?php
+				// Lazy-loading attributes should be skipped for thumbnails since they are immediately in the viewport.
+				the_post_thumbnail( 'post-thumbnail', array( 'loading' => false ) );
+				?>
+				<?php if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
+					<figcaption class="wp-caption-text"><?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() ) ); ?></figcaption>
+				<?php endif; ?>
+			</figure><!-- .post-thumbnail -->
+
+		<?php else : ?>
+
+			<figure class="post-thumbnail">
+				<a class="post-thumbnail-inner alignwide" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+					<?php the_post_thumbnail( 'post-thumbnail' ); ?>
+				</a>
+				<?php if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
+					<figcaption class="wp-caption-text"><?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() ) ); ?></figcaption>
+				<?php endif; ?>
+			</figure>
+
+		<?php endif; ?>
+		<?php
+	}
+
+	/**
+	 * Print the next and previous posts navigation.
+	 *
+	 * @since Dimas 1.0
+	 *
+	 * @return void
+	 */
+	public function dimas_the_posts_navigation() {
+		the_posts_pagination(
 			array(
-				'avatar_size' => 70,
-				'short_ping'  => true,
-				'style'       => 'ol',
-				'callback'    => array( $this, 'dimas_comment' ),
+				'before_page_number' => esc_html__( 'Page', 'dimas' ) . ' ',
+				'mid_size'           => 0,
+				'prev_text'          => sprintf(
+					'%s <span class="nav-prev-text">%s</span>',
+					is_rtl() ? Temp_Funs::dimas_get_icon_svg( 'ui', 'arrow_right' ) : Temp_Funs::dimas_get_icon_svg( 'ui', 'arrow_left' ),
+					wp_kses(
+						__( 'Newer <span class="nav-short">posts</span>', 'dimas' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					)
+				),
+				'next_text'          => sprintf(
+					'<span class="nav-next-text">%s</span> %s',
+					wp_kses(
+						__( 'Older <span class="nav-short">posts</span>', 'dimas' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					is_rtl() ? Temp_Funs::dimas_get_icon_svg( 'ui', 'arrow_left' ) : Temp_Funs::dimas_get_icon_svg( 'ui', 'arrow_right' )
+				),
 			)
 		);
-
-		echo '</ol><!-- .comment-list -->';
 	}
 
-	/**
-	 * Custom fields comment form
-	 *
-	 * @since  1.0
-	 *
-	 * @return  array  $fields
-	 */
-	public function comment_form_fields() {
-		global $commenter, $aria_req;
-
-		$comment_author       = isset( $commenter['comment_author'] ) ? $commenter['comment_author'] : '';
-		$comment_author_email = isset( $commenter['comment_author_email'] ) ? $commenter['comment_author_email'] : '';
-		$comment_author_url   = isset( $commenter['comment_author_url'] ) ? $commenter['comment_author_url'] : '';
-
-		$fields = array(
-			'author' => '<p class="comment-form-author">' .
-						'<input id ="author" placeholder="' . esc_attr__( 'Name', 'dimas' ) . ' " name="author" type="text" required value="' . esc_attr( $comment_author ) .
-						'" size    ="30"' . $aria_req . ' /></p>',
-
-			'email'  => '<p class="comment-form-email">' .
-					   '<input id ="email" placeholder="' . esc_attr__( 'Email', 'dimas' ) . '" name="email" type="email" required value="' . esc_attr( $comment_author_email ) .
-					   '" size    ="30"' . $aria_req . ' /></p>',
-
-			'url'    => '<p class="comment-form-url">' .
-					 '<input id ="url" placeholder="' . esc_attr__( 'Website', 'dimas' ) . '" name="url" type="text" value="' . esc_attr( $comment_author_url ) .
-					 '" size    ="30" /></p>',
-		);
-
-		return $fields;
-	}
-
-	/**
-	 * Hooks callback function
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param object $comment
-	 * @param array  $args
-	 * @param int    $depth
-	 *
-	 * @return string
-	 */
-	public function dimas_comment( $comment, $args, $depth ) {
-		$GLOBALS['comment'] = $comment;
-		extract( $args, EXTR_SKIP );
-
-		$avatar = '';
-		if ( $args['avatar_size'] != 0 ) {
-			$avatar = get_avatar( $comment, $args['avatar_size'] );
-		}
-
-		$classes = get_comment_class( empty( $args['has_children'] ) ? '' : 'parent' );
-		$classes = $classes ? implode( ' ', $classes ) : $classes;
-
-		$comments = array(
-			'comment_parent'      => 0,
-			'comment_ID'          => get_comment_ID(),
-			'comment_class'       => $classes,
-			'comment_avatar'      => $avatar,
-			'comment_author_link' => get_comment_author_link(),
-			'comment_link'        => get_comment_link( get_comment_ID() ),
-			'comment_date'        => get_comment_date(),
-			'comment_time'        => get_comment_time(),
-			'comment_approved'    => $comment->comment_approved,
-			'comment_text'        => get_comment_text(),
-			'comment_reply'       => get_comment_reply_link(
-				array_merge(
-					$args,
-					array(
-						'add_below' => 'comment',
-						'depth'     => $depth,
-						'max_depth' => $args['max_depth'],
-					)
-				)
-			),
-
-		);
-
-		$comment = $this->comment_template( $comments );
-
-		echo ! empty( $comment ) ? $comment : '';
-	}
-
-	/**
-	 * Hooks Template function
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param object $comment
-	 *
-	 * @return string
-	 */
-	public function comment_template( $comments ) {
-		$output    = array();
-		$output[]  = sprintf( '<li id="comment-%s" class="%s">', esc_attr( $comments['comment_ID'] ), esc_attr( $comments['comment_class'] ) );
-		$output[]  = sprintf( '<article id="div-comment-%s" class="comment-body">', $comments['comment_ID'] );
-		$output [] = ! empty( $comments['comment_avatar'] ) ? sprintf(
-			'<header class="comment-meta">' .
-			'<div class="comment-author vcard">%s</div>' .
-			'</header>',
-			$comments['comment_avatar']
-		) : '';
-		$output[]  = '<div class="comment-content"><div class="comment-metadata">';
-		$output[]  = sprintf( '<cite class="fn">%s </cite>', $comments['comment_author_link'] );
-		$date      = sprintf( esc_html__( '%1$s at %2$s', 'dimas' ), $comments['comment_date'], $comments['comment_time'] );
-		$output[]  = sprintf( '<a href="%s" class="date">%s</a>', esc_url( $comments['comment_link'] ), $date );
-		$output[]  = '</div>';
-		if ( $comments['comment_approved'] == '0' ) {
-			$output[] = sprintf( '<em class="comment-awaiting-moderation">%s</em>', esc_html__( 'Your comment is awaiting moderation.', 'dimas' ) );
-		} else {
-			$output[] = $comments['comment_text'];
-		}
-
-		$output[] = '<div class="reply">';
-		$output[] = $comments['comment_reply'];
-
-		if ( current_user_can( 'edit_comment', $comments['comment_ID'] ) ) {
-			$output[] = sprintf( '<a class="comment-edit-link" href="%s">%s</a>', esc_url( admin_url( 'comment.php?action=editcomment&amp;c=' ) . $comments['comment_ID'] ), esc_html__( 'Edit', 'dimas' ) );
-		}
-
-		$output[] = '</div></div></article>';
-
-		return implode( ' ', $output );
-	}
 }

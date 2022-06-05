@@ -7,7 +7,7 @@
  * @since Dimas 1.0
  */
 
-namespace Dimas; 
+ namespace Dimas;
 
 /**
  * This class is in charge of displaying SVG icons across the site.
