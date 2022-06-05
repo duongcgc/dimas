@@ -46,7 +46,7 @@ class Dynamic_CSS {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'dimas_after_enqueue_style', array( $this, 'add_static_css' ) );
+		// add_action( 'dimas_after_enqueue_style', array( $this, 'add_static_css' ) );
 	}
 
 	/**
@@ -69,6 +69,42 @@ class Dynamic_CSS {
 		$parse_css .= $this->preloader_static_css();
 		wp_add_inline_style( 'dimas', apply_filters( 'dimas_inline_style', $parse_css ) );
 	}
+
+
+	/**
+	 * Generate CSS.
+	 *
+	 * @since Dimas 1.0
+	 *
+	 * @param string $selector The CSS selector.
+	 * @param string $style    The CSS style.
+	 * @param string $value    The CSS value.
+	 * @param string $prefix   The CSS prefix.
+	 * @param string $suffix   The CSS suffix.
+	 * @param bool   $display  Print the styles.
+	 * @return string
+	 */
+	public static function dimas_generate_css( $selector, $style, $value, $prefix = '', $suffix = '', $display = true ) {
+
+		// Bail early if there is no $selector elements or properties and $value.
+		if ( ! $value || ! $selector ) {
+			return '';
+		}
+
+		$css = sprintf( '%s { %s: %s; }', $selector, $style, $prefix . $value . $suffix );
+
+		if ( $display ) {
+			/*
+			 * Note to reviewers: $css contains auto-generated CSS.
+			 * It is included inside <style> tags and can only be interpreted as CSS on the browser.
+			 * Using wp_strip_all_tags() here is sufficient escaping to avoid
+			 * malicious attempts to close </style> and open a <script>.
+			 */
+			echo wp_strip_all_tags( $css ); // phpcs:ignore WordPress.Security.EscapeOutput
+		}
+		return $css;
+	}
+
 
 	/**
 	 * Get topbar style data
@@ -121,7 +157,7 @@ class Dynamic_CSS {
 	protected function page_static_css() {
 		$static_css = '';
 
-		// Page content spacings
+		// Page content spacings.
 		if ( is_page() ) {
 
 			if ( $top = get_post_meta( get_the_ID(), 'rz_content_top_padding', true ) ) {
@@ -150,15 +186,15 @@ class Dynamic_CSS {
 	protected function header_static_css() {
 		$static_css = '';
 
-		// Header Main Height
+		// Header Main Height.
 		if ( Helper::get_option( 'header_main_height' ) != 90 && Helper::get_header_layout() != 'v6' ) {
 			$static_css .= '.header-main { height: ' . intval( Helper::get_option( 'header_main_height' ) ) . 'px; }';
 		}
-		// Header Main Sticky Height
+		// Header Main Sticky Height.
 		if ( Helper::get_option( 'sticky_header_main_height' ) != 90 && Helper::get_header_layout() != 'v6' ) {
 			$static_css .= '.header-sticky .site-header.minimized .header-main{ height: ' . intval( Helper::get_option( 'sticky_header_main_height' ) ) . 'px; }';
 		}
-		// Header Bottom Height
+		// Header Bottom Height.
 		if ( Helper::get_option( 'header_bottom_height' ) != 50 ) {
 			$static_css .= '.header-bottom { height: ' . intval( Helper::get_option( 'header_bottom_height' ) ) . 'px; }';
 		}
@@ -167,12 +203,12 @@ class Dynamic_CSS {
 			$static_css .= '.header-sticky .site-header.minimized .header-bottom{ height: ' . intval( Helper::get_option( 'sticky_header_bottom_height' ) ) . 'px; }';
 		}
 
-		// Mobile Header Height
+		// Mobile Header Height.
 		if ( Helper::get_option( 'mobile_header_height' ) != 60 ) {
 			$static_css .= '.header-mobile { height: ' . intval( Helper::get_option( 'mobile_header_height' ) ) . 'px; }';
 		}
 
-		// Header Background Main
+		// Header Background Main.
 		if ( intval( Helper::get_option( 'header_main_background' ) ) ) {
 			$header_main_bg_color         = Helper::get_option( 'header_main_background_color' );
 			$header_main_text_color       = Helper::get_option( 'header_main_background_text_color' );
@@ -205,7 +241,7 @@ class Dynamic_CSS {
 			}
 		}
 
-		// Header Background Bottom
+		// Header Background Bottom.
 		if ( intval( Helper::get_option( 'header_bottom_background' ) ) ) {
 			$header_bottom_bg_color         = Helper::get_option( 'header_bottom_background_color' );
 			$header_bottom_text_color       = Helper::get_option( 'header_bottom_background_text_color' );

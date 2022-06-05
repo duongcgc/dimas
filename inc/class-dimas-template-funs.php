@@ -370,13 +370,11 @@ class Temp_Funs {
 			return '';
 		}
 
-		// Include file if public function doesn't exist.
-		if ( ! function_exists( 'dimas_generate_css' ) ) {
-			require_once get_theme_file_path( 'inc/custom-css.php' ); // phpcs:ignore WPDimas_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		}
+		// Include file class create dynamic css.
+		require_once get_theme_file_path( 'inc/class-dimas-dynamic-css.php' ); // phpcs:ignore WPDimas_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound				
 
 		// Return the specified styles.
-		return dimas_generate_css( // @phpstan-ignore-line.
+		return Dynamic_CSS::dimas_generate_css( // @phpstan-ignore-line.
 			implode( ',', $elements[ $type ] ),
 			'font-family',
 			implode( ',', $font_family[ $locale ] ),
