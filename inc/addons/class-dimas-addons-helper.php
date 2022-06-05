@@ -61,10 +61,13 @@ class Helper {
 				break;
 
 			case 'twitter':
-				$url = add_query_arg( array(
-					'url'  => get_permalink(),
-					'text' => get_the_title()
-				), 'https://twitter.com/intent/tweet' );
+				$url = add_query_arg(
+					array(
+						'url'  => get_permalink(),
+						'text' => get_the_title(),
+					),
+					'https://twitter.com/intent/tweet'
+				);
 				break;
 
 			case 'pinterest';
@@ -83,24 +86,33 @@ class Helper {
 				break;
 
 			case 'linkedin':
-				$url = add_query_arg( array(
-					'url'   => get_permalink(),
-					'title' => get_the_title()
-				), 'https://www.linkedin.com/shareArticle' );
+				$url = add_query_arg(
+					array(
+						'url'   => get_permalink(),
+						'title' => get_the_title(),
+					),
+					'https://www.linkedin.com/shareArticle'
+				);
 				break;
 
 			case 'tumblr':
-				$url = add_query_arg( array(
-					'url'  => get_permalink(),
-					'name' => get_the_title()
-				), 'https://www.tumblr.com/share/link' );
+				$url = add_query_arg(
+					array(
+						'url'  => get_permalink(),
+						'name' => get_the_title(),
+					),
+					'https://www.tumblr.com/share/link'
+				);
 				break;
 
 			case 'reddit':
-				$url = add_query_arg( array(
-					'url'   => get_permalink(),
-					'title' => get_the_title()
-				), 'https://reddit.com/submit' );
+				$url = add_query_arg(
+					array(
+						'url'   => get_permalink(),
+						'title' => get_the_title(),
+					),
+					'https://reddit.com/submit'
+				);
 				break;
 
 			case 'telegram':
@@ -120,10 +132,13 @@ class Helper {
 				break;
 
 			case 'pocket':
-				$url  = add_query_arg( array(
-					'url'   => get_permalink(),
-					'title' => get_the_title()
-				), 'https://getpocket.com/save' );
+				$url  = add_query_arg(
+					array(
+						'url'   => get_permalink(),
+						'title' => get_the_title(),
+					),
+					'https://getpocket.com/save'
+				);
 				$text = esc_html__( 'Save On Pocket', 'dimas' );
 				break;
 
@@ -163,12 +178,15 @@ class Helper {
 	 * @return array
 	 */
 	public static function get_countdown_texts() {
-		return apply_filters( 'dimas_get_countdown_texts', array(
-			'days'    => esc_html__( 'Days', 'dimas' ),
-			'hours'   => esc_html__( 'Hours', 'dimas' ),
-			'minutes' => esc_html__( 'Minutes', 'dimas' ),
-			'seconds' => esc_html__( 'Seconds', 'dimas' )
-		) );
+		return apply_filters(
+			'dimas_get_countdown_texts',
+			array(
+				'days'    => esc_html__( 'Days', 'dimas' ),
+				'hours'   => esc_html__( 'Hours', 'dimas' ),
+				'minutes' => esc_html__( 'Minutes', 'dimas' ),
+				'seconds' => esc_html__( 'Seconds', 'dimas' ),
+			)
+		);
 	}
 
 	/**
@@ -207,13 +225,15 @@ class Helper {
 	 *
 	 * @return string
 	 */
-	public static function get_content_limit( $num_words, $more = "&hellip;", $content = '' ) {
+	public static function get_content_limit( $num_words, $more = '&hellip;', $content = '' ) {
 		$content = empty( $content ) ? get_the_excerpt() : $content;
 
 		// Strip tags and shortcodes so the content truncation count is done correctly
 		$content = strip_tags(
-			strip_shortcodes( $content ), apply_filters(
-				'dimas_content_limit_allowed_tags', '<script>,<style>'
+			strip_shortcodes( $content ),
+			apply_filters(
+				'dimas_content_limit_allowed_tags',
+				'<script>,<style>'
 			)
 		);
 
@@ -278,11 +298,13 @@ class Helper {
 	 * @return array
 	 */
 	public static function get_terms_hierarchy( $taxonomy = 'category', $separator = '-' ) {
-		$terms = get_terms( array(
-			'taxonomy'               => $taxonomy,
-			'hide_empty'             => true,
-			'update_term_meta_cache' => false,
-		) );
+		$terms = get_terms(
+			array(
+				'taxonomy'               => $taxonomy,
+				'hide_empty'             => true,
+				'update_term_meta_cache' => false,
+			)
+		);
 
 		if ( ! $terms || is_wp_error( $terms ) ) {
 			return array();
@@ -303,7 +325,7 @@ class Helper {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $terms
+	 * @param array   $terms
 	 * @param integer $parent_id
 	 *
 	 * @return array
@@ -326,7 +348,7 @@ class Helper {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $terms
+	 * @param array   $terms
 	 * @param integer $depth
 	 *
 	 * @return array

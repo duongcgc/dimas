@@ -7,7 +7,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Autoloader.
- *
  */
 class Auto_Loader {
 	private static $files;

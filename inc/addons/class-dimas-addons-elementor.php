@@ -58,16 +58,16 @@ class Elementor {
 	 */
 	public function widgets_init() {
 		$sidebars = array(
-			'blog-sidebar'           => esc_html__( 'Blog Sidebar', 'dimas' ),
-			'header-bar'             => esc_html__( 'Header Bar', 'dimas' ),
+			'blog-sidebar' => esc_html__( 'Blog Sidebar', 'dimas' ),
+			'header-bar'   => esc_html__( 'Header Bar', 'dimas' ),
 		);
 
-		// Register footer sidebars
+		// Register footer sidebars.
 		for ( $i = 1; $i <= 5; $i ++ ) {
-			$sidebars["footer-$i"] = esc_html__( 'Footer', 'dimas' ) . " $i";
+			$sidebars[ "footer-$i" ] = esc_html__( 'Footer', 'dimas' ) . " $i";
 		}
 
-		// Register sidebars
+		// Register sidebars.
 		foreach ( $sidebars as $id => $name ) {
 			register_sidebar(
 				array(

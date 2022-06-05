@@ -257,7 +257,7 @@ class Temp_Tags {
 				'mid_size'           => 0,
 				'prev_text'          => sprintf(
 					'%s <span class="nav-prev-text">%s</span>',
-					is_rtl() ? Temp_Funs::dimas_get_icon_svg( 'ui', 'arrow_right' ) : Temp_Funs::dimas_get_icon_svg( 'ui', 'arrow_left' ),
+					is_rtl() ? Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' ) : Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' ),
 					wp_kses(
 						__( 'Newer <span class="nav-short">posts</span>', 'dimas' ),
 						array(
@@ -277,7 +277,7 @@ class Temp_Tags {
 							),
 						)
 					),
-					is_rtl() ? Temp_Funs::dimas_get_icon_svg( 'ui', 'arrow_left' ) : Temp_Funs::dimas_get_icon_svg( 'ui', 'arrow_right' )
+					is_rtl() ? Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' ) : Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' )
 				),
 			)
 		);
