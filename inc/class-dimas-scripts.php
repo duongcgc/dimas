@@ -59,7 +59,7 @@ class Scripts {
 	function dimas_scripts() {
 		// Note, the is_IE global variable is defined by WordPress and is used
 		// to detect if the current browser is internet explorer.
-		global $is_IE, $wp_scripts;
+		global $wp_scripts;
 
 		// Register the IE11 polyfill file.
 		wp_register_script(
@@ -78,6 +78,8 @@ class Scripts {
 			wp_get_theme()->get( 'Version' ),
 			true
 		);
+
+		// Inline scripts.
 		wp_add_inline_script(
 			'dimas-ie11-polyfills',
 			wp_get_script_polyfill(

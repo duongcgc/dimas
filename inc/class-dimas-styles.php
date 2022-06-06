@@ -46,7 +46,6 @@ class Styles {
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'dimas_non_latin_languages' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'dimas_styles' ) );
-
 	}
 
 	/**
@@ -59,7 +58,7 @@ class Styles {
 	public function dimas_styles() {
 		// Note, the is_IE global variable is defined by WordPress and is used
 		// to detect if the current browser is internet explorer.
-		global $is_IE, $wp_scripts;
+		global $is_IE;
 		if ( $is_IE ) {
 			// If IE 11 or below, use a flattened stylesheet with static values replacing CSS Variables.
 			wp_enqueue_style( 'dimas-style', get_template_directory_uri() . '/assets/css/ie.css', array(), wp_get_theme()->get( 'Version' ) );

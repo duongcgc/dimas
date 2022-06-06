@@ -26,13 +26,13 @@ require get_template_directory() . '/inc/class-dimas-helper.php';
 require get_template_directory() . '/inc/core/admin/class-dimas-admin-block-editor.php';
 \Dimas\Admin\Block_Editor::instance();
 
-// Theme Scripts.
-require get_template_directory() . '/inc/class-dimas-scripts.php';
-\Dimas\Scripts::instance();
-
 // Theme Styles.
 require get_template_directory() . '/inc/class-dimas-styles.php';
 \Dimas\Styles::instance();
+
+// Theme Scripts.
+require get_template_directory() . '/inc/class-dimas-scripts.php';
+\Dimas\Scripts::instance();
 
 // SVG Icons class.
 require get_template_directory() . '/inc/class-dimas-svg-icons.php';
