@@ -17,6 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+/**
+ * Elementor class for this theme.
+ */
 class Elementor {
 
 	/**
@@ -60,15 +63,17 @@ class Elementor {
 	 * @return void
 	 */
 	private function includes() {
-		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Elementor\Helper'                 => DIMAS_ADDONS_DIR . 'inc/elementor/class-dimas-elementor-helper.php',
-			'Dimas\Addons\Elementor\Setup'                  => DIMAS_ADDONS_DIR . 'inc/elementor/class-dimas-elementor-setup.php',
-			'Dimas\Addons\Elementor\AjaxLoader'             => DIMAS_ADDONS_DIR . 'inc/elementor/class-dimas-elementor-ajaxloader.php',
-			'Dimas\Addons\Elementor\Widgets'                => DIMAS_ADDONS_DIR . 'inc/elementor/class-dimas-elementor-widgets.php',
-			'Dimas\Addons\Elementor\Module\Motion_Parallax' => DIMAS_ADDONS_DIR . 'inc/elementor/modules/class-dimas-elementor-motion-parallax.php',
-			'Dimas\Addons\Elementor\Controls'               => DIMAS_ADDONS_DIR . 'inc/elementor/controls/class-dimas-elementor-controls.php',
-			'Dimas\Addons\Elementor\Page_Settings'          => DIMAS_ADDONS_DIR . 'inc/elementor/class-dimas-elementor-page-settings.php',
-		] );
+		\Dimas\Addons\Auto_Loader::register(
+			array(
+				'Dimas\Addons\Elementor\Helper'        => DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor-helper.php',
+				'Dimas\Addons\Elementor\Setup'         => DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor-setup.php',
+				'Dimas\Addons\Elementor\AjaxLoader'    => DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor-ajaxloader.php',
+				'Dimas\Addons\Elementor\Widgets'       => DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor-widgets.php',
+				'Dimas\Addons\Elementor\Module\Motion_Parallax' => DIMAS_ADDONS_DIR . '/elementor/modules/class-dimas-elementor-motion-parallax.php',
+				'Dimas\Addons\Elementor\Controls'      => DIMAS_ADDONS_DIR . '/elementor/controls/class-dimas-elementor-controls.php',
+				'Dimas\Addons\Elementor\Page_Settings' => DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor-page-settings.php',
+			)
+		);
 
 	}
 

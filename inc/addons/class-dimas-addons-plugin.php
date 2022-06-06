@@ -78,13 +78,13 @@ class Addons {
 		require_once DIMAS_ADDONS_DIR . 'class-dimas-addons-autoloader.php';
 		\Dimas\Addons\Auto_Loader::register(
 			array(
-				'Dimas\Addons\Helper'          => DIMAS_ADDONS_DIR . 'class-dimas-addons-helper.php',
-				'Dimas\Addons\Widgets'         => DIMAS_ADDONS_DIR . 'inc/widgets/class-dimas-addons-widgets.php',
+				'Dimas\Addons\Helper'          => DIMAS_ADDONS_DIR . '/class-dimas-addons-helper.php',
+				'Dimas\Addons\Widgets'         => DIMAS_ADDONS_DIR . '/widgets/class-dimas-addons-widgets.php',
 				'Dimas\Addons\Modules'         => DIMAS_ADDONS_DIR . 'modules/modules.php',
-				'Dimas\Addons\Elementor'       => DIMAS_ADDONS_DIR . 'inc/elementor/class-dimas-elementor.php',
-				'Dimas\Addons\Product_Brands'  => DIMAS_ADDONS_DIR . 'inc/backend/class-dimas-addons-product-brand.php',
-				'Dimas\Addons\Product_Authors' => DIMAS_ADDONS_DIR . 'inc/backend/class-dimas-addons-product-author.php',
-				'Dimas\Addons\Importer'        => DIMAS_ADDONS_DIR . 'inc/backend/class-dimas-addons-importer.php',
+				'Dimas\Addons\Elementor'       => DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor.php',
+				'Dimas\Addons\Product_Brands'  => DIMAS_ADDONS_DIR . '/backend/class-dimas-addons-product-brand.php',
+				'Dimas\Addons\Product_Authors' => DIMAS_ADDONS_DIR . '/backend/class-dimas-addons-product-author.php',
+				'Dimas\Addons\Importer'        => DIMAS_ADDONS_DIR . '/backend/class-dimas-addons-importer.php',
 			)
 		);
 	}
@@ -105,13 +105,13 @@ class Addons {
 
 		$this->get( 'importer' );
 
-		// Elmentor
+		// Elmentor.
 		$this->get( 'elementor' );
 
-		// Modules
+		// Modules.
 		$this->get( 'modules' );
 
-		// Widgets
+		// Widgets.
 		$this->get( 'widgets' );
 
 		add_action( 'after_setup_theme', array( $this, 'addons_init' ), 20 );
@@ -167,7 +167,7 @@ class Addons {
 	 *
 	 * @return void
 	 */
-	function addons_init() {
+	public function addons_init() {
 		load_plugin_textdomain( 'dimas', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
 	}
 }
