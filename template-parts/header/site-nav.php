@@ -14,10 +14,10 @@
 		<div class="menu-button-container">
 			<button id="primary-mobile-menu" class="button" aria-controls="primary-menu-list" aria-expanded="false">
 				<span class="dropdown-icon open"><?php esc_html_e( 'Menu', 'dimas' ); ?>
-					<?php echo \Dimas\Temp_Tags::dimas_get_icon_svg( 'ui', 'menu' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+					<?php echo \Dimas\Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'menu' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 				</span>
 				<span class="dropdown-icon close"><?php esc_html_e( 'Close', 'dimas' ); ?>
-					<?php echo \Dimas\Temp_Tags::dimas_get_icon_svg( 'ui', 'close' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+					<?php echo \Dimas\Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'close' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 				</span>
 			</button><!-- #primary-mobile-menu -->
 		</div><!-- .menu-button-container -->
