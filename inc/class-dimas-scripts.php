@@ -49,15 +49,16 @@ class Scripts {
 
 	}
 
-	// Add script to footer.
-	public function add_footer_script( $handle, $src = '', $$deps = array(), $ver = '' ) {
+	// Add script.
+	public function add_script( $handle, $src = '', $deps = array(), $defer = null, $ver = '', $at_footer = true ) {
 
 		$version = ($ver == '')? wp_get_theme()->get( 'Version' ) : $ver;
 		$params = array(
 			'handle'	=> $handle,
-			'src'		=> $src,
+			'src'		=> $src,			
 			'deps'		=> $deps,
 			'ver'		=> $version,
+			'footer'    => $at_footer, 
 		);
 
 		add_action( 'wp_enqueue_scripts', function() use ($params) {
@@ -66,15 +67,74 @@ class Scripts {
 				$params['src'],
 				$params['deps'],
 				$params['ver'],
-				true
+				$params['footer'],				
 			);
 		});
+		
+		// add defer or defer.
+		$cur_handle = $params['handle'];
 
-	}
+		if ($defer === true) {
+
+			// add defer.
+			add_filter( 'script_loader_tag', function ( $tag, $handle ) use ($cur_handle) {
+
+				if ( $cur_handle !== $handle )
+					return $tag;
+				return str_replace( ' src', ' defer src', $tag );
+
+			}, 10, 2 );
+
+		} elseif ($defer === false) {
+
+			// add async.
+			add_filter( 'script_loader_tag', function ( $tag, $handle ) use ($cur_handle) {
+
+				if ( $cur_handle !== $handle )
+					return $tag;
+				return str_replace( ' src', ' async src', $tag );
+
+			}, 10, 2 );
+
+		}
+
+	}	
 	
-	// Add script to header.
+	/**
+	 * Add script to footer.
+	 *
+	 * @param string $handle     The unique name of script for add deps.
+	 * @param string $src        The src path to script file.
+	 * @param array $deps        The array of depend scripts - default array.
+	 * @param mixed $defer       The defer loading script true: defer, false: async, other null.      
+	 * @param string $ver        The version of script default version of theme.
+	 * @return void
+	 */
+	public static function add_footer_script( $handle, $src = '', $deps = array(), $defer = null, $ver = '' ) {
+		self::$instance->add_script( $handle, $src, $deps, $defer, $ver );
+	}
 
+	public static function add_footer_defer_script( $handle, $src = '', $deps = array(), $ver = '' ) {
+		self::$instance->add_script( $handle, $src, $deps, true, $ver );
+	}
 
+	public static function add_footer_async_script( $handle, $src = '', $deps = array(), $ver = '' ) {
+		self::$instance->add_script( $handle, $src, $deps, false, $ver );
+	}
+
+	/**
+	 * Add script to header.
+	 * async if load invidual module, defer trì hoãn nếu phụ thuộc, inline trực tiếp
+	 * @param string $handle     The unique name of script for add deps.
+	 * @param string $src        The src path to script file.
+	 * @param array $deps        The array of depend scripts - default array.
+	 * @param mixed $defer       The defer loading script true: defer, false: async, other null.      
+	 * @param string $ver        The version of script default version of theme.
+	 * @return void
+	 */
+	public static function add_header_script( $handle, $src = '', $deps = array(), $defer = null, $ver = '' ) {
+		self::$instance->add_script( $handle, $src, $deps, $defer, $ver, false );		
+	}
 
 
 	/**

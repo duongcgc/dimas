@@ -28,6 +28,14 @@ if ( ! defined( 'DIMAS_CORE_DIR' ) ) {
 	define( 'DIMAS_CORE_DIR', DIMAS_INC_DIR . '/core' );
 }
 
+if ( ! defined( 'DIMAS_ASSETS_URI' ) ) {
+	define( 'DIMAS_ASSETS_URI', get_template_directory_uri() . '/assets' );
+}
+
+if ( ! defined( 'DIMAS_JS_URI' ) ) {
+	define( 'DIMAS_JS_URI', DIMAS_ASSETS_URI . '/js' );
+}
+
 
 // Setup Theme.
 require DIMAS_INC_DIR . '/class-dimas-setup.php';
