@@ -49,6 +49,34 @@ class Scripts {
 
 	}
 
+	// Add script to footer.
+	public function add_footer_script( $handle, $src = '', $$deps = array(), $ver = '' ) {
+
+		$version = ($ver == '')? wp_get_theme()->get( 'Version' ) : $ver;
+		$params = array(
+			'handle'	=> $handle,
+			'src'		=> $src,
+			'deps'		=> $deps,
+			'ver'		=> $version,
+		);
+
+		add_action( 'wp_enqueue_scripts', function() use ($params) {
+			wp_enqueue_script(
+				$params['handle'],
+				$params['src'],
+				$params['deps'],
+				$params['ver'],
+				true
+			);
+		});
+
+	}
+	
+	// Add script to header.
+
+
+
+
 	/**
 	 * Enqueue scripts.
 	 *
