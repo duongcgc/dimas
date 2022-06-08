@@ -97,10 +97,14 @@ require DIMAS_INC_DIR . '/block-patterns.php';
 // Block Styles.
 require DIMAS_INC_DIR . '/block-styles.php';
 
+// Notice.
+require DIMAS_INC_DIR . '/class-dimas-notice.php';
+\Dimas\Notice::instance()->add_notice( 'warning', 'This is best.', );
+
 // Dark Mode.
 require_once DIMAS_INC_DIR . '/class-dimas-dark-mode.php';
 new \Dimas\Dark_Mode();
 
-// Loading Addons
+// Loading Addons.
 require_once DIMAS_ADDONS_DIR . '/class-dimas-addons-plugin.php';
 \Dimas\Addons::instance();
