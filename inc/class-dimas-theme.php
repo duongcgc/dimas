@@ -8,8 +8,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -230,5 +228,70 @@ final class Dimas_Theme {
 		} else {
 			$GLOBALS['dimas'][ $prop ] = $value;
 		}
+	}
+
+	/**
+	 * Include all.
+	 *
+	 * @return void
+	 */
+	public function dimas_includes() {
+		// Setup Theme =================.
+		require DIMAS_INC_DIR . '/class-dimas-setup.php';
+		Dimas_Setup::instance();
+
+		// Helper functions.
+		require DIMAS_INC_DIR . '/class-dimas-helper.php';
+
+		// Block Editor Scripts.
+		require DIMAS_CORE_DIR . '/admin/class-dimas-admin-block-editor.php';
+		Dimas_Admin_Block_Editor::instance();
+
+		// Theme Styles.
+		require DIMAS_INC_DIR . '/class-dimas-styles.php';
+		Dimas_Styles::instance();
+
+		// Theme Scripts.
+		require DIMAS_INC_DIR . '/class-dimas-scripts.php';
+		Dimas_Scripts::instance();
+
+		// SVG Icons class.
+		require DIMAS_INC_DIR . '/class-dimas-svg-icons.php';
+
+		// Custom color classes.
+		require DIMAS_INC_DIR . '/class-dimas-custom-colors.php';
+		new Dimas_Custom_Colors();
+
+		// Enhance the theme by hooking into WordPress.
+		require DIMAS_INC_DIR . '/class-dimas-template-funs.php';
+
+		// Menu functions and filters.
+		require DIMAS_INC_DIR . '/class-dimas-menu.php';
+
+		// Custom template tags for the theme.
+		require DIMAS_INC_DIR . '/class-dimas-template-tags.php';
+
+		// Customizer additions.
+		require DIMAS_CORE_DIR . '/class-dimas-customize.php';
+		new Dimas_Customize();
+
+		// Block Patterns.
+		require DIMAS_INC_DIR . '/block-patterns.php';
+
+		// Block Styles.
+		require DIMAS_INC_DIR . '/block-styles.php';
+
+		// Notice.
+		require DIMAS_INC_DIR . '/class-dimas-notice.php';
+		Dimas_Notice::instance()->add_notice( 'warning', 'This is best.', );
+
+		// Dark Mode.
+		require_once DIMAS_INC_DIR . '/class-dimas-dark-mode.php';
+		new Dimas_Dark_Mode();
+
+		// Loading Addons.
+		require_once DIMAS_ADDONS_DIR . '/class-dimas-addons-plugin.php';
+		Dimas_Addons::instance();
+
 	}
 }
