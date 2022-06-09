@@ -1,0 +1,6 @@
+{
+    "phpcbf.executablePath": "C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin\\phpcbf.bat",
+    "phpcbf.onsave": true,
+    "phpcs.autoConfigSearch": false,
+    "phpcs.executablePath": "C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin\\phpcs"
+}

@@ -2,7 +2,7 @@
 /**
  * Scripts functions and definitions.
  *
- * @package Dimas
+ * @package  Dimas
  */
 
 namespace Dimas;
@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Scripts initial
  */
 class Scripts {
+
 	/**
 	 * Instance
 	 *
@@ -25,7 +26,7 @@ class Scripts {
 	/**
 	 * Initiator
 	 *
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 * @return object
 	 */
 	public static function instance() {
@@ -49,65 +50,90 @@ class Scripts {
 
 	}
 
-	// Add script.
+	/**
+	 * Add script.
+	 *
+	 * @param  string $handle    The unique name of script for add deps.
+	 * @param  string $src       The src path to script file.
+	 * @param  array  $deps      The array of depend scripts - default array.
+	 * @param  mixed  $defer     The defer loading script true: defer, false: async, other null.
+	 * @param  string $ver       The version of script default version of theme.
+	 * @param  bool   $at_footer The version of script default version of theme.
+	 * @return void
+	 */
 	public function add_script( $handle, $src = '', $deps = array(), $defer = null, $ver = '', $at_footer = true ) {
 
-		$version = ($ver == '')? wp_get_theme()->get( 'Version' ) : $ver;
-		$params = array(
-			'handle'	=> $handle,
-			'src'		=> $src,			
-			'deps'		=> $deps,
-			'ver'		=> $version,
-			'footer'    => $at_footer, 
+		$version = ( '' === $ver ) ? wp_get_theme()->get( 'Version' ) : $ver;
+		$params  = array(
+			'handle' => $handle,
+			'src'    => $src,
+			'deps'   => $deps,
+			'ver'    => $version,
+			'footer' => $at_footer,
 		);
 
-		add_action( 'wp_enqueue_scripts', function() use ($params) {
-			wp_enqueue_script(
-				$params['handle'],
-				$params['src'],
-				$params['deps'],
-				$params['ver'],
-				$params['footer'],				
-			);
-		});
-		
+		add_action(
+			'wp_enqueue_scripts',
+			function () use ( $params ) {
+				wp_enqueue_script(
+					$params['handle'],
+					$params['src'],
+					$params['deps'],
+					$params['ver'],
+					$params['footer'],
+				);
+			}
+		);
+
 		// add defer or defer.
 		$cur_handle = $params['handle'];
 
-		if ($defer === true) {
+		if ( true === $defer ) {
 
 			// add defer.
-			add_filter( 'script_loader_tag', function ( $tag, $handle ) use ($cur_handle) {
+			add_filter(
+				'script_loader_tag',
+				function ( $tag, $handle ) use ( $cur_handle ) {
 
-				if ( $cur_handle !== $handle )
-					return $tag;
-				return str_replace( ' src', ' defer src', $tag );
+					if ( $cur_handle !== $handle ) {
+						return $tag;
+					}
+					return str_replace( ' src', ' defer src', $tag );
 
-			}, 10, 2 );
+				},
+				10,
+				2
+			);
 
-		} elseif ($defer === false) {
+		} elseif ( false === $defer ) {
 
 			// add async.
-			add_filter( 'script_loader_tag', function ( $tag, $handle ) use ($cur_handle) {
+			add_filter(
+				'script_loader_tag',
+				function ( $tag, $handle ) use ( $cur_handle ) {
 
-				if ( $cur_handle !== $handle )
-					return $tag;
-				return str_replace( ' src', ' async src', $tag );
+					if ( $cur_handle !== $handle ) {
+						  return $tag;
+					}
+					return str_replace( ' src', ' async src', $tag );
 
-			}, 10, 2 );
+				},
+				10,
+				2
+			);
 
 		}
 
-	}	
-	
+	}
+
 	/**
 	 * Add script to footer.
 	 *
-	 * @param string $handle     The unique name of script for add deps.
-	 * @param string $src        The src path to script file.
-	 * @param array $deps        The array of depend scripts - default array.
-	 * @param mixed $defer       The defer loading script true: defer, false: async, other null.      
-	 * @param string $ver        The version of script default version of theme.
+	 * @param  string $handle The unique name of script for add deps.
+	 * @param  string $src    The src path to script file.
+	 * @param  array  $deps   The array of depend scripts - default array.
+	 * @param  mixed  $defer  The defer loading script true: defer, false: async, other null.
+	 * @param  string $ver    The version of script default version of theme.
 	 * @return void
 	 */
 	public static function add_footer_script( $handle, $src = '', $deps = array(), $defer = null, $ver = '' ) {
@@ -125,15 +151,16 @@ class Scripts {
 	/**
 	 * Add script to header.
 	 * async if load invidual module, defer trì hoãn nếu phụ thuộc, inline trực tiếp
-	 * @param string $handle     The unique name of script for add deps.
-	 * @param string $src        The src path to script file.
-	 * @param array $deps        The array of depend scripts - default array.
-	 * @param mixed $defer       The defer loading script true: defer, false: async, other null.      
-	 * @param string $ver        The version of script default version of theme.
+	 *
+	 * @param  string $handle The unique name of script for add deps.
+	 * @param  string $src    The src path to script file.
+	 * @param  array  $deps   The array of depend scripts - default array.
+	 * @param  mixed  $defer  The defer loading script true: defer, false: async, other null.
+	 * @param  string $ver    The version of script default version of theme.
 	 * @return void
 	 */
 	public static function add_header_script( $handle, $src = '', $deps = array(), $defer = null, $ver = '' ) {
-		self::$instance->add_script( $handle, $src, $deps, $defer, $ver, false );		
+		self::$instance->add_script( $handle, $src, $deps, $defer, $ver, false );
 	}
 
 
