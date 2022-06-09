@@ -1,0 +1,41 @@
+/*FONT*/
+
+@font-face {
+    src: url("./fonts/heist/Heist_Italic.otf");
+    font-family: "Heist";
+    font-style: italic;
+}
+
+@font-face {
+    src: url("./fonts/heist/Heist_Regular.otf");
+    font-family: "Heist";
+    font-style: normal;
+}
+
+.heist {
+    font-family: "Heist";
+}
+
+.lato {
+    font-family: "Lato";
+}
+
+.marcellus {
+    font-family: "Marcellus";
+}
+
+.montserrat {
+    font-family: "Montserrat";
+}
+
+.outfit {
+    font-family: "Outfit";
+}
+
+.poppins {
+    font-family: "Poppins";
+}
+
+.raleway {
+    font-family: "Raleway";
+}

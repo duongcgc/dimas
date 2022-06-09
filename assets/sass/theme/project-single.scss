@@ -1,0 +1,399 @@
+/*!
+ * Project Single css Dimas
+ * Copyright GCO Software
+ */
+
+// CUSTOM
+@import "custom/custom";
+// HEADER
+@import "header/header";
+// FOOTER
+@import "footer/footer";
+.dimas-project {
+    .swiper-wrapper {
+        height: 100vh;
+    }
+    &__vertical-align {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #left-slider {
+        .swiper {
+            .slider-img,
+            .slider-video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        .swiper-container-horizontal {
+            >.swiper-pagination-bullets {
+                position: absolute;
+                z-index: 25;
+                top: calc(97vh - 7.5rem);
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                text-align: center;
+                color: var(--dimas-color-white);
+                .swiper-pagination-bullet {
+                    transition: border-color var(--dimas-transition-duration) var(--dimas-transition-easing);
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: (18rem/16);
+                    height: (18rem/16);
+                    cursor: pointer;
+                    border-radius: 50%;
+                    border: 4px solid var(--dimas-color-transparent);
+                    position: relative;
+                    opacity: 1;
+                    margin: 0 (10rem/16);
+                    background-color: var(--dimas-color-transparent);
+                    &::after {
+                        transition: background-color var(--dimas-transition-duration) var(--dimas-transition-easing);
+                        content: "";
+                        width: 4px;
+                        height: 4px;
+                        display: block;
+                        position: absolute;
+                        border-radius: 50%;
+                        background-color: var(--dimas-color-white);
+                    }
+                    &:hover,
+                    &-active {
+                        border-color: var(--dimas-color-main);
+                        &::after {
+                            background-color: var(--dimas-color-main);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #right-slider {
+        span.swiper-notification {
+            display: none;
+        }
+        .scroll-wrap {
+            height: 100%;
+            overflow-y: scroll;
+        }
+        .swiper {
+            &:before {
+                content: "";
+                display: block;
+                z-index: 8;
+                width: 99%;
+                height: (92rem/16);
+                background-color: var(--dimas-color-accent);
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            &:after {
+                content: "";
+                display: block;
+                z-index: 8;
+                width: 99%;
+                height: (87rem/16);
+                background-color: var(--dimas-color-accent);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+            .swiper-slide {
+                min-height: 100%;
+                height: fit-content;
+                padding: (164rem/16) (93rem/16) (132rem/16);
+                position: relative;
+            }
+        }
+        .dimas-section {
+            &__list-item {
+                position: relative;
+                list-style: none;
+                padding-left: 0;
+            }
+            &__item {
+                &:not(:last-child) {
+                    .dimas-section__item--text {
+                        border-bottom: 1px solid var(--dimas-color-border);
+                    }
+                }
+            }
+            &__img {
+                max-width: 7.5rem;
+            }
+        }
+    }
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev,
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+    position: absolute;
+    &:after {
+        content: unset;
+    }
+    svg {
+        color: var(--dimas-color-white);
+        font-size: 2rem;
+        &:hover {
+            color: var(--dimas-color-main);
+        }
+    }
+}
+
+.dimas-btn {
+    &.play-video {
+        color: var(--dimas-color-white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--dimas-color-white);
+        border-radius: 50%;
+        width: (82rem/16);
+        height: (82rem/16);
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        svg {
+            margin-left: 0.5rem;
+        }
+        &:hover {
+            border-color: var(--dimas-color-main);
+            svg {
+                color: var(--dimas-color-main);
+            }
+        }
+    }
+}
+
+.dimas-project-pointer {
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: var(--dimas-color-white);
+    @for $i from 1 through 7 {
+        &:nth-child(#{$i}) {
+            &:after {
+                transition-delay: 200 + (20ms * $i);
+            }
+        }
+    }
+    &::after {
+        animation: pulse 1.5s linear infinite;
+        background: radial-gradient(50% 50% at 50% 50%, #ffffff00 0%, #ffffff33 100%);
+        border-radius: 50%;
+        width: 1rem;
+        height: 1rem;
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+    }
+    &__description {
+        background-color: var(--dimas-color-black);
+        padding: (24rem/16);
+        transition: all var(--dimas-transition-duration-3) var(--dimas-transition-easing);
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        left: 2rem;
+        top: 0;
+        transform: translateY(-50%);
+        max-width: 20rem;
+        width: 20vw;
+        &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: (12rem/16) solid transparent;
+            border-bottom: (12rem/16) solid transparent;
+            border-right: (12rem/16) solid var(--dimas-color-black);
+            position: absolute;
+            left: -(12rem/16);
+            top: calc(50% - 7px);
+        }
+    }
+    &.active,
+    &:hover {
+        .dimas-project-pointer__description {
+            visibility: visible;
+            opacity: 1;
+        }
+        background-color: var(--dimas-color-main);
+        &::after {
+            background: radial-gradient(50% 50% at 50% 50%, #F2196713 0%, #F2196739 100%);
+        }
+    }
+}
+
+.thanks {
+    &__text {
+        font-family: 'Playfair Display';
+        font-style: italic;
+        font-weight: 400;
+        font-size: (40rem/16);
+        line-height: (53rem/16);
+        margin-bottom: 0;
+        color: var(--dimas-color-thk-text);
+    }
+}
+
+.projects-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__next,
+    &__prev {
+        position: relative;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: (24rem/16);
+        line-height: (29rem/16);
+        color: var(--dimas-color-white);
+    }
+    &__next {
+        margin-left: (15rem/16);
+        text-align: right;
+        &:before {
+            font-weight: 400;
+            content: "⇀";
+            display: block;
+            position: absolute;
+            top: 8px;
+            right: 0;
+            font-size: (43rem/16);
+            transform: translateY(-100%);
+        }
+    }
+    &__prev {
+        margin-right: (15rem/16);
+        &:after {
+            font-weight: 400;
+            content: "↽";
+            display: block;
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            font-size: (43rem/16);
+            transform: translateY(100%);
+        }
+    }
+}
+
+
+/*  Responsive  */
+
+@media (max-width: 1399px) {
+    .dimas-project {
+        #right-slider {
+            .swiper {
+                .swiper-slide {
+                    padding: (164rem/16) (64rem/16) (132rem/16);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1399px) and (min-width:1200px) {
+    .quote {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1199px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        svg {
+            visibility: hidden;
+        }
+    }
+    .dimas-project {
+        .pp-wrap {
+            padding: (164rem/16) (93rem/16) (132rem/16);
+        }
+        .swiper-slide {
+            background-color: var(--dimas-color-accent);
+            &.dimas-section {
+                position: absolute;
+            }
+        }
+        #right-slider {
+            width: 100vw;
+            height: 100vh;
+            .swiper {
+                height: auto;
+                .swiper-slide {
+                    height: auto;
+                    overflow-y: auto;
+                }
+                &::before,
+                &::after {
+                    content: unset;
+                }
+            }
+        }
+        &-pointer {
+            &__description {
+                width: 30vw;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .dimas-project-pointer {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .dimas-project-pointer {
+        display: none;
+    }
+    .dimas-project {
+        .pp-wrap {
+            padding: (64rem/16) 1rem (114rem/16);
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .thanks {
+        &__text {
+            font-size: 2rem;
+            line-height: (43rem/16);
+        }
+        &__icon {
+            &.heart-img {
+                width: (24rem/16);
+            }
+        }
+    }
+    .projects-pagination {
+        flex-wrap: wrap;
+        &__prev {
+            margin-bottom: (40rem/16);
+        }
+        &__next,
+        &__prev {
+            width: 100%;
+        }
+    }
+}

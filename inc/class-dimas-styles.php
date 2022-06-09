@@ -73,9 +73,24 @@ class Styles {
 		// Print styles.
 		wp_enqueue_style( 'dimas-print-style', get_template_directory_uri() . '/assets/css/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 
-		// Threaded comment reply styles.
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' );
+		// Home styles.
+		if ( is_front_page() ) {
+			wp_enqueue_style( 'home-style', get_template_directory_uri() . '/assets/css/home.css', array(), wp_get_theme()->get( 'Version' ) );
+		}
+
+		// Project styles.
+		if ( is_singular('project') ) {
+			wp_enqueue_style( 'project-style', get_template_directory_uri() . '/assets/css/project-single.css', array(), wp_get_theme()->get( 'Version' ) );
+		}
+
+		// Blog Post styles.
+		if ( is_single() ) {
+			wp_enqueue_style( 'blog-post-style', get_template_directory_uri() . '/assets/css/blog-single.css', array(), wp_get_theme()->get( 'Version' ) );
+		}
+
+		// Blog Archive styles.
+		if ( is_category() ) {
+			wp_enqueue_style( 'blog-archive-style', get_template_directory_uri() . '/assets/css/blog-archive.css', array(), wp_get_theme()->get( 'Version' ) );
 		}
 
 	}

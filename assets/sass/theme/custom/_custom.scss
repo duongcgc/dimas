@@ -1,0 +1,267 @@
+//  FONT
+@import "./fonts/font";
+// ANIMATION
+@import "./animation/animation";
+
+/*CUSTOM CSS*/
+
+:root {
+    --dimas-color-main: #F21967;
+    --dimas-color-white: #FFFFFF;
+    --dimas-color-black: #000000;
+    --dimas-color-accent: #011A2C;
+    --dimas-color-bg-header: #011A2C66;
+    --dimas-color-subtitle: #FFFFFFB3;
+    --dimas-color-thk-text: #FFFFFF66;
+    --dimas-color-border: #FFFFFF33;
+    --dimas-color-overlay: #FFFFFF26;
+    --dimas-color-bg-tag: #1A3141;
+    --dimas-color-transparent: transparent;
+    --dimas-transition-duration: 300ms;
+    --dimas-transition-duration-2: 400ms;
+    --dimas-transition-duration-3: 500ms;
+    --dimas-transition-easing: ease;
+    --dimas-transition-linear: linear;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::selection {
+    background: var(--dimas-color-main);
+    color: var(--dimas-color-white);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--dimas-color-main);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--dimas-color-accent);
+}
+
+body {
+    background-color: var(--dimas-color-accent);
+    font-family: 'Poppins';
+}
+
+.label-header {
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: (19rem/16);
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    &.label-content {
+        font-family: 'Outfit';
+    }
+}
+
+.label-content:not(.label-header) {
+    font-family: 'Outfit';
+    font-size: (14rem/16);
+    line-height: 1.125rem;
+    text-transform: uppercase;
+}
+
+.name-author {
+    font-family: 'Outfit';
+    font-size: 1rem;
+    line-height: 1.25;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+}
+
+h1 {
+    font-family: 'Heist';
+    font-style: normal;
+    font-weight: 400;
+    &.label-banner {
+        width: fit-content;
+        font-family: 'Heist';
+        font-style: normal;
+        font-size: 5rem;
+    }
+}
+
+h2 {
+    font-family: 'Outfit';
+    font-weight: 700;
+    text-transform: capitalize;
+    &.label-banner {
+        width: fit-content;
+        font-family: 'Heist';
+        font-weight: 400;
+        font-size: 3.5rem;
+        &.hg60 {
+            line-height: (60rem/16);
+        }
+        &.has-after {
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                display: block;
+                width: (136rem/16);
+                height: 3px;
+                background-color: var(--dimas-color-main);
+            }
+        }
+    }
+}
+
+h3 {
+    font-family: 'Outfit';
+    font-style: normal;
+    line-height: 2rem;
+}
+
+h4 {
+    font-family: 'Outfit';
+    font-style: normal;
+}
+
+.quote {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.5;
+    &__author {
+        font-family: 'Outfit';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 0.875rem;
+        line-height: 1.125rem;
+    }
+    &__text {
+        position: relative;
+        &.has-after {
+            &::after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                content: "";
+                display: block;
+                height: 1px;
+                width: 5rem;
+                background-color: var(--dimas-color-border);
+            }
+        }
+    }
+}
+
+a {
+    color: var(--dimas-color-white);
+    text-decoration: none;
+    &:hover {
+        color: var(--dimas-color-main);
+    }
+    &:after {
+        transition: all var(--dimas-transition-duration) var(--dimas-transition-easing);
+    }
+    transition: all var(--dimas-transition-duration) var(--dimas-transition-easing);
+}
+
+svg {
+    transition: color var(--dimas-transition-duration) var(--dimas-transition-easing);
+}
+
+.has-color-white {
+    color: var(--dimas-color-white)
+}
+
+.has-color-subtitle {
+    color: var(--dimas-color-subtitle);
+}
+
+.has-color-main {
+    color: var(--dimas-color-main)
+}
+
+.has-bg-main {
+    background-color: var(--dimas-color-main);
+}
+
+.has-bg-black {
+    background-color: var(--dimas-color-black);
+}
+
+.dimas-site-overlay {
+    position: fixed;
+    z-index: 35;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    background-color: var(--dimas-color-overlay);
+}
+
+.dimas-custom-cursor {
+    position: absolute;
+    z-index: 100;
+    pointer-events: none;
+    color: var(--dimas-color-accent);
+    span {
+        font-size: (15rem/16);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        visibility: hidden;
+        width: (80rem/16);
+        height: (80rem/16);
+        transition: transform calc(var(--dimas-transition-duration)/ 2);
+        transform: translate3d(calc(var(--dimas-custom-cursor__x) - (40rem/16)), calc(var(--dimas-custom-cursor__y) - (40rem/16)), 0);
+        opacity: 0;
+        color: currentColor;
+        border: 1px solid currentColor;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        svg {
+            height: 1em
+        }
+    }
+    &.is-visible {
+        span {
+            visibility: visible;
+            animation: dimas_blink_in var(--dimas-transition-duration) var(--dimas-transition-easing) forwards
+        }
+    }
+}
+
+.dimas-main {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/** Responsive Custom CSS **/
+
+@media (max-width: 767px) {
+    h2 {
+        font-size: 1rem;
+        line-height: 1.25;
+        &.label-banner {
+            font-size: 3rem;
+            line-height: (60rem/16);
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .quote {
+        flex-wrap: wrap;
+        &__img {
+            margin-bottom: (24rem/16);
+        }
+    }
+}
+
+
+/** End Responsive Custom CSS **/

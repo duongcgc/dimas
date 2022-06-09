@@ -197,6 +197,15 @@ class Scripts {
 			wp_get_theme()->get( 'Version' ),
 			true
 		);
+
+		// Main script.
+		wp_enqueue_script(
+			'main-script',
+			get_template_directory_uri() . '/assets/js/dimas-main.js',
+			array( 'dimas-responsive-embeds-script' ),
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
 	}
 
 	/**

@@ -1,0 +1,51 @@
+/*FOOTER*/
+
+.dimas-footer {
+    a {
+        font-family: 'Outfit';
+        font-style: normal;
+        font-weight: 600;
+        font-size: (12rem/16);
+        line-height: (15rem/16);
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+    }
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: (36rem/16) 3rem (36rem/16) (60rem/16);
+    align-items: center;
+    justify-content: space-between;
+    &--fixed {
+        background-color: var(--dimas-color-bg-header);
+        position: fixed;
+        z-index: 20;
+    }
+}
+
+
+/** Responsive Footer **/
+
+@media (max-width: 991px) {
+    .dimas-footer {
+        padding: (38rem/16) (48rem/16) (38rem/16) 4rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .dimas-footer {
+        display: block;
+        padding: 1rem;
+        &-hotline {
+            margin-top: (5rem/16);
+            width: 100%;
+            position: relative;
+            right: unset;
+        }
+    }
+}
+
+
+/** End Responsive Footer **/

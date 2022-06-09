@@ -1,0 +1,79 @@
+/*ANIMATION*/
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(2, 2, 2);
+    }
+}
+
+@keyframes dimas_blink_in {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes dimas_bounce {
+    0%,
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+    50% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+@keyframes dimas_spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(380deg)
+    }
+}
+
+@keyframes dimas_heartbeat {
+    0% {
+        -webkit-transform: scale(.8);
+        transform: scale(.8)
+    }
+    5% {
+        -webkit-transform: scale(.9);
+        transform: scale(.9)
+    }
+    10% {
+        -webkit-transform: scale(.8);
+        transform: scale(.8)
+    }
+    15% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    50% {
+        -webkit-transform: scale(.8);
+        transform: scale(.8)
+    }
+    100% {
+        -webkit-transform: scale(.8);
+        transform: scale(.8)
+    }
+}
+
+@keyframes dimas_marquee {
+    0% {
+        -webkit-transform: translateX(0) translateZ(0);
+        transform: translateX(0) translateZ(0)
+    }
+    100% {
+        -webkit-transform: translateX(-100%) translateZ(0);
+        transform: translateX(-100%) translateZ(0)
+    }
+}
