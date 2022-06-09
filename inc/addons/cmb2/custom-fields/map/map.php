@@ -36,13 +36,13 @@ class Dimas_Field_Map {
 	 */
 	public static function render_map( $field, $field_escaped_value, $field_object_id, $field_object_type, $field_type_object ) {
 		self::setup_admin_scripts();
-		echo '<div class="' . apply_filters( 'opalrealestate_row_container_class', 'row opal-row' ) . '">
+		echo '<div class="' . apply_filters( 'opalrealestate_row_container_class', 'row dimas-row' ) . '">
             <div class="col-sm-6">
 					<div  class="form-group">
-						<input type="text" class="large-text regular-text opal-map-search  form-control" id="' . $field->args( 'id' ) . '" 
+						<input type="text" class="large-text regular-text dimas-map-search  form-control" id="' . $field->args( 'id' ) . '" 
 						name="' . $field->args( '_name' ) . '[addess]" value="' . ( isset( $field_escaped_value['address'] ) ? $field_escaped_value['address'] : '' ) . '"/>
 			<div class="col-sm-6">
-				<div class="opal-map"></div>
+				<div class="dimas-map"></div>
 			</div>
 			';
 		echo '</div>';
@@ -55,7 +55,7 @@ class Dimas_Field_Map {
 			'type'  => 'text',
 			'name'  => $field->args( '_name' ) . '[latitude]',
 			'value' => isset( $field_escaped_value['latitude'] ) ? $field_escaped_value['latitude'] : '',
-			'class' => 'opal-map-latitude form-control',
+			'class' => 'dimas-map-latitude form-control',
 			'desc'  => '',
 		) );
 		echo '</div>';
@@ -65,7 +65,7 @@ class Dimas_Field_Map {
 			'type'  => 'text',
 			'name'  => $field->args( '_name' ) . '[longitude]',
 			'value' => isset( $field_escaped_value['longitude'] ) ? $field_escaped_value['longitude'] : '',
-			'class' => 'opal-map-longitude form-control',
+			'class' => 'dimas-map-longitude form-control',
 			'desc'  => '',
 		) );
 		echo '</div>';

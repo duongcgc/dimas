@@ -19,7 +19,7 @@ class Dimas_Field_Agent_Info {
 	private function render_content( $userid ) {
 		global $post;
 		$user_info       = get_userdata( $userid );
-		$link_profile    = get_edit_user_link( $userid ) . '#opal-section-estate-settings';
+		$link_profile    = get_edit_user_link( $userid ) . '#dimas-section-estate-settings';
 		$link_properties = esc_url( add_query_arg( array(
 			'post_type' => $post->post_type,
 			'agent_id'  => $userid

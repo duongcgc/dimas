@@ -1,15 +1,15 @@
 @font-face {
-    font-family: "opal-icon";
-    src: url('../fonts/opal-icon.eot');
-    src: url('../fonts/opal-icon.eot?#iefix') format('eot'),
-    url('../fonts/opal-icon.woff2') format('woff2'),
-    url('../fonts/opal-icon.woff') format('woff'),
-    url('../fonts/opal-icon.ttf') format('truetype'),
-    url('../fonts/opal-icon.svg#opal-icon') format('svg');
+    font-family: "dimas-icon";
+    src: url('../fonts/dimas-icon.eot');
+    src: url('../fonts/dimas-icon.eot?#iefix') format('eot'),
+    url('../fonts/dimas-icon.woff2') format('woff2'),
+    url('../fonts/dimas-icon.woff') format('woff'),
+    url('../fonts/dimas-icon.ttf') format('truetype'),
+    url('../fonts/dimas-icon.svg#dimas-icon') format('svg');
 }
 
-@mixin opal-icon-styles {
-    font-family: "opal-icon";
+@mixin dimas-icon-styles {
+    font-family: "dimas-icon";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-style: normal;
@@ -20,11 +20,11 @@
     text-transform: none;
 }
 
-%opal-icon {
-    @include opal-icon-styles;
+%dimas-icon {
+    @include dimas-icon-styles;
 }
 
-@function opal-icon-char($filename) {
+@function dimas-icon-char($filename) {
     $char: "";
 
     @if $filename == arrow-left {
@@ -76,59 +76,59 @@
 @return $char;
 }
 
-@mixin opal-icon($filename, $insert: before, $extend: true) {
+@mixin dimas-icon($filename, $insert: before, $extend: true) {
 &:#{$insert} {
     @if $extend {
-        @extend %opal-icon;
+        @extend %dimas-icon;
     } @else {
-        @include opal-icon-styles;
+        @include dimas-icon-styles;
     }
-    content: opal-icon-char($filename);
+    content: dimas-icon-char($filename);
 }
 }
 
-.opal-icon-arrow-left {
-    @include opal-icon(arrow-left);
+.dimas-icon-arrow-left {
+    @include dimas-icon(arrow-left);
 }
-.opal-icon-arrow-right {
-    @include opal-icon(arrow-right);
+.dimas-icon-arrow-right {
+    @include dimas-icon(arrow-right);
 }
-.opal-icon-bag {
-    @include opal-icon(bag);
+.dimas-icon-bag {
+    @include dimas-icon(bag);
 }
-.opal-icon-checked {
-    @include opal-icon(checked);
+.dimas-icon-checked {
+    @include dimas-icon(checked);
 }
-.opal-icon-cog {
-    @include opal-icon(cog);
+.dimas-icon-cog {
+    @include dimas-icon(cog);
 }
-.opal-icon-compare {
-    @include opal-icon(compare);
+.dimas-icon-compare {
+    @include dimas-icon(compare);
 }
-.opal-icon-heart {
-    @include opal-icon(heart);
+.dimas-icon-heart {
+    @include dimas-icon(heart);
 }
-.opal-icon-minus {
-    @include opal-icon(minus);
+.dimas-icon-minus {
+    @include dimas-icon(minus);
 }
-.opal-icon-plan {
-    @include opal-icon(plan);
+.dimas-icon-plan {
+    @include dimas-icon(plan);
 }
-.opal-icon-plus {
-    @include opal-icon(plus);
+.dimas-icon-plus {
+    @include dimas-icon(plus);
 }
-.opal-icon-search {
-    @include opal-icon(search);
+.dimas-icon-search {
+    @include dimas-icon(search);
 }
-.opal-icon-start {
-    @include opal-icon(start);
+.dimas-icon-start {
+    @include dimas-icon(start);
 }
-.opal-icon-times {
-    @include opal-icon(times);
+.dimas-icon-times {
+    @include dimas-icon(times);
 }
-.opal-icon-user {
-    @include opal-icon(user);
+.dimas-icon-user {
+    @include dimas-icon(user);
 }
-.opal-icon-zoom-in {
-    @include opal-icon(zoom-in);
-}
+.dimas-icon-zoom-in {
+    @include dimas-icon(zoom-in);
+}

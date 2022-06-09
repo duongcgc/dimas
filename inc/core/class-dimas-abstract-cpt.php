@@ -15,7 +15,7 @@ abstract class CPT_Abstract {
 		$this->create_taxonomy();
 		$this->widgets_init();
 
-		add_filter( 'osf_customizer_buttons', array( $this, 'customizer_buttons' ) );
+		add_filter( 'dimas_customizer_buttons', array( $this, 'customizer_buttons' ) );
 		add_action( 'cmb2_admin_init', array( $this, 'create_meta_box' ) );
 		add_action( 'customize_register', array( $this, 'customize_register' ) );
 
@@ -102,7 +102,7 @@ abstract class CPT_Abstract {
 	 */
 	protected function init_meta_box( $cbm2, $name, $args = array() ) {
 		$name1 = wp_basename( $name, '.php' );
-		$args  = apply_filters( 'osf_metabox_' . $name1 . '_fields', $args );
+		$args  = apply_filters( 'dimas_metabox_' . $name1 . '_fields', $args );
 		foreach ( $args as $arg ) {
 			$cbm2->add_field( $arg );
 		}

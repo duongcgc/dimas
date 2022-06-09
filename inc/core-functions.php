@@ -2,8 +2,8 @@
 /**
  * @return array
  */
-function osf_get_google_fonts() {
-	$content = file_get_contents( BEAUTIFO_CORE_PLUGIN_DIR . 'webfonts.json' );
+function dimas_get_google_fonts() {
+	$content = file_get_contents( DIMAS_CORE_PLUGIN_DIR . 'webfonts.json' );
 
 	return json_decode( $content )->items;
 }
@@ -12,8 +12,8 @@ function osf_get_google_fonts() {
  * @return bool|array
  * @see
  */
-function osf_get_theme_supports() {
-	$theme_supports = get_theme_support( 'opal-service-framework' );
+function dimas_get_theme_supports() {
+	$theme_supports = get_theme_support( 'dimas-service-framework' );
 	if ( $theme_supports ) {
 		return wp_parse_args(
 			$theme_supports,
@@ -29,9 +29,9 @@ function osf_get_theme_supports() {
 }
 
 
-if ( ! function_exists( 'osf_do_shortcode' ) ) {
+if ( ! function_exists( 'dimas_do_shortcode' ) ) {
 
-	function osf_do_shortcode( $tag, array $atts = array(), $content = null ) {
+	function dimas_do_shortcode( $tag, array $atts = array(), $content = null ) {
 		global $shortcode_tags;
 
 		if ( ! isset( $shortcode_tags[ $tag ] ) ) {
@@ -42,20 +42,20 @@ if ( ! function_exists( 'osf_do_shortcode' ) ) {
 	}
 }
 
-function osf_get_fonts_url() {
+function dimas_get_fonts_url() {
 	$subsets       = array();
 	$font_families = array();
 
-	// Body Font
-	$body_font = get_theme_mod( 'osf_typography_general_body_font' );
+	// Body Font.
+	$body_font = get_theme_mod( 'dimas_typography_general_body_font' );
 	if ( is_array( $body_font ) && $body_font['family'] ) {
 		$font_families[] = "{$body_font['family']}:{$body_font['fontWeight']}";
 		// $font_families[] = "{$body_font['family']}";
 		$subsets[] = $body_font['subsets'];
 	}
 
-	// Heading Font
-	$heading_font = get_theme_mod( 'osf_typography_general_heading_font' );
+	// Heading Font.
+	$heading_font = get_theme_mod( 'dimas_typography_general_heading_font' );
 	if ( is_array( $heading_font ) && $heading_font['family'] ) {
 
 		// $font_families[] = "{$heading_font['family']}";
@@ -63,16 +63,16 @@ function osf_get_fonts_url() {
 		$subsets[]       = $heading_font['subsets'];
 	}
 
-	// Tertiary Font
-	$tertiary_font = get_theme_mod( 'osf_typography_general_tertiary_font' );
+	// Tertiary Font.
+	$tertiary_font = get_theme_mod( 'dimas_typography_general_tertiary_font' );
 	if ( is_array( $tertiary_font ) && $tertiary_font['family'] ) {
 		// $font_families[] = "{$heading_font['family']}";
 		$font_families[] = "{$tertiary_font['family']}:{$tertiary_font['fontWeight']}";
 		$subsets[]       = $tertiary_font['subsets'];
 	}
 
-	// Quaternary Font
-	$quaternary_font = get_theme_mod( 'osf_typography_general_quaternary_font' );
+	// Quaternary Font.
+	$quaternary_font = get_theme_mod( 'dimas_typography_general_quaternary_font' );
 	if ( is_array( $quaternary_font ) && $quaternary_font['family'] ) {
 		// $font_families[] = "{$heading_font['family']}";
 		$font_families[] = "{$quaternary_font['family']}:{$quaternary_font['fontWeight']}";
@@ -97,7 +97,7 @@ function osf_get_fonts_url() {
  *
  * @return array
  */
-function osf_sanitize_font_style( $font ) {
+function dimas_sanitize_font_style( $font ) {
 	if ( $font && is_array( $font ) ) {
 		return $font;
 	}
@@ -115,14 +115,14 @@ function osf_sanitize_font_style( $font ) {
  *
  * @return string
  */
-function osf_sanitize_editor( $value ) {
+function dimas_sanitize_editor( $value ) {
 	return force_balance_tags( apply_filters( 'the_content', $value ) );
 }
 
 /**
  * @return bool
  */
-function osf_sanitize_button_switch( $value ) {
+function dimas_sanitize_button_switch( $value ) {
 	if ( $value ) {
 		return true;
 	} else {
@@ -136,7 +136,7 @@ function osf_sanitize_button_switch( $value ) {
  *
  * @return array
  */
-function osf_sanitize_font_family( $font ) {
+function dimas_sanitize_font_family( $font ) {
 	if ( $font && is_array( $font ) ) {
 		return $font;
 	}
@@ -149,43 +149,43 @@ function osf_sanitize_font_family( $font ) {
 }
 
 
-if ( ! function_exists( 'osf_is_frontpage' ) ) {
+if ( ! function_exists( 'dimas_is_frontpage' ) ) {
 
-	function osf_is_frontpage() {
+	function dimas_is_frontpage() {
 		return ( is_front_page() && ! is_home() );
 	}
 }
 
-if ( ! function_exists( 'osf_page_enable_breadcrumb' ) ) {
+if ( ! function_exists( 'dimas_page_enable_breadcrumb' ) ) {
 	/**
 	 * @return bool
 	 */
-	function osf_page_enable_breadcrumb() {
-		$check = get_post_meta( get_the_ID(), 'osf_enable_breadcrumb', true ) === '0' ? false : true;
+	function dimas_page_enable_breadcrumb() {
+		$check = get_post_meta( get_the_ID(), 'dimas_enable_breadcrumb', true ) === '0' ? false : true;
 
 		return ( $check );
 	}
 }
 
-if ( ! function_exists( 'osf_page_enable_page_title' ) ) {
+if ( ! function_exists( 'dimas_page_enable_page_title' ) ) {
 	/**
 	 * @return bool
 	 */
-	function osf_page_enable_page_title() {
-		$check = get_post_meta( get_the_ID(), 'osf_enable_page_title', true ) === '0' ? false : true;
+	function dimas_page_enable_page_title() {
+		$check = get_post_meta( get_the_ID(), 'dimas_enable_page_title', true ) === '0' ? false : true;
 
 		return ( is_page() && $check );
 	}
 }
 
-if ( ! function_exists( 'osf_get_query' ) ) {
+if ( ! function_exists( 'dimas_get_query' ) ) {
 
 	/**
 	 * @param $args
 	 *
 	 * @return WP_Query
 	 */
-	function osf_get_query( $args ) {
+	function dimas_get_query( $args ) {
 		global $wp_query;
 		$default  = array(
 			'post_type' => 'post',
@@ -197,7 +197,7 @@ if ( ! function_exists( 'osf_get_query' ) ) {
 	}
 }
 
-if ( ! function_exists( 'osf_get_metabox' ) ) {
+if ( ! function_exists( 'dimas_get_metabox' ) ) {
 
 	/**
 	 * @param int    $id
@@ -206,7 +206,7 @@ if ( ! function_exists( 'osf_get_metabox' ) ) {
 	 *
 	 * @return bool|mixed
 	 */
-	function osf_get_metabox( $id, $key, $default = false ) {
+	function dimas_get_metabox( $id, $key, $default = false ) {
 		$value = get_post_meta( $id, $key, true );
 		if ( false === $value ) {
 			return $default;
@@ -218,14 +218,14 @@ if ( ! function_exists( 'osf_get_metabox' ) ) {
 
 
 
-if ( ! function_exists( 'osf_scrape_instagram' ) ) {
+if ( ! function_exists( 'dimas_scrape_instagram' ) ) {
 	/**
 	 * @param string $username
 	 * @param int    $slice
 	 *
 	 * @return array|mixed|WP_Error
 	 */
-	function osf_scrape_instagram( $username, $slice = 9 ) {
+	function dimas_scrape_instagram( $username, $slice = 9 ) {
 		$username   = strtolower( $username );
 		$by_hashtag = ( substr( $username, 0, 1 ) == '#' );
 		if ( false === ( $instagram = get_transient( 'otf-instagram-media-new-' . sanitize_title_with_dashes( $username ) ) ) ) {
@@ -372,8 +372,8 @@ if ( ! function_exists( 'osf_scrape_instagram' ) ) {
 	}
 }
 
-if ( ! function_exists( 'osf_pretty_number' ) ) {
-	function osf_pretty_number( $x = 0 ) {
+if ( ! function_exists( 'dimas_pretty_number' ) ) {
+	function dimas_pretty_number( $x = 0 ) {
 		$x = (int) $x;
 
 		if ( $x > 1000000 ) {
@@ -388,8 +388,8 @@ if ( ! function_exists( 'osf_pretty_number' ) ) {
 	}
 }
 
-function osf_get_icon_svg( $path, $color = '', $width = '' ) {
-	$content = osf_get_file_contents( $path );
+function dimas_get_icon_svg( $path, $color = '', $width = '' ) {
+	$content = dimas_get_file_contents( $path );
 	if ( $content ) {
 		$re = '/<svg(([^\n]*\n)+)<\/svg>/';
 		preg_match_all( $re, $content, $matches, PREG_SET_ORDER, 0 );
@@ -410,7 +410,7 @@ function osf_get_icon_svg( $path, $color = '', $width = '' ) {
 	return $content;
 }
 
-function osf_get_file_contents( $path ) {
+function dimas_get_file_contents( $path ) {
 	if ( is_file( $path ) ) {
 		return file_get_contents( $path );
 	}
@@ -418,7 +418,7 @@ function osf_get_file_contents( $path ) {
 	return false;
 }
 
-function osf_get_image_size( $thumb_size ) {
+function dimas_get_image_size( $thumb_size ) {
 	if ( is_string( $thumb_size )
 		&& in_array(
 			$thumb_size,
@@ -430,7 +430,7 @@ function osf_get_image_size( $thumb_size ) {
 				'full',
 			)
 		) ) {
-		$images_sizes = osf_get_all_image_sizes();
+		$images_sizes = dimas_get_all_image_sizes();
 		$image_size   = $images_sizes[ $thumb_size ];
 		if ( $thumb_size == 'full' ) {
 			$image_size['width']  = 999999;
@@ -457,7 +457,7 @@ function osf_get_image_size( $thumb_size ) {
 	}
 }
 
-function osf_get_all_image_sizes() {
+function dimas_get_all_image_sizes() {
 	global $_wp_additional_image_sizes;
 
 	$default_image_sizes = array( 'thumbnail', 'medium', 'large', 'full' );
@@ -478,17 +478,17 @@ function osf_get_all_image_sizes() {
 // ======================================================================================
 // Customizer Callback
 // ======================================================================================
-function osf_customize_partial_header_content() {
+function dimas_customize_partial_header_content() {
 	get_template_part( 'template-parts/header' );
 }
 
-function osf_customize_partial_css() {
+function dimas_customize_partial_css() {
 	echo '<style type="text/css">';
-	echo apply_filters( 'osf_theme_custom_inline_css', '' ) . osf_theme_custom_css();
+	echo apply_filters( 'dimas_theme_custom_inline_css', '' ) . dimas_theme_custom_css();
 	echo '</style>';
 }
 
-function osf_customize_partial_google_font() {
+function dimas_customize_partial_google_font() {
 	?>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -497,27 +497,27 @@ function osf_customize_partial_google_font() {
 	wp_head();
 }
 
-function osf_customize_partial_sidebar() {
+function dimas_customize_partial_sidebar() {
 	echo dynamic_sidebar( apply_filters( 'opal_theme_sidebar', '' ) );
 }
 
-function osf_customize_partial_page_title() {
+function dimas_customize_partial_page_title() {
 	get_template_part( 'template-parts/common/page-title' );
 }
 
-function osf_customize_partial_footer() {
-	if ( ! get_theme_mod( 'osf_footer_layout', 0 ) ) {
+function dimas_customize_partial_footer() {
+	if ( ! get_theme_mod( 'dimas_footer_layout', 0 ) ) {
 		get_template_part( 'template-parts/footer/default' );
 	} else {
 		get_template_part( 'template-parts/footer/builder' );
 	}
 }
 
-function osf_customize_partial_copyright() {
-	echo force_balance_tags( apply_filters( 'the_content', get_theme_mod( 'osf_footer_copyright' ) ) );
+function dimas_customize_partial_copyright() {
+	echo force_balance_tags( apply_filters( 'the_content', get_theme_mod( 'dimas_footer_copyright' ) ) );
 }
 
-function osf_get_option( $option_key, $key = '', $default = false ) {
+function dimas_get_option( $option_key, $key = '', $default = false ) {
 	if ( function_exists( 'cmb2_get_option' ) ) {
 		// Use cmb2_get_option as it passes through some key filters.
 		return cmb2_get_option( $option_key, $key, $default );
@@ -534,9 +534,9 @@ function osf_get_option( $option_key, $key = '', $default = false ) {
 	return $val;
 }
 
-if ( ! function_exists( 'osf_fnc_excerpt' ) ) {
+if ( ! function_exists( 'dimas_fnc_excerpt' ) ) {
 	// Custom Excerpt Function
-	function osf_fnc_excerpt( $limit, $afterlimit = '[...]' ) {
+	function dimas_fnc_excerpt( $limit, $afterlimit = '[...]' ) {
 		$excerpt = get_the_excerpt();
 		$limit   = empty( $limit ) ? 20 : $limit;
 		if ( $excerpt != '' ) {
@@ -556,7 +556,7 @@ if ( ! function_exists( 'osf_fnc_excerpt' ) ) {
 	}
 }
 
-function osf_do_shortcode( $tag, array $atts = array(), $content = null ) {
+function dimas_do_shortcode( $tag, array $atts = array(), $content = null ) {
 	global $shortcode_tags;
 
 	if ( ! isset( $shortcode_tags[ $tag ] ) ) {
@@ -567,11 +567,11 @@ function osf_do_shortcode( $tag, array $atts = array(), $content = null ) {
 }
 
 
-if ( ! function_exists( 'osf_is_woocommerce_activated' ) ) {
+if ( ! function_exists( 'dimas_is_woocommerce_activated' ) ) {
 	/**
 	 * Query WooCommerce activation
 	 */
-	function osf_is_woocommerce_activated() {
+	function dimas_is_woocommerce_activated() {
 		return class_exists( 'WooCommerce' ) ? true : false;
 	}
 }
@@ -616,14 +616,14 @@ function sanitize_font_weight( $arr ) {
 	return $arr;
 }
 
-if ( ! function_exists( 'osf_vertical_navigation' ) ) {
+if ( ! function_exists( 'dimas_vertical_navigation' ) ) {
 	/**
 	 * Display Vertical Navigation
 	 *
 	 * @return void
 	 * @since  1.0.0
 	 */
-	function osf_vertical_navigation() {
+	function dimas_vertical_navigation() {
 
 		if ( isset( get_nav_menu_locations()['vertical'] ) ) {
 

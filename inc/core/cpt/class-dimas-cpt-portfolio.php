@@ -10,9 +10,9 @@ if (!defined('ABSPATH')) {
  * Class CPT_Portfolio
  */
 class CPT_Portfolio extends CPT_Abstract {
-    public $post_type = 'osf_portfolio';
-    public $prefix    = 'osf_portfolio_';
-    public $taxonomy  = 'osf_portfolio_category';
+    public $post_type = 'dimas_portfolio';
+    public $prefix    = 'dimas_portfolio_';
+    public $taxonomy  = 'dimas_portfolio_category';
     static $instance;
 
     public static function getInstance() {
@@ -41,8 +41,8 @@ class CPT_Portfolio extends CPT_Abstract {
             'menu_name'          => __('Portfolios', 'dimas'),
         );
 
-        $labels     = apply_filters('osf_postype_portfolio_labels', $labels);
-        $slug_field = osf_get_option('portfolio_settings', 'slug_portfolio', 'portfolios');
+        $labels     = apply_filters('dimas_postype_portfolio_labels', $labels);
+        $slug_field = dimas_get_option('portfolio_settings', 'slug_portfolio', 'portfolios');
         $slug       = isset($slug_field) ? $slug_field : "portfolios";
 
         register_post_type($this->post_type,
@@ -51,7 +51,7 @@ class CPT_Portfolio extends CPT_Abstract {
                 'supports'      => array('title', 'editor', 'excerpt', 'thumbnail'),
                 'public'        => true,
                 'has_archive'   => true,
-                'rewrite'       => array('slug' => apply_filters('osf_custom_post_type_portfolio_slug', $slug)),
+                'rewrite'       => array('slug' => apply_filters('dimas_custom_post_type_portfolio_slug', $slug)),
                 'menu_position' => 5,
                 'categories'    => array(),
                 'menu_icon'     => 'dashicons-portfolio',
@@ -77,7 +77,7 @@ class CPT_Portfolio extends CPT_Abstract {
             'new_item_name'     => __('New Category Name', "beautifo-core"),
             'menu_name'         => __('Categories', "beautifo-core"),
         );
-        $slug_cat_field = osf_get_option('portfolio_settings', 'slug_category_portfolio', 'category-portfolio');
+        $slug_cat_field = dimas_get_option('portfolio_settings', 'slug_category_portfolio', 'category-portfolio');
         $slug_cat       = isset($slug_cat_field) ? $slug_cat_field : "category-portfolio";
         $args           = array(
             'hierarchical'      => true,
@@ -97,7 +97,7 @@ class CPT_Portfolio extends CPT_Abstract {
      */
     public static function getQuery($args = array()) {
         $default = array(
-            'post_type' => 'osf_portfolio',
+            'post_type' => 'dimas_portfolio',
         );
 
         $args = array_merge($default, $args);
@@ -131,15 +131,15 @@ class CPT_Portfolio extends CPT_Abstract {
         if ($term_id == 0 || empty($term_id)) {
             $args = array(
                 'posts_per_page' => $per_page,
-                'post_type'      => "osf_portfolio",
+                'post_type'      => "dimas_portfolio",
             );
         } else {
             $args = array(
                 'posts_per_page' => $per_page,
-                'post_type'      => "osf_portfolio",
+                'post_type'      => "dimas_portfolio",
                 'tax_query'      => array(
                     array(
-                        'taxonomy' => "osf_portfolio_category",
+                        'taxonomy' => "dimas_portfolio_category",
                         'field'    => 'term_id',
                         'terms'    => $term_id,
                         'operator' => 'IN'
@@ -160,7 +160,7 @@ class CPT_Portfolio extends CPT_Abstract {
         wp_reset_query();
         $args = array(
             'posts_per_page' => $per_page,
-            'post_type'      => "osf_portfolio",
+            'post_type'      => "dimas_portfolio",
         );
 
         return new WP_Query($args);
@@ -255,7 +255,7 @@ class CPT_Portfolio extends CPT_Abstract {
             'order'      => 'ASC',
             'number'     => $per_page,
         );
-        $terms = get_terms('osf_portfolio_category', $args);
+        $terms = get_terms('dimas_portfolio_category', $args);
 
         return $terms;
     }
@@ -266,7 +266,7 @@ class CPT_Portfolio extends CPT_Abstract {
      */
     public static function check_active_category_by_post_id($term_id, $post_id) {
         $termid = array();
-        $terms  = wp_get_post_terms($post_id, 'osf_portfolio_category');
+        $terms  = wp_get_post_terms($post_id, 'dimas_portfolio_category');
         foreach ($terms as $term) {
             $termid[] = $term->term_id;
         }
@@ -296,7 +296,7 @@ class CPT_Portfolio extends CPT_Abstract {
     }
 
     public function set_sidebar($name) {
-        if (is_singular('osf_portfolio') && is_active_sidebar('sidebar-portfolio')) {
+        if (is_singular('dimas_portfolio') && is_active_sidebar('sidebar-portfolio')) {
             $name = 'sidebar-portfolio';
         }
         return $name;
@@ -304,14 +304,14 @@ class CPT_Portfolio extends CPT_Abstract {
 
     public function body_class($classes) {
         if (is_post_type_archive($this->post_type) || is_tax($this->taxonomy)) {
-            if (in_array('opal-content-layout-2cr', $classes)) {
-                $key           = array_search('opal-content-layout-2cr', $classes);
-                $classes[$key] = 'opal-content-layout-1c';
+            if (in_array('dimas-content-layout-2cr', $classes)) {
+                $key           = array_search('dimas-content-layout-2cr', $classes);
+                $classes[$key] = 'dimas-content-layout-1c';
             }
         }
         if (is_singular($this->post_type) && is_active_sidebar('sidebar-portfolio')) {
 
-            $classes[] = 'opal-portfolio-layout-2cr';
+            $classes[] = 'dimas-portfolio-layout-2cr';
         }
 
         return $classes;

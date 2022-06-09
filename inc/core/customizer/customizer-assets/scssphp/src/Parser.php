@@ -909,7 +909,7 @@ final class Parser
                     }
 
                     $this->seek($end);
-                    $this->append([Type::T_CUSTOM_PROPERTY, $name, $value], $s);
+                    $this->append([Type::T_CUSTDIMAS_PROPERTY, $name, $value], $s);
 
                     return true;
                 }
@@ -1362,7 +1362,7 @@ final class Parser
                     ]
                 ];
 
-            case Type::T_CUSTOM_PROPERTY:
+            case Type::T_CUSTDIMAS_PROPERTY:
             case Type::T_UNARY:
                 $parsed[2] = $this->isPlainCssValidElement($parsed[2]);
                 if (! $parsed[2]) {

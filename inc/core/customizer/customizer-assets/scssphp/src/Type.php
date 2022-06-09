@@ -43,7 +43,7 @@ final class Type
     /**
      * @internal
      */
-    const T_CUSTOM_PROPERTY = 'custom';
+    const T_CUSTDIMAS_PROPERTY = 'custom';
     /**
      * @internal
      */

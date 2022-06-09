@@ -48,7 +48,7 @@ class Dimas_CMB2Box_Slider {
                  data-id="' . $field->_id() . '"
                  data-highlight="true">
             </div>
-            ' . $field_type_object->input( array( 'type' => 'hidden', 'opal-hidden' => 'true' ) ) . '
+            ' . $field_type_object->input( array( 'type' => 'hidden', 'dimas-hidden' => 'true' ) ) . '
         </div>';
 	}
 

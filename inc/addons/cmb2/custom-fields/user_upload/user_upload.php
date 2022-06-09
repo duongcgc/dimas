@@ -108,7 +108,7 @@ class Dimas_Field_User_upload {
         $post_id = 0;
 
 
-        echo '<div class="opalrealestate-user-upload ' . apply_filters( 'opalrealestate_row_container_class', 'opal-row' ) . '"> '; ?>
+        echo '<div class="opalrealestate-user-upload ' . apply_filters( 'opalrealestate_row_container_class', 'dimas-row' ) . '"> '; ?>
         <div class="upload-container" data-button="select-images<?php echo $id; ?>"
              data-field="<?php echo $field->args( '_name' ); ?>">
             <?php if ($files): ?>
@@ -172,7 +172,7 @@ class Dimas_Field_User_upload {
 
         }
 
-        echo '<div class="opalrealestate-user-upload ' . apply_filters( 'opalrealestate_row_container_class', 'opal-row' ) . '"> '; ?>
+        echo '<div class="opalrealestate-user-upload ' . apply_filters( 'opalrealestate_row_container_class', 'dimas-row' ) . '"> '; ?>
         <div class="upload-container single-upload" data-button="select-images<?php echo $id; ?>"
              data-field="<?php echo $field->args( '_name' ); ?>" data-issingle="1">
             <?php if ($files): ?>

@@ -1,15 +1,15 @@
 @font-face {
-    font-family: "opal-icon";
-    src: url('fonts/opal-icon.eot');
-    src: url('fonts/opal-icon.eot?#iefix') format('eot'),
-    url('fonts/opal-icon.woff2') format('woff2'),
-    url('fonts/opal-icon.woff') format('woff'),
-    url('fonts/opal-icon.ttf') format('truetype'),
-    url('fonts/opal-icon.svg#opal-icon') format('svg');
+    font-family: "dimas-icon";
+    src: url('fonts/dimas-icon.eot');
+    src: url('fonts/dimas-icon.eot?#iefix') format('eot'),
+    url('fonts/dimas-icon.woff2') format('woff2'),
+    url('fonts/dimas-icon.woff') format('woff'),
+    url('fonts/dimas-icon.ttf') format('truetype'),
+    url('fonts/dimas-icon.svg#dimas-icon') format('svg');
 }
 
-@mixin opal-icon-font() {
-    font-family: "opal-icon";
+@mixin dimas-icon-font() {
+    font-family: "dimas-icon";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-style: normal;
@@ -19,12 +19,12 @@
     text-transform: none;
 }
 
-.opal-icon,
-[class*="opal-icon-"]:before{
-    @include opal-icon-font();
+.dimas-icon,
+[class*="dimas-icon-"]:before{
+    @include dimas-icon-font();
 }
 
-@function opal-icon-char($filename) {
+@function dimas-icon-char($filename) {
     $char: "";
 
     @if $filename == about-1 {
@@ -349,327 +349,327 @@
 @return $char;
 }
 
-@mixin opal-icon($filename, $insert: before) {
+@mixin dimas-icon($filename, $insert: before) {
 &:#{$insert} {
-    content: opal-icon-char($filename);
+    content: dimas-icon-char($filename);
 }
 }
 
-.opal-icon-about-1 {
-    @include opal-icon(about-1);
+.dimas-icon-about-1 {
+    @include dimas-icon(about-1);
 }
-.opal-icon-about-2 {
-    @include opal-icon(about-2);
+.dimas-icon-about-2 {
+    @include dimas-icon(about-2);
 }
-.opal-icon-about-3 {
-    @include opal-icon(about-3);
+.dimas-icon-about-3 {
+    @include dimas-icon(about-3);
 }
-.opal-icon-biography {
-    @include opal-icon(biography);
+.dimas-icon-biography {
+    @include dimas-icon(biography);
 }
-.opal-icon-category-body {
-    @include opal-icon(category-body);
+.dimas-icon-category-body {
+    @include dimas-icon(category-body);
 }
-.opal-icon-category-cosmetic {
-    @include opal-icon(category-cosmetic);
+.dimas-icon-category-cosmetic {
+    @include dimas-icon(category-cosmetic);
 }
-.opal-icon-category-foundation {
-    @include opal-icon(category-foundation);
+.dimas-icon-category-foundation {
+    @include dimas-icon(category-foundation);
 }
-.opal-icon-category-health {
-    @include opal-icon(category-health);
+.dimas-icon-category-health {
+    @include dimas-icon(category-health);
 }
-.opal-icon-category-masks {
-    @include opal-icon(category-masks);
+.dimas-icon-category-masks {
+    @include dimas-icon(category-masks);
 }
-.opal-icon-category-moisturizing {
-    @include opal-icon(category-moisturizing);
+.dimas-icon-category-moisturizing {
+    @include dimas-icon(category-moisturizing);
 }
-.opal-icon-category-other1 {
-    @include opal-icon(category-other1);
+.dimas-icon-category-other1 {
+    @include dimas-icon(category-other1);
 }
-.opal-icon-category-sale {
-    @include opal-icon(category-sale);
+.dimas-icon-category-sale {
+    @include dimas-icon(category-sale);
 }
-.opal-icon-category-skin {
-    @include opal-icon(category-skin);
+.dimas-icon-category-skin {
+    @include dimas-icon(category-skin);
 }
-.opal-icon-category-star {
-    @include opal-icon(category-star);
+.dimas-icon-category-star {
+    @include dimas-icon(category-star);
 }
-.opal-icon-circle {
-    @include opal-icon(circle);
+.dimas-icon-circle {
+    @include dimas-icon(circle);
 }
-.opal-icon-earn-reward-points {
-    @include opal-icon(earn-reward-points);
+.dimas-icon-earn-reward-points {
+    @include dimas-icon(earn-reward-points);
 }
-.opal-icon-free-deluxe-samples {
-    @include opal-icon(free-deluxe-samples);
+.dimas-icon-free-deluxe-samples {
+    @include dimas-icon(free-deluxe-samples);
 }
-.opal-icon-free-standard-delivery {
-    @include opal-icon(free-standard-delivery);
+.dimas-icon-free-standard-delivery {
+    @include dimas-icon(free-standard-delivery);
 }
-.opal-icon-get-in-touch {
-    @include opal-icon(get-in-touch);
+.dimas-icon-get-in-touch {
+    @include dimas-icon(get-in-touch);
 }
-.opal-icon-location {
-    @include opal-icon(location);
+.dimas-icon-location {
+    @include dimas-icon(location);
 }
-.opal-icon-organic {
-    @include opal-icon(organic);
+.dimas-icon-organic {
+    @include dimas-icon(organic);
 }
-.opal-icon-support {
-    @include opal-icon(support);
+.dimas-icon-support {
+    @include dimas-icon(support);
 }
-.opal-icon-addtocart {
-    @include opal-icon(addtocart);
+.dimas-icon-addtocart {
+    @include dimas-icon(addtocart);
 }
-.opal-icon-cart-empty {
-    @include opal-icon(cart-empty);
+.dimas-icon-cart-empty {
+    @include dimas-icon(cart-empty);
 }
-.opal-icon-cart {
-    @include opal-icon(cart);
+.dimas-icon-cart {
+    @include dimas-icon(cart);
 }
-.opal-icon-check-circle {
-    @include opal-icon(check-circle);
+.dimas-icon-check-circle {
+    @include dimas-icon(check-circle);
 }
-.opal-icon-check {
-    @include opal-icon(check);
+.dimas-icon-check {
+    @include dimas-icon(check);
 }
-.opal-icon-cloud-download {
-    @include opal-icon(cloud-download);
+.dimas-icon-cloud-download {
+    @include dimas-icon(cloud-download);
 }
-.opal-icon-compare {
-    @include opal-icon(compare);
+.dimas-icon-compare {
+    @include dimas-icon(compare);
 }
-.opal-icon-credit-card {
-    @include opal-icon(credit-card);
+.dimas-icon-credit-card {
+    @include dimas-icon(credit-card);
 }
-.opal-icon-download {
-    @include opal-icon(download);
+.dimas-icon-download {
+    @include dimas-icon(download);
 }
-.opal-icon-exclamation-circle {
-    @include opal-icon(exclamation-circle);
+.dimas-icon-exclamation-circle {
+    @include dimas-icon(exclamation-circle);
 }
-.opal-icon-eye {
-    @include opal-icon(eye);
+.dimas-icon-eye {
+    @include dimas-icon(eye);
 }
-.opal-icon-file-alt {
-    @include opal-icon(file-alt);
+.dimas-icon-file-alt {
+    @include dimas-icon(file-alt);
 }
-.opal-icon-filter {
-    @include opal-icon(filter);
+.dimas-icon-filter {
+    @include dimas-icon(filter);
 }
-.opal-icon-frown {
-    @include opal-icon(frown);
+.dimas-icon-frown {
+    @include dimas-icon(frown);
 }
-.opal-icon-gift {
-    @include opal-icon(gift);
+.dimas-icon-gift {
+    @include dimas-icon(gift);
 }
-.opal-icon-heart {
-    @include opal-icon(heart);
+.dimas-icon-heart {
+    @include dimas-icon(heart);
 }
-.opal-icon-home-lg {
-    @include opal-icon(home-lg);
+.dimas-icon-home-lg {
+    @include dimas-icon(home-lg);
 }
-.opal-icon-home {
-    @include opal-icon(home);
+.dimas-icon-home {
+    @include dimas-icon(home);
 }
-.opal-icon-info-circle {
-    @include opal-icon(info-circle);
+.dimas-icon-info-circle {
+    @include dimas-icon(info-circle);
 }
-.opal-icon-level-up {
-    @include opal-icon(level-up);
+.dimas-icon-level-up {
+    @include dimas-icon(level-up);
 }
-.opal-icon-meh {
-    @include opal-icon(meh);
+.dimas-icon-meh {
+    @include dimas-icon(meh);
 }
-.opal-icon-no-favorites {
-    @include opal-icon(no-favorites);
+.dimas-icon-no-favorites {
+    @include dimas-icon(no-favorites);
 }
-.opal-icon-pen-square {
-    @include opal-icon(pen-square);
+.dimas-icon-pen-square {
+    @include dimas-icon(pen-square);
 }
-.opal-icon-pencil {
-    @include opal-icon(pencil);
+.dimas-icon-pencil {
+    @include dimas-icon(pencil);
 }
-.opal-icon-quickview {
-    @include opal-icon(quickview);
+.dimas-icon-quickview {
+    @include dimas-icon(quickview);
 }
-.opal-icon-reply {
-    @include opal-icon(reply);
+.dimas-icon-reply {
+    @include dimas-icon(reply);
 }
-.opal-icon-search-plus {
-    @include opal-icon(search-plus);
+.dimas-icon-search-plus {
+    @include dimas-icon(search-plus);
 }
-.opal-icon-shopping-bag {
-    @include opal-icon(shopping-bag);
+.dimas-icon-shopping-bag {
+    @include dimas-icon(shopping-bag);
 }
-.opal-icon-shopping-basket {
-    @include opal-icon(shopping-basket);
+.dimas-icon-shopping-basket {
+    @include dimas-icon(shopping-basket);
 }
-.opal-icon-sign-in {
-    @include opal-icon(sign-in);
+.dimas-icon-sign-in {
+    @include dimas-icon(sign-in);
 }
-.opal-icon-sign-out {
-    @include opal-icon(sign-out);
+.dimas-icon-sign-out {
+    @include dimas-icon(sign-out);
 }
-.opal-icon-smile {
-    @include opal-icon(smile);
+.dimas-icon-smile {
+    @include dimas-icon(smile);
 }
-.opal-icon-spinner {
-    @include opal-icon(spinner);
+.dimas-icon-spinner {
+    @include dimas-icon(spinner);
 }
-.opal-icon-star {
-    @include opal-icon(star);
+.dimas-icon-star {
+    @include dimas-icon(star);
 }
-.opal-icon-sync {
-    @include opal-icon(sync);
+.dimas-icon-sync {
+    @include dimas-icon(sync);
 }
-.opal-icon-tachometer-alt-fastest {
-    @include opal-icon(tachometer-alt-fastest);
+.dimas-icon-tachometer-alt-fastest {
+    @include dimas-icon(tachometer-alt-fastest);
 }
-.opal-icon-times-circle {
-    @include opal-icon(times-circle);
+.dimas-icon-times-circle {
+    @include dimas-icon(times-circle);
 }
-.opal-icon-truck {
-    @include opal-icon(truck);
+.dimas-icon-truck {
+    @include dimas-icon(truck);
 }
-.opal-icon-wishlist-fill {
-    @include opal-icon(wishlist-fill);
+.dimas-icon-wishlist-fill {
+    @include dimas-icon(wishlist-fill);
 }
-.opal-icon-wishlist {
-    @include opal-icon(wishlist);
+.dimas-icon-wishlist {
+    @include dimas-icon(wishlist);
 }
-.opal-icon-angle-double-down {
-    @include opal-icon(angle-double-down);
+.dimas-icon-angle-double-down {
+    @include dimas-icon(angle-double-down);
 }
-.opal-icon-angle-double-left {
-    @include opal-icon(angle-double-left);
+.dimas-icon-angle-double-left {
+    @include dimas-icon(angle-double-left);
 }
-.opal-icon-angle-double-right {
-    @include opal-icon(angle-double-right);
+.dimas-icon-angle-double-right {
+    @include dimas-icon(angle-double-right);
 }
-.opal-icon-angle-double-up {
-    @include opal-icon(angle-double-up);
+.dimas-icon-angle-double-up {
+    @include dimas-icon(angle-double-up);
 }
-.opal-icon-angle-down {
-    @include opal-icon(angle-down);
+.dimas-icon-angle-down {
+    @include dimas-icon(angle-down);
 }
-.opal-icon-angle-left {
-    @include opal-icon(angle-left);
+.dimas-icon-angle-left {
+    @include dimas-icon(angle-left);
 }
-.opal-icon-angle-right {
-    @include opal-icon(angle-right);
+.dimas-icon-angle-right {
+    @include dimas-icon(angle-right);
 }
-.opal-icon-angle-up {
-    @include opal-icon(angle-up);
+.dimas-icon-angle-up {
+    @include dimas-icon(angle-up);
 }
-.opal-icon-arrow-circle-left {
-    @include opal-icon(arrow-circle-left);
+.dimas-icon-arrow-circle-left {
+    @include dimas-icon(arrow-circle-left);
 }
-.opal-icon-arrow-circle-right {
-    @include opal-icon(arrow-circle-right);
+.dimas-icon-arrow-circle-right {
+    @include dimas-icon(arrow-circle-right);
 }
-.opal-icon-arrow-down {
-    @include opal-icon(arrow-down);
+.dimas-icon-arrow-down {
+    @include dimas-icon(arrow-down);
 }
-.opal-icon-arrow-left {
-    @include opal-icon(arrow-left);
+.dimas-icon-arrow-left {
+    @include dimas-icon(arrow-left);
 }
-.opal-icon-arrow-right {
-    @include opal-icon(arrow-right);
+.dimas-icon-arrow-right {
+    @include dimas-icon(arrow-right);
 }
-.opal-icon-arrow-up {
-    @include opal-icon(arrow-up);
+.dimas-icon-arrow-up {
+    @include dimas-icon(arrow-up);
 }
-.opal-icon-blockquote {
-    @include opal-icon(blockquote);
+.dimas-icon-blockquote {
+    @include dimas-icon(blockquote);
 }
-.opal-icon-blockquote2 {
-    @include opal-icon(blockquote2);
+.dimas-icon-blockquote2 {
+    @include dimas-icon(blockquote2);
 }
-.opal-icon-bookmark {
-    @include opal-icon(bookmark);
+.dimas-icon-bookmark {
+    @include dimas-icon(bookmark);
 }
-.opal-icon-calendar-alt {
-    @include opal-icon(calendar-alt);
+.dimas-icon-calendar-alt {
+    @include dimas-icon(calendar-alt);
 }
-.opal-icon-calendar {
-    @include opal-icon(calendar);
+.dimas-icon-calendar {
+    @include dimas-icon(calendar);
 }
-.opal-icon-chevron-down {
-    @include opal-icon(chevron-down);
+.dimas-icon-chevron-down {
+    @include dimas-icon(chevron-down);
 }
-.opal-icon-chevron-left {
-    @include opal-icon(chevron-left);
+.dimas-icon-chevron-left {
+    @include dimas-icon(chevron-left);
 }
-.opal-icon-chevron-right {
-    @include opal-icon(chevron-right);
+.dimas-icon-chevron-right {
+    @include dimas-icon(chevron-right);
 }
-.opal-icon-chevron-up {
-    @include opal-icon(chevron-up);
+.dimas-icon-chevron-up {
+    @include dimas-icon(chevron-up);
 }
-.opal-icon-down {
-    @include opal-icon(down);
+.dimas-icon-down {
+    @include dimas-icon(down);
 }
-.opal-icon-instagram {
-    @include opal-icon(instagram);
+.dimas-icon-instagram {
+    @include dimas-icon(instagram);
 }
-.opal-icon-left {
-    @include opal-icon(left);
+.dimas-icon-left {
+    @include dimas-icon(left);
 }
-.opal-icon-long-arrow-alt-down {
-    @include opal-icon(long-arrow-alt-down);
+.dimas-icon-long-arrow-alt-down {
+    @include dimas-icon(long-arrow-alt-down);
 }
-.opal-icon-long-arrow-alt-left {
-    @include opal-icon(long-arrow-alt-left);
+.dimas-icon-long-arrow-alt-left {
+    @include dimas-icon(long-arrow-alt-left);
 }
-.opal-icon-long-arrow-alt-right {
-    @include opal-icon(long-arrow-alt-right);
+.dimas-icon-long-arrow-alt-right {
+    @include dimas-icon(long-arrow-alt-right);
 }
-.opal-icon-long-arrow-alt-up {
-    @include opal-icon(long-arrow-alt-up);
+.dimas-icon-long-arrow-alt-up {
+    @include dimas-icon(long-arrow-alt-up);
 }
-.opal-icon-long-arrow-down {
-    @include opal-icon(long-arrow-down);
+.dimas-icon-long-arrow-down {
+    @include dimas-icon(long-arrow-down);
 }
-.opal-icon-long-arrow-left {
-    @include opal-icon(long-arrow-left);
+.dimas-icon-long-arrow-left {
+    @include dimas-icon(long-arrow-left);
 }
-.opal-icon-long-arrow-right {
-    @include opal-icon(long-arrow-right);
+.dimas-icon-long-arrow-right {
+    @include dimas-icon(long-arrow-right);
 }
-.opal-icon-long-arrow-up {
-    @include opal-icon(long-arrow-up);
+.dimas-icon-long-arrow-up {
+    @include dimas-icon(long-arrow-up);
 }
-.opal-icon-menu {
-    @include opal-icon(menu);
+.dimas-icon-menu {
+    @include dimas-icon(menu);
 }
-.opal-icon-right {
-    @include opal-icon(right);
+.dimas-icon-right {
+    @include dimas-icon(right);
 }
-.opal-icon-search {
-    @include opal-icon(search);
+.dimas-icon-search {
+    @include dimas-icon(search);
 }
-.opal-icon-share-all {
-    @include opal-icon(share-all);
+.dimas-icon-share-all {
+    @include dimas-icon(share-all);
 }
-.opal-icon-th-grid {
-    @include opal-icon(th-grid);
+.dimas-icon-th-grid {
+    @include dimas-icon(th-grid);
 }
-.opal-icon-th-list {
-    @include opal-icon(th-list);
+.dimas-icon-th-list {
+    @include dimas-icon(th-list);
 }
-.opal-icon-thumbtack {
-    @include opal-icon(thumbtack);
+.dimas-icon-thumbtack {
+    @include dimas-icon(thumbtack);
 }
-.opal-icon-times {
-    @include opal-icon(times);
+.dimas-icon-times {
+    @include dimas-icon(times);
 }
-.opal-icon-user {
-    @include opal-icon(user);
+.dimas-icon-user {
+    @include dimas-icon(user);
 }
-.opal-icon-video {
-    @include opal-icon(video);
+.dimas-icon-video {
+    @include dimas-icon(video);
 }

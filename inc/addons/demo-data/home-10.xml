@@ -71,43 +71,43 @@
     <wp:meta_value><![CDATA[page-elementor.php]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>osf_enable_sidebar_page</wp:meta_key>
+    <wp:meta_key>dimas_enable_sidebar_page</wp:meta_key>
     <wp:meta_value><![CDATA[0]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>osf_enable_page_heading</wp:meta_key>
+    <wp:meta_key>dimas_enable_page_heading</wp:meta_key>
     <wp:meta_value><![CDATA[0]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>osf_enable_full_page</wp:meta_key>
+    <wp:meta_key>dimas_enable_full_page</wp:meta_key>
     <wp:meta_value><![CDATA[0]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>osf_enable_custom_header</wp:meta_key>
+    <wp:meta_key>dimas_enable_custom_header</wp:meta_key>
     <wp:meta_value><![CDATA[1]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>osf_header_layout</wp:meta_key>
+    <wp:meta_key>dimas_header_layout</wp:meta_key>
     <wp:meta_value><![CDATA[header-7]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>osf_enable_breadcrumb</wp:meta_key>
+    <wp:meta_key>dimas_enable_breadcrumb</wp:meta_key>
     <wp:meta_value><![CDATA[0]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>osf_enable_custom_footer</wp:meta_key>
+    <wp:meta_key>dimas_enable_custom_footer</wp:meta_key>
     <wp:meta_value><![CDATA[1]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>osf_footer_padding_top</wp:meta_key>
+    <wp:meta_key>dimas_footer_padding_top</wp:meta_key>
     <wp:meta_value><![CDATA[0]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>osf_enable_fixed_footer</wp:meta_key>
+    <wp:meta_key>dimas_enable_fixed_footer</wp:meta_key>
     <wp:meta_value><![CDATA[0]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
-    <wp:meta_key>osf_footer_layout</wp:meta_key>
+    <wp:meta_key>dimas_footer_layout</wp:meta_key>
     <wp:meta_value><![CDATA[footer-emty]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
@@ -124,11 +124,11 @@
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_elementor_data</wp:meta_key>
-    <wp:meta_value><![CDATA[[{"id":"8667d2a","elType":"section","settings":{"gap":"no","stretch_section":"section-stretched","content_delay_time":"0.50","osf_section_parallax_layer":[],"layout":"full_width"},"elements":[{"id":"4d82034","elType":"column","settings":{"_column_size":100,"_inline_size":null},"elements":[{"id":"312afbf","elType":"widget","settings":{"rev_alias":"slider-8"},"elements":[],"widgetType":"opal-revslider"}],"isInner":false}],"isInner":false}]]]></wp:meta_value>
+    <wp:meta_value><![CDATA[[{"id":"8667d2a","elType":"section","settings":{"gap":"no","stretch_section":"section-stretched","content_delay_time":"0.50","dimas_section_parallax_layer":[],"layout":"full_width"},"elements":[{"id":"4d82034","elType":"column","settings":{"_column_size":100,"_inline_size":null},"elements":[{"id":"312afbf","elType":"widget","settings":{"rev_alias":"slider-8"},"elements":[],"widgetType":"dimas-revslider"}],"isInner":false}],"isInner":false}]]]></wp:meta_value>
   </wp:postmeta>
   <wp:postmeta>
     <wp:meta_key>_elementor_controls_usage</wp:meta_key>
-    <wp:meta_value><![CDATA[a:3:{s:14:"opal-revslider";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:1:{s:7:"content";a:1:{s:10:"rev_slider";a:1:{s:9:"rev_alias";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:1:{s:6:"layout";a:1:{s:6:"layout";a:1:{s:12:"_inline_size";i:1;}}}}s:7:"section";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:1:{s:6:"layout";a:1:{s:14:"section_layout";a:3:{s:3:"gap";i:1;s:15:"stretch_section";i:1;s:6:"layout";i:1;}}}}}]]></wp:meta_value>
+    <wp:meta_value><![CDATA[a:3:{s:14:"dimas-revslider";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:1:{s:7:"content";a:1:{s:10:"rev_slider";a:1:{s:9:"rev_alias";i:1;}}}}s:6:"column";a:3:{s:5:"count";i:1;s:15:"control_percent";i:0;s:8:"controls";a:1:{s:6:"layout";a:1:{s:6:"layout";a:1:{s:12:"_inline_size";i:1;}}}}s:7:"section";a:3:{s:5:"count";i:1;s:15:"control_percent";i:1;s:8:"controls";a:1:{s:6:"layout";a:1:{s:14:"section_layout";a:3:{s:3:"gap";i:1;s:15:"stretch_section";i:1;s:6:"layout";i:1;}}}}}]]></wp:meta_value>
   </wp:postmeta>
 </item>
   </channel>

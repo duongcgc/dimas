@@ -2,7 +2,7 @@
     <div class="property-media">
 		<?php ?>
         <div class="media-gallery">
-            <div class="<?php echo apply_filters( 'opalrealestate_row_container_class', 'row opal-row' ); ?>">
+            <div class="<?php echo apply_filters( 'opalrealestate_row_container_class', 'row dimas-row' ); ?>">
                 <div id="property-thumbs-container">
 
 					<?php

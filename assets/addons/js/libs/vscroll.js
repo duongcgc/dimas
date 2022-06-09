@@ -709,7 +709,7 @@
 
   $(window).on("elementor/frontend/init", function() {
     elementorFrontend.hooks.addAction(
-      "frontend/element_ready/opal-vertical-scroll.default",
+      "frontend/element_ready/dimas-vertical-scroll.default",
       OsfVerticalScrollHandler
     );
   });

@@ -40,13 +40,13 @@ class Dimas_Field_Adduser {
         $users = $field->value;
 
         //	echo '<pre>'.print_r( $value, 1 );die;
-        echo '<div class="opalrealestate-add-user-field ' . apply_filters( 'opalrealestate_row_container_class', 'row opal-row' ) . '"> '; ?>
+        echo '<div class="opalrealestate-add-user-field ' . apply_filters( 'opalrealestate_row_container_class', 'row dimas-row' ) . '"> '; ?>
         <div class="col-lg-12">
             <h5 class=""><?php _e( 'As an author, you can add other users to your office.', 'dimas' ); ?></h5>
             <div>
                 <p><?php _e( 'Add someone to your office, please enter extractly username in below input:', 'dimas' ); ?></p>
 
-                <div class="<?php echo apply_filters( 'opalrealestate_row_container_class', 'row opal-row' ); ?>">
+                <div class="<?php echo apply_filters( 'opalrealestate_row_container_class', 'row dimas-row' ); ?>">
 
                     <div class="col-lg-8"><input class="regular-text opalrealestate-adduser-search"
                                                  name="opalrealestate_adduser_search" id="opalrealestate_adduser_search"

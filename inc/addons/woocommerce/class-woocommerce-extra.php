@@ -193,7 +193,7 @@ class Opal_Woocommerce_Extra {
      * @return array
      */
     public function quantity_input_args($args, $product) {
-        if (!osf_woocommerce_is_deal_product($product)) {
+        if (!dimas_woocommerce_is_deal_product($product)) {
             return $args;
         }
 
@@ -232,7 +232,7 @@ class Opal_Woocommerce_Extra {
 
         $prefix   = 'product_cat';
         $cmb_term = new_cmb2_box(array(
-            'id'           => 'osf_woo_category_meta',
+            'id'           => 'dimas_woo_category_meta',
             'title'        => __('Metabox', 'dimas'), // Doesn't output for term boxes
             'object_types' => array('term'),
             'taxonomies'   => array('product_cat'),

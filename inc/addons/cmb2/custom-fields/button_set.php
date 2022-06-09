@@ -23,9 +23,9 @@ class Dimas_Field_Button_Set {
 		$show_fields = json_encode( ( isset( $field->args['show_fields'] ) && is_array( $field->args['show_fields'] ) ) ? $field->args['show_fields'] : array() );
 		$style       = isset( $field->args['css_style'] ) ? ' ' . $field->args['css_style'] : '';
 		$allow_set   = isset( $field->args['allow_set'] ) ? $field->args['allow_set'] : true;
-		echo "<div class=\"btn-group\" data-allow-set='{$allow_set}' data-type='opal-button-set' data-id=\"#{$field->_id()}\" data-show-fields='{$show_fields}'>";
+		echo "<div class=\"btn-group\" data-allow-set='{$allow_set}' data-type='dimas-button-set' data-id=\"#{$field->_id()}\" data-show-fields='{$show_fields}'>";
 		foreach ( $field->args['options'] as $key => $value ) {
-			$is_checked = in_array( $key, $value_input ) ? ' opal-checked' : '';
+			$is_checked = in_array( $key, $value_input ) ? ' dimas-checked' : '';
 			echo "<button type=\"button\" data-value='{$key}' class=\"btn btn-secondary{$style}{$is_checked}\">{$value}</button>";
 		}
 		echo " </div > ";

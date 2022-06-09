@@ -1,7 +1,7 @@
 //Woocommerce single js
 jQuery(document).ready(function ($) {
 
-    var $fbtProducts = $('.opal-frequently-bought');
+    var $fbtProducts = $('.dimas-frequently-bought');
 
     if ( $fbtProducts.length <= 0 ) {
         return;

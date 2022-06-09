@@ -1,16 +1,19 @@
 <?php
 /**
+ * Custom CCS.
+ *
  * @return string
- */
-function osf_theme_custom_css() {
-	$a1root      = include trailingslashit( BEAUTIFO_CORE_PLUGIN_DIR ) . 'inc/customize/a1root.php';
-	$grid        = include trailingslashit( BEAUTIFO_CORE_PLUGIN_DIR ) . 'inc/customize/grid.php';
-	$button      = include trailingslashit( BEAUTIFO_CORE_PLUGIN_DIR ) . 'inc/customize/button.php';
-	$error_404   = include trailingslashit( BEAUTIFO_CORE_PLUGIN_DIR ) . 'inc/customize/error-404.php';
-	$heading     = include trailingslashit( BEAUTIFO_CORE_PLUGIN_DIR ) . 'inc/customize/heading.php';
-	$main_layout = include trailingslashit( BEAUTIFO_CORE_PLUGIN_DIR ) . 'inc/customize/main-layout.php';
-	$page_bg     = include trailingslashit( BEAUTIFO_CORE_PLUGIN_DIR ) . 'inc/customize/page-bg.php';
-	$page_title  = include trailingslashit( BEAUTIFO_CORE_PLUGIN_DIR ) . 'inc/customize/page-title.php';
+ **/
+
+function dimas_theme_custom_css() {
+	$a1root      = include trailingslashit( DIMAS_CORE_PLUGIN_DIR ) . 'inc/customize/a1root.php';
+	$grid        = include trailingslashit( DIMAS_CORE_PLUGIN_DIR ) . 'inc/customize/grid.php';
+	$button      = include trailingslashit( DIMAS_CORE_PLUGIN_DIR ) . 'inc/customize/button.php';
+	$error_404   = include trailingslashit( DIMAS_CORE_PLUGIN_DIR ) . 'inc/customize/error-404.php';
+	$heading     = include trailingslashit( DIMAS_CORE_PLUGIN_DIR ) . 'inc/customize/heading.php';
+	$main_layout = include trailingslashit( DIMAS_CORE_PLUGIN_DIR ) . 'inc/customize/main-layout.php';
+	$page_bg     = include trailingslashit( DIMAS_CORE_PLUGIN_DIR ) . 'inc/customize/page-bg.php';
+	$page_title  = include trailingslashit( DIMAS_CORE_PLUGIN_DIR ) . 'inc/customize/page-title.php';
 	$css         = <<<CSS
 {$a1root}
 {$grid}
@@ -22,7 +25,7 @@ function osf_theme_custom_css() {
 {$button}
 CSS;
 
-	$css = apply_filters( 'osf_theme_customizer_css', $css );
+	$css = apply_filters( 'dimas_theme_customizer_css', $css );
 	$css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
 	$css = str_replace( ': ', ':', $css );
 	$css = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '    ' ), '', $css );
@@ -33,22 +36,22 @@ CSS;
 /**
  * @return string
  */
-function osf_theme_custom_css_no_cache( $css ) {
-	global $osf_header;
-	if ( $osf_header ) {
-		$bg_header = osf_get_metabox( $osf_header->ID, 'osf_header_bg_color_mobile', '' );
+function dimas_theme_custom_css_no_cache( $css ) {
+	global $dimas_header;
+	if ( $dimas_header ) {
+		$bg_header = dimas_get_metabox( $dimas_header->ID, 'dimas_header_bg_color_mobile', '' );
 		if ( ! empty( $bg_header ) ) {
-			$css .= '@media(max-width: 991px){.opal-header-absolute .site-header{background:' . $bg_header . ';}}';
+			$css .= '@media(max-width: 991px){.dimas-header-absolute .site-header{background:' . $bg_header . ';}}';
 		}
 	}
 
-	// Footer Css
-	$footer_id = get_theme_mod( 'osf_footer_layout' );
+	// Footer Css.
+	$footer_id = get_theme_mod( 'dimas_footer_layout' );
 	$page_id   = get_the_ID();
 
-	if ( is_page() && osf_get_metabox( get_the_ID(), 'osf_enable_custom_footer', false ) ) {
-		$footer_id          = osf_get_metabox( $page_id, 'osf_footer_layout', false );
-		$footer_padding_top = osf_get_metabox( get_the_ID(), 'osf_footer_padding_top', 15 );
+	if ( is_page() && dimas_get_metabox( get_the_ID(), 'dimas_enable_custom_footer', false ) ) {
+		$footer_id          = dimas_get_metabox( $page_id, 'dimas_footer_layout', false );
+		$footer_padding_top = dimas_get_metabox( get_the_ID(), 'dimas_footer_padding_top', 15 );
 		$css               .= '.site-footer {padding-top:' . $footer_padding_top . 'px!important;}';
 	}
 	if ( $footer_id ) {
@@ -56,16 +59,16 @@ function osf_theme_custom_css_no_cache( $css ) {
 		$css       .= $footer_css;
 	}
 
-	// Padding Page
+	// Padding Page.
 	if ( is_page() ) {
 		$page_title_bar      = $page_title_css_color = $breadcrumb_css = '';
-		$page_title_bg_color = get_post_meta( get_the_ID(), 'osf_breadcrumb_bg_color', 1 );
-		$page_title_bg_image = get_post_meta( get_the_ID(), 'osf_breadcrumb_bg_image', 1 );
-		$breadcrumb_color    = get_post_meta( get_the_ID(), 'osf_breadcrumb_text_color', 1 );
-		$page_title_color    = get_post_meta( get_the_ID(), 'osf_heading_color', 1 );
+		$page_title_bg_color = get_post_meta( get_the_ID(), 'dimas_breadcrumb_bg_color', 1 );
+		$page_title_bg_image = get_post_meta( get_the_ID(), 'dimas_breadcrumb_bg_image', 1 );
+		$breadcrumb_color    = get_post_meta( get_the_ID(), 'dimas_breadcrumb_text_color', 1 );
+		$page_title_color    = get_post_meta( get_the_ID(), 'dimas_heading_color', 1 );
 
-		// page background color
-		$page_background_color = get_post_meta( get_the_ID(), 'osf_page_background_color', 1 );
+		// page background color.
+		$page_background_color = get_post_meta( get_the_ID(), 'dimas_page_background_color', 1 );
 
 		if ( ! empty( $page_title_bg_color ) && $page_title_bg_color != '#fafafa' ) {
 			$css .= '.page-title-bar {background-color: ' . $page_title_bg_color . ';}';
@@ -94,4 +97,4 @@ function osf_theme_custom_css_no_cache( $css ) {
 	return $css;
 }
 
-add_filter( 'osf_theme_custom_inline_css', 'osf_theme_custom_css_no_cache' );
+add_filter( 'dimas_theme_custom_inline_css', 'dimas_theme_custom_css_no_cache' );

@@ -30,12 +30,12 @@ class Header_Builder {
 	 * @param $wp_admin_bar WP_Admin_Bar
 	 */
 	public function custom_button_header_builder( $wp_admin_bar ) {
-		global $osf_header;
-		if ( $osf_header && $osf_header instanceof WP_Post ) {
+		global $dimas_header;
+		if ( $dimas_header && $dimas_header instanceof WP_Post ) {
 			$args = array(
 				'id'    => 'header-builder-button',
 				'title' => __( 'Edit Header', 'dimas' ),
-				'href'  => add_query_arg( 'action', 'elementor', remove_query_arg( 'action', get_edit_post_link( $osf_header->ID ) ) ),
+				'href'  => add_query_arg( 'action', 'elementor', remove_query_arg( 'action', get_edit_post_link( $dimas_header->ID ) ) ),
 			// 'meta'  => array(
 			// 'class' => 'custom-button-class'
 			// )
@@ -45,11 +45,11 @@ class Header_Builder {
 	}
 
 	public function add_body_class( $classes ) {
-		global $osf_header;
-		if ( $osf_header && $osf_header instanceof WP_Post ) {
+		global $dimas_header;
+		if ( $dimas_header && $dimas_header instanceof WP_Post ) {
 			// Absolute Header
-			if ( osf_get_metabox( $osf_header->ID, 'osf_enable_header_absolute', false ) ) {
-				$classes[] = 'opal-header-absolute';
+			if ( dimas_get_metabox( $dimas_header->ID, 'dimas_enable_header_absolute', false ) ) {
+				$classes[] = 'dimas-header-absolute';
 			}
 		}
 
@@ -57,29 +57,29 @@ class Header_Builder {
 	}
 
 	public function setup_header() {
-		global $osf_header;
+		global $dimas_header;
 
-		if ( (bool) osf_get_metabox( get_the_ID(), 'osf_enable_custom_header', false ) ) {
-			if ( ( $header_slug = osf_get_metabox( get_the_ID(), 'osf_header_layout', 'default' ) ) !== 'default' ) {
-				$osf_header = get_page_by_path( $header_slug, OBJECT, 'header' );
+		if ( (bool) dimas_get_metabox( get_the_ID(), 'dimas_enable_custom_header', false ) ) {
+			if ( ( $header_slug = dimas_get_metabox( get_the_ID(), 'dimas_header_layout', 'default' ) ) !== 'default' ) {
+				$dimas_header = get_page_by_path( $header_slug, OBJECT, 'header' );
 			}
 		} else {
-			if ( ( $header_slug = get_theme_mod( 'osf_header_builder', '' ) ) && get_theme_mod( 'osf_header_enable_builder', false ) ) {
-				$osf_header = get_page_by_path( $header_slug, OBJECT, 'header' );
+			if ( ( $header_slug = get_theme_mod( 'dimas_header_builder', '' ) ) && get_theme_mod( 'dimas_header_enable_builder', false ) ) {
+				$dimas_header = get_page_by_path( $header_slug, OBJECT, 'header' );
 			}
 		}
 
-		if ( $osf_header && $osf_header instanceof WP_Post ) {
+		if ( $dimas_header && $dimas_header instanceof WP_Post ) {
 
 			// WPML
-			$wpml_id        = apply_filters( 'wpml_object_id', $osf_header->ID );
-			$osf_header->ID = $wpml_id ? $wpml_id : $osf_header->ID;
+			$wpml_id        = apply_filters( 'wpml_object_id', $dimas_header->ID );
+			$dimas_header->ID = $wpml_id ? $wpml_id : $dimas_header->ID;
 
 			// Polylang
 			if ( function_exists( 'pll_get_post' ) ) {
-				$osf_header->ID = pll_get_post( $osf_header->ID );
+				$dimas_header->ID = pll_get_post( $dimas_header->ID );
 			}
-			$this->content = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $osf_header->ID );
+			$this->content = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $dimas_header->ID );
 		}
 	}
 

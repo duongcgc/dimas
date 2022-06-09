@@ -3383,7 +3383,7 @@ _registerModule('DesktopZoom', {
 			_wheelDelta.x = 0;
 
 			if('deltaX' in e) {
-				if(e.deltaMode === 1 /* DOM_DELTA_LINE */) {
+				if(e.deltaMode === 1 /* DDIMAS_DELTA_LINE */) {
 					// 18 - average line height
 					_wheelDelta.x = e.deltaX * 18;
 					_wheelDelta.y = e.deltaY * 18;

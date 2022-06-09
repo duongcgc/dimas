@@ -31,8 +31,8 @@ class Dimas_Field_Switch {
 		) );
 		$show_fields = json_encode( ( isset( $field->args['show_fields'] ) && is_array( $field->args['show_fields'] ) ) ? $field->args['show_fields'] : array() );
 		echo "
-<div class='opal-onoffswitch-wrapper'>
-    <div class=\"opal-onoffswitch\">
+<div class='dimas-onoffswitch-wrapper'>
+    <div class=\"dimas-onoffswitch\">
         <input type=\"checkbox\" class=\"onoffswitch-checkbox\" id=\"{$field->_id()}-switch\"  data-show-fields='{$show_fields}' {$checked}>
         <label class=\"onoffswitch-label\" for=\"{$field->_id()}-switch\">
             <span class=\"onoffswitch-inner\" data-yes='" . esc_attr( $label['yes'] ) . "' data-no='" . esc_attr( $label['no'] ) . "'></span>

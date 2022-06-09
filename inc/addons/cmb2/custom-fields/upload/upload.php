@@ -184,7 +184,7 @@ class Dimas_Field_Opal_Upload {
      */
     public static function setup_admin_scripts() {
         wp_enqueue_script( 'plupload' );
-        wp_enqueue_script( 'opal-upload', plugins_url( 'script.js', __FILE__ ), array(), self::VERSION );
+        wp_enqueue_script( 'dimas-upload', plugins_url( 'script.js', __FILE__ ), array(), self::VERSION );
 
         $prop_data = array(
             'ajaxURL'       => admin_url( 'admin-ajax.php' ),
@@ -192,7 +192,7 @@ class Dimas_Field_Opal_Upload {
             'fileTypeTitle' => esc_html__( 'Valid file formats', 'dimas' ),
             'message'       => esc_html__( 'Please enter only digits', 'dimas' ),
         );
-        wp_localize_script( 'opal-upload', 'opalrealestate', $prop_data );
+        wp_localize_script( 'dimas-upload', 'opalrealestate', $prop_data );
     }
 
     /**

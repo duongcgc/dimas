@@ -20,13 +20,13 @@
   .mfp-zoom-in.mfp-removing.mfp-bg {
     opacity: 0; }
 
-.elementor-widget-opal-button-contact7.elementor-align-left {
+.elementor-widget-dimas-button-contact7.elementor-align-left {
   text-align: left; }
 
-.elementor-widget-opal-button-contact7.elementor-align-center {
+.elementor-widget-dimas-button-contact7.elementor-align-center {
   text-align: center; }
 
-.elementor-widget-opal-button-contact7.elementor-align-right {
+.elementor-widget-dimas-button-contact7.elementor-align-right {
   text-align: right; }
 
 .elementor-editor-active .mfp-hide {
@@ -47,7 +47,7 @@
 .column-item.portfolio-entries {
   margin-bottom: 30px; }
 
-.elementor-element .owl-carousel.gallery,.elementor-element .woocommerce-product-carousel ul.gallery.products,.entry-gallery .owl-carousel.gallery,.entry-gallery .woocommerce-product-carousel ul.gallery.products,.owl-carousel.comment-form,.owl-carousel.woocommerce-address-fields__field-wrapper,.owl-carousel.woocommerce-Addresses,.owl-carousel.woocommerce-columns--addresses,.owl-carousel[data-elementor-columns],.owl-carousel[data-opal-columns],.row.owl-carousel,.single-portfolio-summary .owl-carousel.single-portfolio-summary-inner,.single-portfolio-summary .woocommerce-product-carousel ul.single-portfolio-summary-inner.products,.single-product div.type-product .owl-carousel.product-inner,.single-product div.type-product .woocommerce-product-carousel ul.products.product-inner,.single .owl-carousel.gallery,.single .woocommerce-product-carousel ul.gallery.products,.site-footer .owl-carousel.widget-area,.site-footer .woocommerce-product-carousel ul.widget-area.products,.widget .owl-carousel.gallery,.widget .woocommerce-product-carousel ul.gallery.products,.woocommerce-account .owl-carousel.woocommerce,.woocommerce-account .woocommerce-product-carousel ul.woocommerce.products,.woocommerce-account .woocommerce .owl-carousel.u-columns.woocommerce-Addresses,.woocommerce-account .woocommerce .woocommerce-product-carousel ul.u-columns.woocommerce-Addresses.products,.woocommerce-billing-fields .owl-carousel.woocommerce-billing-fields__field-wrapper,.woocommerce-billing-fields .woocommerce-product-carousel ul.woocommerce-billing-fields__field-wrapper.products,.woocommerce-cart .owl-carousel.woocommerce,.woocommerce-cart .woocommerce-product-carousel ul.woocommerce.products,.woocommerce-MyAccount-content form.owl-carousel[class^=woocommerce-],.woocommerce-product-carousel .elementor-element ul.gallery.products,.woocommerce-product-carousel .entry-gallery ul.gallery.products,.woocommerce-product-carousel .single-portfolio-summary ul.single-portfolio-summary-inner.products,.woocommerce-product-carousel .single-product div.type-product ul.products.product-inner,.woocommerce-product-carousel .single ul.gallery.products,.woocommerce-product-carousel .site-footer ul.widget-area.products,.woocommerce-product-carousel .widget ul.gallery.products,.woocommerce-product-carousel .woocommerce-account .woocommerce ul.u-columns.woocommerce-Addresses.products,.woocommerce-product-carousel .woocommerce-account ul.woocommerce.products,.woocommerce-product-carousel .woocommerce-billing-fields ul.woocommerce-billing-fields__field-wrapper.products,.woocommerce-product-carousel .woocommerce-cart ul.woocommerce.products,.woocommerce-product-carousel [class*=columns-] ul.products,.woocommerce-product-carousel body.opal-content-layout-2cl #content ul.wrap.products,.woocommerce-product-carousel body.opal-content-layout-2cr #content ul.wrap.products,.woocommerce-product-carousel body.opal-portfolio-layout-2cr ul.portfolio-wrap.products,.woocommerce-product-carousel ul.comment-form.products,.woocommerce-product-carousel ul.products[data-elementor-columns],.woocommerce-product-carousel ul.products[data-opal-columns],.woocommerce-product-carousel ul.row.products,.woocommerce-product-carousel ul.woocommerce-address-fields__field-wrapper.products,.woocommerce-product-carousel ul.woocommerce-Addresses.products,.woocommerce-product-carousel ul.woocommerce-columns--addresses.products,[class*=columns-] .woocommerce-product-carousel ul.products,[class*=columns-] ul.owl-carousel.products,body.opal-content-layout-2cl #content .owl-carousel.wrap,body.opal-content-layout-2cl #content .woocommerce-product-carousel ul.wrap.products,body.opal-content-layout-2cr #content .owl-carousel.wrap,body.opal-content-layout-2cr #content .woocommerce-product-carousel ul.wrap.products,body.opal-portfolio-layout-2cr .owl-carousel.portfolio-wrap,body.opal-portfolio-layout-2cr .woocommerce-product-carousel ul.portfolio-wrap.products,form.owl-carousel.track_order {
+.elementor-element .owl-carousel.gallery,.elementor-element .woocommerce-product-carousel ul.gallery.products,.entry-gallery .owl-carousel.gallery,.entry-gallery .woocommerce-product-carousel ul.gallery.products,.owl-carousel.comment-form,.owl-carousel.woocommerce-address-fields__field-wrapper,.owl-carousel.woocommerce-Addresses,.owl-carousel.woocommerce-columns--addresses,.owl-carousel[data-elementor-columns],.owl-carousel[data-dimas-columns],.row.owl-carousel,.single-portfolio-summary .owl-carousel.single-portfolio-summary-inner,.single-portfolio-summary .woocommerce-product-carousel ul.single-portfolio-summary-inner.products,.single-product div.type-product .owl-carousel.product-inner,.single-product div.type-product .woocommerce-product-carousel ul.products.product-inner,.single .owl-carousel.gallery,.single .woocommerce-product-carousel ul.gallery.products,.site-footer .owl-carousel.widget-area,.site-footer .woocommerce-product-carousel ul.widget-area.products,.widget .owl-carousel.gallery,.widget .woocommerce-product-carousel ul.gallery.products,.woocommerce-account .owl-carousel.woocommerce,.woocommerce-account .woocommerce-product-carousel ul.woocommerce.products,.woocommerce-account .woocommerce .owl-carousel.u-columns.woocommerce-Addresses,.woocommerce-account .woocommerce .woocommerce-product-carousel ul.u-columns.woocommerce-Addresses.products,.woocommerce-billing-fields .owl-carousel.woocommerce-billing-fields__field-wrapper,.woocommerce-billing-fields .woocommerce-product-carousel ul.woocommerce-billing-fields__field-wrapper.products,.woocommerce-cart .owl-carousel.woocommerce,.woocommerce-cart .woocommerce-product-carousel ul.woocommerce.products,.woocommerce-MyAccount-content form.owl-carousel[class^=woocommerce-],.woocommerce-product-carousel .elementor-element ul.gallery.products,.woocommerce-product-carousel .entry-gallery ul.gallery.products,.woocommerce-product-carousel .single-portfolio-summary ul.single-portfolio-summary-inner.products,.woocommerce-product-carousel .single-product div.type-product ul.products.product-inner,.woocommerce-product-carousel .single ul.gallery.products,.woocommerce-product-carousel .site-footer ul.widget-area.products,.woocommerce-product-carousel .widget ul.gallery.products,.woocommerce-product-carousel .woocommerce-account .woocommerce ul.u-columns.woocommerce-Addresses.products,.woocommerce-product-carousel .woocommerce-account ul.woocommerce.products,.woocommerce-product-carousel .woocommerce-billing-fields ul.woocommerce-billing-fields__field-wrapper.products,.woocommerce-product-carousel .woocommerce-cart ul.woocommerce.products,.woocommerce-product-carousel [class*=columns-] ul.products,.woocommerce-product-carousel body.dimas-content-layout-2cl #content ul.wrap.products,.woocommerce-product-carousel body.dimas-content-layout-2cr #content ul.wrap.products,.woocommerce-product-carousel body.dimas-portfolio-layout-2cr ul.portfolio-wrap.products,.woocommerce-product-carousel ul.comment-form.products,.woocommerce-product-carousel ul.products[data-elementor-columns],.woocommerce-product-carousel ul.products[data-dimas-columns],.woocommerce-product-carousel ul.row.products,.woocommerce-product-carousel ul.woocommerce-address-fields__field-wrapper.products,.woocommerce-product-carousel ul.woocommerce-Addresses.products,.woocommerce-product-carousel ul.woocommerce-columns--addresses.products,[class*=columns-] .woocommerce-product-carousel ul.products,[class*=columns-] ul.owl-carousel.products,body.dimas-content-layout-2cl #content .owl-carousel.wrap,body.dimas-content-layout-2cl #content .woocommerce-product-carousel ul.wrap.products,body.dimas-content-layout-2cr #content .owl-carousel.wrap,body.dimas-content-layout-2cr #content .woocommerce-product-carousel ul.wrap.products,body.dimas-portfolio-layout-2cr .owl-carousel.portfolio-wrap,body.dimas-portfolio-layout-2cr .woocommerce-product-carousel ul.portfolio-wrap.products,form.owl-carousel.track_order {
   margin-left: 0 !important;
   margin-right: 0 !important; }
 
@@ -75,18 +75,18 @@
       flex: 0 0 20%;
       max-width: 20%; } }
 
-.opal-content-layout-2cl .site-content section.elementor-section-stretched,.opal-content-layout-2cr .site-content section.elementor-section-stretched {
+.dimas-content-layout-2cl .site-content section.elementor-section-stretched,.dimas-content-layout-2cr .site-content section.elementor-section-stretched {
   max-width: 100%;
   left: auto !important; }
 
 @media (min-width: 576px) {
-  [data-opal-columns="5"] .column-item {
+  [data-dimas-columns="5"] .column-item {
     flex: 0 0 20%;
     max-width: 20%; } }
 
-.opal-loading {
+.dimas-loading {
   position: relative; }
-  .opal-loading:before {
+  .dimas-loading:before {
     content: "";
     width: 30px;
     height: 30px;
@@ -102,9 +102,9 @@
     left: 50%;
     top: 50%; }
 
-.opal-border-1 {
+.dimas-border-1 {
   position: relative; }
-  .opal-border-1:after,.opal-border-1:before {
+  .dimas-border-1:after,.dimas-border-1:before {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -114,11 +114,11 @@
     width: 1px;
     height: 100px; }
     @media (max-width: 575px) {
-      .opal-border-1:after,.opal-border-1:before {
+      .dimas-border-1:after,.dimas-border-1:before {
         width: 0; } }
-  .opal-border-1:after {
+  .dimas-border-1:after {
     right: 0; }
-  .opal-border-1:before {
+  .dimas-border-1:before {
     left: 0; }
 
 article.type-elementor_library .post-inner {
@@ -251,7 +251,7 @@ article.type-elementor_library .post-inner {
   display: flex;
   align-items: center; }
 
-.opal-move-up {
+.dimas-move-up {
   animation-name: e;
   -moz-animation-name: e;
   -webkit-animation-name: e; }
@@ -264,7 +264,7 @@ article.type-elementor_library .post-inner {
     opacity: 1;
     transform: translateY(0); } }
 
-.opal-move-down {
+.dimas-move-down {
   animation-name: f;
   -moz-animation-name: f;
   -webkit-animation-name: f; }
@@ -277,7 +277,7 @@ article.type-elementor_library .post-inner {
     opacity: 1;
     transform: translateY(0); } }
 
-.opal-move-left {
+.dimas-move-left {
   animation-name: g;
   -moz-animation-name: g;
   -webkit-animation-name: g; }
@@ -290,7 +290,7 @@ article.type-elementor_library .post-inner {
     opacity: 1;
     transform: translateX(0); } }
 
-.opal-move-right {
+.dimas-move-right {
   animation-name: h;
   -moz-animation-name: h;
   -webkit-animation-name: h; }
@@ -303,7 +303,7 @@ article.type-elementor_library .post-inner {
     opacity: 1;
     transform: translateX(0); } }
 
-.opal-scale-up {
+.dimas-scale-up {
   animation-name: i;
   -moz-animation-name: i;
   -webkit-animation-name: i; }
@@ -316,7 +316,7 @@ article.type-elementor_library .post-inner {
     transform: scale(1);
     opacity: 1; } }
 
-.opal-flip {
+.dimas-flip {
   animation-name: j;
   -moz-animation-name: j;
   -webkit-animation-name: j; }
@@ -331,7 +331,7 @@ article.type-elementor_library .post-inner {
     transform: rotateX(0deg);
     opacity: 1; } }
 
-.opal-helix {
+.dimas-helix {
   animation-name: k;
   -moz-animation-name: k;
   -webkit-animation-name: k; }
@@ -346,7 +346,7 @@ article.type-elementor_library .post-inner {
     transform: rotateY(0deg);
     opacity: 1; } }
 
-.opal-am-popup {
+.dimas-am-popup {
   animation: l;
   -moz-animation-name: l;
   -webkit-animation-name: l; }
@@ -389,7 +389,7 @@ article.type-elementor_library .post-inner {
     overflow: hidden;
     transition: all .3s ease; }
 
-.elementor-brand-wrapper .comment-form,.elementor-brand-wrapper .elementor-element .gallery,.elementor-brand-wrapper .entry-gallery .gallery,.elementor-brand-wrapper .row,.elementor-brand-wrapper .single-portfolio-summary .single-portfolio-summary-inner,.elementor-brand-wrapper .single-product div.type-product .product-inner,.elementor-brand-wrapper .single .gallery,.elementor-brand-wrapper .site-footer .widget-area,.elementor-brand-wrapper .widget .gallery,.elementor-brand-wrapper .woocommerce-account .woocommerce,.elementor-brand-wrapper .woocommerce-account .woocommerce .u-columns.woocommerce-Addresses,.elementor-brand-wrapper .woocommerce-address-fields__field-wrapper,.elementor-brand-wrapper .woocommerce-Addresses,.elementor-brand-wrapper .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper,.elementor-brand-wrapper .woocommerce-cart .woocommerce,.elementor-brand-wrapper .woocommerce-columns--addresses,.elementor-brand-wrapper .woocommerce-MyAccount-content form[class^=woocommerce-],.elementor-brand-wrapper [class*=columns-] ul.products,.elementor-brand-wrapper [data-elementor-columns],.elementor-brand-wrapper [data-opal-columns],.elementor-brand-wrapper body.opal-content-layout-2cl #content .wrap,.elementor-brand-wrapper body.opal-content-layout-2cr #content .wrap,.elementor-brand-wrapper body.opal-portfolio-layout-2cr .portfolio-wrap,.elementor-brand-wrapper form.track_order,.elementor-element .elementor-brand-wrapper .gallery,.entry-gallery .elementor-brand-wrapper .gallery,.single-portfolio-summary .elementor-brand-wrapper .single-portfolio-summary-inner,.single-product div.type-product .elementor-brand-wrapper .product-inner,.single .elementor-brand-wrapper .gallery,.site-footer .elementor-brand-wrapper .widget-area,.widget .elementor-brand-wrapper .gallery,.woocommerce-account .elementor-brand-wrapper .woocommerce,.woocommerce-account .woocommerce .elementor-brand-wrapper .u-columns.woocommerce-Addresses,.woocommerce-billing-fields .elementor-brand-wrapper .woocommerce-billing-fields__field-wrapper,.woocommerce-cart .elementor-brand-wrapper .woocommerce,.woocommerce-MyAccount-content .elementor-brand-wrapper form[class^=woocommerce-],[class*=columns-] .elementor-brand-wrapper ul.products,body.opal-content-layout-2cl #content .elementor-brand-wrapper .wrap,body.opal-content-layout-2cr #content .elementor-brand-wrapper .wrap,body.opal-portfolio-layout-2cr .elementor-brand-wrapper .portfolio-wrap {
+.elementor-brand-wrapper .comment-form,.elementor-brand-wrapper .elementor-element .gallery,.elementor-brand-wrapper .entry-gallery .gallery,.elementor-brand-wrapper .row,.elementor-brand-wrapper .single-portfolio-summary .single-portfolio-summary-inner,.elementor-brand-wrapper .single-product div.type-product .product-inner,.elementor-brand-wrapper .single .gallery,.elementor-brand-wrapper .site-footer .widget-area,.elementor-brand-wrapper .widget .gallery,.elementor-brand-wrapper .woocommerce-account .woocommerce,.elementor-brand-wrapper .woocommerce-account .woocommerce .u-columns.woocommerce-Addresses,.elementor-brand-wrapper .woocommerce-address-fields__field-wrapper,.elementor-brand-wrapper .woocommerce-Addresses,.elementor-brand-wrapper .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper,.elementor-brand-wrapper .woocommerce-cart .woocommerce,.elementor-brand-wrapper .woocommerce-columns--addresses,.elementor-brand-wrapper .woocommerce-MyAccount-content form[class^=woocommerce-],.elementor-brand-wrapper [class*=columns-] ul.products,.elementor-brand-wrapper [data-elementor-columns],.elementor-brand-wrapper [data-dimas-columns],.elementor-brand-wrapper body.dimas-content-layout-2cl #content .wrap,.elementor-brand-wrapper body.dimas-content-layout-2cr #content .wrap,.elementor-brand-wrapper body.dimas-portfolio-layout-2cr .portfolio-wrap,.elementor-brand-wrapper form.track_order,.elementor-element .elementor-brand-wrapper .gallery,.entry-gallery .elementor-brand-wrapper .gallery,.single-portfolio-summary .elementor-brand-wrapper .single-portfolio-summary-inner,.single-product div.type-product .elementor-brand-wrapper .product-inner,.single .elementor-brand-wrapper .gallery,.site-footer .elementor-brand-wrapper .widget-area,.widget .elementor-brand-wrapper .gallery,.woocommerce-account .elementor-brand-wrapper .woocommerce,.woocommerce-account .woocommerce .elementor-brand-wrapper .u-columns.woocommerce-Addresses,.woocommerce-billing-fields .elementor-brand-wrapper .woocommerce-billing-fields__field-wrapper,.woocommerce-cart .elementor-brand-wrapper .woocommerce,.woocommerce-MyAccount-content .elementor-brand-wrapper form[class^=woocommerce-],[class*=columns-] .elementor-brand-wrapper ul.products,body.dimas-content-layout-2cl #content .elementor-brand-wrapper .wrap,body.dimas-content-layout-2cr #content .elementor-brand-wrapper .wrap,body.dimas-portfolio-layout-2cr .elementor-brand-wrapper .portfolio-wrap {
   justify-content: center; }
 
 .elementor-brand-wrapper .elementor-brand-image>img {
@@ -903,45 +903,45 @@ a.link-box {
 .elementor-cta__bg-wrapper a.link-box {
   z-index: 3; }
 
-.elementor-widget-opal-cart .elementor-widget-container {
+.elementor-widget-dimas-cart .elementor-widget-container {
   display: flex; }
 
-.elementor-widget-opal-chart .elementor-chart-wrapper {
+.elementor-widget-dimas-chart .elementor-chart-wrapper {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
 
-.elementor-widget-opal-chart .chart-canvas {
+.elementor-widget-dimas-chart .chart-canvas {
   width: 290px;
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;
   position: relative; }
 
-.elementor-widget-opal-chart .chart-legend {
+.elementor-widget-dimas-chart .chart-legend {
   padding-left: 30px; }
   @media (max-width: 767px) {
-    .elementor-widget-opal-chart .chart-legend {
+    .elementor-widget-dimas-chart .chart-legend {
       flex: 0 0 100%;
       max-width: 100%;
       padding-top: 1.5em;
       padding-left: 0 !important;
       padding-right: 0 !important; } }
 
-.elementor-widget-opal-chart ul {
+.elementor-widget-dimas-chart ul {
   padding: 0;
   margin: 0; }
 
-.elementor-widget-opal-chart li {
+.elementor-widget-dimas-chart li {
   list-style: none;
   display: flex;
   padding: 5px 0;
   align-items: center; }
 
-.elementor-widget-opal-chart i {
+.elementor-widget-dimas-chart i {
   font-size: 30px;
   font-size: 1.875rem; }
 
-.elementor-widget-opal-chart .chart-name {
+.elementor-widget-dimas-chart .chart-name {
   color: #999;
   padding-left: 20px; }
 
@@ -976,23 +976,23 @@ a.link-box {
     font-size: .875rem;
     transition: transform .4s ease; }
 
-.elementor-opal-countdown-wrapper {
+.elementor-dimas-countdown-wrapper {
   display: flex;
   justify-content: center; }
-  .elementor-opal-countdown-wrapper .elementor-opal-countdown {
+  .elementor-dimas-countdown-wrapper .elementor-dimas-countdown {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: row;
     min-width: 130px; }
-  .elementor-opal-countdown-wrapper .elementor-countdown-item {
+  .elementor-dimas-countdown-wrapper .elementor-countdown-item {
     padding: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative; }
-    .elementor-opal-countdown-wrapper .elementor-countdown-item:not(:first-child) .elementor-countdown-digits:before {
+    .elementor-dimas-countdown-wrapper .elementor-countdown-item:not(:first-child) .elementor-countdown-digits:before {
       content: ":";
       position: absolute;
       left: 0;
@@ -1001,11 +1001,11 @@ a.link-box {
       font-size: 1.5rem;
       line-height: 1;
       transform: translate(-50%,-50%); }
-  .elementor-opal-countdown-wrapper .elementor-countdown-label {
+  .elementor-dimas-countdown-wrapper .elementor-countdown-label {
     font-size: 12px;
     font-size: .75rem;
     text-transform: uppercase; }
-  .elementor-opal-countdown-wrapper .elementor-countdown-digits {
+  .elementor-dimas-countdown-wrapper .elementor-countdown-digits {
     font-size: 50px;
     font-size: 3.125rem;
     margin-bottom: 10px;
@@ -1361,35 +1361,35 @@ a.link-box {
   transform: none;
   opacity: 1; }
 
-.elementor-widget-opal-flip-box .elementor-widget-container {
+.elementor-widget-dimas-flip-box .elementor-widget-container {
   overflow: hidden; }
 
-.elementor-widget-opal-header-group .elementor-widget-container {
+.elementor-widget-dimas-header-group .elementor-widget-container {
   display: flex;
   align-items: center;
   margin: 0 -10px; }
-  .elementor-widget-opal-header-group .elementor-widget-container>div {
+  .elementor-widget-dimas-header-group .elementor-widget-container>div {
     padding: 0 10px; }
 
-.elementor-widget-opal-header-group .search-form {
+.elementor-widget-dimas-header-group .search-form {
   order: 1; }
 
-.elementor-widget-opal-header-group .account {
+.elementor-widget-dimas-header-group .account {
   order: 2; }
 
-.elementor-widget-opal-header-group .site-header-wishlist {
+.elementor-widget-dimas-header-group .site-header-wishlist {
   order: 3; }
 
-.elementor-widget-opal-header-group .cart-woocommerce {
+.elementor-widget-dimas-header-group .cart-woocommerce {
   order: 4; }
 
-.elementor-widget-opal-header-group.elementor-align-left .elementor-widget-container {
+.elementor-widget-dimas-header-group.elementor-align-left .elementor-widget-container {
   justify-content: flex-start; }
 
-.elementor-widget-opal-header-group.elementor-align-right .elementor-widget-container {
+.elementor-widget-dimas-header-group.elementor-align-right .elementor-widget-container {
   justify-content: flex-end; }
 
-.elementor-widget-opal-header-group.elementor-align-center .elementor-widget-container {
+.elementor-widget-dimas-header-group.elementor-align-center .elementor-widget-container {
   justify-content: center; }
 
 .elementor-widget-heading .sub-title {
@@ -1644,41 +1644,41 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
   .elementor-widget-image-box .elementor-widget-container {
     transition: all .3s ease; }
 
-.opal-image-hotspots-container {
+.dimas-image-hotspots-container {
   overflow: hidden; }
 
-.opal-addons-image-hotspots-ib-img {
+.dimas-addons-image-hotspots-ib-img {
   display: block; }
 
-.opal-image-hotspots-main-icons-tooltips-wrapper {
+.dimas-image-hotspots-main-icons-tooltips-wrapper {
   top: 0;
   left: 0;
   position: absolute;
   bottom: 0;
   right: 0; }
 
-.elementor-widget-opal-image-hotspots .elementor-widget-container {
+.elementor-widget-dimas-image-hotspots .elementor-widget-container {
   display: flex;
   flex-wrap: wrap; }
 
-.elementor-widget-opal-image-hotspots .opal-image-hotspots-accordion {
+.elementor-widget-dimas-image-hotspots .dimas-image-hotspots-accordion {
   overflow: hidden;
   background-color: #fff; }
   @media (min-width: 768px) {
-    .elementor-widget-opal-image-hotspots .opal-image-hotspots-accordion {
+    .elementor-widget-dimas-image-hotspots .dimas-image-hotspots-accordion {
       padding-right: 0 !important; } }
   @media (min-width: 1200px) {
-    .elementor-widget-opal-image-hotspots .opal-image-hotspots-accordion {
+    .elementor-widget-dimas-image-hotspots .dimas-image-hotspots-accordion {
       padding: 50px 20px 50px 50px !important; } }
-  .elementor-widget-opal-image-hotspots .opal-image-hotspots-accordion+.opal-image-hotspots-container {
+  .elementor-widget-dimas-image-hotspots .dimas-image-hotspots-accordion+.dimas-image-hotspots-container {
     padding: 0 !important; }
-  .elementor-widget-opal-image-hotspots .opal-image-hotspots-accordion .opal-image-hotspots-accordion-inner {
+  .elementor-widget-dimas-image-hotspots .dimas-image-hotspots-accordion .dimas-image-hotspots-accordion-inner {
     position: relative;
     height: 100%; }
-    .elementor-editor-active .elementor-widget-opal-image-hotspots .opal-image-hotspots-accordion .opal-image-hotspots-accordion-inner {
+    .elementor-editor-active .elementor-widget-dimas-image-hotspots .dimas-image-hotspots-accordion .dimas-image-hotspots-accordion-inner {
       overflow: hidden; }
   @media (min-width: 768px) {
-    .elementor-widget-opal-image-hotspots .opal-image-hotspots-accordion .elementor-accordion {
+    .elementor-widget-dimas-image-hotspots .dimas-image-hotspots-accordion .elementor-accordion {
       position: absolute;
       top: 0;
       left: 0;
@@ -1687,17 +1687,17 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
       overflow: hidden;
       padding-right: 23px; } }
   @media (min-width: 1200px) {
-    .elementor-widget-opal-image-hotspots .opal-image-hotspots-accordion .elementor-accordion {
+    .elementor-widget-dimas-image-hotspots .dimas-image-hotspots-accordion .elementor-accordion {
       padding-right: 30px; } }
 
-.elementor-widget-opal-image-hotspots .elementor-accordion .elementor-tab-title {
+.elementor-widget-dimas-image-hotspots .elementor-accordion .elementor-tab-title {
   font-size: 12px;
   font-size: .75rem;
   text-transform: uppercase;
   letter-spacing: .2em;
   padding: 30px 30px 30px 0;
   position: relative; }
-  .elementor-widget-opal-image-hotspots .elementor-accordion .elementor-tab-title:before {
+  .elementor-widget-dimas-image-hotspots .elementor-accordion .elementor-tab-title:before {
     content: "";
     position: absolute;
     top: calc(50% - 11px);
@@ -1713,30 +1713,30 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
     padding-left: 1px;
     padding-bottom: 2px;
     color: #000; }
-  .elementor-widget-opal-image-hotspots .elementor-accordion .elementor-tab-title.elementor-active:before {
+  .elementor-widget-dimas-image-hotspots .elementor-accordion .elementor-tab-title.elementor-active:before {
     content: "\f077"; }
 
-.elementor-widget-opal-image-hotspots .elementor-accordion .elementor-tab-content {
+.elementor-widget-dimas-image-hotspots .elementor-accordion .elementor-tab-content {
   border-top: 0;
   padding: 0 0 40px; }
 
-.elementor-widget-opal-image-hotspots .elementor-accordion .elementor-accordion-item {
+.elementor-widget-dimas-image-hotspots .elementor-accordion .elementor-accordion-item {
   border-left: 0;
   border-right: 0; }
-  .elementor-widget-opal-image-hotspots .elementor-accordion .elementor-accordion-item:first-child {
+  .elementor-widget-dimas-image-hotspots .elementor-accordion .elementor-accordion-item:first-child {
     border-top: 0; }
 
-.elementor-widget-opal-image-hotspots .scrollbar-inner>.scroll-element .scroll-bar {
+.elementor-widget-dimas-image-hotspots .scrollbar-inner>.scroll-element .scroll-bar {
   opacity: 1; }
 
-.opal-image-hotspots-main-icons {
+.dimas-image-hotspots-main-icons {
   cursor: pointer;
   display: block;
   position: absolute;
   transform: translate(-50%,-50%);
   top: 50%;
   left: 50%; }
-  .opal-image-hotspots-main-icons .opal-image-hotspots-icon {
+  .dimas-image-hotspots-main-icons .dimas-image-hotspots-icon {
     cursor: pointer;
     display: block;
     text-align: center;
@@ -1745,7 +1745,7 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
     width: 18px;
     line-height: 18px;
     box-shadow: 0 0 0 8px hsla(0,0%,100%,.2); }
-    .opal-image-hotspots-main-icons .opal-image-hotspots-icon:after {
+    .dimas-image-hotspots-main-icons .dimas-image-hotspots-icon:after {
       box-shadow: 0 0 0 8px hsla(0,0%,100%,.2);
       border-radius: 200%;
       content: "";
@@ -1758,7 +1758,7 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
       right: 0;
       bottom: 0;
       left: 0; }
-    .opal-image-hotspots-main-icons .opal-image-hotspots-icon:before {
+    .dimas-image-hotspots-main-icons .dimas-image-hotspots-icon:before {
       content: "";
       position: absolute;
       top: calc(50% - 3px);
@@ -1768,10 +1768,10 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
       display: block;
       border-radius: 50%;
       background-color: #fff; }
-  .opal-image-hotspots-main-icons .opal-image-hotspots-image-icon {
+  .dimas-image-hotspots-main-icons .dimas-image-hotspots-image-icon {
     width: 40px;
     height: 40px; }
-  .opal-image-hotspots-main-icons .opal-image-hotspots-text {
+  .dimas-image-hotspots-main-icons .dimas-image-hotspots-text {
     cursor: pointer;
     display: block;
     text-align: center;
@@ -1780,7 +1780,7 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
     padding: 0 10px;
     border-color: #000; }
 
-.opal-image-hotspots-tooltips-wrapper {
+.dimas-image-hotspots-tooltips-wrapper {
   display: none;
   position: absolute;
   z-index: 9999; }
@@ -1789,7 +1789,7 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
   z-index: 9999;
   width: auto !important; }
 
-.tooltipster-box div.opal-image-hotspots-tooltips-text {
+.tooltipster-box div.dimas-image-hotspots-tooltips-text {
   border-color: #000;
   overflow: hidden; }
 
@@ -1797,13 +1797,13 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
   background: transparent;
   box-shadow: 0 0 40px 0 rgba(0,0,0,.18); }
 
-.tooltipster-sidetip div.opal-image-hotspots-tooltips-text {
+.tooltipster-sidetip div.dimas-image-hotspots-tooltips-text {
   padding: 15px 30px; }
-  .tooltipster-sidetip div.opal-image-hotspots-tooltips-text * {
+  .tooltipster-sidetip div.dimas-image-hotspots-tooltips-text * {
     margin: 0;
     padding: 0; }
 
-.tooltipster-box .opal-image-hotspots-tooltips-text * {
+.tooltipster-box .dimas-image-hotspots-tooltips-text * {
   margin: 0; }
 
 @keyframes n {
@@ -1829,47 +1829,47 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
 .tooltipster-base.tooltipster-left .tooltipster-arrow-background {
   border-left-color: hsla(0,0%,5%,.5); }
 
-.tooltipster-box .opal-image-hotspots-tooltips-text {
+.tooltipster-box .dimas-image-hotspots-tooltips-text {
   color: #fff; }
 
-.elementor-widget-opal-images-layers ul {
+.elementor-widget-dimas-images-layers ul {
   padding: 0;
   margin: 0;
   font-size: 0; }
-  .elementor-widget-opal-image-gallery .grid__item a,.elementor-widget-opal-image-gallery .grid__item a img {
+  .elementor-widget-dimas-image-gallery .grid__item a,.elementor-widget-dimas-image-gallery .grid__item a img {
     display: block; }
 
 @media (min-width: 1025px) {
-  .elementor-widget-opal-image-gallery .grid[data-elementor-columns="4"] .column-item {
+  .elementor-widget-dimas-image-gallery .grid[data-elementor-columns="4"] .column-item {
     padding-bottom: 30px; }
-    .elementor-widget-opal-image-gallery .grid[data-elementor-columns="4"] .column-item:nth-child(6n),.elementor-widget-opal-image-gallery .grid[data-elementor-columns="4"] .column-item:nth-child(6n+1) {
+    .elementor-widget-dimas-image-gallery .grid[data-elementor-columns="4"] .column-item:nth-child(6n),.elementor-widget-dimas-image-gallery .grid[data-elementor-columns="4"] .column-item:nth-child(6n+1) {
       flex-basis: 50%;
       max-width: 50%;
       width: 50%; } }
 
-.elementor-widget-opal-image-gallery .column-item {
+.elementor-widget-dimas-image-gallery .column-item {
   padding-bottom: 30px; }
-  .elementor-widget-opal-image-gallery .column-item a {
+  .elementor-widget-dimas-image-gallery .column-item a {
     position: relative;
     overflow: hidden;
     display: block; }
     @media (min-width: 1025px) {
-      .elementor-widget-opal-image-gallery .column-item a {
+      .elementor-widget-dimas-image-gallery .column-item a {
         height: 310px; } }
-  .elementor-widget-opal-image-gallery .column-item img {
+  .elementor-widget-dimas-image-gallery .column-item img {
     display: block;
     transition: all .6s ease;
     transform-origin: bottom right; }
     @media (min-width: 1025px) {
-      .elementor-widget-opal-image-gallery .column-item img {
+      .elementor-widget-dimas-image-gallery .column-item img {
         width: 100%;
         height: 100%;
         object-position: 0 50%;
         object-fit: cover; } }
-  .elementor-widget-opal-image-gallery .column-item:hover img {
+  .elementor-widget-dimas-image-gallery .column-item:hover img {
     transform: scale(1.2); }
 
-.elementor-widget-opal-image-gallery .gallery-item-overlay {
+.elementor-widget-dimas-image-gallery .gallery-item-overlay {
   position: absolute;
   display: flex;
   width: 100%;
@@ -1878,11 +1878,11 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
   align-items: center;
   opacity: .8;
   color: #fff; }
-  .elementor-widget-opal-image-gallery .gallery-item-overlay i {
+  .elementor-widget-dimas-image-gallery .gallery-item-overlay i {
     font-size: 25px;
     font-size: 1.5625rem; }
 
-.elementor-widget-opal-image-gallery .elementor-galerry__filter {
+.elementor-widget-dimas-image-gallery .elementor-galerry__filter {
   margin: 0;
   cursor: pointer;
   padding: 11px 24px;
@@ -1895,7 +1895,7 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
   position: relative;
   letter-spacing: .2em;
   text-transform: uppercase; }
-  .elementor-widget-opal-image-gallery .elementor-galerry__filter:before {
+  .elementor-widget-dimas-image-gallery .elementor-galerry__filter:before {
     position: absolute;
     content: "";
     top: calc(100% - 5px);
@@ -1904,9 +1904,9 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
     border-width: 5px 8px 0;
     border-style: solid;
     transition: all .3s ease-in-out; }
-  .elementor-widget-opal-image-gallery .elementor-galerry__filter.elementor-active {
+  .elementor-widget-dimas-image-gallery .elementor-galerry__filter.elementor-active {
     color: #fff; }
-    .elementor-widget-opal-image-gallery .elementor-galerry__filter.elementor-active:before {
+    .elementor-widget-dimas-image-gallery .elementor-galerry__filter.elementor-active:before {
       border-left-color: transparent !important;
       border-right-color: transparent !important;
       top: 100%; }
@@ -2388,7 +2388,7 @@ div:not(.site-header) .elementor-widget.elementor-widget-icon-list ul li:last-ch
         -ms-flex-pack: center;
         justify-content: center; } }
 
-.elementor-widget-opal-nav-menu .elementor-widget-container {
+.elementor-widget-dimas-nav-menu .elementor-widget-container {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -2594,14 +2594,14 @@ ul.elementor-nav-menu--dropdown a {
   font-size: 16px;
   font-size: 1rem; }
 
-.elementor-widget-opal-nav-menu:not(.elementor-nav-menu--toggle) .elementor-menu-toggle {
+.elementor-widget-dimas-nav-menu:not(.elementor-nav-menu--toggle) .elementor-menu-toggle {
   display: none; }
 
 .elementor-nav-menu__text-align-center .elementor-nav-menu--dropdown .elementor-nav-menu a {
   -ms-flex-pack: center;
   justify-content: center; }
 
-.elementor-nav-menu--toggle.elementor-widget-opal-nav-menu .elementor-menu-toggle:not(.elementor-active)+.elementor-nav-menu__container {
+.elementor-nav-menu--toggle.elementor-widget-dimas-nav-menu .elementor-menu-toggle:not(.elementor-active)+.elementor-nav-menu__container {
   transform: scaleY(1);
   max-height: unset; }
 
@@ -2935,32 +2935,32 @@ ul.elementor-nav-menu--dropdown a {
 div:not(.site-header) .elementor-widget.elementor-widget-number-list ul li:last-child {
   border-right: none; }
 
-.elementor-widget-opal-phone i {
+.elementor-widget-dimas-phone i {
   font-size: 20px;
   line-height: 1;
   margin-right: 5px;
   transition: all .3s ease; }
-  .elementor-widget-opal-phone i:before {
+  .elementor-widget-dimas-phone i:before {
     display: block; }
 
-.elementor-widget-opal-phone .elementor-phone {
+.elementor-widget-dimas-phone .elementor-phone {
   display: inline-flex;
   align-items: center;
   position: relative; }
 
-.elementor-widget-opal-phone .elementor-phone-title {
+.elementor-widget-dimas-phone .elementor-phone-title {
   font-size: 12px;
   font-weight: 700;
   display: block;
   transition: all .3s ease; }
 
-.elementor-widget-opal-phone .elementor-phone-subtitle {
+.elementor-widget-dimas-phone .elementor-phone-subtitle {
   font-size: 20px;
   font-weight: 700;
   display: block;
   transition: all .3s ease; }
 
-.elementor-widget-opal-phone .elementor-phone-link {
+.elementor-widget-dimas-phone .elementor-phone-link {
   position: absolute;
   top: 0;
   left: 0;
@@ -3023,19 +3023,19 @@ div:not(.site-header) .elementor-widget.elementor-widget-number-list ul li:last-
   transform: scale3d(1.1,1.1,1); }
 
 @media (max-width: 1440px) {
-  .elementor-widget-opal-portfolio .owl-theme.owl-carousel .owl-nav [class*=owl-],.elementor-widget-opal-portfolio .woocommerce-product-carousel ul.owl-theme.products .owl-nav [class*=owl-],.woocommerce-product-carousel .elementor-widget-opal-portfolio ul.owl-theme.products .owl-nav [class*=owl-] {
+  .elementor-widget-dimas-portfolio .owl-theme.owl-carousel .owl-nav [class*=owl-],.elementor-widget-dimas-portfolio .woocommerce-product-carousel ul.owl-theme.products .owl-nav [class*=owl-],.woocommerce-product-carousel .elementor-widget-dimas-portfolio ul.owl-theme.products .owl-nav [class*=owl-] {
     display: none; } }
 
-.elementor-widget-opal-portfolio .owl-theme.owl-carousel .owl-nav [class*=owl-].owl-prev,.elementor-widget-opal-portfolio .woocommerce-product-carousel ul.owl-theme.products .owl-nav [class*=owl-].owl-prev,.woocommerce-product-carousel .elementor-widget-opal-portfolio ul.owl-theme.products .owl-nav [class*=owl-].owl-prev {
+.elementor-widget-dimas-portfolio .owl-theme.owl-carousel .owl-nav [class*=owl-].owl-prev,.elementor-widget-dimas-portfolio .woocommerce-product-carousel ul.owl-theme.products .owl-nav [class*=owl-].owl-prev,.woocommerce-product-carousel .elementor-widget-dimas-portfolio ul.owl-theme.products .owl-nav [class*=owl-].owl-prev {
   left: -30px; }
 
-.elementor-widget-opal-portfolio .owl-theme.owl-carousel .owl-nav [class*=owl-].owl-next,.elementor-widget-opal-portfolio .woocommerce-product-carousel ul.owl-theme.products .owl-nav [class*=owl-].owl-next,.woocommerce-product-carousel .elementor-widget-opal-portfolio ul.owl-theme.products .owl-nav [class*=owl-].owl-next {
+.elementor-widget-dimas-portfolio .owl-theme.owl-carousel .owl-nav [class*=owl-].owl-next,.elementor-widget-dimas-portfolio .woocommerce-product-carousel ul.owl-theme.products .owl-nav [class*=owl-].owl-next,.woocommerce-product-carousel .elementor-widget-dimas-portfolio ul.owl-theme.products .owl-nav [class*=owl-].owl-next {
   right: -30px; }
 
-.elementor-widget-opal-portfolio ul.elementor-portfolio__filters {
+.elementor-widget-dimas-portfolio ul.elementor-portfolio__filters {
   padding-left: 0; }
 
-article.type-osf_portfolio {
+article.type-dimas_portfolio {
   padding-bottom: 0;
   width: 100%;
   display: block; }
@@ -3115,7 +3115,7 @@ article.type-osf_portfolio {
 .elementor-portfolio-style-default .entry-category {
   transition-delay: .2s; }
 
-.elementor-portfolio-style-default article.type-osf_portfolio:hover .portfolio-content {
+.elementor-portfolio-style-default article.type-dimas_portfolio:hover .portfolio-content {
   opacity: 1;
   -ms-opacity: 1;
   -o-opacity: 1;
@@ -3123,7 +3123,7 @@ article.type-osf_portfolio {
   -webkit-opacity: 1;
   filter: alpha(opacity=100); }
 
-.elementor-portfolio-style-default article.type-osf_portfolio:hover .entry-category,.elementor-portfolio-style-default article.type-osf_portfolio:hover .entry-title {
+.elementor-portfolio-style-default article.type-dimas_portfolio:hover .entry-category,.elementor-portfolio-style-default article.type-dimas_portfolio:hover .entry-title {
   overflow: hidden;
   transform: translateY(0); }
 
@@ -3158,7 +3158,7 @@ article.type-osf_portfolio {
 .elementor-filter-right .elementor-portfolio__filters {
   justify-content: flex-end; }
 
-.elementor-element .loading .elementor-widget-opal-portfolio .gallery:after,.entry-gallery .loading .elementor-widget-opal-portfolio .gallery:after,.loading .elementor-widget-opal-portfolio .comment-form:after,.loading .elementor-widget-opal-portfolio .elementor-element .gallery:after,.loading .elementor-widget-opal-portfolio .entry-gallery .gallery:after,.loading .elementor-widget-opal-portfolio .row:after,.loading .elementor-widget-opal-portfolio .single-portfolio-summary .single-portfolio-summary-inner:after,.loading .elementor-widget-opal-portfolio .single-product div.type-product .product-inner:after,.loading .elementor-widget-opal-portfolio .single .gallery:after,.loading .elementor-widget-opal-portfolio .site-footer .widget-area:after,.loading .elementor-widget-opal-portfolio .widget .gallery:after,.loading .elementor-widget-opal-portfolio .woocommerce-account .woocommerce .u-columns.woocommerce-Addresses:after,.loading .elementor-widget-opal-portfolio .woocommerce-account .woocommerce:after,.loading .elementor-widget-opal-portfolio .woocommerce-address-fields__field-wrapper:after,.loading .elementor-widget-opal-portfolio .woocommerce-Addresses:after,.loading .elementor-widget-opal-portfolio .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper:after,.loading .elementor-widget-opal-portfolio .woocommerce-cart .woocommerce:after,.loading .elementor-widget-opal-portfolio .woocommerce-columns--addresses:after,.loading .elementor-widget-opal-portfolio .woocommerce-MyAccount-content form[class^=woocommerce-]:after,.loading .elementor-widget-opal-portfolio [class*=columns-] ul.products:after,.loading .elementor-widget-opal-portfolio [data-elementor-columns]:after,.loading .elementor-widget-opal-portfolio [data-opal-columns]:after,.loading .elementor-widget-opal-portfolio body.opal-content-layout-2cl #content .wrap:after,.loading .elementor-widget-opal-portfolio body.opal-content-layout-2cr #content .wrap:after,.loading .elementor-widget-opal-portfolio body.opal-portfolio-layout-2cr .portfolio-wrap:after,.loading .elementor-widget-opal-portfolio form.track_order:after,.single-portfolio-summary .loading .elementor-widget-opal-portfolio .single-portfolio-summary-inner:after,.single-product div.type-product .loading .elementor-widget-opal-portfolio .product-inner:after,.single .loading .elementor-widget-opal-portfolio .gallery:after,.site-footer .loading .elementor-widget-opal-portfolio .widget-area:after,.widget .loading .elementor-widget-opal-portfolio .gallery:after,.woocommerce-account .loading .elementor-widget-opal-portfolio .woocommerce:after,.woocommerce-account .woocommerce .loading .elementor-widget-opal-portfolio .u-columns.woocommerce-Addresses:after,.woocommerce-billing-fields .loading .elementor-widget-opal-portfolio .woocommerce-billing-fields__field-wrapper:after,.woocommerce-cart .loading .elementor-widget-opal-portfolio .woocommerce:after,.woocommerce-MyAccount-content .loading .elementor-widget-opal-portfolio form[class^=woocommerce-]:after,[class*=columns-] .loading .elementor-widget-opal-portfolio ul.products:after,body.opal-content-layout-2cl #content .loading .elementor-widget-opal-portfolio .wrap:after,body.opal-content-layout-2cr #content .loading .elementor-widget-opal-portfolio .wrap:after,body.opal-portfolio-layout-2cr .loading .elementor-widget-opal-portfolio .portfolio-wrap:after {
+.elementor-element .loading .elementor-widget-dimas-portfolio .gallery:after,.entry-gallery .loading .elementor-widget-dimas-portfolio .gallery:after,.loading .elementor-widget-dimas-portfolio .comment-form:after,.loading .elementor-widget-dimas-portfolio .elementor-element .gallery:after,.loading .elementor-widget-dimas-portfolio .entry-gallery .gallery:after,.loading .elementor-widget-dimas-portfolio .row:after,.loading .elementor-widget-dimas-portfolio .single-portfolio-summary .single-portfolio-summary-inner:after,.loading .elementor-widget-dimas-portfolio .single-product div.type-product .product-inner:after,.loading .elementor-widget-dimas-portfolio .single .gallery:after,.loading .elementor-widget-dimas-portfolio .site-footer .widget-area:after,.loading .elementor-widget-dimas-portfolio .widget .gallery:after,.loading .elementor-widget-dimas-portfolio .woocommerce-account .woocommerce .u-columns.woocommerce-Addresses:after,.loading .elementor-widget-dimas-portfolio .woocommerce-account .woocommerce:after,.loading .elementor-widget-dimas-portfolio .woocommerce-address-fields__field-wrapper:after,.loading .elementor-widget-dimas-portfolio .woocommerce-Addresses:after,.loading .elementor-widget-dimas-portfolio .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper:after,.loading .elementor-widget-dimas-portfolio .woocommerce-cart .woocommerce:after,.loading .elementor-widget-dimas-portfolio .woocommerce-columns--addresses:after,.loading .elementor-widget-dimas-portfolio .woocommerce-MyAccount-content form[class^=woocommerce-]:after,.loading .elementor-widget-dimas-portfolio [class*=columns-] ul.products:after,.loading .elementor-widget-dimas-portfolio [data-elementor-columns]:after,.loading .elementor-widget-dimas-portfolio [data-dimas-columns]:after,.loading .elementor-widget-dimas-portfolio body.dimas-content-layout-2cl #content .wrap:after,.loading .elementor-widget-dimas-portfolio body.dimas-content-layout-2cr #content .wrap:after,.loading .elementor-widget-dimas-portfolio body.dimas-portfolio-layout-2cr .portfolio-wrap:after,.loading .elementor-widget-dimas-portfolio form.track_order:after,.single-portfolio-summary .loading .elementor-widget-dimas-portfolio .single-portfolio-summary-inner:after,.single-product div.type-product .loading .elementor-widget-dimas-portfolio .product-inner:after,.single .loading .elementor-widget-dimas-portfolio .gallery:after,.site-footer .loading .elementor-widget-dimas-portfolio .widget-area:after,.widget .loading .elementor-widget-dimas-portfolio .gallery:after,.woocommerce-account .loading .elementor-widget-dimas-portfolio .woocommerce:after,.woocommerce-account .woocommerce .loading .elementor-widget-dimas-portfolio .u-columns.woocommerce-Addresses:after,.woocommerce-billing-fields .loading .elementor-widget-dimas-portfolio .woocommerce-billing-fields__field-wrapper:after,.woocommerce-cart .loading .elementor-widget-dimas-portfolio .woocommerce:after,.woocommerce-MyAccount-content .loading .elementor-widget-dimas-portfolio form[class^=woocommerce-]:after,[class*=columns-] .loading .elementor-widget-dimas-portfolio ul.products:after,body.dimas-content-layout-2cl #content .loading .elementor-widget-dimas-portfolio .wrap:after,body.dimas-content-layout-2cr #content .loading .elementor-widget-dimas-portfolio .wrap:after,body.dimas-portfolio-layout-2cr .loading .elementor-widget-dimas-portfolio .portfolio-wrap:after {
   position: absolute;
   content: "";
   width: 30px;
@@ -3175,7 +3175,7 @@ article.type-osf_portfolio {
   top: calc(50% - 15px);
   z-index: 99; }
 
-.elementor-element .loading .elementor-widget-opal-portfolio .gallery:before,.entry-gallery .loading .elementor-widget-opal-portfolio .gallery:before,.loading .elementor-widget-opal-portfolio .comment-form:before,.loading .elementor-widget-opal-portfolio .elementor-element .gallery:before,.loading .elementor-widget-opal-portfolio .entry-gallery .gallery:before,.loading .elementor-widget-opal-portfolio .row:before,.loading .elementor-widget-opal-portfolio .single-portfolio-summary .single-portfolio-summary-inner:before,.loading .elementor-widget-opal-portfolio .single-product div.type-product .product-inner:before,.loading .elementor-widget-opal-portfolio .single .gallery:before,.loading .elementor-widget-opal-portfolio .site-footer .widget-area:before,.loading .elementor-widget-opal-portfolio .widget .gallery:before,.loading .elementor-widget-opal-portfolio .woocommerce-account .woocommerce .u-columns.woocommerce-Addresses:before,.loading .elementor-widget-opal-portfolio .woocommerce-account .woocommerce:before,.loading .elementor-widget-opal-portfolio .woocommerce-address-fields__field-wrapper:before,.loading .elementor-widget-opal-portfolio .woocommerce-Addresses:before,.loading .elementor-widget-opal-portfolio .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper:before,.loading .elementor-widget-opal-portfolio .woocommerce-cart .woocommerce:before,.loading .elementor-widget-opal-portfolio .woocommerce-columns--addresses:before,.loading .elementor-widget-opal-portfolio .woocommerce-MyAccount-content form[class^=woocommerce-]:before,.loading .elementor-widget-opal-portfolio [class*=columns-] ul.products:before,.loading .elementor-widget-opal-portfolio [data-elementor-columns]:before,.loading .elementor-widget-opal-portfolio [data-opal-columns]:before,.loading .elementor-widget-opal-portfolio body.opal-content-layout-2cl #content .wrap:before,.loading .elementor-widget-opal-portfolio body.opal-content-layout-2cr #content .wrap:before,.loading .elementor-widget-opal-portfolio body.opal-portfolio-layout-2cr .portfolio-wrap:before,.loading .elementor-widget-opal-portfolio form.track_order:before,.single-portfolio-summary .loading .elementor-widget-opal-portfolio .single-portfolio-summary-inner:before,.single-product div.type-product .loading .elementor-widget-opal-portfolio .product-inner:before,.single .loading .elementor-widget-opal-portfolio .gallery:before,.site-footer .loading .elementor-widget-opal-portfolio .widget-area:before,.widget .loading .elementor-widget-opal-portfolio .gallery:before,.woocommerce-account .loading .elementor-widget-opal-portfolio .woocommerce:before,.woocommerce-account .woocommerce .loading .elementor-widget-opal-portfolio .u-columns.woocommerce-Addresses:before,.woocommerce-billing-fields .loading .elementor-widget-opal-portfolio .woocommerce-billing-fields__field-wrapper:before,.woocommerce-cart .loading .elementor-widget-opal-portfolio .woocommerce:before,.woocommerce-MyAccount-content .loading .elementor-widget-opal-portfolio form[class^=woocommerce-]:before,[class*=columns-] .loading .elementor-widget-opal-portfolio ul.products:before,body.opal-content-layout-2cl #content .loading .elementor-widget-opal-portfolio .wrap:before,body.opal-content-layout-2cr #content .loading .elementor-widget-opal-portfolio .wrap:before,body.opal-portfolio-layout-2cr .loading .elementor-widget-opal-portfolio .portfolio-wrap:before {
+.elementor-element .loading .elementor-widget-dimas-portfolio .gallery:before,.entry-gallery .loading .elementor-widget-dimas-portfolio .gallery:before,.loading .elementor-widget-dimas-portfolio .comment-form:before,.loading .elementor-widget-dimas-portfolio .elementor-element .gallery:before,.loading .elementor-widget-dimas-portfolio .entry-gallery .gallery:before,.loading .elementor-widget-dimas-portfolio .row:before,.loading .elementor-widget-dimas-portfolio .single-portfolio-summary .single-portfolio-summary-inner:before,.loading .elementor-widget-dimas-portfolio .single-product div.type-product .product-inner:before,.loading .elementor-widget-dimas-portfolio .single .gallery:before,.loading .elementor-widget-dimas-portfolio .site-footer .widget-area:before,.loading .elementor-widget-dimas-portfolio .widget .gallery:before,.loading .elementor-widget-dimas-portfolio .woocommerce-account .woocommerce .u-columns.woocommerce-Addresses:before,.loading .elementor-widget-dimas-portfolio .woocommerce-account .woocommerce:before,.loading .elementor-widget-dimas-portfolio .woocommerce-address-fields__field-wrapper:before,.loading .elementor-widget-dimas-portfolio .woocommerce-Addresses:before,.loading .elementor-widget-dimas-portfolio .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper:before,.loading .elementor-widget-dimas-portfolio .woocommerce-cart .woocommerce:before,.loading .elementor-widget-dimas-portfolio .woocommerce-columns--addresses:before,.loading .elementor-widget-dimas-portfolio .woocommerce-MyAccount-content form[class^=woocommerce-]:before,.loading .elementor-widget-dimas-portfolio [class*=columns-] ul.products:before,.loading .elementor-widget-dimas-portfolio [data-elementor-columns]:before,.loading .elementor-widget-dimas-portfolio [data-dimas-columns]:before,.loading .elementor-widget-dimas-portfolio body.dimas-content-layout-2cl #content .wrap:before,.loading .elementor-widget-dimas-portfolio body.dimas-content-layout-2cr #content .wrap:before,.loading .elementor-widget-dimas-portfolio body.dimas-portfolio-layout-2cr .portfolio-wrap:before,.loading .elementor-widget-dimas-portfolio form.track_order:before,.single-portfolio-summary .loading .elementor-widget-dimas-portfolio .single-portfolio-summary-inner:before,.single-product div.type-product .loading .elementor-widget-dimas-portfolio .product-inner:before,.single .loading .elementor-widget-dimas-portfolio .gallery:before,.site-footer .loading .elementor-widget-dimas-portfolio .widget-area:before,.widget .loading .elementor-widget-dimas-portfolio .gallery:before,.woocommerce-account .loading .elementor-widget-dimas-portfolio .woocommerce:before,.woocommerce-account .woocommerce .loading .elementor-widget-dimas-portfolio .u-columns.woocommerce-Addresses:before,.woocommerce-billing-fields .loading .elementor-widget-dimas-portfolio .woocommerce-billing-fields__field-wrapper:before,.woocommerce-cart .loading .elementor-widget-dimas-portfolio .woocommerce:before,.woocommerce-MyAccount-content .loading .elementor-widget-dimas-portfolio form[class^=woocommerce-]:before,[class*=columns-] .loading .elementor-widget-dimas-portfolio ul.products:before,body.dimas-content-layout-2cl #content .loading .elementor-widget-dimas-portfolio .wrap:before,body.dimas-content-layout-2cr #content .loading .elementor-widget-dimas-portfolio .wrap:before,body.dimas-portfolio-layout-2cr .loading .elementor-widget-dimas-portfolio .portfolio-wrap:before {
   content: "";
   width: 50px;
   height: 50px;
@@ -3424,15 +3424,15 @@ ul.single-portfolio-summary-meta-list {
   .elementor-category-wrapper:hover img {
     transform: translate3d(0,-2px,0) scale3d(1.05,1.05,1.05); }
 
-.elementor-widget-opal-post-grid .owl-theme .column-item .post-inner {
+.elementor-widget-dimas-post-grid .owl-theme .column-item .post-inner {
   margin-bottom: 0; }
 
-.elementor-widget-opal-post-grid .column-item {
+.elementor-widget-dimas-post-grid .column-item {
   display: flex;
   -ms-flex-align: stretch;
   align-items: stretch; }
 
-.elementor-widget-opal-post-grid .post-inner {
+.elementor-widget-dimas-post-grid .post-inner {
   flex: 0 0 100%;
   max-width: 100%;
   position: relative;
@@ -3441,45 +3441,45 @@ ul.single-portfolio-summary-meta-list {
   background-color: transparent;
   transition: all .3s ease; }
 
-.elementor-widget-opal-post-grid .entry-header {
+.elementor-widget-dimas-post-grid .entry-header {
   margin-bottom: 0; }
 
-.elementor-widget-opal-post-grid .entry-title {
+.elementor-widget-dimas-post-grid .entry-title {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.4;
   margin-bottom: .6rem; }
-  .elementor-widget-opal-post-grid .entry-title a {
+  .elementor-widget-dimas-post-grid .entry-title a {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     overflow: hidden;
     min-height: 3em; }
 
-.elementor-widget-opal-post-grid .post-thumbnail {
+.elementor-widget-dimas-post-grid .post-thumbnail {
   margin-bottom: 1.2rem;
   padding-top: 66.66%;
   overflow: hidden;
   border-radius: 20px;
   width: 100%; }
-  .elementor-widget-opal-post-grid .post-thumbnail a {
+  .elementor-widget-dimas-post-grid .post-thumbnail a {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0; }
-    .elementor-widget-opal-post-grid .post-thumbnail a img {
+    .elementor-widget-dimas-post-grid .post-thumbnail a img {
       width: 100%;
       height: 100%;
       object-fit: cover; }
-  .elementor-widget-opal-post-grid .post-thumbnail img {
+  .elementor-widget-dimas-post-grid .post-thumbnail img {
     width: 100%;
     transform: scale(1);
     transition: all .3s ease; }
 
-.elementor-widget-opal-post-grid .entry-meta {
+.elementor-widget-dimas-post-grid .entry-meta {
   margin-bottom: 0; }
 
-.elementor-widget-opal-post-grid .entry-header-overlay {
+.elementor-widget-dimas-post-grid .entry-header-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -3487,10 +3487,10 @@ ul.single-portfolio-summary-meta-list {
   padding: 30px;
   z-index: 99; }
   @media (max-width: 575px) {
-    .elementor-widget-opal-post-grid .entry-header-overlay {
+    .elementor-widget-dimas-post-grid .entry-header-overlay {
       padding: 20px; } }
 
-.elementor-widget-opal-post-grid .entry-content {
+.elementor-widget-dimas-post-grid .entry-content {
   line-height: 24px;
   font-size: 14px; }
 
@@ -3574,7 +3574,7 @@ ul.elementor-price-table__features-list {
 .elementor-button-default .elementor-button {
   background: transparent; }
 
-.elementor-widget-opal-price-table .elementor-widget-container {
+.elementor-widget-dimas-price-table .elementor-widget-container {
   transition: all .3s ease; }
 
 .elementor-price-table__footer {
@@ -3610,16 +3610,16 @@ ul.elementor-price-table__features-list {
   font-weight: 700;
   margin-top: 5px; }
 
-.elementor-widget-opal-products-tabs .elementor-tabs-wrapper {
+.elementor-widget-dimas-products-tabs .elementor-tabs-wrapper {
   text-align: center;
   margin-bottom: 50px;
   display: flex;
   justify-content: center; }
   @media (max-width: 767px) {
-    .elementor-widget-opal-products-tabs .elementor-tabs-wrapper {
+    .elementor-widget-dimas-products-tabs .elementor-tabs-wrapper {
       display: none; } }
 
-.elementor-widget-opal-products-tabs .elementor-tab-title {
+.elementor-widget-dimas-products-tabs .elementor-tab-title {
   font-size: 15px;
   font-size: .9375rem;
   line-height: 1.2;
@@ -3630,27 +3630,27 @@ ul.elementor-price-table__features-list {
   color: #000;
   border: none;
   transition: all .3s ease; }
-  .elementor-widget-opal-products-tabs .elementor-tab-title:last-child {
+  .elementor-widget-dimas-products-tabs .elementor-tab-title:last-child {
     margin-right: 0; }
-  .elementor-widget-opal-products-tabs .elementor-tab-title:first-child {
+  .elementor-widget-dimas-products-tabs .elementor-tab-title:first-child {
     margin-left: 0; }
-  .elementor-widget-opal-products-tabs .elementor-tab-title.elementor-active,.elementor-widget-opal-products-tabs .elementor-tab-title:hover {
+  .elementor-widget-dimas-products-tabs .elementor-tab-title.elementor-active,.elementor-widget-dimas-products-tabs .elementor-tab-title:hover {
     color: #fff; }
 
-.elementor-widget-opal-products-tabs .elementor-tab-desktop-title {
+.elementor-widget-dimas-products-tabs .elementor-tab-desktop-title {
   border-radius: 20px;
   font-weight: 400;
   margin: 0 2px; }
 
-.elementor-widget-opal-products-tabs .elementor-tab-mobile-title {
+.elementor-widget-dimas-products-tabs .elementor-tab-mobile-title {
   border-radius: 5px 5px 0 0;
   margin: 0 0 5px;
   padding: 10px;
   color: #fff; }
 
-.elementor-widget-opal-products-tabs .elementor-tabs-content-wrapper {
+.elementor-widget-dimas-products-tabs .elementor-tabs-content-wrapper {
   border: none; }
-  .elementor-widget-opal-products-tabs .elementor-tabs-content-wrapper .elementor-tab-content {
+  .elementor-widget-dimas-products-tabs .elementor-tabs-content-wrapper .elementor-tab-content {
     padding: 0; }
 
 @media (max-width: 767px) {
@@ -3701,7 +3701,7 @@ ul.elementor-price-table__features-list {
     font-size: .75rem;
     display: block; }
 
-.opal-product-tooltipster .tooltipster-content {
+.dimas-product-tooltipster .tooltipster-content {
   color: #fff;
   padding-left: 10px;
   padding-right: 10px;
@@ -3709,7 +3709,7 @@ ul.elementor-price-table__features-list {
   font-size: 13px;
   font-size: .8125rem; }
 
-.opal-product-tooltipster.tooltipster-base.tooltipster-left .tooltipster-arrow {
+.dimas-product-tooltipster.tooltipster-base.tooltipster-left .tooltipster-arrow {
   transform: translateY(-5px); }
 
 .woocommerce-product-gallery__image .embed-container {
@@ -3970,44 +3970,44 @@ ul.elementor-price-table__features-list {
     opacity: 1;
     transform: none; } }
 
-.elementor-widget-opal-services .owl-item {
+.elementor-widget-dimas-services .owl-item {
   opacity: .2; }
-  .elementor-widget-opal-services .owl-item.active {
+  .elementor-widget-dimas-services .owl-item.active {
     opacity: 1; }
 
-.elementor-widget-opal-services .owl-carousel .elementor-service-item,.elementor-widget-opal-services .woocommerce-product-carousel ul.products .elementor-service-item,.woocommerce-product-carousel .elementor-widget-opal-services ul.products .elementor-service-item {
+.elementor-widget-dimas-services .owl-carousel .elementor-service-item,.elementor-widget-dimas-services .woocommerce-product-carousel ul.products .elementor-service-item,.woocommerce-product-carousel .elementor-widget-dimas-services ul.products .elementor-service-item {
   margin-bottom: 0; }
 
-.elementor-widget-opal-services .elementor-service-item {
+.elementor-widget-dimas-services .elementor-service-item {
   margin-bottom: 30px; }
 
-.elementor-widget-opal-services .elementor-item-box {
+.elementor-widget-dimas-services .elementor-item-box {
   transition: all .4s ease;
   margin-bottom: 0; }
 
-.elementor-widget-opal-services .elementor-icon {
+.elementor-widget-dimas-services .elementor-icon {
   margin-bottom: 10px; }
 
-.elementor-widget-opal-services .elementor-service-name {
+.elementor-widget-dimas-services .elementor-service-name {
   font-size: 20px;
   font-size: 1.25rem;
   padding-top: 0;
   margin-bottom: 1rem; }
 
-.elementor-widget-opal-services .elementor-service-image {
+.elementor-widget-dimas-services .elementor-service-image {
   padding: 0;
   margin-bottom: 0;
   overflow: hidden; }
   @media (max-width: 767px) {
-    .elementor-widget-opal-services .elementor-service-image {
+    .elementor-widget-dimas-services .elementor-service-image {
       padding: 0; } }
-  .elementor-widget-opal-services .elementor-service-image img {
+  .elementor-widget-dimas-services .elementor-service-image img {
     display: block;
     width: 100%; }
 
-.elementor-widget-opal-services .elementor-service-image,.elementor-widget-opal-services .elementor-service-item-inner {
+.elementor-widget-dimas-services .elementor-service-image,.elementor-widget-dimas-services .elementor-service-item-inner {
   position: relative; }
-  .elementor-widget-opal-services .elementor-service-image:after {
+  .elementor-widget-dimas-services .elementor-service-image:after {
     height: 250px;
     max-height: 100%;
     width: 100%;
@@ -4016,10 +4016,10 @@ ul.elementor-price-table__features-list {
     background: linear-gradient(0deg,#14225c,hsla(0,0%,100%,0));
     position: absolute; }
 
-.elementor-widget-opal-services.elementor-service-layout-1 .elementor-item-box {
+.elementor-widget-dimas-services.elementor-service-layout-1 .elementor-item-box {
   padding: 40px; }
 
-.elementor-widget-opal-services.elementor-service-layout-2 .elementor-item-box {
+.elementor-widget-dimas-services.elementor-service-layout-2 .elementor-item-box {
   position: absolute;
   width: 100%;
   margin-bottom: 0;
@@ -4030,7 +4030,7 @@ ul.elementor-price-table__features-list {
   visibility: hidden;
   transform: translateY(50%); }
 
-.elementor-widget-opal-services.elementor-service-layout-2 .overlay {
+.elementor-widget-dimas-services.elementor-service-layout-2 .overlay {
   position: absolute;
   margin-bottom: 0;
   bottom: 0;
@@ -4039,22 +4039,22 @@ ul.elementor-price-table__features-list {
   box-shadow: none;
   background: transparent;
   transition: all .3s ease; }
-  .elementor-widget-opal-services.elementor-service-layout-2 .overlay .elementor-service-box-content {
+  .elementor-widget-dimas-services.elementor-service-layout-2 .overlay .elementor-service-box-content {
     background: transparent; }
-  .elementor-widget-opal-services.elementor-service-layout-2 .overlay .elementor-service-name {
+  .elementor-widget-dimas-services.elementor-service-layout-2 .overlay .elementor-service-name {
     margin-bottom: 0 !important; }
 
-.elementor-widget-opal-services.elementor-service-layout-2 .elementor-service-box-content {
+.elementor-widget-dimas-services.elementor-service-layout-2 .elementor-service-box-content {
   margin-bottom: 0;
   box-shadow: none; }
 
-.elementor-widget-opal-services.elementor-service-layout-2 .elementor-service-item-inner {
+.elementor-widget-dimas-services.elementor-service-layout-2 .elementor-service-item-inner {
   overflow: hidden; }
-  .elementor-widget-opal-services.elementor-service-layout-2 .elementor-service-item-inner:hover .elementor-item-box {
+  .elementor-widget-dimas-services.elementor-service-layout-2 .elementor-service-item-inner:hover .elementor-item-box {
     transform: translateY(0);
     opacity: 1;
     visibility: visible; }
-  .elementor-widget-opal-services.elementor-service-layout-2 .elementor-service-item-inner:hover .overlay {
+  .elementor-widget-dimas-services.elementor-service-layout-2 .elementor-service-item-inner:hover .overlay {
     opacity: 0;
     visibility: hidden; }
 
@@ -4067,7 +4067,7 @@ ul.elementor-price-table__features-list {
 .elementor-service-text-align-right .elementor-item-box {
   text-align: right; }
 
-.elementor-widget-opal-site-logo.elementor-widget-image .elementor-image>a img[src$=".svg"],.elementor-widget-opal-site-logo.elementor-widget-image .elementor-image>img[src$=".svg"],.elementor-widget-opal-site-logo.elementor-widget-image .elementor-image figure>a img[src$=".svg"] {
+.elementor-widget-dimas-site-logo.elementor-widget-image .elementor-image>a img[src$=".svg"],.elementor-widget-dimas-site-logo.elementor-widget-image .elementor-image>img[src$=".svg"],.elementor-widget-dimas-site-logo.elementor-widget-image .elementor-image figure>a img[src$=".svg"] {
   width: 95px; }
 
 .elementor-widget-social-icons.elementor-social-custom .elementor-social-icon:hover {
@@ -4481,30 +4481,30 @@ ul.elementor-price-table__features-list {
 .elementor-widget-spacer .elementor-widget-container {
   height: 100%; }
 
-.elementor-widget-wrap:hover [class*=opal-svg-],.elementor-widget-wrap:hover [class*=opal-svg-]>* {
+.elementor-widget-wrap:hover [class*=dimas-svg-],.elementor-widget-wrap:hover [class*=dimas-svg-]>* {
   transform-origin: center center;
   transform-box: fill-box; }
 
-.elementor-widget-wrap:hover .opal-svg-spinner {
+.elementor-widget-wrap:hover .dimas-svg-spinner {
   animation: fa-spin 2s infinite linear; }
 
-.elementor-widget-wrap:hover .opal-svg-moveup {
+.elementor-widget-wrap:hover .dimas-svg-moveup {
   animation: i .3s;
   -moz-animation: i .3s;
   -webkit-animation: i .3s; }
 
-.elementor-widget-opal-tabs.elementor-tabs-view-horizontal .elementor-tab-title .elementor-tab-title {
+.elementor-widget-dimas-tabs.elementor-tabs-view-horizontal .elementor-tab-title .elementor-tab-title {
   margin-right: 5px;
   display: inline-flex;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px; }
-  .elementor-widget-opal-tabs.elementor-tabs-view-horizontal .elementor-tab-title .elementor-tab-title:not(:last-child) {
+  .elementor-widget-dimas-tabs.elementor-tabs-view-horizontal .elementor-tab-title .elementor-tab-title:not(:last-child) {
     margin-right: 5px; }
 
-.elementor-widget-opal-tabs .elementor-tab-mobile-title {
+.elementor-widget-dimas-tabs .elementor-tab-mobile-title {
   border-radius: 8px 8px 0 0; }
 
-.elementor-widget-opal-tabs.list-title .elementor-tab-title span:before {
+.elementor-widget-dimas-tabs.list-title .elementor-tab-title span:before {
   content: "";
   width: 10px;
   height: 10px;
@@ -4606,21 +4606,21 @@ ul.elementor-price-table__features-list {
     visibility: visible;
     overflow: visible; }
 
-.elementor-widget-opal-team-box .elementor-widget-container {
+.elementor-widget-dimas-team-box .elementor-widget-container {
   background-color: #fff; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-wrapper {
+.elementor-widget-dimas-testimonials .elementor-testimonial-wrapper {
   overflow: unset; }
 
-.elementor-widget-opal-testimonials .owl-dots {
+.elementor-widget-dimas-testimonials .owl-dots {
   padding: 0 15px; }
 
 @media (max-width: 767px) {
-  .elementor-widget-opal-testimonials .owl-nav {
+  .elementor-widget-dimas-testimonials .owl-nav {
     display: none;
     visibility: hidden; } }
 
-.elementor-widget-opal-testimonials .item-box {
+.elementor-widget-dimas-testimonials .item-box {
   display: flex;
   flex: 1 0 auto;
   margin-right: auto;
@@ -4629,12 +4629,12 @@ ul.elementor-price-table__features-list {
   max-width: 100%;
   transition: all .3s ease; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-content:before {
+.elementor-widget-dimas-testimonials .elementor-testimonial-content:before {
   content: "";
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 24px;
-  font-family: opal-icon;
+  font-family: dimas-icon;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-style: normal;
@@ -4645,36 +4645,36 @@ ul.elementor-price-table__features-list {
   display: block;
   margin-bottom: 25px; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-image {
+.elementor-widget-dimas-testimonials .elementor-testimonial-image {
   line-height: 0;
   margin-bottom: 1rem;
   position: relative; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-item {
+.elementor-widget-dimas-testimonials .elementor-testimonial-item {
   display: flex;
   flex-direction: column; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-meta .elementor-testimonial-image img {
+.elementor-widget-dimas-testimonials .elementor-testimonial-meta .elementor-testimonial-image img {
   border-radius: 50%;
   height: 80px;
   width: 80px;
   box-shadow: none;
   object-fit: cover; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-driver {
+.elementor-widget-dimas-testimonials .elementor-testimonial-driver {
   display: none; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-image-position-top .elementor-testimonial-details>*,.elementor-widget-opal-testimonials .elementor-testimonial-image-position-top .elementor-testimonial-driver {
+.elementor-widget-dimas-testimonials .elementor-testimonial-image-position-top .elementor-testimonial-details>*,.elementor-widget-dimas-testimonials .elementor-testimonial-image-position-top .elementor-testimonial-driver {
   display: inline-flex; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-title {
+.elementor-widget-dimas-testimonials .elementor-testimonial-title {
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 12px;
   transition: all .2s ease; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-content {
+.elementor-widget-dimas-testimonials .elementor-testimonial-content {
   font-size: 20px;
   font-size: 1.25rem;
   font-style: italic;
@@ -4684,16 +4684,16 @@ ul.elementor-price-table__features-list {
   transition: all .2s ease;
   flex-grow: 1; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-rating {
+.elementor-widget-dimas-testimonials .elementor-testimonial-rating {
   font-size: 16px;
   font-size: 1rem;
   color: #ffd21c;
   margin-bottom: 30px;
   margin-top: auto; }
-  .elementor-widget-opal-testimonials .elementor-testimonial-rating i {
+  .elementor-widget-dimas-testimonials .elementor-testimonial-rating i {
     margin: 0 1px; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-name {
+.elementor-widget-dimas-testimonials .elementor-testimonial-name {
   font-size: 14px;
   font-size: .875rem;
   margin-bottom: 8px;
@@ -4701,21 +4701,21 @@ ul.elementor-price-table__features-list {
   letter-spacing: .07em;
   transition: all .2s ease; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-job {
+.elementor-widget-dimas-testimonials .elementor-testimonial-job {
   font-size: 14px;
   font-size: .875rem;
   letter-spacing: .03em;
   display: block;
   transition: all .2s ease; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-quote {
+.elementor-widget-dimas-testimonials .elementor-testimonial-quote {
   font-size: 1rem;
   line-height: 1;
   margin-bottom: 25px;
   transition: all .3s ease;
   position: relative; }
 
-.elementor-widget-opal-testimonials .elementor-testimonial-rating {
+.elementor-widget-dimas-testimonials .elementor-testimonial-rating {
   overflow: hidden;
   display: inline-block;
   position: relative;
@@ -4727,7 +4727,7 @@ ul.elementor-price-table__features-list {
   font-weight: 400;
   font-size: 13px;
   font-size: .8125rem; }
-  .elementor-widget-opal-testimonials .elementor-testimonial-rating:before {
+  .elementor-widget-dimas-testimonials .elementor-testimonial-rating:before {
     content: "\f005 \f005 \f005 \f005 \f005";
     opacity: .25;
     float: left;
@@ -4735,14 +4735,14 @@ ul.elementor-price-table__features-list {
     left: 0;
     position: absolute;
     letter-spacing: .1em; }
-  .elementor-widget-opal-testimonials .elementor-testimonial-rating span {
+  .elementor-widget-dimas-testimonials .elementor-testimonial-rating span {
     overflow: hidden;
     float: left;
     top: 0;
     left: 0;
     position: absolute;
     padding-top: 1.5em; }
-    .elementor-widget-opal-testimonials .elementor-testimonial-rating span:before {
+    .elementor-widget-dimas-testimonials .elementor-testimonial-rating span:before {
       content: "\f005 \f005 \f005 \f005 \f005";
       top: 0;
       position: absolute;
@@ -4750,25 +4750,25 @@ ul.elementor-price-table__features-list {
       color: #fbb614;
       letter-spacing: .1em; }
 
-.elementor-widget-opal-testimonials.elementor-testimonial-text-align-left .elementor-testimonial-wrapper,.elementor-widget-opal-testimonials.elementor-testimonial-text-align-left .owl-dots {
+.elementor-widget-dimas-testimonials.elementor-testimonial-text-align-left .elementor-testimonial-wrapper,.elementor-widget-dimas-testimonials.elementor-testimonial-text-align-left .owl-dots {
   text-align: left; }
 
-.elementor-widget-opal-testimonials.elementor-testimonial-text-align-center .elementor-testimonial-wrapper {
+.elementor-widget-dimas-testimonials.elementor-testimonial-text-align-center .elementor-testimonial-wrapper {
   text-align: center; }
 
-.elementor-widget-opal-testimonials.elementor-testimonial-text-align-right .elementor-testimonial-wrapper,.elementor-widget-opal-testimonials.elementor-testimonial-text-align-right .owl-dots {
+.elementor-widget-dimas-testimonials.elementor-testimonial-text-align-right .elementor-testimonial-wrapper,.elementor-widget-dimas-testimonials.elementor-testimonial-text-align-right .owl-dots {
   text-align: right; }
 
-.elementor-widget-opal-testimonials.content-box-move-up .item-box:hover .elementor-testimonial-content-box {
+.elementor-widget-dimas-testimonials.content-box-move-up .item-box:hover .elementor-testimonial-content-box {
   transform: translateY(-10px); }
 
-.elementor-widget-opal-testimonials.content-box-move-down .item-box:hover .elementor-testimonial-content-box {
+.elementor-widget-dimas-testimonials.content-box-move-down .item-box:hover .elementor-testimonial-content-box {
   transform: translateY(10px); }
 
-.elementor-widget-opal-testimonials.wrapper-move-up .item-box:hover {
+.elementor-widget-dimas-testimonials.wrapper-move-up .item-box:hover {
   transform: translateY(-5px); }
 
-.elementor-widget-opal-testimonials.wrapper-move-down .item-box:hover {
+.elementor-widget-dimas-testimonials.wrapper-move-down .item-box:hover {
   transform: translateY(5px); }
 
 .elementor-widget-opal_text_carousel .owl-carousel .elementor-heading-title,.elementor-widget-opal_text_carousel .woocommerce-product-carousel ul.products .elementor-heading-title,.woocommerce-product-carousel .elementor-widget-opal_text_carousel ul.products .elementor-heading-title {
@@ -4791,7 +4791,7 @@ ul.elementor-price-table__features-list {
     flex-direction: column;
     justify-content: center; } }
 
-.elementor-element .elementor-text_carousel-wrapper .gallery,.elementor-text_carousel-wrapper .comment-form,.elementor-text_carousel-wrapper .elementor-element .gallery,.elementor-text_carousel-wrapper .entry-gallery .gallery,.elementor-text_carousel-wrapper .row,.elementor-text_carousel-wrapper .single-portfolio-summary .single-portfolio-summary-inner,.elementor-text_carousel-wrapper .single-product div.type-product .product-inner,.elementor-text_carousel-wrapper .single .gallery,.elementor-text_carousel-wrapper .site-footer .widget-area,.elementor-text_carousel-wrapper .widget .gallery,.elementor-text_carousel-wrapper .woocommerce-account .woocommerce,.elementor-text_carousel-wrapper .woocommerce-account .woocommerce .u-columns.woocommerce-Addresses,.elementor-text_carousel-wrapper .woocommerce-address-fields__field-wrapper,.elementor-text_carousel-wrapper .woocommerce-Addresses,.elementor-text_carousel-wrapper .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper,.elementor-text_carousel-wrapper .woocommerce-cart .woocommerce,.elementor-text_carousel-wrapper .woocommerce-columns--addresses,.elementor-text_carousel-wrapper .woocommerce-MyAccount-content form[class^=woocommerce-],.elementor-text_carousel-wrapper [class*=columns-] ul.products,.elementor-text_carousel-wrapper [data-elementor-columns],.elementor-text_carousel-wrapper [data-opal-columns],.elementor-text_carousel-wrapper body.opal-content-layout-2cl #content .wrap,.elementor-text_carousel-wrapper body.opal-content-layout-2cr #content .wrap,.elementor-text_carousel-wrapper body.opal-portfolio-layout-2cr .portfolio-wrap,.elementor-text_carousel-wrapper form.track_order,.entry-gallery .elementor-text_carousel-wrapper .gallery,.single-portfolio-summary .elementor-text_carousel-wrapper .single-portfolio-summary-inner,.single-product div.type-product .elementor-text_carousel-wrapper .product-inner,.single .elementor-text_carousel-wrapper .gallery,.site-footer .elementor-text_carousel-wrapper .widget-area,.widget .elementor-text_carousel-wrapper .gallery,.woocommerce-account .elementor-text_carousel-wrapper .woocommerce,.woocommerce-account .woocommerce .elementor-text_carousel-wrapper .u-columns.woocommerce-Addresses,.woocommerce-billing-fields .elementor-text_carousel-wrapper .woocommerce-billing-fields__field-wrapper,.woocommerce-cart .elementor-text_carousel-wrapper .woocommerce,.woocommerce-MyAccount-content .elementor-text_carousel-wrapper form[class^=woocommerce-],[class*=columns-] .elementor-text_carousel-wrapper ul.products,body.opal-content-layout-2cl #content .elementor-text_carousel-wrapper .wrap,body.opal-content-layout-2cr #content .elementor-text_carousel-wrapper .wrap,body.opal-portfolio-layout-2cr .elementor-text_carousel-wrapper .portfolio-wrap {
+.elementor-element .elementor-text_carousel-wrapper .gallery,.elementor-text_carousel-wrapper .comment-form,.elementor-text_carousel-wrapper .elementor-element .gallery,.elementor-text_carousel-wrapper .entry-gallery .gallery,.elementor-text_carousel-wrapper .row,.elementor-text_carousel-wrapper .single-portfolio-summary .single-portfolio-summary-inner,.elementor-text_carousel-wrapper .single-product div.type-product .product-inner,.elementor-text_carousel-wrapper .single .gallery,.elementor-text_carousel-wrapper .site-footer .widget-area,.elementor-text_carousel-wrapper .widget .gallery,.elementor-text_carousel-wrapper .woocommerce-account .woocommerce,.elementor-text_carousel-wrapper .woocommerce-account .woocommerce .u-columns.woocommerce-Addresses,.elementor-text_carousel-wrapper .woocommerce-address-fields__field-wrapper,.elementor-text_carousel-wrapper .woocommerce-Addresses,.elementor-text_carousel-wrapper .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper,.elementor-text_carousel-wrapper .woocommerce-cart .woocommerce,.elementor-text_carousel-wrapper .woocommerce-columns--addresses,.elementor-text_carousel-wrapper .woocommerce-MyAccount-content form[class^=woocommerce-],.elementor-text_carousel-wrapper [class*=columns-] ul.products,.elementor-text_carousel-wrapper [data-elementor-columns],.elementor-text_carousel-wrapper [data-dimas-columns],.elementor-text_carousel-wrapper body.dimas-content-layout-2cl #content .wrap,.elementor-text_carousel-wrapper body.dimas-content-layout-2cr #content .wrap,.elementor-text_carousel-wrapper body.dimas-portfolio-layout-2cr .portfolio-wrap,.elementor-text_carousel-wrapper form.track_order,.entry-gallery .elementor-text_carousel-wrapper .gallery,.single-portfolio-summary .elementor-text_carousel-wrapper .single-portfolio-summary-inner,.single-product div.type-product .elementor-text_carousel-wrapper .product-inner,.single .elementor-text_carousel-wrapper .gallery,.site-footer .elementor-text_carousel-wrapper .widget-area,.widget .elementor-text_carousel-wrapper .gallery,.woocommerce-account .elementor-text_carousel-wrapper .woocommerce,.woocommerce-account .woocommerce .elementor-text_carousel-wrapper .u-columns.woocommerce-Addresses,.woocommerce-billing-fields .elementor-text_carousel-wrapper .woocommerce-billing-fields__field-wrapper,.woocommerce-cart .elementor-text_carousel-wrapper .woocommerce,.woocommerce-MyAccount-content .elementor-text_carousel-wrapper form[class^=woocommerce-],[class*=columns-] .elementor-text_carousel-wrapper ul.products,body.dimas-content-layout-2cl #content .elementor-text_carousel-wrapper .wrap,body.dimas-content-layout-2cr #content .elementor-text_carousel-wrapper .wrap,body.dimas-portfolio-layout-2cr .elementor-text_carousel-wrapper .portfolio-wrap {
   margin: 0; }
 
 @media (max-width: 1440px) {
@@ -4893,18 +4893,18 @@ ul.elementor-price-table__features-list {
     .timeline-item .content p {
       margin-bottom: 1rem; }
 
-.opal-timeline-wrapper {
+.dimas-timeline-wrapper {
   overflow: hidden;
   position: relative; }
 
-.opal-timeline-line {
+.dimas-timeline-line {
   position: absolute;
   border-left: 4px dotted #e8e8e9;
   left: 6px;
   top: 0;
   bottom: 0; }
   @media (min-width: 768px) {
-    .opal-timeline-line {
+    .dimas-timeline-line {
       transform: translateX(50%);
       right: 50%;
       left: unset; } }

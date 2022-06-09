@@ -2,7 +2,7 @@
 /**
  * Preloader functions and definitions.
  *
- * @package Dimas
+ * @package Dimas.
  */
 
 namespace Dimas;
@@ -15,9 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Preloader initial
- *
  */
-class Preloader {
+class Dimas_Preloader {
 	/**
 	 * Instance
 	 *

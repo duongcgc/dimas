@@ -35,7 +35,7 @@ class Dimas_CMB2_Field_Header_Layout {
 				$option .= '<option value="' . esc_attr( $header->ID ) . '"' . selected( $field_escaped_value, $header->ID, false ) . '>' . esc_html( $header->post_title ) . '</option>';
 			};
 		}
-		echo '<div class="cmb2-footer-header opal-control-image-select opal-control-footer" data-id="' . $field->_id() . '">
+		echo '<div class="cmb2-footer-header dimas-control-image-select dimas-control-footer" data-id="' . $field->_id() . '">
                 <div class="select-control footer-select">
                     <select>' . $option . '</select>
                 </div>
