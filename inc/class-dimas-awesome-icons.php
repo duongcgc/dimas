@@ -8,8 +8,6 @@
  * @since Dimas 1.0
  */
 
-namespace Dimas;
-
 /**
  * This class is in charge of displaying SVG icons across the site.
  *
@@ -22,7 +20,7 @@ namespace Dimas;
  *
  * @since Dimas 1.0
  */
-class Awesome_Icons {
+class Dimas_Awesome_Icons {
 
 	/**
 	 * User Interface icons – svg sources.

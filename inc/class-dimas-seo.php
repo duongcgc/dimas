@@ -3,12 +3,10 @@
  * SEO OnPage functions
  */
 
-namespace Dimas;
-
 /**
  * SEO OnPage class
  */
-class SEO {
+class Dimas_SEO {
 	/**
 	 * The context data
 	 *

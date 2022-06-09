@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Thumbnail initial
  */
-class Thumbnail {
+class Dimas_Thumbnail {
 	/**
 	 * Instance
 	 *

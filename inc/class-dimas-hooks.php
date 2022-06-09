@@ -6,8 +6,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -15,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Hooks initial
  */
-class Hooks {
+class Dimas_Hooks {
 	/**
 	 * Instance
 	 *

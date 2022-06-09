@@ -8,8 +8,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -18,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Auto_Load init
  */
-class Auto_Load {
+class Dimas_AutoLoad {
 	/**
 	 * Instance
 	 *

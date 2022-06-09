@@ -5,8 +5,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -15,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Layout initial
  *
  */
-class Layout {
+class Dimas_Layout {
 	/**
 	 * Instance
 	 *

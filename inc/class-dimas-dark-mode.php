@@ -7,12 +7,10 @@
  * @since Dimas 1.0
  */
 
- namespace Dimas;
-
 /**
  * This class is in charge of Dark Mode.
  */
-class Dark_Mode {
+class Dimas_Dark_Mode {
 
 	/**
 	 * Instantiate the object.

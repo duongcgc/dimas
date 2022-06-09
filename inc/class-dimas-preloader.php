@@ -5,8 +5,6 @@
  * @package Dimas.
  */
 
-namespace Dimas;
-
 use WeDevs\WeMail\Rest\Help\Help;
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -7,8 +7,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 use WeDevs\WeMail\Rest\Help\Help;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Page Header Init
  *
  */
-class Page_Header {
+class Dimas_Page_Header {
 	/**
 	 * Instance
 	 *

@@ -7,8 +7,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -17,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * PageNav
  *
  */
-class PageNav {
+class Dimas_Page_Nav {
 	/**
 	 * Instance
 	 *

@@ -6,8 +6,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -15,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Hooks initial
  */
-class Temp_Tags {
+class Dimas_Template_Tag {
 	/**
 	 * Instance
 	 *
@@ -281,6 +279,45 @@ class Temp_Tags {
 				),
 			)
 		);
+	}
+
+	/**
+	 * Display Vertical Navigation
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	function dimas_vertical_navigation() {
+
+		if ( isset( get_nav_menu_locations()['vertical'] ) ) {
+
+			$menu_location  = 'vertical';
+			$menu_locations = get_nav_menu_locations();
+			$menu_object    = ( isset( $menu_locations[ $menu_location ] ) ? wp_get_nav_menu_object( $menu_locations[ $menu_location ] ) : null );
+			$menu_name      = ( isset( $menu_object->name ) ? $menu_object->name : esc_html__( 'Vertical Menu', 'beautifo-core' ) );
+
+			?>
+			<nav class="vertical-navigation" aria-label="<?php esc_html_e( 'Vertical Navigation', 'beautifo-core' ); ?>">
+				<div class="vertical-navigation-header">
+					<i class="fa fa-bars"></i>
+					<span class="vertical-navigation-title"><?php echo esc_html( $menu_name ); ?></span>
+				</div>
+				<?php
+
+				$args = apply_filters(
+					'opal_nav_menu_args',
+					array(
+						'fallback_cb'     => '__return_empty_string',
+						'theme_location'  => 'vertical',
+						'container_class' => 'vertical-menu',
+					)
+				);
+
+				wp_nav_menu( $args );
+				?>
+			</nav>
+			<?php
+		}
 	}
 
 }

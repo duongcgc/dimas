@@ -12,8 +12,6 @@
  * @since Dimas 1.0
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -21,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Thumbnail initial
  */
-class Back_Compatible {
+class Dimas_Back_Compat {
 	/**
 	 * Instance
 	 *

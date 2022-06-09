@@ -5,17 +5,14 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
 /**
  * Block_Builder initial
- *
  */
-class Block_Builder {
+class Dimas_Block_Builder {
 	/**
 	 * Instance
 	 *
@@ -82,11 +79,11 @@ class Block_Builder {
 	 * @return string
 	 */
 	public static function classes( $classes ) {
-		$classes .= ' site-footer-' . Helper::get_option('footer_background_scheme');
+		$classes .= ' site-footer-' . Helper::get_option( 'footer_background_scheme' );
 
-		$footer_border = intval( Helper::get_option('footer_section_border_top'));
+		$footer_border        = intval( Helper::get_option( 'footer_section_border_top' ) );
 		$footer_border_custom = get_post_meta( \Dimas\Helper::get_post_ID(), 'rz_footer_section_border_top', true );
-		if( is_page() && $footer_border_custom != 'default' ) {
+		if ( is_page() && $footer_border_custom != 'default' ) {
 			$footer_border = $footer_border_custom;
 		}
 
@@ -94,7 +91,7 @@ class Block_Builder {
 			$classes .= ' has-divider';
 		}
 
-		echo apply_filters( 'dimas_site_footer_class', $classes);
+		echo apply_filters( 'dimas_site_footer_class', $classes );
 	}
 
 	/**
@@ -105,14 +102,17 @@ class Block_Builder {
 	 * @return array
 	 */
 	public function footer_items_option() {
-		return apply_filters( 'dimas_footer_items_option', array(
-			'copyright' => esc_html__( 'Copyright', 'dimas' ),
-			'menu'      => esc_html__( 'Menu', 'dimas' ),
-			'text'      => esc_html__( 'Custom text', 'dimas' ),
-			'payment'   => esc_html__( 'Payments', 'dimas' ),
-			'social'    => esc_html__( 'Socials', 'dimas' ),
-			'logo'      => esc_html__( 'Logo', 'dimas' ),
-		) );
+		return apply_filters(
+			'dimas_footer_items_option',
+			array(
+				'copyright' => esc_html__( 'Copyright', 'dimas' ),
+				'menu'      => esc_html__( 'Menu', 'dimas' ),
+				'text'      => esc_html__( 'Custom text', 'dimas' ),
+				'payment'   => esc_html__( 'Payments', 'dimas' ),
+				'social'    => esc_html__( 'Socials', 'dimas' ),
+				'logo'      => esc_html__( 'Logo', 'dimas' ),
+			)
+		);
 	}
 
 	/**
@@ -130,15 +130,17 @@ class Block_Builder {
 
 			case 'menu':
 				$menu_slug = Helper::get_option( 'footer_menu' );
-				if( ! empty($menu_slug) ) {
-					wp_nav_menu( array(
-						'theme_location' => '__no_such_location',
-						'menu'           => Helper::get_option( 'footer_menu' ),
-						'container'      => 'nav',
-						'menu_id'        => 'footer-menu',
-						'menu_class'     => 'footer-menu nav-menu menu',
-						'depth'          => 1,
-					) );
+				if ( ! empty( $menu_slug ) ) {
+					wp_nav_menu(
+						array(
+							'theme_location' => '__no_such_location',
+							'menu'           => Helper::get_option( 'footer_menu' ),
+							'container'      => 'nav',
+							'menu_id'        => 'footer-menu',
+							'menu_class'     => 'footer-menu nav-menu menu',
+							'depth'          => 1,
+						)
+					);
 				}
 
 				break;
@@ -180,11 +182,11 @@ class Block_Builder {
 		$style = $class = '';
 
 		if ( 'svg' == $logo_type ) :
-			$logo =  Helper::get_option( 'footer_logo_svg' );
+			$logo = Helper::get_option( 'footer_logo_svg' );
 
-        elseif ( 'text' == $logo_type ) :
-			$logo  = Helper::get_option( 'footer_logo_text' );
-		else:
+		elseif ( 'text' == $logo_type ) :
+			$logo = Helper::get_option( 'footer_logo_text' );
+		else :
 			$logo = Helper::get_option( 'footer_logo' );
 
 			if ( ! $logo ) {
@@ -193,22 +195,22 @@ class Block_Builder {
 
 			$dimension = Helper::get_option( 'footer_logo_dimension' );
 			$style     = ! empty( $dimension['width'] ) ? ' width="' . esc_attr( $dimension['width'] ) . '"' : '';
-			$style     .= ! empty( $dimension['width'] ) ? ' height="' . esc_attr( $dimension['height'] ) . '"' : '';
+			$style    .= ! empty( $dimension['width'] ) ? ' height="' . esc_attr( $dimension['height'] ) . '"' : '';
 		endif;
 
 		?>
-        <div class="footer-branding">
-            <a href="<?php echo esc_url( home_url( '/' ) ) ?>" class="logo <?php echo esc_attr( $class ) ?>">
+		<div class="footer-branding">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo <?php echo esc_attr( $class ); ?>">
 				<?php if ( 'svg' == $logo_type ) : ?>
 					<?php echo \Dimas\Icon::sanitize_svg( $logo ); ?>
 				<?php elseif ( 'text' == $logo_type ) : ?>
 					<?php echo esc_html( $logo ); ?>
 				<?php else : ?>
-                    <img src="<?php echo esc_url( $logo ); ?>"
-                         alt="<?php echo get_bloginfo( 'name' ); ?>" <?php echo wp_kses_post( $style ) ?>>
+					<img src="<?php echo esc_url( $logo ); ?>"
+						 alt="<?php echo get_bloginfo( 'name' ); ?>" <?php echo wp_kses_post( $style ); ?>>
 				<?php endif; ?>
-            </a>
-        </div>
+			</a>
+		</div>
 
 		<?php
 	}
@@ -245,7 +247,6 @@ class Block_Builder {
 						$output[] = sprintf( '<li>%s</li>', $img );
 					}
 				}
-
 			}
 			$output[] = '</ul>';
 		}

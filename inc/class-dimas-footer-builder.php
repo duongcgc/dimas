@@ -5,9 +5,7 @@
  * => Drag and Drop Footer Builder with Elementor.
  */
 
-namespace Dimas;
-
-class Footer_Builder {
+class Dimas_Footer_Builder {
 
 	public static $instance;
 

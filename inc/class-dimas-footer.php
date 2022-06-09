@@ -5,8 +5,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -17,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  * @return mixed
  */
-class Footer {
+class Dimas_Footer {
 	/**
 	 * Instance
 	 *

@@ -7,8 +7,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -17,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Breadcrumbs
  *
  */
-class Breadcrumbs {
+class Dimas_Breadcrumbs {
 	/**
 	 * Instance
 	 *

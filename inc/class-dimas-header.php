@@ -5,16 +5,14 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
 /**
  * Header initial
- */
-class Header {
+ **/
+class Dimas_Header {
 	/**
 	 * Instance
 	 *

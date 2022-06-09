@@ -1,6 +1,7 @@
 <?php
 /**
- * Dimas init
+ * Dimas Them initial.
+ * => Include and Instance main group classes Base, Core, Module and Addons.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -49,6 +50,7 @@ final class Dimas_Theme {
 	public function __construct() {
 		require_once get_template_directory() . '/inc/class-dimas-autoload.php';
 		require_once get_template_directory() . '/inc/libs/class-mobile_detect.php';
+		require_once get_template_directory() . '/inc/core/class-mobile.php';
 		if ( is_admin() ) {
 			require_once get_template_directory() . '/inc/libs/class-tgm-plugin-activation.php';
 		}
@@ -65,7 +67,7 @@ final class Dimas_Theme {
 		// Before init action.
 		do_action( 'before_dimas_init' );
 
-		// Setup
+		// Setup.
 		$this->get( 'autoload' );
 		$this->get( 'setup' );
 		$this->get( 'widgets' );
@@ -76,36 +78,36 @@ final class Dimas_Theme {
 
 		$this->get( 'maintenance' );
 
-		// Header
+		// Header.
 		$this->get( 'preloader' );
 		$this->get( 'topbar' );
 		$this->get( 'header' );
 		$this->get( 'campaigns' );
 
-		// Page Header
+		// Page Header.
 		$this->get( 'page_header' );
 		$this->get( 'breadcrumbs' );
 
-		// Layout & Style
+		// Layout & Style.
 		$this->get( 'layout' );
 		$this->get( 'dynamic_css' );
 
-		// Comments
+		// Comments.
 		$this->get( 'comments' );
 
-		//Footer
+		// Footer.
 		$this->get( 'footer' );
 
-		// Modules
+		// Modules.
 		$this->get( 'search_ajax' );
 		$this->get( 'newsletter' );
 
-		// Templates
+		// Templates.
 		$this->get( 'page' );
 
 		$this->get( 'blog' );
 
-		// Admin
+		// Admin.
 		$this->get( 'admin' );
 
 		// Init action.
@@ -115,6 +117,8 @@ final class Dimas_Theme {
 
 	/**
 	 * Get Dimas Class.
+	 *
+	 * @param mixed $class        Get class name.
 	 *
 	 * @since 1.0.0
 	 *
@@ -146,9 +150,9 @@ final class Dimas_Theme {
 				}
 				break;
 
-			default :
+			default:
 				$class = ucwords( $class );
-				$class = "\Dimas\\" . $class;
+				$class = '\Dimas\\' . $class;
 				if ( class_exists( $class ) ) {
 					return $class::instance();
 				}
@@ -160,6 +164,8 @@ final class Dimas_Theme {
 
 	/**
 	 * Setup the theme global variable.
+	 *
+	 * @param array $args    The array of arguments.
 	 *
 	 * @since 1.0.0
 	 *

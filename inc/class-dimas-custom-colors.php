@@ -7,12 +7,10 @@
  * @since Dimas 1.0
  */
 
-namespace Dimas;
-
 /**
  * This class is in charge of color customization via the Customizer.
  */
-class Custom_Colors {
+class Dimas_Custom_Colors {
 
 	/**
 	 * Instantiate the object.

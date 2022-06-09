@@ -7,8 +7,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -17,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas after setup theme
  */
-class Theme_Setup {
+class Dimas_Setup {
 	/**
 	 * Instance
 	 *

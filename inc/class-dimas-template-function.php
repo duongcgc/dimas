@@ -6,8 +6,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -15,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Hooks initial
  */
-class Temp_Funs {
+class Dimas_Template_Function {
 	/**
 	 * Instance
 	 *
@@ -563,6 +561,50 @@ class Temp_Funs {
 			return;
 		}
 		echo 'class="' . esc_attr( $classes ) . '"';
+	}
+
+	/**
+	 * Custom Excerpt Function
+	 *
+	 * @param [type] $limit
+	 * @param string $afterlimit
+	 * @return void
+	 */
+	public static function dimas_fnc_excerpt( $limit, $afterlimit = '[...]' ) {
+		$excerpt = get_the_excerpt();
+		$limit   = empty( $limit ) ? 20 : $limit;
+		if ( $excerpt != '' ) {
+			$excerpt = @explode( ' ', strip_tags( $excerpt ), $limit );
+		} else {
+			$excerpt = @explode( ' ', strip_tags( get_the_content() ), $limit );
+		}
+		if ( count( $excerpt ) >= $limit ) {
+			@array_pop( $excerpt );
+			$excerpt = @implode( ' ', $excerpt ) . ' ' . $afterlimit;
+		} else {
+			$excerpt = @implode( ' ', $excerpt );
+		}
+		$excerpt = preg_replace( '`[[^]]*]`', '', $excerpt );
+
+		return strip_shortcodes( $excerpt );
+	}
+
+	/**
+	 * Do custom Shortcodes.
+	 *
+	 * @param [type] $tag
+	 * @param array  $atts
+	 * @param [type] $content
+	 * @return void
+	 */
+	public static function dimas_do_shortcode( $tag, array $atts = array(), $content = null ) {
+		global $shortcode_tags;
+
+		if ( ! isset( $shortcode_tags[ $tag ] ) ) {
+			return false;
+		}
+
+		return call_user_func( $shortcode_tags[ $tag ], $atts, $content, $tag );
 	}
 
 

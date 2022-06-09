@@ -7,8 +7,6 @@
  * @since Dimas 1.0
  */
 
-namespace Dimas;
-
 /**
  * This class is in charge of displaying SVG settings across the site.
  *
@@ -21,7 +19,7 @@ namespace Dimas;
  *
  * @since Dimas 1.0
  */
-class Default_Setting {
+class Dimas_Default_Setting {
 
 	/**
 	 * Customizer settings.

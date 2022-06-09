@@ -4,16 +4,14 @@
  * => Drag and Drop Header Builder with Elementor.
  */
 
-namespace Dimas;
-
-class Header_Builder {
+class Dimas_Header_Builder {
 	public static $instance;
 
 	private $content = '';
 
 	public static function getInstance() {
 		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Header_Builder ) ) {
-			self::$instance = new Header_Builder();
+			self::$instance = new Dimas_Header_Builder();
 		}
 
 		return self::$instance;
@@ -72,7 +70,7 @@ class Header_Builder {
 		if ( $dimas_header && $dimas_header instanceof WP_Post ) {
 
 			// WPML
-			$wpml_id        = apply_filters( 'wpml_object_id', $dimas_header->ID );
+			$wpml_id          = apply_filters( 'wpml_object_id', $dimas_header->ID );
 			$dimas_header->ID = $wpml_id ? $wpml_id : $dimas_header->ID;
 
 			// Polylang

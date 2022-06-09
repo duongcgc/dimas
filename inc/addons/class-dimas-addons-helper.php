@@ -7,8 +7,6 @@
  * @package Dimas
  */
 
-namespace Dimas\Addons;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -16,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Helper
  */
-class Helper {
+class Dimas_Addons_Helper {
 
 	/**
 	 * Instance
@@ -42,11 +40,12 @@ class Helper {
 
 
 	/**
-	 * Get the sharing URL of a social
+	 * Get the sharing URL of a social.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $social
+	 * @param string $social       The social.
+	 * @param array  $args          The args.
 	 *
 	 * @return string
 	 */
@@ -70,7 +69,7 @@ class Helper {
 				);
 				break;
 
-			case 'pinterest';
+			case 'pinterest':
 				$params = array(
 					'description' => get_the_title(),
 					'media'       => get_the_post_thumbnail_url( null, 'full' ),
@@ -165,7 +164,7 @@ class Helper {
 			'<a href="%s" target="_blank" class="social-share-link %s">%s<span class="after-text">%s</span></a>',
 			esc_url( $url ),
 			esc_attr( $social ),
-			\Dimas\Icon::get_svg( $icon, '', 'social' ),
+			Dimas_SVG_Icon::get_svg( $icon, '', 'social' ),
 			$text
 		);
 	}

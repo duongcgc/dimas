@@ -6,17 +6,14 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
 /**
  * Attachment initial
- *
  */
-class Attachment {
+class Dimas_Attachment {
 	/**
 	 * Instance
 	 *
@@ -77,12 +74,12 @@ class Attachment {
 	 * @return void
 	 */
 	public function get_title() {
-		if( ! have_comments()) {
+		if ( ! have_comments() ) {
 			return;
 		}
 
 		$comments_number = get_comments_number();
-		$comments_class = $comments_number ? 'has-comments' : '';
+		$comments_class  = $comments_number ? 'has-comments' : '';
 
 		echo '<h2 class="comments-title ' . esc_attr( $comments_class ) . '">';
 		printf( // WPCS: XSS OK.
@@ -126,12 +123,14 @@ class Attachment {
 	public function comment_content() {
 		echo '<ol class="comment-list ' . esc_attr( get_comments_number() ? 'has-comments' : '' ) . '">';
 
-		wp_list_comments( array(
-			'avatar_size' => 70,
-			'short_ping'  => true,
-			'style'       => 'ol',
-			'callback'    => array( $this, 'dimas_comment' )
-		) );
+		wp_list_comments(
+			array(
+				'avatar_size' => 70,
+				'short_ping'  => true,
+				'style'       => 'ol',
+				'callback'    => array( $this, 'dimas_comment' ),
+			)
+		);
 
 		echo '</ol><!-- .comment-list -->';
 	}
@@ -146,22 +145,22 @@ class Attachment {
 	public function comment_form_fields() {
 		global $commenter, $aria_req;
 
-		$comment_author = isset($commenter['comment_author']) ? $commenter['comment_author'] : '';
-		$comment_author_email = isset($commenter['comment_author_email']) ? $commenter['comment_author_email'] : '';
-		$comment_author_url = isset($commenter['comment_author_url']) ? $commenter['comment_author_url'] : '';
+		$comment_author       = isset( $commenter['comment_author'] ) ? $commenter['comment_author'] : '';
+		$comment_author_email = isset( $commenter['comment_author_email'] ) ? $commenter['comment_author_email'] : '';
+		$comment_author_url   = isset( $commenter['comment_author_url'] ) ? $commenter['comment_author_url'] : '';
 
 		$fields = array(
 			'author' => '<p class="comment-form-author">' .
-			            '<input id ="author" placeholder="' . esc_attr__( 'Name', 'dimas' ) . ' " name="author" type="text" required value="' . esc_attr( $comment_author ) .
-			            '" size    ="30"' . $aria_req . ' /></p>',
+						'<input id ="author" placeholder="' . esc_attr__( 'Name', 'dimas' ) . ' " name="author" type="text" required value="' . esc_attr( $comment_author ) .
+						'" size    ="30"' . $aria_req . ' /></p>',
 
-			'email' => '<p class="comment-form-email">' .
-			           '<input id ="email" placeholder="' . esc_attr__( 'Email', 'dimas' ) . '" name="email" type="email" required value="' . esc_attr( $comment_author_email ) .
-			           '" size    ="30"' . $aria_req . ' /></p>',
+			'email'  => '<p class="comment-form-email">' .
+					   '<input id ="email" placeholder="' . esc_attr__( 'Email', 'dimas' ) . '" name="email" type="email" required value="' . esc_attr( $comment_author_email ) .
+					   '" size    ="30"' . $aria_req . ' /></p>',
 
-			'url' => '<p class="comment-form-url">' .
-			         '<input id ="url" placeholder="' . esc_attr__( 'Website', 'dimas' ) . '" name="url" type="text" value="' . esc_attr( $comment_author_url ) .
-			         '" size    ="30" /></p>'
+			'url'    => '<p class="comment-form-url">' .
+					 '<input id ="url" placeholder="' . esc_attr__( 'Website', 'dimas' ) . '" name="url" type="text" value="' . esc_attr( $comment_author_url ) .
+					 '" size    ="30" /></p>',
 		);
 
 		return $fields;
@@ -173,8 +172,8 @@ class Attachment {
 	 * @since 1.0.0
 	 *
 	 * @param object $comment
-	 * @param array $args
-	 * @param int $depth
+	 * @param array  $args
+	 * @param int    $depth
 	 *
 	 * @return string
 	 */
@@ -201,11 +200,16 @@ class Attachment {
 			'comment_time'        => get_comment_time(),
 			'comment_approved'    => $comment->comment_approved,
 			'comment_text'        => get_comment_text(),
-			'comment_reply'       => get_comment_reply_link( array_merge( $args, array(
-				'add_below' => 'comment',
-				'depth'     => $depth,
-				'max_depth' => $args['max_depth']
-			) ) )
+			'comment_reply'       => get_comment_reply_link(
+				array_merge(
+					$args,
+					array(
+						'add_below' => 'comment',
+						'depth'     => $depth,
+						'max_depth' => $args['max_depth'],
+					)
+				)
+			),
 
 		);
 
@@ -231,7 +235,8 @@ class Attachment {
 			'<header class="comment-meta">' .
 			'<div class="comment-author vcard">%s</div>' .
 			'</header>',
-			$comments['comment_avatar'] ) : '';
+			$comments['comment_avatar']
+		) : '';
 		$output[]  = '<div class="comment-content"><div class="comment-metadata">';
 		$output[]  = sprintf( '<cite class="fn">%s </cite>', $comments['comment_author_link'] );
 		$date      = sprintf( esc_html__( '%1$s at %2$s', 'dimas' ), $comments['comment_date'], $comments['comment_time'] );

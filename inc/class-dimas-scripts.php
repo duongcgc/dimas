@@ -5,8 +5,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -14,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Scripts initial
  */
-class Scripts {
+class Dimas_Scripts {
 	/**
 	 * Instance
 	 *

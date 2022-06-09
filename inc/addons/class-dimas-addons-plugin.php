@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Addons {
+class Dimas_Addons_Plugin {
 
 	/**
 	 * Instance

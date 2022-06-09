@@ -7,8 +7,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -16,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas maintenance
  */
-class Maintenance {
+class Dimas_Maintenance {
 	/**
 	 * Instance
 	 *

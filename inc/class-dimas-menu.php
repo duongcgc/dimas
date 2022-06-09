@@ -8,8 +8,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -17,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Menu initial
  */
-class Menu {
+class Dimas_Menu {
 	/**
 	 * Instance
 	 *

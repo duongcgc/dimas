@@ -5,8 +5,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 use Dimas\Dimas_Theme;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Helper initial
  */
-class Helper {
+class Dimas_Helper {
 	/**
 	 * Post ID
 	 *
@@ -664,6 +662,361 @@ class Helper {
 	public static function dimas_get_placeholder_image() {
 		return get_parent_theme_file_uri( '/assets/images/placeholder.png' );
 	}
+
+	/**
+	 * Check Breadcrumb.
+	 *
+	 * @return bool
+	 */
+	public static function dimas_page_enable_breadcrumb() {
+		$check = get_post_meta( get_the_ID(), 'dimas_enable_breadcrumb', true ) === '0' ? false : true;
+
+		return ( $check );
+	}
+
+	/**
+	 * Enable Page Title.
+	 *
+	 * @return bool
+	 */
+	public static function dimas_page_enable_page_title() {
+		$check = get_post_meta( get_the_ID(), 'dimas_enable_page_title', true ) === '0' ? false : true;
+
+		return ( is_page() && $check );
+	}
+
+	/**
+	 * Check is fontpage.
+	 *
+	 * @return void
+	 */
+	public static function dimas_is_frontpage() {
+		return ( is_front_page() && ! is_home() );
+	}
+
+
+
+	/**
+	 * Get Query Posts.
+	 *
+	 * @param mixed $args
+
+	 * @return WP_Query
+	 */
+	public static function dimas_get_query( $args ) {
+		global $wp_query;
+		$default  = array(
+			'post_type' => 'post',
+		);
+		$args     = wp_parse_args( $args, $default );
+		$wp_query = new WP_Query( $args );
+
+		return $wp_query;
+	}
+
+
+	/**
+	 * Get file content.
+	 *
+	 * @param string $path
+	 * @return void
+	 */
+	public static function dimas_get_file_contents( $path ) {
+		if ( is_file( $path ) ) {
+			return file_get_contents( $path );
+		}
+
+		return false;
+	}
+
+	/**
+	 * Elapsed ...
+	 *
+	 * @param [type]  $datetime
+	 * @param boolean $full
+	 * @return void
+	 */
+	public static function time_elapsed_string( $datetime, $full = false ) {
+		$now  = new DateTime();
+		$ago  = new DateTime( $datetime );
+		$diff = $now->diff( $ago );
+
+		$diff->w  = floor( $diff->d / 7 );
+		$diff->d -= $diff->w * 7;
+
+		$string = array(
+			'y' => __( 'year', 'beautifo-core' ),
+			'm' => __( 'month', 'beautifo-core' ),
+			'w' => __( 'week', 'beautifo-core' ),
+			'd' => __( 'day', 'beautifo-core' ),
+		// 'h' => __('hour', 'beautifo-core'),
+		// 'i' => __('minute', 'beautifo-core'),
+		// 's' => __('second', 'beautifo-core'),
+		);
+		foreach ( $string as $k => &$v ) {
+			if ( $diff->$k ) {
+				$v = $diff->$k . ' ' . $v . ( $diff->$k > 1 ? 's' : '' );
+			} else {
+				unset( $string[ $k ] );
+			}
+		}
+
+		if ( ! $full ) {
+			$string = array_slice( $string, 0, 1 );
+		}
+
+		return $string ? implode( ', ', $string ) . __( ' left', 'beautifo-core' ) : __( 'just now', 'beautifo-core' );
+	}
+
+	/**
+	 * Sanitize Editor.
+	 *
+	 * @param $value
+	 *
+	 * @return string
+	 */
+
+	public function dimas_sanitize_editor( $value ) {
+		return force_balance_tags( apply_filters( 'the_content', $value ) );
+	}
+
+
+
+	 /**
+	  * Sanitize Button.
+	  *
+	  * @param $value
+	  *
+	  * @return bold
+	  */
+	function dimas_sanitize_button_switch( $value ) {
+		if ( $value ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Query WooCommerce activation
+	 */
+	public static function dimas_is_woocommerce_activated() {
+		return class_exists( 'WooCommerce' ) ? true : false;
+	}
+
+	/**
+	 * Scrape Instagram.
+	 *
+	 * @param string $username
+	 * @param int    $slice
+	 *
+	 * @return array|mixed|WP_Error
+	 */
+	public static function dimas_scrape_instagram( $username, $slice = 9 ) {
+		$username   = strtolower( $username );
+		$by_hashtag = ( substr( $username, 0, 1 ) == '#' );
+		if ( false === ( $instagram = get_transient( 'otf-instagram-media-new-' . sanitize_title_with_dashes( $username ) ) ) ) {
+			$request_param = ( $by_hashtag ) ? 'explore/tags/' . substr( $username, 1 ) : trim( $username );
+			$remote        = wp_remote_get( 'https://instagram.com/' . $request_param );
+
+			if ( is_wp_error( $remote ) ) {
+				return new WP_Error( 'site_down', esc_html__( 'Unable to communicate with Instagram.', 'beautifo-core' ) );
+			}
+
+			if ( 200 != wp_remote_retrieve_response_code( $remote ) ) {
+				return new WP_Error( 'invalid_response', esc_html__( 'Instagram did not return a 200.', 'beautifo-core' ) );
+			}
+
+			$shards      = explode( 'window._sharedData = ', $remote['body'] );
+			$insta_json  = explode( ';</script>', $shards[1] );
+			$insta_array = json_decode( $insta_json[0], true );
+
+			if ( ! $insta_array ) {
+				return new WP_Error( 'bad_json', esc_html__( 'Instagram has returned invalid data.', 'beautifo-core' ) );
+			}
+
+			// old style
+			if ( isset( $insta_array['entry_data']['UserProfile'][0]['userMedia'] ) ) {
+				$images = $insta_array['entry_data']['UserProfile'][0]['userMedia'];
+				$type   = 'old';
+				// old_2 style
+			} elseif ( $by_hashtag && isset( $insta_array['entry_data']['TagPage'][0]['tag']['media']['nodes'] ) ) {
+				$images = $insta_array['entry_data']['TagPage'][0]['tag']['media']['nodes'];
+				$type   = 'old_2';
+			} elseif ( isset( $insta_array['entry_data']['ProfilePage'][0]['user']['media']['nodes'] ) ) {
+				$images = $insta_array['entry_data']['ProfilePage'][0]['user']['media']['nodes'];
+				$type   = 'old_2';
+				// new style
+			} elseif ( isset( $insta_array['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges'] ) ) {
+				$images = $insta_array['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges'];
+				$type   = 'new';
+				// new style
+			} elseif ( $by_hashtag && isset( $insta_array['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'] ) ) {
+				$images = $insta_array['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'];
+				$type   = 'new';
+			} else {
+				return new WP_Error( 'bad_json_2', esc_html__( 'Instagram has returned invalid data.', 'beautifo-core' ) );
+			}
+
+			if ( ! is_array( $images ) ) {
+				return new WP_Error( 'bad_array', esc_html__( 'Instagram has returned invalid data.', 'beautifo-core' ) );
+			}
+
+			$instagram = array();
+
+			switch ( $type ) {
+				case 'old':
+					foreach ( $images as $image ) {
+						if ( $image['user']['username'] == $username ) {
+							$image['images']['thumbnail']           = preg_replace( '/^http:/i', '', $image['images']['thumbnail'] );
+							$image['images']['standard_resolution'] = preg_replace( '/^http:/i', '', $image['images']['standard_resolution'] );
+							$image['images']['low_resolution']      = preg_replace( '/^http:/i', '', $image['images']['low_resolution'] );
+							$instagram[]                            = array(
+								'description' => $image['caption']['text'],
+								'link'        => $image['link'],
+								'time'        => $image['created_time'],
+								'comments'    => $image['comments']['count'],
+								'likes'       => $image['likes']['count'],
+								'thumbnail'   => $image['images']['thumbnail'],
+								'large'       => $image['images']['standard_resolution'],
+								'small'       => $image['images']['low_resolution'],
+								'type'        => $image['type'],
+							);
+						}
+					}
+					break;
+				case 'old_2':
+					foreach ( $images as $image ) {
+						$image['thumbnail_src'] = preg_replace( '/^https:/i', '', $image['thumbnail_src'] );
+						$image['thumbnail']     = preg_replace( '/^https:/i', '', $image['thumbnail_resources'][0]['src'] );
+						$image['medium']        = preg_replace( '/^https:/i', '', $image['thumbnail_resources'][2]['src'] );
+						$image['large']         = $image['thumbnail_src'];
+						$image['display_src']   = preg_replace( '/^https:/i', '', $image['display_src'] );
+						if ( $image['is_video'] == true ) {
+							$type = 'video';
+						} else {
+							$type = 'image';
+						}
+						$caption = esc_html__( 'Instagram Image', 'beautifo-core' );
+						if ( ! empty( $image['caption'] ) ) {
+							$caption = $image['caption'];
+						}
+						$instagram[] = array(
+							'description' => $caption,
+							'link'        => '//instagram.com/p/' . $image['code'],
+							'time'        => $image['date'],
+							'comments'    => $image['comments']['count'],
+							'likes'       => $image['likes']['count'],
+							'thumbnail'   => $image['thumbnail'],
+							'medium'      => $image['medium'],
+							'large'       => $image['large'],
+							'original'    => $image['display_src'],
+							'type'        => $type,
+						);
+					}
+					break;
+				default:
+					foreach ( $images as $image ) {
+						$image   = $image['node'];
+						$caption = esc_html__( 'Instagram Image', 'beautifo-core' );
+						if ( ! empty( $image['edge_media_to_caption']['edges'][0]['node']['text'] ) ) {
+							$caption = $image['edge_media_to_caption']['edges'][0]['node']['text'];
+						}
+
+						$image['thumbnail_src'] = preg_replace( '/^https:/i', '', $image['thumbnail_src'] );
+						$image['thumbnail']     = preg_replace( '/^https:/i', '', $image['thumbnail_resources'][0]['src'] );
+						$image['medium']        = preg_replace( '/^https:/i', '', $image['thumbnail_resources'][2]['src'] );
+						$image['large']         = $image['thumbnail_src'];
+
+						$type = ( $image['is_video'] ) ? 'video' : 'image';
+
+						$instagram[] = array(
+							'description' => $caption,
+							'link'        => '//instagram.com/p/' . $image['shortcode'],
+							'comments'    => $image['edge_media_to_comment']['count'],
+							'likes'       => $image['edge_liked_by']['count'],
+							'thumbnail'   => $image['thumbnail'],
+							'medium'      => $image['medium'],
+							'large'       => $image['large'],
+							'type'        => $type,
+						);
+					}
+					break;
+			}
+			// do not set an empty transient - should help catch private or empty accounts
+			if ( ! empty( $instagram ) ) {
+				$instagram = base64_encode( maybe_serialize( $instagram ) );
+				set_transient( 'otf-instagram-media-new-' . sanitize_title_with_dashes( $username ), $instagram, apply_filters( 'null_instagram_cache_time', HOUR_IN_SECONDS * 2 ) );
+			}
+		}
+		if ( ! empty( $instagram ) ) {
+			$instagram = maybe_unserialize( base64_decode( $instagram ) );
+
+			return array_slice( $instagram, 0, $slice );
+		} else {
+			return new WP_Error( 'no_images', esc_html__( 'Instagram did not return any images.', 'beautifo-core' ) );
+		}
+	}
+
+
+	/**
+	 * Get metabox.
+	 *
+	 * @param int    $id
+	 * @param string $key
+	 * @param bool   $default
+	 *
+	 * @return bool|mixed
+	 */
+	public static function dimas_get_metabox( $id, $key, $default = false ) {
+		$value = get_post_meta( $id, $key, true );
+		if ( false === $value ) {
+			return $default;
+		} else {
+			return $value;
+		}
+	}
+
+	/**
+	 * Do custom shortcode.
+	 *
+	 * @param string $tag      Shortcode tag name.
+	 * @param array  $atts      List of params.
+	 * @param mixed  $content  The content of shortcode.
+	 * @return void
+	 */
+	public static function dimas_do_shortcode( $tag, array $atts = array(), $content = null ) {
+		global $shortcode_tags;
+
+		if ( ! isset( $shortcode_tags[ $tag ] ) ) {
+			return false;
+		}
+
+		return call_user_func( $shortcode_tags[ $tag ], $atts, $content, $tag );
+	}
+
+	/**
+	 * Get Theme Supports.
+	 *
+	 * @return bool|array
+	 * @see custom theme support: https://developer.wordpress.org/reference/functions/add_theme_support/
+	 */
+	public static function dimas_get_theme_supports() {
+		$theme_supports = get_theme_support( 'dimas-service-framework' );
+		if ( $theme_supports ) {
+			return wp_parse_args(
+				$theme_supports,
+				array(
+					'typography_callback' => '',
+					'colors_callback'     => '',
+					'post_types'          => array(),
+				)
+			);
+		} else {
+			return false;
+		}
+	}
+
 
 
 }

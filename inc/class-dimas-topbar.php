@@ -12,10 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Topbar initial
- *
+ * Topbar initial.
  */
-class Topbar {
+class Dimas_Topbar {
 	/**
 	 * Instance
 	 *
@@ -80,7 +79,7 @@ class Topbar {
 			return;
 		}
 
-		$show_header = is_page() ? ! get_post_meta( \Dimas\Helper::get_post_ID(), 'rz_hide_header_section', true ) : true;
+		$show_header = is_page() ? ! get_post_meta( Helper::get_post_ID(), 'rz_hide_header_section', true ) : true;
 		if ( ! $show_header ) {
 			return;
 		}
@@ -92,7 +91,7 @@ class Topbar {
 	 * Display topbar items
 	 *
 	 * @since 1.0.0
-	 *
+	 * @param array $items     The items on topbar.
 	 * @return void
 	 */
 	public function topbar_items( $items ) {
@@ -122,16 +121,17 @@ class Topbar {
 
 				case 'text':
 					$html_svg = '';
-					if ( $svg = Helper::get_option( 'topbar_svg_code' ) ) {
-						$html_svg = '<span class="dimas-svg-icon">' . \Dimas\Icon::sanitize_svg( $svg ) . '</span>';
+					$svg      = \Dimas\Helper::get_option( 'topbar_svg_code' );
+					if ( $svg ) {
+						$html_svg = '<span class="dimas-svg-icon">' . \Dimas\Dimas_SVG_Icons::sanitize_svg( $svg ) . '</span>';
 					}
 
-					echo '<div class="dimas-topbar__text">' . $html_svg . do_shortcode( wp_kses_post( Helper::get_option( 'topbar_text' ) ) ) . '</div>';
+					echo '<div class="dimas-topbar__text">' . esc_html( $html_svg ) . do_shortcode( wp_kses_post( Helper::get_option( 'topbar_text' ) ) ) . '</div>';
 
 					break;
 
 				case 'close':
-					echo \Dimas\Icon::get_svg( 'close', 'dimas-topbar__close' );
+					echo esc_html( \Dimas\Dimas_SVG_Icons::get_svg( 'close', 'dimas-topbar__close', 32 ) );
 					break;
 
 				default:
@@ -142,7 +142,9 @@ class Topbar {
 	}
 
 	/**
-	 * Display topbar items
+	 * Display topbar items.
+	 *
+	 * @param array $items    The array of items.
 	 *
 	 * @since 1.0.0
 	 *
@@ -175,16 +177,17 @@ class Topbar {
 
 				case 'text':
 					$html_svg = '';
-					if ( $svg = Helper::get_option( 'mobile_topbar_svg_code' ) ) {
-						$html_svg = '<span class="dimas-svg-icon">' . \Dimas\Icon::sanitize_svg( $svg ) . '</span>';
+					$svg      = \Dimas\Helper::get_option( 'mobile_topbar_svg_code' );
+					if ( $svg ) {
+						$html_svg = '<span class="dimas-svg-icon">' . Dimas_SVG_Icons::sanitize_svg( $svg ) . '</span>';
 					}
 
-					echo '<div class="dimas-topbar__text">' . $html_svg . do_shortcode( wp_kses_post( Helper::get_option( 'mobile_topbar_text' ) ) ) . '</div>';
+					echo '<div class="dimas-topbar__text">' . esc_html( $html_svg ) . do_shortcode( wp_kses_post( Helper::get_option( 'mobile_topbar_text' ) ) ) . '</div>';
 
 					break;
 
 				case 'close':
-					echo \Dimas\Icon::get_svg( 'close', 'dimas-topbar__close' );
+					echo esc_html( Dimas_SVG_Icons::get_svg( 'close', 'dimas-topbar__close', 32 ) );
 					break;
 
 				default:
@@ -202,17 +205,22 @@ class Topbar {
 	 * @return string
 	 */
 	public function topbar_menu() {
-		$menu_slug =  Helper::get_option( 'topbar_menu_item' );
-		if( empty($menu_slug) ) {
+		$menu_slug = Helper::get_option( 'topbar_menu_item' );
+		if ( empty( $menu_slug ) ) {
 			return;
 		}
-		wp_nav_menu( apply_filters( 'dimas_topbar_menu_content', array(
-			'theme_location' => '__no_such_location',
-			'menu'           => $menu_slug,
-			'container'      => 'nav',
-			'container_id'   => 'topbar-menu',
-			'menu_class'     => 'nav-menu topbar-menu menu',
-		) ) );
+		wp_nav_menu(
+			apply_filters(
+				'dimas_topbar_menu_content',
+				array(
+					'theme_location' => '__no_such_location',
+					'menu'           => $menu_slug,
+					'container'      => 'nav',
+					'container_id'   => 'topbar-menu',
+					'menu_class'     => 'nav-menu topbar-menu menu',
+				)
+			)
+		);
 	}
 
 	/**
@@ -223,13 +231,16 @@ class Topbar {
 	 * @return array
 	 */
 	public function topbar_items_option() {
-		return apply_filters( 'dimas_topbar_items_option', array(
-			'menu'     => esc_html__( 'Menu', 'dimas' ),
-			'currency' => esc_html__( 'Currency Switcher', 'dimas' ),
-			'language' => esc_html__( 'Language Switcher', 'dimas' ),
-			'social'   => esc_html__( 'Socials', 'dimas' ),
-			'text'     => esc_html__( 'Custom Text', 'dimas' ),
-			'close'    => esc_html__( 'Close Icon', 'dimas' ),
-		) );
+		return apply_filters(
+			'dimas_topbar_items_option',
+			array(
+				'menu'     => esc_html__( 'Menu', 'dimas' ),
+				'currency' => esc_html__( 'Currency Switcher', 'dimas' ),
+				'language' => esc_html__( 'Language Switcher', 'dimas' ),
+				'social'   => esc_html__( 'Socials', 'dimas' ),
+				'text'     => esc_html__( 'Custom Text', 'dimas' ),
+				'close'    => esc_html__( 'Close Icon', 'dimas' ),
+			)
+		);
 	}
 }
