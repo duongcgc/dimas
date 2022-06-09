@@ -59,6 +59,9 @@ require DIMAS_INC_DIR . '/class-dimas-setup.php';
 // Helper functions.
 require DIMAS_INC_DIR . '/class-dimas-helper.php';
 
+// HTML functions.
+require DIMAS_INC_DIR . '/class-dimas-html.php';
+
 // Block Editor Scripts.
 require DIMAS_CORE_DIR . '/admin/class-dimas-admin-block-editor.php';
 \Dimas\Admin\Block_Editor::instance();
@@ -96,10 +99,6 @@ require DIMAS_INC_DIR . '/block-patterns.php';
 
 // Block Styles.
 require DIMAS_INC_DIR . '/block-styles.php';
-
-// Notice.
-require DIMAS_INC_DIR . '/class-dimas-notice.php';
-\Dimas\Notice::instance()->add_notice( 'warning', 'This is best.', );
 
 // Dark Mode.
 require_once DIMAS_INC_DIR . '/class-dimas-dark-mode.php';

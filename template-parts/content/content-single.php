@@ -20,6 +20,9 @@
 
 	<div class="entry-content">
 		<?php
+
+		do_action( 'dimas_after_open_post_content' );
+
 		the_content();
 
 		wp_link_pages(

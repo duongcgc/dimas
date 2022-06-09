@@ -190,35 +190,6 @@ class Helper {
 	}
 
 	/**
-	 * Check is product deals
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return bool
-	 */
-	public static function is_product_deal( $product ) {
-		$product = is_numeric( $product ) ? wc_get_product( $product ) : $product;
-
-		// It must be a sale product first
-		if ( ! $product->is_on_sale() ) {
-			return false;
-		}
-
-		// Only support product type "simple" and "external"
-		if ( ! $product->is_type( 'simple' ) && ! $product->is_type( 'external' ) ) {
-			return false;
-		}
-
-		$deal_quantity = get_post_meta( $product->get_id(), '_deal_quantity', true );
-
-		if ( $deal_quantity > 0 ) {
-			return true;
-		}
-
-		return false;
-	}
-
-	/**
 	 * Content limit
 	 *
 	 * @since 1.0.0

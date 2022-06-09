@@ -10,7 +10,20 @@
  */
 
 get_header();
+\Dimas\HTML::instance()->open(
+	'dimas-container',
+	array(
+		'tag'  => 'section',
+		'attr' => array(
+			'class' => 'myclass',
+			'id'    => 'myid',
+		),
+	)
+);
 
+echo 'sdfsdfsdfsdfdsfdsf';
+
+\Dimas\HTML::instance()->close( 'dimas-container' );
 /* Start the Loop */
 while ( have_posts() ) :
 	the_post();

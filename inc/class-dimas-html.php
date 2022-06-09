@@ -2,7 +2,7 @@
 namespace Dimas;
 
 /**
- * Dimas HTML markup rendering class. 
+ * Dimas HTML markup rendering class.
  * => All methods create html tag for template.
  */
 
@@ -104,6 +104,7 @@ class HTML {
 
 		if ( true === $args['actions'] || 'before' === $args['actions'] ) {
 			$html = $this->do_action( $context, 'before_close' ) . $html;
+			echo $context;
 		}
 
 		if ( $args['echo'] ) {

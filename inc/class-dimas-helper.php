@@ -94,10 +94,10 @@ class Helper {
 			echo sprintf(
 				'<div class="dimas-posts__found"><div class="dimas-posts__found-inner">%s<span class="current-post"> %s </span> %s <span class="found-post"> %s </span> %s <span class="count-bar"></span></div> </div>',
 				esc_html__( 'Showing', 'dimas' ),
-				$wp_query->post_count,
+				esc_html( $wp_query->post_count ),
 				esc_html__( 'of', 'dimas' ),
-				$wp_query->found_posts,
-				$post_text
+				esc_html( $wp_query->found_posts ),
+				esc_textarea( $post_text, 'dimas' ),
 			);
 
 		}

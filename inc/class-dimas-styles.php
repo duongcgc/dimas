@@ -8,7 +8,7 @@
 namespace Dimas;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+			exit; // Exit if accessed directly.
 }
 
 /**
@@ -73,23 +73,48 @@ class Styles {
 		// Print styles.
 		wp_enqueue_style( 'dimas-print-style', get_template_directory_uri() . '/assets/css/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 
+		// Bootstrap styles.
+		wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/assets/addons/css/bootstrap/bootstrap.min.css', array(), wp_get_theme()->get( 'Version' ) );
+
+		// Animate styles.
+		wp_enqueue_style( 'animate-style', get_template_directory_uri() . '/assets/addons/css/animate/animate.min.css', array(), wp_get_theme()->get( 'Version' ) );
+
+		// Animsition styles.
+		wp_enqueue_style( 'animsition-style', get_template_directory_uri() . '/assets/addons/css/animsition/animsition.min.css', array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'animsition-style', get_template_directory_uri() . '/assets/addons/css/animsition/preload.min.css', array(), wp_get_theme()->get( 'Version' ) );
+
 		// Home styles.
 		if ( is_front_page() ) {
+
+			// main style.
 			wp_enqueue_style( 'home-style', get_template_directory_uri() . '/assets/css/home.css', array(), wp_get_theme()->get( 'Version' ) );
 		}
 
 		// Project styles.
-		if ( is_singular('project') ) {
+		if ( is_singular( 'project' ) ) {
+
+			// pagepiling style.
+			wp_enqueue_style( 'pagepiling-style', get_template_directory_uri() . '/assets/addons/css/pagepiling/pagepiling.min.css', array(), wp_get_theme()->get( 'Version' ) );
+
+			// main style.
 			wp_enqueue_style( 'project-style', get_template_directory_uri() . '/assets/css/project-single.css', array(), wp_get_theme()->get( 'Version' ) );
 		}
 
 		// Blog Post styles.
 		if ( is_single() ) {
+
+			// fancybox style.
+			wp_enqueue_style( 'fancybox-style', get_template_directory_uri() . '/assets/addons/css/fancybox/fancybox.css', array(), wp_get_theme()->get( 'Version' ) );
+
+			// main style.
 			wp_enqueue_style( 'blog-post-style', get_template_directory_uri() . '/assets/css/blog-single.css', array(), wp_get_theme()->get( 'Version' ) );
+
 		}
 
 		// Blog Archive styles.
 		if ( is_category() ) {
+
+			// main style.
 			wp_enqueue_style( 'blog-archive-style', get_template_directory_uri() . '/assets/css/blog-archive.css', array(), wp_get_theme()->get( 'Version' ) );
 		}
 

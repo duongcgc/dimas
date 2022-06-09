@@ -113,7 +113,7 @@ class Scripts {
 				function ( $tag, $handle ) use ( $cur_handle ) {
 
 					if ( $cur_handle !== $handle ) {
-						  return $tag;
+								return $tag;
 					}
 					return str_replace( ' src', ' async src', $tag );
 
@@ -140,10 +140,28 @@ class Scripts {
 		self::$instance->add_script( $handle, $src, $deps, $defer, $ver );
 	}
 
+	/**
+	 * Add script defer to footer.
+	 *
+	 * @param  string $handle The unique name of script for add deps.
+	 * @param  string $src    The src path to script file.
+	 * @param  array  $deps   The array of depend scripts - default array.
+	 * @param  string $ver    The version of script default version of theme.
+	 * @return void
+	 */
 	public static function add_footer_defer_script( $handle, $src = '', $deps = array(), $ver = '' ) {
 		self::$instance->add_script( $handle, $src, $deps, true, $ver );
 	}
 
+	/**
+	 * Add script async to footer.
+	 *
+	 * @param  string $handle The unique name of script for add deps.
+	 * @param  string $src    The src path to script file.
+	 * @param  array  $deps   The array of depend scripts - default array.
+	 * @param  string $ver    The version of script default version of theme.
+	 * @return void
+	 */
 	public static function add_footer_async_script( $handle, $src = '', $deps = array(), $ver = '' ) {
 		self::$instance->add_script( $handle, $src, $deps, false, $ver );
 	}
@@ -171,7 +189,7 @@ class Scripts {
 	 *
 	 * @return void
 	 */
-	function dimas_scripts() {
+	public static function dimas_scripts() {
 		// Note, the is_IE global variable is defined by WordPress and is used
 		// to detect if the current browser is internet explorer.
 		global $wp_scripts;
@@ -205,17 +223,6 @@ class Scripts {
 			)
 		);
 
-		// Main navigation scripts.
-		if ( has_nav_menu( 'primary' ) ) {
-			wp_enqueue_script(
-				'dimas-primary-navigation-script',
-				get_template_directory_uri() . '/assets/js/primary-navigation.js',
-				array( 'dimas-ie11-polyfills' ),
-				wp_get_theme()->get( 'Version' ),
-				true
-			);
-		}
-
 		// Responsive embeds script.
 		wp_enqueue_script(
 			'dimas-responsive-embeds-script',
@@ -224,6 +231,53 @@ class Scripts {
 			wp_get_theme()->get( 'Version' ),
 			true
 		);
+
+		// Animsition script.
+		wp_enqueue_script(
+			'animsition-script',
+			get_template_directory_uri() . '/assets/addons/js/animsition/animsition.min.js',
+			array( 'dimas-responsive-embeds-script' ),
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+
+		// Blog Archive script.
+		if ( is_category() ) {
+
+			// masonry script.
+			wp_enqueue_script(
+				'masonry-script',
+				get_template_directory_uri() . '/assets/addons/js/masonry/masonry.min.js',
+				array( 'dimas-responsive-embeds-script' ),
+				wp_get_theme()->get( 'Version' ),
+				true
+			);
+		}
+		// Blog Post script.
+		if ( is_category() ) {
+
+			// fancybox script.
+			wp_enqueue_script(
+				'fancybox-script',
+				get_template_directory_uri() . '/assets/addons/js/fancybox/fancybox.umd.js',
+				array( 'dimas-responsive-embeds-script' ),
+				wp_get_theme()->get( 'Version' ),
+				true
+			);
+		}
+
+		// Project & Home script.
+		if ( is_singular( 'project' ) || is_front_page() ) {
+
+			// pagepiling script.
+			wp_enqueue_script(
+				'pagepiling-script',
+				get_template_directory_uri() . '/assets/addons/js/pagepiling/pagepiling.min.js',
+				array( 'dimas-responsive-embeds-script' ),
+				wp_get_theme()->get( 'Version' ),
+				true
+			);
+		}
 
 		// Main script.
 		wp_enqueue_script(
