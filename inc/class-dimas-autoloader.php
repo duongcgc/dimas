@@ -1,6 +1,6 @@
 <?php
 /**
- * Autoload Widgets Classes.
+ * Autoload Classes.
  * => Auto load all class with prefix class-dimas- in a folder
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Auto_Load init
  */
-class Dimas_Widgets_AutoLoader {
+class Dimas_Classes_AutoLoader {
 	/**
 	 * Instance
 	 *

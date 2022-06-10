@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /**
- * Classes Init init
+ * Classes Platform init
  */
-class Init {
+class Dimas_Platform_AutoLoader {
 	/**
 	 * Instance
 	 *
