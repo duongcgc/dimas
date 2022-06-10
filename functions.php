@@ -48,6 +48,10 @@ if ( ! defined( 'DIMAS_CORE_URI' ) ) {
 	define( 'DIMAS_CORE_URI', DIMAS_INC_URI . '/core' );
 }
 
+if ( ! defined( 'DIMAS_PLATFORM_URI' ) ) {
+	define( 'DIMAS_PLATFORM_URI', DIMAS_INC_URI . '/platform' );
+}
+
 if ( ! defined( 'DIMAS_JS_URI' ) ) {
 	define( 'DIMAS_JS_URI', DIMAS_ASSETS_URI . '/js' );
 }
