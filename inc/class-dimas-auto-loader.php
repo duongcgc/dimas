@@ -67,7 +67,6 @@ class Dimas_Auto_Loader {
 		$file_name           = $relative_class_name;		
 		$file_dir            = DIMAS_INC_DIR . '/';
 
-
 		$addons_folder = array( 
 			'widgets'	=> 'addons/widgets',
 			'elementor'	=> 'addons/elementor', 
@@ -101,10 +100,9 @@ class Dimas_Auto_Loader {
 			} 
 
 		}
-		$file_name = $file_dir . 'class-' . $file_name . '.php';
 
-		echo $file_name;
-		echo '<br />'; 
+		$file_name = $file_dir . 'class-' . $file_name . '.php';
+		
 
 
 		if ( is_readable( $file_name ) ) {

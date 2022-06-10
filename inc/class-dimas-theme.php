@@ -74,7 +74,7 @@ final class Dimas_Theme {
 
 		// Setup.
 		$this->get( 'auto-loader' );
-		$this->get( 'template-function', 'platform' );
+		$this->get( 'template-function' );
 
 		// $this->get( 'autoload' );
 		// $this->get( 'setup' );
@@ -150,53 +150,16 @@ final class Dimas_Theme {
 	 *
 	 * @return object
 	 */
-	public function get( $class, $folder = '' ) {
+	public function get( $class ) {
+		
+		// Class name.		
+		$class = $this->file_to_class( $class );
+		$class = 'Dimas_' . $class;
 
-		// Folder slug
-		$folder_slug = $folder;
-
-		if ( ('platform' == $folder) || ( 'core' == $folder ) ) {
-			$folder_slug = '';
+		if ( class_exists( $class ) ) {
+			return $class::instance();
 		} else {
-			$folder_slug = $folder;
-		}
-
-		// Class name.
-		switch ( $class ) {
-			case 'woocommerce':
-				if ( class_exists( 'Dimas_Woocommerce' ) ) {
-					return Dimas_Woocommerce::instance();
-				}
-				break;
-
-			case 'options':
-				return Dimas_Options::instance();
-				break;
-
-			case 'search_ajax':
-				return Dimas_Addons_Modules_Search_Ajax::instance();
-				break;
-
-			case 'newsletter':
-				return Dimas_Addons_Modules_Newsletter_Popup::instance();
-				break;
-
-			case 'mobile':
-				if ( Dimas_Helper::is_mobile() ) {
-					return Dimas_Mobile::instance();
-				}
-				break;
-
-			default:
-				$class = $this->file_to_class( $class );
-				$class = 'Dimas_' . $folder_slug . $class;
-
-				if ( class_exists( $class ) ) {
-					return $class::instance();
-				} else {
-					echo 'Not found class ' . $class;
-				}
-				break;
+			echo 'Not found class ' . $class;
 		}
 
 	}
