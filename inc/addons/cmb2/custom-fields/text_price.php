@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Dimas_Field_Text_Price {
+class DM_Field_Text_Price {
 
 	public function __construct() {
 		add_filter( 'cmb2_render_opal_text_price', array( $this, 'render' ), 10, 5 );
@@ -16,4 +16,4 @@ class Dimas_Field_Text_Price {
 	}
 }
 
-new Dimas_Field_Text_Price();
+new DM_Field_Text_Price();

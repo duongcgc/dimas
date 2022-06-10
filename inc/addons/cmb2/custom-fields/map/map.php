@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Dimas_Field_Map {
+class DM_Field_Map {
 
 	/**
 	 * Current version number
@@ -109,4 +109,4 @@ class Dimas_Field_Map {
 	}
 }
 
-Dimas_Field_Map::init();
+DM_Field_Map::init();

@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Autoloader elements of classes.
  */
-class Dimas_Addons_AutoLoader {
+class DM_Addons_AutoLoader {
 
 	/**
 	 * Files to loaded.

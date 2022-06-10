@@ -3,10 +3,10 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-if (!class_exists('Dimas_Addons_Woo_Tag')) :
+if (!class_exists('DM_Addons_Woo_Tag')) :
 
 
-    class Dimas_Addons_Woo_Tag {
+    class DM_Addons_Woo_Tag {
 
         static $instance;
 
@@ -18,7 +18,7 @@ if (!class_exists('Dimas_Addons_Woo_Tag')) :
         private $list_size = 'shop_thumbnail';
 
         /**
-         * @return Dimas_Addons_Woo_Tag
+         * @return DM_Addons_Woo_Tag
          */
         public static function getInstance() {
             if (!isset(self::$instance) && !(self::$instance instanceof dimas_WooCommerce)) {
@@ -875,9 +875,9 @@ HTML;
         public function custom_comment_form($comment_form) {
             $commenter                     = wp_get_current_commenter();
             $comment_form['fields']        = array(
-                'author' => '<p class="comment-form-author"><input id="author" name="author" type="text" placeholder="' . esc_attr__("Name", "beautifo-core") . '" value="' . esc_attr($commenter['comment_author']) . '" size="30" required /></p>',
-                'email'  => '<p class="comment-form-email"><input id="email" name="email" type="email" placeholder="' . esc_attr__("Email", "beautifo-core") . '" value="' . esc_attr($commenter['comment_author_email']) . '" size="30" required /></p>',
-                //                'url'    => '<p class="comment-form-url"> <input id="url" name="url" type="url" placeholder="' . esc_attr__("Website", "beautifo-core") . '" value="' . esc_attr($commenter['comment_author_url']) . '" size="30" maxlength="200" /></p>'
+                'author' => '<p class="comment-form-author"><input id="author" name="author" type="text" placeholder="' . esc_attr__("Name", 'dimas') . '" value="' . esc_attr($commenter['comment_author']) . '" size="30" required /></p>',
+                'email'  => '<p class="comment-form-email"><input id="email" name="email" type="email" placeholder="' . esc_attr__("Email", 'dimas') . '" value="' . esc_attr($commenter['comment_author_email']) . '" size="30" required /></p>',
+                //                'url'    => '<p class="comment-form-url"> <input id="url" name="url" type="url" placeholder="' . esc_attr__("Website", 'dimas') . '" value="' . esc_attr($commenter['comment_author_url']) . '" size="30" maxlength="200" /></p>'
             );
             $comment_form['comment_field'] = '';
 
@@ -893,7 +893,7 @@ HTML;
             }
 
 
-            $comment_form['comment_field'] .= '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="6" required placeholder="' . esc_attr__("Your review", "beautifo-core") . '"></textarea></p>';
+            $comment_form['comment_field'] .= '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="6" required placeholder="' . esc_attr__("Your review", 'dimas') . '"></textarea></p>';
             $comment_form['submit_button'] = '<button name="%1$s" type="submit" id="%2$s" class="%3$s"><span>%4$s</span></button>';
             $comment_form['label_submit']  = __('Submit Your Review', 'dimas');
 

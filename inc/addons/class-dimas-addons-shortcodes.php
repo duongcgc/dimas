@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas after setup theme
  */
-class Dimas_Addons_Shortcodes {
+class DM_Addons_Shortcodes {
 	/**
 	 * Instance
 	 *

@@ -10,7 +10,7 @@
 ?>
 
 <?php
-Dimas_HTML::instance()->open('post_content',[
+DM_HTML::instance()->open('post_content',[
 	'tag' => 'article',
 	'attr' => [
 		'id'    => 'post-' . get_the_ID(),
@@ -22,4 +22,4 @@ Dimas_HTML::instance()->open('post_content',[
 
 <?php the_content(); ?>
 
-<?php Dimas_HTML::instance()->close('post_content');  ?>
+<?php DM_HTML::instance()->close('post_content');  ?>

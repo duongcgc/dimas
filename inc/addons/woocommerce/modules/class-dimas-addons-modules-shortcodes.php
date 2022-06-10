@@ -3,7 +3,7 @@
 /**
  * Class for shortcodes.
  */
-class Dimas_Addons_Modules_Shortcodes {
+class DM_Addons_Modules_Shortcodes {
 	/**
 	 * Instance
 	 *

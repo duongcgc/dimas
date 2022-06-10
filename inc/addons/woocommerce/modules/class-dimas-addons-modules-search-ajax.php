@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class of Header Search Form template.
  */
-class Dimas_Addons_Modules_Search_Ajax {
+class DM_Addons_Modules_Search_Ajax {
 	/**
 	 * Instance
 	 *
@@ -54,7 +54,7 @@ class Dimas_Addons_Modules_Search_Ajax {
 	 * @return void
 	 */
 	public function search_modal() {
-		$modals = Dimas_Theme::instance()->get_prop( 'modals' );
+		$modals = DM_Theme::instance()->get_prop( 'modals' );
 
 		if ( ! in_array( 'search', $modals ) ) {
 			return;
@@ -90,13 +90,13 @@ class Dimas_Addons_Modules_Search_Ajax {
 		}
 
 		if ( empty( $response ) ) {
-			$response[]  = sprintf( '<div class="list-item"><span class="text">%s</span>%s</div>', esc_html__( 'Nothing matches your search', 'dimas' ), Dimas_SVG_Icon::get_svg( 'smile' ) );
+			$response[]  = sprintf( '<div class="list-item"><span class="text">%s</span>%s</div>', esc_html__( 'Nothing matches your search', 'dimas' ), DM_SVG_Icon::get_svg( 'smile' ) );
 			$class_title = 'not-found';
 			$class_list  = 'result-list-not-found';
 		}
 
 		if ( count( $response ) > intval( $_POST['ajax_search_number'] ) ) {
-			$view_more = sprintf( '<div class="list-item view-more"><a class="dimas-button button-normal" href="#">%s%s</a></div>', esc_html__( 'View All', 'dimas' ), Dimas_SVG_Icon::get_svg( 'arrow-right' ) );
+			$view_more = sprintf( '<div class="list-item view-more"><a class="dimas-button button-normal" href="#">%s%s</a></div>', esc_html__( 'View All', 'dimas' ), DM_SVG_Icon::get_svg( 'arrow-right' ) );
 		}
 
 		if ( Helper::get_option( 'header_search_style' ) == 'icon' ) {

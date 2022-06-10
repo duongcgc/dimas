@@ -23,13 +23,13 @@ if ( Helper::get_option( 'header_width' ) == 'large' ) {
 	<div class="razzi-container-fluid <?php echo esc_attr( apply_filters( 'razzi_topbar_container_class', $container_width) ); ?>">
 		<?php if ( ! empty( $left_items ) ) : ?>
 			<div class="topbar-items topbar-left-items">
-				<?php Dimas_Theme::instance()->get('topbar')->topbar_items( $left_items ); ?>
+				<?php DM_Theme::instance()->get('topbar')->topbar_items( $left_items ); ?>
 			</div>
 		<?php endif; ?>
 
 		<?php if ( ! empty( $right_items ) ) : ?>
 			<div class="topbar-items topbar-right-items">
-				<?php Dimas_Theme::instance()->get('topbar')->topbar_items( $right_items ); ?>
+				<?php DM_Theme::instance()->get('topbar')->topbar_items( $right_items ); ?>
 			</div>
 		<?php endif; ?>
 	</div>

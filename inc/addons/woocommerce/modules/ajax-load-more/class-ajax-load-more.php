@@ -10,14 +10,14 @@ use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use Elementor\Scheme_Typography;
 
-class Dimas_Ajax_Load_More {
+class DM_Ajax_Load_More {
     public static $instance;
 
     private $template;
 
     public static function getInstance() {
-        if (!isset(self::$instance) && !(self::$instance instanceof Dimas_Ajax_Load_More)) {
-            self::$instance = new Dimas_Ajax_Load_More();
+        if (!isset(self::$instance) && !(self::$instance instanceof DM_Ajax_Load_More)) {
+            self::$instance = new DM_Ajax_Load_More();
         }
         return self::$instance;
     }
@@ -215,4 +215,4 @@ class Dimas_Ajax_Load_More {
     }
 }
 
-Dimas_Ajax_Load_More::getInstance();
+DM_Ajax_Load_More::getInstance();

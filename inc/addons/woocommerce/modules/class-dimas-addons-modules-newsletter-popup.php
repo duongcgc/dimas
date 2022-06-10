@@ -5,7 +5,7 @@
  * @package Dimas
  */
 
-use Dimas_Helper;
+use DM_Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class of Newsletter popup template.
  */
-class Dimas_Addons_Modules_Newsletter_Popup {
+class DM_Addons_Modules_Newsletter_Popup {
 	/**
 	 * Instance
 	 *
@@ -54,7 +54,7 @@ class Dimas_Addons_Modules_Newsletter_Popup {
 	 * @return void
 	 */
 	public function newsletter_popup() {
-		$newsletter = apply_filters( 'dimas_newsletter_popup', Dimas_Helper::get_option( 'newsletter_popup_enable' ) );
+		$newsletter = apply_filters( 'dimas_newsletter_popup', DM_Helper::get_option( 'newsletter_popup_enable' ) );
 		if ( ! $newsletter ) {
 			return;
 		}

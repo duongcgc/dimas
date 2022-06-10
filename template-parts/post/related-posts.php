@@ -13,7 +13,7 @@ if ( ! $related_posts->have_posts() ) {
 
 ?>
     <?php
-    Dimas_HTML::instance()->open('related_post_contents',[
+    DM_HTML::instance()->open('related_post_contents',[
         'attr' => [
             'class'    => 'razzi-posts__related',
         ],
@@ -27,6 +27,6 @@ if ( ! $related_posts->have_posts() ) {
 
             endwhile;
 		?>
-    <?php Dimas_HTML::instance()->close('related_post_contents');  ?>
+    <?php DM_HTML::instance()->close('related_post_contents');  ?>
 <?php
 wp_reset_postdata();

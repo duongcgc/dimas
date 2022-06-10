@@ -16,7 +16,7 @@ if (!defined( 'ABSPATH' )) {
     exit; // Exit if accessed directly
 }
 
-class Dimas_Field_Opal_Upload {
+class DM_Field_Opal_Upload {
 
     /**
      * Current version number
@@ -277,4 +277,4 @@ class Dimas_Field_Opal_Upload {
     }
 }
 
-Dimas_Field_Opal_Upload::init();
+DM_Field_Opal_Upload::init();

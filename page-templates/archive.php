@@ -16,7 +16,7 @@ get_header();
 ?>
 <?php if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'archive' ) ) { ?>
 	<?php
-	Dimas_HTML::instance()->open('primary_content',[
+	DM_HTML::instance()->open('primary_content',[
 		'attr' => [
 			'id'    => 'primary',
 			'class' => 'content-area',
@@ -26,7 +26,7 @@ get_header();
 	?>
 	<?php if ( have_posts() ) : ?>
 		<?php
-		Dimas_HTML::instance()->open('posts_content',[
+		DM_HTML::instance()->open('posts_content',[
 			'attr' => [
 				'class' => 'razzi-posts__wrapper',
 			],
@@ -52,9 +52,9 @@ get_header();
 	endif;
 	?>
 
-	<?php Dimas_HTML::instance()->close('posts_content');  ?>
+	<?php DM_HTML::instance()->close('posts_content');  ?>
 
-	<?php Dimas_HTML::instance()->close('primary_content');  ?>
+	<?php DM_HTML::instance()->close('primary_content');  ?>
 
 	<?php get_sidebar(); ?>
 <?php } ?>

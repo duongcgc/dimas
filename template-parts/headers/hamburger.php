@@ -7,6 +7,6 @@
 ?>
 <div class="header-hamburger hamburger-menu">
 	<span data-toggle="modal" data-target="hamburger-modal">
-		<?php echo Dimas_SVG_Icon::get_svg( 'hamburger' ); ?>
+		<?php echo DM_SVG_Icon::get_svg( 'hamburger' ); ?>
 	</span>
 </div>

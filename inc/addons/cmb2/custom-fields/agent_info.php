@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Dimas_Field_Agent_Info {
+class DM_Field_Agent_Info {
 
 	public function __construct() {
 		add_filter( 'cmb2_render_agent_info', array( $this, 'render' ), 10, 5 );
@@ -62,4 +62,4 @@ class Dimas_Field_Agent_Info {
 	}
 }
 
-new Dimas_Field_Agent_Info();
+new DM_Field_Agent_Info();

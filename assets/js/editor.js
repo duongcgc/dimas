@@ -4,7 +4,7 @@ wp.domReady( function() {
 	wp.blocks.unregisterBlockStyle( 'core/separator', 'wide' );
 
 	// Add to ".block-editor__typewriter" the "is-dark-theme" class if needed.
-	function dimasCopyDarkDimas_ThemeClass() {
+	function dimasCopyDarkDM_ThemeClass() {
 		var editor,
 			attemptDelay = 25,
 			attempt = 0,
@@ -19,7 +19,7 @@ wp.domReady( function() {
 			// Try again.
 			if ( attempt < maxAttempts ) {
 				setTimeout( function() {
-					dimasCopyDarkDimas_ThemeClass();
+					dimasCopyDarkDM_ThemeClass();
 				}, attemptDelay );
 
 				// Increment the attempts counter.
@@ -34,5 +34,5 @@ wp.domReady( function() {
 		editor.classList.add( 'is-dark-theme' );
 	}
 
-	dimasCopyDarkDimas_ThemeClass();
+	dimasCopyDarkDM_ThemeClass();
 } );

@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
  * @version  2.6.0
  * @extends  WC_Widget
  */
-class Dimas_Widget_Layered_Nav extends WC_Widget {
+class DM_Widget_Layered_Nav extends WC_Widget {
 
     /**
      * Constructor.

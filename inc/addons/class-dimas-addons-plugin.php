@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Dimas_Addons_Plugin {
+class DM_Addons_Plugin {
 
 	/**
 	 * Instance
@@ -76,7 +76,7 @@ class Dimas_Addons_Plugin {
 	private function includes() {
 		// Auto Loader
 		require_once DIMAS_ADDONS_DIR . 'class-dimas-addons-autoloader.php';
-		Dimas_Addons_Auto_Loader::register(
+		DM_Addons_Auto_Loader::register(
 			array(
 				'Dimas\Addons\Helper'          => DIMAS_ADDONS_DIR . '/class-dimas-addons-helper.php',
 				'Dimas\Addons\Widgets'         => DIMAS_ADDONS_DIR . '/widgets/class-dimas-addons-widgets.php',

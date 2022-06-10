@@ -167,7 +167,7 @@ class Widgets {
 			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Products_Masonry() );
 			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Products_Deal() );
 			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Products_Deal_2() );
-			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Dimas_Product() );
+			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\DM_Product() );
 			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Products_Recently_Viewed_Carousel() );
 			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Products_Recently_Viewed_Grid() );
 			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Products_Carousel_With_Thumbnails() );

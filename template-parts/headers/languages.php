@@ -6,5 +6,5 @@
 
 ?>
 <div class="header-languages">
-	<?php Dimas_Helper::language_switcher(); ?>
+	<?php DM_Helper::language_switcher(); ?>
 </div><!-- .header-languages -->

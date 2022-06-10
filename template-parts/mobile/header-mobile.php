@@ -8,7 +8,7 @@
 ?>
 
 <?php
-Dimas_HTML::instance()->open('header_mobile',[
+DM_HTML::instance()->open('header_mobile',[
 	'attr' => [
 		'class' => 'header-mobile',
 	],
@@ -18,4 +18,4 @@ Dimas_HTML::instance()->open('header_mobile',[
 
 <?php do_action( 'razzi_header_mobile_content' ); ?>
 
-<?php Dimas_HTML::instance()->close('header_mobile');  ?>
+<?php DM_HTML::instance()->close('header_mobile');  ?>

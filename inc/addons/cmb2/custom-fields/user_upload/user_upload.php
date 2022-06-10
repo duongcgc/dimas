@@ -16,7 +16,7 @@ if (!defined( 'ABSPATH' )) {
     exit; // Exit if accessed directly
 }
 
-class Dimas_Field_User_upload {
+class DM_Field_User_upload {
 
     /**
      * Current version number
@@ -231,4 +231,4 @@ class Dimas_Field_User_upload {
     }
 }
 
-Dimas_Field_User_upload::init();
+DM_Field_User_upload::init();

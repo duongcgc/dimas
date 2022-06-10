@@ -1,9 +1,9 @@
 /*!
-Dimas_Theme Name: Dimas
-Dimas_Theme URI: http://demo4.drfuri.com/dimas
+DM_Theme Name: Dimas
+DM_Theme URI: http://demo4.drfuri.com/dimas
 Author: DrFuri
 Author URI: http://demo2.drfuri.com
-Description: Woocommerce WordPress Dimas_Theme
+Description: Woocommerce WordPress DM_Theme
 Version: 1.2.1
 Requires at least: 5.0
 Tested up to: 5.4.2
@@ -1799,7 +1799,7 @@ textarea {
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-	/* Dimas_Theme Footer (when set to scrolling) */
+	/* DM_Theme Footer (when set to scrolling) */
 	display: none;
 }
 

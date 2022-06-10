@@ -23,7 +23,7 @@ use Razzi\Helper;
 		?>
     </h3>
     <a href="#"
-       class="close-search-panel button-close"><?php echo Dimas_SVG_Icon::get_svg( 'close' ); ?></a>
+       class="close-search-panel button-close"><?php echo DM_SVG_Icon::get_svg( 'close' ); ?></a>
 </div>
 <div class="modal-content">
     <form method="get" class="form-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -49,7 +49,7 @@ use Razzi\Helper;
 					'%s' .
 					'</div>',
 					esc_html__( 'All Categories', 'razzi' ),
-					Dimas_SVG_Icon::get_svg( 'chevron-bottom' ),
+					DM_SVG_Icon::get_svg( 'chevron-bottom' ),
 					wp_dropdown_categories( $args )
 				);
 			}
@@ -72,13 +72,13 @@ use Razzi\Helper;
                     <input type="hidden" name="post_type" value="product">
 				<?php endif; ?>
                 <a href="#"
-                   class="close-search-results"><?php echo Dimas_SVG_Icon::get_svg( 'close' ); ?></a>
+                   class="close-search-results"><?php echo DM_SVG_Icon::get_svg( 'close' ); ?></a>
                 <button class="search-submit"
-                        type="submit"><?php echo Dimas_SVG_Icon::get_svg( 'search', '', 'shop' ); ?></button>
+                        type="submit"><?php echo DM_SVG_Icon::get_svg( 'search', '', 'shop' ); ?></button>
             </div>
         </div>
         <span class="razzi-loading"></span>
     </form>
-	<?php Dimas_Header::search_quicklinks(); ?>
+	<?php DM_Header::search_quicklinks(); ?>
     <div class="search-results woocommerce"></div>
 </div>

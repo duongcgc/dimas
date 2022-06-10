@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas after setup theme
  */
-class Dimas_Addons_Elementor {
+class DM_Addons_Elementor {
 	/**
 	 * Instance
 	 *

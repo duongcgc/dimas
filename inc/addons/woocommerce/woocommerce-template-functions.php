@@ -103,7 +103,7 @@ if (!function_exists('dimas_cart_link')) {
     function dimas_cart_link() {
         if (!empty(WC()->cart) && WC()->cart instanceof WC_Cart) {
             $items = '';
-            $items .= '<a data-toggle="toggle" class="cart-contents header-button" href="' . esc_url(wc_get_cart_url()) . '" title="' . __("View your shopping cart", "beautifo-core") . '">';
+            $items .= '<a data-toggle="toggle" class="cart-contents header-button" href="' . esc_url(wc_get_cart_url()) . '" title="' . __("View your shopping cart", 'dimas') . '">';
             $items .= '<i class="dimas-icon-cart" aria-hidden="true"></i>';
             $items .= '<span class="count">' . wp_kses_data(WC()->cart->get_cart_contents_count()) . '</span>';
             $items .= '</a>';
@@ -153,7 +153,7 @@ if (!function_exists('dimas_cart_count_text')) {
      */
     function dimas_cart_count_text() {
         if (!empty(WC()->cart) && WC()->cart instanceof WC_Cart) {
-            return '<span class="count-text">' . wp_kses_data(_n("item", "items", WC()->cart->get_cart_contents_count(), "beautifo-core")) . '</span>';
+            return '<span class="count-text">' . wp_kses_data(_n("item", "items", WC()->cart->get_cart_contents_count(), 'dimas')) . '</span>';
         }
 
         return '';
@@ -737,7 +737,7 @@ if (!function_exists('dimas_woocommerce_get_product_label_feature')) {
 
 if (!function_exists('dimas_woocommerce_set_register_text')) {
     function dimas_woocommerce_set_register_text() {
-        echo '<div class="user-text">' . __("Creating an account is quick and easy, and will allow you to move through our checkout quicker.", "beautifo-core") . '</div>';
+        echo '<div class="user-text">' . __("Creating an account is quick and easy, and will allow you to move through our checkout quicker.", 'dimas') . '</div>';
     }
 }
 
@@ -817,10 +817,10 @@ if (!function_exists('dimas_woocommerce_time_sale')) {
                     <div class="deal-text d-none">' . esc_html__('Hurry up. Offer end in', 'dimas') . '</div>
                     <div class="dimas-countdown clearfix typo-quaternary"
                         data-countdown="countdown"
-                        data-days="' . esc_html__("days", "beautifo-core") . '" 
-                        data-hours="' . esc_html__("hours", "beautifo-core") . '"
-                        data-minutes="' . esc_html__("mins", "beautifo-core") . '"
-                        data-seconds="' . esc_html__("secs", "beautifo-core") . '"
+                        data-days="' . esc_html__("days", 'dimas') . '" 
+                        data-hours="' . esc_html__("hours", 'dimas') . '"
+                        data-minutes="' . esc_html__("mins", 'dimas') . '"
+                        data-seconds="' . esc_html__("secs", 'dimas') . '"
                         data-Message="' . esc_html__('Expired', 'dimas') . '"
                         data-date="' . date('m', $time_sale) . '-' . date('d', $time_sale) . '-' . date('Y', $time_sale) . '-' . date('H', $time_sale) . '-' . date('i', $time_sale) . '-' . date('s', $time_sale) . '">
                     </div>

@@ -17,7 +17,7 @@ Take it for a spin! See how Dimas elevates your portfolio, business website, or 
 
 == Installation ==
 
-1. In your admin panel, go to Appearance -> Dimas_Themes and click the 'Add New' button.
+1. In your admin panel, go to Appearance -> DM_Themes and click the 'Add New' button.
 2. Type in Dimas in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
 4. Go to INSERT ABOUT PAGE for a guide on how to customize this theme.
@@ -67,7 +67,7 @@ https://wordpress.org/support/article/dimas-changelog#Version_1.0
 
 == Copyright ==
 
-Dimas WordPress Dimas_Theme, 2020-2022 WordPress.org
+Dimas WordPress DM_Theme, 2020-2022 WordPress.org
 Dimas is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify

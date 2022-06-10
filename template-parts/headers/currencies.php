@@ -7,5 +7,5 @@
 
 ?>
 <div class="header-currencies">
-	<?php Dimas_Helper::currency_switcher(); ?>
+	<?php DM_Helper::currency_switcher(); ?>
 </div><!-- .header-currencies -->

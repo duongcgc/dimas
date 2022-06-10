@@ -42,7 +42,7 @@ class Opal_Woocommerce_Extra {
     }
 
     public function register_widget() {
-        register_widget('Dimas_Widget_Layered_Nav');
+        register_widget('DM_Widget_Layered_Nav');
     }
 
     /**
