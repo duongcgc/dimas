@@ -10,7 +10,7 @@
 ?>
 
 <?php
-\Razzi\Markup::instance()->open('post_content',[
+Dimas_HTML::instance()->open('post_content',[
 	'tag' => 'article',
 	'attr' => [
 		'id'    => 'post-' . get_the_ID(),
@@ -22,4 +22,4 @@
 
 <?php the_content(); ?>
 
-<?php \Razzi\Markup::instance()->close('post_content');  ?>
+<?php Dimas_HTML::instance()->close('post_content');  ?>

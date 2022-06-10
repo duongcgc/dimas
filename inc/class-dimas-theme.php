@@ -1,7 +1,7 @@
 <?php
 /**
  * Dimas Them initial.
- * => Include and Instance main group classes Base, Core, Module and Addons.
+ * => Include and Instance main group classes base Platform, Core, Module and Addons classes.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *

@@ -34,7 +34,7 @@
 	<?php do_action('razzi_after_close_site_header'); ?>
 
 	<?php
-	\Razzi\Markup::instance()->open( 'site_content', [
+	Dimas_HTML::instance()->open( 'site_content', [
 		'tag'     => 'div',
 		'attr'    => [
 			'id'    => 'content',

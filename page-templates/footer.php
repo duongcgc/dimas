@@ -12,7 +12,7 @@
 ?>
 
 <?php
-\Razzi\Markup::instance()->close( 'site_content' );
+Dimas_HTML::instance()->close( 'site_content' );
 ?>
 
 <?php do_action('razzi_before_open_site_footer'); ?>

@@ -11,7 +11,7 @@ get_header();
 ?>
 <?php if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'archive' ) ) { ?>
     <?php
-    \Razzi\Markup::instance()->open('search_content',[
+    Dimas_HTML::instance()->open('search_content',[
         'attr' => [
             'id'    => 'primary',
             'class' => 'content-area',
@@ -46,7 +46,7 @@ get_header();
 		endif;
 		?>
 
-    <?php \Razzi\Markup::instance()->close('search_content');  ?>
+    <?php Dimas_HTML::instance()->close('search_content');  ?>
 
 	<?php get_sidebar(); ?>
 <?php } ?>

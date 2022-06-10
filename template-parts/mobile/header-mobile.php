@@ -8,7 +8,7 @@
 ?>
 
 <?php
-\Razzi\Markup::instance()->open('header_mobile',[
+Dimas_HTML::instance()->open('header_mobile',[
 	'attr' => [
 		'class' => 'header-mobile',
 	],
@@ -18,4 +18,4 @@
 
 <?php do_action( 'razzi_header_mobile_content' ); ?>
 
-<?php \Razzi\Markup::instance()->close('header_mobile');  ?>
+<?php Dimas_HTML::instance()->close('header_mobile');  ?>

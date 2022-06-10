@@ -11,7 +11,7 @@ get_header();
 ?>
 <?php if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'single' ) ) { ?>
 	<?php
-	\Razzi\Markup::instance()->open('single_post_content',[
+	Dimas_HTML::instance()->open('single_post_content',[
 		'attr' => [
 			'id'    => 'primary',
 			'class' => 'content-area',
@@ -28,7 +28,7 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-	<?php \Razzi\Markup::instance()->close('single_post_content');  ?>
+	<?php Dimas_HTML::instance()->close('single_post_content');  ?>
 
 
 	<?php get_sidebar(); ?>
