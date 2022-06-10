@@ -49,10 +49,14 @@ final class Dimas_Theme {
 	 */
 	public function __construct() {
 
-		require_once get_template_directory() . '/inc/class-dimas-autoloader.php';
+		// auto include classes.
+		require_once DIMAS_INC_DIR . '/class-dimas-autoloader.php';
+
+		// create classes.
+		$this->init();
 
 		if ( is_admin() ) {
-			require_once get_template_directory() . '/inc/libs/class-tgm-plugin-activation.php';
+			// require_once get_template_directory() . '/inc/libs/class-tgm-plugin-activation.php';
 		}
 		
 	}
@@ -69,51 +73,71 @@ final class Dimas_Theme {
 		do_action( 'before_dimas_init' );
 
 		// Setup.
-		$this->get( 'autoload' );
-		$this->get( 'setup' );
-		$this->get( 'widgets' );
+		$this->get( 'template-function', 'platform' );
 
-		$this->get( 'woocommerce' );
+		// $this->get( 'autoload' );
+		// $this->get( 'setup' );
+		// $this->get( 'widgets' );
 
-		$this->get( 'mobile' );
+		// $this->get( 'woocommerce' );
 
-		$this->get( 'maintenance' );
+		// $this->get( 'mobile' );
 
-		// Header.
-		$this->get( 'preloader' );
-		$this->get( 'topbar' );
-		$this->get( 'header' );
-		$this->get( 'campaigns' );
+		// $this->get( 'maintenance' );
 
-		// Page Header.
-		$this->get( 'page_header' );
-		$this->get( 'breadcrumbs' );
+		// // Header.
+		// $this->get( 'preloader' );
+		// $this->get( 'topbar' );
+		// $this->get( 'header' );
+		// $this->get( 'campaigns' );
 
-		// Layout & Style.
-		$this->get( 'layout' );
-		$this->get( 'dynamic_css' );
+		// // Page Header.
+		// $this->get( 'page_header' );
+		// $this->get( 'breadcrumbs' );
 
-		// Comments.
-		$this->get( 'comments' );
+		// // Layout & Style.
+		// $this->get( 'layout' );
+		// $this->get( 'dynamic_css' );
 
-		// Footer.
-		$this->get( 'footer' );
+		// // Comments.
+		// $this->get( 'comments' );
 
-		// Modules.
-		$this->get( 'search_ajax' );
-		$this->get( 'newsletter' );
+		// // Footer.
+		// $this->get( 'footer' );
 
-		// Templates.
-		$this->get( 'page' );
+		// // Modules.
+		// $this->get( 'search_ajax' );
+		// $this->get( 'newsletter' );
 
-		$this->get( 'blog' );
+		// // Templates.
+		// $this->get( 'page' );
 
-		// Admin.
-		$this->get( 'admin' );
+		// $this->get( 'blog' );
+
+		// // Admin.
+		// $this->get( 'admin' );
 
 		// Init action.
 		do_action( 'after_dimas_init' );
 
+	}
+
+	/**
+	 * Convert file name into Class name.
+	 *
+	 * @param string $file    The file name with format - sperate.
+	 * @return string
+	 */
+	public function file_to_class( $file ) {		
+		$file_parts = explode( '-', $file );
+		
+		for ( $i=0; $i < count($file_parts); $i++) {			 
+			$file_parts[$i] = ucwords( $file_parts[$i] );
+		}
+
+		$class_name = implode( '_', $file_parts );
+
+		return $class_name;
 	}
 
 	/**
@@ -125,7 +149,18 @@ final class Dimas_Theme {
 	 *
 	 * @return object
 	 */
-	public function get( $class ) {
+	public function get( $class, $folder = '' ) {
+
+		// Folder slug
+		$folder_slug = $folder;
+
+		if ( 'platform' == $folder ) {
+			$folder_slug = '';
+		} else {
+			$folder_slug = $folder . '_';
+		}
+
+		// Class name.
 		switch ( $class ) {
 			case 'woocommerce':
 				if ( class_exists( 'Dimas_Woocommerce' ) ) {
@@ -152,8 +187,11 @@ final class Dimas_Theme {
 				break;
 
 			default:
-				$class = ucwords( $class );
-				$class = 'Dimas_' . $class;
+				$class = $this->file_to_class( $class );
+				$class = 'Dimas_' . ucwords( $folder_slug ) . $class;
+
+				echo $class;
+
 				if ( class_exists( $class ) ) {
 					return $class::instance();
 				}

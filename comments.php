@@ -62,13 +62,13 @@ $dimas_comment_count = get_comments_number();
 				'mid_size'           => 0,
 				'prev_text'          => sprintf(
 					'%s <span class="nav-prev-text">%s</span>',
-					is_rtl() ? \Dimas\Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' ) : \Dimas\Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' ),
+					is_rtl() ? \Dimas_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' ) : \Dimas_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' ),
 					esc_html__( 'Older comments', 'dimas' )
 				),
 				'next_text'          => sprintf(
 					'<span class="nav-next-text">%s</span> %s',
 					esc_html__( 'Newer comments', 'dimas' ),
-					is_rtl() ? \Dimas\Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' ) : \Dimas\Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' )
+					is_rtl() ? \Dimas_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' ) : \Dimas_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' )
 				),
 			)
 		);

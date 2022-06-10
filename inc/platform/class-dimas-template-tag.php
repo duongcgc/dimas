@@ -209,7 +209,7 @@ class Dimas_Template_Tag {
 	 * @return void
 	 */
 	public function dimas_post_thumbnail() {
-		if ( ! \Dimas\Temp_Funs::instance()->dimas_can_show_post_thumbnail() ) {
+		if ( ! \Dimas_Template_Function::instance()->dimas_can_show_post_thumbnail() ) {
 			return;
 		}
 		?>
