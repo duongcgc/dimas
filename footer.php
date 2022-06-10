@@ -75,6 +75,8 @@
 
 </div><!-- #page -->
 
+<h5>This is Footer</h5>
+
 <?php wp_footer(); ?>
 
 </body>
