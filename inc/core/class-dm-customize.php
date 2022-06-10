@@ -7,13 +7,14 @@
  * @since Dimas 1.0
  */
 
+namespace Dimas;
 
-	/**
-	 * Customizer Settings.
-	 *
-	 * @since Dimas 1.0
-	 */
-class DM_Co_Customize {
+/**
+ * Customizer Settings.
+ *
+ * @since Dimas 1.0
+ */
+class DM_Customize {
 
 	/**
 	 * Instance

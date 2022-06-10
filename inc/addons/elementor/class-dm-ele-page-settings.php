@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-class Page_Settings {
+class DM_Ele_Page_Settings {
 
 	/**
 	 * Instance

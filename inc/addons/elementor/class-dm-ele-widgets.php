@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Widgets {
+class DM_Ele_Widgets {
 
 	/**
 	 * Instance
@@ -50,7 +50,7 @@ class Widgets {
 	 * @return void
 	 */
 	public function __construct() {
-		spl_autoload_register( [ $this, 'autoload' ] );
+		spl_autoload_register( array( $this, 'autoload' ) );
 		$this->add_actions();
 	}
 
@@ -83,7 +83,7 @@ class Widgets {
 		$filename = DIMAS_ADDONS_DIR . 'inc/elementor/widgets/' . $filename . '.php';
 
 		if ( is_readable( $filename ) ) {
-			include( $filename );
+			include $filename;
 		}
 	}
 
@@ -95,7 +95,7 @@ class Widgets {
 	 * @return void
 	 */
 	protected function add_actions() {
-		add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
+		add_action( 'elementor/widgets/widgets_registered', array( $this, 'init_widgets' ) );
 	}
 
 	/**

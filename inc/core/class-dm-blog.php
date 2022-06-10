@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Blog initial
  *
  */
-class Blog {
+class DM_Blog {
 	/**
 	 * Instance
 	 *

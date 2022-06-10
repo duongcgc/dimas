@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-class AjaxLoader {
+class DM_Ele_Ajax_Loader {
 
 	/**
 	 * Instance

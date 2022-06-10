@@ -14,7 +14,10 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-class Metaboxes {
+/**
+ * Undocumented class.
+ */
+class DM_Metaboxes {
 	/**
 	 * Instance
 	 *

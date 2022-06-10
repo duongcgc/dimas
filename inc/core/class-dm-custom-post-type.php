@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Custom Post Type initial
  */
-class DM_CPT {
+class DM_Custom_Post_Type {
 	/**
 	 * Instance
 	 *

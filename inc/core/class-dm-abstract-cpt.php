@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Base for custom post.
+ */
 
 namespace Dimas;
 
