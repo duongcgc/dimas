@@ -76,7 +76,7 @@ class Dimas_Addons_Plugin {
 	private function includes() {
 		// Auto Loader
 		require_once DIMAS_ADDONS_DIR . 'class-dimas-addons-autoloader.php';
-		\Dimas\Addons\Auto_Loader::register(
+		Dimas_Addons_Auto_Loader::register(
 			array(
 				'Dimas\Addons\Helper'          => DIMAS_ADDONS_DIR . '/class-dimas-addons-helper.php',
 				'Dimas\Addons\Widgets'         => DIMAS_ADDONS_DIR . '/widgets/class-dimas-addons-widgets.php',
