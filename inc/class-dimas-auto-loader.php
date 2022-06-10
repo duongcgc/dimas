@@ -87,6 +87,7 @@ class Dimas_Auto_Loader {
 		$core_framework = array(
 			'co'			=> 'core',
 			'fw'			=> 'framework',
+			'addons'		=> 'addons',
 		);
 		
 		if ( count( $file_parts ) > 1 ) {
@@ -109,6 +110,8 @@ class Dimas_Auto_Loader {
 		}
 
 		$file_name = $file_dir . 'class-' . $file_name . '.php';
+
+		echo $file_name . '<br/>';
 
 		if ( is_readable( $file_name ) ) {
 			include( $file_name );

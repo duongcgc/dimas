@@ -83,6 +83,14 @@ final class Dimas_Theme {
 		// $this->get( 'setup' );
 		// $this->get( 'widgets' );
 
+
+		// Elementor.
+		$this->get( 'addons-elementor');
+
+
+		// Customizer
+		$this->get( 'co-customize' );
+
 		// $this->get( 'woocommerce' );
 
 		// $this->get( 'mobile-blog' );

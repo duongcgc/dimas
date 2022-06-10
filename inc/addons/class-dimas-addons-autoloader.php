@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Autoloader.
+ * Autoloader elements of classes.
  */
 class Dimas_Addons_AutoLoader {
 

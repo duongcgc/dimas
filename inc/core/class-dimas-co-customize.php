@@ -13,7 +13,28 @@
 	 *
 	 * @since Dimas 1.0
 	 */
-class Dimas_Customize {
+class Dimas_Co_Customize {
+
+	/**
+	 * Instance
+	 *
+	 * @var $instance
+	 */
+	protected static $instance = null;
+
+	/**
+	 * Initiator
+	 *
+	 * @since 1.0.0
+	 * @return object
+	 */
+	public static function instance() {
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
 
 	/**
 	 * Constructor. Instantiate the object.
@@ -24,6 +45,8 @@ class Dimas_Customize {
 		add_action( 'customize_register', array( $this, 'register' ) );
 		add_action( 'customize_preview_init', array( $this, 'dimas_customize_preview_init' ) );
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'dimas_customize_controls_enqueue_scripts' ) );
+
+		echo 'Hello Customize';
 
 	}
 

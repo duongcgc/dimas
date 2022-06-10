@@ -8,8 +8,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -47,6 +45,7 @@ class Dimas_Addons_Elementor {
 	 */
 	public function __construct() {
 		add_action( 'widgets_init', array( $this, 'widgets_init' ) );
+		echo 'Elementor Helo';
 	}
 
 	/**
