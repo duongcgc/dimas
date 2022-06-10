@@ -33,8 +33,8 @@ while ( have_posts() ) :
 	}
 
 	// Previous/next post navigation.
-	$dimas_next = is_rtl() ? \Dimas_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' ) : \Dimas_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' );
-	$dimas_prev = is_rtl() ? \Dimas_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' ) : \Dimas_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' );
+	$dimas_next = is_rtl() ? \Dimas_Fw_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' ) : \Dimas_Fw_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' );
+	$dimas_prev = is_rtl() ? \Dimas_Fw_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' ) : \Dimas_Fw_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' );
 
 	$dimas_next_label     = esc_html__( 'Next post', 'dimas' );
 	$dimas_previous_label = esc_html__( 'Previous post', 'dimas' );

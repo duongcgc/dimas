@@ -84,9 +84,9 @@ class Dimas_Auto_Loader {
 			'options'		=> 'core/options',
 		);
 
-		$core_platform = array(
+		$core_framework = array(
 			'co'			=> 'core',
-			'pl'			=> 'platform',
+			'fw'			=> 'framework',
 		);
 		
 		if ( count( $file_parts ) > 1 ) {
@@ -102,8 +102,8 @@ class Dimas_Auto_Loader {
 				$file_dir .= $addons_folder[ $file_parts['1'] ] . '/';
 			} elseif ( array_key_exists($file_parts['1'], $core_folder ) ) {
 				$file_dir .= $core_folder[ $file_parts['1'] ] . '/';
-			} elseif ( array_key_exists($file_parts['1'], $core_platform ) ) {
-				$file_dir .= $core_platform[ $file_parts['1'] ] . '/';
+			} elseif ( array_key_exists($file_parts['1'], $core_framework ) ) {
+				$file_dir .= $core_framework[ $file_parts['1'] ] . '/';
 			}
 
 		}

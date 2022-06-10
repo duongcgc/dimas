@@ -74,14 +74,18 @@ final class Dimas_Theme {
 
 		// Setup.
 		$this->get( 'auto-loader' );
-		$this->get( 'pl-template-function' );
+		$this->get( 'fw-template-function' );
+		$this->get( 'fw-template-tag' );
+
+		$this->get( 'styles' );
+		$this->get( 'scripts' );
 
 		// $this->get( 'setup' );
 		// $this->get( 'widgets' );
 
 		// $this->get( 'woocommerce' );
 
-		$this->get( 'mobile-blog' );
+		// $this->get( 'mobile-blog' );
 
 		// $this->get( 'maintenance' );
 

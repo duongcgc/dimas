@@ -20,7 +20,7 @@
  *
  * @since Dimas 1.0
  */
-class Dimas_SVG_Icon {
+class Dimas_SVG_Icons {
 
 	/**
 	 * User Interface icons – svg sources.

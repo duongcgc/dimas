@@ -107,7 +107,7 @@ class Dimas_Menu {
 	 * @return string
 	 */
 	public function dimas_get_social_link_svg( $uri, $size = 24 ) {
-		return \Dimas\SVG_Icons::get_social_link_svg( $uri, $size );
+		return \Dimas_SVG_Icons::get_social_link_svg( $uri, $size );
 	}
 
 	/**

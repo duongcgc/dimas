@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Hooks initial
  */
-class Dimas_Pl_Template_Function {
+class Dimas_Fw_Template_Function {
 	/**
 	 * Instance
 	 *
@@ -239,7 +239,7 @@ class Dimas_Pl_Template_Function {
 	 * @return string
 	 */
 	public function dimas_get_icon_svg( $group, $icon, $size = 24 ) {
-		return \Dimas\SVG_Icons::get_svg( $group, $icon, $size );
+		return \Dimas_SVG_Icons::get_svg( $group, $icon, $size );
 	}
 
 	/**

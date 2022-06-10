@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Hooks initial
  */
-class Dimas_Template_Tag {
+class Dimas_Fw_Template_Tag {
 	/**
 	 * Instance
 	 *
@@ -134,7 +134,7 @@ class Dimas_Template_Tag {
 
 				echo '<div class="post-taxonomies">';
 
-				$categories_list = get_the_category_list( Temp_Funs::wp_get_list_item_separator() );
+				$categories_list = get_the_category_list( Dimas_Fw_Template_Function::wp_get_list_item_separator() );
 				if ( $categories_list ) {
 					printf(
 						/* translators: %s: List of categories. */
@@ -143,7 +143,7 @@ class Dimas_Template_Tag {
 					);
 				}
 
-				$tags_list = get_the_tag_list( '', Temp_Funs::wp_get_list_item_separator() );
+				$tags_list = get_the_tag_list( '', Dimas_Fw_Template_Function::wp_get_list_item_separator() );
 				if ( $tags_list ) {
 					printf(
 						/* translators: %s: List of tags. */
@@ -176,7 +176,7 @@ class Dimas_Template_Tag {
 
 				echo '<div class="post-taxonomies">';
 
-				$categories_list = get_the_category_list( Temp_Funs::wp_get_list_item_separator() );
+				$categories_list = get_the_category_list( Dimas_Fw_Template_Function::wp_get_list_item_separator() );
 				if ( $categories_list ) {
 					printf(
 						/* translators: %s: List of categories. */
@@ -185,7 +185,7 @@ class Dimas_Template_Tag {
 					);
 				}
 
-				$tags_list = get_the_tag_list( '', Temp_Funs::wp_get_list_item_separator() );
+				$tags_list = get_the_tag_list( '', Dimas_Fw_Template_Function::wp_get_list_item_separator() );
 				if ( $tags_list ) {
 					printf(
 						/* translators: %s: List of tags. */
@@ -209,7 +209,7 @@ class Dimas_Template_Tag {
 	 * @return void
 	 */
 	public function dimas_post_thumbnail() {
-		if ( ! \Dimas_Template_Function::instance()->dimas_can_show_post_thumbnail() ) {
+		if ( ! \Dimas_Fw_Template_Function::instance()->dimas_can_show_post_thumbnail() ) {
 			return;
 		}
 		?>
@@ -255,7 +255,7 @@ class Dimas_Template_Tag {
 				'mid_size'           => 0,
 				'prev_text'          => sprintf(
 					'%s <span class="nav-prev-text">%s</span>',
-					is_rtl() ? Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' ) : Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' ),
+					is_rtl() ? Dimas_Fw_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' ) : Dimas_Fw_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' ),
 					wp_kses(
 						__( 'Newer <span class="nav-short">posts</span>', 'dimas' ),
 						array(
@@ -275,7 +275,7 @@ class Dimas_Template_Tag {
 							),
 						)
 					),
-					is_rtl() ? Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' ) : Temp_Funs::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' )
+					is_rtl() ? Dimas_Fw_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_left' ) : Dimas_Fw_Template_Function::instance()->dimas_get_icon_svg( 'ui', 'arrow_right' )
 				),
 			)
 		);

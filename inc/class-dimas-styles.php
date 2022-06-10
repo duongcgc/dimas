@@ -86,7 +86,7 @@ class Dimas_Styles {
 	 * @return void
 	 */
 	public function dimas_non_latin_languages() {
-		$custom_css = \Dimas_Template_Function::instance()->dimas_get_non_latin_css( 'front-end' );
+		$custom_css = \Dimas_Fw_Template_Function::instance()->dimas_get_non_latin_css( 'front-end' );
 
 		if ( $custom_css ) {
 			wp_add_inline_style( 'dimas-style', $custom_css );

@@ -55,7 +55,7 @@ if ( have_posts() ) {
 	} // End the loop.
 
 	// Previous/next page navigation.
-	\Dimas_Template_Tag::instance()->dimas_the_posts_navigation();
+	\Dimas_Fw_Template_Tag::instance()->dimas_the_posts_navigation();
 
 	// If no content, include the "No posts found" template.
 } else {
