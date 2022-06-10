@@ -50,7 +50,7 @@ final class Dimas_Theme {
 	public function __construct() {
 
 		// auto include classes.
-		require_once DIMAS_INC_DIR . '/class-dimas-autoloader.php';
+		require_once DIMAS_INC_DIR . '/class-dimas-auto-loader.php';
 
 		// create classes.
 		$this->init();
@@ -73,6 +73,7 @@ final class Dimas_Theme {
 		do_action( 'before_dimas_init' );
 
 		// Setup.
+		$this->get( 'auto-loader' );
 		$this->get( 'template-function', 'platform' );
 
 		// $this->get( 'autoload' );
@@ -81,7 +82,7 @@ final class Dimas_Theme {
 
 		// $this->get( 'woocommerce' );
 
-		// $this->get( 'mobile' );
+		$this->get( 'mobile-blog' );
 
 		// $this->get( 'maintenance' );
 
@@ -154,10 +155,10 @@ final class Dimas_Theme {
 		// Folder slug
 		$folder_slug = $folder;
 
-		if ( 'platform' == $folder ) {
+		if ( ('platform' == $folder) || ( 'core' == $folder ) ) {
 			$folder_slug = '';
 		} else {
-			$folder_slug = $folder . '_';
+			$folder_slug = $folder;
 		}
 
 		// Class name.
@@ -188,12 +189,12 @@ final class Dimas_Theme {
 
 			default:
 				$class = $this->file_to_class( $class );
-				$class = 'Dimas_' . ucwords( $folder_slug ) . $class;
-
-				echo $class;
+				$class = 'Dimas_' . $folder_slug . $class;
 
 				if ( class_exists( $class ) ) {
 					return $class::instance();
+				} else {
+					echo 'Not found class ' . $class;
 				}
 				break;
 		}

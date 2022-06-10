@@ -19,7 +19,7 @@
 			<?php the_title( sprintf( '<h2 class="entry-title default-max-width"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 		<?php endif; ?>
 
-		<?php \Dimas\Temp_Tags::instance()->dimas_post_thumbnail(); ?>
+		<?php \Dimas_Template_Tag::instance()->dimas_post_thumbnail(); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

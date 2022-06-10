@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas_AutoLoader init
  */
-class Dimas_AutoLoader {
+class Dimas_Auto_Loader {
 	/**
 	 * Instance
 	 *
@@ -63,9 +63,27 @@ class Dimas_AutoLoader {
 		
 		$relative_class_name = strtolower( $class );
 		$relative_class_name = str_replace( '_', '-', $relative_class_name );
-		$file_parts          = explode( '\\', $relative_class_name );
+		$file_parts          = explode( '-', $relative_class_name );
 		$file_name           = $relative_class_name;		
-		$file_dir            = get_template_directory() . '/inc/';
+		$file_dir            = DIMAS_INC_DIR . '/';
+
+
+		$addons_folder = array( 
+			'widgets'	=> 'addons/widgets',
+			'elementor'	=> 'addons/elementor', 
+			'ocdi'		=> 'addons/ocdi', 
+			'woo'		=> 'addons/woocommerce',
+		);
+
+		$core_folder = array( 
+			'admin'			=> 'core/admin',
+			'blog'			=> 'core/blog',
+			'cpt'			=> 'core/cpt',
+			'customizer'	=> 'core/customizer',
+			'libs'			=> 'core/libs',
+			'mobile'		=> 'core/mobile',
+			'options'		=> 'core/options',
+		);
 		
 		if ( count( $file_parts ) > 1 ) {
 			$i         = 0;
@@ -76,18 +94,18 @@ class Dimas_AutoLoader {
 				$file_name .= $file_part;
 				$i ++;
 			}
-			if ( $file_parts['0'] === 'mobile' ) {
-				$file_dir .= 'mobile/';
-			} elseif ( $file_parts['0'] === 'woocommerce' ) {
-				$file_dir .= 'woocommerce/';
-			} elseif ( $file_parts['0'] === 'admin' ) {
-				$file_dir .= 'admin/';
-			} elseif ( $file_parts['0'] === 'blog' ) {
-				$file_dir .= 'blog/';
-			}
+			if ( array_key_exists($file_parts['1'], $addons_folder ) ) {
+				$file_dir .= $addons_folder[ $file_parts['1'] ] . '/';
+			} elseif ( array_key_exists($file_parts['1'], $core_folder ) ) {
+				$file_dir .= $core_folder[ $file_parts['1'] ] . '/';
+			} 
 
 		}
-		$file_name = $file_dir . 'class-dimas-' . $file_name . '.php';
+		$file_name = $file_dir . 'class-' . $file_name . '.php';
+
+		echo $file_name;
+		echo '<br />'; 
+
 
 		if ( is_readable( $file_name ) ) {
 			include( $file_name );
