@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Hooks initial
  */
-class Dimas_Template_Function {
+class Dimas_Pl_Template_Function {
 	/**
 	 * Instance
 	 *

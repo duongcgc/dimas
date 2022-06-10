@@ -74,9 +74,8 @@ final class Dimas_Theme {
 
 		// Setup.
 		$this->get( 'auto-loader' );
-		$this->get( 'template-function' );
+		$this->get( 'pl-template-function' );
 
-		// $this->get( 'autoload' );
 		// $this->get( 'setup' );
 		// $this->get( 'widgets' );
 

@@ -83,12 +83,17 @@ class Dimas_Auto_Loader {
 			'mobile'		=> 'core/mobile',
 			'options'		=> 'core/options',
 		);
+
+		$core_platform = array(
+			'co'			=> 'core',
+			'pl'			=> 'platform',
+		);
 		
 		if ( count( $file_parts ) > 1 ) {
 			$i         = 0;
 			$file_name = '';
 			foreach ( $file_parts as $file_part ) {
-				$file_part = $file_part === 'woocommerce' ? 'woo' : $file_part;
+				$file_part = $file_part === 'woocommerce' ? 'woo' : $file_part;				
 				$file_name .= $i == 0 ? '' : '-';
 				$file_name .= $file_part;
 				$i ++;
@@ -97,13 +102,13 @@ class Dimas_Auto_Loader {
 				$file_dir .= $addons_folder[ $file_parts['1'] ] . '/';
 			} elseif ( array_key_exists($file_parts['1'], $core_folder ) ) {
 				$file_dir .= $core_folder[ $file_parts['1'] ] . '/';
-			} 
+			} elseif ( array_key_exists($file_parts['1'], $core_platform ) ) {
+				$file_dir .= $core_platform[ $file_parts['1'] ] . '/';
+			}
 
 		}
 
 		$file_name = $file_dir . 'class-' . $file_name . '.php';
-		
-
 
 		if ( is_readable( $file_name ) ) {
 			include( $file_name );

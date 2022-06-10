@@ -5,8 +5,6 @@
  * @package Dimas
  */
 
-namespace Dimas\Mobile;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -15,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Mobile Blog initial
  *
  */
-class Mobile_Blog {
+class Dimas_Mobile_Blog {
 	/**
 	 * Instance
 	 *
