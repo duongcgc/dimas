@@ -469,15 +469,13 @@ class Theme_Setup {
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 
-		// Set post thumbnails.
-		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 1568, 9999 );
+		// // Set post thumbnails.
+		// add_theme_support( 'post-thumbnails' );
+		// set_post_thumbnail_size( 1568, 9999 );
 
-		// Add Image Sizes.
-		add_image_size( 'dimas-blog-grid', 600, 398, true );
-		add_image_size( 'dimas-post-full', 1170, 450, true );
-		add_image_size( 'dimas-products-with-thumbnails-large', 270, 270, true );
-		add_image_size( 'dimas-products-with-thumbnails-small', 94, 86, true );
+		// // Add Image Sizes.
+		// add_image_size( 'dimas-blog-grid', 600, 398, false );
+		// add_image_size( 'dimas-post-full', 1170, 450, false );
 	}
 
 }

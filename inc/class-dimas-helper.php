@@ -97,7 +97,7 @@ class Helper {
 				esc_html( $wp_query->post_count ),
 				esc_html__( 'of', 'dimas' ),
 				esc_html( $wp_query->found_posts ),
-				esc_textarea( $post_text, 'dimas' ),
+				esc_html( $post_text ),
 			);
 
 		}

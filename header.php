@@ -4,9 +4,9 @@
  *
  * This is the template that displays all of the <head> section and everything up until main.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @link https://www.gcosoftware.vn/
  *
- * @package WordPress
+ * @package GCO
  * @subpackage Dimas
  * @since Dimas 1.0
  */
@@ -20,13 +20,13 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'dimas' ); ?></a>
-
-	<?php get_template_part( 'template-parts/header/site-header' ); ?>
-
-	<div id="content" class="site-content">
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main">
+<body data-plugin-page-transition class="animsition pp-viewing-Home <?php body_class(); ?>">
+	<?php wp_body_open(); ?>
+	<div class="preloader">
+		<div class="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+		</div>
+	</div>
+	<div class="body">
+		<?php get_template_part( 'template-parts/header/site-header' ); ?>

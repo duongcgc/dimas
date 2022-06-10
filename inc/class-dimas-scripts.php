@@ -236,7 +236,7 @@ class Scripts {
 		wp_enqueue_script(
 			'animsition-script',
 			get_template_directory_uri() . '/assets/addons/js/animsition/animsition.min.js',
-			array( 'dimas-responsive-embeds-script' ),
+			array( 'jquery' ),
 			wp_get_theme()->get( 'Version' ),
 			true
 		);
@@ -248,19 +248,19 @@ class Scripts {
 			wp_enqueue_script(
 				'masonry-script',
 				get_template_directory_uri() . '/assets/addons/js/masonry/masonry.min.js',
-				array( 'dimas-responsive-embeds-script' ),
+				array( 'jquery' ),
 				wp_get_theme()->get( 'Version' ),
 				true
 			);
 		}
 		// Blog Post script.
-		if ( is_category() ) {
+		if ( is_singular( 'post' ) ) {
 
 			// fancybox script.
 			wp_enqueue_script(
 				'fancybox-script',
 				get_template_directory_uri() . '/assets/addons/js/fancybox/fancybox.umd.js',
-				array( 'dimas-responsive-embeds-script' ),
+				array( 'jquery' ),
 				wp_get_theme()->get( 'Version' ),
 				true
 			);
@@ -273,7 +273,7 @@ class Scripts {
 			wp_enqueue_script(
 				'pagepiling-script',
 				get_template_directory_uri() . '/assets/addons/js/pagepiling/pagepiling.min.js',
-				array( 'dimas-responsive-embeds-script' ),
+				array( 'jquery' ),
 				wp_get_theme()->get( 'Version' ),
 				true
 			);
@@ -283,7 +283,7 @@ class Scripts {
 		wp_enqueue_script(
 			'main-script',
 			get_template_directory_uri() . '/assets/js/dimas-main.js',
-			array( 'dimas-responsive-embeds-script' ),
+			array( 'jquery', 'animsition-script' ),
 			wp_get_theme()->get( 'Version' ),
 			true
 		);

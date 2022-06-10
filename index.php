@@ -1,45 +1,28 @@
 <?php
 /**
- * The main template file
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
+ * The site's entry point.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * Loads the relevant template part,
+ * the loop is executed (when needed) by the relevant template part.
  *
- * @package WordPress
+ * @link https://www.gcosoftware.vn/
+ *
+ * @package GCO
  * @subpackage Dimas
  * @since Dimas 1.0
  */
 
-get_header(); ?>
-
-<?php if ( is_home() && ! is_front_page() && ! empty( single_post_title( '', false ) ) ) : ?>
-	<header class="page-header alignwide">
-		<h1 class="page-title"><?php single_post_title(); ?></h1>
-	</header><!-- .page-header -->
-<?php endif; ?>
-
-<?php
-if ( have_posts() ) {
-
-	// Load posts loop.
-	while ( have_posts() ) {
-		the_post();
-
-		get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) );
-	}
-
-	// Previous/next page navigation.
-	\Dimas\Temp_Tags::instance()->dimas_the_posts_navigation();
-
+get_header();
+$type_current = get_post_type();
+if ( is_front_page() ) {
+	get_template_part( 'template-parts/page/home' );
+} elseif ( is_single() ) {
+	get_template_part( 'template-parts/' . $type_current . '/single-' . $type_current );
+} elseif ( is_category() ) {
+		get_template_part( 'template-parts/' . $type_current . '/archive-' . $type_current );
 } else {
-
-	// If no content, include the "No posts found" template.
-	get_template_part( 'template-parts/content/content-none' );
-
+		get_template_part( '404' );
 }
 
 get_footer();

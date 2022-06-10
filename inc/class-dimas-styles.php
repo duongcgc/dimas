@@ -86,6 +86,9 @@ class Styles {
 		// Home styles.
 		if ( is_front_page() ) {
 
+			// pagepiling style.
+			wp_enqueue_style( 'pagepiling-style', get_template_directory_uri() . '/assets/addons/css/pagepiling/pagepiling.min.css', array(), wp_get_theme()->get( 'Version' ) );
+
 			// main style.
 			wp_enqueue_style( 'home-style', get_template_directory_uri() . '/assets/css/home.css', array(), wp_get_theme()->get( 'Version' ) );
 		}
@@ -101,7 +104,7 @@ class Styles {
 		}
 
 		// Blog Post styles.
-		if ( is_single() ) {
+		if ( is_singular( 'post' ) ) {
 
 			// fancybox style.
 			wp_enqueue_style( 'fancybox-style', get_template_directory_uri() . '/assets/addons/css/fancybox/fancybox.css', array(), wp_get_theme()->get( 'Version' ) );
