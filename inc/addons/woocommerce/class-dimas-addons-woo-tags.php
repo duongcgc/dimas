@@ -3,10 +3,10 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-if (!class_exists('Dimas_WooCommerce')) :
+if (!class_exists('Dimas_Addons_Woo_Tag')) :
 
 
-    class Dimas_Addons_WooCommerce {
+    class Dimas_Addons_Woo_Tag {
 
         static $instance;
 
@@ -18,7 +18,7 @@ if (!class_exists('Dimas_WooCommerce')) :
         private $list_size = 'shop_thumbnail';
 
         /**
-         * @return Dimas_Addons_WooCommerce
+         * @return Dimas_Addons_Woo_Tag
          */
         public static function getInstance() {
             if (!isset(self::$instance) && !(self::$instance instanceof dimas_WooCommerce)) {

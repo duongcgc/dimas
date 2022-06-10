@@ -1,6 +1,7 @@
 <?php
 /**
  * Woocommerce functions and definitions.
+ * => connection template logic woocommerce into this theme.
  *
  * @package Dimas
  */
@@ -12,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Woocommerce initial
  */
-class Dimas_Woocommerce {
+class Dimas_Addons_Woocommerce {
 	/**
 	 * Instance
 	 *
@@ -105,29 +106,29 @@ class Dimas_Woocommerce {
 	public function get( $class ) {
 		switch ( $class ) {
 			case 'setup':
-				return \Dimas\Initial\Setup::instance();
+				return Dimas_Woo_Setup::instance();
 				break;
 			case 'sidebars':
-				return \Dimas\Initial\Sidebars::instance();
+				return Dimas_Woo_Sidebars::instance();
 				break;
 			case 'customizer':
-				return \Dimas\Initial\Customizer::instance();
+				return Dimas_Woo_Customizer::instance();
 				break;
 			case 'cache':
-				return \Dimas\Initial\Cache::instance();
+				return Dimas_Woo_Cache::instance();
 				break;
 			case 'dynamic_css':
-				return \Dimas\Initial\Dimas_Dynamic_CSS::instance();
+				return Dimas_Woo_Dimas_Dynamic_CSS::instance();
 				break;
 			case 'cat_settings':
 				if ( is_admin() ) {
-					return \Dimas\Initial\Settings\Category::instance();
+					return Dimas_Woo_Settings_Category::instance();
 				}
 				break;
 
 			case 'product_settings':
 				if ( is_admin() ) {
-					return \Dimas\Initial\Settings\Product::instance();
+					return Dimas_Woo_Settings_Product::instance();
 				}
 				break;
 		}
@@ -143,32 +144,32 @@ class Dimas_Woocommerce {
 	public function get_template( $class ) {
 		switch ( $class ) {
 			case 'general':
-				return \Dimas\Initial\Template\General::instance();
+				return Dimas_Woo_Template_General::instance();
 				break;
 			case 'product_loop':
-				return \Dimas\Initial\Template\Product_Loop::instance();
+				return Dimas_Woo_Template_Product_Loop::instance();
 				break;
 			case 'catalog':
-				if ( \Dimas\Helper::is_catalog() ) {
-					return \Dimas\Initial\Template\Catalog::instance();
+				if ( Dimas_Helper::is_catalog() ) {
+					return Dimas_Woo_Template_Catalog::instance();
 				}
 				break;
 			case 'single_product':
 				if ( is_singular( 'product' ) ) {
-					return \Dimas\Initial\Template\Single_Product::instance();
+					return Dimas_Woo_Template_Single_Product::instance();
 				}
 				break;
 			case 'account':
-				return \Dimas\Initial\Template\Account::instance();
+				return Dimas_Woo_Template_Account::instance();
 				break;
 			case 'cart':
 				if ( function_exists( 'is_cart' ) && is_cart() ) {
-					return \Dimas\Initial\Template\Cart::instance();
+					return Dimas_Woo_Template_Cart::instance();
 				}
 				break;
 			case 'checkout':
 				if ( function_exists( 'is_checkout' ) && is_checkout() ) {
-					return \Dimas\Initial\Template\Checkout::instance();
+					return Dimas_Woo_Template_Checkout::instance();
 				}
 				break;
 			default:
@@ -186,19 +187,19 @@ class Dimas_Woocommerce {
 	public function get_element( $class ) {
 		switch ( $class ) {
 			case 'deal':
-				return \Dimas\Initial\Elements\Product_Deal::instance();
+				return Dimas_Woo_Elements_Product_Deal::instance();
 				break;
 			case 'masonry':
-				return \Dimas\Initial\Elements\Product_Masonry::instance();
+				return Dimas_Woo_Elements_Product_Masonry::instance();
 				break;
 			case 'showcase':
-				return \Dimas\Initial\Elements\Product_ShowCase::instance();
+				return Dimas_Woo_Elements_Product_ShowCase::instance();
 				break;
 			case 'summary':
-				return \Dimas\Initial\Elements\Product_Summary::instance();
+				return Dimas_Woo_Elements_Product_Summary::instance();
 				break;
 			case 'product_with_thumbnails':
-				return \Dimas\Initial\Elements\Product_With_Thumbnails::instance();
+				return Dimas_Woo_Elements_Product_With_Thumbnails::instance();
 				break;
 		}
 	}
@@ -213,26 +214,26 @@ class Dimas_Woocommerce {
 	public function get_module( $class ) {
 		switch ( $class ) {
 			case 'badges':
-				return \Dimas\Initial\Modules\Badges::instance();
+				return Dimas_Woo_Modules_Badges::instance();
 				break;
 			case 'quick_view':
-				return \Dimas\Initial\Modules\Quick_View::instance();
+				return Dimas_Woo_Modules_Quick_View::instance();
 				break;
 			case 'notices':
-				return \Dimas\Initial\Modules\Notices::instance();
+				return Dimas_Woo_Modules_Notices::instance();
 				break;
 			case 'recently_viewed':
-				return \Dimas\Initial\Modules\Recently_Viewed::instance();
+				return Dimas_Woo_Modules_Recently_Viewed::instance();
 				break;
 			case 'login_ajax':
-				return \Dimas\Initial\Modules\Login_AJAX::instance();
+				return Dimas_Woo_Modules_Login_AJAX::instance();
 				break;
 			case 'mini_cart':
-				return \Dimas\Initial\Modules\Mini_Cart::instance();
+				return Dimas_Woo_Modules_Mini_Cart::instance();
 				break;
 			case 'sticky_atc':
-				if ( is_singular( 'product' ) && intval( apply_filters( 'dimas_product_add_to_cart_sticky', Helper::get_option( 'product_add_to_cart_sticky' ) ) ) ) {
-					return \Dimas\Initial\Modules\Sticky_ATC::instance();
+				if ( is_singular( 'product' ) && intval( apply_filters( 'dimas_product_add_to_cart_sticky', Dimas_Helper::get_option( 'product_add_to_cart_sticky' ) ) ) ) {
+					return Dimas_Woo_Modules_Sticky_ATC::instance();
 				}
 				break;
 		}
