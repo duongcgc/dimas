@@ -49,13 +49,12 @@ final class Dimas_Theme {
 	 */
 	public function __construct() {
 
+		require_once get_template_directory() . '/inc/class-dimas-autoloader.php';
 
-		require_once get_template_directory() . '/inc/class-dimas-autoload.php';
-		require_once get_template_directory() . '/inc/libs/class-mobile_detect.php';
-		require_once get_template_directory() . '/inc/core/class-mobile.php';
 		if ( is_admin() ) {
 			require_once get_template_directory() . '/inc/libs/class-tgm-plugin-activation.php';
 		}
+		
 	}
 
 	/**

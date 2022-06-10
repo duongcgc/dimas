@@ -1,7 +1,7 @@
 <?php
 /**
  * Autoload Classes.
- * => Auto load all class with prefix class-dimas- in a folder
+ * => Auto load all class with prefix class-dimas- in addons, core, platform
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /**
- * Auto_Load init
+ * Dimas_AutoLoader init
  */
-class Dimas_Classes_AutoLoader {
+class Dimas_AutoLoader {
 	/**
 	 * Instance
 	 *
@@ -46,11 +46,56 @@ class Dimas_Classes_AutoLoader {
 	 * @return void
 	 */
 	public function __construct() {
-		spl_autoload_register( [ $this, 'load' ] );
+		spl_autoload_register( [ $this, 'load2' ] );
 	}
 
 	/**
-	 * Auto load widgets
+	 * Auto load classes without namespace
+	 * => Class name: This_Class_Name	=> file name is class-this-class-name.php
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function load2( $class ) {
+		if ( false === strpos( $class, 'Dimas' ) ) {
+			return;
+		}
+		
+		$relative_class_name = strtolower( $class );
+		$relative_class_name = str_replace( '_', '-', $relative_class_name );
+		$file_parts          = explode( '\\', $relative_class_name );
+		$file_name           = $relative_class_name;		
+		$file_dir            = get_template_directory() . '/inc/';
+		
+		if ( count( $file_parts ) > 1 ) {
+			$i         = 0;
+			$file_name = '';
+			foreach ( $file_parts as $file_part ) {
+				$file_part = $file_part === 'woocommerce' ? 'woo' : $file_part;
+				$file_name .= $i == 0 ? '' : '-';
+				$file_name .= $file_part;
+				$i ++;
+			}
+			if ( $file_parts['0'] === 'mobile' ) {
+				$file_dir .= 'mobile/';
+			} elseif ( $file_parts['0'] === 'woocommerce' ) {
+				$file_dir .= 'woocommerce/';
+			} elseif ( $file_parts['0'] === 'admin' ) {
+				$file_dir .= 'admin/';
+			} elseif ( $file_parts['0'] === 'blog' ) {
+				$file_dir .= 'blog/';
+			}
+
+		}
+		$file_name = $file_dir . 'class-dimas-' . $file_name . '.php';
+
+		if ( is_readable( $file_name ) ) {
+			include( $file_name );
+		}
+	}
+
+	/**
+	 * Auto load classes with namespace
 	 *
 	 * @since 1.0.0
 	 *
