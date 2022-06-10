@@ -7,14 +7,12 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 // Exit if accessed directly
 if (!defined('ABSPATH')) {
 	exit;
 }
 
-class Options {
+class Dimas_Options {
 	/**
 	 * Instance
 	 *

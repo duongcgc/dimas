@@ -5,8 +5,6 @@
  * @package Dimas
  */
 
-namespace Dimas\Addons;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -14,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Addons Modules
  */
-class Modules {
+class Dimas_Addons_Modules {
 
 	/**
 	 * Instance

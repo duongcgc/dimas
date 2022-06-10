@@ -5,8 +5,6 @@
  * @package Dimas
  */
 
-namespace Dimas;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -14,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Woocommerce initial
  */
-class Woocommerce {
+class Dimas_Woocommerce {
 	/**
 	 * Instance
 	 *
@@ -119,7 +117,7 @@ class Woocommerce {
 				return \Dimas\Initial\Cache::instance();
 				break;
 			case 'dynamic_css':
-				return \Dimas\Initial\Dynamic_CSS::instance();
+				return \Dimas\Initial\Dimas_Dynamic_CSS::instance();
 				break;
 			case 'cat_settings':
 				if ( is_admin() ) {

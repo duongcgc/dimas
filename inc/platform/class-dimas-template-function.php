@@ -372,7 +372,7 @@ class Dimas_Template_Function {
 		require_once get_theme_file_path( 'inc/class-dimas-dynamic-css.php' ); // phpcs:ignore WPDimas_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound				
 
 		// Return the specified styles.
-		return Dynamic_CSS::dimas_generate_css( // @phpstan-ignore-line.
+		return Dimas_Dynamic_CSS::dimas_generate_css( // @phpstan-ignore-line.
 			implode( ',', $elements[ $type ] ),
 			'font-family',
 			implode( ',', $font_family[ $locale ] ),

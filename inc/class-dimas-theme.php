@@ -8,6 +8,8 @@
  * @package Dimas
  */
 
+use Dimas\Dimas_Woocommerce;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -46,6 +48,8 @@ final class Dimas_Theme {
 	 * @return void
 	 */
 	public function __construct() {
+
+
 		require_once get_template_directory() . '/inc/class-dimas-autoload.php';
 		require_once get_template_directory() . '/inc/libs/class-mobile_detect.php';
 		require_once get_template_directory() . '/inc/core/class-mobile.php';
@@ -125,32 +129,32 @@ final class Dimas_Theme {
 	public function get( $class ) {
 		switch ( $class ) {
 			case 'woocommerce':
-				if ( class_exists( 'Initial' ) ) {
-					return Initial::instance();
+				if ( class_exists( 'Dimas_Woocommerce' ) ) {
+					return Dimas_Woocommerce::instance();
 				}
 				break;
 
 			case 'options':
-				return Options::instance();
+				return Dimas_Options::instance();
 				break;
 
 			case 'search_ajax':
-				return \Dimas\Modules\Search_Ajax::instance();
+				return Dimas_Addons_Modules_Search_Ajax::instance();
 				break;
 
 			case 'newsletter':
-				return \Dimas\Modules\Newsletter_Popup::instance();
+				return Dimas_Addons_Modules_Newsletter_Popup::instance();
 				break;
 
 			case 'mobile':
-				if ( Helper::is_mobile() ) {
-					return \Dimas\Mobile::instance();
+				if ( Dimas_Helper::is_mobile() ) {
+					return Dimas_Mobile::instance();
 				}
 				break;
 
 			default:
 				$class = ucwords( $class );
-				$class = '\Dimas\\' . $class;
+				$class = 'Dimas_' . $class;
 				if ( class_exists( $class ) ) {
 					return $class::instance();
 				}

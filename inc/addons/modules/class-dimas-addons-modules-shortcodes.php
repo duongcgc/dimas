@@ -1,11 +1,9 @@
 <?php
 
-namespace Dimas\Addons\Modules;
-
 /**
  * Class for shortcodes.
  */
-class Shortcodes {
+class Dimas_Addons_Modules_Shortcodes {
 	/**
 	 * Instance
 	 *

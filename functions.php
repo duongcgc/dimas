@@ -56,5 +56,6 @@ if ( ! defined( 'DIMAS_CSS_URI' ) ) {
 	define( 'DIMAS_CSS_URI', DIMAS_ASSETS_URI . '/js' );
 }
 
+// Init Dimas Theme.
 require DIMAS_INC_DIR . '/class-dimas-theme.php';
 Dimas_Theme::instance();
