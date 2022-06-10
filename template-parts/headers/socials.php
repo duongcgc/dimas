@@ -6,5 +6,5 @@
 
 ?>
 <div class="header-socials">
-	<?php \Razzi\Helper::socials_menu(); ?>
+	<?php Dimas_Helper::socials_menu(); ?>
 </div><!-- .header-socials -->

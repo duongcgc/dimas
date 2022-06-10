@@ -5,15 +5,15 @@
  * @package Razzi
  */
 ?>
-<div id="preloader" class="preloader preloader-<?php echo esc_attr( \Razzi\Helper::get_option( 'preloader' ) ) ?>">
+<div id="preloader" class="preloader preloader-<?php echo esc_attr( Dimas_Helper::get_option( 'preloader' ) ) ?>">
 	<?php
-	switch ( \Razzi\Helper::get_option( 'preloader' ) ) {
+	switch ( Dimas_Helper::get_option( 'preloader' ) ) {
 		case 'image':
-			$image = \Razzi\Helper::get_option( 'preloader_image' );
+			$image = Dimas_Helper::get_option( 'preloader_image' );
 			break;
 
 		case 'external':
-			$image = \Razzi\Helper::get_option( 'preloader_url' );
+			$image = Dimas_Helper::get_option( 'preloader_url' );
 			break;
 
 		default:

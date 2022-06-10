@@ -8,6 +8,6 @@
 
 <div class="mobile-menu">
 	<a href="#" class="mobile-menu-toggle hamburger-menu" data-toggle="modal" data-target="mobile-menu-modal">
-		<?php echo \Razzi\Icon::get_svg( 'hamburger' ); ?>
+		<?php echo Dimas_SVG_Icon::get_svg( 'hamburger' ); ?>
 	</a>
 </div>

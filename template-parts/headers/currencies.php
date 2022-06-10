@@ -7,5 +7,5 @@
 
 ?>
 <div class="header-currencies">
-	<?php \Razzi\Helper::currency_switcher(); ?>
+	<?php Dimas_Helper::currency_switcher(); ?>
 </div><!-- .header-currencies -->

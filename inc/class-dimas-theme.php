@@ -256,7 +256,7 @@ final class Dimas_Theme {
 		Dimas_Scripts::instance();
 
 		// SVG Icons class.
-		require DIMAS_INC_DIR . '/class-dimas-svg-icons.php';
+		require DIMAS_INC_DIR . '/class-dimas-svg-icon.php';
 
 		// Custom color classes.
 		require DIMAS_INC_DIR . '/class-dimas-custom-colors.php';

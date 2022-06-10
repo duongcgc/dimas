@@ -1,6 +1,7 @@
 <?php
 /**
  * SVG Icons class
+ * => functions and data svg icons in this theme.
  *
  * @package WordPress
  * @subpackage Dimas
@@ -19,7 +20,7 @@
  *
  * @since Dimas 1.0
  */
-class Dimas_SVG_Icons {
+class Dimas_SVG_Icon {
 
 	/**
 	 * User Interface icons – svg sources.

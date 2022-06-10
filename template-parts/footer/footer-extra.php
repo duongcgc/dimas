@@ -23,8 +23,8 @@ $add_class .= ! intval( Helper::get_option( 'mobile_footer_extra' ) ) ? 'razzi-h
 		<div class="footer-extra__inner">
 			<?php
 			foreach ( $items as $item ) {
-				$item['item'] = $item['item'] ? $item['item'] : key( \Razzi\Theme::instance()->get('footer')->footer_items_option() );
-				\Razzi\Theme::instance()->get('footer')->footer_item( $item['item'] );
+				$item['item'] = $item['item'] ? $item['item'] : key( Dimas_Theme::instance()->get('footer')->footer_items_option() );
+				Dimas_Theme::instance()->get('footer')->footer_item( $item['item'] );
 			}
 			?>
 		</div>

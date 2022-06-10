@@ -27,7 +27,7 @@ if( Helper::get_option( 'header_type' ) == 'custom' &&  $args['search_form_style
 <div class="header-search <?php echo esc_attr( $search_class ); ?>">
 	<?php if ( $args['search_style'] == 'icon' ) : ?>
         <span class="search-icon" data-toggle="modal" data-target="search-modal">
-			<?php echo \Razzi\Icon::get_svg( 'search', '', 'shop' ); ?>
+			<?php echo Dimas_SVG_Icon::get_svg( 'search', '', 'shop' ); ?>
 		</span>
 	<?php elseif ( $args['search_style'] == 'form-cat' ) : ?>
         <form method="get" class="form-search" action="<?php echo esc_url( home_url( '/' ) ) ?>">
@@ -35,7 +35,7 @@ if( Helper::get_option( 'header_type' ) == 'custom' &&  $args['search_form_style
                 <input type="text" name="s" class="search-field" value="<?php echo esc_attr( get_search_query() ); ?>"
                        placeholder="<?php echo esc_attr( $text_placeholder ) ?>" autocomplete="off">
                 <a href="#"
-                   class="close-search-results"><?php echo \Razzi\Icon::get_svg( 'close' ); ?></a>
+                   class="close-search-results"><?php echo Dimas_SVG_Icon::get_svg( 'close' ); ?></a>
                 <span class="razzi-loading"></span>
             </div>
 			<?php if ( $args['search_type'] == 'product' ) : ?>
@@ -62,14 +62,14 @@ if( Helper::get_option( 'header_type' ) == 'custom' &&  $args['search_form_style
 					'%s' .
 					'</div>',
 					esc_html__( 'All Categories', 'razzi' ),
-					\Razzi\Icon::get_svg( 'chevron-bottom' ),
+					Dimas_SVG_Icon::get_svg( 'chevron-bottom' ),
 					wp_dropdown_categories( $args_cat )
 				);
 			}
 
 			?>
             <button class="search-submit"
-                    type="submit"><?php echo \Razzi\Icon::get_svg( 'search', '', 'shop' ); ?></button>
+                    type="submit"><?php echo Dimas_SVG_Icon::get_svg( 'search', '', 'shop' ); ?></button>
         </form>
 	<?php else: ?>
         <form method="get" class="form-search" action="<?php echo esc_url( home_url( '/' ) ) ?>">
@@ -79,14 +79,14 @@ if( Helper::get_option( 'header_type' ) == 'custom' &&  $args['search_form_style
                 <input type="hidden" name="post_type" value="<?php echo esc_attr( $args['search_type'] ) ?>">
 			<?php endif; ?>
             <a href="#"
-               class="close-search-results"><?php echo \Razzi\Icon::get_svg( 'close', '' ); ?></a>
+               class="close-search-results"><?php echo Dimas_SVG_Icon::get_svg( 'close', '' ); ?></a>
             <button class="search-submit"
-                    type="submit"><?php echo \Razzi\Icon::get_svg( 'search', '', 'shop' ); ?></button>
+                    type="submit"><?php echo Dimas_SVG_Icon::get_svg( 'search', '', 'shop' ); ?></button>
             <span class="razzi-loading"></span>
         </form>
 	<?php endif; ?>
 	<?php if ( $args['search_style'] != 'icon' ) : ?>
-		<?php \Razzi\Header::search_quicklinks(); ?>
+		<?php Dimas_Header::search_quicklinks(); ?>
         <div class="search-results woocommerce"></div>
 	<?php endif; ?>
 </div>

@@ -6,5 +6,5 @@
 
 ?>
 <div class="header-languages">
-	<?php \Razzi\Helper::language_switcher(); ?>
+	<?php Dimas_Helper::language_switcher(); ?>
 </div><!-- .header-languages -->

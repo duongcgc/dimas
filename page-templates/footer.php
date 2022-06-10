@@ -17,7 +17,7 @@ Dimas_HTML::instance()->close( 'site_content' );
 
 <?php do_action('razzi_before_open_site_footer'); ?>
 <?php if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'footer' ) ) {?>
-	<footer id="site-footer" class="<?php \Razzi\Footer::classes('site-footer'); ?>">
+	<footer id="site-footer" class="<?php Dimas_Footer::classes('site-footer'); ?>">
 		<?php do_action('razzi_after_open_site_footer'); ?>
 		<?php do_action('razzi_before_close_site_footer'); ?>
 	</footer>

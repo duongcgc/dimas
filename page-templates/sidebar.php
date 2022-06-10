@@ -15,7 +15,7 @@ if ( ! $has_sidebar ) {
 
 $sidebar = 'blog-sidebar';
 
-if ( \Razzi\Helper::is_catalog() ) {
+if ( Dimas_Helper::is_catalog() ) {
 	$sidebar = 'catalog-sidebar';
 }
 

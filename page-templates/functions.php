@@ -9,4 +9,4 @@
 
 require_once get_template_directory() . '/inc/class-razzi-theme.php';
 
-\Razzi\Theme::instance()->init();
+Dimas_Theme::instance()->init();
