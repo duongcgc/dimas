@@ -9,7 +9,7 @@ namespace Dimas\Addons;
 /**
  * Dimas theme init
  */
-class DM_Widgets {
+class GO_Widgets {
 
 	/**
 	 * Instance

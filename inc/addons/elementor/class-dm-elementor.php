@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Elementor class for this theme.
  */
-class DM_Elementor {
+class GO_Elementor {
 
 	/**
 	 * Instance

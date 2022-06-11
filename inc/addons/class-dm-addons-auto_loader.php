@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Autoloader elements of classes.
  */
-class DM_Addons_Auto_Loader {
+class GO_Addons_Auto_Loader {
 
 	/**
 	 * Files to loaded.

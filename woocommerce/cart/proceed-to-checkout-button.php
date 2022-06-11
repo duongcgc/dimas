@@ -13,7 +13,7 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @author  WooDM_Themes
+ * @author  WooGO_Themes
  * @package Initial/Templates
  * @version 3.6.1
  */

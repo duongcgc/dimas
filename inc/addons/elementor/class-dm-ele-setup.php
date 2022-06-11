@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-class DM_Ele_Setup {
+class GO_Ele_Setup {
 
 	/**
 	 * Instance

@@ -7,5 +7,5 @@
 
 ?>
 <div class="header-currencies">
-	<?php DM_Helper::currency_switcher(); ?>
+	<?php GO_Helper::currency_switcher(); ?>
 </div><!-- .header-currencies -->

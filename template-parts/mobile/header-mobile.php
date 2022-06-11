@@ -8,7 +8,7 @@
 ?>
 
 <?php
-DM_HTML::instance()->open('header_mobile',[
+GO_HTML::instance()->open('header_mobile',[
 	'attr' => [
 		'class' => 'header-mobile',
 	],
@@ -18,4 +18,4 @@ DM_HTML::instance()->open('header_mobile',[
 
 <?php do_action( 'razzi_header_mobile_content' ); ?>
 
-<?php DM_HTML::instance()->close('header_mobile');  ?>
+<?php GO_HTML::instance()->close('header_mobile');  ?>

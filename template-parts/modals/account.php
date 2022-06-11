@@ -8,7 +8,7 @@
 ?>
 <div class="modal-header">
     <h3 class="modal-title"><?php esc_html_e( 'Sign in', 'razzi' ) ?></h3>
-    <a href="#" class="close-account-panel button-close"><?php echo DM_SVG_Icon::get_svg( 'close' ); ?></a>
+    <a href="#" class="close-account-panel button-close"><?php echo GO_SVG_Icon::get_svg( 'close' ); ?></a>
 </div>
 
 <div class="modal-content">

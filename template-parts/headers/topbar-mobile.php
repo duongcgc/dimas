@@ -15,7 +15,7 @@ $mobile_items = array_filter( (array) Helper::get_option( 'mobile_topbar_items' 
 
 		<?php if ( ! empty( $mobile_items ) ) : ?>
 			<div class="topbar-items mobile-topbar-items">
-				<?php DM_Theme::instance()->get('topbar')->topbar_mobile_items( $mobile_items ); ?>
+				<?php GO_Theme::instance()->get('topbar')->topbar_mobile_items( $mobile_items ); ?>
 			</div>
 		<?php endif; ?>
 	</div>

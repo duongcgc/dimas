@@ -28,7 +28,7 @@ $description = get_the_archive_description();
 		<?php get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) ); ?>
 	<?php endwhile; ?>
 
-	<?php \DM_Fw_Template_Tag::instance()->dimas_the_posts_navigation(); ?>
+	<?php \GO_Template_Tag::instance()->dimas_the_posts_navigation(); ?>
 
 <?php else : ?>
 	<?php get_template_part( 'template-parts/content/content-none' ); ?>

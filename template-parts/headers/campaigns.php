@@ -15,7 +15,7 @@ $class_mobile = Helper::get_option( 'mobile_campaign_bar' ) ? '' : 'razzi-hide-o
     <div class="campaign-bar__campaigns">
 		<?php
 		foreach ( $campaigns as $campaign ) {
-			DM_Theme::instance()->get( 'campaigns' )->campaign_item( $campaign );
+			GO_Theme::instance()->get( 'campaigns' )->campaign_item( $campaign );
 		}
 		?>
     </div>

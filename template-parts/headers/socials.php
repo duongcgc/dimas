@@ -6,5 +6,5 @@
 
 ?>
 <div class="header-socials">
-	<?php DM_Helper::socials_menu(); ?>
+	<?php GO_Helper::socials_menu(); ?>
 </div><!-- .header-socials -->

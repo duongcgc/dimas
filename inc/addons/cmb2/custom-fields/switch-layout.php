@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class DM_CMB2_Field_Switch_Layout {
+class GO_CMB2_Field_Switch_Layout {
 
 	/**
 	 * Current version number
@@ -58,4 +58,4 @@ HTML;
 
 }
 
-new DM_CMB2_Field_Switch_Layout();
+new GO_CMB2_Field_Switch_Layout();

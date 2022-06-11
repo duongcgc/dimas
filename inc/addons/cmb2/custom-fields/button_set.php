@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class DM_Field_Button_Set {
+class GO_Field_Button_Set {
 
 	/**
 	 * Current version number
@@ -33,4 +33,4 @@ class DM_Field_Button_Set {
 	}
 }
 
-new DM_Field_Button_Set();
+new GO_Field_Button_Set();

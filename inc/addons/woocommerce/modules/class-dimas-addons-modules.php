@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Addons Modules
  */
-class DM_Addons_Modules {
+class GO_Addons_Modules {
 
 	/**
 	 * Instance

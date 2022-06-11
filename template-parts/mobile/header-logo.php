@@ -10,8 +10,8 @@ $dimension = Helper::get_option( 'mobile_logo_dimension' );
 $style     = ! empty( $dimension['width'] ) ? ' width="' . esc_attr( $dimension['width'] ) . '"' : '';
 $style     .= ! empty( $dimension['width'] ) ? ' height="' . esc_attr( $dimension['height'] ) . '"' : '';
 
-$header_background = get_post_meta( DM_Helper::get_post_ID(), 'rz_header_background', true );
-$header_background_text = get_post_meta( DM_Helper::get_post_ID(), 'rz_header_text_color', true );
+$header_background = get_post_meta( GO_Helper::get_post_ID(), 'rz_header_background', true );
+$header_background_text = get_post_meta( GO_Helper::get_post_ID(), 'rz_header_text_color', true );
 ?>
 
 <div class="mobile-logo site-branding">

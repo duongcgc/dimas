@@ -3,7 +3,7 @@
 /**
  * Class for shortcodes.
  */
-class DM_Addons_Modules_Shortcodes {
+class GO_Addons_Modules_Shortcodes {
 	/**
 	 * Instance
 	 *

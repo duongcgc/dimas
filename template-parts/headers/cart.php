@@ -14,7 +14,7 @@ if ( ! function_exists( 'WC' ) ) {
 
 <div class="header-cart">
 	<a href="<?php echo esc_url( wc_get_cart_url() ) ?>" data-toggle="<?php echo 'panel' == Helper::get_option( 'header_cart_behaviour' ) ? 'modal' : 'link'; ?>" data-target="cart-modal">
-		<?php echo DM_SVG_Icon::get_svg('cart', '', 'shop'); ?>
+		<?php echo GO_SVG_Icon::get_svg('cart', '', 'shop'); ?>
 		<span class="counter cart-counter"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
 	</a>
 </div>

@@ -6,4 +6,4 @@
  */
 ?>
 <a href="<?php echo esc_url( home_url( '/' ) ) ?>"
-   class="razzi-history-back"><?php echo DM_SVG_Icon::get_svg( 'chevron-left' ); ?></a>
+   class="razzi-history-back"><?php echo GO_SVG_Icon::get_svg( 'chevron-left' ); ?></a>

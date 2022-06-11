@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Woocommerce initial
  */
-class DM_Addons_Woocommerce {
+class GO_Addons_Woocommerce {
 	/**
 	 * Instance
 	 *
@@ -106,29 +106,29 @@ class DM_Addons_Woocommerce {
 	public function get( $class ) {
 		switch ( $class ) {
 			case 'setup':
-				return DM_Woo_Setup::instance();
+				return GO_Woo_Setup::instance();
 				break;
 			case 'sidebars':
-				return DM_Woo_Sidebars::instance();
+				return GO_Woo_Sidebars::instance();
 				break;
 			case 'customizer':
-				return DM_Woo_Customizer::instance();
+				return GO_Woo_Customizer::instance();
 				break;
 			case 'cache':
-				return DM_Woo_Cache::instance();
+				return GO_Woo_Cache::instance();
 				break;
 			case 'dynamic_css':
-				return DM_Woo_DM_Dynamic_CSS::instance();
+				return GO_Woo_GO_Dynamic_CSS::instance();
 				break;
 			case 'cat_settings':
 				if ( is_admin() ) {
-					return DM_Woo_Settings_Category::instance();
+					return GO_Woo_Settings_Category::instance();
 				}
 				break;
 
 			case 'product_settings':
 				if ( is_admin() ) {
-					return DM_Woo_Settings_Product::instance();
+					return GO_Woo_Settings_Product::instance();
 				}
 				break;
 		}
@@ -144,32 +144,32 @@ class DM_Addons_Woocommerce {
 	public function get_template( $class ) {
 		switch ( $class ) {
 			case 'general':
-				return DM_Woo_Template_General::instance();
+				return GO_Woo_Template_General::instance();
 				break;
 			case 'product_loop':
-				return DM_Woo_Template_Product_Loop::instance();
+				return GO_Woo_Template_Product_Loop::instance();
 				break;
 			case 'catalog':
-				if ( DM_Helper::is_catalog() ) {
-					return DM_Woo_Template_Catalog::instance();
+				if ( GO_Helper::is_catalog() ) {
+					return GO_Woo_Template_Catalog::instance();
 				}
 				break;
 			case 'single_product':
 				if ( is_singular( 'product' ) ) {
-					return DM_Woo_Template_Single_Product::instance();
+					return GO_Woo_Template_Single_Product::instance();
 				}
 				break;
 			case 'account':
-				return DM_Woo_Template_Account::instance();
+				return GO_Woo_Template_Account::instance();
 				break;
 			case 'cart':
 				if ( function_exists( 'is_cart' ) && is_cart() ) {
-					return DM_Woo_Template_Cart::instance();
+					return GO_Woo_Template_Cart::instance();
 				}
 				break;
 			case 'checkout':
 				if ( function_exists( 'is_checkout' ) && is_checkout() ) {
-					return DM_Woo_Template_Checkout::instance();
+					return GO_Woo_Template_Checkout::instance();
 				}
 				break;
 			default:
@@ -187,19 +187,19 @@ class DM_Addons_Woocommerce {
 	public function get_element( $class ) {
 		switch ( $class ) {
 			case 'deal':
-				return DM_Woo_Elements_Product_Deal::instance();
+				return GO_Woo_Elements_Product_Deal::instance();
 				break;
 			case 'masonry':
-				return DM_Woo_Elements_Product_Masonry::instance();
+				return GO_Woo_Elements_Product_Masonry::instance();
 				break;
 			case 'showcase':
-				return DM_Woo_Elements_Product_ShowCase::instance();
+				return GO_Woo_Elements_Product_ShowCase::instance();
 				break;
 			case 'summary':
-				return DM_Woo_Elements_Product_Summary::instance();
+				return GO_Woo_Elements_Product_Summary::instance();
 				break;
 			case 'product_with_thumbnails':
-				return DM_Woo_Elements_Product_With_Thumbnails::instance();
+				return GO_Woo_Elements_Product_With_Thumbnails::instance();
 				break;
 		}
 	}
@@ -214,26 +214,26 @@ class DM_Addons_Woocommerce {
 	public function get_module( $class ) {
 		switch ( $class ) {
 			case 'badges':
-				return DM_Woo_Modules_Badges::instance();
+				return GO_Woo_Modules_Badges::instance();
 				break;
 			case 'quick_view':
-				return DM_Woo_Modules_Quick_View::instance();
+				return GO_Woo_Modules_Quick_View::instance();
 				break;
 			case 'notices':
-				return DM_Woo_Modules_Notices::instance();
+				return GO_Woo_Modules_Notices::instance();
 				break;
 			case 'recently_viewed':
-				return DM_Woo_Modules_Recently_Viewed::instance();
+				return GO_Woo_Modules_Recently_Viewed::instance();
 				break;
 			case 'login_ajax':
-				return DM_Woo_Modules_Login_AJAX::instance();
+				return GO_Woo_Modules_Login_AJAX::instance();
 				break;
 			case 'mini_cart':
-				return DM_Woo_Modules_Mini_Cart::instance();
+				return GO_Woo_Modules_Mini_Cart::instance();
 				break;
 			case 'sticky_atc':
-				if ( is_singular( 'product' ) && intval( apply_filters( 'dimas_product_add_to_cart_sticky', DM_Helper::get_option( 'product_add_to_cart_sticky' ) ) ) ) {
-					return DM_Woo_Modules_Sticky_ATC::instance();
+				if ( is_singular( 'product' ) && intval( apply_filters( 'dimas_product_add_to_cart_sticky', GO_Helper::get_option( 'product_add_to_cart_sticky' ) ) ) ) {
+					return GO_Woo_Modules_Sticky_ATC::instance();
 				}
 				break;
 		}

@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Helper
  */
-class DM_Addons_Helper {
+class GO_Addons_Helper {
 
 	/**
 	 * Instance
@@ -164,7 +164,7 @@ class DM_Addons_Helper {
 			'<a href="%s" target="_blank" class="social-share-link %s">%s<span class="after-text">%s</span></a>',
 			esc_url( $url ),
 			esc_attr( $social ),
-			DM_SVG_Icon::get_svg( $icon, '', 'social' ),
+			GO_SVG_Icon::get_svg( $icon, '', 'social' ),
 			$text
 		);
 	}

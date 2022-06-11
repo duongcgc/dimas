@@ -11,7 +11,7 @@ get_header();
 ?>
 <?php if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'single' ) ) { ?>
 	<?php
-	DM_HTML::instance()->open('single_post_content',[
+	GO_HTML::instance()->open('single_post_content',[
 		'attr' => [
 			'id'    => 'primary',
 			'class' => 'content-area',
@@ -28,7 +28,7 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-	<?php DM_HTML::instance()->close('single_post_content');  ?>
+	<?php GO_HTML::instance()->close('single_post_content');  ?>
 
 
 	<?php get_sidebar(); ?>

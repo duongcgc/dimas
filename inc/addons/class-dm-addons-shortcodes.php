@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas after setup theme
  */
-class DM_Addons_Shortcodes {
+class GO_Addons_Shortcodes {
 	/**
 	 * Instance
 	 *

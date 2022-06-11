@@ -7,5 +7,5 @@
 ?>
 
 <a href="<?php echo esc_url( home_url( '/' ) ) ?>" class="rz-navigation-bar_icon home-icon">
-	<?php echo DM_SVG_Icon::get_svg( 'home', '', 'mobile' ); ?>
+	<?php echo GO_SVG_Icon::get_svg( 'home', '', 'mobile' ); ?>
 </a>

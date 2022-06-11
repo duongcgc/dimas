@@ -20,6 +20,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer default-max-width">
-		<?php \DM_Fw_Template_Tag::instance()->dimas_entry_meta_footer(); ?>
+		<?php //\GO_Template_Tag::instance()->dimas_entry_meta_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-${ID} -->

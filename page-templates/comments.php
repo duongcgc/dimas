@@ -22,7 +22,7 @@ if ( post_password_required() ) {
 ?>
 
 <?php
-DM_HTML::instance()->open( 'comments_content', [
+GO_HTML::instance()->open( 'comments_content', [
 	'attr'    => [
 		'id'    => 'comments',
 		'class' => 'comments-area',
@@ -41,4 +41,4 @@ if ( have_comments() ) :
 endif; // Check for have_comments().
 ?>
 
-<?php DM_HTML::instance()->close( 'comments_content' ); ?>
+<?php GO_HTML::instance()->close( 'comments_content' ); ?>

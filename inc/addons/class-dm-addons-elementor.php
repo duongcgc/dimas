@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas after setup theme
  */
-class DM_Addons_Elementor {
+class GO_Addons_Elementor {
 	/**
 	 * Instance
 	 *
