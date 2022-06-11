@@ -1,7 +1,7 @@
 <?php
 /**
  * Auto Loader Core Modules Elements class.
- * => Custom Post Types, Metaboxes Page Settings, Customize Settings, Settings Options, ...
+ * => Custom Post Types, Metaboxes Custom Fields, Customize Settings, Settings Options, ...
  *
  * @package Dimas
  *
@@ -70,11 +70,11 @@ class Core_Auto_Loader {
 	}
 
 	/**
-	 * Load all metaboxs page settings.
+	 * Load all metaboxs custom fields.
 	 *
 	 * @return mixed
 	 */
-	public static function page_settings_loader() {
+	public static function custom_fields_loader() {
 		return true;
 	}
 

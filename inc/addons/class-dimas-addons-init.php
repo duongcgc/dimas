@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Addons_Plugin {
+class Addons_Init {
 
 	/**
 	 * Instance
