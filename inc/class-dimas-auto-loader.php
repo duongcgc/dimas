@@ -140,10 +140,10 @@ class Auto_Loader {
 
 		// If class name is key then remove name on filename.
 		$file_by_class = array(
-			'addons'     => 'addons',
+			'addons'     => 'addons-',
 			'core'       => '',
 			'framework'  => '',
-			'woocomerce' => 'woo',
+			'woocomerce' => 'woo-',
 		);
 
 		if ( false === strpos( $class, 'Dimas' ) ) {
@@ -165,10 +165,7 @@ class Auto_Loader {
 			foreach ( $file_parts as $file_part ) {
 
 				if ( array_key_exists( $file_part, $file_by_class ) ) {
-					$file_part = $file_by_class[ $file_part ];
-					// if ( $file_by_class[ $file_part ] != '' ) {
-					// 	$file_part .= '-';
-					// }
+					$file_part = $file_by_class[ $file_part ];					
 					$file_name .= $i == 0 ? '' : '-';
 				}
 
