@@ -76,17 +76,17 @@ final class Theme {
 
 		// Setup.
 		$this->get( 'auto-loader' );
-		$this->get( 'template-function', 'framework' );
-		$this->get( 'template-tag', 'framework' );
+		$this->get( 'framework/template-function' );
+		$this->get( 'framework/template-tag' );
 
 		$this->get( 'styles' );
 		$this->get( 'scripts' );
 
 		$this->get( 'setup' );
-		$this->get( 'widgets', 'addons' );
+		$this->get( 'addons/widgets' );
 
 		// Options.
-		$this->get( 'options', 'core' );
+		$this->get( 'core/options' );
 
 		// Elementor.
 		// $this->get( 'elementor' );
@@ -164,19 +164,7 @@ final class Theme {
 	 * @param string $namespace
 	 * @return void
 	 */
-	public function create_object( $class, $space = 'dimas' ) {
-
-		$namespace_array = array(
-			'dimas'     => '\Dimas\\',
-			'addons'    => '\Dimas\Addons\\',
-			'core'      => '\Dimas\Core\\',
-			'framework' => '\Dimas\Framework\\',
-		);
-
-		$namespace = $space;
-		if ( array_key_exists( $space, $namespace_array ) ) {
-			$namespace = $namespace_array[ $space ];
-		}
+	public function create_object( $class, $namespace ) {
 
 		$class = $this->file_to_class( $class );
 		$class = $namespace . $class;
@@ -197,40 +185,34 @@ final class Theme {
 	 *
 	 * @return object
 	 */
-	public function get( $class, $space = 'dimas' ) {
+	public function get( $slug_class ) {
 
-		$this->create_object( $class, $space );
+		// get space in class.
+		$space_parts  = explode( '/', $slug_class );
+		$number_parts = count( $space_parts );
 
-		// switch ( $class ) {
-		// case 'woocommerce':
-		// if ( class_exists( 'WooCommerce' ) ) {
-		// return WooCommerce::instance();
-		// }
-		// break;
+		if ( 1 === $number_parts ) {
+			$space = 'dimas';
+			$class = $slug_class;
+		} else {
+			$space = $space_parts[0];
+			$class = $space_parts[$number_parts - 1];
+		}
 
-		// case 'options':
-		// $this->create_object( $class, 'core' );
-		// break;
-		// break;
+		// namespace by space when get class.
+		$namespace_array = array(
+			'dimas'     => '\Dimas\\',
+			'addons'    => '\Dimas\Addons\\',
+			'core'      => '\Dimas\Core\\',
+			'framework' => '\Dimas\Framework\\',
+		);
 
-		// case 'search_ajax':
-		// return \Dimas\Modules\Search_Ajax::instance();
-		// break;
+		$namespace = $space;
+		if ( array_key_exists( $space, $namespace_array ) ) {
+			$namespace = $namespace_array[ $space ];
+		}
 
-		// case 'newsletter':
-		// return \Dimas\Modules\Newsletter_Popup::instance();
-		// break;
-
-		// case 'mobile':
-		// if ( Helper::is_mobile() ) {
-		// return \Dimas\Mobile::instance();
-		// }
-		// break;
-
-		// default:
-		// $this->create_object( $class, $space );
-		// break;
-		// }
+		$this->create_object( $class, $namespace );
 	}
 
 
