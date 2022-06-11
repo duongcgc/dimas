@@ -1,23 +1,23 @@
 <?php
 /**
- * Auto Loader Addons Elements class.
- * => Elementor Widgets, Woocomerce, Custom Widgets, OCDI, Demo Data, Custom Fields, ...
+ * Auto Loader Core Modules Elements class.
+ * => Custom Post Types, Metaboxes Custom Fields, Customize Settings, Settings Options, ...
  *
  * @package Dimas
  *
  * @return mixed
  **/
 
-namespace Dimas\Addons;
+namespace Dimas\Core;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
- * Autoloader elements of classes.
+ * Auto loading all elements core modules.
  */
-class Addons_Auto_Loader {
+class Core_Auto_Loader {
 
 	/**
 	 * Files to loaded.
@@ -42,6 +42,41 @@ class Addons_Auto_Loader {
 		return true;
 	}
 
+	/**
+	 * Load all custom post types.
+	 *
+	 * @return mixed
+	 */
+	public static function cpt_loader() {
+		return true;
+	}
+
+	/**
+	 * Load all customize settings.
+	 *
+	 * @return mixed
+	 */
+	public static function customize_loader() {
+		return true;
+	}
+
+	/**
+	 * Load all options settings.
+	 *
+	 * @return mixed
+	 */
+	public static function options_loader() {
+		return true;
+	}
+
+	/**
+	 * Load all metaboxs settings.
+	 *
+	 * @return mixed
+	 */
+	public static function custom_fields_loader() {
+		return true;
+	}
 
 	/**
 	 * Load files.

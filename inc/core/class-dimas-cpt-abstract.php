@@ -3,7 +3,7 @@
  * Base for custom post.
  */
 
-namespace Dimas;
+namespace Dimas\Core;
 
 /**
  * Class CPT_Abstract
@@ -11,21 +11,21 @@ namespace Dimas;
 abstract class CPT_Abstract {
 
 	/**
-	 * Undocumented variable
+	 * Link image variable
 	 *
 	 * @var $link_image;
 	 */
 	public $link_image;
 
 	/**
-	 * Undocumented variable
+	 * Options variable
 	 *
 	 * @var $options;
 	 */
 	public $options;
 
 	/**
-	 * Undocumented function
+	 * Init function
 	 */
 	public function __construct() {
 		$this->create_post_type();
