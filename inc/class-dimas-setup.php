@@ -7,6 +7,8 @@
  * @package Dimas
  */
 
+namespace Dimas;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -156,7 +158,7 @@ class Setup {
 		// Add support for editor styles. Load regular editor styles into the new block-based editor.
 		add_theme_support( 'editor-styles' );
 		$background_color = get_theme_mod( 'background_color', 'D1E4DD' );
-		if ( 127 > \Dimas\Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
+		if ( 127 > \Dimas\Framework\Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
 			add_theme_support( 'dark-editor-style' );
 		}
 

@@ -6,7 +6,7 @@
  * @package Dimas
  */
 
-namespace Dimas;
+namespace Dimas\Framework;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -241,7 +241,7 @@ class Template_Function {
 	 * @return string
 	 */
 	public function dimas_get_icon_svg( $group, $icon, $size = 24 ) {
-		return \SVG_Icons::get_svg( $group, $icon, $size );
+		return \Dimas\SVG_Icons::get_svg( $group, $icon, $size );
 	}
 
 	/**

@@ -7,6 +7,8 @@
  * @since Dimas 1.0
  */
 
+ namespace Dimas\Framework;
+
 /**
  * This class is in charge of color customization via the Customizer.
  */

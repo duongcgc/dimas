@@ -52,13 +52,13 @@ final class Theme {
 	public function __construct() {
 
 		// auto include classes.
-		require_once DIMAS_INC_DIR . '/class-go-auto-loader.php';
+		require_once DIMAS_INC_DIR . '/class-dimas-auto-loader.php';
 
 		// create classes.
 		$this->init();
 
 		if ( is_admin() ) {
-			require_once DIMAS_INC_DIR . '/libs/class-tgm-plugin-activation.php';
+			// require_once DIMAS_INC_DIR . '/libs/class-tgm-plugin-activation.php';
 		}
 
 	}
@@ -76,14 +76,17 @@ final class Theme {
 
 		// Setup.
 		$this->get( 'auto-loader' );
-		$this->get( 'template-function' );
-		// $this->get( 'template-tag' );
+		$this->get( 'template-function', 'framework' );
+		$this->get( 'template-tag', 'framework' );
 
-		// $this->get( 'styles' );
-		// $this->get( 'scripts' );
+		$this->get( 'styles' );
+		$this->get( 'scripts' );
 
-		// $this->get( 'setup' );
-		// $this->get( 'widgets' );
+		$this->get( 'setup' );
+		$this->get( 'widgets', 'addons' );
+
+		// Options.
+		$this->get( 'options', 'core' );
 
 		// Elementor.
 		// $this->get( 'elementor' );
@@ -155,6 +158,37 @@ final class Theme {
 	}
 
 	/**
+	 * Call class with namespace.
+	 *
+	 * @param string $class
+	 * @param string $namespace
+	 * @return void
+	 */
+	public function create_object( $class, $space = 'dimas' ) {
+
+		$namespace_array = array(
+			'dimas'     => '\Dimas\\',
+			'addons'    => '\Dimas\Addons\\',
+			'core'      => '\Dimas\Core\\',
+			'framework' => '\Dimas\Framework\\',
+		);
+
+		$namespace = $space;
+		if ( array_key_exists( $space, $namespace_array ) ) {
+			$namespace = $namespace_array[ $space ];
+		}
+
+		$class = $this->file_to_class( $class );
+		$class = $namespace . $class;
+
+		if ( class_exists( $class ) ) {
+			return $class::instance();
+		} else {
+			echo '<br/> Not found the class: ' . $class;
+		}
+	}
+
+	/**
 	 * Get Dimas Class.
 	 *
 	 * @param mixed $class        Get class name.
@@ -163,18 +197,40 @@ final class Theme {
 	 *
 	 * @return object
 	 */
-	public function get( $class ) {
+	public function get( $class, $space = 'dimas' ) {
 
-		// Class name.
-		$class = $this->file_to_class( $class );
-		$class = '\Dimas\\' . $class;
+		$this->create_object( $class, $space );
 
-		if ( class_exists( $class ) ) {
-			return $class::instance();
-		} else {
-			echo 'Not found class ' . esc_attr( $class );
-		}
+		// switch ( $class ) {
+		// case 'woocommerce':
+		// if ( class_exists( 'WooCommerce' ) ) {
+		// return WooCommerce::instance();
+		// }
+		// break;
 
+		// case 'options':
+		// $this->create_object( $class, 'core' );
+		// break;
+		// break;
+
+		// case 'search_ajax':
+		// return \Dimas\Modules\Search_Ajax::instance();
+		// break;
+
+		// case 'newsletter':
+		// return \Dimas\Modules\Newsletter_Popup::instance();
+		// break;
+
+		// case 'mobile':
+		// if ( Helper::is_mobile() ) {
+		// return \Dimas\Mobile::instance();
+		// }
+		// break;
+
+		// default:
+		// $this->create_object( $class, $space );
+		// break;
+		// }
 	}
 
 

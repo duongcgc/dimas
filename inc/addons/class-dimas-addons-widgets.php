@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas after setup theme
  */
-class Addons_Widgets {
+class Widgets {
 	/**
 	 * Instance
 	 *

@@ -128,6 +128,24 @@ class Auto_Loader {
 	 */
 	public function load( $class ) {
 
+		// If namespace is key then folder is value.
+		$folder_by_space = array(
+			'dimas'     => '/',
+			'addons'    => '/addons',
+			'elementor' => '/addons/elementor',
+			'core'      => '/core',
+			'options'   => '/core/options',
+			'framework' => '/framework',
+		);
+
+		// If class name is key then remove name on filename.
+		$file_by_class = array(
+			'addons'     => 'addons',
+			'core'       => '',
+			'framework'  => '',
+			'woocomerce' => 'woo',
+		);
+
 		if ( false === strpos( $class, 'Dimas' ) ) {
 			return;
 		}
@@ -137,31 +155,38 @@ class Auto_Loader {
 		$relative_class_name = str_replace( '_', '-', $relative_class_name );
 		$file_parts          = explode( '\\', $relative_class_name );
 		$file_name           = $relative_class_name;
-		$file_dir            = DIMAS_INC_DIR . '/';
-
-
-		var_dump($file_parts);
+		$file_dir            = DIMAS_INC_DIR;
 
 		if ( count( $file_parts ) > 1 ) {
 			$i         = 0;
 			$file_name = '';
+
+			// file name.
 			foreach ( $file_parts as $file_part ) {
-				$file_part  = $file_part === 'woocommerce' ? 'woo' : $file_part;
-				$file_name .= $i == 0 ? '' : '-';
+
+				if ( array_key_exists( $file_part, $file_by_class ) ) {
+					$file_part = $file_by_class[ $file_part ];
+					// if ( $file_by_class[ $file_part ] != '' ) {
+					// 	$file_part .= '-';
+					// }
+					$file_name .= $i == 0 ? '' : '-';
+				}
+
 				$file_name .= $file_part;
 				$i ++;
 			}
-			if ( $file_parts['0'] === 'mobile' ) {
-				$file_dir .= 'mobile/';
-			} elseif ( $file_parts['0'] === 'woocommerce' ) {
-				$file_dir .= 'woocommerce/';
-			} elseif ( $file_parts['0'] === 'admin' ) {
-				$file_dir .= 'admin/';
-			} elseif ( $file_parts['0'] === 'blog' ) {
-				$file_dir .= 'blog/';
+
+			// file dir.
+			if ( array_key_exists( $file_parts['0'], $folder_by_space ) ) {
+				$file_dir .= $folder_by_space[ $file_parts['0'] ];
+			} else {
+				$file_dir .= '/';
 			}
 		}
-		$file_name = $file_dir . 'class-go-' . $file_name . '.php';
+
+		$file_name = $file_dir . '/class-dimas-' . $file_name . '.php';
+
+		// echo '<br>' . $file_name;
 
 		if ( is_readable( $file_name ) ) {
 			include $file_name;
