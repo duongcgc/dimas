@@ -5,15 +5,15 @@
  * @package Razzi
  */
 ?>
-<div id="preloader" class="preloader preloader-<?php echo esc_attr( GO_Helper::get_option( 'preloader' ) ) ?>">
+<div id="preloader" class="preloader preloader-<?php echo esc_attr( Helper::get_option( 'preloader' ) ) ?>">
 	<?php
-	switch ( GO_Helper::get_option( 'preloader' ) ) {
+	switch ( Helper::get_option( 'preloader' ) ) {
 		case 'image':
-			$image = GO_Helper::get_option( 'preloader_image' );
+			$image = Helper::get_option( 'preloader_image' );
 			break;
 
 		case 'external':
-			$image = GO_Helper::get_option( 'preloader_url' );
+			$image = Helper::get_option( 'preloader_url' );
 			break;
 
 		default:

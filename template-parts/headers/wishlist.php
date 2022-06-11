@@ -25,6 +25,6 @@ if (! defined( 'YITH_WCWL' ) ) {
 
 <div class="header-wishlist">
 	<a class="wishlist-icon" href="<?php echo esc_url( $link ) ?>">
-		<?php echo GO_SVG_Icon::get_svg('heart', '', 'shop'); ?>
+		<?php echo SVG_Icon::get_svg('heart', '', 'shop'); ?>
 	</a>
 </div>

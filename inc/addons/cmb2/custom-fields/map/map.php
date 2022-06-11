@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class GO_Field_Map {
+class Field_Map {
 
 	/**
 	 * Current version number
@@ -109,4 +109,4 @@ class GO_Field_Map {
 	}
 }
 
-GO_Field_Map::init();
+Field_Map::init();

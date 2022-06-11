@@ -18,4 +18,4 @@ $floating_button = Helper::get_option('mobile_floating_action_button');
 		<?php wc_cart_totals_order_total_html(); ?>
 	</div>
 <?php endif; ?>
-<?php echo '<a href="' . esc_url( wc_get_checkout_url() ) . '" class="button checkout wc-forward checkout_button rz-loop_atc_button rz-navigation-bar_icon">' . GO_SVG_Icon::get_svg( 'checkout', '', 'mobile' ) .'<span class="checkout-text-button">' . esc_html__('Proceed to checkout', 'razzi') . '</span>' . '</a>'; ?>
+<?php echo '<a href="' . esc_url( wc_get_checkout_url() ) . '" class="button checkout wc-forward checkout_button rz-loop_atc_button rz-navigation-bar_icon">' . SVG_Icon::get_svg( 'checkout', '', 'mobile' ) .'<span class="checkout-text-button">' . esc_html__('Proceed to checkout', 'razzi') . '</span>' . '</a>'; ?>

@@ -10,7 +10,7 @@ use Razzi\Helper;
 ?>
 <div class="modal-header">
     <h3 class="modal-title"></h3>
-    <a href="#" class="close-account-panel button-close"><?php echo GO_SVG_Icon::get_svg( 'close' ); ?></a>
+    <a href="#" class="close-account-panel button-close"><?php echo SVG_Icon::get_svg( 'close' ); ?></a>
 </div>
 <div class="modal-content">
     <nav class="hamburger-navigation razzi-scrollbar">
@@ -50,8 +50,8 @@ use Razzi\Helper;
 				'link_after'      => '</span>',
 			);
 
-			if ( class_exists( 'GO_Addons\Modules\Mega_Menu\Socials_Walker' ) ) {
-				$args['walker'] = new GO_Addons\Modules\Mega_Menu\Socials_Walker();
+			if ( class_exists( 'Addons\Modules\Mega_Menu\Socials_Walker' ) ) {
+				$args['walker'] = new Addons\Modules\Mega_Menu\Socials_Walker();
 			}
 
 			wp_nav_menu( $args );

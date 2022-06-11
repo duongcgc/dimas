@@ -9,5 +9,5 @@ $modal_class = is_user_logged_in() ? 'link' : 'modal';
 ?>
 
 <a href="<?php echo esc_url( wc_get_account_endpoint_url( 'dashboard' ) ) ?>" class="rz-navigation-bar_icon account-icon" data-toggle="<?php echo esc_attr($modal_class); ?>" data-target="account-modal">
-	<?php echo GO_SVG_Icon::get_svg( 'account', '', 'shop' ); ?>
+	<?php echo SVG_Icon::get_svg( 'account', '', 'shop' ); ?>
 </a>

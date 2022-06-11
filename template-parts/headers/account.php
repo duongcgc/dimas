@@ -15,7 +15,7 @@ if ( ! function_exists( 'WC' ) ) {
 
 <div class="header-account">
 	<a class="account-icon" href="<?php echo esc_url( wc_get_account_endpoint_url( 'dashboard' ) ) ?>" data-toggle="<?php echo 'panel' == Helper::get_option( 'header_account_behaviour' ) ? 'modal' : 'link'; ?>" data-target="account-modal">
-		<?php echo GO_SVG_Icon::get_svg('account', '', 'shop'); ?>
+		<?php echo SVG_Icon::get_svg('account', '', 'shop'); ?>
 	</a>
 	<?php if ( is_user_logged_in() ) : ?>
 		<div class="account-links">

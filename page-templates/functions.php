@@ -9,4 +9,4 @@
 
 require_once get_template_directory() . '/inc/class-razzi-theme.php';
 
-GO_Theme::instance()->init();
+Theme::instance()->init();

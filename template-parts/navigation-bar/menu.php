@@ -7,5 +7,5 @@
 ?>
 
 <a href="#" class="rz-navigation-bar_icon menu-icon" data-toggle="modal" data-target="mobile-category-menu-modal">
-	<?php echo GO_SVG_Icon::get_svg( 'hamburger' ); ?>
+	<?php echo SVG_Icon::get_svg( 'hamburger' ); ?>
 </a>

@@ -26,7 +26,7 @@
 <div id="page" class="site">
 	<?php do_action('razzi_before_open_site_header'); ?>
 	<?php if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'header' ) ) {?>
-		<header id="site-header" class="<?php GO_Header::classes('site-header'); ?>">
+		<header id="site-header" class="<?php Header::classes('site-header'); ?>">
 			<?php do_action('razzi_after_open_site_header'); ?>
 			<?php do_action('razzi_before_close_site_header'); ?>
 		</header>
@@ -34,7 +34,7 @@
 	<?php do_action('razzi_after_close_site_header'); ?>
 
 	<?php
-	GO_HTML::instance()->open( 'site_content', [
+	HTML::instance()->open( 'site_content', [
 		'tag'     => 'div',
 		'attr'    => [
 			'id'    => 'content',

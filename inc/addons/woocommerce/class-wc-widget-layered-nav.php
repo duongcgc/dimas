@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
  * @version  2.6.0
  * @extends  WC_Widget
  */
-class GO_Widget_Layered_Nav extends WC_Widget {
+class Widget_Layered_Nav extends WC_Widget {
 
     /**
      * Constructor.

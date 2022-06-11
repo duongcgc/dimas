@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class GO_Field_Text_Password {
+class Field_Text_Password {
 
 	public function __construct() {
 		add_filter( 'cmb2_render_text_password', array( $this, 'render' ), 10, 5 );
@@ -15,4 +15,4 @@ class GO_Field_Text_Password {
 	}
 }
 
-new GO_Field_Text_Password();
+new Field_Text_Password();

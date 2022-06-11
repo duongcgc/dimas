@@ -27,10 +27,10 @@ function dimas_get_starter_content() {
 		'posts'     => array(
 			'front' => array(
 				'post_type'    => 'page',
-				'post_title'   => esc_html_x( 'Create your website with blocks', 'GO_Theme starter content', 'dimas' ),
+				'post_title'   => esc_html_x( 'Create your website with blocks', 'Theme starter content', 'dimas' ),
 				'post_content' => '
 					<!-- wp:heading {"align":"wide","fontSize":"gigantic","style":{"typography":{"lineHeight":"1.1"}}} -->
-					<h2 class="alignwide has-text-align-wide has-gigantic-font-size" style="line-height:1.1">' . esc_html_x( 'Create your website with blocks', 'GO_Theme starter content', 'dimas' ) . '</h2>
+					<h2 class="alignwide has-text-align-wide has-gigantic-font-size" style="line-height:1.1">' . esc_html_x( 'Create your website with blocks', 'Theme starter content', 'dimas' ) . '</h2>
 					<!-- /wp:heading -->
 
 					<!-- wp:spacer -->
@@ -70,31 +70,31 @@ function dimas_get_starter_content() {
 					<!-- wp:columns {"verticalAlignment":"top","align":"wide"} -->
 					<div class="wp-block-columns alignwide are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top"} -->
 					<div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":3} -->
-					<h3>' . esc_html_x( 'Add block patterns', 'GO_Theme starter content', 'dimas' ) . '</h3>
+					<h3>' . esc_html_x( 'Add block patterns', 'Theme starter content', 'dimas' ) . '</h3>
 					<!-- /wp:heading -->
 
 					<!-- wp:paragraph -->
-					<p>' . esc_html_x( 'Block patterns are pre-designed groups of blocks. To add one, select the Add Block button [+] in the toolbar at the top of the editor. Switch to the Patterns tab underneath the search bar, and choose a pattern.', 'GO_Theme starter content', 'dimas' ) . '</p>
+					<p>' . esc_html_x( 'Block patterns are pre-designed groups of blocks. To add one, select the Add Block button [+] in the toolbar at the top of the editor. Switch to the Patterns tab underneath the search bar, and choose a pattern.', 'Theme starter content', 'dimas' ) . '</p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:column -->
 
 					<!-- wp:column {"verticalAlignment":"top"} -->
 					<div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":3} -->
-					<h3>' . esc_html_x( 'Frame your images', 'GO_Theme starter content', 'dimas' ) . '</h3>
+					<h3>' . esc_html_x( 'Frame your images', 'Theme starter content', 'dimas' ) . '</h3>
 					<!-- /wp:heading -->
 
 					<!-- wp:paragraph -->
-					<p>' . esc_html_x( 'Dimas includes stylish borders for your content. With an Image block selected, open the "Styles" panel within the Editor sidebar. Select the "Frame" block style to activate it.', 'GO_Theme starter content', 'dimas' ) . '</p>
+					<p>' . esc_html_x( 'Dimas includes stylish borders for your content. With an Image block selected, open the "Styles" panel within the Editor sidebar. Select the "Frame" block style to activate it.', 'Theme starter content', 'dimas' ) . '</p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:column -->
 
 					<!-- wp:column {"verticalAlignment":"top"} -->
 					<div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":3} -->
-					<h3>' . esc_html_x( 'Overlap columns', 'GO_Theme starter content', 'dimas' ) . '</h3>
+					<h3>' . esc_html_x( 'Overlap columns', 'Theme starter content', 'dimas' ) . '</h3>
 					<!-- /wp:heading -->
 
 					<!-- wp:paragraph -->
-					<p>' . esc_html_x( 'Dimas also includes an overlap style for column blocks. With a Columns block selected, open the "Styles" panel within the Editor sidebar. Choose the "Overlap" block style to try it out.', 'GO_Theme starter content', 'dimas' ) . '</p>
+					<p>' . esc_html_x( 'Dimas also includes an overlap style for column blocks. With a Columns block selected, open the "Styles" panel within the Editor sidebar. Choose the "Overlap" block style to try it out.', 'Theme starter content', 'dimas' ) . '</p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:column --></div>
 					<!-- /wp:columns -->
@@ -109,7 +109,7 @@ function dimas_get_starter_content() {
 					<!-- /wp:spacer -->
 
 					<!-- wp:paragraph {"fontSize":"huge"} -->
-					<p class="has-huge-font-size">' . esc_html_x( 'Need help?', 'GO_Theme starter content', 'dimas' ) . '</p>
+					<p class="has-huge-font-size">' . esc_html_x( 'Need help?', 'Theme starter content', 'dimas' ) . '</p>
 					<!-- /wp:paragraph -->
 
 					<!-- wp:spacer {"height":75} -->
@@ -119,13 +119,13 @@ function dimas_get_starter_content() {
 					<!-- wp:columns -->
 					<div class="wp-block-columns"><!-- wp:column -->
 					<div class="wp-block-column"><!-- wp:paragraph -->
-					<p><a href="https://wordpress.org/support/article/dimas/">' . esc_html_x( 'Read the GO_Theme Documentation', 'GO_Theme starter content', 'dimas' ) . '</a></p>
+					<p><a href="https://wordpress.org/support/article/dimas/">' . esc_html_x( 'Read the Theme Documentation', 'Theme starter content', 'dimas' ) . '</a></p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:column -->
 
 					<!-- wp:column -->
 					<div class="wp-block-column"><!-- wp:paragraph -->
-					<p><a href="https://wordpress.org/support/theme/dimas/">' . esc_html_x( 'Check out the Support Forums', 'GO_Theme starter content', 'dimas' ) . '</a></p>
+					<p><a href="https://wordpress.org/support/theme/dimas/">' . esc_html_x( 'Check out the Support Forums', 'Theme starter content', 'dimas' ) . '</a></p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:column --></div>
 					<!-- /wp:columns -->

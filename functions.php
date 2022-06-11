@@ -13,8 +13,8 @@ namespace Dimas;
 
 // This theme requires WordPress 5.3 or later.
 if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
-	require get_template_directory() . '/inc/framework/class-dm-back-compat.php';
-	\Dimas\GO_Back_Compat::instance();
+	require get_template_directory() . '/inc/framework/class-go-back-compat.php';
+	\Dimas\Back_Compat::instance();
 }
 
 // Global Constants.
@@ -63,5 +63,5 @@ if ( ! defined( 'DIMAS_CSS_URI' ) ) {
 }
 
 // Init Dimas Theme.
-require DIMAS_INC_DIR . '/class-dm-theme.php';
-GO_Theme::instance();
+require DIMAS_INC_DIR . '/class-go-theme.php';
+Theme::instance();

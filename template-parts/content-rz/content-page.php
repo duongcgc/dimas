@@ -10,7 +10,7 @@
 ?>
 
 <?php
-GO_HTML::instance()->open('page_content',[
+HTML::instance()->open('page_content',[
 	'tag' => 'article',
 	'attr' => [
 		'id'    => 'post-' . get_the_ID(),
@@ -22,4 +22,4 @@ GO_HTML::instance()->open('page_content',[
 
 <?php the_content(); ?>
 
-<?php GO_HTML::instance()->close('page_content');  ?>
+<?php HTML::instance()->close('page_content');  ?>

@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class GO_Field_Switch {
+class Field_Switch {
 
 	/**
 	 * Current version number
@@ -45,4 +45,4 @@ class GO_Field_Switch {
 	}
 }
 
-GO_Field_Switch::init();
+Field_Switch::init();

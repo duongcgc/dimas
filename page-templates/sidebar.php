@@ -15,7 +15,7 @@ if ( ! $has_sidebar ) {
 
 $sidebar = 'blog-sidebar';
 
-if ( GO_Helper::is_catalog() ) {
+if ( Helper::is_catalog() ) {
 	$sidebar = 'catalog-sidebar';
 }
 

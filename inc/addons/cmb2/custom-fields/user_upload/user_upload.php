@@ -16,7 +16,7 @@ if (!defined( 'ABSPATH' )) {
     exit; // Exit if accessed directly
 }
 
-class GO_Field_User_upload {
+class Field_User_upload {
 
     /**
      * Current version number
@@ -231,4 +231,4 @@ class GO_Field_User_upload {
     }
 }
 
-GO_Field_User_upload::init();
+Field_User_upload::init();

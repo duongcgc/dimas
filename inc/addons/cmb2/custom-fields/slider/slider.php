@@ -4,9 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class GO_CMB2Box_Slider
+ * Class CMB2Box_Slider
  */
-class GO_CMB2Box_Slider {
+class CMB2Box_Slider {
 	const VERSION = '1.0.0';
 
 	public function __construct() {
@@ -63,4 +63,4 @@ class GO_CMB2Box_Slider {
 	}
 }
 
-new GO_CMB2Box_Slider();
+new CMB2Box_Slider();

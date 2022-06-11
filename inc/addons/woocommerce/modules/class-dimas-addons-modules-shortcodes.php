@@ -3,7 +3,7 @@
 /**
  * Class for shortcodes.
  */
-class GO_Addons_Modules_Shortcodes {
+class Addons_Modules_Shortcodes {
 	/**
 	 * Instance
 	 *

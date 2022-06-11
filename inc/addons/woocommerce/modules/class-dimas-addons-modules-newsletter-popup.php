@@ -5,7 +5,7 @@
  * @package Dimas
  */
 
-use GO_Helper;
+use Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class of Newsletter popup template.
  */
-class GO_Addons_Modules_Newsletter_Popup {
+class Addons_Modules_Newsletter_Popup {
 	/**
 	 * Instance
 	 *
@@ -54,7 +54,7 @@ class GO_Addons_Modules_Newsletter_Popup {
 	 * @return void
 	 */
 	public function newsletter_popup() {
-		$newsletter = apply_filters( 'dimas_newsletter_popup', GO_Helper::get_option( 'newsletter_popup_enable' ) );
+		$newsletter = apply_filters( 'dimas_newsletter_popup', Helper::get_option( 'newsletter_popup_enable' ) );
 		if ( ! $newsletter ) {
 			return;
 		}

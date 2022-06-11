@@ -26,7 +26,7 @@ $classess .= Helper::get_option( 'mobile_newsletter_popup' ) ? '' : ' razzi-hide
     <div class="off-modal-layer"></div>
     <div class="modal-content container">
         <div class="button-close active">
-			<?php echo GO_SVG_Icon::get_svg( 'close' ) ?>
+			<?php echo SVG_Icon::get_svg( 'close' ) ?>
         </div>
         <div class="newsletter-popup-image <?php echo esc_attr( $add_class ) ?>">
 			<?php

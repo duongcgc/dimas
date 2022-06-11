@@ -15,7 +15,7 @@
 
 	<header class="entry-header alignwide">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<?php \GO_Template_Tag::instance()->dimas_post_thumbnail(); ?>
+		<?php \Template_Tag::instance()->dimas_post_thumbnail(); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -34,7 +34,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer default-max-width">
-		<?php \GO_Template_Tag::instance()->dimas_entry_meta_footer(); ?>
+		<?php \Template_Tag::instance()->dimas_entry_meta_footer(); ?>
 	</footer><!-- .entry-footer -->
 
 	<?php if ( ! is_singular( 'attachment' ) ) : ?>

@@ -16,7 +16,7 @@ if (!defined( 'ABSPATH' )) {
     exit; // Exit if accessed directly
 }
 
-class GO_Field_Adduser {
+class Field_Adduser {
 
     /**
      * Current version number
@@ -111,4 +111,4 @@ class GO_Field_Adduser {
     }
 }
 
-GO_Field_Adduser::init();
+Field_Adduser::init();

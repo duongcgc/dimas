@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Icon Box widget
  */
-class GO_Product extends Widget_Base {
+class Product extends Widget_Base {
 	/**
 	 * Retrieve the widget name.
 	 *

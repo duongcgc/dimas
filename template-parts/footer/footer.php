@@ -36,8 +36,8 @@ $add_class .= ! intval( Helper::get_option( 'mobile_footer_main' ) ) ? ' razzi-h
 			<div class="footer-items footer-<?php echo esc_attr( $section ); ?>">
 				<?php
 				foreach ( $items as $item ) {
-					$item['item'] = $item['item'] ? $item['item'] : key( GO_Theme::instance()->get('footer')->footer_items_option() );
-					GO_Theme::instance()->get('footer')->footer_item( $item['item'] );
+					$item['item'] = $item['item'] ? $item['item'] : key( Theme::instance()->get('footer')->footer_items_option() );
+					Theme::instance()->get('footer')->footer_item( $item['item'] );
 				}
 				?>
 			</div>
