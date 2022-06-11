@@ -75,16 +75,16 @@ class DM_Addons_Plugin {
 	 */
 	private function includes() {
 		// Auto Loader
-		require_once DIMAS_ADDONS_DIR . 'class-dimas-addons-autoloader.php';
+		require_once DIMAS_ADDONS_DIR . 'class-dm-addons-autoloader.php';
 		DM_Addons_Auto_Loader::register(
 			array(
-				'Dimas\Addons\Helper'          => DIMAS_ADDONS_DIR . '/class-dimas-addons-helper.php',
-				'Dimas\Addons\Widgets'         => DIMAS_ADDONS_DIR . '/widgets/class-dimas-addons-widgets.php',
+				'Dimas\Addons\Helper'          => DIMAS_ADDONS_DIR . '/class-dm-addons-helper.php',
+				'Dimas\Addons\Widgets'         => DIMAS_ADDONS_DIR . '/widgets/class-dm-addons-widgets.php',
 				'Dimas\Addons\Modules'         => DIMAS_ADDONS_DIR . 'modules/modules.php',
-				'Dimas\Addons\Elementor'       => DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor.php',
-				'Dimas\Addons\Product_Brands'  => DIMAS_ADDONS_DIR . '/backend/class-dimas-addons-product-brand.php',
-				'Dimas\Addons\Product_Authors' => DIMAS_ADDONS_DIR . '/backend/class-dimas-addons-product-author.php',
-				'Dimas\Addons\Importer'        => DIMAS_ADDONS_DIR . '/backend/class-dimas-addons-importer.php',
+				'Dimas\Addons\Elementor'       => DIMAS_ADDONS_DIR . '/elementor/class-dm-elementor.php',
+				'Dimas\Addons\Product_Brands'  => DIMAS_ADDONS_DIR . '/backend/class-dm-addons-product-brand.php',
+				'Dimas\Addons\Product_Authors' => DIMAS_ADDONS_DIR . '/backend/class-dm-addons-product-author.php',
+				'Dimas\Addons\Importer'        => DIMAS_ADDONS_DIR . '/backend/class-dm-addons-importer.php',
 			)
 		);
 	}

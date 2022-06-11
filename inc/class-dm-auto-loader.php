@@ -1,7 +1,7 @@
 <?php
 /**
  * Autoload Classes.
- * => Auto load all class with prefix class-dimas- in addons, core, platform
+ * => Auto load all class with prefix class-dm- in addons, core, platform
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -156,7 +156,7 @@ class DM_Auto_Loader {
 				$file_dir .= 'blog/';
 			}
 		}
-		$file_name = $file_dir . 'class-dimas-' . $file_name . '.php';
+		$file_name = $file_dir . 'class-dm-' . $file_name . '.php';
 
 		if ( is_readable( $file_name ) ) {
 			include $file_name;

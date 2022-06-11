@@ -6,6 +6,8 @@
  * @package Dimas
  */
 
+namespace Dimas;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -13,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Hooks initial
  */
-class DM_Fw_Template_Function {
+class DM_Template_Function {
 	/**
 	 * Instance
 	 *
@@ -369,7 +371,7 @@ class DM_Fw_Template_Function {
 		}
 
 		// Include file class create dynamic css.
-		require_once get_theme_file_path( 'inc/class-dimas-dynamic-css.php' ); // phpcs:ignore WPDM_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound				
+		require_once get_theme_file_path( 'inc/class-dm-dynamic-css.php' ); // phpcs:ignore WPDM_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound				
 
 		// Return the specified styles.
 		return DM_Dynamic_CSS::dimas_generate_css( // @phpstan-ignore-line.

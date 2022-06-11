@@ -12,7 +12,7 @@
  * @since Dimas 1.0
  */
 
-namespace Dimas\Framework;
+namespace Dimas;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

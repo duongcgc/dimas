@@ -33,7 +33,7 @@ if ( have_posts() ) {
 	}
 
 	// Previous/next page navigation.
-	\DM_Fw_Template_Tag::instance()->dimas_the_posts_navigation();
+	\Dimas\DM_Template_Tag::instance()->dimas_the_posts_navigation();
 
 } else {
 

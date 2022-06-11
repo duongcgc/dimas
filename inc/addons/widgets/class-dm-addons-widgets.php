@@ -67,7 +67,7 @@ class DM_Widgets {
 	 */
 	public function includes() {
 		\Dimas\Addons\Auto_Loader::register( [
-			'Dimas\Addons\Widgets\Social_Links'    => DIMAS_ADDONS_DIR . 'inc/widgets/class-dimas-addons-socials.php',
+			'Dimas\Addons\Widgets\Social_Links'    => DIMAS_ADDONS_DIR . 'inc/widgets/class-dm-addons-socials.php',
 		] );
 	}
 

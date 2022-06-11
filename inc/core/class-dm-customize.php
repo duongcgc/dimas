@@ -140,7 +140,7 @@ class DM_Customize {
 
 		// Background color.
 		// Include the custom control class.
-		include_once get_theme_file_path( 'inc/core/customizer/class-dimas-customize-color-control.php' ); // phpcs:ignore WPDM_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+		include_once get_theme_file_path( 'inc/core/customizer/class-dm-customize-color-control.php' ); // phpcs:ignore WPDM_ThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 		// Register the custom control.
 		$wp_customize->register_control_type( 'Dimas\Customize_Color_Control' );

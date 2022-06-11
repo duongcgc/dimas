@@ -9,9 +9,11 @@
  * @since Dimas 1.0
  */
 
+namespace Dimas;
+
 // This theme requires WordPress 5.3 or later.
 if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
-	require get_template_directory() . '/inc/class-dimas-back-compat.php';
+	require get_template_directory() . '/inc/framework/class-dimas-back-compat.php';
 	DM_Back_Compat::instance();
 }
 
@@ -36,8 +38,8 @@ if ( ! defined( 'DIMAS_CORE_DIR' ) ) {
 	define( 'DIMAS_CORE_DIR', DIMAS_INC_DIR . '/core' );
 }
 
-if ( ! defined( 'DIMAS_CORE_PLATFORM' ) ) {
-	define( 'DIMAS_CORE_PLATFORM', DIMAS_INC_DIR . '/platform' );
+if ( ! defined( 'DIMAS_CORE_FRAMEWORK' ) ) {
+	define( 'DIMAS_CORE_FRAMEWORK', DIMAS_INC_DIR . '/framework' );
 }
 
 if ( ! defined( 'DIMAS_ADDONS_URL' ) ) {
@@ -48,8 +50,8 @@ if ( ! defined( 'DIMAS_CORE_URI' ) ) {
 	define( 'DIMAS_CORE_URI', DIMAS_INC_URI . '/core' );
 }
 
-if ( ! defined( 'DIMAS_PLATFORM_URI' ) ) {
-	define( 'DIMAS_PLATFORM_URI', DIMAS_INC_URI . '/platform' );
+if ( ! defined( 'DIMAS_FRAMEWORK_URI' ) ) {
+	define( 'DIMAS_FRAMEWORK_URI', DIMAS_INC_URI . '/framework' );
 }
 
 if ( ! defined( 'DIMAS_JS_URI' ) ) {
@@ -61,5 +63,5 @@ if ( ! defined( 'DIMAS_CSS_URI' ) ) {
 }
 
 // Init Dimas Theme.
-require DIMAS_INC_DIR . '/class-dimas-theme.php';
+require DIMAS_INC_DIR . '/class-dm-theme.php';
 DM_Theme::instance();

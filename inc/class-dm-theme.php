@@ -52,7 +52,7 @@ final class DM_Theme {
 	public function __construct() {
 
 		// auto include classes.
-		require_once DIMAS_INC_DIR . '/class-dimas-auto-loader.php';
+		require_once DIMAS_INC_DIR . '/class-dm-auto-loader.php';
 
 		// create classes.
 		$this->init();
@@ -76,20 +76,20 @@ final class DM_Theme {
 
 		// Setup.
 		$this->get( 'auto-loader' );
-		$this->get( 'fw-template-function' );
-		$this->get( 'fw-template-tag' );
+		$this->get( 'template-function' );
+		// $this->get( 'template-tag' );
 
-		$this->get( 'styles' );
-		$this->get( 'scripts' );
+		// $this->get( 'styles' );
+		// $this->get( 'scripts' );
 
 		// $this->get( 'setup' );
 		// $this->get( 'widgets' );
 
 		// Elementor.
-		$this->get( 'addons-elementor' );
+		// $this->get( 'elementor' );
 
 		// Customizer.
-		$this->get( 'co-customize' );
+		// $this->get( 'customize' );
 
 		// $this->get( 'woocommerce' );
 
@@ -255,42 +255,42 @@ final class DM_Theme {
 	 */
 	public function dimas_includes() {
 		// Setup Theme =================.
-		require DIMAS_INC_DIR . '/class-dimas-setup.php';
+		require DIMAS_INC_DIR . '/class-dm-setup.php';
 		DM_Setup::instance();
 
 		// Helper functions.
-		require DIMAS_INC_DIR . '/class-dimas-helper.php';
+		require DIMAS_INC_DIR . '/class-dm-helper.php';
 
 		// Block Editor Scripts.
-		require DIMAS_CORE_DIR . '/admin/class-dimas-admin-block-editor.php';
+		require DIMAS_CORE_DIR . '/admin/class-dm-admin-block-editor.php';
 		DM_Admin_Block_Editor::instance();
 
 		// Theme Styles.
-		require DIMAS_INC_DIR . '/class-dimas-styles.php';
+		require DIMAS_INC_DIR . '/class-dm-styles.php';
 		DM_Styles::instance();
 
 		// Theme Scripts.
-		require DIMAS_INC_DIR . '/class-dimas-scripts.php';
+		require DIMAS_INC_DIR . '/class-dm-scripts.php';
 		DM_Scripts::instance();
 
 		// SVG Icons class.
-		require DIMAS_INC_DIR . '/class-dimas-svg-icon.php';
+		require DIMAS_INC_DIR . '/class-dm-svg-icon.php';
 
 		// Custom color classes.
-		require DIMAS_INC_DIR . '/class-dimas-custom-colors.php';
+		require DIMAS_INC_DIR . '/class-dm-custom-colors.php';
 		new DM_Custom_Colors();
 
 		// Enhance the theme by hooking into WordPress.
-		require DIMAS_INC_DIR . '/class-dimas-template-funs.php';
+		require DIMAS_INC_DIR . '/class-dm-template-funs.php';
 
 		// Menu functions and filters.
-		require DIMAS_INC_DIR . '/class-dimas-menu.php';
+		require DIMAS_INC_DIR . '/class-dm-menu.php';
 
 		// Custom template tags for the theme.
-		require DIMAS_INC_DIR . '/class-dimas-template-tags.php';
+		require DIMAS_INC_DIR . '/class-dm-template-tags.php';
 
 		// Customizer additions.
-		require DIMAS_CORE_DIR . '/class-dimas-customize.php';
+		require DIMAS_CORE_DIR . '/class-dm-customize.php';
 		new DM_Customize();
 
 		// Block Patterns.
@@ -300,15 +300,15 @@ final class DM_Theme {
 		require DIMAS_INC_DIR . '/block-styles.php';
 
 		// Notice.
-		require DIMAS_INC_DIR . '/class-dimas-notice.php';
+		require DIMAS_INC_DIR . '/class-dm-notice.php';
 		DM_Notice::instance()->add_notice( 'warning', 'This is best.', );
 
 		// Dark Mode.
-		require_once DIMAS_INC_DIR . '/class-dimas-dark-mode.php';
+		require_once DIMAS_INC_DIR . '/class-dm-dark-mode.php';
 		new DM_Dark_Mode();
 
 		// Loading Addons.
-		require_once DIMAS_ADDONS_DIR . '/class-dimas-addons-plugin.php';
+		require_once DIMAS_ADDONS_DIR . '/class-dm-addons-plugin.php';
 		DM_Addons::instance();
 
 	}

@@ -65,13 +65,13 @@ class DM_Elementor {
 	private function includes() {
 		\Dimas\Addons\Auto_Loader::register(
 			array(
-				'Dimas\Addons\Elementor\Helper'        => DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor-helper.php',
-				'Dimas\Addons\Elementor\Setup'         => DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor-setup.php',
-				'Dimas\Addons\Elementor\AjaxLoader'    => DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor-ajaxloader.php',
-				'Dimas\Addons\Elementor\Widgets'       => DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor-widgets.php',
-				'Dimas\Addons\Elementor\Module\Motion_Parallax' => DIMAS_ADDONS_DIR . '/elementor/modules/class-dimas-elementor-motion-parallax.php',
-				'Dimas\Addons\Elementor\Controls'      => DIMAS_ADDONS_DIR . '/elementor/controls/class-dimas-elementor-controls.php',
-				'Dimas\Addons\Elementor\Page_Settings' => DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor-page-settings.php',
+				'Dimas\Addons\Elementor\Helper'        => DIMAS_ADDONS_DIR . '/elementor/class-dm-elementor-helper.php',
+				'Dimas\Addons\Elementor\Setup'         => DIMAS_ADDONS_DIR . '/elementor/class-dm-elementor-setup.php',
+				'Dimas\Addons\Elementor\AjaxLoader'    => DIMAS_ADDONS_DIR . '/elementor/class-dm-elementor-ajaxloader.php',
+				'Dimas\Addons\Elementor\Widgets'       => DIMAS_ADDONS_DIR . '/elementor/class-dm-elementor-widgets.php',
+				'Dimas\Addons\Elementor\Module\Motion_Parallax' => DIMAS_ADDONS_DIR . '/elementor/modules/class-dm-elementor-motion-parallax.php',
+				'Dimas\Addons\Elementor\Controls'      => DIMAS_ADDONS_DIR . '/elementor/controls/class-dm-elementor-controls.php',
+				'Dimas\Addons\Elementor\Page_Settings' => DIMAS_ADDONS_DIR . '/elementor/class-dm-elementor-page-settings.php',
 			)
 		);
 
