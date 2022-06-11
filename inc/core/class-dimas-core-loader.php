@@ -1,7 +1,7 @@
 <?php
 /**
  * Auto Loader Core Modules Elements class.
- * => Custom Post Types, Metaboxes Custom Fields, Customize Settings, Settings Options, ...
+ * => Custom Post Types, Metaboxes Page Settings, Customize Settings, Settings Options, ...
  *
  * @package Dimas
  *
@@ -56,25 +56,25 @@ class Core_Auto_Loader {
 	 *
 	 * @return mixed
 	 */
-	public static function customize_loader() {
+	public static function customize_settings_loader() {
 		return true;
 	}
 
 	/**
-	 * Load all options settings.
+	 * Load all admin options settings.
 	 *
 	 * @return mixed
 	 */
-	public static function options_loader() {
+	public static function addmin_settings_loader() {
 		return true;
 	}
 
 	/**
-	 * Load all metaboxs settings.
+	 * Load all metaboxs page settings.
 	 *
 	 * @return mixed
 	 */
-	public static function custom_fields_loader() {
+	public static function page_settings_loader() {
 		return true;
 	}
 

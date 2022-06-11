@@ -8,6 +8,8 @@
  * @package Dimas
  */
 
+namespace Dimas;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
