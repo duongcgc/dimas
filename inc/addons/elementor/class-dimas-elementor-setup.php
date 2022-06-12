@@ -67,8 +67,6 @@ class Setup {
 			add_action( 'init', array( $this, 'register_wc_hooks' ), 5 );
 		}
 
-		echo 'Setup Elementor';
-
 	}
 
 	/**
@@ -96,7 +94,7 @@ class Setup {
 	 * @return void
 	 */
 	public function enqueue_styles() {
-		\Elementor\Plugin::$instance->frontend->enqueue_styles();
+		// \Elementor\Plugin::$instance->frontend->enqueue_styles();
 	}
 
 
@@ -108,10 +106,10 @@ class Setup {
 	 * @return array
 	 */
 	public function get_product_classes( $classes, $class, $post_id ) {
-		if ( is_admin() && \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
-			$post      = get_post( $post_id );
-			$classes[] = $post->post_type;
-		}
+		// if ( is_admin() && \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
+		// 	$post      = get_post( $post_id );
+		// 	$classes[] = $post->post_type;
+		// }
 
 		return $classes;
 	}

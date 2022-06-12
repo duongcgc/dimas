@@ -9,6 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+/**
+ * Controls.
+ */
 class Controls {
 
 	/**
@@ -45,7 +48,7 @@ class Controls {
 		$this->includes();
 
 		// Register controls
-		add_action( 'elementor/controls/controls_registered', [ $this, 'register_controls' ] );
+		add_action( 'elementor/controls/controls_registered', array( $this, 'register_controls' ) );
 
 		AjaxLoader::instance();
 	}
@@ -58,11 +61,15 @@ class Controls {
 	 * @return void
 	 */
 	public function includes() {
-		\Dimas\Addons\Auto_Loader::register( [
-				'Dimas\Addons\Elementor\Controls\AjaxLoader'  => DIMAS_ADDONS_DIR . 'inc/elementor/controls/class-dimas-elementor-controls-ajaxloader.php',
-				'Dimas\Addons\Elementor\Control\Autocomplete' => DIMAS_ADDONS_DIR . 'inc/elementor/controls/class-dimas-elementor-autocomplete.php',
-			]
+
+		$control_elementor = array(
+			'Dimas\Addons\Elementor\Controls\AjaxLoader'   => DIMAS_ADDONS_DIR . '/elementor/controls/class-dimas-elementor-controls-ajaxloader.php',
+			'Dimas\Addons\Elementor\Controls\Autocomplete' => DIMAS_ADDONS_DIR . '/elementor/controls/class-dimas-elementor-autocomplete.php',
 		);
+
+		foreach ( $control_elementor as $class_file ) {
+			require_once $class_file;
+		}
 
 	}
 
@@ -75,7 +82,7 @@ class Controls {
 	 */
 	public function register_controls() {
 		$controls_manager = \Elementor\Plugin::$instance->controls_manager;
-		$controls_manager->register_control( 'rzautocomplete', \Dimas\Addons\Elementor\Control\Autocomplete::instance() );
+		$controls_manager->register_control( 'dm_autocomplete', \Dimas\Addons\Elementor\Control\Autocomplete::instance() );
 
 	}
 }
