@@ -59,6 +59,14 @@ class Customizer {
 		$this->config = apply_filters( 'razzi_customize_config', $config );
 
 		if ( ! class_exists( 'Kirki' ) ) {
+
+			$plugin_url = \Dimas\Core\Helper::get_install_plugin_url( 'kirki' );
+			$msg_html   = 'Please install <a href="';
+			$msg_html  .= $plugin_url;
+			$msg_html  .= '">Kirki</a> plugin.';
+
+			\Dimas\Framework\Notice::add_notice( 'warning', $msg_html );
+
 			return;
 		}
 
