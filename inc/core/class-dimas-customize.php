@@ -47,8 +47,6 @@ class Customize {
 		add_action( 'customize_preview_init', array( $this, 'dimas_customize_preview_init' ) );
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'dimas_customize_controls_enqueue_scripts' ) );
 
-		echo 'Hello Customize';
-
 	}
 
 	/**

@@ -50,7 +50,6 @@ class Addons_Init {
 	 */
 	public function __construct() {
 		add_action( 'plugins_loaded', array( $this, 'load_templates' ) );
-		echo 'Addons Init';
 	}
 
 	/**
@@ -104,10 +103,8 @@ class Addons_Init {
 	 */
 	private function includes() {
 		// Auto Loader addons.
-		require_once DIMAS_ADDONS_DIR . 'class-dimas-addons-autoloader.php';
-		Addons_Auto_Loader::register(
-			$this->addons_classes_files
-		);
+		require_once DIMAS_ADDONS_DIR . '/class-dimas-addons-autoloader.php';
+		Addons_Auto_Loader::register( $this->addons_classes_files );
 	}
 
 	/**

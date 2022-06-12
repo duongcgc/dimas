@@ -5,14 +5,14 @@
  * @package Dimas
  */
 
-namespace Dimas;
+namespace Dimas\Core;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
 /**
- * Blog initial
+ * Blog initial.
  *
  */
 class Blog {
@@ -72,32 +72,32 @@ class Blog {
 	 */
 	public function get( $class ) {
 		switch ( $class ) {
-			case 'posts':
-				if ( \Dimas\Helper::is_blog() ) {
-					return \Dimas\Blog\Posts::instance();
-				}
-				break;
-			case 'post_loop':
-				return \Dimas\Blog\Post_Loop::instance();
-				break;
+			// case 'posts':
+			// 	if ( \Dimas\Core\Helper::is_blog() ) {
+			// 		return \Dimas\Blog\Posts::instance();
+			// 	}
+			// 	break;
+			// case 'post_loop':
+			// 	return \Dimas\Blog\Post_Loop::instance();
+			// 	break;
 
-			case 'post':
-				if ( is_singular( 'post' ) ) {
-					return \Dimas\Blog\Post::instance();
-				}
-				break;
+			// case 'post':
+			// 	if ( is_singular( 'post' ) ) {
+			// 		return \Dimas\Blog\Post::instance();
+			// 	}
+			// 	break;
 
-			case 'related_posts':
-				if ( is_singular( 'post' ) && Helper::get_option('related_posts') ) {
-					return \Dimas\Blog\Related_Posts::instance();
-				}
-				break;
+			// case 'related_posts':
+			// 	if ( is_singular( 'post' ) && Helper::get_option('related_posts') ) {
+			// 		return \Dimas\Blog\Related_Posts::instance();
+			// 	}
+			// 	break;
 
-			case 'search':
-				if ( is_search() ) {
-					return \Dimas\Blog\Search::instance();
-				}
-				break;
+			// case 'search':
+			// 	if ( is_search() ) {
+			// 		return \Dimas\Blog\Search::instance();
+			// 	}
+			// 	break;
 		}
 
 	}

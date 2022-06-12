@@ -30,6 +30,27 @@ class Helper {
 	protected static $header_layout = null;
 
 	/**
+	 * Instance.
+	 *
+	 * @var $instance
+	 */
+	private static $instance;
+
+	/**
+	 * Initiator.
+	 *
+	 * @since 1.0.0
+	 * @return object
+	 */
+	public static function instance() {
+		if ( ! isset( self::$instance ) ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
+
+	/**
 	 * Get font url
 	 *
 	 * @since 1.0.0
@@ -68,7 +89,7 @@ class Helper {
 	 * @return string
 	 */
 	public static function get_option( $name ) {
-		return Theme::instance()->get( 'options' )->get_option( $name );
+		return \Dimas\Theme::instance()->get( 'options' )->get_option( $name );
 	}
 
 	/**
@@ -800,9 +821,9 @@ class Helper {
 	/**
 	 * Query WooCommerce activation
 	 */
-	public static function dimas_is_woocommerce_activated() {
-		return class_exists( 'WooCommerce' ) ? true : false;
-	}
+	// public static function dimas_is_woocommerce_activated() {
+	// return class_exists( 'WooCommerce' ) ? true : false;
+	// }
 
 	/**
 	 * Scrape Instagram.

@@ -20,11 +20,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Core_Loader {
 
 	/**
+	 * Instance
+	 *
+	 * @var $instance
+	 */
+	private static $instance;
+
+	/**
+	 * Initiator
+	 *
+	 * @since 1.0.0
+	 * @return object
+	 */
+	public static function instance() {
+		if ( ! isset( self::$instance ) ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
+
+	/**
 	 * Files to loaded.
 	 *
 	 * @var string $files     Lis of file.
 	 */
 	private static $files;
+
+	/**
+	 * Instantiate the object.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function __construct() {
+		spl_autoload_register( array( $this, 'load' ) );
+	}
 
 	/**
 	 * Register files
@@ -51,7 +83,8 @@ class Core_Loader {
 	 *
 	 * @return void|boolen
 	 */
-	public static function load( $class ) {
+	public function load( $class ) {
+
 		if ( isset( self::$files[ $class ] ) ) {
 			require self::$files[ $class ];
 		}

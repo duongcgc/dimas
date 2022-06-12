@@ -65,35 +65,35 @@ class Mobile {
 	 */
 	public function get( $class ) {
 		switch ( $class ) {
-			case 'general':
-				return \Dimas\Mobile\General::instance();
-				break;
-			case 'header':
-				return \Dimas\Mobile\Header::instance();
-				break;
-			case 'footer':
-				return \Dimas\Mobile\Footer::instance();
-				break;
-			case 'navigation_bar':
-				if( Helper::get_option('mobile_navigation_bar') != 'none' ) {
-					return \Dimas\Mobile\Navigation_Bar::instance();
-				}
-				break;
-			case 'catalog':
-				return \Dimas\Mobile\Catalog::instance();
-				break;
-			case 'product_loop':
-				return \Dimas\Mobile\Product_Loop::instance();
-				break;
-			case 'single_product':
-				return \Dimas\Mobile\Single_Product::instance();
-				break;
-			case 'page_header':
-				return \Dimas\Mobile\Page_Header::instance();
-				break;
-			case 'blog':
-				return \Dimas\Mobile\Blog::instance();
-				break;
+			// case 'general':
+			// 	return \Dimas\Mobile\General::instance();
+			// 	break;
+			// case 'header':
+			// 	return \Dimas\Mobile\Header::instance();
+			// 	break;
+			// case 'footer':
+			// 	return \Dimas\Mobile\Footer::instance();
+			// 	break;
+			// case 'navigation_bar':
+			// 	if( Helper::get_option('mobile_navigation_bar') != 'none' ) {
+			// 		return \Dimas\Mobile\Navigation_Bar::instance();
+			// 	}
+			// 	break;
+			// case 'catalog':
+			// 	return \Dimas\Mobile\Catalog::instance();
+			// 	break;
+			// case 'product_loop':
+			// 	return \Dimas\Mobile\Product_Loop::instance();
+			// 	break;
+			// case 'single_product':
+			// 	return \Dimas\Mobile\Single_Product::instance();
+			// 	break;
+			// case 'page_header':
+			// 	return \Dimas\Mobile\Page_Header::instance();
+			// 	break;
+			// case 'blog':
+			// 	return \Dimas\Mobile\Blog::instance();
+			// 	break;
 		}
 	}
 }

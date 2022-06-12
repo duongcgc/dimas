@@ -49,8 +49,7 @@ class Core_Init {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'plugins_loaded', array( $this, 'load_templates' ) );
-		echo 'Core Init';
+		add_action( 'after_setup_theme', array( $this, 'load_templates' ) );
 	}
 
 	/**
@@ -66,7 +65,7 @@ class Core_Init {
 		$this->includes();
 
 		// auto includes all elements of core.
-		spl_autoload_register( '\Dimas\Core\Core_Loader::load' );
+		\Dimas\Core\Core_Loader::instance();
 
 		// create all core objects.
 		$this->add_actions();
@@ -78,7 +77,6 @@ class Core_Init {
 	private $core_classes_files = array(
 		'Dimas\Core\Helper'       => DIMAS_CORE_DIR . '/class-dimas-helper.php',
 		'Dimas\Core\Blog'         => DIMAS_CORE_DIR . '/class-dimas-blog.php',
-		'Dimas\Core\CPT_Abstract' => DIMAS_CORE_DIR . '/class-dimas-cpt-abstract.php',
 		'Dimas\Core\CPT_Register' => DIMAS_CORE_DIR . '/class-dimas-cpt-register.php',
 		'Dimas\Core\Customize'    => DIMAS_CORE_DIR . '/class-dimas-customize.php',
 		'Dimas\Core\Metaboxes'    => DIMAS_CORE_DIR . '/class-dimas-metaboxes.php',
@@ -92,11 +90,10 @@ class Core_Init {
 	 * @var array
 	 */
 	private $core_classes_names = array(
-		'help'         => 'Dimas\Core\Helper',
+		'helper'       => 'Dimas\Core\Helper',
 		'blog'         => 'Dimas\Core\Blog',
-		'cpt-abstract' => 'Dimas\Core\CPT_Abstract',
 		'cpt-register' => 'Dimas\Core\CPT_Register',
-		'customizer'   => 'Dimas\Core\Customize',
+		'customize'    => 'Dimas\Core\Customize',
 		'metaboxes'    => 'Dimas\Core\Metaboxes',
 		'options'      => 'Dimas\Core\Options',
 		'mobile'       => 'Dimas\Core\Mobile',
@@ -111,10 +108,10 @@ class Core_Init {
 	 */
 	private function includes() {
 		// Auto Loader core.
-		require_once DIMAS_ADDONS_DIR . 'class-dimas-core-loader.php';
-		Core_Loader::register(
-			$this->core_classes_files
-		);
+		require_once DIMAS_CORE_DIR . '/class-dimas-core-loader.php';
+		require_once DIMAS_CORE_DIR . '/class-dimas-cpt-abstract.php';
+
+		Core_Loader::register( $this->core_classes_files );
 	}
 
 	/**
@@ -131,11 +128,10 @@ class Core_Init {
 		$this->get( 'helper' );
 		$this->get( 'blog' );
 
-		$this->get( 'cpt-abstract' );
 		$this->get( 'cpt-register' );
 
 		// Customizer.
-		$this->get( 'customizer' );
+		$this->get( 'customize' );
 
 		// Metabos.
 		$this->get( 'metaboxes' );
@@ -163,12 +159,8 @@ class Core_Init {
 
 		$class_name = $this->core_classes_names[ $class ];
 
-		if ( array_key_exists( $class, $this->core_classes_files ) ) {
-			if ( class_exists( $class_name ) ) {
-				return $class_name::instance();				
-			} else {
-				echo '<br/>' . esc_html__( 'Not found the class: ', 'dimas' ) . esc_url( $class_name );
-			}
+		if ( array_key_exists( $class, $this->core_classes_names ) ) {
+			return $class_name::instance();
 		}
 
 	}
