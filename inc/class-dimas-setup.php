@@ -53,7 +53,7 @@ class Setup {
 		add_action( 'widgets_init', array( $this, 'dimas_widgets_init' ) );
 
 		// Other theme setups and supports.
-		add_action( 'after_setup_theme', array( $this, 'setup_theme' ), 3 );		
+		add_action( 'after_setup_theme', array( $this, 'setup_theme' ), 3 );
 	}
 
 	/**
@@ -351,7 +351,7 @@ class Setup {
 		* page load, as it is a one-off operation only needed once in the customizer.
 		*/
 		if ( is_customize_preview() ) {
-			require get_template_directory() . '/inc/starter-content.php';
+			require get_template_directory() . '/inc/framework/starter-content.php';
 			add_theme_support( 'starter-content', dimas_get_starter_content() );
 		}
 

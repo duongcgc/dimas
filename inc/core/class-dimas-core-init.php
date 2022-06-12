@@ -78,7 +78,7 @@ class Core_Init {
 		'Dimas\Core\Helper'       => DIMAS_CORE_DIR . '/class-dimas-helper.php',
 		'Dimas\Core\Blog'         => DIMAS_CORE_DIR . '/class-dimas-blog.php',
 		'Dimas\Core\CPT_Register' => DIMAS_CORE_DIR . '/class-dimas-cpt-register.php',
-		'Dimas\Core\Customize'    => DIMAS_CORE_DIR . '/class-dimas-customize.php',
+		'Dimas\Core\Customizer'   => DIMAS_CORE_DIR . '/class-dimas-customizer.php',
 		'Dimas\Core\Metaboxes'    => DIMAS_CORE_DIR . '/class-dimas-metaboxes.php',
 		'Dimas\Core\Options'      => DIMAS_CORE_DIR . '/class-dimas-options.php',
 		'Dimas\Core\Mobile'       => DIMAS_CORE_DIR . '/class-dimas-mobile.php',
@@ -93,7 +93,7 @@ class Core_Init {
 		'helper'       => 'Dimas\Core\Helper',
 		'blog'         => 'Dimas\Core\Blog',
 		'cpt-register' => 'Dimas\Core\CPT_Register',
-		'customize'    => 'Dimas\Core\Customize',
+		'customizer'   => 'Dimas\Core\Customizer',
 		'metaboxes'    => 'Dimas\Core\Metaboxes',
 		'options'      => 'Dimas\Core\Options',
 		'mobile'       => 'Dimas\Core\Mobile',
@@ -131,7 +131,7 @@ class Core_Init {
 		$this->get( 'cpt-register' );
 
 		// Customizer.
-		$this->get( 'customize' );
+		$this->get( 'customizer' );
 
 		// Metabos.
 		$this->get( 'metaboxes' );

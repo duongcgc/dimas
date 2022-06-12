@@ -156,7 +156,7 @@ class Customize {
 
 		// Add the control. Overrides the default background-color control.
 		$wp_customize->add_control(
-			new Customize_Color_Control(
+			new \Dimas\Customize_Color_Control(
 				$wp_customize,
 				'background_color',
 				array(

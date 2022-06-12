@@ -1,23 +1,19 @@
 <?php
 
 /**
- * Metabox Options
- * => Init options
+ * Theme Options
  *
  * @package Dimas
  */
 
-namespace Dimas\Core;
+namespace Dimas\Core\Customizer;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) {
 	exit;
 }
 
-/**
- * Undocumented class.
- */
-class Metaboxes {
+class Settings {
 	/**
 	 * Instance
 	 *
@@ -54,9 +50,8 @@ class Metaboxes {
 	 *
 	 */
 	public function __construct() {
-
-		add_filter( 'dimas_customize_config' , array($this, 'customize_settings') );
-		self::$dimas_customize = \Dimas\Core\Customizer::instance();
+		add_filter('dimas_customize_config', array($this, 'customize_settings'));
+		self::$dimas_customize = \Dimas\Theme::instance()->get('customizer');
 	}
 
 
