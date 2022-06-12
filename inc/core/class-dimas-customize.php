@@ -7,7 +7,7 @@
  * @since Dimas 1.0
  */
 
-namespace Dimas;
+namespace Dimas\Core;
 
 /**
  * Customizer Settings.

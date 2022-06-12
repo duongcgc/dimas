@@ -72,6 +72,29 @@ class Addons_Init {
 	}
 
 	/**
+	 * List components of addons.
+	 */
+	private $addons_classes_files = array(
+		'Dimas\Addons\Elementor'  => DIMAS_ADDONS_DIR . '/class-dimas-addons-elementor.php',
+		'Dimas\Addons\Helper'     => DIMAS_ADDONS_DIR . '/class-dimas-addons-helper.php',
+		'Dimas\Addons\Shortcodes' => DIMAS_ADDONS_DIR . '/class-dimas-addons-shortcodes.php',
+		'Dimas\Addons\Widgets'    => DIMAS_ADDONS_DIR . '/class-dimas-addons-widgets.php',
+		'Dimas\Addons\Woocomerce' => DIMAS_ADDONS_DIR . '/class-dimas-addons-woocommerce.php',
+	);
+	/**
+	 * List classes components of addons.
+	 *
+	 * @var array
+	 */
+	private $addons_classes_names = array(
+		'elementor'  => 'Dimas\Addons\Elementor',
+		'helper'     => 'Dimas\Addons\Helper',
+		'shortcodes' => 'Dimas\Addons\Shortcodes',
+		'widgets'    => 'Dimas\Addons\Widgets',
+		'woocomerce' => 'Dimas\Addons\Woocomerce',
+	);
+
+	/**
 	 * Includes files.
 	 *
 	 * @since 1.0.0
@@ -82,20 +105,12 @@ class Addons_Init {
 		// Auto Loader addons.
 		require_once DIMAS_ADDONS_DIR . 'class-dimas-addons-autoloader.php';
 		Addons_Auto_Loader::register(
-			array(
-				'Dimas\Addons\Helper'          => DIMAS_ADDONS_DIR . '/class-dimas-addons-helper.php',
-				'Dimas\Addons\Widgets'         => DIMAS_ADDONS_DIR . '/widgets/class-dimas-addons-widgets.php',
-				'Dimas\Addons\Modules'         => DIMAS_ADDONS_DIR . 'modules/modules.php',
-				'Dimas\Addons\Elementor'       => DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor.php',
-				'Dimas\Addons\Product_Brands'  => DIMAS_ADDONS_DIR . '/backend/class-dimas-addons-product-brand.php',
-				'Dimas\Addons\Product_Authors' => DIMAS_ADDONS_DIR . '/backend/class-dimas-addons-product-author.php',
-				'Dimas\Addons\Importer'        => DIMAS_ADDONS_DIR . '/backend/class-dimas-addons-importer.php',
-			)
+			$this->addons_classes_files;
 		);
 	}
 
 	/**
-	 * Add Actions
+	 * Add Actions.
 	 *
 	 * @since 1.0.0
 	 *
@@ -105,16 +120,14 @@ class Addons_Init {
 		// Before init action.
 		do_action( 'before_dimas_init' );
 
-		$this->get( 'product_brand' );
-		$this->get( 'product_author' );
-
-		$this->get( 'importer' );
-
 		// Elmentor.
 		$this->get( 'elementor' );
 
-		// Modules.
-		$this->get( 'modules' );
+		// Helper.
+		$this->get( 'helper' );
+
+		// Shortcodes.
+		$this->get( 'shortcodes' );
 
 		// Widgets.
 		$this->get( 'widgets' );
@@ -126,42 +139,21 @@ class Addons_Init {
 	}
 
 	/**
-	 * Get Dimas Addons Class instance
+	 * Get Dimas Addons Class instance.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return object
 	 */
 	public function get( $class ) {
-		switch ( $class ) {
-			case 'product_brand':
-				if ( class_exists( 'WooCommerce' ) ) {
-					return \Dimas\Addons\Product_Brands::instance();
-				}
-				break;
-			case 'product_author':
-				if ( class_exists( 'WooCommerce' ) ) {
-					return \Dimas\Addons\Product_Authors::instance();
-				}
-				break;
-			case 'importer':
-				if ( is_admin() ) {
-					return \Dimas\Addons\Importer::instance();
-				}
-				break;
-			case 'elementor':
-				if ( did_action( 'elementor/loaded' ) ) {
-					return \Dimas\Addons\Elementor::instance();
-				}
-				break;
+		$class_name = $this->addons_classes_names[ $class ];
 
-			case 'modules':
-				return \Dimas\Addons\Modules::instance();
-				break;
-
-			case 'widgets':
-				return \Dimas\Addons\Widgets::instance();
-				break;
+		if ( array_key_exists( $class, $this->addons_classes_files ) ) {
+			if ( class_exists( $class_name ) ) {
+				return $class_name::instance();
+			} else {
+				echo '<br/>' . esc_html__( 'Not found the class: ', 'dimas' ) . esc_url( $class_name );
+			}
 		}
 	}
 

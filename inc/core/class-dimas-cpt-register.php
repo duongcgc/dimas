@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Custom Post Type initial
  */
-class Custom_Post_Type {
+class CPT_Register {
 	/**
 	 * Instance
 	 *
@@ -75,19 +75,19 @@ class Custom_Post_Type {
 	 * @return array All registered meta boxes
 	 */
 	public function register_meta_boxes( $meta_boxes ) {
-		// Header
+		// Header CPT.
 		$meta_boxes[] = $this->register_header_settings();
 
-		// Page Header
+		// Page Header CPT.
 		$meta_boxes[] = $this->register_page_header_settings();
 
-		// Content
+		// Content CPT.
 		$meta_boxes[] = $this->register_content_settings();
 
-		// Page Boxed
+		// Page Boxed CPT.
 		$meta_boxes[] = $this->register_page_boxed_settings();
 
-		// Footer
+		// Footer CPT.
 		$meta_boxes[] = $this->register_footer_settings();
 
 		return $meta_boxes;

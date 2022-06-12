@@ -5,14 +5,14 @@
  * @package Dimas
  */
 
-use Dimas\Theme;
+namespace Dimas\Core;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
- * Helper initial
+ * Core Helper initial
  */
 class Helper {
 	/**

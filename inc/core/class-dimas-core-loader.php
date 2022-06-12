@@ -43,42 +43,6 @@ class Core_Loader {
 	}
 
 	/**
-	 * Load all custom post types.
-	 *
-	 * @return mixed
-	 */
-	public static function cpt_loader() {
-		return true;
-	}
-
-	/**
-	 * Load all customize settings.
-	 *
-	 * @return mixed
-	 */
-	public static function customize_settings_loader() {
-		return true;
-	}
-
-	/**
-	 * Load all admin options settings.
-	 *
-	 * @return mixed
-	 */
-	public static function addmin_settings_loader() {
-		return true;
-	}
-
-	/**
-	 * Load all metaboxs custom fields.
-	 *
-	 * @return mixed
-	 */
-	public static function custom_fields_loader() {
-		return true;
-	}
-
-	/**
 	 * Load files.
 	 *
 	 * @param string $class    The class loading.

@@ -75,74 +75,30 @@ final class Theme {
 		do_action( 'before_dimas_init' );
 
 		/**
-		 * Setup ===================.
+		 * Setup popular components ===============.
 		 */
 		$this->get( 'auto-loader' );
-		$this->get( 'framework/template-function' );
-		$this->get( 'framework/template-tag' );
 
 		$this->get( 'styles' );
 		$this->get( 'scripts' );
 
 		$this->get( 'setup' );
-		$this->get( 'addons/widgets' );
 
 		/**
-		 * Framework ===============.
+		 * Framework init components ==============.
 		 */
+		$this->get( 'framework/template-function' );
+		$this->get( 'framework/template-tag' );
 
 		/**
-		 * Core ====================.
+		 * Core init components =====.
 		 */
-		$this->get( 'core/options' );
+		$this->get( 'core/core-init' );
 
 		/**
-		 * Addons ==================.
+		 * Addons init components ====.
 		 */
-
-		// Elementor.
 		$this->get( 'addons/addons-init' );
-
-		// Customizer.
-		// $this->get( 'customize' );
-
-		// $this->get( 'woocommerce' );
-
-		// $this->get( 'mobile-blog' );
-
-		// $this->get( 'maintenance' );
-
-		// // Header.
-		// $this->get( 'preloader' );
-		// $this->get( 'topbar' );
-		// $this->get( 'header' );
-		// $this->get( 'campaigns' );
-
-		// // Page Header.
-		// $this->get( 'page_header' );
-		// $this->get( 'breadcrumbs' );
-
-		// // Layout & Style.
-		// $this->get( 'layout' );
-		// $this->get( 'dynamic_css' );
-
-		// // Comments.
-		// $this->get( 'comments' );
-
-		// // Footer.
-		// $this->get( 'footer' );
-
-		// // Modules.
-		// $this->get( 'search_ajax' );
-		// $this->get( 'newsletter' );
-
-		// // Templates.
-		// $this->get( 'page' );
-
-		// $this->get( 'blog' );
-
-		// // Admin.
-		// $this->get( 'admin' );
 
 		// Init action.
 		do_action( 'after_dimas_init' );

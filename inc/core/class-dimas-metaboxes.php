@@ -7,7 +7,7 @@
  * @package Dimas
  */
 
-namespace Dimas;
+namespace Dimas\Core;
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) {

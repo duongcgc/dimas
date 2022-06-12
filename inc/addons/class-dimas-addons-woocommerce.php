@@ -6,6 +6,8 @@
  * @package Dimas
  */
 
+namespace Dimas\Addons;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
