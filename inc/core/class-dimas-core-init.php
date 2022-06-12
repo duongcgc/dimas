@@ -50,6 +50,7 @@ class Core_Init {
 	 */
 	public function __construct() {
 		add_action( 'plugins_loaded', array( $this, 'load_templates' ) );
+		echo 'Core Init';
 	}
 
 	/**
@@ -164,7 +165,7 @@ class Core_Init {
 
 		if ( array_key_exists( $class, $this->core_classes_files ) ) {
 			if ( class_exists( $class_name ) ) {
-				return $class_name::instance();
+				return $class_name::instance();				
 			} else {
 				echo '<br/>' . esc_html__( 'Not found the class: ', 'dimas' ) . esc_url( $class_name );
 			}

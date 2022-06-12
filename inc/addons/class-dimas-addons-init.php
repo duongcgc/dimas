@@ -50,6 +50,7 @@ class Addons_Init {
 	 */
 	public function __construct() {
 		add_action( 'plugins_loaded', array( $this, 'load_templates' ) );
+		echo 'Addons Init';
 	}
 
 	/**
@@ -105,7 +106,7 @@ class Addons_Init {
 		// Auto Loader addons.
 		require_once DIMAS_ADDONS_DIR . 'class-dimas-addons-autoloader.php';
 		Addons_Auto_Loader::register(
-			$this->addons_classes_files;
+			$this->addons_classes_files
 		);
 	}
 
@@ -150,6 +151,7 @@ class Addons_Init {
 
 		if ( array_key_exists( $class, $this->addons_classes_files ) ) {
 			if ( class_exists( $class_name ) ) {
+				echo $class_name;
 				return $class_name::instance();
 			} else {
 				echo '<br/>' . esc_html__( 'Not found the class: ', 'dimas' ) . esc_url( $class_name );

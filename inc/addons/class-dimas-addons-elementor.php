@@ -46,8 +46,8 @@ class Addons_Elementor {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'widgets_init', array( $this, 'widgets_init' ) );
 		echo 'Elementor Helo';
+		add_action( 'widgets_init', array( $this, 'widgets_init' ) );		
 	}
 
 	/**
