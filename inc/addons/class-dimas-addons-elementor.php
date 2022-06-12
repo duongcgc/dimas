@@ -40,6 +40,7 @@ class Addons_Elementor {
 
 		return self::$instance;
 	}
+
 	/**
 	 * Instantiate the object.
 	 *
@@ -48,10 +49,13 @@ class Addons_Elementor {
 	 * @return void
 	 */
 	public function __construct() {
+
+		// includes all addons.
 		$this->includes();
+
+		// create all addons objects.
 		$this->add_actions();
 
-		echo 'Elementor Init';
 	}
 
 	/**
@@ -89,8 +93,11 @@ class Addons_Elementor {
 	 * @return void
 	 */
 	private function includes() {
-		require_once DIMAS_ADDONS_DIR . '/elementor/class-dimas-elementor-loader.php';
-		\Dimas\Addons\Elementor\Elementor_Loader::register( $this->elementor_classes_files );
+
+		foreach ( $this->elementor_classes_files as $class_file ) {
+			require_once $class_file;
+		}
+
 	}
 
 	/**
@@ -105,7 +112,7 @@ class Addons_Elementor {
 		$this->get( 'ajax-loader' );
 		$this->get( 'widgets' );
 		$this->get( 'controls' );
-		$this->get( 'page_settings' );
+		$this->get( 'page-settings' );
 
 		if ( ! defined( 'ELEMENTOR_PRO_VERSION' ) ) {
 			$this->modules['motion_parallax'] = $this->get( 'motion_parallax' );
