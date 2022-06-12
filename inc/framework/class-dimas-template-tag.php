@@ -211,7 +211,7 @@ class Template_Tag {
 	 * @return void
 	 */
 	public function dimas_post_thumbnail() {
-		if ( ! \Template_Function::instance()->dimas_can_show_post_thumbnail() ) {
+		if ( ! Template_Function::instance()->dimas_can_show_post_thumbnail() ) {
 			return;
 		}
 		?>

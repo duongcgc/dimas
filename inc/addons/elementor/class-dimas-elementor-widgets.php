@@ -80,7 +80,7 @@ class Widgets {
 		}
 
 		$filename = str_replace( '_', '-', $filename );
-		$filename = DIMAS_ADDONS_DIR . 'inc/elementor/widgets/' . $filename . '.php';
+		$filename = DIMAS_ADDONS_DIR . '/elementor/widgets/' . $filename . '.php';
 
 		if ( is_readable( $filename ) ) {
 			include $filename;
@@ -99,7 +99,7 @@ class Widgets {
 	}
 
 	/**
-	 * Init Widgets
+	 * Init Widgets.
 	 *
 	 * @since 1.0.0
 	 *
