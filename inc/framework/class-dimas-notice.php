@@ -5,6 +5,8 @@
  * @package Dimas
  */
 
+namespace Dimas\Framework;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -53,7 +55,7 @@ class Notice {
 	 * @param string $tag        The tag for text.
 	 * @return void
 	 */
-	public function add_notice( $type = 'warning', $message = '', $tag = 'p' ) {
+	public static function add_notice( $type = 'warning', $message = '', $tag = 'p' ) {
 
 		$params = array(
 			'type' => $type,

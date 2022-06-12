@@ -89,6 +89,7 @@ final class Theme {
 		 */
 		$this->get( 'framework/template-function' );
 		$this->get( 'framework/template-tag' );
+		$this->get( 'framework/notice' );
 
 		/**
 		 * Core init components =====.

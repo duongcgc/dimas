@@ -50,6 +50,18 @@ class Addons_Elementor {
 	 */
 	public function __construct() {
 
+		if ( false === \Dimas\Core\Helper::dimas_is_elementor_activated() ) {
+
+			$plugin_url = \Dimas\Core\Helper::get_install_plugin_url( 'elementor' );
+			$msg_html   = 'Please install <a href="';
+			$msg_html  .= $plugin_url;
+			$msg_html  .= '">Elementor</a> plugin.';
+
+			\Dimas\Framework\Notice::add_notice( 'warning', $msg_html );
+
+			return;
+		}
+
 		// includes all addons.
 		$this->includes();
 
@@ -115,7 +127,7 @@ class Addons_Elementor {
 		$this->get( 'page-settings' );
 
 		if ( ! defined( 'ELEMENTOR_PRO_VERSION' ) ) {
-			$this->modules['motion_parallax'] = $this->get( 'motion_parallax' );
+			// $this->modules['motion_parallax'] = $this->get( 'motion_parallax' );
 		}
 	}
 

@@ -50,6 +50,33 @@ class Helper {
 		return self::$instance;
 	}
 
+
+	/**
+	 * Install plugin url function
+	 *
+	 * @param string $slug     The plugin slug.
+	 * @return void
+	 */
+	public static function get_install_plugin_url( $plugin_slug ) {
+
+		$action = 'install-plugin';
+		$slug   = $plugin_slug;
+		$url    = '';
+
+		$url = wp_nonce_url(
+			add_query_arg(
+				array(
+					'action' => $action,
+					'plugin' => $slug,
+				),
+				admin_url( 'update.php' )
+			),
+			$action . '_' . $slug
+		);
+
+		return $url;
+	}
+
 	/**
 	 * Get font url
 	 *
