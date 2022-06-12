@@ -54,8 +54,9 @@ class Metaboxes {
 	 *
 	 */
 	public function __construct() {
-		add_filter('dimas_customize_config', array($this, 'customize_settings'));
-		self::$dimas_customize = \Dimas\Theme::instance()->get('customizer');
+
+		add_filter( 'dimas_customize_config' , array($this, 'customize_settings') );
+		self::$dimas_customize = \Dimas\Core\Customize::instance();
 	}
 
 

@@ -20,11 +20,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Addons_Auto_Loader {
 
 	/**
+	 * Instance
+	 *
+	 * @var $instance
+	 */
+	private static $instance;
+
+	/**
+	 * Initiator
+	 *
+	 * @since 1.0.0
+	 * @return object
+	 */
+	public static function instance() {
+		if ( ! isset( self::$instance ) ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
+
+	/**
 	 * Files to loaded.
 	 *
 	 * @var string $files     Lis of file.
 	 */
 	private static $files;
+
+	/**
+	 * Instantiate the object.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function __construct() {
+		spl_autoload_register( array( $this, 'load' ) );
+	}
 
 	/**
 	 * Register files
