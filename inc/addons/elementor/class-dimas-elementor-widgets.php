@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Ele_Widgets {
+class Widgets {
 
 	/**
 	 * Instance

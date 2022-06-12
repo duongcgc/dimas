@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-class Ele_Page_Settings {
+class Page_Settings {
 
 	/**
 	 * Instance

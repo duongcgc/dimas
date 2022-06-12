@@ -73,6 +73,8 @@ class Addons_Init {
 
 	/**
 	 * List components of addons.
+	 *
+	 * @var array $addons_classes_files     The list of addons modules files.
 	 */
 	private $addons_classes_files = array(
 		'Dimas\Addons\Addons_Elementor'  => DIMAS_ADDONS_DIR . '/class-dimas-addons-elementor.php',
@@ -84,7 +86,7 @@ class Addons_Init {
 	/**
 	 * List classes components of addons.
 	 *
-	 * @var array
+	 * @var array $addons_classes_names     The list of addons modules classes name.
 	 */
 	private $addons_classes_names = array(
 		'elementor'  => 'Dimas\Addons\Addons_Elementor',

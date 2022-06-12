@@ -2,12 +2,11 @@
 
 namespace Dimas\Addons\Elementor;
 
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-class Ele_Ajax_Loader {
+class Ajax_Loader {
 
 	/**
 	 * Instance
@@ -40,18 +39,21 @@ class Ele_Ajax_Loader {
 	 */
 	public function __construct() {
 		// Load category
-		add_action( 'wc_ajax_ra_elementor_load_category', [ $this, 'elementor_load_category' ] );
+		add_action( 'wc_ajax_ra_elementor_load_category', array( $this, 'elementor_load_category' ) );
 
 		// Products without Load more button
-		add_action( 'wc_ajax_ra_elementor_load_products', [ $this, 'elementor_load_products' ] );
+		add_action( 'wc_ajax_ra_elementor_load_products', array( $this, 'elementor_load_products' ) );
 
 		// Products without Load more button
-		add_action( 'wc_ajax_ra_elementor_load_products_grid', [ $this, 'elementor_load_products_grid' ] );
+		add_action( 'wc_ajax_ra_elementor_load_products_grid', array( $this, 'elementor_load_products_grid' ) );
 
-		add_action( 'wc_ajax_ra_elementor_load_recently_viewed_products', [
-			$this,
-			'elementor_load_recently_viewed_products'
-		] );
+		add_action(
+			'wc_ajax_ra_elementor_load_recently_viewed_products',
+			array(
+				$this,
+				'elementor_load_recently_viewed_products',
+			)
+		);
 	}
 
 	/**
@@ -85,14 +87,14 @@ class Ele_Ajax_Loader {
 	 */
 	public function elementor_load_products() {
 		$atts = array(
-			'columns'        => isset( $_POST['columns'] ) ? intval( $_POST['columns'] ) : '',
-			'products'       => isset( $_POST['products'] ) ? $_POST['products'] : '',
-			'order'          => isset( $_POST['order'] ) ? $_POST['order'] : '',
-			'orderby'        => isset( $_POST['orderby'] ) ? $_POST['orderby'] : '',
-			'per_page'       => isset( $_POST['per_page'] ) ? intval( $_POST['per_page'] ) : '',
-			'product_cats'   => isset( $_POST['product_cats'] ) ? $_POST['product_cats'] : '',
-			'product_tags'   => isset( $_POST['product_tags'] ) ? $_POST['product_tags'] : '',
-			'product_brands' => isset( $_POST['product_brands'] ) ? $_POST['product_brands'] : '',
+			'columns'         => isset( $_POST['columns'] ) ? intval( $_POST['columns'] ) : '',
+			'products'        => isset( $_POST['products'] ) ? $_POST['products'] : '',
+			'order'           => isset( $_POST['order'] ) ? $_POST['order'] : '',
+			'orderby'         => isset( $_POST['orderby'] ) ? $_POST['orderby'] : '',
+			'per_page'        => isset( $_POST['per_page'] ) ? intval( $_POST['per_page'] ) : '',
+			'product_cats'    => isset( $_POST['product_cats'] ) ? $_POST['product_cats'] : '',
+			'product_tags'    => isset( $_POST['product_tags'] ) ? $_POST['product_tags'] : '',
+			'product_brands'  => isset( $_POST['product_brands'] ) ? $_POST['product_brands'] : '',
 			'product_authors' => isset( $_POST['product_authors'] ) ? $_POST['product_authors'] : '',
 		);
 
@@ -103,7 +105,6 @@ class Ele_Ajax_Loader {
 
 	/**
 	 * Load products
-	 *
 	 *
 	 * @since 1.0.0
 	 *
@@ -147,7 +148,7 @@ class Ele_Ajax_Loader {
 
 		wc_setup_loop(
 			array(
-				'columns' => $atts['columns']
+				'columns' => $atts['columns'],
 			)
 		);
 
