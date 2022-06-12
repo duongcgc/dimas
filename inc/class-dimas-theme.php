@@ -140,7 +140,7 @@ final class Theme {
 		if ( class_exists( $class ) ) {
 			return $class::instance();
 		} else {
-			echo '<br/>' . esc_html__( 'Not found the class: ', 'dimas' ) . esc_html( $class );
+			echo '<br/>' . esc_html__( '[Dimas] Not found the class: ', 'dimas' ) . esc_html( $class );
 		}
 	}
 
