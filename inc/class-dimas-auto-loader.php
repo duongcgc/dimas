@@ -1,7 +1,7 @@
 <?php
 /**
  * Autoload Classes.
- * => Auto load all class with prefix class-dm- in addons, core, platform
+ * => Auto load all class with prefix class-dimas- in addons, core, platform
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -165,12 +165,18 @@ class Auto_Loader {
 			foreach ( $file_parts as $file_part ) {
 
 				if ( array_key_exists( $file_part, $file_by_class ) ) {
-					$file_part = $file_by_class[ $file_part ];					
+					$file_part  = $file_by_class[ $file_part ];
 					$file_name .= $i == 0 ? '' : '-';
 				}
 
 				$file_name .= $file_part;
 				$i ++;
+			}
+
+			// remove duplicate file_name.
+			foreach ( $file_by_class as $key => $value ) {
+				$duplicate_name = $key . '-' . $key;
+				$file_name      = str_replace( $duplicate_name, $key, $file_name );
 			}
 
 			// file dir.

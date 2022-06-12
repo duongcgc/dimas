@@ -371,7 +371,7 @@ class Template_Function {
 		}
 
 		// Include file class create dynamic css.
-		require_once get_theme_file_path( 'inc/class-dm-dynamic-css.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound				
+		require_once get_theme_file_path( 'inc/class-dimas-dynamic-css.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound				
 
 		// Return the specified styles.
 		return Dynamic_CSS::dimas_generate_css( // @phpstan-ignore-line.

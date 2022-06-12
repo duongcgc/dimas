@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Auto loading all elements core modules.
  */
-class Core_Auto_Loader {
+class Core_Loader {
 
 	/**
 	 * Files to loaded.

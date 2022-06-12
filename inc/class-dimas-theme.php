@@ -74,7 +74,9 @@ final class Theme {
 		// Before init action.
 		do_action( 'before_dimas_init' );
 
-		// Setup.
+		/**
+		 * Setup ===================.
+		 */
 		$this->get( 'auto-loader' );
 		$this->get( 'framework/template-function' );
 		$this->get( 'framework/template-tag' );
@@ -85,11 +87,21 @@ final class Theme {
 		$this->get( 'setup' );
 		$this->get( 'addons/widgets' );
 
-		// Options.
+		/**
+		 * Framework ===============.
+		 */
+
+		/**
+		 * Core ====================.
+		 */
 		$this->get( 'core/options' );
 
+		/**
+		 * Addons ==================.
+		 */
+
 		// Elementor.
-		// $this->get( 'elementor' );
+		$this->get( 'addons/addons-init' );
 
 		// Customizer.
 		// $this->get( 'customize' );
@@ -160,8 +172,8 @@ final class Theme {
 	/**
 	 * Call class with namespace.
 	 *
-	 * @param string $class
-	 * @param string $namespace
+	 * @param string $class       The class name need init.
+	 * @param string $namespace   The namespace of class.
 	 * @return void
 	 */
 	public function create_object( $class, $namespace ) {
@@ -172,7 +184,7 @@ final class Theme {
 		if ( class_exists( $class ) ) {
 			return $class::instance();
 		} else {
-			echo '<br/> Not found the class: ' . $class;
+			echo '<br/>' . esc_html__( 'Not found the class: ', 'dimas' ) . esc_html( $class );
 		}
 	}
 
@@ -196,7 +208,7 @@ final class Theme {
 			$class = $slug_class;
 		} else {
 			$space = $space_parts[0];
-			$class = $space_parts[$number_parts - 1];
+			$class = $space_parts[ $number_parts - 1 ];
 		}
 
 		// namespace by space when get class.
@@ -293,42 +305,42 @@ final class Theme {
 	 */
 	public function dimas_includes() {
 		// Setup Theme =================.
-		require DIMAS_INC_DIR . '/class-dm-setup.php';
+		require DIMAS_INC_DIR . '/class-dimas-setup.php';
 		Setup::instance();
 
 		// Helper functions.
-		require DIMAS_INC_DIR . '/class-dm-helper.php';
+		require DIMAS_INC_DIR . '/class-dimas-helper.php';
 
 		// Block Editor Scripts.
-		require DIMAS_CORE_DIR . '/admin/class-dm-admin-block-editor.php';
+		require DIMAS_CORE_DIR . '/admin/class-dimas-admin-block-editor.php';
 		Admin_Block_Editor::instance();
 
 		// Theme Styles.
-		require DIMAS_INC_DIR . '/class-dm-styles.php';
+		require DIMAS_INC_DIR . '/class-dimas-styles.php';
 		Styles::instance();
 
 		// Theme Scripts.
-		require DIMAS_INC_DIR . '/class-dm-scripts.php';
+		require DIMAS_INC_DIR . '/class-dimas-scripts.php';
 		Scripts::instance();
 
 		// SVG Icons class.
-		require DIMAS_INC_DIR . '/class-dm-svg-icon.php';
+		require DIMAS_INC_DIR . '/class-dimas-svg-icon.php';
 
 		// Custom color classes.
-		require DIMAS_INC_DIR . '/class-dm-custom-colors.php';
+		require DIMAS_INC_DIR . '/class-dimas-custom-colors.php';
 		new Custom_Colors();
 
 		// Enhance the theme by hooking into WordPress.
-		require DIMAS_INC_DIR . '/class-dm-template-funs.php';
+		require DIMAS_INC_DIR . '/class-dimas-template-funs.php';
 
 		// Menu functions and filters.
-		require DIMAS_INC_DIR . '/class-dm-menu.php';
+		require DIMAS_INC_DIR . '/class-dimas-menu.php';
 
 		// Custom template tags for the theme.
-		require DIMAS_INC_DIR . '/class-dm-template-tags.php';
+		require DIMAS_INC_DIR . '/class-dimas-template-tags.php';
 
 		// Customizer additions.
-		require DIMAS_CORE_DIR . '/class-dm-customize.php';
+		require DIMAS_CORE_DIR . '/class-dimas-customize.php';
 		new Customize();
 
 		// Block Patterns.
@@ -338,15 +350,15 @@ final class Theme {
 		require DIMAS_INC_DIR . '/block-styles.php';
 
 		// Notice.
-		require DIMAS_INC_DIR . '/class-dm-notice.php';
+		require DIMAS_INC_DIR . '/class-dimas-notice.php';
 		Notice::instance()->add_notice( 'warning', 'This is best.', );
 
 		// Dark Mode.
-		require_once DIMAS_INC_DIR . '/class-dm-dark-mode.php';
+		require_once DIMAS_INC_DIR . '/class-dimas-dark-mode.php';
 		new Dark_Mode();
 
 		// Loading Addons.
-		require_once DIMAS_ADDONS_DIR . '/class-dm-addons-plugin.php';
+		require_once DIMAS_ADDONS_DIR . '/class-dimas-addons-plugin.php';
 		Addons::instance();
 
 	}
