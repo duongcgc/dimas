@@ -22,13 +22,6 @@ class Fields {
 	protected static $instance = null;
 
 	/**
-	 * $dimas_customize
-	 *
-	 * @var $dimas_customize
-	 */
-	protected static $dimas_customize = null;
-
-	/**
 	 * Initiator
 	 *
 	 * @since 1.0.0
@@ -49,9 +42,7 @@ class Fields {
 	 * @since 1.0.0
 	 *
 	 */
-	public function __construct() {
-		add_filter('dimas_customize_fields', array($this, 'customize_fields'));
-	}	
+	public function __construct() {	}	
 
 	/**
 	 * Get customize fields
@@ -60,7 +51,7 @@ class Fields {
 	 *
 	 * @return array
 	 */
-	public function customize_fields() {	
+	public static function customize_fields() {	
 
 		$fields = array(
 			'color_scheme_title'  => array(
@@ -792,7 +783,7 @@ class Fields {
 				'fields'      => array(
 					'item' => array(
 						'type'    => 'select',
-						'choices' => $this->topbar_items_option(),
+						//'choices' => \Dimas\Core\Customizer\Settings::instance()->topbar_items_option(),
 					),
 				),
 				'section' => 'header_top',
@@ -811,7 +802,7 @@ class Fields {
 				'fields'      => array(
 					'item' => array(
 						'type'    => 'select',
-						'choices' => $this->topbar_items_option(),
+						// 'choices' => \Dimas\Core\Customizer\Settings::instance()->topbar_items_option(),
 					),
 				),
 				'section' => 'header_top',
@@ -828,7 +819,7 @@ class Fields {
 				'label'           => esc_html__( 'Menu', 'dimas' ),
 				'section'         => 'header_top',
 				'default'         => '',
-				'choices'         => $this->get_navigation_bar_get_menus(),
+				// 'choices'         => $this->get_navigation_bar_get_menus(),
 
 			),
 
@@ -1036,7 +1027,7 @@ class Fields {
 					'header_bottom' => esc_html__('Header Bottom', 'dimas'),
 				),
 				'active_callback' => function() {
-					return $this->display_header_sticky();
+					return \Dimas\Core\Customizer\Settings::instance()->display_header_sticky();
 				},
 			),
 
@@ -1056,7 +1047,7 @@ class Fields {
 				'fields'          => array(
 					'item' => array(
 						'type'    => 'select',
-						'choices' => $this->header_items_option(),
+						'choices' => \Dimas\Core\Customizer\Settings::instance()->header_items_option(),
 					),
 				),
 				'active_callback' => array(
@@ -4725,7 +4716,7 @@ class Fields {
 				'fields'          => array(
 					'item' => array(
 						'type'    => 'select',
-						'choices' => $this->topbar_items_option(),
+						// 'choices' => \Dimas\Core\Customizer\Settings::instance()->topbar_items_option(),
 					),
 				),
 				'active_callback' => array(
@@ -5544,9 +5535,7 @@ class Fields {
 				),
 		);
 
-		$settings['fields']   = apply_filters('dimas_customize_fields', $fields);
-
-		return $settings;
+		return $fields;
 	}
 
 }

@@ -22,13 +22,6 @@ class Sections {
 	protected static $instance = null;
 
 	/**
-	 * $dimas_customize
-	 *
-	 * @var $dimas_customize
-	 */
-	protected static $dimas_customize = null;
-
-	/**
 	 * Initiator
 	 *
 	 * @since 1.0.0
@@ -50,7 +43,6 @@ class Sections {
 	 *
 	 */
 	public function __construct() {
-		add_filter('dimas_customize_sections', array($this, 'customize_sections'));
 	}	
 
 	/**
@@ -60,7 +52,7 @@ class Sections {
 	 *
 	 * @return array
 	 */
-	public function customize_sections() {	
+	public static function customize_sections() {	
 
 		$sections = array(
 			// Maintenance
@@ -355,9 +347,7 @@ class Sections {
 
 		);
 
-		$settings['sections'] = apply_filters('dimas_customize_sections', $sections);
-
-		return $settings;
+		return $sections;
 	}
 
 }
