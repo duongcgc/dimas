@@ -2,7 +2,7 @@
 /**
  * Template file for displaying search
  *
- * @package Razzi
+ * @package Dimas
  */
 ?>
 

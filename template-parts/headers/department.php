@@ -2,10 +2,10 @@
 /**
  * Template part for display department
  *
- * @package Razzi
+ * @package Dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 $class = '';
 if ( empty( Helper::get_option( 'header_department_text' ) ) ) {

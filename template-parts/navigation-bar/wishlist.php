@@ -2,7 +2,7 @@
 /**
  * Template file for displaying wishlist mobile
  *
- * @package Razzi
+ * @package Dimas
  */
 
 $modal_class = is_user_logged_in() ? 'link' : 'modal';

@@ -5,7 +5,7 @@
  * @package dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 $campaigns    = array_filter( (array) Helper::get_option( 'campaign_items' ) );
 $class_mobile = Helper::get_option( 'mobile_campaign_bar' ) ? '' : 'dimas-hide-on-mobile';

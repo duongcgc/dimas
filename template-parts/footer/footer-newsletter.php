@@ -5,7 +5,7 @@
  * @package dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 if ( ! apply_filters( 'dimas_footer_newsletter_section', true ) ) {
 	return;

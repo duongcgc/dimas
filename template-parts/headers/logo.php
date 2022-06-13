@@ -5,7 +5,7 @@
  * @package dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 $pre =
 $logo_type        = Helper::get_option( 'logo_type' );

@@ -2,7 +2,7 @@
 /**
  * Template file for displaying cart mobile
  *
- * @package Razzi
+ * @package Dimas
  */
 ?>
 

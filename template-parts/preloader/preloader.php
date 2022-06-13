@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the preloader.
  *
- * @package Razzi
+ * @package Dimas
  */
 ?>
 <div id="preloader" class="preloader preloader-<?php echo esc_attr( Helper::get_option( 'preloader' ) ) ?>">

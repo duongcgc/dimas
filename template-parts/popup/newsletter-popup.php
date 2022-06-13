@@ -5,7 +5,7 @@
  * @package dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 $layout       = Helper::get_option( 'newsletter_popup_layout' );
 $content      = Helper::get_option( 'newsletter_popup_content' );

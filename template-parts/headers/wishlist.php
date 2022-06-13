@@ -2,10 +2,10 @@
 /**
  * Template part for displaying the search icon
  *
- * @package Razzi
+ * @package Dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 if ( ! function_exists( 'WC' ) ) {
 	return;

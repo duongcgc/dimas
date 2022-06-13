@@ -2,7 +2,7 @@
 /**
  * Template part for display primary menu
  *
- * @package Razzi
+ * @package Dimas
  */
 
  $classes = 'main-navigation primary-navigation';

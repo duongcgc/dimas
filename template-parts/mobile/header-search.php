@@ -2,7 +2,7 @@
 /**
  * Template file for displaying mobile search
  *
- * @package Razzi
+ * @package Dimas
  */
 ?>
 

@@ -2,10 +2,10 @@
 /**
  * Template file for displaying filter mobile
  *
- * @package Razzi
+ * @package Dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 global $product;
 

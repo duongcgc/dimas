@@ -2,7 +2,7 @@
 /**
  * Template file for displaying Home mobile
  *
- * @package Razzi
+ * @package Dimas
  */
 ?>
 

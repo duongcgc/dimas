@@ -5,7 +5,7 @@
  * @package dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 $sections = array(
 	'left'   => Helper::get_option( 'footer_main_left' ),

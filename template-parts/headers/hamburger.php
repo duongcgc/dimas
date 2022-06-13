@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the search icon
  *
- * @package Razzi
+ * @package Dimas
  */
 ?>
 <div class="header-hamburger hamburger-menu">

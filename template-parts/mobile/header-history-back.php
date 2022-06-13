@@ -2,7 +2,7 @@
 /**
  * Template file for displaying mobile history back
  *
- * @package Razzi
+ * @package Dimas
  */
 ?>
 <a href="<?php echo esc_url( home_url( '/' ) ) ?>"

@@ -1,7 +1,7 @@
 <?php
 /**
  * Template part for display languages
- * @package Razzi
+ * @package Dimas
  */
 
 ?>

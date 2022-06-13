@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Razzi
+ * @package Dimas
  */
 
 require_once get_template_directory() . '/inc/class-dimas-theme.php';

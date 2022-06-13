@@ -5,7 +5,7 @@
  * @package dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 $left_items   = array_filter( (array) Helper::get_option( 'topbar_left' ) );
 $right_items  = array_filter( (array) Helper::get_option( 'topbar_right' ) );

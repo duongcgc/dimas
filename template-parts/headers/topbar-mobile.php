@@ -5,7 +5,7 @@
  * @package dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 $mobile_items = array_filter( (array) Helper::get_option( 'mobile_topbar_items' ) );
 ?>

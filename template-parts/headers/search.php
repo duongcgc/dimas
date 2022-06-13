@@ -2,10 +2,10 @@
 /**
  * Template part for displaying the search icon
  *
- * @package Razzi
+ * @package Dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 $search_class = isset($args['search_class']) ? $args['search_class'] : '';
 

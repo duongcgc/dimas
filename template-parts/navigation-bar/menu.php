@@ -2,7 +2,7 @@
 /**
  * Template file for displaying menu mobile
  *
- * @package Razzi
+ * @package Dimas
  */
 ?>
 

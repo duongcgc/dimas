@@ -2,7 +2,7 @@
 /**
  * Template part for display secondary menu
  *
- * @package Razzi
+ * @package Dimas
  */
 ?>
 <nav id="secondary-menu" class="main-navigation secondary-navigation">

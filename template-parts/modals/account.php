@@ -2,7 +2,7 @@
 /**
  * Template part for modal account
  *
- * @package Razzi
+ * @package Dimas
  */
 
 ?>

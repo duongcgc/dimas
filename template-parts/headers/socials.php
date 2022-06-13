@@ -1,7 +1,7 @@
 <?php
 /**
  * Template part for display socials
- * @package Razzi
+ * @package Dimas
  */
 
 ?>

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Razzi
+ * @package Dimas
  */
 
 $has_sidebar = apply_filters( 'dimas_get_sidebar', false );

@@ -5,7 +5,7 @@
  * @package dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 $layout      = Helper::get_option( 'footer_widgets_layout' );
 $columns     = intval( $layout );

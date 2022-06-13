@@ -76,8 +76,6 @@ class Customizer {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'customize_register', array( $this, 'customize_modify' ) );
 
-		echo '<p>Customizer Kirki Done!</p>';
-
 	}
 
 	/**

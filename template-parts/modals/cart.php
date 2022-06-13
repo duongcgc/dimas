@@ -2,7 +2,7 @@
 /**
  * Template part for modal cart
  *
- * @package Razzi
+ * @package Dimas
  */
 
 ?>

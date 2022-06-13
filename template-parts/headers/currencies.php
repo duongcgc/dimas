@@ -2,7 +2,7 @@
 /**
  * Template part for display cusrrencies
  *
- * @package Razzi
+ * @package Dimas
  */
 
 ?>

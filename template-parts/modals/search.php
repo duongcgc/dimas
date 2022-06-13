@@ -2,10 +2,10 @@
 /**
  * Template part for modal search
  *
- * @package Razzi
+ * @package Dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 ?>
 <div class="modal-header">

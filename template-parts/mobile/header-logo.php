@@ -2,10 +2,10 @@
 /**
  * Template file for displaying mobile menu
  *
- * @package Razzi
+ * @package Dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 $dimension = Helper::get_option( 'mobile_logo_dimension' );
 $style     = ! empty( $dimension['width'] ) ? ' width="' . esc_attr( $dimension['width'] ) . '"' : '';
 $style     .= ! empty( $dimension['width'] ) ? ' height="' . esc_attr( $dimension['height'] ) . '"' : '';

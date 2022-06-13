@@ -2,7 +2,7 @@
 /**
  * Template file for displaying filter mobile
  *
- * @package Razzi
+ * @package Dimas
  */
 
 

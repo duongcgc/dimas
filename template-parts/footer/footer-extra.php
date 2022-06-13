@@ -5,7 +5,7 @@
  * @package dimas
  */
 
-use Razzi\Helper;
+use Dimas\Helper;
 
 $items = apply_filters( 'dimas_footer_extra_section', Helper::get_option('footer_extra_content') );
 
