@@ -9,6 +9,7 @@
 @import "header/header";
 // FOOTER
 @import "footer/footer";
+
 .dimas-blog-archive {
     &__vertical-align {
         padding-top: (185rem/16);
@@ -25,14 +26,17 @@
 
 .dimas-grid-wrap {
     .dimas-post {
+
         &.grid-item,
         &.grid-sizer {
             width: calc(33.33% - (4rem/3));
             margin-bottom: 2rem;
         }
+
         position: relative;
         padding: 2rem (23rem/16);
         border: 1px solid var(--dimas-color-border);
+
         &:hover {
             .dimas-post__thumbnail {
                 &--wrap {
@@ -40,6 +44,7 @@
                 }
             }
         }
+
         &__description {
             text-overflow: ellipsis;
             -webkit-line-clamp: 3;
@@ -48,6 +53,7 @@
             max-height: (78rem/16);
             overflow: hidden;
         }
+
         &__thumbnail {
             &--wrap {
                 width: 100%;
@@ -59,11 +65,13 @@
                 left: 0;
                 opacity: 0;
             }
+
             &--img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
+
             &--arrow-wrap {
                 border: 1px solid var(--dimas-color-white);
                 border-radius: 50%;
@@ -73,19 +81,23 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
                 &:hover {
                     border: 1px solid var(--dimas-color-main);
+
                     svg {
                         color: var(--dimas-color-main);
                     }
                 }
             }
         }
+
         &__content {
             &--wrap {
                 z-index: 1;
             }
         }
+
         &__link {
             color: var(--dimas-color-white);
             display: flex;
@@ -102,13 +114,16 @@
     width: fit-content;
     transition: all var(--dimas-transition-duration) var(--dimas-transition-linear);
     padding: (15rem/16) (47rem/16);
+
     svg {
         margin-left: (24rem/16);
         margin-bottom: 2px;
         transition: all var(--dimas-transition-duration) var(--dimas-transition-linear);
     }
+
     &:hover {
         background-color: var(--dimas-color-white);
+
         svg {
             color: var(--dimas-color-main);
             transform: translateX(5px);
@@ -123,19 +138,23 @@
         list-style: none;
         padding-left: 0;
         margin-bottom: 0;
+
         &--item {
             &:not(.dot-page, .current-page) {
                 cursor: pointer;
             }
+
             width: 3rem;
             height: 3rem;
             display: flex;
             justify-content: center;
             align-items: center;
             border: 1px solid var(--dimas-color-overlay);
+
             &:not(:last-child) {
                 margin-right: (12rem/16);
             }
+
             &.prev-page,
             &.next-page {
                 svg {
@@ -143,19 +162,28 @@
                     height: (20rem/16);
                 }
             }
+
             span,
             a {
+                width: 3rem;
+                height: 3rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 font-family: 'Outfit';
                 font-weight: 400;
                 font-size: 1rem;
                 line-height: (20rem/16);
             }
+
             span {
                 color: var(--dimas-color-white);
             }
+
             &:not(.dot-page):hover,
             &.current-page {
                 background: var(--dimas-color-main);
+
                 a {
                     color: var(--dimas-color-white);
                 }
@@ -167,6 +195,7 @@
 @media (max-width: 1199px) {
     .dimas-grid-wrap {
         .dimas-post {
+
             &.grid-item,
             &.grid-sizer {
                 width: calc(50% - 1rem);
@@ -182,6 +211,7 @@
                 &--arrow-wrap {
                     width: 3rem;
                     height: 3rem;
+
                     svg {
                         width: (19rem/16);
                         height: (19rem/16);
@@ -190,6 +220,7 @@
             }
         }
     }
+
     .dimas-blog-archive {
         &__vertical-align {
             padding-top: (184rem/16);
@@ -201,10 +232,36 @@
 @media (max-width: 767px) {
     .dimas-grid-wrap {
         .dimas-post {
+
             &.grid-item,
             &.grid-sizer {
                 width: 100%;
             }
         }
     }
+}
+
+@media (max-width: 575px) {
+    .dimas-pagination {
+        &__wrap {
+
+            &--item {
+
+                width: 2rem;
+                height: 2rem;
+
+                &:not(:last-child) {
+                    margin-right: (3rem/16);
+                }
+
+                span,
+                a {
+                    width: 2rem;
+                    height: 2rem;
+                }
+
+            }
+        }
+    }
+
 }

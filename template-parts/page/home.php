@@ -32,7 +32,6 @@ $args_project = array(
 );
 // Project Featured.
 $project_featured = get_posts( $args_project );
-
 ?>
 		<main class="dimas-main">
 			<div class="dimas-fullpage-slider" data-loop-top="" data-loop-bottom="" data-speed="800">
@@ -386,34 +385,7 @@ $project_featured = get_posts( $args_project );
 										</div>
 									</div>
 									<div class="col-xxl-6 col-lg-5 offset-lg-1 position-relative overflow-hidden">
-										<form class="dimas-contact-form mt-1" action="php/contact-form.php" method="POST" novalidate="novalidate">
-											<div class="dimas-form-row two-col">
-												<div class="dimas-form-group">
-													<input class="dimas-form-control" type="text" id="name" name="name" placeholder="Name">
-												</div>
-												<div class="dimas-form-group">
-													<input class="dimas-form-control" type="email" id="email" name="email" placeholder="Email *" required="required">
-												</div>
-											</div>
-											<div class="dimas-form-row">
-												<div class="dimas-form-group">
-													<input class="dimas-form-control" type="text" id="subject" name="subject" placeholder="Subject">
-												</div>
-											</div>
-											<div class="dimas-form-row">
-												<textarea class="dimas-form-control" name="message" id="message" rows="4" required="required" placeholder="Message *"></textarea>
-											</div>
-											<div class="contact-form-message alert alert-danger d-none mt-4">
-												<div class="message success">Your message is successfully sent...</div>
-												<div class="message danger">Sorry something went wrong!</div>
-											</div>
-											<button class="dimas-btn label-content has-color-white has-bg-main">
-												Send request   
-												<svg width="17" height="10" viewBox="0 0 17 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-													<path d="M16.4243 5.42426C16.6586 5.18995 16.6586 4.81005 16.4243 4.57574L12.6059 0.757359C12.3716 0.523045 11.9917 0.523045 11.7574 0.757359C11.523 0.991674 11.523 1.37157 11.7574 1.60589L15.1515 5L11.7574 8.39411C11.523 8.62843 11.523 9.00833 11.7574 9.24264C11.9917 9.47696 12.3716 9.47696 12.6059 9.24264L16.4243 5.42426ZM0 5.6H16V4.4H0V5.6Z"/>
-												</svg>
-											</button>
-										</form>
+										<?php echo do_shortcode( '[contact-form-7 id="147" title="Contact form"]' ); ?>
 									</div>
 								</div>
 							</div>

@@ -53,7 +53,7 @@ class Theme_Setup {
 		add_action( 'widgets_init', array( $this, 'dimas_widgets_init' ) );
 
 		// Other theme setups and supports.
-		add_action( 'after_setup_theme', array( $this, 'setup_theme' ), 3 );		
+		add_action( 'after_setup_theme', array( $this, 'setup_theme' ), 3 );
 	}
 
 	/**
@@ -72,6 +72,7 @@ class Theme_Setup {
 	public function setup_theme() {
 
 		/*
+		 *
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Dimas, use a find and replace
@@ -435,19 +436,7 @@ class Theme_Setup {
 
 		register_nav_menus(
 			array(
-				'primary' => esc_html__( 'Primary menu', 'dimas' ),
-				'footer'  => esc_html__( 'Secondary menu', 'dimas' ),
-			)
-		);
-
-		register_nav_menus(
-			array(
-				'primary'    => esc_html__( 'Primary Menu', 'dimas' ),
-				'secondary'  => esc_html__( 'Secondary Menu', 'dimas' ),
-				'hamburger'  => esc_html__( 'Hamburger Menu', 'dimas' ),
-				'socials'    => esc_html__( 'Social Menu', 'dimas' ),
-				'department' => esc_html__( 'Department Menu', 'dimas' ),
-				'mobile'     => esc_html__( 'Mobile Menu', 'dimas' ),
+				'primary-menu' => esc_html__( 'Primary menu', 'dimas' ),
 			)
 		);
 	}
@@ -470,8 +459,8 @@ class Theme_Setup {
 		 */
 
 		// // Set post thumbnails.
-		// add_theme_support( 'post-thumbnails' );
-		// set_post_thumbnail_size( 1568, 9999 );
+		add_theme_support( 'post-thumbnails' );
+		set_post_thumbnail_size( 1568, 9999 );
 
 		// // Add Image Sizes.
 		// add_image_size( 'dimas-blog-grid', 600, 398, false );

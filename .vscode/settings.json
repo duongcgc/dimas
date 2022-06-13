@@ -1,6 +1,9 @@
 {
     "phpcbf.executablePath": "C:\\Users\\ADMIN\\wpcs\\vendor\\bin\\phpcbf.bat",
     "phpcbf.onsave": true,
-    "phpcs.autoConfigSearch": false,
-    "phpcs.executablePath": "C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin\\phpcs"
+    "phpcbf.standard": "WordPress",
+    "phpcs.autoConfigSearch": true,
+    "phpcs.executablePath": "C:\\Users\\ADMIN\\wpcs\\vendor\\bin\\phpcs.bat",
+    "phpcs.standard": "WordPress",
+    "phpcs.showWarnings": false
 }

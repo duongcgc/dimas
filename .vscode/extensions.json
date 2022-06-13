@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "wordpresstoolbox.wordpress-toolbox"
+        "wordpresstoolbox.wordpress-toolbox",
+        "ikappas.phpcs"
     ]
 }

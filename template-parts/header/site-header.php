@@ -8,44 +8,39 @@
  */
 
 ?>
+<?php
 
+$args_wp_nav_menu          = array(
+	'theme_location' => 'primary-menu',
+	'menu_class'     => 'dimas-menu',
+	'container'      => 'nav',
+	'fallback_cb'    => false,
+	'echo'           => false,
+);
+$container_class_main      = 'dimas-default-menu__navigation';
+$container_class_offcanvas = 'dimas-offcanvas-menu__navigation';
+// Main menu.
+$args_wp_nav_menu['container_class'] = $container_class_main;
+$header_nav_menu                     = wp_nav_menu( $args_wp_nav_menu );
+// Offcanvas menu.
+$args_wp_nav_menu['container_class'] = $container_class_offcanvas;
+$header_nav_menu_offcanvas           = wp_nav_menu( $args_wp_nav_menu );
+?>
 		<header id="masthead" class="dimas-header">
 			<div class="dimas-navbar dimas-navbar--main dimas-navbar--fixed">
 				<div class="dimas-navbar-background">
 				</div>
 				<div class="dimas-navbar-inner h-100">
 					<div class="dimas-navbar-inner-left">
-						<a class="dimas-navbar-logo" href="index.html">
+						<a class="dimas-navbar-logo" href="<?php echo esc_url( home_url() ); ?>">
 							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo.png" alt="Dimas Logo" />
 						</a>
 					</div>
 					<div class="container">
 						<div class="dimas-navbar-inner-center d-none d-xxxl-flex row">
-							<nav class="dimas-default-menu__navigation">
-								<ul class="dimas-menu">
-									<li data-menuanchor="Home" class="active">
-										<a href="#Home">Home</a>
-									</li>
-									<li data-menuanchor="About">
-										<a href="#About">About</a>
-									</li>
-									<li data-menuanchor="Projects">
-										<a href="#Projects">Projects</a>
-									</li>
-									<li data-menuanchor="Services">
-										<a href="#Services">Services</a>
-									</li>
-									<li data-menuanchor="Testimonials">
-										<a href="#Testimonials">Testimonials</a>
-									</li>
-									<li data-menuanchor="Blog">
-										<a href="#Blog">Blog</a>
-									</li>
-									<li data-menuanchor="Contact">
-										<a href="#Contact">Contact</a>
-									</li>
-								</ul>
-							</nav>
+							<?php
+								echo $header_nav_menu;
+							?>
 						</div>
 					</div>
 					<div class="dimas-navbar-inner-right d-xxxl-none">
@@ -89,31 +84,9 @@
 				</svg>
 				</a>
 			</div>
-			<nav class="dimas-offcanvas-menu__navigation">
-				<ul class="dimas-menu">
-					<li data-menuanchor="Home" class="active">
-						<a href="#Home">Home</a>
-					</li>
-					<li data-menuanchor="About">
-						<a href="#About">About</a>
-					</li>
-					<li data-menuanchor="Projects">
-						<a href="#Projects">Projects</a>
-					</li>
-					<li data-menuanchor="Services">
-						<a href="#Services">Services</a>
-					</li>
-					<li data-menuanchor="Testimonials">
-						<a href="#Testimonials">Testimonials</a>
-					</li>
-					<li data-menuanchor="Blog">
-						<a href="#Blog">Blog</a>
-					</li>
-					<li data-menuanchor="Contact">
-						<a href="#Contact">Contact</a>
-					</li>
-				</ul>
-			</nav>
+			<?php
+				echo $header_nav_menu_offcanvas;
+			?>
 			<div class="dimas-offcanvas-menu__footer d-flex justify-content-center">
 				<a class="dimas-social-icon" href="#">
 					<svg width="17" height="30" viewBox="0 0 17 30" fill="none" xmlns="http://www.w3.org/2000/svg">

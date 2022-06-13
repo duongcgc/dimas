@@ -233,7 +233,6 @@
 
 .dimas-tab {
     &__header {
-        cursor: pointer;
         &--icon-wrap {
             position: absolute;
             display: flex;
@@ -274,6 +273,7 @@
             transition: all var(--dimas-transition-duration) linear;
         }
         .swiper-pagination-bullet {
+            overflow: hidden;
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -445,9 +445,6 @@
 .dimas-contact-form {
     input {
         margin-bottom: 2rem;
-    }
-    textarea {
-        margin-bottom: 4rem;
     }
     input,
     textarea {

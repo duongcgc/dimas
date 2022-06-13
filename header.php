@@ -20,7 +20,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body data-plugin-page-transition class="animsition pp-viewing-Home <?php body_class(); ?>">
+<body data-plugin-page-transition <?php body_class( ' animsition pp-viewing-Home' ); ?>>
 	<?php wp_body_open(); ?>
 	<div class="preloader">
 		<div class="spinner">

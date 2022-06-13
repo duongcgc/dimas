@@ -397,6 +397,12 @@ svg {
   background-color: var(--dimas-color-overlay);
 }
 
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+  color: var(--dimas-color-subtitle);
+}
+
 .dimas-custom-cursor {
   position: absolute;
   z-index: 100;

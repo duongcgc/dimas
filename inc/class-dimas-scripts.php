@@ -266,18 +266,14 @@ class Scripts {
 			);
 		}
 
-		// Project & Home script.
-		if ( is_singular( 'project' ) || is_front_page() ) {
-
-			// pagepiling script.
-			wp_enqueue_script(
-				'pagepiling-script',
-				get_template_directory_uri() . '/assets/addons/js/pagepiling/pagepiling.min.js',
-				array( 'jquery' ),
-				wp_get_theme()->get( 'Version' ),
-				true
-			);
-		}
+		// pagepiling script.
+		wp_enqueue_script(
+			'pagepiling-script',
+			get_template_directory_uri() . '/assets/addons/js/pagepiling/pagepiling.min.js',
+			array( 'jquery' ),
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
 
 		// Main script.
 		wp_enqueue_script(
