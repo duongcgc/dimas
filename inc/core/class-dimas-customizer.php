@@ -111,8 +111,6 @@ class Customizer {
 	 */
 	public function register() {
 
-		var_dump($this->config);
-
 		/**
 		 * Add the theme configuration
 		 */
