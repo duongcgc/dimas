@@ -53,7 +53,7 @@ class Addons_Elementor {
 		if ( false === \Dimas\Core\Helper::dimas_is_elementor_activated() ) {
 
 			$plugin_url = \Dimas\Core\Helper::get_install_plugin_url( 'elementor' );
-			$msg_html   = 'Please install <a href="';
+			$msg_html   = 'Dimas requires Elementor. Please install <a href="';
 			$msg_html  .= $plugin_url;
 			$msg_html  .= '">Elementor</a> plugin.';
 

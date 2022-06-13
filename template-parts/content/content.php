@@ -25,7 +25,7 @@
 	<div class="entry-content">
 		<?php
 		the_content(
-			\Template_Function::instance()->dimas_continue_reading_text()
+			\Dimas\Framework\Template_Function::instance()->dimas_continue_reading_text()
 		);
 
 		wp_link_pages(

@@ -61,11 +61,11 @@ class Customizer {
 		if ( ! class_exists( 'Kirki' ) ) {
 
 			$plugin_url = \Dimas\Core\Helper::get_install_plugin_url( 'kirki' );
-			$msg_html   = 'Please install <a href="';
+			$msg_html   = 'Dimas requires Kirki. Please install <a href="';
 			$msg_html  .= $plugin_url;
 			$msg_html  .= '">Kirki</a> plugin.';
 
-			\Dimas\Framework\Notice::add_notice( 'warning', $msg_html );
+			\Dimas\Framework\Notice::add_notice( 'error', $msg_html );
 
 			return;
 		}
@@ -152,7 +152,7 @@ class Customizer {
 		}
 
 		// Settings
-		require_once DIMAS_CORE_DIR . '/customizer/class-dimas-customizer-settings.php';
+		require_once DIMAS_CORE_DIR . '/customizer/class-dimas-customize-settings.php';
 		\Dimas\Core\Customizer\Settings::instance();
 	}
 
