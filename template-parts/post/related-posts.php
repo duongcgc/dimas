@@ -15,7 +15,7 @@ if ( ! $related_posts->have_posts() ) {
     <?php
     HTML::instance()->open('related_post_contents',[
         'attr' => [
-            'class'    => 'razzi-posts__related',
+            'class'    => 'dimas-posts__related',
         ],
         'actions' => true,
     ]);

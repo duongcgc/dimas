@@ -22,16 +22,16 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<?php do_action( 'razzi_before_site' ) ?>
+<?php do_action( 'dimas_before_site' ) ?>
 <div id="page" class="site">
-	<?php do_action('razzi_before_open_site_header'); ?>
+	<?php do_action('dimas_before_open_site_header'); ?>
 	<?php if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'header' ) ) {?>
 		<header id="site-header" class="<?php Header::classes('site-header'); ?>">
-			<?php do_action('razzi_after_open_site_header'); ?>
-			<?php do_action('razzi_before_close_site_header'); ?>
+			<?php do_action('dimas_after_open_site_header'); ?>
+			<?php do_action('dimas_before_close_site_header'); ?>
 		</header>
 	<?php } ?>
-	<?php do_action('razzi_after_close_site_header'); ?>
+	<?php do_action('dimas_after_close_site_header'); ?>
 
 	<?php
 	HTML::instance()->open( 'site_content', [

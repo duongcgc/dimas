@@ -35,7 +35,7 @@ HTML::instance()->open( 'comments_content', [
 // You can start editing here -- including this comment!
 if ( have_comments() ) :
 	?>
-	<?php do_action( 'razzi_comments_content' ); ?>
+	<?php do_action( 'dimas_comments_content' ); ?>
 <?php
 
 endif; // Check for have_comments().

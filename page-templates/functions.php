@@ -7,6 +7,6 @@
  * @package Razzi
  */
 
-require_once get_template_directory() . '/inc/class-razzi-theme.php';
+require_once get_template_directory() . '/inc/class-dimas-theme.php';
 
 Theme::instance()->init();

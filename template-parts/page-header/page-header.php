@@ -12,6 +12,6 @@
 	]);
 ?>
 
-<?php do_action( 'razzi_page_header_content_item' ); ?>
+<?php do_action( 'dimas_page_header_content_item' ); ?>
 
 <?php HTML::instance()->close('page_header');  ?>

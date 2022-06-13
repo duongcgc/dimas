@@ -2,7 +2,7 @@
 /**
  * Template part for displaying footer widgets
  *
- * @package razzi
+ * @package dimas
  */
 
 use Razzi\Helper;
@@ -19,17 +19,17 @@ if ( ! $has_widgets ) {
 	return;
 }
 
-if ( ! apply_filters( 'razzi_footer_widget_section', true ) ) {
+if ( ! apply_filters( 'dimas_footer_widget_section', true ) ) {
 	return;
 }
 
 $add_class = Helper::get_option( 'footer_widget_border' ) ? 'has-divider' : '';
-$add_class .= ! intval( Helper::get_option( 'mobile_footer_widget' ) ) ? 'razzi-hide-on-mobile' : '';
+$add_class .= ! intval( Helper::get_option( 'mobile_footer_widget' ) ) ? 'dimas-hide-on-mobile' : '';
 
 ?>
 
 <div class="footer-widgets widgets-area <?php echo esc_attr( $add_class ) ?>">
-	<div class="footer-container <?php echo esc_attr( apply_filters( 'razzi_footer_container_class', Helper::get_option( 'footer_container' ), 'widgets' ) ); ?>">
+	<div class="footer-container <?php echo esc_attr( apply_filters( 'dimas_footer_container_class', Helper::get_option( 'footer_container' ), 'widgets' ) ); ?>">
 		<div class="row-flex">
 			<?php
 			if($layout  != '5-columns'){

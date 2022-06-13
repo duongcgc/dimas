@@ -13,7 +13,7 @@
 
     <section class="no-results not-found">
         <header class="page-header">
-            <h1 class="page-title"><?php esc_html_e( 'Nothing Found',  'razzi' ); ?></h1>
+            <h1 class="page-title"><?php esc_html_e( 'Nothing Found',  'dimas' ); ?></h1>
         </header><!-- .page-header -->
 
         <div class="page-content">
@@ -23,7 +23,7 @@
 				printf(
 					'<p>' . wp_kses(
 					/* translators: 1: link to WP admin new post page. */
-						__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.',  'razzi' ),
+						__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.',  'dimas' ),
 						array(
 							'a' => array(
 								'href' => array(),
@@ -36,14 +36,14 @@
             elseif ( is_search() ) :
 				?>
 
-                <p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.',  'razzi' ); ?></p>
+                <p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.',  'dimas' ); ?></p>
 				<?php
 				get_search_form();
 
 			else :
 				?>
 
-                <p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.',  'razzi' ); ?></p>
+                <p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.',  'dimas' ); ?></p>
 				<?php
 				get_search_form();
 

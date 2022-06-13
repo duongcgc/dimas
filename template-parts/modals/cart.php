@@ -7,7 +7,7 @@
 
 ?>
 <div class="modal-header">
-    <h3 class="modal-title"><?php esc_html_e( 'Your Cart', 'razzi' ) ?>
+    <h3 class="modal-title"><?php esc_html_e( 'Your Cart', 'dimas' ) ?>
         <span class="cart-panel-counter">(<?php echo WC()->cart->get_cart_contents_count(); ?>)</span>
     </h3>
     <a href="#" class="close-account-panel button-close"><?php echo SVG_Icon::get_svg( 'close' ); ?></a>

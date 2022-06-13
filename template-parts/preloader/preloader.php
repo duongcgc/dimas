@@ -24,7 +24,7 @@
 	if ( ! $image ) {
 		echo '<span class="preloader-icon spinner"></span>';
 	} else {
-		$image = '<img src="' . esc_url( $image ) . '" alt="' . esc_attr__( 'Preloader', 'razzi' ) . '">';
+		$image = '<img src="' . esc_url( $image ) . '" alt="' . esc_attr__( 'Preloader', 'dimas' ) . '">';
 		echo '<span class="preloader-icon">' . $image . '</span>';
 	}
 	?>

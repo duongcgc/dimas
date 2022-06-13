@@ -56,7 +56,7 @@ class Customizer {
 	 * @return void
 	 */
 	public function __construct( $config = array() ) {
-		$this->config = apply_filters( 'razzi_customize_config', $config );
+		$this->config = apply_filters( 'dimas_customize_config', $config );
 
 		if ( ! class_exists( 'Kirki' ) ) {
 
@@ -75,6 +75,9 @@ class Customizer {
 		add_action( 'customize_preview_init', array( $this, 'enqueue_preview_scripts' ) );
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'customize_register', array( $this, 'customize_modify' ) );
+
+		echo '<p>Customizer Kirki Done!</p>';
+
 	}
 
 	/**
@@ -107,6 +110,9 @@ class Customizer {
 	 * @return void
 	 */
 	public function register() {
+
+		var_dump($this->config);
+
 		/**
 		 * Add the theme configuration
 		 */
@@ -150,10 +156,7 @@ class Customizer {
 				\Kirki::add_field( $this->config['theme'], $settings );
 			}
 		}
-
-		// Settings
-		require_once DIMAS_CORE_DIR . '/customizer/class-dimas-customize-settings.php';
-		\Dimas\Core\Customizer\Settings::instance();
+		
 	}
 
 	/**

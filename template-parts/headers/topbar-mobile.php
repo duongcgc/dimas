@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the topbar
  *
- * @package razzi
+ * @package dimas
  */
 
 use Razzi\Helper;
@@ -11,7 +11,7 @@ $mobile_items = array_filter( (array) Helper::get_option( 'mobile_topbar_items' 
 ?>
 
 <div id="topbar-mobile" class="topbar topbar-mobile hidden-md hidden-lg">
-	<div class="razzi-container-fluid razzi-container">
+	<div class="dimas-container-fluid dimas-container">
 
 		<?php if ( ! empty( $mobile_items ) ) : ?>
 			<div class="topbar-items mobile-topbar-items">

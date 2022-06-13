@@ -2,7 +2,7 @@
 /**
  * Template part for displaying footer main
  *
- * @package razzi
+ * @package dimas
  */
 
 use Razzi\Helper;
@@ -14,11 +14,11 @@ $sections = array(
 );
 
 /**
- * Hook: razzi_footer_main_sections
+ * Hook: dimas_footer_main_sections
  *
- * @hooked: razzi_split_content_custom_footer - 10
+ * @hooked: dimas_split_content_custom_footer - 10
  */
-$sections = apply_filters( 'razzi_footer_main_sections', $sections );
+$sections = apply_filters( 'dimas_footer_main_sections', $sections );
 
 $sections = array_filter( $sections );
 
@@ -27,10 +27,10 @@ if ( empty( $sections ) ) {
 }
 
 $add_class = Helper::get_option( 'footer_main_border' ) ? 'has-divider' : '';
-$add_class .= ! intval( Helper::get_option( 'mobile_footer_main' ) ) ? ' razzi-hide-on-mobile' : '';
+$add_class .= ! intval( Helper::get_option( 'mobile_footer_main' ) ) ? ' dimas-hide-on-mobile' : '';
 ?>
 <div class="footer-main site-info <?php echo esc_attr($add_class ) ?>">
-	<div class="footer-container <?php echo esc_attr( apply_filters( 'razzi_footer_container_class', Helper::get_option( 'footer_container' ), 'main' ) ); ?>">
+	<div class="footer-container <?php echo esc_attr( apply_filters( 'dimas_footer_container_class', Helper::get_option( 'footer_container' ), 'main' ) ); ?>">
 		<?php foreach ( $sections as $section => $items ) : ?>
 
 			<div class="footer-items footer-<?php echo esc_attr( $section ); ?>">

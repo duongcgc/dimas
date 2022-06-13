@@ -13,7 +13,7 @@ use Razzi\Helper;
     <a href="#" class="close-account-panel button-close"><?php echo SVG_Icon::get_svg( 'close' ); ?></a>
 </div>
 <div class="modal-content">
-    <nav class="hamburger-navigation razzi-scrollbar">
+    <nav class="hamburger-navigation dimas-scrollbar">
 		<?php
 		$click_class = Helper::get_option( 'hamburger_click_item' );
 		if ( ! intval( Helper::get_option( 'hamburger_show_arrow' ) ) && Helper::get_option( 'hamburger_click_item' ) == 'click-icon' ) {

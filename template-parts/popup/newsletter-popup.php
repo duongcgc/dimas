@@ -2,7 +2,7 @@
 /**
  * The template part for displaying the popup.
  *
- * @package razzi
+ * @package dimas
  */
 
 use Razzi\Helper;
@@ -17,7 +17,7 @@ $content_html = sprintf( '<div class="newsletter-popup-content">%s</div>', wp_ks
 $form_html    = sprintf( '<div class="newsletter-popup-form">%s</div>', do_shortcode( wp_kses_post( $form ) ) );
 
 $classess = 'newsletter-popup-layout-' . $layout;
-$classess .= Helper::get_option( 'mobile_newsletter_popup' ) ? '' : ' razzi-hide-on-mobile';
+$classess .= Helper::get_option( 'mobile_newsletter_popup' ) ? '' : ' dimas-hide-on-mobile';
 
 ?>
 
@@ -49,7 +49,7 @@ $classess .= Helper::get_option( 'mobile_newsletter_popup' ) ? '' : ' razzi-hide
 			echo ! empty( $form ) ? $form_html : '';
 			?>
             <a href="#" class="n-close">
-				<?php echo apply_filters( 'razzi_newsletter_notices', esc_html__( "Don't show this popup again", 'razzi' ) ) ?>
+				<?php echo apply_filters( 'dimas_newsletter_notices', esc_html__( "Don't show this popup again", 'dimas' ) ) ?>
             </a>
         </div>
     </div>

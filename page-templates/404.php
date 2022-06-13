@@ -13,12 +13,12 @@ get_header();
     <div id="primary" class="content-area">
         <section class="error-404 not-found">
 			<?php echo SVG_Icon::get_svg( 'error', 'error-404__svg' ); ?>
-            <h1 class="page-title"><?php esc_html_e( '404. Page not found.', 'razzi' ); ?></h1>
+            <h1 class="page-title"><?php esc_html_e( '404. Page not found.', 'dimas' ); ?></h1>
             <div class="page-content">
-				<?php esc_html_e( 'Sorry, we couldn&rsquo;t find the page you where looking for. We suggest that you return to homepage.', 'razzi' ); ?>
+				<?php esc_html_e( 'Sorry, we couldn&rsquo;t find the page you where looking for. We suggest that you return to homepage.', 'dimas' ); ?>
             </div><!-- .page-content -->
             <a href="<?php echo esc_url( get_home_url() ); ?>"
-               class="razzi-button button-larger"><?php echo esc_html__( 'Go to homepage', 'razzi' ); ?></a>
+               class="dimas-button button-larger"><?php echo esc_html__( 'Go to homepage', 'dimas' ); ?></a>
         </section><!-- .error-404 -->
 
     </div><!-- #primary -->

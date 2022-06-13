@@ -7,4 +7,4 @@
 
 ?>
 
-<a href="#" class="button razzi-button rz-navigation-bar__btn-place-order"><?php echo esc_html__( 'Place order', 'razzi' ) ?></a>
+<a href="#" class="button dimas-button rz-navigation-bar__btn-place-order"><?php echo esc_html__( 'Place order', 'dimas' ) ?></a>

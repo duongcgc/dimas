@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the logo
  *
- * @package razzi
+ * @package dimas
  */
 
 use Razzi\Helper;
@@ -38,7 +38,7 @@ $header_background_text = get_post_meta( Helper::get_post_ID(), 'rz_header_text_
 <div class="site-branding">
     <a href="<?php echo esc_url( home_url( '/' ) ) ?>" class="logo <?php echo esc_attr( $class ) ?>">
 		<?php if ( 'svg' == $logo_type ) : ?>
-            <span class="logo-dark"><?php echo apply_filters('razzi_get_theme_logo', SVG_Icon::sanitize_svg( $logo )); ?></span>
+            <span class="logo-dark"><?php echo apply_filters('dimas_get_theme_logo', SVG_Icon::sanitize_svg( $logo )); ?></span>
 		<?php elseif ( 'text' == $logo_type ) : ?>
             <span class="logo-dark"><?php echo esc_html( $logo ); ?></span>
 		<?php else : ?>
@@ -47,7 +47,7 @@ $header_background_text = get_post_meta( Helper::get_post_ID(), 'rz_header_text_
 		<?php endif; ?>
 		<?php if ( $header_background == 'transparent' && $header_background_text == 'light' ) : ?>
 			<?php if ( 'svg' == $logo_type ) : ?>
-				<span class="logo-light"><?php echo apply_filters('razzi_get_theme_logo_light',SVG_Icon::sanitize_svg( $logo_light )); ?></span>
+				<span class="logo-light"><?php echo apply_filters('dimas_get_theme_logo_light',SVG_Icon::sanitize_svg( $logo_light )); ?></span>
 			<?php elseif ( 'text' == $logo_type ) : ?>
             	<span class="logo-light"><?php echo esc_html( $logo ); ?></span>
 			<?php else : ?>

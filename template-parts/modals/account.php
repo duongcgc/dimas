@@ -7,7 +7,7 @@
 
 ?>
 <div class="modal-header">
-    <h3 class="modal-title"><?php esc_html_e( 'Sign in', 'razzi' ) ?></h3>
+    <h3 class="modal-title"><?php esc_html_e( 'Sign in', 'dimas' ) ?></h3>
     <a href="#" class="close-account-panel button-close"><?php echo SVG_Icon::get_svg( 'close' ); ?></a>
 </div>
 
@@ -17,11 +17,11 @@
 		<?php do_action( 'woocommerce_login_form_start' ); ?>
 
         <p class="form-row form-row-wide">
-            <input  placeholder="<?php  esc_attr_e( 'Username', 'razzi' );?>" type="text" class="input-text" name="username" id="panel_username"/>
+            <input  placeholder="<?php  esc_attr_e( 'Username', 'dimas' );?>" type="text" class="input-text" name="username" id="panel_username"/>
         </p>
         <p class="form-row form-row-wide">
             <span class="password-input">
-                <input placeholder="<?php  esc_attr_e( 'Password', 'razzi' );?>" class="input-text" type="password" name="password" id="panel_password"/>
+                <input placeholder="<?php  esc_attr_e( 'Password', 'dimas' );?>" class="input-text" type="password" name="password" id="panel_password"/>
             </span>
         </p>
 
@@ -31,22 +31,22 @@
             <label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
                 <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme"
                        type="checkbox" value="forever"/>
-                <span><?php esc_html_e( 'Remember me', 'razzi' ); ?></span>
+                <span><?php esc_html_e( 'Remember me', 'dimas' ); ?></span>
             </label>
             <label class="form-row form-row-wide lost_password">
-                <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'razzi' ); ?></a>
+                <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'dimas' ); ?></a>
             </label>
         </p>
 
         <p class="form-row form-row-wide">
 			<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
-            <button type="submit" class="razzi-button" name="login"
-                    value="<?php esc_attr_e( 'Sign in', 'razzi' ); ?>"
-                    data-signing="<?php esc_attr_e( 'Siging in...', 'razzi' ); ?>"
-                    data-signed="<?php esc_attr_e( 'Signed In', 'razzi' ); ?>"><?php esc_html_e( 'Sign in', 'razzi' ); ?></button>
+            <button type="submit" class="dimas-button" name="login"
+                    value="<?php esc_attr_e( 'Sign in', 'dimas' ); ?>"
+                    data-signing="<?php esc_attr_e( 'Siging in...', 'dimas' ); ?>"
+                    data-signed="<?php esc_attr_e( 'Signed In', 'dimas' ); ?>"><?php esc_html_e( 'Sign in', 'dimas' ); ?></button>
 
 			<?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
-                <span class="create-account razzi-button button-outline button-medium"><?php esc_html_e( 'Create An Account', 'razzi' ); ?></span>
+                <span class="create-account dimas-button button-outline button-medium"><?php esc_html_e( 'Create An Account', 'dimas' ); ?></span>
 			<?php endif; ?>
         </p>
 
@@ -64,14 +64,14 @@
 			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
 
                 <p class="form-row form-row-wide">
-                    <input placeholder="<?php  esc_attr_e( 'Username', 'razzi' );?>" type="text" class="input-text" name="username" id="panel_reg_username"
+                    <input placeholder="<?php  esc_attr_e( 'Username', 'dimas' );?>" type="text" class="input-text" name="username" id="panel_reg_username"
                            value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>"/><?php // @codingStandardsIgnoreLine ?>
                 </p>
 
 			<?php endif; ?>
 
             <p class="form-row form-row-wide">
-                <input placeholder="<?php  esc_attr_e( 'Email address', 'razzi' );?>" type="email" class="input-text" name="email" id="panel_reg_email"
+                <input placeholder="<?php  esc_attr_e( 'Email address', 'dimas' );?>" type="email" class="input-text" name="email" id="panel_reg_email"
                        value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>"/><?php // @codingStandardsIgnoreLine ?>
             </p>
 
@@ -79,7 +79,7 @@
 
                 <p class="form-row form-row-wide">
                     <span class="password-input">
-                        <input placeholder="<?php  esc_attr_e( 'Password', 'razzi' );?>" type="password" class="input-text" name="password" id="panel_reg_password"/>
+                        <input placeholder="<?php  esc_attr_e( 'Password', 'dimas' );?>" type="password" class="input-text" name="password" id="panel_reg_password"/>
                     </span>
                 </p>
 
@@ -89,13 +89,13 @@
 
             <p class="form-row form-row-wide">
 				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-                <button type="submit" class="razzi-button" name="register"
-                        value="<?php esc_attr_e( 'Sign up', 'razzi' ); ?>"><?php esc_html_e( 'Sign up', 'razzi' ); ?></button>
+                <button type="submit" class="dimas-button" name="register"
+                        value="<?php esc_attr_e( 'Sign up', 'dimas' ); ?>"><?php esc_html_e( 'Sign up', 'dimas' ); ?></button>
             </p>
 
             <p class="form-row form-row-wide already_registered">
                 <a href="#"
-                   class="login razzi-button button-outline button-medium"><?php esc_html_e( 'Already has an account', 'razzi' ); ?></a>
+                   class="login dimas-button button-outline button-medium"><?php esc_html_e( 'Already has an account', 'dimas' ); ?></a>
             </p>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>

@@ -9,12 +9,12 @@ use Razzi\Helper;
 
 $search_class = isset($args['search_class']) ? $args['search_class'] : '';
 
-$text_placeholder = esc_html__( 'Search for items', 'razzi' );
+$text_placeholder = esc_html__( 'Search for items', 'dimas' );
 if ( ! empty( Helper::get_option( 'header_search_placeholder' ) ) ) {
 	$text_placeholder = esc_html( Helper::get_option( 'header_search_placeholder' ) );
 } else {
 	if ( $args['search_type'] == 'product' ) {
-		$text_placeholder = esc_html__( 'Search for items', 'razzi' );
+		$text_placeholder = esc_html__( 'Search for items', 'dimas' );
 	}
 }
 
@@ -36,7 +36,7 @@ if( Helper::get_option( 'header_type' ) == 'custom' &&  $args['search_form_style
                        placeholder="<?php echo esc_attr( $text_placeholder ) ?>" autocomplete="off">
                 <a href="#"
                    class="close-search-results"><?php echo SVG_Icon::get_svg( 'close' ); ?></a>
-                <span class="razzi-loading"></span>
+                <span class="dimas-loading"></span>
             </div>
 			<?php if ( $args['search_type'] == 'product' ) : ?>
                 <input type="hidden" name="post_type" value="<?php echo esc_attr( $args['search_type'] ) ?>">
@@ -52,7 +52,7 @@ if( Helper::get_option( 'header_type' ) == 'custom' &&  $args['search_form_style
 					'echo'            => 0,
 					'value_field'     => 'slug',
 					'class'           => 'product-cat-dd',
-					'show_option_all' => esc_html__( 'All Categories', 'razzi' ),
+					'show_option_all' => esc_html__( 'All Categories', 'dimas' ),
 					'id'              => 'product-cat',
 				);
 
@@ -61,7 +61,7 @@ if( Helper::get_option( 'header_type' ) == 'custom' &&  $args['search_form_style
 					'<div class="product-cat-label"><span class="label">%s</span>%s</div>' .
 					'%s' .
 					'</div>',
-					esc_html__( 'All Categories', 'razzi' ),
+					esc_html__( 'All Categories', 'dimas' ),
 					SVG_Icon::get_svg( 'chevron-bottom' ),
 					wp_dropdown_categories( $args_cat )
 				);
@@ -82,7 +82,7 @@ if( Helper::get_option( 'header_type' ) == 'custom' &&  $args['search_form_style
                class="close-search-results"><?php echo SVG_Icon::get_svg( 'close', '' ); ?></a>
             <button class="search-submit"
                     type="submit"><?php echo SVG_Icon::get_svg( 'search', '', 'shop' ); ?></button>
-            <span class="razzi-loading"></span>
+            <span class="dimas-loading"></span>
         </form>
 	<?php endif; ?>
 	<?php if ( $args['search_style'] != 'icon' ) : ?>

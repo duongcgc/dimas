@@ -22,7 +22,7 @@ get_header();
 
 		<?php if ( have_posts() ) :
 
-			do_action( 'razzi_before_search_loop' );
+			do_action( 'dimas_before_search_loop' );
 
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -37,7 +37,7 @@ get_header();
 
 			endwhile;
 
-			do_action( 'razzi_after_search_loop' );
+			do_action( 'dimas_after_search_loop' );
 
 		else :
 

@@ -2,7 +2,7 @@
 /**
  * Template file for displaying mobile header v1
  *
- * @package razzi
+ * @package dimas
  */
 
 ?>
@@ -16,6 +16,6 @@ HTML::instance()->open('header_mobile',[
 ]);
 ?>
 
-<?php do_action( 'razzi_header_mobile_content' ); ?>
+<?php do_action( 'dimas_header_mobile_content' ); ?>
 
 <?php HTML::instance()->close('header_mobile');  ?>

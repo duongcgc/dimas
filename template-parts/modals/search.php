@@ -15,9 +15,9 @@ use Razzi\Helper;
 			echo esc_html( Helper::get_option( 'header_search_text' ) );
 		} else {
 			if ( Helper::get_option( 'header_search_type' ) == 'product' ) {
-				echo esc_html__( 'Search Products', 'razzi' );
+				echo esc_html__( 'Search Products', 'dimas' );
 			} else {
-				echo esc_html__( 'Search', 'razzi' );
+				echo esc_html__( 'Search', 'dimas' );
 			}
 		}
 		?>
@@ -39,7 +39,7 @@ use Razzi\Helper;
 					'echo'            => 0,
 					'value_field'     => 'slug',
 					'class'           => 'product-cat-dd',
-					'show_option_all' => esc_html__( 'All Categories', 'razzi' ),
+					'show_option_all' => esc_html__( 'All Categories', 'dimas' ),
 					'id'              => 'product-cat-modal',
 				);
 
@@ -48,7 +48,7 @@ use Razzi\Helper;
 					'<div class="product-cat-label"><span class="label">%s</span>%s</div>' .
 					'%s' .
 					'</div>',
-					esc_html__( 'All Categories', 'razzi' ),
+					esc_html__( 'All Categories', 'dimas' ),
 					SVG_Icon::get_svg( 'chevron-bottom' ),
 					wp_dropdown_categories( $args )
 				);
@@ -57,12 +57,12 @@ use Razzi\Helper;
 			?>
             <div class="search-wrapper">
 				<?php
-				$text_placeholder = esc_html__( 'Search for items', 'razzi' );
+				$text_placeholder = esc_html__( 'Search for items', 'dimas' );
 				if ( ! empty( Helper::get_option( 'header_search_placeholder' ) ) ) {
 					$text_placeholder = esc_html( Helper::get_option( 'header_search_placeholder' ) );
 				} else {
 					if ( Helper::get_option( 'header_search_type' ) == 'product' ) {
-						$text_placeholder = esc_html__( 'Search for items', 'razzi' );
+						$text_placeholder = esc_html__( 'Search for items', 'dimas' );
 					}
 				}
 				?>
@@ -77,7 +77,7 @@ use Razzi\Helper;
                         type="submit"><?php echo SVG_Icon::get_svg( 'search', '', 'shop' ); ?></button>
             </div>
         </div>
-        <span class="razzi-loading"></span>
+        <span class="dimas-loading"></span>
     </form>
 	<?php Header::search_quicklinks(); ?>
     <div class="search-results woocommerce"></div>

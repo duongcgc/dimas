@@ -7,7 +7,7 @@
  * @package Razzi
  */
 
-$has_sidebar = apply_filters( 'razzi_get_sidebar', false );
+$has_sidebar = apply_filters( 'dimas_get_sidebar', false );
 
 if ( ! $has_sidebar ) {
 	return;
@@ -27,7 +27,7 @@ if ( ! is_active_sidebar( $sidebar ) ) {
 	return;
 }
 
-$sidebar_class = apply_filters( 'razzi_primary_sidebar_classes', $sidebar );
+$sidebar_class = apply_filters( 'dimas_primary_sidebar_classes', $sidebar );
 ?>
 
 <aside id="primary-sidebar"

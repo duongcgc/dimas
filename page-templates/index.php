@@ -28,7 +28,7 @@ get_header();
 			<?php
 			HTML::instance()->open('posts_content',[
 				'attr' => [
-					'class' => 'razzi-posts__wrapper',
+					'class' => 'dimas-posts__wrapper',
 				],
 				'actions' => true,
 			]);
