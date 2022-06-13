@@ -346,6 +346,7 @@ h4 {
 }
 
 a {
+  cursor: pointer;
   color: var(--dimas-color-white);
   text-decoration: none;
   -webkit-transition: all var(--dimas-transition-duration) var(--dimas-transition-easing);

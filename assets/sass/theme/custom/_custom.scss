@@ -53,7 +53,6 @@ body {
     line-height: (19rem/16);
     letter-spacing: 0.32em;
     text-transform: uppercase;
-
     &.label-content {
         font-family: 'Outfit';
     }
@@ -79,7 +78,6 @@ h1 {
     font-family: 'Heist';
     font-style: normal;
     font-weight: 400;
-
     &.label-banner {
         width: fit-content;
         font-family: 'Heist';
@@ -92,17 +90,14 @@ h2 {
     font-family: 'Outfit';
     font-weight: 700;
     text-transform: capitalize;
-
     &.label-banner {
         width: fit-content;
         font-family: 'Heist';
         font-weight: 400;
         font-size: 3.5rem;
-
         &.hg60 {
             line-height: (60rem/16);
         }
-
         &.has-after {
             &::after {
                 content: "";
@@ -134,7 +129,6 @@ h4 {
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.5;
-
     &__author {
         font-family: 'Outfit';
         font-style: normal;
@@ -142,10 +136,8 @@ h4 {
         font-size: 0.875rem;
         line-height: 1.125rem;
     }
-
     &__text {
         position: relative;
-
         &.has-after {
             &::after {
                 position: absolute;
@@ -162,17 +154,15 @@ h4 {
 }
 
 a {
+    cursor: pointer;
     color: var(--dimas-color-white);
     text-decoration: none;
-
     &:hover {
         color: var(--dimas-color-main);
     }
-
     &:after {
         transition: all var(--dimas-transition-duration) var(--dimas-transition-easing);
     }
-
     transition: all var(--dimas-transition-duration) var(--dimas-transition-easing);
 }
 
@@ -223,7 +213,6 @@ svg {
     z-index: 100;
     pointer-events: none;
     color: var(--dimas-color-accent);
-
     span {
         font-size: (15rem/16);
         position: fixed;
@@ -241,12 +230,10 @@ svg {
         border-radius: 50%;
         align-items: center;
         justify-content: center;
-
         svg {
             height: 1em
         }
     }
-
     &.is-visible {
         span {
             visibility: visible;
@@ -267,7 +254,6 @@ svg {
     h2 {
         font-size: 1rem;
         line-height: 1.25;
-
         &.label-banner {
             font-size: 3rem;
             line-height: (60rem/16);
@@ -278,7 +264,6 @@ svg {
 @media (max-width: 575px) {
     .quote {
         flex-wrap: wrap;
-
         &__img {
             margin-bottom: (24rem/16);
         }

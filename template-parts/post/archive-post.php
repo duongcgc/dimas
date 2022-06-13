@@ -16,7 +16,7 @@
 global $wp_query;
 $max_page = $wp_query->max_num_pages;
 /**
- * New pagination function.
+ * Dimas pagination function.
  *
  * @return string
  */
@@ -37,7 +37,7 @@ function dimas_pagination() {
 			'type'      => 'array',
 		)
 	);
-	$out      = '';
+	$out      = '<ul class="dimas-pagination__wrap">';
 	foreach ( $arr_pag as $key => $value ) :
 		if ( str_contains( $value, 'prev' ) ) :
 			$out .= '<li class="dimas-pagination__wrap--item prev-page">' . $value;
@@ -55,6 +55,7 @@ function dimas_pagination() {
 				$out .= '</li>';
 		endif;
 	endforeach;
+	$out .= '</ul>';
 	return $out;
 }
 ?>
@@ -107,8 +108,40 @@ function dimas_pagination() {
 						if ( $max_page > 1 ) :
 							?>
 						<div class="dimas-pagination pt-5 pt-lg-96">
-							<ul class="dimas-pagination__wrap">
-								<?php echo dimas_pagination(); ?>
+								<?php
+								echo wp_kses(
+									dimas_pagination(),
+									array(
+										'ul'   => array(
+											'class' => array(),
+										),
+										'li'   => array(
+											'class' => array(),
+										),
+										'span' => array(
+											'class' => array(),
+										),
+										'a'    => array(
+											'href'  => array(),
+											'title' => array(),
+											'rel'   => array(),
+										),
+										'svg'  => array(
+											'width'   => array(),
+											'height'  => array(),
+											'fill'    => array(),
+											'xmlns'   => array(),
+											'viewbox' => array(),
+										),
+										'path' => array(
+											'd'            => array(),
+											'stroke'       => array(),
+											'stroke-width' => array(),
+											'stroke-linecap' => array(),
+										),
+									)
+								);
+								?>
 							</ul>
 						</div>
 						<?php endif; ?>
