@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Theme Settings
+ * Theme Settings Settings
  *
  * @package Dimas
  */
@@ -29,13 +29,6 @@ class Settings {
 	protected static $dimas_customize = null;
 
 	/**
-	 * Customize settings
-	 *
-	 * @var array
-	 */
-	protected $dimas_settings = array();
-
-	/**
 	 * Initiator
 	 *
 	 * @since 1.0.0
@@ -57,9 +50,8 @@ class Settings {
 	 *
 	 */
 	public function __construct() {
-		add_filter( 'dimas_customize_config', array( $this, 'customize_settings' ) );		
-		self::$dimas_customize = \Dimas\Core\Core_Init::instance()->get('customizer');	
-	
+		add_filter('dimas_customize_config', array($this, 'customize_settings'));
+		self::$dimas_customize = \Dimas\Core\Core_Init::instance()->get('customizer');
 	}
 
 
@@ -72,16 +64,16 @@ class Settings {
 	 *
 	 * @return bool|string
 	 */
-	public function get_option($name) {
+	public function get_setting($name) {
 		if (is_object(self::$dimas_customize)) {
-			$value = self::$dimas_customize->get_option($name);
+			$value = self::$dimas_customize->get_setting($name);
 		} elseif (false !== get_theme_mod($name)) {
 			$value = get_theme_mod($name);
 		} else {
-			$value = $this->get_option_default($name);
+			$value = $this->get_setting_default($name);
 		}
 
-		return apply_filters('dimas_get_option', $value, $name);
+		return apply_filters('dimas_get_setting', $value, $name);
 	}
 
 	/**
@@ -93,12 +85,12 @@ class Settings {
 	 *
 	 * @return mixed
 	 */
-	public static function get_option_default($name) {
+	public static function get_setting_default($name) {
 		if (empty(self::$dimas_customize)) {
 			return false;
 		}
 
-		return self:: $dimas_customize->get_option_default($name);
+		return self:: $dimas_customize->get_setting_default($name);
 	}
 
 	/**
@@ -148,14 +140,14 @@ class Settings {
 	}
 
 	/**
-	 * Options of footer items
+	 * Settings of footer items
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return array
 	 */
-	public function footer_items_option() {
-		return apply_filters('dimas_footer_items_option', array(
+	public function footer_items_setting() {
+		return apply_filters('dimas_footer_items_setting', array(
 			'copyright' => esc_html__('Copyright', 'dimas'),
 			'menu'      => esc_html__('Menu', 'dimas'),
 			'text'      => esc_html__('Custom text', 'dimas'),
@@ -166,14 +158,14 @@ class Settings {
 	}
 
 	/**
-	 * Options of header items
+	 * Settings of header items
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return array
 	 */
-	public function header_items_option() {
-		return apply_filters('dimas_header_items_option', array(
+	public function header_items_setting() {
+		return apply_filters('dimas_header_items_setting', array(
 			'0'              => esc_html__('Select a item', 'dimas'),
 			'logo'           => esc_html__('Logo', 'dimas'),
 			'menu-primary'   => esc_html__('Primary Menu', 'dimas'),
@@ -191,14 +183,14 @@ class Settings {
 	}
 
 	/**
-	 * Options of topbar items
+	 * Settings of topbar items
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return array
 	 */
-	public function topbar_items_option() {
-		return apply_filters('dimas_topbar_items_option', array(
+	public function topbar_items_setting() {
+		return apply_filters('dimas_topbar_items_setting', array(
 			'menu'     => esc_html__('Menu', 'dimas'),
 			'currency' => esc_html__('Currency Switcher', 'dimas'),
 			'language' => esc_html__('Language Switcher', 'dimas'),
@@ -209,14 +201,14 @@ class Settings {
 	}
 
 		/**
-	 * Options of navigation bar items
+	 * Settings of navigation bar items
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return array
 	 */
-	public function navigation_bar_items_option() {
-		return apply_filters( 'dimas_navigation_bar_items_option', array(
+	public function navigation_bar_items_setting() {
+		return apply_filters( 'dimas_navigation_bar_items_setting', array(
 			'home'     => esc_html__( 'Home', 'dimas' ),
 			'menu'     => esc_html__( 'Menu', 'dimas' ),
 			'search'   => esc_html__( 'Search', 'dimas' ),
@@ -228,14 +220,14 @@ class Settings {
 
 
 	/**
-	 * Options of mobile header icons
+	 * Settings of mobile header icons
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return array
 	 */
-	public function mobile_header_icons_option() {
-		return apply_filters( 'dimas_mobile_header_icons_option', array(
+	public function mobile_header_icons_setting() {
+		return apply_filters( 'dimas_mobile_header_icons_setting', array(
 			'cart'     => esc_html__( 'Cart Icon', 'dimas' ),
 			'wishlist' => esc_html__( 'Wishlist Icon', 'dimas' ),
 			'account'  => esc_html__( 'Account Icon', 'dimas' ),
@@ -252,14 +244,10 @@ class Settings {
 	 * @return array
 	 */
 	public function customize_settings() {
-
 		$settings = array(
-			'theme' 	=> 'dimas',
+			'theme' => 'dimas',
 		);
 
-		// $panels 		= \Dimas\Core\Customizer\Panels::customize_panels();
-		// $sections 		= \Dimas\Core\Customizer\Sections::customize_sections();
-		// $fields			= \Dimas\Core\Customizer\Fields::customize_fields();
 		$panels = array(
 			'general' => array(
 				'priority' => 10,
@@ -275,57 +263,58 @@ class Settings {
 			// Header
 			'header'  => array(
 				'title'      => esc_html__('Header', 'dimas'),
-				'capability' => 'edit_theme_options',
+				'capability' => 'edit_theme_settings',
 				'priority'   => 30,
 			),
 
 			'page'   => array(
 				'title'      => esc_html__('Page', 'dimas'),
-				'capability' => 'edit_theme_options',
+				'capability' => 'edit_theme_settings',
 				'priority'   => 40,
 			),
 
 			// Blog
 			'blog'   => array(
 				'title'      => esc_html__('Blog', 'dimas'),
-				'capability' => 'edit_theme_options',
+				'capability' => 'edit_theme_settings',
 				'priority'   => 50,
 			),
 
 			// Footer
 			'footer' => array(
 				'title'      => esc_html__('Footer', 'dimas'),
-				'capability' => 'edit_theme_options',
+				'capability' => 'edit_theme_settings',
 				'priority'   => 60,
 			),
 			// Footer
 			'mobile' => array(
 				'title'      => esc_html__('Mobile', 'dimas'),
-				'capability' => 'edit_theme_options',
+				'capability' => 'edit_theme_settings',
 				'priority'   => 60,
 			),
 
 		);
+
 		$sections = array(
 			// Maintenance
 			'maintenance'  => array(
 				'title'      => esc_html__('Maintenance', 'dimas'),
 				'priority'   => 10,
-				'capability' => 'edit_theme_options',
+				'capability' => 'edit_theme_settings',
 			),
 			// Boxed
 			'boxed_layout' => array(
 				'title'       => esc_html__('Boxed Layout', 'dimas'),
 				'description' => '',
 				'priority'    => 20,
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'general',
 			),
 
 			'general_backtotop' => array(
 				'title'       => esc_html__('Back To Top', 'dimas'),
 				'description' => '',
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'general',
 				'priority'    => 20,
 			),
@@ -367,7 +356,7 @@ class Settings {
 			// Newsletter
 			'newsletter_popup'  => array(
 				'title'      => esc_html__('Newsletter Popup', 'dimas'),
-				'capability' => 'edit_theme_options',
+				'capability' => 'edit_theme_settings',
 				'priority'   => 20,
 			),
 
@@ -444,7 +433,7 @@ class Settings {
 				'title'       => esc_html__('Page Header', 'dimas'),
 				'description' => '',
 				'priority'    => 10,
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'page',
 			),
 
@@ -452,7 +441,7 @@ class Settings {
 			'blog_page'         => array(
 				'title'       => esc_html__('Blog Page', 'dimas'),
 				'description' => '',
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'blog',
 			),
 
@@ -460,7 +449,7 @@ class Settings {
 				'title'       => esc_html__('Blog Page Header', 'dimas'),
 				'description' => '',
 				'priority'    => 10,
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'blog',
 			),
 
@@ -469,7 +458,7 @@ class Settings {
 				'title'       => esc_html__('Single Post', 'dimas'),
 				'description' => '',
 				'priority'    => 10,
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'blog',
 			),
 
@@ -477,73 +466,73 @@ class Settings {
 			'footer_layout'     => array(
 				'title'       => esc_html__('Footer Layout', 'dimas'),
 				'description' => '',
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'footer',
 			),
 			'footer_newsletter' => array(
 				'title'       => esc_html__('Footer Newsletter', 'dimas'),
 				'description' => '',
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'footer',
 			),
 			'footer_widget'		=> array(
 				'title'       => esc_html__('Footer Widget', 'dimas'),
 				'description' => '',
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'footer',
 			),
 			'footer_extra'      => array(
 				'title'       => esc_html__('Footer Extra', 'dimas'),
 				'description' => '',
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'footer',
 			),
 			'footer_main'       => array(
 				'title'       => esc_html__('Footer Main', 'dimas'),
 				'description' => '',
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'footer',
 			),
 			'footer_background' => array(
 				'title'       => esc_html__('Footer Background', 'dimas'),
 				'description' => '',
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'footer',
 			),
 			'footer_copyright'  => array(
 				'title'       => esc_html__('Copyright', 'dimas'),
 				'description' => '',
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'footer',
 			),
 			'footer_menu'  => array(
 				'title'       => esc_html__('Menu', 'dimas'),
 				'description' => '',
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'footer',
 			),
 			'footer_text'       => array(
 				'title'       => esc_html__('Custom Text', 'dimas'),
 				'description' => '',
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'footer',
 			),
 			'footer_payment'    => array(
 				'title'       => esc_html__('Payments', 'dimas'),
 				'description' => '',
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'footer',
 			),
 			'footer_logo'       => array(
 				'title'       => esc_html__('Logo', 'dimas'),
 				'description' => '',
-				'capability'  => 'edit_theme_options',
+				'capability'  => 'edit_theme_settings',
 				'panel'       => 'footer',
 			),
 
 			'recently_viewed'  => array(
 				'title'      => esc_html__('Recently Viewed', 'dimas'),
-				'capability' => 'edit_theme_options',
+				'capability' => 'edit_theme_settings',
 				'priority'   => 50,
 			),
 			// Mobile
@@ -1329,7 +1318,7 @@ class Settings {
 				'fields'      => array(
 					'item' => array(
 						'type'    => 'select',
-						// 'choices' => $this->topbar_items_option(),
+						'choices' => $this->topbar_items_setting(),
 					),
 				),
 				'section' => 'header_top',
@@ -1348,7 +1337,7 @@ class Settings {
 				'fields'      => array(
 					'item' => array(
 						'type'    => 'select',
-						// 'choices' => $this->topbar_items_option(),
+						'choices' => $this->topbar_items_setting(),
 					),
 				),
 				'section' => 'header_top',
@@ -1365,7 +1354,7 @@ class Settings {
 				'label'           => esc_html__( 'Menu', 'dimas' ),
 				'section'         => 'header_top',
 				'default'         => '',
-				// 'choices'         => $this->get_navigation_bar_get_menus(),
+				'choices'         => $this->get_navigation_bar_get_menus(),
 
 			),
 
@@ -1537,78 +1526,7 @@ class Settings {
 					),
 				),
 			),
-			'header_search_icon'  => array(
-				'type'    => 'toggle',
-				'label'   => esc_html__('Header Search', 'dimas'),
-				'section' => 'header_layout',
-				'default' => 1,
-				'active_callback' => array(
-					array(
-						'setting'  => 'header_type',
-						'operator' => '==',
-						'value'    => 'default',
-					),
-					array(
-						'setting'  => 'header_layout',
-						'operator' => 'in',
-						'value'    => array( 'v1', 'v2', 'v3', 'v5', 'v6', 'v8', 'v9' ),
-					),
-				),
-			),
-			'header_account_icon'  => array(
-				'type'    => 'toggle',
-				'label'   => esc_html__('Header Account', 'dimas'),
-				'section' => 'header_layout',
-				'default' => 1,
-				'active_callback' => array(
-					array(
-						'setting'  => 'header_type',
-						'operator' => '==',
-						'value'    => 'default',
-					),
-					array(
-						'setting'  => 'header_layout',
-						'operator' => 'in',
-						'value'    => array( 'v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v8', 'v9' ),
-					),
-				),
-			),
-			'header_wishlist_icon'  => array(
-				'type'    => 'toggle',
-				'label'   => esc_html__('Header Wishlist', 'dimas'),
-				'section' => 'header_layout',
-				'default' => 1,
-				'active_callback' => array(
-					array(
-						'setting'  => 'header_type',
-						'operator' => '==',
-						'value'    => 'default',
-					),
-					array(
-						'setting'  => 'header_layout',
-						'operator' => 'in',
-						'value'    => array( 'v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v8', 'v9' ),
-					),
-				),
-			),
-			'header_cart_icon'  => array(
-				'type'    => 'toggle',
-				'label'   => esc_html__('Header Cart', 'dimas'),
-				'section' => 'header_layout',
-				'default' => 1,
-				'active_callback' => array(
-					array(
-						'setting'  => 'header_type',
-						'operator' => '==',
-						'value'    => 'default',
-					),
-					array(
-						'setting'  => 'header_layout',
-						'operator' => 'in',
-						'value'    => array( 'v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9' ),
-					),
-				),
-			),
+
 			'header_layout_custom_field_1'              => array(
 				'type'    => 'custom',
 				'section' => 'header_layout',
@@ -1618,7 +1536,7 @@ class Settings {
 			// Header Sticky
 			'header_sticky'                             => array(
 				'type'    => 'toggle',
-				'label'   => esc_html__('Sticky Header', 'dimas'),
+				'label'   => esc_html__('Header Sticky', 'dimas'),
 				'default' => 0,
 				'section' => 'header_layout',
 			),
@@ -1635,7 +1553,7 @@ class Settings {
 			),
 			'header_sticky_el'                          => array(
 				'type'     => 'multicheck',
-				'label'    => esc_html__('Sticky Header Elements', 'dimas'),
+				'label'    => esc_html__('Header Sticky Elements', 'dimas'),
 				'section'  => 'header_layout',
 				'default'  => array('header_main'),
 				'priority' => 10,
@@ -1644,7 +1562,7 @@ class Settings {
 					'header_bottom' => esc_html__('Header Bottom', 'dimas'),
 				),
 				'active_callback' => function() {
-					// return $this->display_header_sticky();
+					return $this->display_header_sticky();
 				},
 			),
 
@@ -1664,7 +1582,7 @@ class Settings {
 				'fields'          => array(
 					'item' => array(
 						'type'    => 'select',
-						// 'choices' => $this->header_items_option(),
+						'choices' => $this->header_items_setting(),
 					),
 				),
 				'active_callback' => array(
@@ -1690,7 +1608,7 @@ class Settings {
 				'fields'          => array(
 					'item' => array(
 						'type'    => 'select',
-						// 'choices' => $this->header_items_option(),
+						'choices' => $this->header_items_setting(),
 					),
 				),
 				'active_callback' => array(
@@ -1716,7 +1634,7 @@ class Settings {
 				'fields'          => array(
 					'item' => array(
 						'type'    => 'select',
-						// 'choices' => $this->header_items_option(),
+						'choices' => $this->header_items_setting(),
 					),
 				),
 				'active_callback' => array(
@@ -1744,7 +1662,7 @@ class Settings {
 				),
 				'js_vars'   => array(
 					array(
-						'element'  => '#site-header .header-main',
+						'element'  => '.header-main',
 						'property' => 'height',
 						'units'    => 'px',
 					),
@@ -1752,8 +1670,8 @@ class Settings {
 			),
 			'sticky_header_main_height'                 => array(
 				'type'        => 'slider',
-				'label'       => esc_html__('Sticky Header Height', 'dimas'),
-				'description' => esc_html__('Adjust Header Main height when the Sticky Header enabled', 'dimas'),
+				'label'       => esc_html__('Header Sticky Height', 'dimas'),
+				'description' => esc_html__('Adjust Header Main height when Header Sticky is enable', 'dimas'),
 				'transport'   => 'postMessage',
 				'section'     => 'header_main',
 				'default'     => '90',
@@ -1770,7 +1688,7 @@ class Settings {
 				),
 				'js_vars'         => array(
 					array(
-						'element'  => '.header-sticky #site-header.minimized .header-main',
+						'element'  => '.header-sticky .site-header.minimized .header-main',
 						'property' => 'height',
 						'units'    => 'px',
 					),
@@ -1793,7 +1711,7 @@ class Settings {
 				'fields'          => array(
 					'item' => array(
 						'type'    => 'select',
-						// 'choices' => $this->header_items_option(),
+						'choices' => $this->header_items_setting(),
 					),
 				),
 				'active_callback' => array(
@@ -1819,7 +1737,7 @@ class Settings {
 				'fields'          => array(
 					'item' => array(
 						'type'    => 'select',
-						// 'choices' => $this->header_items_option(),
+						'choices' => $this->header_items_setting(),
 					),
 				),
 				'active_callback' => array(
@@ -1845,7 +1763,7 @@ class Settings {
 				'fields'          => array(
 					'item' => array(
 						'type'    => 'select',
-						// 'choices' => $this->header_items_option(),
+						'choices' => $this->header_items_setting(),
 					),
 				),
 				'active_callback' => array(
@@ -1873,7 +1791,7 @@ class Settings {
 				),
 				'js_vars'   => array(
 					array(
-						'element'  => '#site-header .header-bottom',
+						'element'  => '.header-bottom',
 						'property' => 'height',
 						'units'    => 'px',
 					),
@@ -1881,8 +1799,8 @@ class Settings {
 			),
 			'sticky_header_bottom_height'               => array(
 				'type'        => 'slider',
-				'label'       => esc_html__('Sticky Header Height', 'dimas'),
-				'description' => esc_html__('Adjust Header Bottom height when the Sticky Header enabled', 'dimas'),
+				'label'       => esc_html__('Header Sticky Height', 'dimas'),
+				'description' => esc_html__('Adjust Header Bottom height when Header Sticky is enable', 'dimas'),
 				'transport'   => 'postMessage',
 				'section'     => 'header_bottom',
 				'default'     => '50',
@@ -1899,7 +1817,7 @@ class Settings {
 				),
 				'js_vars'         => array(
 					array(
-						'element'  => '.header-sticky #site-header.minimized .header-bottom',
+						'element'  => '.header-sticky .site-header.minimized .header-bottom',
 						'property' => 'height',
 						'units'    => 'px',
 					),
@@ -2410,7 +2328,7 @@ class Settings {
 				'section'         => 'header_search',
 				'default'         => '<hr/>',
 				'active_callback' => function() {
-					// return $this->display_header_search_panel();
+					return $this->display_header_search_panel();
 				},
 			),
 			'header_search_text'                        => array(
@@ -2419,7 +2337,7 @@ class Settings {
 				'section'         => 'header_search',
 				'default'         => '',
 				'active_callback' => function() {
-					// return $this->display_header_search_panel();
+					return $this->display_header_search_panel();
 				},
 			),
 			'header_search_custom_field_2'              => array(
@@ -2793,52 +2711,6 @@ class Settings {
 				'section' => 'header_cart',
 				'default' => '<hr/>',
 			),
-			'cart_icon_source'      => array(
-				'type'    => 'radio',
-				'label'   => esc_html__( 'Cart Icon', 'dimas' ),
-				'default' => 'icon',
-				'section' => 'header_cart',
-				'choices' => array(
-					'icon'  => esc_attr__( 'Built-in Icon', 'dimas' ),
-					'svg'   => esc_attr__( 'SVG Code', 'dimas' ),
-				),
-			),
-			'cart_icon'             => array(
-				'type'    => 'radio-image',
-				'default' => 'cart',
-				'section' => 'header_cart',
-				'choices' => array(
-					'cart'       => get_template_directory_uri() . '/assets/svg/cart.svg',
-					'shop-bag'   => get_template_directory_uri() . '/assets/svg/shop-bag.svg',
-					'shop-bag-2' => get_template_directory_uri() . '/assets/svg/shop-bag-2.svg',
-					'shop-cart'  => get_template_directory_uri() . '/assets/svg/shop-cart.svg',
-				),
-				'active_callback' => array(
-					array(
-						'setting'  => 'cart_icon_source',
-						'operator' => '==',
-						'value'    => 'icon',
-					),
-				),
-			),
-			'cart_icon_svg'         => array(
-				'type'              => 'textarea',
-				'description'       => esc_html__( 'Icon SVG code', 'dimas' ),
-				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
-				'section'           => 'header_cart',
-				'active_callback'   => array(
-					array(
-						'setting'  => 'cart_icon_source',
-						'operator' => '==',
-						'value'    => 'svg',
-					),
-				),
-			),
-			'cart_hr_1'          => array(
-				'type'    => 'custom',
-				'section' => 'header_cart',
-				'default' => '<hr>',
-			),
 			'header_cart_custom_color'                  => array(
 				'type'        => 'toggle',
 				'label'       => esc_html__('Custom Color Counter', 'dimas'),
@@ -3097,12 +2969,6 @@ class Settings {
 					),
 				),
 			),
-			'header_custom_text' => array(
-				'type'        => 'textarea',
-				'label'       => esc_html__('Custom Text', 'dimas'),
-				'description' => esc_html__('The content of the Custom Text item', 'dimas'),
-				'section'     => 'header_custom_text',
-			),
 
 			// Blog
 			'blog_type'                                 => array(
@@ -3163,7 +3029,7 @@ class Settings {
 				'type'     => 'text',
 				'label'    => esc_html__('Loading Text', 'dimas'),
 				'section'  => 'blog_page',
-				'default'  => '',
+				'default'  => esc_html__('Load More', 'dimas'),
 				'priority' => 10,
 			),
 
@@ -3197,7 +3063,7 @@ class Settings {
 				'default'         => '',
 				'multiple'        => 999,
 				'priority'        => 10,
-				// 'choices'         => $this->get_categories('category'),
+				'choices'         => $this->get_categories('category'),
 				'active_callback' => array(
 					array(
 						'setting'  => 'custom_blog_cats',
@@ -3211,7 +3077,7 @@ class Settings {
 				'type'     => 'text',
 				'label'    => esc_html__('View All Text', 'dimas'),
 				'section'  => 'blog_page',
-				'default'  => '',
+				'default'  => esc_html__('All', 'dimas'),
 				'priority' => 10,
 			),
 			'blog_cats_orderby'      => array(
@@ -3338,7 +3204,7 @@ class Settings {
 				'type'     => 'text',
 				'label'    => esc_html__('Title', 'dimas'),
 				'section'  => 'single_post',
-				'default'  => '',
+				'default'  => esc_html__('Related Posts', 'dimas'),
 				'priority' => 10,
 
 			),
@@ -3538,7 +3404,7 @@ class Settings {
 				'fields'          => array(
 					'item' => array(
 						'type'    => 'select',
-						// 'choices' => $this->footer_items_option(),
+						'choices' => $this->footer_items_setting(),
 					),
 				),
 				'section' => 'footer_main',
@@ -3557,7 +3423,7 @@ class Settings {
 				'fields'          => array(
 					'item' => array(
 						'type'    => 'select',
-						'choices' => $this->footer_items_option(),
+						'choices' => $this->footer_items_setting(),
 					),
 				),
 				'section' => 'footer_main',
@@ -3577,7 +3443,7 @@ class Settings {
 					'item' => array(
 						'type'    => 'select',
 						'default' => 'copyright',
-						// 'choices' => $this->footer_items_option(),
+						'choices' => $this->footer_items_setting(),
 					),
 				),
 				'section' => 'footer_main',
@@ -3673,7 +3539,7 @@ class Settings {
 				'label'           => esc_html__( 'Menu', 'dimas' ),
 				'section'         => 'footer_menu',
 				'default'         => '',
-				// 'choices'         => $this->get_navigation_bar_get_menus(),
+				'choices'         => $this->get_navigation_bar_get_menus(),
 
 			),
 
@@ -3826,7 +3692,7 @@ class Settings {
 				'fields'          => array(
 					'item' => array(
 						'type'    => 'select',
-						// 'choices' => $this->footer_items_option(),
+						'choices' => $this->footer_items_setting(),
 					),
 				),
 				'section' => 'footer_extra',
@@ -4894,7 +4760,7 @@ class Settings {
 				),
 				'js_vars'         => array(
 					array(
-						'element'  => '#page-header .page-header__title',
+						'element'  => '#page-header .page-header__title.custom-spacing',
 						'property' => 'padding-top',
 						'units'    => 'px',
 					),
@@ -4926,7 +4792,7 @@ class Settings {
 				),
 				'js_vars'         => array(
 					array(
-						'element'  => '#page-header .page-header__title',
+						'element'  => '#page-header .page-header__title.custom-spacing',
 						'property' => 'padding-bottom',
 						'units'    => 'px',
 					),
@@ -5294,7 +5160,7 @@ class Settings {
 				'type'            => 'text',
 				'label'           => esc_html__('Title', 'dimas'),
 				'section'         => 'recently_viewed',
-				'default'         => '',
+				'default'         => esc_html__('Recently Viewed', 'dimas'),
 				'active_callback' => array(
 					array(
 						'setting'  => 'recently_viewed_enable',
@@ -5308,7 +5174,7 @@ class Settings {
 				'type'            => 'text',
 				'label'           => esc_html__('Button Text', 'dimas'),
 				'section'         => 'recently_viewed',
-				'default'         => '',
+				'default'         => esc_html__('View All', 'dimas'),
 				'active_callback' => array(
 					array(
 						'setting'  => 'recently_viewed_enable',
@@ -5385,7 +5251,7 @@ class Settings {
 				'fields'          => array(
 					'item' => array(
 						'type'    => 'select',
-						// 'choices' => $this->topbar_items_option(),
+						'choices' => $this->topbar_items_setting(),
 					),
 				),
 				'active_callback' => array(
@@ -5473,10 +5339,15 @@ class Settings {
 				'fields'      => array(
 					'item' => array(
 						'type'    => 'select',
-						// 'choices' => $this->mobile_header_icons_option(),
+						'choices' => $this->mobile_header_icons_setting(),
 					),
 				),
 			),
+			'mobile_logo_custom_field_1'        => array(
+				'type'    => 'custom',
+				'section' => 'mobile_header',
+					'default' => '<hr/>',
+				),
 
 				// Page
 				'mobile_page_header_hr'             => array(
@@ -6047,30 +5918,6 @@ class Settings {
 						),
 					),
 				),
-				'shop_products_hr_5' => array(
-					'type'    => 'custom',
-					'default' => '<hr/><h2>' . esc_html__( 'Catalog Toolbar', 'dimas' ) . '</h2>',
-					'section' => 'mobile_product_catalog',
-					'active_callback' => array(
-						array(
-							'setting'  => 'mobile_navigation_bar',
-							'operator' => 'in',
-							'value'    => array( 'none', 'standard', 'simple' ),
-						),
-					),
-				),
-				'mobile_filter_label'    => array(
-					'type'            => 'text',
-					'label'           => esc_html__( 'Filter Label', 'dimas' ),
-					'section'         => 'mobile_product_catalog',
-					'active_callback' => array(
-						array(
-							'setting'  => 'mobile_navigation_bar',
-							'operator' => 'in',
-							'value'    => array( 'none', 'standard', 'simple' ),
-						),
-					),
-				),
 				// Single Product
 				'mobile_single_product_breadcrumb'    => array(
 					'type'        => 'toggle',
@@ -6078,16 +5925,6 @@ class Settings {
 					'label'       => esc_html__( 'Enable Breadcrumb', 'dimas' ),
 					'section'     => 'mobile_single_product',
 					'description' => esc_html__( 'Enable to show a page header for the single product page below the site header', 'dimas' ),
-				),
-				'mobile_product_tabs_status'           => array(
-					'type'    => 'select',
-					'label'   => esc_html__( 'Product Tabs Status', 'dimas' ),
-					'default' => 'close',
-					'section' => 'mobile_single_product',
-					'choices' => array(
-						'close' => esc_html__( 'Close all tabs', 'dimas' ),
-						'first' => esc_html__( 'Open first tab', 'dimas' ),
-					),
 				),
 
 				'mobile_version'                        => array(
@@ -6147,7 +5984,7 @@ class Settings {
 					'label'           => esc_html__( 'Items', 'dimas' ),
 					'section'         => 'mobile_version',
 					'default'         => array( 'home', 'menu', 'search', 'account' ),
-					// 'choices'         => $this->navigation_bar_items_option(),
+					'choices'         => $this->navigation_bar_items_setting(),
 					'active_callback' => array(
 						array(
 							'setting'  => 'mobile_navigation_bar',
@@ -6162,7 +5999,7 @@ class Settings {
 					'label'           => esc_html__( 'Item', 'dimas' ),
 					'section'         => 'mobile_version',
 					'default'         => 'menu',
-					// 'choices'         => $this->navigation_bar_items_option(),
+					'choices'         => $this->navigation_bar_items_setting(),
 					'active_callback' => array(
 						array(
 							'setting'  => 'mobile_navigation_bar',
@@ -6195,7 +6032,7 @@ class Settings {
 					'label'           => esc_html__( 'Menu', 'dimas' ),
 					'section'         => 'mobile_version',
 					'default'         => '',
-					// 'choices'         => $this->get_navigation_bar_get_menus(),
+					'choices'         => $this->get_navigation_bar_get_menus(),
 
 				),
 				'mobile_navigation_bar_menu_side_type'  => array(
@@ -6231,8 +6068,7 @@ class Settings {
 						),
 					),
 				),
-		);	
-
+		);
 
 		$settings['panels']   = apply_filters('dimas_customize_panels', $panels);
 		$settings['sections'] = apply_filters('dimas_customize_sections', $sections);

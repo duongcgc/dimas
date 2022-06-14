@@ -67,7 +67,7 @@ class Fields {
 			'color_scheme_title'  => array(
 				'type'  => 'custom',
 				'section'     => 'colors',
-				'label' => esc_html__( 'Color Scheme', 'razzi' ),
+				'label' => esc_html__( 'Color Scheme', 'dimas' ),
 			),
 			'color_scheme'        => array(
 				'type'            => 'color-palette',
@@ -96,13 +96,13 @@ class Fields {
 			),
 			'color_scheme_custom' => array(
 				'type'      => 'checkbox',
-				'label'     => esc_html__( 'Pick my favorite color', 'razzi' ),
+				'label'     => esc_html__( 'Pick my favorite color', 'dimas' ),
 				'default'   => false,
 				'section'     => 'colors',
 			),
 			'color_scheme_color'  => array(
 				'type'            => 'color',
-				'label'           => esc_html__( 'Custom Color', 'razzi' ),
+				'label'           => esc_html__( 'Custom Color', 'dimas' ),
 				'default'         => '#161619',
 				'section'     => 'colors',
 				'active_callback' => array(
@@ -115,15 +115,15 @@ class Fields {
 			),
 			'preloader_enable'           => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__( 'Enable Preloader', 'razzi' ),
-				'description' => esc_html__( 'Show a waiting screen when page is loading', 'razzi' ),
+				'label'       => esc_html__( 'Enable Preloader', 'dimas' ),
+				'description' => esc_html__( 'Show a waiting screen when page is loading', 'dimas' ),
 				'default'     => false,
 				'section'     => 'preloader',
 				'transport'   => 'postMessage',
 			),
 			'preloader_background_color' => array(
 				'type'            => 'color',
-				'label'           => esc_html__( 'Background Color', 'razzi' ),
+				'label'           => esc_html__( 'Background Color', 'dimas' ),
 				'default'         => 'rgba(255,255,255,1)',
 				'section'     => 'preloader',
 				'choices'         => array(
@@ -146,13 +146,13 @@ class Fields {
 			),
 			'preloader'                  => array(
 				'type'            => 'radio',
-				'label'           => esc_html__( 'Preloader', 'razzi' ),
+				'label'           => esc_html__( 'Preloader', 'dimas' ),
 				'default'         => 'default',
 				'section'     => 'preloader',
 				'choices'         => array(
-					'default'  => esc_attr__( 'Default Icon', 'razzi' ),
-					'image'    => esc_attr__( 'Upload custom image', 'razzi' ),
-					'external' => esc_attr__( 'External image URL', 'razzi' ),
+					'default'  => esc_attr__( 'Default Icon', 'dimas' ),
+					'image'    => esc_attr__( 'Upload custom image', 'dimas' ),
+					'external' => esc_attr__( 'External image URL', 'dimas' ),
 				),
 				'active_callback' => array(
 					array(
@@ -165,7 +165,7 @@ class Fields {
 			),
 			'preloader_image'            => array(
 				'type'            => 'image',
-				'description'     => esc_html__( 'Preloader Image', 'razzi' ),
+				'description'     => esc_html__( 'Preloader Image', 'dimas' ),
 				'section'     => 'preloader',
 				'active_callback' => array(
 					array(
@@ -183,11 +183,11 @@ class Fields {
 			),
 			'preloader_url'              => array(
 				'type'            => 'text',
-				'description'     => esc_html__( 'Preloader URL', 'razzi' ),
+				'description'     => esc_html__( 'Preloader URL', 'dimas' ),
 				'choices'         => array(
-					'default'  => esc_attr__( 'Default Icon', 'razzi' ),
-					'image'    => esc_attr__( 'Upload custom image', 'razzi' ),
-					'external' => esc_attr__( 'External image URL', 'razzi' ),
+					'default'  => esc_attr__( 'Default Icon', 'dimas' ),
+					'image'    => esc_attr__( 'Upload custom image', 'dimas' ),
+					'external' => esc_attr__( 'External image URL', 'dimas' ),
 				),
 				'section'     => 'preloader',
 				'active_callback' => array(
@@ -207,8 +207,8 @@ class Fields {
 			// Popup
 			'newsletter_popup_enable' => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Enable Popup', 'razzi'),
-				'description' => esc_html__('Show a newsletter popup after website loaded.', 'razzi'),
+				'label'       => esc_html__('Enable Popup', 'dimas'),
+				'description' => esc_html__('Show a newsletter popup after website loaded.', 'dimas'),
 				'section'     => 'newsletter_popup',
 				'default'     => false,
 				'transport'   => 'postMessage',
@@ -216,12 +216,12 @@ class Fields {
 
 			'newsletter_popup_layout' => array(
 				'type'      => 'radio-buttonset',
-				'label'     => esc_html__('Popup Layout', 'razzi'),
+				'label'     => esc_html__('Popup Layout', 'dimas'),
 				'default'   => '2-columns',
 				'transport' => 'postMessage',
 				'choices'   => array(
-					'1-column'  => esc_attr__('1 Column', 'razzi'),
-					'2-columns' => esc_attr__('2 Columns', 'razzi'),
+					'1-column'  => esc_attr__('1 Column', 'dimas'),
+					'2-columns' => esc_attr__('2 Columns', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -235,8 +235,8 @@ class Fields {
 
 			'newsletter_popup_image' => array(
 				'type'            => 'image',
-				'label'           => esc_html__('Image', 'razzi'),
-				'description'     => esc_html__('This image will be used as background of the popup if the layout is 1 Column', 'razzi'),
+				'label'           => esc_html__('Image', 'dimas'),
+				'description'     => esc_html__('This image will be used as background of the popup if the layout is 1 Column', 'dimas'),
 				'transport'       => 'postMessage',
 				'active_callback' => array(
 					array(
@@ -250,8 +250,8 @@ class Fields {
 
 			'newsletter_popup_content' => array(
 				'type'            => 'editor',
-				'label'           => esc_html__('Popup Content', 'razzi'),
-				'description'     => esc_html__('Enter popup content. HTML and shortcodes are allowed.', 'razzi'),
+				'label'           => esc_html__('Popup Content', 'dimas'),
+				'description'     => esc_html__('Enter popup content. HTML and shortcodes are allowed.', 'dimas'),
 				'active_callback' => array(
 					array(
 						'setting'  => 'newsletter_popup_enable',
@@ -265,9 +265,9 @@ class Fields {
 
 			'newsletter_popup_form' => array(
 				'type'            => 'textarea',
-				'label'           => esc_html__('NewsLetter Form', 'razzi'),
+				'label'           => esc_html__('NewsLetter Form', 'dimas'),
 				'default'         => '',
-				'description'     => sprintf(wp_kses_post('Enter the shortcode of MailChimp form . You can edit your sign - up form in the <a href= "%s" > MailChimp for WordPress form settings </a>.', 'razzi'), admin_url('admin.php?page=mailchimp-for-wp-forms')),
+				'description'     => sprintf(wp_kses_post('Enter the shortcode of MailChimp form . You can edit your sign - up form in the <a href= "%s" > MailChimp for WordPress form settings </a>.', 'dimas'), admin_url('admin.php?page=mailchimp-for-wp-forms')),
 				'section'         => 'newsletter_popup',
 				'active_callback' => array(
 					array(
@@ -282,8 +282,8 @@ class Fields {
 
 			'newsletter_popup_frequency' => array(
 				'type'        => 'number',
-				'label'       => esc_html__('Frequency', 'razzi'),
-				'description' => esc_html__('Do NOT show the popup to the same visitor again until this much days has passed.', 'razzi'),
+				'label'       => esc_html__('Frequency', 'dimas'),
+				'description' => esc_html__('Do NOT show the popup to the same visitor again until this much days has passed.', 'dimas'),
 				'default'     => 1,
 				'choices'     => array(
 					'min'  => 0,
@@ -302,12 +302,12 @@ class Fields {
 
 			'newsletter_popup_visible' => array(
 				'type'        => 'select',
-				'label'       => esc_html__('Popup Visible', 'razzi'),
-				'description' => esc_html__('Select when the popup appear', 'razzi'),
+				'label'       => esc_html__('Popup Visible', 'dimas'),
+				'description' => esc_html__('Select when the popup appear', 'dimas'),
 				'default'     => 'loaded',
 				'choices'     => array(
-					'loaded' => esc_html__('Right after page loads', 'razzi'),
-					'delay'  => esc_html__('Wait for seconds', 'razzi'),
+					'loaded' => esc_html__('Right after page loads', 'dimas'),
+					'delay'  => esc_html__('Wait for seconds', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -322,8 +322,8 @@ class Fields {
 
 			'newsletter_popup_visible_delay' => array(
 				'type'        => 'number',
-				'label'       => esc_html__('Delay Time', 'razzi'),
-				'description' => esc_html__('The time (in seconds) before the popup is displayed, after the page loaded.', 'razzi'),
+				'label'       => esc_html__('Delay Time', 'dimas'),
+				'description' => esc_html__('The time (in seconds) before the popup is displayed, after the page loaded.', 'dimas'),
 				'default'     => 5,
 				'choices'     => array(
 					'min'  => 0,
@@ -348,20 +348,20 @@ class Fields {
 			// Maintenance
 			'maintenance_enable'             => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Enable Maintenance Mode', 'razzi'),
-				'description' => esc_html__('Put your site into maintenance mode', 'razzi'),
+				'label'       => esc_html__('Enable Maintenance Mode', 'dimas'),
+				'description' => esc_html__('Put your site into maintenance mode', 'dimas'),
 				'default'     => false,
 				'section'     => 'maintenance',
 			),
 			'maintenance_mode'               => array(
 				'type'        => 'radio',
-				'label'       => esc_html__('Mode', 'razzi'),
-				'description' => esc_html__('Select the correct mode for your site', 'razzi'),
-				'tooltip'     => wp_kses_post(sprintf(__('If you are putting your site into maintenance mode for a longer perior of time, you should set this to "Coming Soon". Maintenance will return HTTP 503, Comming Soon will set HTTP to 200. <a href="%s" target="_blank">Learn more</a>', 'razzi'), 'https://yoast.com/http-503-site-maintenance-seo/')),
+				'label'       => esc_html__('Mode', 'dimas'),
+				'description' => esc_html__('Select the correct mode for your site', 'dimas'),
+				'tooltip'     => wp_kses_post(sprintf(__('If you are putting your site into maintenance mode for a longer perior of time, you should set this to "Coming Soon". Maintenance will return HTTP 503, Comming Soon will set HTTP to 200. <a href="%s" target="_blank">Learn more</a>', 'dimas'), 'https://yoast.com/http-503-site-maintenance-seo/')),
 				'default'     => 'maintenance',
 				'choices'     => array(
-					'maintenance' => esc_attr__('Maintenance', 'razzi'),
-					'coming_soon' => esc_attr__('Coming Soon', 'razzi'),
+					'maintenance' => esc_attr__('Maintenance', 'dimas'),
+					'coming_soon' => esc_attr__('Coming Soon', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -374,7 +374,7 @@ class Fields {
 			),
 			'maintenance_page'               => array(
 				'type'            => 'dropdown-pages',
-				'label'           => esc_html__('Maintenance Page', 'razzi'),
+				'label'           => esc_html__('Maintenance Page', 'dimas'),
 				'default'         => 0,
 				'active_callback' => array(
 					array(
@@ -389,8 +389,8 @@ class Fields {
 			// Typography
 			'typo_body'                      => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Body', 'razzi' ),
-				'description' => esc_html__( 'Customize the body font', 'razzi' ),
+				'label'       => esc_html__( 'Body', 'dimas' ),
+				'description' => esc_html__( 'Customize the body font', 'dimas' ),
 				'section' 	  => 'typo_main',
 				'default'     => array(
 					'font-family' => '',
@@ -410,8 +410,8 @@ class Fields {
 
 			'typo_h1'                        => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Heading 1', 'razzi' ),
-				'description' => esc_html__( 'Customize the H1 font', 'razzi' ),
+				'label'       => esc_html__( 'Heading 1', 'dimas' ),
+				'description' => esc_html__( 'Customize the H1 font', 'dimas' ),
 				'section' 	  => 'typo_headings',
 				'default'     => array(
 					'font-family'    => '',
@@ -431,8 +431,8 @@ class Fields {
 			),
 			'typo_h2'                        => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Heading 2', 'razzi' ),
-				'description' => esc_html__( 'Customize the H2 font', 'razzi' ),
+				'label'       => esc_html__( 'Heading 2', 'dimas' ),
+				'description' => esc_html__( 'Customize the H2 font', 'dimas' ),
 				'section' 	  => 'typo_headings',
 				'default'     => array(
 					'font-family'    => '',
@@ -452,8 +452,8 @@ class Fields {
 			),
 			'typo_h3'                        => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Heading 3', 'razzi' ),
-				'description' => esc_html__( 'Customize the H3 font', 'razzi' ),
+				'label'       => esc_html__( 'Heading 3', 'dimas' ),
+				'description' => esc_html__( 'Customize the H3 font', 'dimas' ),
 				'section' 	  => 'typo_headings',
 				'default'     => array(
 					'font-family'    => '',
@@ -473,8 +473,8 @@ class Fields {
 			),
 			'typo_h4'                        => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Heading 4', 'razzi' ),
-				'description' => esc_html__( 'Customize the H4 font', 'razzi' ),
+				'label'       => esc_html__( 'Heading 4', 'dimas' ),
+				'description' => esc_html__( 'Customize the H4 font', 'dimas' ),
 				'section' 	  => 'typo_headings',
 				'default'     => array(
 					'font-family'    => '',
@@ -494,8 +494,8 @@ class Fields {
 			),
 			'typo_h5'                        => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Heading 5', 'razzi' ),
-				'description' => esc_html__( 'Customize the H5 font', 'razzi' ),
+				'label'       => esc_html__( 'Heading 5', 'dimas' ),
+				'description' => esc_html__( 'Customize the H5 font', 'dimas' ),
 				'section' 	  => 'typo_headings',
 				'default'     => array(
 					'font-family'    => '',
@@ -515,8 +515,8 @@ class Fields {
 			),
 			'typo_h6'                        => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Heading 6', 'razzi' ),
-				'description' => esc_html__( 'Customize the H6 font', 'razzi' ),
+				'label'       => esc_html__( 'Heading 6', 'dimas' ),
+				'description' => esc_html__( 'Customize the H6 font', 'dimas' ),
 				'section' 	  => 'typo_headings',
 				'default'     => array(
 					'font-family'    => '',
@@ -537,8 +537,8 @@ class Fields {
 
 			'typo_menu'                      => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Menu', 'razzi' ),
-				'description' => esc_html__( 'Customize the menu font', 'razzi' ),
+				'label'       => esc_html__( 'Menu', 'dimas' ),
+				'description' => esc_html__( 'Customize the menu font', 'dimas' ),
 				'section' 	  => 'typo_header',
 				'default'     => array(
 					'font-family'    => '',
@@ -556,8 +556,8 @@ class Fields {
 			),
 			'typo_submenu'                   => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Sub-Menu', 'razzi' ),
-				'description' => esc_html__( 'Customize the sub-menu font', 'razzi' ),
+				'label'       => esc_html__( 'Sub-Menu', 'dimas' ),
+				'description' => esc_html__( 'Customize the sub-menu font', 'dimas' ),
 				'section'     => 'typo_header',
 				'default'     => array(
 					'font-family'    => '',
@@ -576,8 +576,8 @@ class Fields {
 
 			'typo_page_title'              => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Page Title', 'razzi' ),
-				'description' => esc_html__( 'Customize the page title font', 'razzi' ),
+				'label'       => esc_html__( 'Page Title', 'dimas' ),
+				'description' => esc_html__( 'Customize the page title font', 'dimas' ),
 				'section'     => 'typo_page',
 				'default'     => array(
 					'font-family'    => '',
@@ -598,8 +598,8 @@ class Fields {
 
 			'typo_blog_header_title'              => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Blog Header Title', 'razzi' ),
-				'description' => esc_html__( 'Customize the font of blog header', 'razzi' ),
+				'label'       => esc_html__( 'Blog Header Title', 'dimas' ),
+				'description' => esc_html__( 'Customize the font of blog header', 'dimas' ),
 				'section'     => 'typo_posts',
 				'default'     => array(
 					'font-family'    => '',
@@ -619,8 +619,8 @@ class Fields {
 			),
 			'typo_blog_post_title'              => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Blog Post Title', 'razzi' ),
-				'description' => esc_html__( 'Customize the font of blog post title', 'razzi' ),
+				'label'       => esc_html__( 'Blog Post Title', 'dimas' ),
+				'description' => esc_html__( 'Customize the font of blog post title', 'dimas' ),
 				'section'     => 'typo_posts',
 				'default'     => array(
 					'font-family'    => '',
@@ -640,8 +640,8 @@ class Fields {
 			),
 			'typo_blog_post_excerpt'              => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Blog Post Excerpt', 'razzi' ),
-				'description' => esc_html__( 'Customize the font of blog post excerpt', 'razzi' ),
+				'label'       => esc_html__( 'Blog Post Excerpt', 'dimas' ),
+				'description' => esc_html__( 'Customize the font of blog post excerpt', 'dimas' ),
 				'section'     => 'typo_posts',
 				'default'     => array(
 					'font-family'    => '',
@@ -662,8 +662,8 @@ class Fields {
 
 			'typo_widget_title'              => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Widget Title', 'razzi' ),
-				'description' => esc_html__( 'Customize the widget title font', 'razzi' ),
+				'label'       => esc_html__( 'Widget Title', 'dimas' ),
+				'description' => esc_html__( 'Customize the widget title font', 'dimas' ),
 				'section'     => 'typo_widget',
 				'default'     => array(
 					'font-family'    => '',
@@ -683,8 +683,8 @@ class Fields {
 
 			'typo_footer_extra'              => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Footer Extra', 'razzi' ),
-				'description' => esc_html__( 'Customize the font of footer extra', 'razzi' ),
+				'label'       => esc_html__( 'Footer Extra', 'dimas' ),
+				'description' => esc_html__( 'Customize the font of footer extra', 'dimas' ),
 				'section'     => 'typo_widget',
 				'default'     => array(
 					'font-family'    => '',
@@ -702,8 +702,8 @@ class Fields {
 			),
 			'typo_footer_widgets'              => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Footer Widgets', 'razzi' ),
-				'description' => esc_html__( 'Customize the font of footer widgets', 'razzi' ),
+				'label'       => esc_html__( 'Footer Widgets', 'dimas' ),
+				'description' => esc_html__( 'Customize the font of footer widgets', 'dimas' ),
 				'section'     => 'typo_widget',
 				'default'     => array(
 					'font-family'    => '',
@@ -721,8 +721,8 @@ class Fields {
 			),
 			'typo_footer_main'              => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Footer Main', 'razzi' ),
-				'description' => esc_html__( 'Customize the font of footer main', 'razzi' ),
+				'label'       => esc_html__( 'Footer Main', 'dimas' ),
+				'description' => esc_html__( 'Customize the font of footer main', 'dimas' ),
 				'section'     => 'typo_widget',
 				'default'     => array(
 					'font-family'    => '',
@@ -742,10 +742,10 @@ class Fields {
 			// topbar
 			'topbar'                         => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Topbar', 'razzi'),
+				'label'       => esc_html__('Topbar', 'dimas'),
 				'default'     => '0',
 				'section'     => 'header_top',
-				'description' => esc_html__('Check this option to enable a topbar above the site header', 'razzi'),
+				'description' => esc_html__('Check this option to enable a topbar above the site header', 'dimas'),
 			),
 
 			'topbar_custom_field_1' => array(
@@ -756,7 +756,7 @@ class Fields {
 
 			'topbar_height' => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Height', 'razzi'),
+				'label'     => esc_html__('Height', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '45',
 				'choices'   => array(
@@ -781,13 +781,13 @@ class Fields {
 
 			'topbar_left'  => array(
 				'type'        => 'repeater',
-				'label'       => esc_html__('Left Items', 'razzi'),
-				'description' => esc_html__('Control items on the left side of the topbar', 'razzi'),
+				'label'       => esc_html__('Left Items', 'dimas'),
+				'description' => esc_html__('Control items on the left side of the topbar', 'dimas'),
 				'transport'   => 'postMessage',
 				'default'     => array(),
 				'row_label'   => array(
 					'type'  => 'field',
-					'value' => esc_attr__('Item', 'razzi'),
+					'value' => esc_attr__('Item', 'dimas'),
 					'field' => 'item',
 				),
 				'fields'      => array(
@@ -800,13 +800,13 @@ class Fields {
 			),
 			'topbar_right' => array(
 				'type'        => 'repeater',
-				'label'       => esc_html__('Right Items', 'razzi'),
-				'description' => esc_html__('Control items on the right side of the topbar', 'razzi'),
+				'label'       => esc_html__('Right Items', 'dimas'),
+				'description' => esc_html__('Control items on the right side of the topbar', 'dimas'),
 				'transport'   => 'postMessage',
 				'default'     => array(),
 				'row_label'   => array(
 					'type'  => 'field',
-					'value' => esc_attr__('Item', 'razzi'),
+					'value' => esc_attr__('Item', 'dimas'),
 					'field' => 'item',
 				),
 				'fields'      => array(
@@ -826,7 +826,7 @@ class Fields {
 
 			'topbar_menu_item'       => array(
 				'type'            => 'select',
-				'label'           => esc_html__( 'Menu', 'razzi' ),
+				'label'           => esc_html__( 'Menu', 'dimas' ),
 				'section'         => 'header_top',
 				'default'         => '',
 				// 'choices'         => $this->get_navigation_bar_get_menus(),
@@ -841,13 +841,13 @@ class Fields {
 
 			'topbar_svg_code' => array(
 				'type'              => 'textarea',
-				'label'             => esc_html__('Custom Text SVG', 'razzi'),
-				'description'       => esc_html__('The SVG before your text', 'razzi'),
+				'label'             => esc_html__('Custom Text SVG', 'dimas'),
+				'description'       => esc_html__('The SVG before your text', 'dimas'),
 				'default'           => '',
-				'sanitize_callback' => '\Razzi\Icon::sanitize_svg',
+				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
 				'output'            => array(
 					array(
-						'element' => '.razzi-topbar__text .razzi-svg-icon',
+						'element' => '.dimas-topbar__text .dimas-svg-icon',
 					),
 				),
 				'section' => 'header_top',
@@ -855,8 +855,8 @@ class Fields {
 
 			'topbar_text'             => array(
 				'type'        => 'editor',
-				'label'       => esc_html__('Custom Text', 'razzi'),
-				'description' => esc_html__('The content of Custom Text item', 'razzi'),
+				'label'       => esc_html__('Custom Text', 'dimas'),
+				'description' => esc_html__('The content of Custom Text item', 'dimas'),
 				'default'     => '',
 				'section'     => 'header_top',
 			),
@@ -865,12 +865,12 @@ class Fields {
 			// topbar bg
 			'topbar_bg_custom_color'  => array(
 				'type'    => 'toggle',
-				'label'   => esc_html__('Custom Color', 'razzi'),
+				'label'   => esc_html__('Custom Color', 'dimas'),
 				'section' => 'header_topbar_bg',
 				'default' => 0,
 			),
 			'topbar_bg_color'         => array(
-				'label'           => esc_html__('Background Color', 'razzi'),
+				'label'           => esc_html__('Background Color', 'dimas'),
 				'type'            => 'color',
 				'default'         => '',
 				'transport'       => 'postMessage',
@@ -891,7 +891,7 @@ class Fields {
 			),
 			'topbar_text_color'       => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Text Color', 'razzi'),
+				'label'           => esc_html__('Text Color', 'dimas'),
 				'transport'       => 'postMessage',
 				'default'         => '',
 				'active_callback' => array(
@@ -915,7 +915,7 @@ class Fields {
 			),
 			'topbar_text_color_hover' => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Text Hover Color', 'razzi'),
+				'label'           => esc_html__('Text Hover Color', 'dimas'),
 				'transport'       => 'postMessage',
 				'default'         => '',
 				'active_callback' => array(
@@ -940,13 +940,13 @@ class Fields {
 			),
 			'topbar_bg_border'  => array(
 				'type'    => 'toggle',
-				'label'   => esc_html__('Border Line', 'razzi'),
+				'label'   => esc_html__('Border Line', 'dimas'),
 				'section' => 'header_topbar_bg',
 				'default' => 0,
 			),
 			'topbar_bg_border_color' => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Border Color', 'razzi'),
+				'label'           => esc_html__('Border Color', 'dimas'),
 				'transport'       => 'postMessage',
 				'default'         => '',
 				'active_callback' => array(
@@ -968,30 +968,30 @@ class Fields {
 			// Header Layout
 			'header_type'             => array(
 				'type'        => 'radio',
-				'label'       => esc_html__('Header Type', 'razzi'),
-				'description' => esc_html__('Select a default header or custom header', 'razzi'),
+				'label'       => esc_html__('Header Type', 'dimas'),
+				'description' => esc_html__('Select a default header or custom header', 'dimas'),
 				'section'     => 'header_layout',
 				'default'     => 'default',
 				'choices'     => array(
-					'default' => esc_html__('Use pre-build header', 'razzi'),
-					'custom'  => esc_html__('Build my own', 'razzi'),
+					'default' => esc_html__('Use pre-build header', 'dimas'),
+					'custom'  => esc_html__('Build my own', 'dimas'),
 				),
 			),
 			'header_layout'           => array(
 				'type'    => 'select',
-				'label'   => esc_html__('Header Layout', 'razzi'),
+				'label'   => esc_html__('Header Layout', 'dimas'),
 				'section' => 'header_layout',
 				'default' => 'v1',
 				'choices' => array(
-					'v1' => esc_html__('Header v1', 'razzi'),
-					'v2' => esc_html__('Header v2', 'razzi'),
-					'v3' => esc_html__('Header v3', 'razzi'),
-					'v4' => esc_html__('Header v4', 'razzi'),
-					'v5' => esc_html__('Header v5', 'razzi'),
-					'v6' => esc_html__('Header v6', 'razzi'),
-					'v7' => esc_html__('Header v7', 'razzi'),
-					'v8' => esc_html__('Header v8', 'razzi'),
-					'v9' => esc_html__('Header v9', 'razzi'),
+					'v1' => esc_html__('Header v1', 'dimas'),
+					'v2' => esc_html__('Header v2', 'dimas'),
+					'v3' => esc_html__('Header v3', 'dimas'),
+					'v4' => esc_html__('Header v4', 'dimas'),
+					'v5' => esc_html__('Header v5', 'dimas'),
+					'v6' => esc_html__('Header v6', 'dimas'),
+					'v7' => esc_html__('Header v7', 'dimas'),
+					'v8' => esc_html__('Header v8', 'dimas'),
+					'v9' => esc_html__('Header v9', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -1003,7 +1003,7 @@ class Fields {
 			),
 			'header_search_icon'  => array(
 				'type'    => 'toggle',
-				'label'   => esc_html__('Header Search', 'razzi'),
+				'label'   => esc_html__('Header Search', 'dimas'),
 				'section' => 'header_layout',
 				'default' => 1,
 				'active_callback' => array(
@@ -1021,7 +1021,7 @@ class Fields {
 			),
 			'header_account_icon'  => array(
 				'type'    => 'toggle',
-				'label'   => esc_html__('Header Account', 'razzi'),
+				'label'   => esc_html__('Header Account', 'dimas'),
 				'section' => 'header_layout',
 				'default' => 1,
 				'active_callback' => array(
@@ -1039,7 +1039,7 @@ class Fields {
 			),
 			'header_wishlist_icon'  => array(
 				'type'    => 'toggle',
-				'label'   => esc_html__('Header Wishlist', 'razzi'),
+				'label'   => esc_html__('Header Wishlist', 'dimas'),
 				'section' => 'header_layout',
 				'default' => 1,
 				'active_callback' => array(
@@ -1057,7 +1057,7 @@ class Fields {
 			),
 			'header_cart_icon'  => array(
 				'type'    => 'toggle',
-				'label'   => esc_html__('Header Cart', 'razzi'),
+				'label'   => esc_html__('Header Cart', 'dimas'),
 				'section' => 'header_layout',
 				'default' => 1,
 				'active_callback' => array(
@@ -1082,30 +1082,30 @@ class Fields {
 			// Header Sticky
 			'header_sticky'                             => array(
 				'type'    => 'toggle',
-				'label'   => esc_html__('Sticky Header', 'razzi'),
+				'label'   => esc_html__('Sticky Header', 'dimas'),
 				'default' => 0,
 				'section' => 'header_layout',
 			),
 			'header_width'	=> array(
 				'type'    => 'select',
-				'label'   => esc_html__('Header Width', 'razzi'),
+				'label'   => esc_html__('Header Width', 'dimas'),
 				'section' => 'header_layout',
 				'default' => '',
 				'choices' => array(
-					''      => esc_html__('Normal', 'razzi'),
-					'large' => esc_html__('Large', 'razzi'),
-					'wide'  => esc_html__('Wide', 'razzi'),
+					''      => esc_html__('Normal', 'dimas'),
+					'large' => esc_html__('Large', 'dimas'),
+					'wide'  => esc_html__('Wide', 'dimas'),
 				),
 			),
 			'header_sticky_el'                          => array(
 				'type'     => 'multicheck',
-				'label'    => esc_html__('Sticky Header Elements', 'razzi'),
+				'label'    => esc_html__('Sticky Header Elements', 'dimas'),
 				'section'  => 'header_layout',
 				'default'  => array('header_main'),
 				'priority' => 10,
 				'choices'  => array(
-					'header_main'   => esc_html__('Header Main', 'razzi'),
-					'header_bottom' => esc_html__('Header Bottom', 'razzi'),
+					'header_main'   => esc_html__('Header Main', 'dimas'),
+					'header_bottom' => esc_html__('Header Bottom', 'dimas'),
 				),
 				'active_callback' => function() {
 					// return $this->display_header_sticky();
@@ -1115,14 +1115,14 @@ class Fields {
 			// Header main
 			'header_main_left'                          => array(
 				'type'        => 'repeater',
-				'label'       => esc_html__('Left Items', 'razzi'),
-				'description' => esc_html__('Control items on the left side of header main', 'razzi'),
+				'label'       => esc_html__('Left Items', 'dimas'),
+				'description' => esc_html__('Control items on the left side of header main', 'dimas'),
 				'transport'   => 'postMessage',
 				'section'     => 'header_main',
 				'default'     => array(),
 				'row_label'   => array(
 					'type'  => 'field',
-					'value' => esc_attr__('Item', 'razzi'),
+					'value' => esc_attr__('Item', 'dimas'),
 					'field' => 'item',
 				),
 				'fields'          => array(
@@ -1141,14 +1141,14 @@ class Fields {
 			),
 			'header_main_center'                        => array(
 				'type'        => 'repeater',
-				'label'       => esc_html__('Center Items', 'razzi'),
-				'description' => esc_html__('Control items at the center of header main', 'razzi'),
+				'label'       => esc_html__('Center Items', 'dimas'),
+				'description' => esc_html__('Control items at the center of header main', 'dimas'),
 				'transport'   => 'postMessage',
 				'section'     => 'header_main',
 				'default'     => array(),
 				'row_label'   => array(
 					'type'  => 'field',
-					'value' => esc_attr__('Item', 'razzi'),
+					'value' => esc_attr__('Item', 'dimas'),
 					'field' => 'item',
 				),
 				'fields'          => array(
@@ -1167,14 +1167,14 @@ class Fields {
 			),
 			'header_main_right'                         => array(
 				'type'        => 'repeater',
-				'label'       => esc_html__('Right Items', 'razzi'),
-				'description' => esc_html__('Control items on the right of header main', 'razzi'),
+				'label'       => esc_html__('Right Items', 'dimas'),
+				'description' => esc_html__('Control items on the right of header main', 'dimas'),
 				'transport'   => 'postMessage',
 				'section'     => 'header_main',
 				'default'     => array(),
 				'row_label'   => array(
 					'type'  => 'field',
-					'value' => esc_attr__('Item', 'razzi'),
+					'value' => esc_attr__('Item', 'dimas'),
 					'field' => 'item',
 				),
 				'fields'          => array(
@@ -1198,7 +1198,7 @@ class Fields {
 			),
 			'header_main_height'                        => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Header Height', 'razzi'),
+				'label'     => esc_html__('Header Height', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'header_main',
 				'default'   => '90',
@@ -1216,8 +1216,8 @@ class Fields {
 			),
 			'sticky_header_main_height'                 => array(
 				'type'        => 'slider',
-				'label'       => esc_html__('Sticky Header Height', 'razzi'),
-				'description' => esc_html__('Adjust Header Main height when the Sticky Header enabled', 'razzi'),
+				'label'       => esc_html__('Sticky Header Height', 'dimas'),
+				'description' => esc_html__('Adjust Header Main height when the Sticky Header enabled', 'dimas'),
 				'transport'   => 'postMessage',
 				'section'     => 'header_main',
 				'default'     => '90',
@@ -1244,14 +1244,14 @@ class Fields {
 			// Header Bottom
 			'header_bottom_left'                        => array(
 				'type'        => 'repeater',
-				'label'       => esc_html__('Left Items', 'razzi'),
-				'description' => esc_html__('Control items on the left side of header bottom', 'razzi'),
+				'label'       => esc_html__('Left Items', 'dimas'),
+				'description' => esc_html__('Control items on the left side of header bottom', 'dimas'),
 				'transport'   => 'postMessage',
 				'section'     => 'header_bottom',
 				'default'     => array(),
 				'row_label'   => array(
 					'type'  => 'field',
-					'value' => esc_attr__('Item', 'razzi'),
+					'value' => esc_attr__('Item', 'dimas'),
 					'field' => 'item',
 				),
 				'fields'          => array(
@@ -1270,14 +1270,14 @@ class Fields {
 			),
 			'header_bottom_center'                      => array(
 				'type'        => 'repeater',
-				'label'       => esc_html__('Center Items', 'razzi'),
-				'description' => esc_html__('Control items at the center of header bottom', 'razzi'),
+				'label'       => esc_html__('Center Items', 'dimas'),
+				'description' => esc_html__('Control items at the center of header bottom', 'dimas'),
 				'transport'   => 'postMessage',
 				'section'     => 'header_bottom',
 				'default'     => array(),
 				'row_label'   => array(
 					'type'  => 'field',
-					'value' => esc_attr__('Item', 'razzi'),
+					'value' => esc_attr__('Item', 'dimas'),
 					'field' => 'item',
 				),
 				'fields'          => array(
@@ -1296,14 +1296,14 @@ class Fields {
 			),
 			'header_bottom_right'                       => array(
 				'type'        => 'repeater',
-				'label'       => esc_html__('Right Items', 'razzi'),
-				'description' => esc_html__('Control items on the right of header bottom', 'razzi'),
+				'label'       => esc_html__('Right Items', 'dimas'),
+				'description' => esc_html__('Control items on the right of header bottom', 'dimas'),
 				'transport'   => 'postMessage',
 				'section'     => 'header_bottom',
 				'default'     => array(),
 				'row_label'   => array(
 					'type'  => 'field',
-					'value' => esc_attr__('Item', 'razzi'),
+					'value' => esc_attr__('Item', 'dimas'),
 					'field' => 'item',
 				),
 				'fields'          => array(
@@ -1327,7 +1327,7 @@ class Fields {
 			),
 			'header_bottom_height'                      => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Header Height', 'razzi'),
+				'label'     => esc_html__('Header Height', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'header_bottom',
 				'default'   => '50',
@@ -1345,8 +1345,8 @@ class Fields {
 			),
 			'sticky_header_bottom_height'               => array(
 				'type'        => 'slider',
-				'label'       => esc_html__('Sticky Header Height', 'razzi'),
-				'description' => esc_html__('Adjust Header Bottom height when the Sticky Header enabled', 'razzi'),
+				'label'       => esc_html__('Sticky Header Height', 'dimas'),
+				'description' => esc_html__('Adjust Header Bottom height when the Sticky Header enabled', 'dimas'),
 				'transport'   => 'postMessage',
 				'section'     => 'header_bottom',
 				'default'     => '50',
@@ -1373,13 +1373,13 @@ class Fields {
 			// Header Backgound
 			'header_main_background'                    => array(
 				'type'    => 'toggle',
-				'label'   => esc_html__('Header Main Custom Color', 'razzi'),
+				'label'   => esc_html__('Header Main Custom Color', 'dimas'),
 				'section' => 'header_background',
 				'default' => 0,
 			),
 			'header_main_background_color'              => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Background Color', 'razzi'),
+				'label'           => esc_html__('Background Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_background',
@@ -1396,14 +1396,14 @@ class Fields {
 						'property' => 'background-color',
 					),
 					array(
-						'element'  => '.header-v6 .header-main .razzi-header-container',
+						'element'  => '.header-v6 .header-main .dimas-header-container',
 						'property' => '--rz-background-color-light',
 					),
 				),
 			),
 			'header_main_background_text_color'         => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Text Color', 'razzi'),
+				'label'           => esc_html__('Text Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_background',
@@ -1427,7 +1427,7 @@ class Fields {
 			),
 			'header_main_background_text_color_hover'   => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Text Hover Color', 'razzi'),
+				'label'           => esc_html__('Text Hover Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_background',
@@ -1447,7 +1447,7 @@ class Fields {
 			),
 			'header_main_background_border_color'       => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Border Color', 'razzi'),
+				'label'           => esc_html__('Border Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_background',
@@ -1472,13 +1472,13 @@ class Fields {
 			),
 			'header_bottom_background'                  => array(
 				'type'    => 'toggle',
-				'label'   => esc_html__('Header Bottom Custom Color', 'razzi'),
+				'label'   => esc_html__('Header Bottom Custom Color', 'dimas'),
 				'section' => 'header_background',
 				'default' => 0,
 			),
 			'header_bottom_background_color'            => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Background Color', 'razzi'),
+				'label'           => esc_html__('Background Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_background',
@@ -1498,7 +1498,7 @@ class Fields {
 			),
 			'header_bottom_background_text_color'       => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Text Color', 'razzi'),
+				'label'           => esc_html__('Text Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_background',
@@ -1526,7 +1526,7 @@ class Fields {
 			),
 			'header_bottom_background_text_color_hover' => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Text Hover Color', 'razzi'),
+				'label'           => esc_html__('Text Hover Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_background',
@@ -1546,7 +1546,7 @@ class Fields {
 			),
 			'header_bottom_background_border_color'     => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Border Color', 'razzi'),
+				'label'           => esc_html__('Border Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_background',
@@ -1572,31 +1572,31 @@ class Fields {
 
 			'header_active_primary_menu_color'                  => array(
 				'type'    => 'select',
-				'label'   => esc_html__('Active Primary Menu Color', 'razzi'),
+				'label'   => esc_html__('Active Primary Menu Color', 'dimas'),
 				'section' => 'header_background',
 				'default' => 'primary',
 				'choices' => array(
-					'primary'  => esc_html__('Primary Color', 'razzi'),
-					'current' => esc_html__('Current Color', 'razzi'),
+					'primary'  => esc_html__('Primary Color', 'dimas'),
+					'current' => esc_html__('Current Color', 'dimas'),
 				),
 			),
 
 			// Header Campain
 			'campaign_bar'                              => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Campaign Bar', 'razzi'),
+				'label'       => esc_html__('Campaign Bar', 'dimas'),
 				'section'     => 'header_campaign',
-				'description' => esc_html__('Display a bar bellow site header. This bar will be hidden when the header background is transparent.', 'razzi'),
+				'description' => esc_html__('Display a bar bellow site header. This bar will be hidden when the header background is transparent.', 'dimas'),
 				'default'     => false,
 			),
 			'campaign_bar_position'                     => array(
 				'type'    => 'select',
-				'label'   => esc_html__('Position', 'razzi'),
+				'label'   => esc_html__('Position', 'dimas'),
 				'section' => 'header_campaign',
 				'default' => 'after',
 				'choices' => array(
-					'after'  => esc_html__('After Header', 'razzi'),
-					'before' => esc_html__('Before Header', 'razzi'),
+					'after'  => esc_html__('After Header', 'dimas'),
+					'before' => esc_html__('Before Header', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -1608,7 +1608,7 @@ class Fields {
 			),
 			'campaign_bar_height'                       => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Height', 'razzi'),
+				'label'     => esc_html__('Height', 'dimas'),
 				'section'   => 'header_campaign',
 				'default'   => '50',
 				'transport' => 'postMessage',
@@ -1645,30 +1645,30 @@ class Fields {
 			),
 			'campaign_items'                            => array(
 				'type'      => 'repeater',
-				'label'     => esc_html__('Campaigns', 'razzi'),
+				'label'     => esc_html__('Campaigns', 'dimas'),
 				'section'   => 'header_campaign',
 				'transport' => 'postMessage',
 				'default'   => array(),
 				'row_label' => array(
 					'type'  => 'field',
-					'value' => esc_attr__('Campaign', 'razzi'),
+					'value' => esc_attr__('Campaign', 'dimas'),
 				),
 				'fields'          => array(
 					'text'    => array(
 						'type'  => 'textarea',
-						'label' => esc_html__('Text', 'razzi'),
+						'label' => esc_html__('Text', 'dimas'),
 					),
 					'image'   => array(
 						'type'  => 'image',
-						'label' => esc_html__('Background Image', 'razzi'),
+						'label' => esc_html__('Background Image', 'dimas'),
 					),
 					'bgcolor' => array(
 						'type'  => 'color',
-						'label' => esc_html__('Background Color', 'razzi'),
+						'label' => esc_html__('Background Color', 'dimas'),
 					),
 					'color'   => array(
 						'type'  => 'color',
-						'label' => esc_html__('Color', 'razzi'),
+						'label' => esc_html__('Color', 'dimas'),
 					),
 				),
 				'active_callback' => array(
@@ -1683,21 +1683,21 @@ class Fields {
 			// Logo
 			'logo_type'                                 => array(
 				'type'    => 'radio',
-				'label'   => esc_html__('Logo Type', 'razzi'),
+				'label'   => esc_html__('Logo Type', 'dimas'),
 				'default' => 'text',
 				'section' => 'header_logo',
 				'choices' => array(
-					'image' => esc_html__('Image', 'razzi'),
-					'svg'   => esc_html__('SVG', 'razzi'),
-					'text'  => esc_html__('Text', 'razzi'),
+					'image' => esc_html__('Image', 'dimas'),
+					'svg'   => esc_html__('SVG', 'dimas'),
+					'text'  => esc_html__('Text', 'dimas'),
 				),
 			),
 			'logo_svg'                                  => array(
 				'type'              => 'textarea',
-				'label'             => esc_html__('Logo SVG', 'razzi'),
+				'label'             => esc_html__('Logo SVG', 'dimas'),
 				'section'           => 'header_logo',
-				'description'       => esc_html__('Paste SVG code of your logo here', 'razzi'),
-				'sanitize_callback' => '\Razzi\Icon::sanitize_svg',
+				'description'       => esc_html__('Paste SVG code of your logo here', 'dimas'),
+				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
 				'output'            => array(
 					array(
 						'element' => '.site-branding .logo',
@@ -1713,7 +1713,7 @@ class Fields {
 			),
 			'logo'                                      => array(
 				'type'            => 'image',
-				'label'           => esc_html__('Logo', 'razzi'),
+				'label'           => esc_html__('Logo', 'dimas'),
 				'default'         => '',
 				'section'         => 'header_logo',
 				'active_callback' => array(
@@ -1726,10 +1726,10 @@ class Fields {
 			),
 			'logo_svg_light'                            => array(
 				'type'              => 'textarea',
-				'label'             => esc_html__('Logo Light SVG', 'razzi'),
+				'label'             => esc_html__('Logo Light SVG', 'dimas'),
 				'section'           => 'header_logo',
-				'description'       => esc_html__('Paste SVG code of your logo here', 'razzi'),
-				'sanitize_callback' => '\Razzi\Icon::sanitize_svg',
+				'description'       => esc_html__('Paste SVG code of your logo here', 'dimas'),
+				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
 				'output'            => array(
 					array(
 						'element' => '.site-branding .logo',
@@ -1745,7 +1745,7 @@ class Fields {
 			),
 			'logo_light'                                => array(
 				'type'            => 'image',
-				'label'           => esc_html__('Logo Light', 'razzi'),
+				'label'           => esc_html__('Logo Light', 'dimas'),
 				'default'         => '',
 				'section'         => 'header_logo',
 				'active_callback' => array(
@@ -1758,8 +1758,8 @@ class Fields {
 			),
 			'logo_text'                                 => array(
 				'type'    => 'textarea',
-				'label'   => esc_html__('Logo Text', 'razzi'),
-				'default' => 'Razzi.',
+				'label'   => esc_html__('Logo Text', 'dimas'),
+				'default' => 'Dimas.',
 				'section' => 'header_logo',
 				'output'  => array(
 					array(
@@ -1776,7 +1776,7 @@ class Fields {
 			),
 			'logo_dimension'                            => array(
 				'type'    => 'dimensions',
-				'label'   => esc_html__('Logo Dimension', 'razzi'),
+				'label'   => esc_html__('Logo Dimension', 'dimas'),
 				'default' => array(
 					'width'  => '',
 					'height' => '',
@@ -1794,13 +1794,13 @@ class Fields {
 			// Header Search
 			'header_search_style'                       => array(
 				'type'    => 'select',
-				'label'   => esc_html__('Search Layout', 'razzi'),
+				'label'   => esc_html__('Search Layout', 'dimas'),
 				'default' => 'icon',
 				'section' => 'header_search',
 				'choices' => array(
-					'form-cat' => esc_html__('Icon and categories', 'razzi'),
-					'form'     => esc_html__('Icon and search field', 'razzi'),
-					'icon'     => esc_html__('Icon only', 'razzi'),
+					'form-cat' => esc_html__('Icon and categories', 'dimas'),
+					'form'     => esc_html__('Icon and search field', 'dimas'),
+					'icon'     => esc_html__('Icon only', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -1812,12 +1812,12 @@ class Fields {
 			),
 			'header_search_form_style'                  => array(
 				'type'    => 'select',
-				'label'   => esc_html__('Search Style', 'razzi'),
+				'label'   => esc_html__('Search Style', 'dimas'),
 				'default' => 'boxed',
 				'section' => 'header_search',
 				'choices' => array(
-					'boxed'      => esc_html__('Boxed', 'razzi'),
-					'full-width' => esc_html__('Full Width', 'razzi'),
+					'boxed'      => esc_html__('Boxed', 'dimas'),
+					'full-width' => esc_html__('Full Width', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -1834,12 +1834,12 @@ class Fields {
 			),
 			'header_search_form_skin'                  => array(
 				'type'    => 'select',
-				'label'   => esc_html__('Search Skin', 'razzi'),
+				'label'   => esc_html__('Search Skin', 'dimas'),
 				'default' => 'dark',
 				'section' => 'header_search',
 				'choices' => array(
-					'dark' 		=> esc_html__('Dark', 'razzi'),
-					'light'      => esc_html__('Light', 'razzi'),
+					'dark' 		=> esc_html__('Dark', 'dimas'),
+					'light'      => esc_html__('Light', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -1861,12 +1861,12 @@ class Fields {
 			),
 			'header_search_type'                        => array(
 				'type'    => 'select',
-				'label'   => esc_html__('Search For', 'razzi'),
+				'label'   => esc_html__('Search For', 'dimas'),
 				'default' => '',
 				'section' => 'header_search',
 				'choices' => array(
-					''        => esc_html__('Search for everything', 'razzi'),
-					'product' => esc_html__('Search for products', 'razzi'),
+					''        => esc_html__('Search for everything', 'dimas'),
+					'product' => esc_html__('Search for products', 'dimas'),
 				),
 			),
 			'header_search_custom_field_1'              => array(
@@ -1879,7 +1879,7 @@ class Fields {
 			),
 			'header_search_text'                        => array(
 				'type'            => 'text',
-				'label'           => esc_html__('Panel Search Title', 'razzi'),
+				'label'           => esc_html__('Panel Search Title', 'dimas'),
 				'section'         => 'header_search',
 				'default'         => '',
 				'active_callback' => function() {
@@ -1893,7 +1893,7 @@ class Fields {
 			),
 			'header_search_placeholder'                 => array(
 				'type'    => 'text',
-				'label'   => esc_html__('Placeholder', 'razzi'),
+				'label'   => esc_html__('Placeholder', 'dimas'),
 				'section' => 'header_search',
 				'default' => '',
 			),
@@ -1911,14 +1911,14 @@ class Fields {
 			),
 			'header_search_ajax'                        => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('AJAX Search', 'razzi'),
+				'label'       => esc_html__('AJAX Search', 'dimas'),
 				'section'     => 'header_search',
 				'default'     => 0,
-				'description' => esc_html__('Check this option to enable AJAX search in the header', 'razzi'),
+				'description' => esc_html__('Check this option to enable AJAX search in the header', 'dimas'),
 			),
 			'header_search_number'                      => array(
 				'type'            => 'number',
-				'label'           => esc_html__('AJAX Product Numbers', 'razzi'),
+				'label'           => esc_html__('AJAX Product Numbers', 'dimas'),
 				'default'         => 3,
 				'section'         => 'header_search',
 				'active_callback' => array(
@@ -1937,30 +1937,30 @@ class Fields {
 			'header_search_quick_links' => array(
 				'type'            => 'toggle',
 				'section'         => 'header_search',
-				'label'           => esc_html__( 'Quick links', 'razzi' ),
-				'description'     => esc_html__( 'Display a list of links bellow the search field', 'razzi' ),
+				'label'           => esc_html__( 'Quick links', 'dimas' ),
+				'description'     => esc_html__( 'Display a list of links bellow the search field', 'dimas' ),
 				'default'         => false,
 			),
 			'header_search_links'       => array(
 				'type'            => 'repeater',
 				'section'         => 'header_search',
-				'label'           => esc_html__( 'Links', 'razzi' ),
-				'description'     => esc_html__( 'Add custom links of the quick links popup', 'razzi' ),
+				'label'           => esc_html__( 'Links', 'dimas' ),
+				'description'     => esc_html__( 'Add custom links of the quick links popup', 'dimas' ),
 				'transport'       => 'postMessage',
 				'default'         => array(),
 				'row_label'       => array(
 					'type'  => 'field',
-					'value' => esc_attr__( 'Link', 'razzi' ),
+					'value' => esc_attr__( 'Link', 'dimas' ),
 					'field' => 'text',
 				),
 				'fields'          => array(
 					'text' => array(
 						'type'  => 'text',
-						'label' => esc_html__( 'Text', 'razzi' ),
+						'label' => esc_html__( 'Text', 'dimas' ),
 					),
 					'url'  => array(
 						'type'  => 'text',
-						'label' => esc_html__( 'URL', 'razzi' ),
+						'label' => esc_html__( 'URL', 'dimas' ),
 					),
 				),
 				'active_callback' => array(
@@ -1990,7 +1990,7 @@ class Fields {
 			),
 			'header_search_custom_color'                => array(
 				'type'            => 'toggle',
-				'label'           => esc_html__('Custom Color', 'razzi'),
+				'label'           => esc_html__('Custom Color', 'dimas'),
 				'section'         => 'header_search',
 				'default'         => 0,
 				'active_callback' => array(
@@ -2003,7 +2003,7 @@ class Fields {
 			),
 			'header_search_background_color'            => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Background Color', 'razzi'),
+				'label'           => esc_html__('Background Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_search',
@@ -2036,7 +2036,7 @@ class Fields {
 			),
 			'header_search_text_color'                  => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Text Color', 'razzi'),
+				'label'           => esc_html__('Text Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_search',
@@ -2073,7 +2073,7 @@ class Fields {
 			),
 			'header_search_button_color'                => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Icon Color', 'razzi'),
+				'label'           => esc_html__('Icon Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_search',
@@ -2095,14 +2095,14 @@ class Fields {
 						'property' => 'color',
 					),
 					array(
-						'element'  => '#site-header .header-search .form-search .search-submit .razzi-svg-icon',
+						'element'  => '#site-header .header-search .form-search .search-submit .dimas-svg-icon',
 						'property' => 'color',
 					),
 				),
 			),
 			'header_search_border_color'                => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Border Color', 'razzi'),
+				'label'           => esc_html__('Border Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_search',
@@ -2139,7 +2139,7 @@ class Fields {
 			),
 			'header_search_border_color_hover'          => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Border Color Hover', 'razzi'),
+				'label'           => esc_html__('Border Color Hover', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_search',
@@ -2172,7 +2172,7 @@ class Fields {
 			),
 			'header_search_bg_button_color'             => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Button Background Color', 'razzi'),
+				'label'           => esc_html__('Button Background Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_search',
@@ -2197,7 +2197,7 @@ class Fields {
 			),
 			'header_search_border_button_color'         => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Button Border Color', 'razzi'),
+				'label'           => esc_html__('Button Border Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_search',
@@ -2224,19 +2224,19 @@ class Fields {
 			// Header Account
 			'header_account_behaviour'                  => array(
 				'type'    => 'radio',
-				'label'   => esc_html__('Account Icon Behaviour', 'razzi'),
+				'label'   => esc_html__('Account Icon Behaviour', 'dimas'),
 				'default' => 'panel',
 				'section' => 'header_account',
 				'choices' => array(
-					'panel' => esc_attr__('Open the account panel', 'razzi'),
-					'link'  => esc_attr__('Open the account page', 'razzi'),
+					'panel' => esc_attr__('Open the account panel', 'dimas'),
+					'link'  => esc_attr__('Open the account page', 'dimas'),
 				),
 			),
 
 			// Header Wishlist
 			'header_wishlist_link'                      => array(
 				'type'    => 'text',
-				'label'   => esc_html__('Custom Wishlist Link', 'razzi'),
+				'label'   => esc_html__('Custom Wishlist Link', 'dimas'),
 				'section' => 'header_wishlist',
 				'default' => '',
 			),
@@ -2244,12 +2244,12 @@ class Fields {
 			// Header Cart
 			'header_cart_behaviour'                     => array(
 				'type'    => 'radio',
-				'label'   => esc_html__('Cart Icon Behaviour', 'razzi'),
+				'label'   => esc_html__('Cart Icon Behaviour', 'dimas'),
 				'default' => 'panel',
 				'section' => 'header_cart',
 				'choices' => array(
-					'panel' => esc_attr__('Open the cart panel', 'razzi'),
-					'link'  => esc_attr__('Open the cart page', 'razzi'),
+					'panel' => esc_attr__('Open the cart panel', 'dimas'),
+					'link'  => esc_attr__('Open the cart page', 'dimas'),
 				),
 			),
 			'header_cart_custom_field_1'                => array(
@@ -2259,12 +2259,12 @@ class Fields {
 			),
 			'cart_icon_source'      => array(
 				'type'    => 'radio',
-				'label'   => esc_html__( 'Cart Icon', 'razzi' ),
+				'label'   => esc_html__( 'Cart Icon', 'dimas' ),
 				'default' => 'icon',
 				'section' => 'header_cart',
 				'choices' => array(
-					'icon'  => esc_attr__( 'Built-in Icon', 'razzi' ),
-					'svg'   => esc_attr__( 'SVG Code', 'razzi' ),
+					'icon'  => esc_attr__( 'Built-in Icon', 'dimas' ),
+					'svg'   => esc_attr__( 'SVG Code', 'dimas' ),
 				),
 			),
 			'cart_icon'             => array(
@@ -2287,8 +2287,8 @@ class Fields {
 			),
 			'cart_icon_svg'         => array(
 				'type'              => 'textarea',
-				'description'       => esc_html__( 'Icon SVG code', 'razzi' ),
-				'sanitize_callback' => '\Razzi\Icon::sanitize_svg',
+				'description'       => esc_html__( 'Icon SVG code', 'dimas' ),
+				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
 				'section'           => 'header_cart',
 				'active_callback'   => array(
 					array(
@@ -2305,14 +2305,14 @@ class Fields {
 			),
 			'header_cart_custom_color'                  => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Custom Color Counter', 'razzi'),
+				'label'       => esc_html__('Custom Color Counter', 'dimas'),
 				'section'     => 'header_cart',
 				'default'     => 0,
-				'description' => esc_html__('Change color button counter cart', 'razzi'),
+				'description' => esc_html__('Change color button counter cart', 'dimas'),
 			),
 			'header_cart_background_color'              => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Background Color', 'razzi'),
+				'label'           => esc_html__('Background Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_cart',
@@ -2332,7 +2332,7 @@ class Fields {
 			),
 			'header_cart_text_color'                    => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Text Color', 'razzi'),
+				'label'           => esc_html__('Text Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_cart',
@@ -2352,7 +2352,7 @@ class Fields {
 			),
 			'header_cart_border_color'                  => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Border Color', 'razzi'),
+				'label'           => esc_html__('Border Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_cart',
@@ -2377,32 +2377,32 @@ class Fields {
 			),
 			'header_mini_cart_buttons'              => array(
 				'type'            => 'multicheck',
-				'label'           => esc_html__('Mini Cart Buttons', 'razzi'),
+				'label'           => esc_html__('Mini Cart Buttons', 'dimas'),
 				'default'         => array('cart', 'checkout'),
 				'section'         => 'header_cart',
 				'choices' => array(
-					'cart' => esc_attr__('Cart Button', 'razzi'),
-					'checkout'  => esc_attr__('Checkout Button', 'razzi'),
+					'cart' => esc_attr__('Cart Button', 'dimas'),
+					'checkout'  => esc_attr__('Checkout Button', 'dimas'),
 				),
 			),
 
 			// Header Primary Menu
 			'primary_menu_show_arrow'                      => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Show Arrow Icon', 'razzi'),
+				'label'       => esc_html__('Show Arrow Icon', 'dimas'),
 				'default'     => 1,
 				'section'     => 'header_primary_menu',
 			),
 			'primary_menu_style'                       => array(
 				'type'    => 'select',
-				'label'   => esc_html__('Justify Content', 'razzi'),
+				'label'   => esc_html__('Justify Content', 'dimas'),
 				'section' => 'header_primary_menu',
 				'default' => 'space-between',
 				'choices' => array(
-					'space-between'  => esc_html__('Space Between', 'razzi'),
-					'flex-start' => esc_html__('Left', 'razzi'),
-					'flex-end' => esc_html__('Right', 'razzi'),
-					'center' => esc_html__('Center', 'razzi'),
+					'space-between'  => esc_html__('Space Between', 'dimas'),
+					'flex-start' => esc_html__('Left', 'dimas'),
+					'flex-end' => esc_html__('Right', 'dimas'),
+					'center' => esc_html__('Center', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -2427,27 +2427,27 @@ class Fields {
 			// Header Menu Hamburger
 			'hamburger_side_type'                       => array(
 				'type'    => 'select',
-				'label'   => esc_html__('Show Menu', 'razzi'),
+				'label'   => esc_html__('Show Menu', 'dimas'),
 				'section' => 'header_hamburger',
 				'default' => 'side-right',
 				'choices' => array(
-					'side-left'  => esc_html__('Side to right', 'razzi'),
-					'side-right' => esc_html__('Side to left', 'razzi'),
+					'side-left'  => esc_html__('Side to right', 'dimas'),
+					'side-right' => esc_html__('Side to left', 'dimas'),
 				),
 			),
 			'hamburger_click_item'                      => array(
 				'type'    => 'select',
-				'label'   => esc_html__('Show Sub-Menus', 'razzi'),
+				'label'   => esc_html__('Show Sub-Menus', 'dimas'),
 				'section' => 'header_hamburger',
 				'default' => 'click-item',
 				'choices' => array(
-					'click-item' => esc_html__('Click to item', 'razzi'),
-					'click-icon' => esc_html__('Click to icon', 'razzi'),
+					'click-item' => esc_html__('Click to item', 'dimas'),
+					'click-icon' => esc_html__('Click to icon', 'dimas'),
 				),
 			),
 			'hamburger_show_arrow'                      => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Show Arrow Icon', 'razzi'),
+				'label'       => esc_html__('Show Arrow Icon', 'dimas'),
 				'default'     => '0',
 				'section'     => 'header_hamburger',
 			),
@@ -2458,10 +2458,10 @@ class Fields {
 			),
 			'hamburger_show_socials'                    => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Show Socials', 'razzi'),
+				'label'       => esc_html__('Show Socials', 'dimas'),
 				'default'     => '0',
 				'section'     => 'header_hamburger',
-				'description' => esc_html__('Display social menu', 'razzi'),
+				'description' => esc_html__('Display social menu', 'dimas'),
 			),
 			'header_hamburger_custom_field_2'           => array(
 				'type'    => 'custom',
@@ -2470,10 +2470,10 @@ class Fields {
 			),
 			'hamburger_show_copyright'                  => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Show Copyright', 'razzi'),
+				'label'       => esc_html__('Show Copyright', 'dimas'),
 				'default'     => '0',
 				'section'     => 'header_hamburger',
-				'description' => esc_html__('Display copyright', 'razzi'),
+				'description' => esc_html__('Display copyright', 'dimas'),
 			),
 
 			// Header Department
@@ -2481,11 +2481,11 @@ class Fields {
 				'type'        => 'custom',
 				'section'     => 'header_department',
 				'default'     => '<hr>',
-				'description' => esc_html__('Go to Appearance > Menus > create a new menu and check to Department Menu location', 'razzi'),
+				'description' => esc_html__('Go to Appearance > Menus > create a new menu and check to Department Menu location', 'dimas'),
 			),
 			'header_department_text'                    => array(
 				'type'    => 'text',
-				'label'   => esc_html__('Text', 'razzi'),
+				'label'   => esc_html__('Text', 'dimas'),
 				'section' => 'header_department',
 				'default' => '',
 			),
@@ -2496,14 +2496,14 @@ class Fields {
 			),
 			'header_department_custom_color'            => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Custom Color', 'razzi'),
+				'label'       => esc_html__('Custom Color', 'dimas'),
 				'section'     => 'header_department',
 				'default'     => 0,
-				'description' => esc_html__('Change color header department', 'razzi'),
+				'description' => esc_html__('Change color header department', 'dimas'),
 			),
 			'header_department_background_color'        => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Background Color', 'razzi'),
+				'label'           => esc_html__('Background Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_department',
@@ -2523,7 +2523,7 @@ class Fields {
 			),
 			'header_department_text_color'              => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Text Color', 'razzi'),
+				'label'           => esc_html__('Text Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_department',
@@ -2543,7 +2543,7 @@ class Fields {
 			),
 			'header_department_border_color'            => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Border Color', 'razzi'),
+				'label'           => esc_html__('Border Color', 'dimas'),
 				'default'         => '',
 				'transport'       => 'postMessage',
 				'section'         => 'header_department',
@@ -2563,33 +2563,33 @@ class Fields {
 			),
 			'header_custom_text' => array(
 				'type'        => 'textarea',
-				'label'       => esc_html__('Custom Text', 'razzi'),
-				'description' => esc_html__('The content of the Custom Text item', 'razzi'),
+				'label'       => esc_html__('Custom Text', 'dimas'),
+				'description' => esc_html__('The content of the Custom Text item', 'dimas'),
 				'section'     => 'header_custom_text',
 			),
 
 			// Blog
 			'blog_type'                                 => array(
 				'type'        => 'radio',
-				'label'       => esc_html__('Blog Type', 'razzi'),
-				'description' => esc_html__('The layout of blog posts', 'razzi'),
+				'label'       => esc_html__('Blog Type', 'dimas'),
+				'description' => esc_html__('The layout of blog posts', 'dimas'),
 				'default'     => 'listing',
 				'choices'     => array(
-					'listing' => esc_attr__('Listing', 'razzi'),
-					'grid'    => esc_attr__('Grid', 'razzi'),
+					'listing' => esc_attr__('Listing', 'dimas'),
+					'grid'    => esc_attr__('Grid', 'dimas'),
 				),
 				'section' => 'blog_page',
 			),
 
 			'blog_columns' => array(
 				'type'     => 'select',
-				'label'    => esc_html__('Columns', 'razzi'),
+				'label'    => esc_html__('Columns', 'dimas'),
 				'section'  => 'blog_page',
 				'default'  => '3',
 				'priority' => 10,
 				'choices'  => array(
-					'2' => esc_html__('2 Columns', 'razzi'),
-					'3' => esc_html__('3 Columns', 'razzi'),
+					'2' => esc_html__('2 Columns', 'dimas'),
+					'3' => esc_html__('3 Columns', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -2602,22 +2602,22 @@ class Fields {
 
 			'blog_layout' => array(
 				'type'        => 'select',
-				'label'       => esc_html__('Blog Layout', 'razzi'),
+				'label'       => esc_html__('Blog Layout', 'dimas'),
 				'section'     => 'blog_page',
 				'default'     => 'content-sidebar',
-				'tooltip'     => esc_html__('Go to appearance > widgets find to blog sidebar to edit your sidebar', 'razzi'),
+				'tooltip'     => esc_html__('Go to appearance > widgets find to blog sidebar to edit your sidebar', 'dimas'),
 				'priority'    => 10,
-				'description' => esc_html__('Select default sidebar for the single post page.', 'razzi'),
+				'description' => esc_html__('Select default sidebar for the single post page.', 'dimas'),
 				'choices'     => array(
-					'content-sidebar' => esc_html__('Right Sidebar', 'razzi'),
-					'sidebar-content' => esc_html__('Left Sidebar', 'razzi'),
-					'full-content'    => esc_html__('Full Content', 'razzi'),
+					'content-sidebar' => esc_html__('Right Sidebar', 'dimas'),
+					'sidebar-content' => esc_html__('Left Sidebar', 'dimas'),
+					'full-content'    => esc_html__('Full Content', 'dimas'),
 				),
 			),
 
 			'excerpt_length' => array(
 				'type'     => 'number',
-				'label'    => esc_html__('Excerpt Length', 'razzi'),
+				'label'    => esc_html__('Excerpt Length', 'dimas'),
 				'section'  => 'blog_page',
 				'default'  => 20,
 				'priority' => 10,
@@ -2625,7 +2625,7 @@ class Fields {
 
 			'blog_view_more_text'                   => array(
 				'type'     => 'text',
-				'label'    => esc_html__('Loading Text', 'razzi'),
+				'label'    => esc_html__('Loading Text', 'dimas'),
 				'section'  => 'blog_page',
 				'default'  => '',
 				'priority' => 10,
@@ -2635,20 +2635,20 @@ class Fields {
 			'blog_categories_filter_custom_field_2' => array(
 				'type'    => 'custom',
 				'section' => 'blog_page',
-				'default' => '<hr/><h2>' . esc_html__('Categories Filter', 'razzi') . '</h2>',
+				'default' => '<hr/><h2>' . esc_html__('Categories Filter', 'dimas') . '</h2>',
 			),
 			'show_blog_cats'                        => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Enable', 'razzi'),
+				'label'       => esc_html__('Enable', 'dimas'),
 				'section'     => 'blog_page',
 				'default'     => 0,
-				'description' => esc_html__('Display categories list above posts list', 'razzi'),
+				'description' => esc_html__('Display categories list above posts list', 'dimas'),
 				'priority'    => 10,
 			),
 
 			'custom_blog_cats' => array(
 				'type'     => 'toggle',
-				'label'    => esc_html__('Custom Categories List', 'razzi'),
+				'label'    => esc_html__('Custom Categories List', 'dimas'),
 				'section'  => 'blog_page',
 				'default'  => 0,
 				'priority' => 10,
@@ -2656,8 +2656,8 @@ class Fields {
 			'blog_cats_slug'   => array(
 				'type'            => 'select',
 				'section'         => 'blog_page',
-				'label'           => esc_html__('Custom Categories', 'razzi'),
-				'description'     => esc_html__('Select product categories you want to show.', 'razzi'),
+				'label'           => esc_html__('Custom Categories', 'dimas'),
+				'description'     => esc_html__('Select product categories you want to show.', 'dimas'),
 				'default'         => '',
 				'multiple'        => 999,
 				'priority'        => 10,
@@ -2673,37 +2673,37 @@ class Fields {
 
 			'blog_cats_view_all'     => array(
 				'type'     => 'text',
-				'label'    => esc_html__('View All Text', 'razzi'),
+				'label'    => esc_html__('View All Text', 'dimas'),
 				'section'  => 'blog_page',
 				'default'  => '',
 				'priority' => 10,
 			),
 			'blog_cats_orderby'      => array(
 				'type'     => 'select',
-				'label'    => esc_html__('Categories Orderby', 'razzi'),
+				'label'    => esc_html__('Categories Orderby', 'dimas'),
 				'section'  => 'blog_page',
 				'default'  => 'count',
 				'priority' => 10,
 				'choices'  => array(
-					'count' => esc_html__('Count', 'razzi'),
-					'title' => esc_html__('Title', 'razzi'),
-					'id'    => esc_html__('ID', 'razzi'),
+					'count' => esc_html__('Count', 'dimas'),
+					'title' => esc_html__('Title', 'dimas'),
+					'id'    => esc_html__('ID', 'dimas'),
 				),
 			),
 			'blog_cats_order'        => array(
 				'type'     => 'select',
-				'label'    => esc_html__('Categories Order', 'razzi'),
+				'label'    => esc_html__('Categories Order', 'dimas'),
 				'section'  => 'blog_page',
 				'default'  => 'DESC',
 				'priority' => 10,
 				'choices'  => array(
-					'DESC' => esc_html__('DESC', 'razzi'),
-					'ASC'  => esc_html__('ASC', 'razzi'),
+					'DESC' => esc_html__('DESC', 'dimas'),
+					'ASC'  => esc_html__('ASC', 'dimas'),
 				),
 			),
 			'blog_cats_number'       => array(
 				'type'     => 'number',
-				'label'    => esc_html__('Categories Number', 'razzi'),
+				'label'    => esc_html__('Categories Number', 'dimas'),
 				'section'  => 'blog_page',
 				'default'  => 6,
 				'priority' => 10,
@@ -2713,31 +2713,31 @@ class Fields {
 			'single_post_breadcrumb' => array(
 				'type'     => 'toggle',
 				'default'  => 1,
-				'label'    => esc_html__('Enable breadcrumb', 'razzi'),
+				'label'    => esc_html__('Enable breadcrumb', 'dimas'),
 				'section'  => 'single_post',
 				'priority' => 10,
 			),
 
 			'single_post_featured' => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Enable featured image', 'razzi'),
+				'label'       => esc_html__('Enable featured image', 'dimas'),
 				'default'     => '1',
 				'section'     => 'single_post',
-				'description' => esc_html__('Display the featured image on the post', 'razzi'),
+				'description' => esc_html__('Display the featured image on the post', 'dimas'),
 			),
 
 			'single_post_layout' => array(
 				'type'        => 'select',
-				'label'       => esc_html__('Layout', 'razzi'),
+				'label'       => esc_html__('Layout', 'dimas'),
 				'section'     => 'single_post',
 				'default'     => 'full-content',
-				'tooltip'     => esc_html__('Go to appearance > widgets find to blog sidebar to edit your sidebar', 'razzi'),
+				'tooltip'     => esc_html__('Go to appearance > widgets find to blog sidebar to edit your sidebar', 'dimas'),
 				'priority'    => 10,
-				'description' => esc_html__('Select default sidebar for the single post page.', 'razzi'),
+				'description' => esc_html__('Select default sidebar for the single post page.', 'dimas'),
 				'choices'     => array(
-					'content-sidebar' => esc_html__('Right Sidebar', 'razzi'),
-					'sidebar-content' => esc_html__('Left Sidebar', 'razzi'),
-					'full-content'    => esc_html__('Full Content', 'razzi'),
+					'content-sidebar' => esc_html__('Right Sidebar', 'dimas'),
+					'sidebar-content' => esc_html__('Left Sidebar', 'dimas'),
+					'full-content'    => esc_html__('Full Content', 'dimas'),
 				),
 			),
 
@@ -2749,8 +2749,8 @@ class Fields {
 
 			'post_socials_toggle' => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Socials Share', 'razzi'),
-				'description' => esc_html__('Check this option to show socials share in the single post.', 'razzi'),
+				'label'       => esc_html__('Socials Share', 'dimas'),
+				'description' => esc_html__('Check this option to show socials share in the single post.', 'dimas'),
 				'section'     => 'single_post',
 				'default'     => 0,
 				'priority'    => 10,
@@ -2758,20 +2758,20 @@ class Fields {
 
 			'post_socials_share'           => array(
 				'type'    => 'multicheck',
-				'label'   => esc_html__('Socials List', 'razzi'),
+				'label'   => esc_html__('Socials List', 'dimas'),
 				'section' => 'single_post',
 				'default' => array('facebook', 'twitter', 'googleplus', 'tumblr'),
 				'choices' => array(
-					'facebook'   => esc_html__('Facebook', 'razzi'),
-					'twitter'    => esc_html__('Twitter', 'razzi'),
-					'googleplus' => esc_html__('Google Plus', 'razzi'),
-					'tumblr'     => esc_html__('Tumblr', 'razzi'),
-					'pinterest'  => esc_html__('Pinterest', 'razzi'),
-					'linkedin'   => esc_html__('Linkedin', 'razzi'),
-					'reddit'     => esc_html__('Reddit', 'razzi'),
-					'telegram'   => esc_html__('Telegram', 'razzi'),
-					'pocket'     => esc_html__('Pocket', 'razzi'),
-					'email'      => esc_html__('Email', 'razzi'),
+					'facebook'   => esc_html__('Facebook', 'dimas'),
+					'twitter'    => esc_html__('Twitter', 'dimas'),
+					'googleplus' => esc_html__('Google Plus', 'dimas'),
+					'tumblr'     => esc_html__('Tumblr', 'dimas'),
+					'pinterest'  => esc_html__('Pinterest', 'dimas'),
+					'linkedin'   => esc_html__('Linkedin', 'dimas'),
+					'reddit'     => esc_html__('Reddit', 'dimas'),
+					'telegram'   => esc_html__('Telegram', 'dimas'),
+					'pocket'     => esc_html__('Pocket', 'dimas'),
+					'email'      => esc_html__('Email', 'dimas'),
 				),
 				'priority'        => 10,
 				'active_callback' => array(
@@ -2787,20 +2787,20 @@ class Fields {
 			'related_posts_custom_field_1' => array(
 				'type'    => 'custom',
 				'section' => 'single_post',
-				'default' => '<hr/><h2>' . esc_html__('Related Posts', 'razzi') . '</h2>',
+				'default' => '<hr/><h2>' . esc_html__('Related Posts', 'dimas') . '</h2>',
 			),
 
 			'related_posts'             => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Enable', 'razzi'),
-				'description' => esc_html__('Check this option to show related posts.', 'razzi'),
+				'label'       => esc_html__('Enable', 'dimas'),
+				'description' => esc_html__('Check this option to show related posts.', 'dimas'),
 				'section'     => 'single_post',
 				'default'     => 0,
 				'priority'    => 10,
 			),
 			'related_posts_title'       => array(
 				'type'     => 'text',
-				'label'    => esc_html__('Title', 'razzi'),
+				'label'    => esc_html__('Title', 'dimas'),
 				'section'  => 'single_post',
 				'default'  => '',
 				'priority' => 10,
@@ -2808,8 +2808,8 @@ class Fields {
 			),
 			'related_posts_numbers'     => array(
 				'type'        => 'number',
-				'label'       => esc_html__('Numbers', 'razzi'),
-				'description' => esc_html__('How many related posts would you like to show', 'razzi'),
+				'label'       => esc_html__('Numbers', 'dimas'),
+				'description' => esc_html__('How many related posts would you like to show', 'dimas'),
 				'section'     => 'single_post',
 				'default'     => 3,
 				'priority'    => 10,
@@ -2817,13 +2817,13 @@ class Fields {
 			),
 			'related_posts_columns'     => array(
 				'type'    => 'select',
-				'label'   => esc_html__('Columns', 'razzi'),
+				'label'   => esc_html__('Columns', 'dimas'),
 				'section' => 'single_post',
 				'default' => '3',
 				'choices' => array(
-					'4' => esc_html__('4 Columns', 'razzi'),
-					'3' => esc_html__('3 Columns', 'razzi'),
-					'2' => esc_html__('2 Columns', 'razzi'),
+					'4' => esc_html__('4 Columns', 'dimas'),
+					'3' => esc_html__('3 Columns', 'dimas'),
+					'2' => esc_html__('2 Columns', 'dimas'),
 				),
 				'priority' => 10,
 
@@ -2832,14 +2832,14 @@ class Fields {
 			// Footer Layout
 			'footer_sections'           => array(
 				'type'        => 'sortable',
-				'label'       => esc_html__('Footer Sections', 'razzi'),
-				'description' => esc_html__('Select and order footer contents', 'razzi'),
+				'label'       => esc_html__('Footer Sections', 'dimas'),
+				'description' => esc_html__('Select and order footer contents', 'dimas'),
 				'default'     => '',
 				'choices'     => array(
-					'newsletter' => esc_attr__('Newsletter', 'razzi'),
-					'extra'      => esc_attr__('Extra Content', 'razzi'),
-					'widgets'    => esc_attr__('Footer Widgets', 'razzi'),
-					'main'       => esc_attr__('Footer Main', 'razzi'),
+					'newsletter' => esc_attr__('Newsletter', 'dimas'),
+					'extra'      => esc_attr__('Extra Content', 'dimas'),
+					'widgets'    => esc_attr__('Footer Widgets', 'dimas'),
+					'main'       => esc_attr__('Footer Main', 'dimas'),
 				),
 				'section' => 'footer_layout',
 			),
@@ -2850,13 +2850,13 @@ class Fields {
 			),
 			'footer_container'          => array(
 				'type'        => 'select',
-				'label'       => esc_html__('Footer Width', 'razzi'),
-				'description' => esc_html__('Select the width of footer container', 'razzi'),
+				'label'       => esc_html__('Footer Width', 'dimas'),
+				'description' => esc_html__('Select the width of footer container', 'dimas'),
 				'default'     => 'container',
 				'choices'     => array(
-					'container'       => esc_attr__('Normal', 'razzi'),
-					'razzi-container' => esc_attr__('Large', 'razzi'),
-					'razzi-container-wide'  => esc_html__('Wide', 'razzi'),
+					'container'       => esc_attr__('Normal', 'dimas'),
+					'dimas-container' => esc_attr__('Large', 'dimas'),
+					'dimas-container-wide'  => esc_html__('Wide', 'dimas'),
 				),
 				'section' => 'footer_layout',
 			),
@@ -2867,13 +2867,13 @@ class Fields {
 			),
 			'footer_section_border_top'             => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Border Top', 'razzi'),
-				'description' => esc_html__('Display a divide line on top', 'razzi'),
+				'label'       => esc_html__('Border Top', 'dimas'),
+				'description' => esc_html__('Display a divide line on top', 'dimas'),
 				'section'     => 'footer_layout',
 				'default'     => '',
 			),
 			'footer_section_border_color' => array(
-				'label'     => esc_html__('Border Color', 'razzi'),
+				'label'     => esc_html__('Border Color', 'dimas'),
 				'type'      => 'color',
 				'default'   => '',
 				'transport' => 'postMessage',
@@ -2896,15 +2896,15 @@ class Fields {
 			// Footer Widget
 			'footer_widgets_layout'     => array(
 				'type'        => 'select',
-				'tooltip'     => esc_html__('Go to appearance > widgets find to footer sidebar to edit your sidebar', 'razzi'),
-				'label'       => esc_html__('Layout', 'razzi'),
-				'description' => esc_html__('Select number of columns for displaying widgets', 'razzi'),
+				'tooltip'     => esc_html__('Go to appearance > widgets find to footer sidebar to edit your sidebar', 'dimas'),
+				'label'       => esc_html__('Layout', 'dimas'),
+				'description' => esc_html__('Select number of columns for displaying widgets', 'dimas'),
 				'default'     => '4-columns',
 				'choices'     => array(
-					'2-columns'      => esc_html__('2 Columns', 'razzi'),
-					'3-columns'      => esc_html__('3 Columns', 'razzi'),
-					'4-columns'      => esc_html__('4 Columns', 'razzi'),
-					'5-columns'      => esc_html__('5 Columns', 'razzi'),
+					'2-columns'      => esc_html__('2 Columns', 'dimas'),
+					'3-columns'      => esc_html__('3 Columns', 'dimas'),
+					'4-columns'      => esc_html__('4 Columns', 'dimas'),
+					'5-columns'      => esc_html__('5 Columns', 'dimas'),
 				),
 				'section' => 'footer_widget',
 			),
@@ -2917,14 +2917,14 @@ class Fields {
 
 			'footer_widget_border'           => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Border Line', 'razzi'),
-				'description' => esc_html__('Display a divide line on top', 'razzi'),
+				'label'       => esc_html__('Border Line', 'dimas'),
+				'description' => esc_html__('Display a divide line on top', 'dimas'),
 				'default'     => true,
 				'section'     => 'footer_widget',
 			),
 			'footer_widget_border_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Border Color', 'razzi'),
+				'label'     => esc_html__('Border Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -2946,12 +2946,12 @@ class Fields {
 			'footer_widget_custom_field_2' => array(
 				'type'    => 'custom',
 				'section' => 'footer_widget',
-				'default' => '<hr/><h2>' . esc_html__('Custom Padding', 'razzi') . '</h2>',
+				'default' => '<hr/><h2>' . esc_html__('Custom Padding', 'dimas') . '</h2>',
 			),
 
 			'footer_widget_padding_top' => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Top', 'razzi'),
+				'label'     => esc_html__('Top', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'footer_widget',
 				'default'   => '64',
@@ -2970,7 +2970,7 @@ class Fields {
 
 			'footer_widget_padding_bottom' => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Bottom', 'razzi'),
+				'label'     => esc_html__('Bottom', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'footer_widget',
 				'default'   => '64',
@@ -2990,13 +2990,13 @@ class Fields {
 			// Footer Main
 			'footer_main_left'             => array(
 				'type'        => 'repeater',
-				'label'       => esc_html__('Left Items', 'razzi'),
-				'description' => esc_html__('Control left items of the footer', 'razzi'),
+				'label'       => esc_html__('Left Items', 'dimas'),
+				'description' => esc_html__('Control left items of the footer', 'dimas'),
 				'transport'   => 'postMessage',
 				'default'     => array(array('item' => 'copyright')),
 				'row_label'   => array(
 					'type'  => 'field',
-					'value' => esc_attr__('Item', 'razzi'),
+					'value' => esc_attr__('Item', 'dimas'),
 					'field' => 'item',
 				),
 				'fields'          => array(
@@ -3009,13 +3009,13 @@ class Fields {
 			),
 			'footer_main_center'           => array(
 				'type'        => 'repeater',
-				'label'       => esc_html__('Center Items', 'razzi'),
-				'description' => esc_html__('Control center items of the footer', 'razzi'),
+				'label'       => esc_html__('Center Items', 'dimas'),
+				'description' => esc_html__('Control center items of the footer', 'dimas'),
 				'transport'   => 'postMessage',
 				'default'     => array(),
 				'row_label'   => array(
 					'type'  => 'field',
-					'value' => esc_attr__('Item', 'razzi'),
+					'value' => esc_attr__('Item', 'dimas'),
 					'field' => 'item',
 				),
 				'fields'          => array(
@@ -3028,13 +3028,13 @@ class Fields {
 			),
 			'footer_main_right'            => array(
 				'type'        => 'repeater',
-				'label'       => esc_html__('Right Items', 'razzi'),
-				'description' => esc_html__('Control right items of the footer', 'razzi'),
+				'label'       => esc_html__('Right Items', 'dimas'),
+				'description' => esc_html__('Control right items of the footer', 'dimas'),
 				'transport'   => 'postMessage',
 				'default'     => array(array('item' => 'menu')),
 				'row_label'   => array(
 					'type'  => 'field',
-					'value' => esc_attr__('Item', 'razzi'),
+					'value' => esc_attr__('Item', 'dimas'),
 					'field' => 'item',
 				),
 				'fields'          => array(
@@ -3053,14 +3053,14 @@ class Fields {
 			),
 			'footer_main_border'           => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Border Line', 'razzi'),
-				'description' => esc_html__('Display a divide line on top', 'razzi'),
+				'label'       => esc_html__('Border Line', 'dimas'),
+				'description' => esc_html__('Display a divide line on top', 'dimas'),
 				'default'     => true,
 				'section'     => 'footer_main',
 			),
 			'footer_main_border_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Border Color', 'razzi'),
+				'label'     => esc_html__('Border Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3082,12 +3082,12 @@ class Fields {
 			'footer_main_custom_field_1' => array(
 				'type'    => 'custom',
 				'section' => 'footer_main',
-				'default' => '<hr/><h2>' . esc_html__('Custom Padding', 'razzi') . '</h2>',
+				'default' => '<hr/><h2>' . esc_html__('Custom Padding', 'dimas') . '</h2>',
 			),
 
 			'footer_main_padding_top' => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Top', 'razzi'),
+				'label'     => esc_html__('Top', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'footer_main',
 				'default'   => '22',
@@ -3106,7 +3106,7 @@ class Fields {
 
 			'footer_main_padding_bottom' => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Bottom', 'razzi'),
+				'label'     => esc_html__('Bottom', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'footer_main',
 				'default'   => '22',
@@ -3126,15 +3126,15 @@ class Fields {
 			// Footer Item
 			'footer_copyright'           => array(
 				'type'        => 'textarea',
-				'label'       => esc_html__('Footer Copyright', 'razzi'),
-				'description' => esc_html__('Display copyright info on the left side of footer', 'razzi'),
-				'default'     => sprintf('%s %s ' . esc_html__('All rights reserved', 'razzi'), '&copy;' . date('Y'), get_bloginfo('name')),
+				'label'       => esc_html__('Footer Copyright', 'dimas'),
+				'description' => esc_html__('Display copyright info on the left side of footer', 'dimas'),
+				'default'     => sprintf('%s %s ' . esc_html__('All rights reserved', 'dimas'), '&copy;' . date('Y'), get_bloginfo('name')),
 				'section'     => 'footer_copyright',
 			),
 
 			'footer_menu'       => array(
 				'type'            => 'select',
-				'label'           => esc_html__( 'Menu', 'razzi' ),
+				'label'           => esc_html__( 'Menu', 'dimas' ),
 				'section'         => 'footer_menu',
 				'default'         => '',
 				// 'choices'         => $this->get_navigation_bar_get_menus(),
@@ -3143,50 +3143,50 @@ class Fields {
 
 			'footer_main_text' => array(
 				'type'        => 'textarea',
-				'label'       => esc_html__('Custom Text', 'razzi'),
-				'description' => esc_html__('The content of the Custom Text item', 'razzi'),
+				'label'       => esc_html__('Custom Text', 'dimas'),
+				'description' => esc_html__('The content of the Custom Text item', 'dimas'),
 				'section'     => 'footer_text',
 			),
 
 			'footer_main_payment_images' => array(
 				'type'      => 'repeater',
-				'label'     => esc_html__('Payment Images', 'razzi'),
+				'label'     => esc_html__('Payment Images', 'dimas'),
 				'section'   => 'footer_payment',
 				'row_label' => array(
 					'type'  => 'text',
-					'value' => esc_html__('Image', 'razzi'),
+					'value' => esc_html__('Image', 'dimas'),
 				),
 				'fields'    => array(
 					'image' => array(
 						'type'    => 'image',
-						'label'   => esc_html__('Image', 'razzi'),
+						'label'   => esc_html__('Image', 'dimas'),
 						'default' => '',
 					),
 					'link'  => array(
 						'type'    => 'text',
-						'label'   => esc_html__('Link', 'razzi'),
+						'label'   => esc_html__('Link', 'dimas'),
 						'default' => '',
 					),
 				),
 			),
 			'footer_logo_type'       => array(
 				'type'    => 'radio',
-				'label'   => esc_html__('Logo Type', 'razzi'),
+				'label'   => esc_html__('Logo Type', 'dimas'),
 				'default' => 'text',
 				'section' => 'footer_logo',
 				'choices' => array(
-					'image' => esc_html__('Image', 'razzi'),
-					'svg'   => esc_html__('SVG', 'razzi'),
-					'text'  => esc_html__('Text', 'razzi'),
+					'image' => esc_html__('Image', 'dimas'),
+					'svg'   => esc_html__('SVG', 'dimas'),
+					'text'  => esc_html__('Text', 'dimas'),
 				),
 			),
 
 			'footer_logo_svg'        => array(
 				'type'              => 'textarea',
-				'label'             => esc_html__('Logo SVG', 'razzi'),
+				'label'             => esc_html__('Logo SVG', 'dimas'),
 				'section'           => 'footer_logo',
-				'description'       => esc_html__('Paste SVG code of your logo here', 'razzi'),
-				'sanitize_callback' => '\Razzi\Icon::sanitize_svg',
+				'description'       => esc_html__('Paste SVG code of your logo here', 'dimas'),
+				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
 				'output'            => array(
 					array(
 						'element' => '.footer-branding .logo',
@@ -3202,7 +3202,7 @@ class Fields {
 			),
 			'footer_logo'            => array(
 				'type'            => 'image',
-				'label'           => esc_html__('Logo', 'razzi'),
+				'label'           => esc_html__('Logo', 'dimas'),
 				'default'         => '',
 				'section'         => 'footer_logo',
 				'active_callback' => array(
@@ -3215,7 +3215,7 @@ class Fields {
 			),
 			'footer_logo_text'       => array(
 				'type'    => 'textarea',
-				'label'   => esc_html__('Logo Text', 'razzi'),
+				'label'   => esc_html__('Logo Text', 'dimas'),
 				'section' => 'footer_logo',
 				'output'  => array(
 					array(
@@ -3232,7 +3232,7 @@ class Fields {
 			),
 			'footer_logo_text_color' => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Color', 'razzi'),
+				'label'           => esc_html__('Color', 'dimas'),
 				'transport'       => 'postMessage',
 				'default'         => '',
 				'active_callback' => array(
@@ -3252,7 +3252,7 @@ class Fields {
 			),
 			'footer_logo_dimension'  => array(
 				'type'    => 'dimensions',
-				'label'   => esc_html__('Logo Dimension', 'razzi'),
+				'label'   => esc_html__('Logo Dimension', 'dimas'),
 				'default' => array(
 					'width'  => '',
 					'height' => '',
@@ -3269,22 +3269,22 @@ class Fields {
 
 			'general_backtotop'    => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Back To Top', 'razzi'),
+				'label'       => esc_html__('Back To Top', 'dimas'),
 				'section'     => 'general_backtotop',
-				'description' => esc_html__('Check this to show back to top.', 'razzi'),
+				'description' => esc_html__('Check this to show back to top.', 'dimas'),
 				'default'     => true,
 			),
 
 			// Footer Extra
 			'footer_extra_content' => array(
 				'type'        => 'repeater',
-				'label'       => esc_html__('Items', 'razzi'),
-				'description' => esc_html__('Control items of the extra footer', 'razzi'),
+				'label'       => esc_html__('Items', 'dimas'),
+				'description' => esc_html__('Control items of the extra footer', 'dimas'),
 				'transport'   => 'postMessage',
 				'default'     => array(array('item' => 'copyright')),
 				'row_label'   => array(
 					'type'  => 'field',
-					'value' => esc_attr__('Item', 'razzi'),
+					'value' => esc_attr__('Item', 'dimas'),
 					'field' => 'item',
 				),
 				'fields'          => array(
@@ -3304,14 +3304,14 @@ class Fields {
 
 			'footer_extra_border'           => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Border Line', 'razzi'),
-				'description' => esc_html__('Display a divide line on top', 'razzi'),
+				'label'       => esc_html__('Border Line', 'dimas'),
+				'description' => esc_html__('Display a divide line on top', 'dimas'),
 				'default'     => false,
 				'section'     => 'footer_extra',
 			),
 			'footer_extra_border_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Border Color', 'razzi'),
+				'label'     => esc_html__('Border Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3333,12 +3333,12 @@ class Fields {
 			'footer_extra_custom_field_2' => array(
 				'type'    => 'custom',
 				'section' => 'footer_extra',
-				'default' => '<hr/><h2>' . esc_html__('Custom Padding', 'razzi') . '</h2>',
+				'default' => '<hr/><h2>' . esc_html__('Custom Padding', 'dimas') . '</h2>',
 			),
 
 			'footer_extra_padding_top' => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Top', 'razzi'),
+				'label'     => esc_html__('Top', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'footer_extra',
 				'default'   => '105',
@@ -3357,7 +3357,7 @@ class Fields {
 
 			'footer_extra_padding_bottom' => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Bottom', 'razzi'),
+				'label'     => esc_html__('Bottom', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'footer_extra',
 				'default'   => '112',
@@ -3376,26 +3376,26 @@ class Fields {
 			// Newsletter
 			'footer_newsletter_layout'       => array(
 				'type'    => 'radio',
-				'label'   => esc_html__('Layout', 'razzi'),
+				'label'   => esc_html__('Layout', 'dimas'),
 				'default' => 'v1',
 				'section' => 'footer_newsletter',
 				'choices' => array(
-					'v1' => esc_html__('Layout 1', 'razzi'),
-					'v2' => esc_html__('Layout 2', 'razzi'),
+					'v1' => esc_html__('Layout 1', 'dimas'),
+					'v2' => esc_html__('Layout 2', 'dimas'),
 				),
 			),
 
 			'footer_newsletter_text' => array(
 				'type'            => 'text',
-				'label'           => esc_html__('Title', 'razzi'),
+				'label'           => esc_html__('Title', 'dimas'),
 				'section'         => 'footer_newsletter',
 				'default'         => '',
 			),
 
 			'footer_newsletter_form' => array(
 				'type'            => 'textarea',
-				'label'           => esc_html__('Form', 'razzi'),
-				'description'     => esc_html__('Enter the shortcode of MailChimp form', 'razzi'),
+				'label'           => esc_html__('Form', 'dimas'),
+				'description'     => esc_html__('Enter the shortcode of MailChimp form', 'dimas'),
 				'section'         => 'footer_newsletter',
 				'default'         => '',
 			),
@@ -3403,7 +3403,7 @@ class Fields {
 			'custom_newsletter_link_to_form' => array(
 				'type'            => 'custom',
 				'section'         => 'footer_newsletter',
-				'default'         => sprintf('<a href="%s">%s</a>', admin_url('admin.php?page=mailchimp-for-wp-forms'), esc_html__('Go to MailChimp form', 'razzi')),
+				'default'         => sprintf('<a href="%s">%s</a>', admin_url('admin.php?page=mailchimp-for-wp-forms'), esc_html__('Go to MailChimp form', 'dimas')),
 			),
 
 			'footer_newsletter_custom_field_1' => array(
@@ -3414,14 +3414,14 @@ class Fields {
 
 			'footer_newsletter_border'           => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Border Line', 'razzi'),
-				'description' => esc_html__('Display a divide line on top', 'razzi'),
+				'label'       => esc_html__('Border Line', 'dimas'),
+				'description' => esc_html__('Display a divide line on top', 'dimas'),
 				'default'     => false,
 				'section'     => 'footer_newsletter',
 			),
 			'footer_newsletter_border_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Border Color', 'razzi'),
+				'label'     => esc_html__('Border Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3443,12 +3443,12 @@ class Fields {
 			'footer_newsletter_custom_field_2' => array(
 				'type'            => 'custom',
 				'section'         => 'footer_newsletter',
-				'default'         => '<hr/><h2>' . esc_html__('Custom Padding', 'razzi') . '</h2>',
+				'default'         => '<hr/><h2>' . esc_html__('Custom Padding', 'dimas') . '</h2>',
 			),
 
 			'footer_newsletter_padding_top' => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Top', 'razzi'),
+				'label'     => esc_html__('Top', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'footer_newsletter',
 				'default'   => '110',
@@ -3467,7 +3467,7 @@ class Fields {
 
 			'footer_newsletter_padding_bottom' => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Bottom', 'razzi'),
+				'label'     => esc_html__('Bottom', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'footer_newsletter',
 				'default'   => '41',
@@ -3486,19 +3486,19 @@ class Fields {
 			// Background
 			'footer_background_scheme'       => array(
 				'type'    => 'select',
-				'label'   => esc_html__('Background Scheme', 'razzi'),
+				'label'   => esc_html__('Background Scheme', 'dimas'),
 				'default' => 'dark',
 				'section' => 'footer_background',
 				'choices' => array(
-					'dark'   => esc_html__('Dark', 'razzi'),
-					'light'  => esc_html__('Light', 'razzi'),
-					'gray'   => esc_html__('Gray', 'razzi'),
-					'custom' => esc_html__('Custom', 'razzi'),
+					'dark'   => esc_html__('Dark', 'dimas'),
+					'light'  => esc_html__('Light', 'dimas'),
+					'gray'   => esc_html__('Gray', 'dimas'),
+					'custom' => esc_html__('Custom', 'dimas'),
 				),
 			),
 			'footer_bg'                        => array(
 				'type'    => 'image',
-				'label'   => esc_html__('Background Image', 'razzi'),
+				'label'   => esc_html__('Background Image', 'dimas'),
 				'default' => '',
 				'section' => 'footer_background',
 				'active_callback' => array(
@@ -3511,7 +3511,7 @@ class Fields {
 			),
 
 			'footer_bg_color' => array(
-				'label'     => esc_html__('Background Color', 'razzi'),
+				'label'     => esc_html__('Background Color', 'dimas'),
 				'type'      => 'color',
 				'default'   => '',
 				'transport' => 'postMessage',
@@ -3533,7 +3533,7 @@ class Fields {
 
 			'footer_bg_heading_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Heading Color', 'razzi'),
+				'label'     => esc_html__('Heading Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3554,7 +3554,7 @@ class Fields {
 
 			'footer_bg_text_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Text Color', 'razzi'),
+				'label'     => esc_html__('Text Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3575,7 +3575,7 @@ class Fields {
 
 			'footer_bg_text_color_hover' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Text Hover Color', 'razzi'),
+				'label'     => esc_html__('Text Hover Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3609,7 +3609,7 @@ class Fields {
 
 			'footer_extra_bg_enable' => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('FOOTER EXTRA', 'razzi'),
+				'label'       => esc_html__('FOOTER EXTRA', 'dimas'),
 				'section'     => 'footer_background',
 				'default'     => false,
 				'active_callback' => array(
@@ -3623,7 +3623,7 @@ class Fields {
 
 			'footer_extra_bg' => array(
 				'type'    => 'image',
-				'label'   => esc_html__('Background Image', 'razzi'),
+				'label'   => esc_html__('Background Image', 'dimas'),
 				'default' => '',
 				'section' => 'footer_background',
 				'active_callback' => array(
@@ -3641,7 +3641,7 @@ class Fields {
 			),
 
 			'footer_extra_bg_color' => array(
-				'label'     => esc_html__('Background Color', 'razzi'),
+				'label'     => esc_html__('Background Color', 'dimas'),
 				'type'      => 'color',
 				'default'   => '',
 				'transport' => 'postMessage',
@@ -3668,7 +3668,7 @@ class Fields {
 
 			'footer_extra_text_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Text Color', 'razzi'),
+				'label'     => esc_html__('Text Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3694,7 +3694,7 @@ class Fields {
 
 			'footer_extra_text_color_hover' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Text Hover Color', 'razzi'),
+				'label'     => esc_html__('Text Hover Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3733,7 +3733,7 @@ class Fields {
 
 			'footer_newsletter_bg_enable' => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('FOOTER NEWSLETTER', 'razzi'),
+				'label'       => esc_html__('FOOTER NEWSLETTER', 'dimas'),
 				'section'     => 'footer_background',
 				'default'     => false,
 				'active_callback' => array(
@@ -3747,7 +3747,7 @@ class Fields {
 
 			'footer_newsletter_bg' => array(
 				'type'    => 'image',
-				'label'   => esc_html__('Background Image', 'razzi'),
+				'label'   => esc_html__('Background Image', 'dimas'),
 				'default' => '',
 				'section' => 'footer_background',
 				'active_callback' => array(
@@ -3765,7 +3765,7 @@ class Fields {
 			),
 
 			'footer_newsletter_bg_color' => array(
-				'label'     => esc_html__('Background Color', 'razzi'),
+				'label'     => esc_html__('Background Color', 'dimas'),
 				'type'      => 'color',
 				'default'   => '',
 				'transport' => 'postMessage',
@@ -3792,7 +3792,7 @@ class Fields {
 
 			'footer_newsletter_heading_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Heading Color', 'razzi'),
+				'label'     => esc_html__('Heading Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3818,7 +3818,7 @@ class Fields {
 
 			'footer_newsletter_form_border_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Border Color', 'razzi'),
+				'label'     => esc_html__('Border Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3849,7 +3849,7 @@ class Fields {
 
 			'footer_newsletter_text_field_bgcolor' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Text Field Background Color', 'razzi'),
+				'label'     => esc_html__('Text Field Background Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3880,7 +3880,7 @@ class Fields {
 
 			'footer_newsletter_text_field_placeholder_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Text Field Placehoder Color', 'razzi'),
+				'label'     => esc_html__('Text Field Placehoder Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3906,7 +3906,7 @@ class Fields {
 
 			'footer_newsletter_text_field_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Text Field Color', 'razzi'),
+				'label'     => esc_html__('Text Field Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3932,7 +3932,7 @@ class Fields {
 
 			'footer_newsletter_submit_bg_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Button Background Color', 'razzi'),
+				'label'     => esc_html__('Button Background Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -3963,7 +3963,7 @@ class Fields {
 
 			'footer_newsletter_submit_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Button Color', 'razzi'),
+				'label'     => esc_html__('Button Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -4001,7 +4001,7 @@ class Fields {
 
 			'footer_widgets_bg_enable' => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('FOOTER WIDGETS', 'razzi'),
+				'label'       => esc_html__('FOOTER WIDGETS', 'dimas'),
 				'section'     => 'footer_background',
 				'default'     => false,
 				'active_callback' => array(
@@ -4014,7 +4014,7 @@ class Fields {
 			),
 			'footer_widget_bg' => array(
 				'type'    => 'image',
-				'label'   => esc_html__('Background Image', 'razzi'),
+				'label'   => esc_html__('Background Image', 'dimas'),
 				'default' => '',
 				'section' => 'footer_background',
 				'active_callback' => array(
@@ -4032,7 +4032,7 @@ class Fields {
 			),
 
 			'footer_widget_bg_color' => array(
-				'label'     => esc_html__('Background Color', 'razzi'),
+				'label'     => esc_html__('Background Color', 'dimas'),
 				'type'      => 'color',
 				'default'   => '',
 				'transport' => 'postMessage',
@@ -4058,7 +4058,7 @@ class Fields {
 			),
 
 			'footer_widget_dropdown_border_color' => array(
-				'label'     => esc_html__('Border Color Dropdown', 'razzi'),
+				'label'     => esc_html__('Border Color Dropdown', 'dimas'),
 				'type'      => 'color',
 				'default'   => '',
 				'transport' => 'postMessage',
@@ -4085,7 +4085,7 @@ class Fields {
 
 			'footer_widget_heading_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Heading Color', 'razzi'),
+				'label'     => esc_html__('Heading Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -4111,7 +4111,7 @@ class Fields {
 
 			'footer_widget_text_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Text Color', 'razzi'),
+				'label'     => esc_html__('Text Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -4137,7 +4137,7 @@ class Fields {
 
 			'footer_widget_text_color_hover' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Text Hover Color', 'razzi'),
+				'label'     => esc_html__('Text Hover Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -4176,7 +4176,7 @@ class Fields {
 
 			'footer_main_bg_enable' => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('FOOTER MAIN', 'razzi'),
+				'label'       => esc_html__('FOOTER MAIN', 'dimas'),
 				'section'     => 'footer_background',
 				'default'     => false,
 				'active_callback' => array(
@@ -4189,7 +4189,7 @@ class Fields {
 			),
 			'footer_main_bg' => array(
 				'type'    => 'image',
-				'label'   => esc_html__('Background Image', 'razzi'),
+				'label'   => esc_html__('Background Image', 'dimas'),
 				'default' => '',
 				'section' => 'footer_background',
 				'active_callback' => array(
@@ -4207,7 +4207,7 @@ class Fields {
 			),
 
 			'footer_main_bg_color' => array(
-				'label'     => esc_html__('Background Color', 'razzi'),
+				'label'     => esc_html__('Background Color', 'dimas'),
 				'type'      => 'color',
 				'default'   => '',
 				'transport' => 'postMessage',
@@ -4234,7 +4234,7 @@ class Fields {
 
 			'footer_main_text_color' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Text Color', 'razzi'),
+				'label'     => esc_html__('Text Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -4260,7 +4260,7 @@ class Fields {
 
 			'footer_main_text_color_hover' => array(
 				'type'      => 'color',
-				'label'     => esc_html__('Text Hover Color', 'razzi'),
+				'label'     => esc_html__('Text Hover Color', 'dimas'),
 				'transport' => 'postMessage',
 				'default'   => '',
 				'js_vars'   => array(
@@ -4288,9 +4288,9 @@ class Fields {
 			'page_header'             => array(
 				'type'        => 'toggle',
 				'default'     => 1,
-				'label'       => esc_html__('Enable Page Header', 'razzi'),
+				'label'       => esc_html__('Enable Page Header', 'dimas'),
 				'section'     => 'page_header',
-				'description' => esc_html__('Enable to show a page header for the page below the site header', 'razzi'),
+				'description' => esc_html__('Enable to show a page header for the page below the site header', 'dimas'),
 				'priority'    => 10,
 			),
 
@@ -4309,15 +4309,15 @@ class Fields {
 
 			'page_header_els' => array(
 				'type'     => 'multicheck',
-				'label'    => esc_html__('Page Header Elements', 'razzi'),
+				'label'    => esc_html__('Page Header Elements', 'dimas'),
 				'section'  => 'page_header',
 				'default'  => array('breadcrumb', 'title'),
 				'priority' => 10,
 				'choices'  => array(
-					'breadcrumb' => esc_html__('BreadCrumb', 'razzi'),
-					'title'      => esc_html__('Title', 'razzi'),
+					'breadcrumb' => esc_html__('BreadCrumb', 'dimas'),
+					'title'      => esc_html__('Title', 'dimas'),
 				),
-				'description'     => esc_html__('Select which elements you want to show.', 'razzi'),
+				'description'     => esc_html__('Select which elements you want to show.', 'dimas'),
 				'active_callback' => array(
 					array(
 						'setting'  => 'page_header',
@@ -4330,7 +4330,7 @@ class Fields {
 			'page_header_custom_field_2' => array(
 				'type'            => 'custom',
 				'section'         => 'page_header',
-				'default'         => '<hr/><h3>' . esc_html__('Custom Title', 'razzi') . '</h3>',
+				'default'         => '<hr/><h3>' . esc_html__('Custom Title', 'dimas') . '</h3>',
 				'active_callback' => array(
 					array(
 						'setting'  => 'page_header',
@@ -4347,7 +4347,7 @@ class Fields {
 
 			'page_header_padding_top' => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Padding Top', 'razzi'),
+				'label'     => esc_html__('Padding Top', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'page_header',
 				'default'   => 50,
@@ -4379,7 +4379,7 @@ class Fields {
 
 			'page_header_padding_bottom'  => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Padding Bottom', 'razzi'),
+				'label'     => esc_html__('Padding Bottom', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'page_header',
 				'default'   => 50,
@@ -4412,14 +4412,14 @@ class Fields {
 			// Boxed Layout
 			'boxed_layout'                => array(
 				'type'     => 'toggle',
-				'label'    => esc_html__('Boxed Layout', 'razzi'),
+				'label'    => esc_html__('Boxed Layout', 'dimas'),
 				'section'  => 'boxed_layout',
 				'default'  => 0,
 				'priority' => 10,
 			),
 			'boxed_background_color'      => array(
 				'type'            => 'color',
-				'label'           => esc_html__('Background Color', 'razzi'),
+				'label'           => esc_html__('Background Color', 'dimas'),
 				'default'         => '',
 				'section'         => 'boxed_layout',
 				'priority'        => 10,
@@ -4433,7 +4433,7 @@ class Fields {
 			),
 			'boxed_background_image'      => array(
 				'type'            => 'image',
-				'label'           => esc_html__('Background Image', 'razzi'),
+				'label'           => esc_html__('Background Image', 'dimas'),
 				'default'         => '',
 				'section'         => 'boxed_layout',
 				'priority'        => 10,
@@ -4447,15 +4447,15 @@ class Fields {
 			),
 			'boxed_background_horizontal' => array(
 				'type'     => 'select',
-				'label'    => esc_html__('Background Horizontal', 'razzi'),
+				'label'    => esc_html__('Background Horizontal', 'dimas'),
 				'section'  => 'boxed_layout',
 				'default'  => '',
 				'priority' => 10,
 				'choices'  => array(
-					''       => esc_html__('None', 'razzi'),
-					'left'   => esc_html__('Left', 'razzi'),
-					'center' => esc_html__('Center', 'razzi'),
-					'right'  => esc_html__('Right', 'razzi'),
+					''       => esc_html__('None', 'dimas'),
+					'left'   => esc_html__('Left', 'dimas'),
+					'center' => esc_html__('Center', 'dimas'),
+					'right'  => esc_html__('Right', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -4467,15 +4467,15 @@ class Fields {
 			),
 			'boxed_background_vertical'   => array(
 				'type'     => 'select',
-				'label'    => esc_html__('Background Vertical', 'razzi'),
+				'label'    => esc_html__('Background Vertical', 'dimas'),
 				'section'  => 'boxed_layout',
 				'default'  => '',
 				'priority' => 10,
 				'choices'  => array(
-					''       => esc_html__('None', 'razzi'),
-					'top'    => esc_html__('Top', 'razzi'),
-					'center' => esc_html__('Center', 'razzi'),
-					'bottom' => esc_html__('Bottom', 'razzi'),
+					''       => esc_html__('None', 'dimas'),
+					'top'    => esc_html__('Top', 'dimas'),
+					'center' => esc_html__('Center', 'dimas'),
+					'bottom' => esc_html__('Bottom', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -4487,16 +4487,16 @@ class Fields {
 			),
 			'boxed_background_repeat'     => array(
 				'type'     => 'select',
-				'label'    => esc_html__('Background Repeat', 'razzi'),
+				'label'    => esc_html__('Background Repeat', 'dimas'),
 				'section'  => 'boxed_layout',
 				'default'  => '',
 				'priority' => 10,
 				'choices'  => array(
-					''          => esc_html__('None', 'razzi'),
-					'no-repeat' => esc_html__('No Repeat', 'razzi'),
-					'repeat'    => esc_html__('Repeat', 'razzi'),
-					'repeat-y'  => esc_html__('Repeat Vertical', 'razzi'),
-					'repeat-x'  => esc_html__('Repeat Horizontal', 'razzi'),
+					''          => esc_html__('None', 'dimas'),
+					'no-repeat' => esc_html__('No Repeat', 'dimas'),
+					'repeat'    => esc_html__('Repeat', 'dimas'),
+					'repeat-y'  => esc_html__('Repeat Vertical', 'dimas'),
+					'repeat-x'  => esc_html__('Repeat Horizontal', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -4508,14 +4508,14 @@ class Fields {
 			),
 			'boxed_background_attachment' => array(
 				'type'     => 'select',
-				'label'    => esc_html__('Background Attachment', 'razzi'),
+				'label'    => esc_html__('Background Attachment', 'dimas'),
 				'section'  => 'boxed_layout',
 				'default'  => '',
 				'priority' => 10,
 				'choices'  => array(
-					''       => esc_html__('None', 'razzi'),
-					'scroll' => esc_html__('Scroll', 'razzi'),
-					'fixed'  => esc_html__('Fixed', 'razzi'),
+					''       => esc_html__('None', 'dimas'),
+					'scroll' => esc_html__('Scroll', 'dimas'),
+					'fixed'  => esc_html__('Fixed', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -4527,15 +4527,15 @@ class Fields {
 			),
 			'boxed_background_size'       => array(
 				'type'     => 'select',
-				'label'    => esc_html__('Background Size', 'razzi'),
+				'label'    => esc_html__('Background Size', 'dimas'),
 				'section'  => 'boxed_layout',
 				'default'  => '',
 				'priority' => 10,
 				'choices'  => array(
-					''        => esc_html__('None', 'razzi'),
-					'auto'    => esc_html__('Auto', 'razzi'),
-					'cover'   => esc_html__('Cover', 'razzi'),
-					'contain' => esc_html__('Contain', 'razzi'),
+					''        => esc_html__('None', 'dimas'),
+					'auto'    => esc_html__('Auto', 'dimas'),
+					'cover'   => esc_html__('Cover', 'dimas'),
+					'contain' => esc_html__('Contain', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -4550,9 +4550,9 @@ class Fields {
 			'page_header_blog'            => array(
 				'type'        => 'toggle',
 				'default'     => 1,
-				'label'       => esc_html__('Enable Page Header', 'razzi'),
+				'label'       => esc_html__('Enable Page Header', 'dimas'),
 				'section'     => 'page_header_blog',
-				'description' => esc_html__('Enable to show a page header for the page below the site header', 'razzi'),
+				'description' => esc_html__('Enable to show a page header for the page below the site header', 'dimas'),
 				'priority'    => 10,
 			),
 
@@ -4571,15 +4571,15 @@ class Fields {
 
 			'page_header_blog_els' => array(
 				'type'     => 'multicheck',
-				'label'    => esc_html__('Page Header Elements', 'razzi'),
+				'label'    => esc_html__('Page Header Elements', 'dimas'),
 				'section'  => 'page_header_blog',
 				'default'  => array('breadcrumb', 'title'),
 				'priority' => 10,
 				'choices'  => array(
-					'breadcrumb' => esc_html__('BreadCrumb', 'razzi'),
-					'title'      => esc_html__('Title', 'razzi'),
+					'breadcrumb' => esc_html__('BreadCrumb', 'dimas'),
+					'title'      => esc_html__('Title', 'dimas'),
 				),
-				'description'     => esc_html__('Select which elements you want to show.', 'razzi'),
+				'description'     => esc_html__('Select which elements you want to show.', 'dimas'),
 				'active_callback' => array(
 					array(
 						'setting'  => 'page_header_blog',
@@ -4592,7 +4592,7 @@ class Fields {
 			'page_header_blog_custom_field_2' => array(
 				'type'            => 'custom',
 				'section'         => 'page_header_blog',
-				'default'         => '<hr/><h3>' . esc_html__('Custom Title', 'razzi') . '</h3>',
+				'default'         => '<hr/><h3>' . esc_html__('Custom Title', 'dimas') . '</h3>',
 				'active_callback' => array(
 					array(
 						'setting'  => 'page_header_blog',
@@ -4609,7 +4609,7 @@ class Fields {
 
 			'page_header_blog_padding_top' => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Padding Top', 'razzi'),
+				'label'     => esc_html__('Padding Top', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'page_header_blog',
 				'default'   => 50,
@@ -4620,7 +4620,7 @@ class Fields {
 				),
 				'js_vars'         => array(
 					array(
-						'element'  => '.razzi-blog-page #page-header .page-header__title',
+						'element'  => '.dimas-blog-page #page-header .page-header__title',
 						'property' => 'padding-top',
 						'units'    => 'px',
 					),
@@ -4641,7 +4641,7 @@ class Fields {
 
 			'page_header_blog_padding_bottom' => array(
 				'type'      => 'slider',
-				'label'     => esc_html__('Padding Bottom', 'razzi'),
+				'label'     => esc_html__('Padding Bottom', 'dimas'),
 				'transport' => 'postMessage',
 				'section'   => 'page_header_blog',
 				'default'   => 50,
@@ -4652,7 +4652,7 @@ class Fields {
 				),
 				'js_vars'         => array(
 					array(
-						'element'  => '.razzi-blog-page #page-header .page-header__title',
+						'element'  => '.dimas-blog-page #page-header .page-header__title',
 						'property' => 'padding-bottom',
 						'units'    => 'px',
 					),
@@ -4674,15 +4674,15 @@ class Fields {
 			// Recently viewed
 			'recently_viewed_enable'          => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__('Recently Viewed', 'razzi'),
+				'label'       => esc_html__('Recently Viewed', 'dimas'),
 				'section'     => 'recently_viewed',
 				'default'     => 0,
-				'description' => esc_html__('Check this option to show the recently viewed products above the footer.', 'razzi'),
+				'description' => esc_html__('Check this option to show the recently viewed products above the footer.', 'dimas'),
 			),
 
 			'recently_viewed_ajax' => array(
 				'type'    => 'toggle',
-				'label'   => esc_html__('Load With Ajax', 'razzi'),
+				'label'   => esc_html__('Load With Ajax', 'dimas'),
 				'section' => 'recently_viewed',
 				'default' => 0,
 				'active_callback' => array(
@@ -4696,10 +4696,10 @@ class Fields {
 
 			'recently_viewed_empty' => array(
 				'type'            => 'toggle',
-				'label'           => esc_html__('Hide Empty Products', 'razzi'),
+				'label'           => esc_html__('Hide Empty Products', 'dimas'),
 				'section'         => 'recently_viewed',
 				'default'         => 1,
-				'description'     => esc_html__('Check this option to hide the recently viewed products when empty.', 'razzi'),
+				'description'     => esc_html__('Check this option to hide the recently viewed products when empty.', 'dimas'),
 				'active_callback' => array(
 					array(
 						'setting'  => 'recently_viewed_enable',
@@ -4711,15 +4711,15 @@ class Fields {
 
 			'recently_viewed_display_page' => array(
 				'type'     => 'multicheck',
-				'label'    => esc_html__('Display On Page', 'razzi'),
+				'label'    => esc_html__('Display On Page', 'dimas'),
 				'section'  => 'recently_viewed',
 				'default'  => array('single'),
 				'priority' => 10,
 				'choices'  => array(
-					'single'   => esc_html__('Single Product', 'razzi'),
-					'catalog'  => esc_html__('Catalog Page', 'razzi'),
-					'cart'     => esc_html__('Cart Page', 'razzi'),
-					'checkout' => esc_html__('Checkout Page', 'razzi'),
+					'single'   => esc_html__('Single Product', 'dimas'),
+					'catalog'  => esc_html__('Catalog Page', 'dimas'),
+					'cart'     => esc_html__('Cart Page', 'dimas'),
+					'checkout' => esc_html__('Checkout Page', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -4738,12 +4738,12 @@ class Fields {
 
 			'recently_viewed_layout' => array(
 				'type'    => 'select',
-				'label'   => esc_html__('Layout', 'razzi'),
+				'label'   => esc_html__('Layout', 'dimas'),
 				'section' => 'recently_viewed',
 				'default' => 'default',
 				'choices' => array(
-					'default' => esc_html__('Default', 'razzi'),
-					'effect'  => esc_html__('Effect Hover', 'razzi'),
+					'default' => esc_html__('Default', 'dimas'),
+					'effect'  => esc_html__('Effect Hover', 'dimas'),
 				),
 				'active_callback' => array(
 					array(
@@ -4756,7 +4756,7 @@ class Fields {
 
 			'recently_viewed_title' => array(
 				'type'            => 'text',
-				'label'           => esc_html__('Title', 'razzi'),
+				'label'           => esc_html__('Title', 'dimas'),
 				'section'         => 'recently_viewed',
 				'default'         => '',
 				'active_callback' => array(
@@ -4770,7 +4770,7 @@ class Fields {
 
 			'recently_viewed_button_text' => array(
 				'type'            => 'text',
-				'label'           => esc_html__('Button Text', 'razzi'),
+				'label'           => esc_html__('Button Text', 'dimas'),
 				'section'         => 'recently_viewed',
 				'default'         => '',
 				'active_callback' => array(
@@ -4784,7 +4784,7 @@ class Fields {
 
 			'recently_viewed_button_link' => array(
 				'type'            => 'text',
-				'label'           => esc_html__('Button Link', 'razzi'),
+				'label'           => esc_html__('Button Link', 'dimas'),
 				'section'         => 'recently_viewed',
 				'default'         => '',
 				'active_callback' => array(
@@ -4798,7 +4798,7 @@ class Fields {
 
 			'recently_viewed_columns' => array(
 				'type'            => 'number',
-				'label'           => esc_html__('Columns', 'razzi'),
+				'label'           => esc_html__('Columns', 'dimas'),
 				'section'         => 'recently_viewed',
 				'default'         => 4,
 				'active_callback' => array(
@@ -4808,12 +4808,12 @@ class Fields {
 						'value'    => 1,
 					),
 				),
-				'description' => esc_html__('Specify how many numbers of recently viewed products you want to show on page', 'razzi'),
+				'description' => esc_html__('Specify how many numbers of recently viewed products you want to show on page', 'dimas'),
 			),
 
 			'recently_viewed_numbers' => array(
 				'type'            => 'number',
-				'label'           => esc_html__('Numbers', 'razzi'),
+				'label'           => esc_html__('Numbers', 'dimas'),
 				'section'         => 'recently_viewed',
 				'default'         => 6,
 				'active_callback' => array(
@@ -4823,27 +4823,27 @@ class Fields {
 						'value'    => 1,
 					),
 				),
-				'description' => esc_html__('Specify how many numbers of recently viewed products you want to show on page', 'razzi'),
+				'description' => esc_html__('Specify how many numbers of recently viewed products you want to show on page', 'dimas'),
 			),
 			// Topbar Mobile
 			'mobile_topbar' => array(
 				'type'        => 'toggle',
-				'label'       => esc_html__( 'Topbar', 'razzi' ),
-				'description' => esc_html__( 'Display topbar on mobile', 'razzi' ),
+				'label'       => esc_html__( 'Topbar', 'dimas' ),
+				'description' => esc_html__( 'Display topbar on mobile', 'dimas' ),
 				'default'     => false,
 				'section'     => 'mobile_topbar',
 			),
 
 			'mobile_topbar_items'               => array(
 				'type'            => 'repeater',
-				'label'           => esc_html__( 'List Items', 'razzi' ),
-				'description'     => esc_html__( 'Control items on the topbar mobile', 'razzi' ),
+				'label'           => esc_html__( 'List Items', 'dimas' ),
+				'description'     => esc_html__( 'Control items on the topbar mobile', 'dimas' ),
 				'transport'       => 'postMessage',
 				'default'         => array(),
 				'section'         => 'mobile_topbar',
 				'row_label'       => array(
 					'type'  => 'field',
-					'value' => esc_attr__( 'Item', 'razzi' ),
+					'value' => esc_attr__( 'Item', 'dimas' ),
 					'field' => 'item',
 				),
 				'fields'          => array(
@@ -4867,14 +4867,14 @@ class Fields {
 			),
 			'mobile_topbar_svg_code'            => array(
 				'type'              => 'textarea',
-				'label'             => esc_html__( 'SVG code', 'razzi' ),
+				'label'             => esc_html__( 'SVG code', 'dimas' ),
 				'section'           => 'mobile_topbar',
-				'description'       => esc_html__( 'The SVG before your text', 'razzi' ),
+				'description'       => esc_html__( 'The SVG before your text', 'dimas' ),
 				'default'           => '',
-				'sanitize_callback' => '\Razzi\Icon::sanitize_svg',
+				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
 				'output'            => array(
 					array(
-						'element' => '.razzi-topbar__text .razzi-svg-icon',
+						'element' => '.dimas-topbar__text .dimas-svg-icon',
 					),
 				),
 				'active_callback'   => array(
@@ -4887,9 +4887,9 @@ class Fields {
 			),
 			'mobile_topbar_text'                => array(
 				'type'            => 'editor',
-				'label'           => esc_html__( 'Custom Text', 'razzi' ),
+				'label'           => esc_html__( 'Custom Text', 'dimas' ),
 				'section'         => 'mobile_topbar',
-				'description'     => esc_html__( 'The content of Custom Text item', 'razzi' ),
+				'description'     => esc_html__( 'The content of Custom Text item', 'dimas' ),
 				'default'         => '',
 				'active_callback' => array(
 					array(
@@ -4901,7 +4901,7 @@ class Fields {
 			),
 			'mobile_header_height'              => array(
 				'type'      => 'slider',
-				'label'     => esc_html__( 'Header Height', 'razzi' ),
+				'label'     => esc_html__( 'Header Height', 'dimas' ),
 				'section'   => 'mobile_header',
 				'transport' => 'postMessage',
 				'default'   => '60',
@@ -4924,14 +4924,14 @@ class Fields {
 			),
 			'mobile_header_icons'               => array(
 				'type'        => 'repeater',
-				'label'       => esc_html__( 'Header Icons', 'razzi' ),
+				'label'       => esc_html__( 'Header Icons', 'dimas' ),
 				'section'     => 'mobile_header',
-				'description' => esc_html__( 'Control icons on the right side of mobile header', 'razzi' ),
+				'description' => esc_html__( 'Control icons on the right side of mobile header', 'dimas' ),
 				'transport'   => 'postMessage',
 				'default'     => array( array( 'item' => 'search' ), array( 'item' => 'cart' ) ),
 				'row_label'   => array(
 					'type'  => 'field',
-					'value' => esc_attr__( 'Item', 'razzi' ),
+					'value' => esc_attr__( 'Item', 'dimas' ),
 					'field' => 'item',
 				),
 				'fields'      => array(
@@ -4946,26 +4946,26 @@ class Fields {
 				'mobile_page_header_hr'             => array(
 					'type'    => 'custom',
 					'section' => 'mobile_page',
-					'default' => '<hr/><h2>' . esc_html__( 'Page Header', 'razzi' ) . '</h2>',
+					'default' => '<hr/><h2>' . esc_html__( 'Page Header', 'dimas' ) . '</h2>',
 				),
 				'mobile_page_header'                => array(
 					'type'        => 'toggle',
 					'default'     => 1,
-					'label'       => esc_html__( 'Enable Page Header', 'razzi' ),
+					'label'       => esc_html__( 'Enable Page Header', 'dimas' ),
 					'section'     => 'mobile_page',
-					'description' => esc_html__( 'Enable to show a page header for the page below the site header', 'razzi' ),
+					'description' => esc_html__( 'Enable to show a page header for the page below the site header', 'dimas' ),
 				),
 				'mobile_page_header_els'            => array(
 					'type'            => 'multicheck',
-					'label'           => esc_html__( 'Page Header Elements', 'razzi' ),
+					'label'           => esc_html__( 'Page Header Elements', 'dimas' ),
 					'section'         => 'mobile_page',
 					'default'         => array( 'breadcrumb', 'title' ),
 					'priority'        => 10,
 					'choices'         => array(
-						'breadcrumb' => esc_html__( 'BreadCrumb', 'razzi' ),
-						'title'      => esc_html__( 'Title', 'razzi' ),
+						'breadcrumb' => esc_html__( 'BreadCrumb', 'dimas' ),
+						'title'      => esc_html__( 'Title', 'dimas' ),
 					),
-					'description'     => esc_html__( 'Select which elements you want to show.', 'razzi' ),
+					'description'     => esc_html__( 'Select which elements you want to show.', 'dimas' ),
 					'active_callback' => array(
 						array(
 							'setting'  => 'mobile_page_header',
@@ -4979,26 +4979,26 @@ class Fields {
 				'mobile_blog_page_header_hr'        => array(
 					'type'    => 'custom',
 					'section' => 'mobile_blog',
-					'default' => '<hr/><h2>' . esc_html__( 'Page Header', 'razzi' ) . '</h2>',
+					'default' => '<hr/><h2>' . esc_html__( 'Page Header', 'dimas' ) . '</h2>',
 				),
 				'mobile_blog_page_header'           => array(
 					'type'        => 'toggle',
 					'default'     => 1,
-					'label'       => esc_html__( 'Enable Page Header', 'razzi' ),
+					'label'       => esc_html__( 'Enable Page Header', 'dimas' ),
 					'section'     => 'mobile_blog',
-					'description' => esc_html__( 'Enable to show a page header for the page below the site header', 'razzi' ),
+					'description' => esc_html__( 'Enable to show a page header for the page below the site header', 'dimas' ),
 				),
 				'mobile_blog_page_header_els'       => array(
 					'type'            => 'multicheck',
-					'label'           => esc_html__( 'Page Header Elements', 'razzi' ),
+					'label'           => esc_html__( 'Page Header Elements', 'dimas' ),
 					'section'         => 'mobile_blog',
 					'default'         => array( 'breadcrumb', 'title' ),
 					'priority'        => 10,
 					'choices'         => array(
-						'breadcrumb' => esc_html__( 'BreadCrumb', 'razzi' ),
-						'title'      => esc_html__( 'Title', 'razzi' ),
+						'breadcrumb' => esc_html__( 'BreadCrumb', 'dimas' ),
+						'title'      => esc_html__( 'Title', 'dimas' ),
 					),
-					'description'     => esc_html__( 'Select which elements you want to show.', 'razzi' ),
+					'description'     => esc_html__( 'Select which elements you want to show.', 'dimas' ),
 					'active_callback' => array(
 						array(
 							'setting'  => 'mobile_page_header',
@@ -5012,21 +5012,21 @@ class Fields {
 				'mobile_single_post_breadcrumb'    => array(
 					'type'    => 'toggle',
 					'default' => 1,
-					'label'   => esc_html__( 'Enable breadcrumb', 'razzi' ),
+					'label'   => esc_html__( 'Enable breadcrumb', 'dimas' ),
 					'section' => 'mobile_single_blog',
 				),
 
 				// Mobile Footer
 				'mobile_footer_newsletter'          => array(
 					'type'        => 'toggle',
-					'label'       => esc_html__( 'Footer Newsletter', 'razzi' ),
-					'description' => esc_html__( 'Display footer newsletter on mobile', 'razzi' ),
+					'label'       => esc_html__( 'Footer Newsletter', 'dimas' ),
+					'description' => esc_html__( 'Display footer newsletter on mobile', 'dimas' ),
 					'default'     => true,
 					'section'     => 'mobile_footer',
 				),
 				'mobile_footer_newsletter_padding_top' => array(
 					'type'      => 'slider',
-					'label'     => esc_html__('Padding Top', 'razzi'),
+					'label'     => esc_html__('Padding Top', 'dimas'),
 					'transport' => 'postMessage',
 					'section'   => 'mobile_footer',
 					'default'   => 30,
@@ -5051,7 +5051,7 @@ class Fields {
 				),
 				'mobile_footer_newsletter_padding_bottom' => array(
 					'type'      => 'slider',
-					'label'     => esc_html__('Padding Bottom', 'razzi'),
+					'label'     => esc_html__('Padding Bottom', 'dimas'),
 					'transport' => 'postMessage',
 					'section'   => 'mobile_footer',
 					'default'   => 40,
@@ -5083,14 +5083,14 @@ class Fields {
 
 				'mobile_footer_widget'              => array(
 					'type'        => 'toggle',
-					'label'       => esc_html__( 'Footer Widget', 'razzi' ),
-					'description' => esc_html__( 'Display footer widget on mobile', 'razzi' ),
+					'label'       => esc_html__( 'Footer Widget', 'dimas' ),
+					'description' => esc_html__( 'Display footer widget on mobile', 'dimas' ),
 					'default'     => true,
 					'section'     => 'mobile_footer',
 				),
 				'mobile_footer_widget_padding_top' => array(
 					'type'      => 'slider',
-					'label'     => esc_html__('Padding Top', 'razzi'),
+					'label'     => esc_html__('Padding Top', 'dimas'),
 					'transport' => 'postMessage',
 					'section'   => 'mobile_footer',
 					'default'   => 30,
@@ -5115,7 +5115,7 @@ class Fields {
 				),
 				'mobile_footer_widget_padding_bottom' => array(
 					'type'      => 'slider',
-					'label'     => esc_html__('Padding Bottom', 'razzi'),
+					'label'     => esc_html__('Padding Bottom', 'dimas'),
 					'transport' => 'postMessage',
 					'section'   => 'mobile_footer',
 					'default'   => 40,
@@ -5147,14 +5147,14 @@ class Fields {
 
 				'mobile_footer_main'                => array(
 					'type'        => 'toggle',
-					'label'       => esc_html__( 'Footer Main', 'razzi' ),
-					'description' => esc_html__( 'Display footer main on mobile', 'razzi' ),
+					'label'       => esc_html__( 'Footer Main', 'dimas' ),
+					'description' => esc_html__( 'Display footer main on mobile', 'dimas' ),
 					'default'     => true,
 					'section'     => 'mobile_footer',
 				),
 				'mobile_footer_main_padding_top' => array(
 					'type'      => 'slider',
-					'label'     => esc_html__('Padding Top', 'razzi'),
+					'label'     => esc_html__('Padding Top', 'dimas'),
 					'transport' => 'postMessage',
 					'section'   => 'mobile_footer',
 					'default'   => 30,
@@ -5179,7 +5179,7 @@ class Fields {
 				),
 				'mobile_footer_main_padding_bottom' => array(
 					'type'      => 'slider',
-					'label'     => esc_html__('Padding Bottom', 'razzi'),
+					'label'     => esc_html__('Padding Bottom', 'dimas'),
 					'transport' => 'postMessage',
 					'section'   => 'mobile_footer',
 					'default'   => 40,
@@ -5211,14 +5211,14 @@ class Fields {
 
 				'mobile_footer_extra'               => array(
 					'type'        => 'toggle',
-					'label'       => esc_html__( 'Footer Extra', 'razzi' ),
-					'description' => esc_html__( 'Display footer extra on mobile', 'razzi' ),
+					'label'       => esc_html__( 'Footer Extra', 'dimas' ),
+					'description' => esc_html__( 'Display footer extra on mobile', 'dimas' ),
 					'default'     => true,
 					'section'     => 'mobile_footer',
 				),
 				'mobile_footer_extra_padding_top' => array(
 					'type'      => 'slider',
-					'label'     => esc_html__('Padding Top', 'razzi'),
+					'label'     => esc_html__('Padding Top', 'dimas'),
 					'transport' => 'postMessage',
 					'section'   => 'mobile_footer',
 					'default'   => 30,
@@ -5243,7 +5243,7 @@ class Fields {
 				),
 				'mobile_footer_extra_padding_bottom' => array(
 					'type'      => 'slider',
-					'label'     => esc_html__('Padding Bottom', 'razzi'),
+					'label'     => esc_html__('Padding Bottom', 'dimas'),
 					'transport' => 'postMessage',
 					'section'   => 'mobile_footer',
 					'default'   => 40,
@@ -5270,15 +5270,15 @@ class Fields {
 				// Mobile Logo
 				'mobile_menu_left'                  => array(
 					'type'        => 'toggle',
-					'label'       => esc_html__( 'Show Menu Left', 'razzi' ),
+					'label'       => esc_html__( 'Show Menu Left', 'dimas' ),
 					'section'     => 'mobile_header',
 					'default'     => true,
 				),
 				'mobile_header_history_back'            => array(
 					'type'    => 'toggle',
-					'label'   => esc_html__( 'Back to history', 'razzi' ),
+					'label'   => esc_html__( 'Back to history', 'dimas' ),
 					'section' => 'mobile_header',
-					'description' => esc_html__( 'Show back icon in the inner pages', 'razzi' ),
+					'description' => esc_html__( 'Show back icon in the inner pages', 'dimas' ),
 					'default' => 0,
 				),
 				'mobile_logo_custom_field_20'        => array(
@@ -5288,9 +5288,9 @@ class Fields {
 				),
 				'mobile_custom_logo'                => array(
 					'type'        => 'toggle',
-					'label'       => esc_html__( 'Mobile Logo', 'razzi' ),
+					'label'       => esc_html__( 'Mobile Logo', 'dimas' ),
 					'section'     => 'mobile_header',
-					'description' => esc_html__( 'Use a different logo on mobile', 'razzi' ),
+					'description' => esc_html__( 'Use a different logo on mobile', 'dimas' ),
 					'default'     => false,
 				),
 				'mobile_logo'                       => array(
@@ -5305,7 +5305,7 @@ class Fields {
 					),
 				),
 				'mobile_logo_light'                       => array(
-					'label'           => esc_html__( 'Logo Light', 'razzi' ),
+					'label'           => esc_html__( 'Logo Light', 'dimas' ),
 					'type'            => 'image',
 					'section'         => 'mobile_header',
 					'active_callback' => array(
@@ -5318,7 +5318,7 @@ class Fields {
 				),
 				'mobile_logo_dimension'                            => array(
 					'type'    => 'dimensions',
-					'label'   => esc_html__('Logo Dimension', 'razzi'),
+					'label'   => esc_html__('Logo Dimension', 'dimas'),
 					'default' => array(
 						'width'  => '',
 						'height' => '',
@@ -5341,48 +5341,48 @@ class Fields {
 				'mobile_menu_custom_field_1'        => array(
 					'type'    => 'custom',
 					'section' => 'mobile_header',
-					'default' => '<h2>' . esc_html__( 'Header Menu Panel', 'razzi' ) . '</h2>',
+					'default' => '<h2>' . esc_html__( 'Header Menu Panel', 'dimas' ) . '</h2>',
 				),
 				'mobile_menu_click_item'            => array(
 					'type'    => 'select',
-					'label'   => esc_html__( 'Show Sub-Menus', 'razzi' ),
+					'label'   => esc_html__( 'Show Sub-Menus', 'dimas' ),
 					'section' => 'mobile_header',
 					'default' => 'click-item',
 					'choices' => array(
-						'click-item' => esc_html__( 'Click to item', 'razzi' ),
-						'click-icon' => esc_html__( 'Click to icon', 'razzi' ),
+						'click-item' => esc_html__( 'Click to item', 'dimas' ),
+						'click-icon' => esc_html__( 'Click to icon', 'dimas' ),
 					),
 				),
 				'mobile_menu_show_socials'          => array(
 					'type'    => 'toggle',
-					'label'   => esc_html__( 'Show Socials', 'razzi' ),
+					'label'   => esc_html__( 'Show Socials', 'dimas' ),
 					'default' => '0',
 					'section' => 'mobile_header',
 				),
 				'mobile_menu_show_copyright'        => array(
 					'type'    => 'toggle',
-					'label'   => esc_html__( 'Show Copyright', 'razzi' ),
+					'label'   => esc_html__( 'Show Copyright', 'dimas' ),
 					'default' => '0',
 					'section' => 'mobile_header',
 				),
 				'mobile_campaign_bar'            => array(
 					'type'    => 'toggle',
-					'label'   => esc_html__( 'Campaign Bar', 'razzi' ),
+					'label'   => esc_html__( 'Campaign Bar', 'dimas' ),
 					'section' => 'mobile_header_campaign',
 					'default' => false,
 				),
 				'mobile_newsletter_popup'        => array(
 					'type'    => 'toggle',
-					'label'   => esc_html__( 'Newsletter_Popup', 'razzi' ),
+					'label'   => esc_html__( 'Newsletter_Popup', 'dimas' ),
 					'section' => 'mobile_newsletter_popup',
 					'default' => true,
 				),
 				// Panel
 				'mobile_panel_custom_logo'                => array(
 					'type'        => 'toggle',
-					'label'       => esc_html__( 'Custom Logo', 'razzi' ),
+					'label'       => esc_html__( 'Custom Logo', 'dimas' ),
 					'section'     => 'mobile_panel',
-					'description' => esc_html__( 'Use a different logo on mobile panel', 'razzi' ),
+					'description' => esc_html__( 'Use a different logo on mobile panel', 'dimas' ),
 					'default'     => false,
 				),
 				'mobile_panel_logo'                       => array(
@@ -5398,7 +5398,7 @@ class Fields {
 				),
 				'mobile_panel_logo_dimension'                            => array(
 					'type'    => 'dimensions',
-					'label'   => esc_html__('Logo Dimension', 'razzi'),
+					'label'   => esc_html__('Logo Dimension', 'dimas'),
 					'default' => array(
 						'width'  => '',
 						'height' => '',
@@ -5416,7 +5416,7 @@ class Fields {
 				'mobile_catalog_product_loop_hr' => array(
 					'type'            => 'custom',
 					'section'         => 'mobile_product_catalog',
-					'default'         => '<hr/><h2>' . esc_html__( 'Product Loop', 'razzi' ) . '</h2>',
+					'default'         => '<hr/><h2>' . esc_html__( 'Product Loop', 'dimas' ) . '</h2>',
 					'active_callback' => array(
 						array(
 							'setting'  => 'product_loop_layout',
@@ -5427,7 +5427,7 @@ class Fields {
 				),
 				'mobile_product_featured_icons'  => array(
 					'type'            => 'toggle',
-					'label'           => esc_html__( 'Always Show Featured Icons', 'razzi' ),
+					'label'           => esc_html__( 'Always Show Featured Icons', 'dimas' ),
 					'default'         => '0',
 					'section'         => 'mobile_product_catalog',
 					'active_callback' => array(
@@ -5440,7 +5440,7 @@ class Fields {
 				),
 				'mobile_product_loop_atc'        => array(
 					'type'            => 'toggle',
-					'label'           => esc_html__( 'Show Add To Cart Button', 'razzi' ),
+					'label'           => esc_html__( 'Show Add To Cart Button', 'dimas' ),
 					'default'         => '0',
 					'section'         => 'mobile_product_catalog',
 					'active_callback' => array(
@@ -5454,55 +5454,55 @@ class Fields {
 
 				'shop_products_hr_4' => array(
 					'type'    => 'custom',
-					'default' => '<hr/><h2>' . esc_html__( 'Product Columns', 'razzi' ) . '</h2>',
+					'default' => '<hr/><h2>' . esc_html__( 'Product Columns', 'dimas' ) . '</h2>',
 					'section' => 'mobile_product_catalog',
 				),
 
 				'mobile_landscape_product_columns'     => array(
-					'label'   => esc_html__( 'Mobile Landscape(767px)', 'razzi' ),
+					'label'   => esc_html__( 'Mobile Landscape(767px)', 'dimas' ),
 					'section' => 'mobile_product_catalog',
 					'type'    => 'select',
 					'default' => '3',
 					'choices' => array(
-						'1' => esc_attr__( '1 Column', 'razzi' ),
-						'2' => esc_attr__( '2 Columns', 'razzi' ),
-						'3' => esc_attr__( '3 Columns', 'razzi' ),
+						'1' => esc_attr__( '1 Column', 'dimas' ),
+						'2' => esc_attr__( '2 Columns', 'dimas' ),
+						'3' => esc_attr__( '3 Columns', 'dimas' ),
 					),
 				),
 				'mobile_portrait_product_columns'      => array(
-					'label'   => esc_html__( 'Mobile Portrait(479px)', 'razzi' ),
+					'label'   => esc_html__( 'Mobile Portrait(479px)', 'dimas' ),
 					'section' => 'mobile_product_catalog',
 					'type'    => 'select',
 					'default' => '2',
 					'choices' => array(
-						'1' => esc_attr__( '1 Column', 'razzi' ),
-						'2' => esc_attr__( '2 Columns', 'razzi' ),
-						'3' => esc_attr__( '3 Columns', 'razzi' ),
+						'1' => esc_attr__( '1 Column', 'dimas' ),
+						'2' => esc_attr__( '2 Columns', 'dimas' ),
+						'3' => esc_attr__( '3 Columns', 'dimas' ),
 					),
 				),
 				'mobile_catalog_page_header_hr'        => array(
 					'type'    => 'custom',
 					'section' => 'mobile_product_catalog',
-					'default' => '<hr/><h2>' . esc_html__( 'Page Header', 'razzi' ) . '</h2>',
+					'default' => '<hr/><h2>' . esc_html__( 'Page Header', 'dimas' ) . '</h2>',
 				),
 				'mobile_catalog_page_header'           => array(
 					'type'        => 'toggle',
 					'default'     => 1,
-					'label'       => esc_html__( 'Enable Page Header', 'razzi' ),
+					'label'       => esc_html__( 'Enable Page Header', 'dimas' ),
 					'section'     => 'mobile_product_catalog',
-					'description' => esc_html__( 'Enable to show a page header for the shop page below the site header', 'razzi' ),
+					'description' => esc_html__( 'Enable to show a page header for the shop page below the site header', 'dimas' ),
 				),
 				'mobile_catalog_page_header_els'       => array(
 					'type'            => 'multicheck',
-					'label'           => esc_html__( 'Page Header Elements', 'razzi' ),
+					'label'           => esc_html__( 'Page Header Elements', 'dimas' ),
 					'section'         => 'mobile_product_catalog',
 					'default'         => array( 'breadcrumb', 'title' ),
 					'priority'        => 10,
 					'choices'         => array(
-						'breadcrumb' => esc_html__( 'BreadCrumb', 'razzi' ),
-						'title'      => esc_html__( 'Title', 'razzi' ),
+						'breadcrumb' => esc_html__( 'BreadCrumb', 'dimas' ),
+						'title'      => esc_html__( 'Title', 'dimas' ),
 					),
-					'description'     => esc_html__( 'Select which elements you want to show.', 'razzi' ),
+					'description'     => esc_html__( 'Select which elements you want to show.', 'dimas' ),
 					'active_callback' => array(
 						array(
 							'setting'  => 'mobile_catalog_page_header',
@@ -5513,7 +5513,7 @@ class Fields {
 				),
 				'shop_products_hr_5' => array(
 					'type'    => 'custom',
-					'default' => '<hr/><h2>' . esc_html__( 'Catalog Toolbar', 'razzi' ) . '</h2>',
+					'default' => '<hr/><h2>' . esc_html__( 'Catalog Toolbar', 'dimas' ) . '</h2>',
 					'section' => 'mobile_product_catalog',
 					'active_callback' => array(
 						array(
@@ -5525,7 +5525,7 @@ class Fields {
 				),
 				'mobile_filter_label'    => array(
 					'type'            => 'text',
-					'label'           => esc_html__( 'Filter Label', 'razzi' ),
+					'label'           => esc_html__( 'Filter Label', 'dimas' ),
 					'section'         => 'mobile_product_catalog',
 					'active_callback' => array(
 						array(
@@ -5539,24 +5539,24 @@ class Fields {
 				'mobile_single_product_breadcrumb'    => array(
 					'type'        => 'toggle',
 					'default'     => 1,
-					'label'       => esc_html__( 'Enable Breadcrumb', 'razzi' ),
+					'label'       => esc_html__( 'Enable Breadcrumb', 'dimas' ),
 					'section'     => 'mobile_single_product',
-					'description' => esc_html__( 'Enable to show a page header for the single product page below the site header', 'razzi' ),
+					'description' => esc_html__( 'Enable to show a page header for the single product page below the site header', 'dimas' ),
 				),
 				'mobile_product_tabs_status'           => array(
 					'type'    => 'select',
-					'label'   => esc_html__( 'Product Tabs Status', 'razzi' ),
+					'label'   => esc_html__( 'Product Tabs Status', 'dimas' ),
 					'default' => 'close',
 					'section' => 'mobile_single_product',
 					'choices' => array(
-						'close' => esc_html__( 'Close all tabs', 'razzi' ),
-						'first' => esc_html__( 'Open first tab', 'razzi' ),
+						'close' => esc_html__( 'Close all tabs', 'dimas' ),
+						'first' => esc_html__( 'Open first tab', 'dimas' ),
 					),
 				),
 
 				'mobile_version'                        => array(
 					'type'    => 'toggle',
-					'label'   => esc_html__( 'Mobile Version', 'razzi' ),
+					'label'   => esc_html__( 'Mobile Version', 'dimas' ),
 					'section' => 'mobile_version',
 					'default' => 'yes',
 				),
@@ -5567,13 +5567,13 @@ class Fields {
 				),
 				'custom_mobile_homepage'                       => array(
 					'type'    => 'toggle',
-					'label'   => esc_html__( 'Custom Homepage', 'razzi' ),
+					'label'   => esc_html__( 'Custom Homepage', 'dimas' ),
 					'section' => 'mobile_version',
 					'default' => 0,
 				),
 				'mobile_homepage_id'                       => array(
 					'type'    => 'select',
-					'label'   => esc_html__( 'Homepage', 'razzi' ),
+					'label'   => esc_html__( 'Homepage', 'dimas' ),
 					'section' => 'mobile_version',
 					'default' => 'homepage-mobile',
 					'choices' => class_exists( 'Kirki_Helper' ) && is_admin() ? \Kirki_Helper::get_posts( array(
@@ -5595,20 +5595,20 @@ class Fields {
 				),
 				'mobile_navigation_bar'                 => array(
 					'type'    => 'select',
-					'label'   => esc_html__( 'Navigation Bar', 'razzi' ),
+					'label'   => esc_html__( 'Navigation Bar', 'dimas' ),
 					'section' => 'mobile_version',
 					'default' => 'none',
 					'choices' => array(
-						'none'              => esc_html__( 'None', 'razzi' ),
-						'simple'            => esc_html__( 'Simple', 'razzi' ),
-						'simple_adoptive'   => esc_html__( 'Simple Adaptive', 'razzi' ),
-						'standard'          => esc_html__( 'Standard', 'razzi' ),
-						'standard_adoptive' => esc_html__( 'Standard Adaptive', 'razzi' ),
+						'none'              => esc_html__( 'None', 'dimas' ),
+						'simple'            => esc_html__( 'Simple', 'dimas' ),
+						'simple_adoptive'   => esc_html__( 'Simple Adaptive', 'dimas' ),
+						'standard'          => esc_html__( 'Standard', 'dimas' ),
+						'standard_adoptive' => esc_html__( 'Standard Adaptive', 'dimas' ),
 					),
 				),
 				'mobile_navigation_bar_items'           => array(
 					'type'            => 'sortable',
-					'label'           => esc_html__( 'Items', 'razzi' ),
+					'label'           => esc_html__( 'Items', 'dimas' ),
 					'section'         => 'mobile_version',
 					'default'         => array( 'home', 'menu', 'search', 'account' ),
 					// 'choices'         => $this->navigation_bar_items_option(),
@@ -5623,7 +5623,7 @@ class Fields {
 				),
 				'mobile_navigation_bar_item'            => array(
 					'type'            => 'select',
-					'label'           => esc_html__( 'Item', 'razzi' ),
+					'label'           => esc_html__( 'Item', 'dimas' ),
 					'section'         => 'mobile_version',
 					'default'         => 'menu',
 					// 'choices'         => $this->navigation_bar_items_option(),
@@ -5638,13 +5638,13 @@ class Fields {
 				),
 				'mobile_navigation_bar_item_align'      => array(
 					'type'            => 'select',
-					'label'           => esc_html__( 'Align Item', 'razzi' ),
+					'label'           => esc_html__( 'Align Item', 'dimas' ),
 					'section'         => 'mobile_version',
 					'default'         => 'right',
 					'choices'         => array(
-						'left'   => esc_html__( 'Left', 'razzi' ),
-						'right'  => esc_html__( 'Right', 'razzi' ),
-						'center' => esc_html__( 'Center', 'razzi' ),
+						'left'   => esc_html__( 'Left', 'dimas' ),
+						'right'  => esc_html__( 'Right', 'dimas' ),
+						'center' => esc_html__( 'Center', 'dimas' ),
 					),
 					'active_callback' => array(
 						array(
@@ -5656,7 +5656,7 @@ class Fields {
 				),
 				'mobile_navigation_bar_menu_item'       => array(
 					'type'            => 'select',
-					'label'           => esc_html__( 'Menu', 'razzi' ),
+					'label'           => esc_html__( 'Menu', 'dimas' ),
 					'section'         => 'mobile_version',
 					'default'         => '',
 					// 'choices'         => $this->get_navigation_bar_get_menus(),
@@ -5664,27 +5664,27 @@ class Fields {
 				),
 				'mobile_navigation_bar_menu_side_type'  => array(
 					'type'    => 'select',
-					'label'   => esc_html__( 'Show Menu', 'razzi' ),
+					'label'   => esc_html__( 'Show Menu', 'dimas' ),
 					'section' => 'mobile_version',
 					'default' => 'side-left',
 					'choices' => array(
-						'side-left'  => esc_html__( 'Side to right', 'razzi' ),
-						'side-right' => esc_html__( 'Side to left', 'razzi' ),
+						'side-left'  => esc_html__( 'Side to right', 'dimas' ),
+						'side-right' => esc_html__( 'Side to left', 'dimas' ),
 					),
 				),
 				'mobile_navigation_bar_menu_click_item' => array(
 					'type'    => 'select',
-					'label'   => esc_html__( 'Show Sub-Menus', 'razzi' ),
+					'label'   => esc_html__( 'Show Sub-Menus', 'dimas' ),
 					'section' => 'mobile_version',
 					'default' => 'click-item',
 					'choices' => array(
-						'click-item' => esc_html__( 'Click to item', 'razzi' ),
-						'click-icon' => esc_html__( 'Click to icon', 'razzi' ),
+						'click-item' => esc_html__( 'Click to item', 'dimas' ),
+						'click-icon' => esc_html__( 'Click to icon', 'dimas' ),
 					),
 				),
 				'mobile_floating_action_button' => array(
 					'type'    => 'toggle',
-					'label'   => esc_html__( 'Floating Action Button', 'razzi' ),
+					'label'   => esc_html__( 'Floating Action Button', 'dimas' ),
 					'section' => 'mobile_version',
 					'default' => 0,
 					'active_callback' => array(
