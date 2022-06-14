@@ -57,7 +57,7 @@ while ( have_posts() ) :
 
 								<div class="dimas-post-info col-md-8 mx-auto">
 									<h4 class="dimas-post-info__post-date has-color-main label-header label-content mb-32">
-										Jan 23, 2021
+										<?php echo esc_html( $post_date ); ?>
 									</h4>
 									<h2 class="dimas-post-info__post-title pb-5 label-banner has-color-white mb-0">
 										Have You Heard? Agency Is Your Best Bet To Grow
