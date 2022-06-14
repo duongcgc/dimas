@@ -51,7 +51,6 @@ class Fields {
 	 */
 	public function __construct() {	
 		add_filter( 'dimas_customize_fields', array( $this, 'customize_fields' ) );
-		echo 'This fields';
 	}	
 
 	/**

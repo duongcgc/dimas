@@ -64,11 +64,12 @@ class Sections {
 
 		$sections = array(
 			// Maintenance
-			'maintenance'  => array(
-				'title'      => esc_html__('Maintenance', 'dimas'),
-				'priority'   => 10,
-				'capability' => 'edit_theme_options',
-			),
+			// 'maintenance'  => array(
+			// 	'title'      => esc_html__('Maintenance', 'dimas'),
+			// 	'priority'   => 10,
+			// 	'capability' => 'edit_theme_options',
+			// ),
+			
 			// Boxed
 			'boxed_layout' => array(
 				'title'       => esc_html__('Boxed Layout', 'dimas'),
