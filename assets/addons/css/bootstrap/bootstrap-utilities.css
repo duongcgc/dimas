@@ -60,10 +60,10 @@
 }
 
 .link-dark {
-  color: #212529;
+  color: rgba(255, 255, 255, 0.7019607843);
 }
 .link-dark:hover, .link-dark:focus {
-  color: #1a1e21;
+  color: rgba(255, 255, 255, 0.7615686275);
 }
 
 .ratio {
@@ -524,7 +524,7 @@
 }
 
 .border-dark {
-  border-color: #212529 !important;
+  border-color: rgba(255, 255, 255, 0.7019607843) !important;
 }
 
 .border-white {

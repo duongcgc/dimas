@@ -9,6 +9,7 @@
 @import "header/header";
 // FOOTER
 @import "footer/footer";
+
 .dimas-menu,
 .dimas-menu * {
     margin: 0;
@@ -21,30 +22,36 @@
     z-index: 999;
     position: fixed;
     top: 30%;
+
     &__item {
         &:not(:last-child) {
             margin-bottom: 2rem;
         }
+
         &.coppy-link {
             svg {
                 color: #4D5F6B;
             }
+
             &:hover {
                 svg {
                     color: var(--dimas-color-white);
                 }
             }
         }
+
         &.fb-share {
             svg {
                 color: var(--dimas-color-main);
             }
+
             &:hover {
                 svg {
                     color: var(--dimas-color-white);
                 }
             }
         }
+
         svg {
             width: (24rem/16);
             height: (24rem/16);
@@ -53,6 +60,10 @@
 }
 
 .dimas-post {
+    &__comment {
+        padding-bottom: (175rem/16);
+    }
+
     &__vertical-align {
         >.dimas-post__thumbnail {
             width: 100%;
@@ -66,22 +77,27 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+
     &__link {
         cursor: pointer;
+
         &:nth-child(1) {
             grid-row-start: 1;
             grid-row-end: 3;
             padding-right: 1rem;
         }
+
         &:nth-child(2) {
             padding-left: 1rem;
             padding-bottom: 1rem;
         }
+
         &:nth-child(3) {
             padding-left: 1rem;
             padding-top: 1rem;
         }
     }
+
     &__item {
         width: 100%;
         height: 100%;
@@ -95,6 +111,7 @@
     padding: (4rem/16) (12rem/16);
     background-color: var(--dimas-color-bg-tag);
     color: var(--dimas-color-white);
+
     &:hover {
         background-color: var(--dimas-color-main);
     }
@@ -107,11 +124,13 @@
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
+
     .dimas-post {
         height: (260rem/16);
         position: relative;
         padding: 2rem (24rem/16);
         border: 1px solid var(--dimas-color-border);
+
         &:hover {
             .dimas-post__thumbnail {
                 &--wrap {
@@ -119,6 +138,7 @@
                 }
             }
         }
+
         &__description,
         &__title {
             text-overflow: ellipsis;
@@ -126,14 +146,17 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+
         &__title {
             -webkit-line-clamp: 2;
             height: 4rem;
         }
+
         &__description {
             -webkit-line-clamp: 3;
             max-height: (78rem/16);
         }
+
         &__thumbnail {
             &--wrap {
                 width: 100%;
@@ -145,11 +168,13 @@
                 left: 0;
                 opacity: 0;
             }
+
             &--img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
+
             &--arrow-wrap {
                 border: 1px solid var(--dimas-color-white);
                 border-radius: 50%;
@@ -159,19 +184,23 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
                 &:hover {
                     border: 1px solid var(--dimas-color-main);
+
                     svg {
                         color: var(--dimas-color-main);
                     }
                 }
             }
         }
+
         &__content {
             &--wrap {
                 z-index: 1;
             }
         }
+
         &__link {
             color: var(--dimas-color-white);
             display: flex;
@@ -186,13 +215,16 @@
 .dimas-btn {
     transition: all var(--dimas-transition-duration) var(--dimas-transition-linear);
     padding: (15rem/16) (24rem/16);
+
     svg {
         margin-left: (24rem/16);
         margin-bottom: 2px;
         transition: all var(--dimas-transition-duration) var(--dimas-transition-linear);
     }
+
     &:hover {
         background-color: var(--dimas-color-white);
+
         svg {
             color: var(--dimas-color-main);
             transform: translateX(5px);
@@ -207,69 +239,107 @@
     .comment-list {
         list-style: none;
         padding-left: 0;
+
         .comment-main {
-            margin-bottom: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            .author-avtar {
-                width: (80rem/16);
-                height: (80rem/16);
-                object-fit: contain;
-                object-position: center;
-                margin-right: 2rem;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+            .comment-body {
+                .form-comment {
+                    padding-left: 2rem;
                 }
-            }
-            .comment-content {
-                color: var(--dimas-color-subtitle);
-                width: calc(100% - (112rem/16));
-                .comment-info {
-                    display: flex;
-                    .author-name {
-                        text-transform: uppercase;
-                        color: var(--dimas-color-white);
+
+                width: 100%;
+                margin-bottom: 2rem;
+                display: flex;
+                flex-wrap: wrap;
+
+                .author-avtar {
+                    width: (80rem/16);
+                    height: (80rem/16);
+                    object-fit: contain;
+                    object-position: center;
+                    margin-right: 2rem;
+
+                    &__img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
                     }
-                    .comment-date {
-                        font-weight: 400;
-                    }
-                    h4 {
-                        &:not(:last-child) {
-                            &::after {
-                                content: "•";
-                                color: var(--dimas-color-border);
-                                display: inline-flex;
-                                justify-content: center;
-                                align-items: center;
-                                width: 1rem;
-                                height: (18rem/16);
+                }
+
+                .comment-reply,
+                .children {
+                    width: 100%;
+                }
+
+                .comment-content {
+                    color: var(--dimas-color-subtitle);
+                    width: calc(100% - (112rem/16));
+
+                    .comment-info {
+                        display: flex;
+
+                        .author-name {
+                            text-transform: uppercase;
+                            color: var(--dimas-color-white);
+                        }
+
+                        .comment-date {
+                            font-weight: 400;
+                        }
+
+                        h4 {
+                            &:not(:last-child) {
+                                &::after {
+                                    content: "•";
+                                    color: var(--dimas-color-border);
+                                    display: inline-flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    width: 1rem;
+                                    height: (18rem/16);
+                                }
                             }
                         }
                     }
                 }
             }
-            .comment-btn {
-                margin-top: 1rem;
+        }
+
+        .comment-btn,
+        #cancel-comment-reply-link,
+        .comment-reply-login,
+        .comment-reply-link {
+            color: var(--dimas-color-main);
+            margin-top: 1rem;
+
+            &:not(#cancel-comment-reply-link) {
                 margin-left: (112rem/16);
-                width: 100%;
-                font-weight: 400;
-                font-size: (14rem/16);
-                line-height: (18rem/16);
-                &:hover {
-                    color: var(--dimas-color-thk-text);
-                }
+            }
+
+            width: 100%;
+            font-weight: 400;
+            font-size: (14rem/16);
+            line-height: (18rem/16);
+
+            &:hover {
+                color: var(--dimas-color-thk-text);
             }
         }
-        &__reply-list {
+
+        #cancel-comment-reply-link {
+            margin-left: 1rem;
+        }
+
+        &__reply-list,
+        .children {
             list-style: none;
             padding-left: (112rem/16);
+
             .comment-main {
                 .author-avtar {
                     width: (56rem/16);
                     height: (56rem/16);
                 }
+
                 .comment-btn {
                     margin-left: (88rem/16);
                 }
@@ -285,9 +355,11 @@
     input {
         margin-bottom: 2rem;
     }
+
     textarea {
         margin-bottom: 4rem;
     }
+
     input,
     textarea {
         -webkit-appearance: none;
@@ -300,25 +372,31 @@
         border-bottom: 1px solid var(--dimas-color-white);
         outline: none;
         padding-bottom: (17rem/16);
+
         &::placeholder {
             color: var(--dimas-color-white);
         }
     }
+
     .dimas-form-row {
         display: flex;
         justify-content: space-between;
+
         &.two-col {
             .dimas-form-group {
                 width: calc(50% - 1rem);
             }
         }
+
         .dimas-form-group {
             width: 100%;
         }
     }
+
     button {
         border: none;
         outline: none;
+
         &:hover {
             background-color: var(--dimas-color-white);
             color: var(--dimas-color-main);
@@ -327,17 +405,19 @@
 }
 
 .form-comment {
-    padding-bottom: (207rem/16);
+    padding-bottom: 2rem;
 }
 
 
 /** Responsive Single Blog Page **/
 
 @media (max-width: 1199px) {
+
     /* grid blog */
     .dimas-grid-wrap {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .dimas-section {
         &__item {
             &--blog {
@@ -353,12 +433,14 @@
     .form-comment {
         padding-bottom: (114rem/16);
     }
+
     .dimas-grid-wrap {
         .dimas-post {
             &__thumbnail {
                 &--arrow-wrap {
                     width: 3rem;
                     height: 3rem;
+
                     svg {
                         width: (19rem/16);
                         height: (19rem/16);
@@ -371,44 +453,53 @@
 
 @media (max-width: 767px) {
     .container {
-        max-width: unset!important;
+        max-width: unset !important;
     }
+
     .dimas-grid-wrap {
         grid-template-columns: auto;
         grid-column-gap: 0px;
         grid-row-gap: 1rem;
+
         .dimas-post {
             height: (282rem/16);
+
             &__description {
                 -webkit-line-clamp: 4;
                 max-height: (104rem/16);
             }
         }
     }
+
     .dimas-post-gallery {
         &__link {
             &:nth-child(1) {
                 padding-right: 6px;
             }
+
             &:nth-child(2) {
                 padding-left: 6px;
                 padding-bottom: 6px;
             }
+
             &:nth-child(3) {
                 padding-left: 6px;
                 padding-top: 6px;
             }
         }
     }
+
     .dimas-post__tag {
         >h3 {
             width: 100%;
         }
+
         >h3,
         >a {
             margin-bottom: 1rem;
         }
     }
+
     .dimas-section {
         &__item {
             &--blog {
@@ -418,6 +509,7 @@
             }
         }
     }
+
     .view-comment {
         .comment-list {
             .comment-main {
@@ -426,20 +518,25 @@
                     height: 3rem;
                     margin-right: 1rem;
                 }
+
                 .comment-btn {
                     margin-left: 4rem;
                 }
+
                 .comment-content {
                     width: calc(100% - 4rem);
                 }
             }
+
             &__reply-list {
                 padding-left: 4rem;
+
                 .comment-main {
                     .author-avtar {
                         width: 2rem;
                         height: 2rem;
                     }
+
                     .comment-btn {
                         margin-left: 3rem;
                     }
@@ -450,20 +547,25 @@
 }
 
 @media (max-width: 575px) {
+
     /* form contact */
     .dimas-comment-form {
+
         input,
         textarea {
             margin-bottom: (40rem/16);
         }
+
         .dimas-form-row {
             flex-wrap: wrap;
+
             &.two-col {
                 .dimas-form-group {
                     width: 100%
                 }
             }
         }
+
         button {
             width: 100%;
         }
