@@ -3021,7 +3021,7 @@ class Fields {
 				'fields'          => array(
 					'item' => array(
 						'type'    => 'select',
-						'choices' => $this->footer_items_option(),
+						// 'choices' => $this->footer_items_option(),
 					),
 				),
 				'section' => 'footer_main',
