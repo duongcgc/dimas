@@ -36,13 +36,22 @@ class Panels {
 	}
 
 	/**
+	 * $dimas_panels
+	 *
+	 * @var $dimas_panels
+	 */
+	protected static $dimas_panels = null;
+
+	/**
 	 * The class constructor
 	 *
 	 *
 	 * @since 1.0.0
 	 *
 	 */
-	public function __construct() {
+	public function __construct( ) {
+		add_filter( 'dimas_customize_panels', array( $this, 'customize_panels' ) );
+		\Dimas\Core\Core_Init::instance()->get('customizer/panels');		
 	}	
 
 	/**
@@ -52,7 +61,7 @@ class Panels {
 	 *
 	 * @return array
 	 */
-	public static function customize_panels() {	
+	public static function customize_panels( $panels ) {	
 
 		$panels = array(
 			'general' => array(

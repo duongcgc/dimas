@@ -36,13 +36,23 @@ class Fields {
 	}
 
 	/**
+	 * $dimas_fields
+	 *
+	 * @var $dimas_fields
+	 */
+	protected static $dimas_fields = null;
+
+	/**
 	 * The class constructor
 	 *
 	 *
 	 * @since 1.0.0
 	 *
 	 */
-	public function __construct() {	}	
+	public function __construct() {	
+		add_filter( 'dimas_customize_fields', array( $this, 'customize_fields' ) );
+		\Dimas\Core\Core_Init::instance()->get('customizer/fields');
+	}	
 
 	/**
 	 * Get customize fields
@@ -51,7 +61,7 @@ class Fields {
 	 *
 	 * @return array
 	 */
-	public static function customize_fields() {	
+	public static function customize_fields( $fields ) {	
 
 		$fields = array(
 			'color_scheme_title'  => array(

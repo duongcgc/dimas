@@ -79,6 +79,9 @@ class Core_Init {
 		'Dimas\Core\Blog'         				=> DIMAS_CORE_DIR . '/class-dimas-blog.php',
 		'Dimas\Core\CPT_Register' 				=> DIMAS_CORE_DIR . '/class-dimas-cpt-register.php',
 		'Dimas\Core\Customizer\Settings'     	=> DIMAS_CORE_DIR . '/customizer/class-dimas-customize-settings.php',
+		'Dimas\Core\Customizer\Panels'     		=> DIMAS_CORE_DIR . '/customizer/class-dimas-customize-panels.php',
+		'Dimas\Core\Customizer\Sections'     	=> DIMAS_CORE_DIR . '/customizer/class-dimas-customize-sections.php',
+		'Dimas\Core\Customizer\Fields'     		=> DIMAS_CORE_DIR . '/customizer/class-dimas-customize-fields.php',
 		'Dimas\Core\Customizer'   				=> DIMAS_CORE_DIR . '/class-dimas-customizer.php',
 		'Dimas\Core\Metaboxes'    				=> DIMAS_CORE_DIR . '/class-dimas-metaboxes.php',
 		'Dimas\Core\Options'      				=> DIMAS_CORE_DIR . '/class-dimas-options.php',
@@ -91,14 +94,17 @@ class Core_Init {
 	 * @var array
 	 */
 	private $core_classes_names = array(
-		'helper'       => 'Dimas\Core\Helper',
-		'blog'         => 'Dimas\Core\Blog',
-		'cpt-register' => 'Dimas\Core\CPT_Register',
-		'customizer/settings'     => 'Dimas\Core\Customizer\Settings',
-		'customizer'   => 'Dimas\Core\Customizer',
-		'metaboxes'    => 'Dimas\Core\Metaboxes',
-		'options'      => 'Dimas\Core\Options',
-		'mobile'       => 'Dimas\Core\Mobile',
+		'helper'       				=> 'Dimas\Core\Helper',
+		'blog'         				=> 'Dimas\Core\Blog',
+		'cpt-register' 				=> 'Dimas\Core\CPT_Register',
+		'customizer/settings'     	=> 'Dimas\Core\Customizer\Settings',
+		'customizer/panels'     	=> 'Dimas\Core\Customizer\Panels',
+		'customizer/sections'     	=> 'Dimas\Core\Customizer\Sections',
+		'customizer/fields'     	=> 'Dimas\Core\Customizer\Fields',
+		'customizer'   				=> 'Dimas\Core\Customizer',
+		'metaboxes'    				=> 'Dimas\Core\Metaboxes',
+		'options'      				=> 'Dimas\Core\Options',
+		'mobile'       				=> 'Dimas\Core\Mobile',
 	);
 
 	/**
@@ -134,7 +140,9 @@ class Core_Init {
 
 		// Customizer.
 		$this->get( 'customizer/settings' );
-		// $this->get( 'customizer' );
+		// $this->get( 'customizer/panels' );
+		// $this->get( 'customizer/sections' );
+		// $this->get( 'customizer/fields' );
 
 		// Metabos.
 		$this->get( 'metaboxes' );

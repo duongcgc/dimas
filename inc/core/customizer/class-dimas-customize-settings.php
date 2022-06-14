@@ -29,6 +29,13 @@ class Settings {
 	protected static $dimas_customize = null;
 
 	/**
+	 * Customize settings
+	 *
+	 * @var array
+	 */
+	protected $dimas_settings = array();
+
+	/**
 	 * Initiator
 	 *
 	 * @since 1.0.0
@@ -49,9 +56,9 @@ class Settings {
 	 * @since 1.0.0
 	 *
 	 */
-	public function __construct() {
-		add_filter( 'dimas_customize_config', array( $this, 'customize_settings' ) );
-		self::$dimas_customize = \Dimas\Core\Core_Init::instance()->get('customizer');
+	public function __construct( $options = array() ) {
+		add_filter( 'dimas_customize_config', array( $this, 'customize_settings' ) );		
+		self::$dimas_customize = \Dimas\Core\Core_Init::instance()->get('customizer');		
 	}
 
 
@@ -244,23 +251,16 @@ class Settings {
 	 * @return array
 	 */
 	public function customize_settings() {
+
 		$settings = array(
 			'theme' => 'dimas',
 		);
 
-		// Load settings parts classes.
+		// $settings['panels']   	= $this->dimas_settings['panels'];
+		// $settings['sections']   = $this->dimas_settings['sections'];
+		// $settings['fields']   	= $this->dimas_settings['fields'];		
 
-		require_once DIMAS_CORE_DIR . '/customizer/class-dimas-customize-panels.php';
-		require_once DIMAS_CORE_DIR . '/customizer/class-dimas-customize-sections.php';
-		require_once DIMAS_CORE_DIR . '/customizer/class-dimas-customize-fields.php';
-
-		$panels 	= \Dimas\Core\Customizer\Panels::customize_panels();
-		$sections 	= \Dimas\Core\Customizer\Sections::customize_sections();
-		$fields 	= \Dimas\Core\Customizer\Fields::customize_fields();
-
-		$settings['panels']   = apply_filters('dimas_customize_panels', $panels);
-		$settings['sections'] = apply_filters('dimas_customize_sections', $sections);
-		$settings['fields']   = apply_filters('dimas_customize_fields', $fields);
+		// var_dump( $settings['panels'] );
 
 		return $settings;
 	}
