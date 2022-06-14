@@ -40,7 +40,7 @@ class Sections {
 	 *
 	 * @var $dimas_sections
 	 */
-	protected static $dimas_sections = null;
+	public $dimas_sections = null;
 
 	/**
 	 * The class constructor
@@ -51,7 +51,6 @@ class Sections {
 	 */
 	public function __construct() {
 		add_filter( 'dimas_customize_sections', array( $this, 'customize_sections' ) );				
-		\Dimas\Core\Core_Init::instance()->get('customizer/sections');		
 	}	
 
 	/**
@@ -61,7 +60,7 @@ class Sections {
 	 *
 	 * @return array
 	 */
-	public static function customize_sections( $sections ) {	
+	public static function customize_sections() {	
 
 		$sections = array(
 			// Maintenance

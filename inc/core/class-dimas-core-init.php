@@ -140,9 +140,9 @@ class Core_Init {
 
 		// Customizer.
 		$this->get( 'customizer/settings' );
-		// $this->get( 'customizer/panels' );
-		// $this->get( 'customizer/sections' );
-		// $this->get( 'customizer/fields' );
+		$this->get( 'customizer/panels' );
+		$this->get( 'customizer/sections' );
+		$this->get( 'customizer/fields' );
 
 		// Metabos.
 		$this->get( 'metaboxes' );
