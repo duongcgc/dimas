@@ -40,7 +40,11 @@ class Fields {
 	 *
 	 * @var $dimas_fields
 	 */
-	public $dimas_fields = null;
+	public static $dimas_fields_classes = array (
+		'\Dimas\Core\Customizer\General_Boxed_Layout_Fields'	=> DIMAS_CORE_DIR . '/customizer/fields/class-dimas-general-boxed_layout.php',
+		'\Dimas\Core\Customizer\General_Backtotop_Fields'		=> DIMAS_CORE_DIR . '/customizer/fields/class-dimas-general-general_backtotop.php',
+		'\Dimas\Core\Customizer\Colors_Fields'					=> DIMAS_CORE_DIR . '/customizer/fields/class-dimas-colors.php',
+	);
 
 	/**
 	 * The class constructor
@@ -50,8 +54,22 @@ class Fields {
 	 *
 	 */
 	public function __construct() {	
-		add_filter( 'dimas_customize_fields', array( $this, 'customize_fields' ) );
+		add_filter( 'dimas_customize_fields', array( $this, 'customize_fields' ) );		
 	}	
+
+	/**
+	 * Create Fields.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return object
+	 */
+	public function create_fields() {
+		foreach (self::$dimas_fields_classes as $field_class => $file_class ) {
+			require_once $file_class;
+			$field_class::instance();
+		}		
+	}
 
 	/**
 	 * Get customize fields
@@ -62,56 +80,17 @@ class Fields {
 	 */
 	public static function customize_fields() {	
 
-		$fields = array(
-			'color_scheme_title'  => array(
-				'type'  => 'custom',
-				'section'     => 'colors',
-				'label' => esc_html__( 'Color Scheme', 'dimas' ),
-			),
-			'color_scheme'        => array(
-				'type'            => 'color-palette',
-				'default'         => '#ff6F61',
-				'choices'         => array(
-					'colors' => array(
-						'#ff6F61',
-						'#053399',
-						'#3f51b5',
-						'#7b1fa2',
-						'#009688',
-						'#388e3c',
-						'#e64a19',
-						'#b8a08d',
-					),
-					'style'  => 'round',
-				),
-				'section'     => 'colors',
-				'active_callback' => array(
-					array(
-						'setting'  => 'color_scheme_custom',
-						'operator' => '!=',
-						'value'    => true,
-					),
-				),
-			),
-			'color_scheme_custom' => array(
-				'type'      => 'checkbox',
-				'label'     => esc_html__( 'Pick my favorite color', 'dimas' ),
-				'default'   => false,
-				'section'     => 'colors',
-			),
-			'color_scheme_color'  => array(
-				'type'            => 'color',
-				'label'           => esc_html__( 'Custom Color', 'dimas' ),
-				'default'         => '#161619',
-				'section'     => 'colors',
-				'active_callback' => array(
-					array(
-						'setting'  => 'color_scheme_custom',
-						'operator' => '==',
-						'value'    => true,
-					),
-				),
-			),
+		self::instance()->create_fields();
+
+		$fields = array();
+
+		foreach (self::$dimas_fields_classes as $field_class => $file_class ) {
+			$fields_tmp = $field_class::get_fields();
+			$fields = array_merge($fields, $fields_tmp);
+		}
+
+		$fields_root = array(
+			
 			'preloader_enable'           => array(
 				'type'        => 'toggle',
 				'label'       => esc_html__( 'Enable Preloader', 'dimas' ),
@@ -5695,6 +5674,7 @@ class Fields {
 					),
 				),
 		);
+		
 
 		return $fields;
 	}

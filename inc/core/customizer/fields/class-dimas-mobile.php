@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-class General_Boxed_Layout_Fields {
+class Mobile_Fields {
 	/**
 	 * Instance
 	 *
@@ -40,7 +40,7 @@ class General_Boxed_Layout_Fields {
 	 *
 	 * @var string
 	 */
-	private static $section = 'boxed_layout';
+	private static $section = 'colors';
 
 	/**
 	 * Section priority variable

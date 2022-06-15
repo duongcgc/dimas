@@ -43,15 +43,11 @@ class General_Backtotop_Fields {
 	private static $section = 'general_backtotop';
 
 	/**
-	 * The class constructor
+	 * Section priority variable
 	 *
-	 *
-	 * @since 1.0.0
-	 *
+	 * @var integer
 	 */
-	public function __construct() {	
-
-	}	
+	private static $section_priority = 10;
 
 	/**
 	 * Get customize fields
@@ -62,11 +58,13 @@ class General_Backtotop_Fields {
 	 */
 	public static function get_fields() {	
 
+		$priority = self::$section_priority;
 		$fields = array(
 			'general_backtotop'    => array(
 				'type'        => 'toggle',
 				'label'       => esc_html__('Back To Top', 'dimas'),
-				'section'     => 'general_backtotop',
+				'section'     => self::$section,
+				'priority' => $priority++,
 				'description' => esc_html__('Check this to show back to top.', 'dimas'),
 				'default'     => true,
 			),
