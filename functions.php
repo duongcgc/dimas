@@ -9,10 +9,12 @@
  * @since Dimas 1.0
  */
 
+namespace Dimas;
+
 // This theme requires WordPress 5.3 or later.
 if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
-	require get_template_directory() . '/inc/class-dimas-back-compat.php';
-	\Dimas\Back_Compatible::instance();
+	require get_template_directory() . '/inc/framework/class-dimas-back-compat.php';
+	\Dimas\Back_Compat::instance();
 }
 
 // Global Constants.
@@ -36,12 +38,20 @@ if ( ! defined( 'DIMAS_CORE_DIR' ) ) {
 	define( 'DIMAS_CORE_DIR', DIMAS_INC_DIR . '/core' );
 }
 
+if ( ! defined( 'DIMAS_CORE_FRAMEWORK' ) ) {
+	define( 'DIMAS_CORE_FRAMEWORK', DIMAS_INC_DIR . '/framework' );
+}
+
 if ( ! defined( 'DIMAS_ADDONS_URL' ) ) {
 	define( 'DIMAS_ADDONS_URI', DIMAS_INC_URI . '/addons' );
 }
 
 if ( ! defined( 'DIMAS_CORE_URI' ) ) {
 	define( 'DIMAS_CORE_URI', DIMAS_INC_URI . '/core' );
+}
+
+if ( ! defined( 'DIMAS_FRAMEWORK_URI' ) ) {
+	define( 'DIMAS_FRAMEWORK_URI', DIMAS_INC_URI . '/framework' );
 }
 
 if ( ! defined( 'DIMAS_JS_URI' ) ) {
@@ -52,63 +62,15 @@ if ( ! defined( 'DIMAS_CSS_URI' ) ) {
 	define( 'DIMAS_CSS_URI', DIMAS_ASSETS_URI . '/js' );
 }
 
-// Setup Theme =================.
-require DIMAS_INC_DIR . '/class-dimas-setup.php';
-\Dimas\Theme_Setup::instance();
+// Init Dimas Theme.
+require DIMAS_INC_DIR . '/class-dimas-theme.php';
+\Dimas\Theme::instance();
 
-// Helper functions.
-require DIMAS_INC_DIR . '/class-dimas-helper.php';
-
-// HTML functions.
-require DIMAS_INC_DIR . '/class-dimas-html.php';
-
-// Block Editor Scripts.
-require DIMAS_CORE_DIR . '/admin/class-dimas-admin-block-editor.php';
-\Dimas\Admin\Block_Editor::instance();
-
-// Theme Styles.
-require DIMAS_INC_DIR . '/class-dimas-styles.php';
-\Dimas\Styles::instance();
-
-// Theme Scripts.
-require DIMAS_INC_DIR . '/class-dimas-scripts.php';
-\Dimas\Scripts::instance();
-
-// SVG Icons class.
-require DIMAS_INC_DIR . '/class-dimas-svg-icons.php';
-
-// Custom color classes.
-require DIMAS_INC_DIR . '/class-dimas-custom-colors.php';
-new \Dimas\Custom_Colors();
-
-// Enhance the theme by hooking into WordPress.
-require DIMAS_INC_DIR . '/class-dimas-template-funs.php';
-
-// Menu functions and filters.
-require DIMAS_INC_DIR . '/class-dimas-menu.php';
-
-// Custom template tags for the theme.
-require DIMAS_INC_DIR . '/class-dimas-template-tags.php';
-
-// Customizer additions.
-require DIMAS_CORE_DIR . '/class-dimas-customize.php';
-new \Dimas\Theme_Customize();
-
-// Block Patterns.
-require DIMAS_INC_DIR . '/block-patterns.php';
-
-// Block Styles.
-require DIMAS_INC_DIR . '/block-styles.php';
-
-// Dark Mode.
-require_once DIMAS_INC_DIR . '/class-dimas-dark-mode.php';
-new \Dimas\Dark_Mode();
-
-// Loading Addons.
-require_once DIMAS_ADDONS_DIR . '/class-dimas-addons-plugin.php';
-\Dimas\Addons::instance();
+// Footer 
+\D
 
 // custom post type project.
+add_action( 'init', 'Dimas\dimas_cpt_register' );
 /**
  * Undocumented function dimas_cpt_register
  *
@@ -174,5 +136,3 @@ function dimas_cpt_register() {
 	);
 	register_taxonomy( 'branch-project', 'project', $args );
 }
-
-add_action( 'init', 'dimas_cpt_register' );
