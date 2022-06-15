@@ -1,6 +1,6 @@
 <?php
 /**
- * Register post types
+ * Register post types author
  *
  * @package Dimas
  */
@@ -92,6 +92,7 @@ class Product_Authors {
 	 * @return void
 	 */
 	public function register_author() {
+
 		// Return if post type is exists
 		if ( ! post_type_exists( 'product' ) ) {
 			return;

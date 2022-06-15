@@ -1,4 +1,8 @@
 <?php
+/**
+ * Custom Post Type Portfolio and Taxonomy
+ */
+
 
 namespace Dimas\CPT;
 
@@ -11,11 +15,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class CPT_Portfolio.
  */
-class Portfolio extends CPT_Abstract {
+class Portfolio extends \Dimas\Core\CPT_Abstract {
 	public $post_type = 'dimas_portfolio';
 	public $prefix    = 'dimas_portfolio_';
 	public $taxonomy  = 'dimas_portfolio_category';
-	static $instance;
+
+
+	/**
+	 * Instance
+	 *
+	 * @var $instance
+	 */
+	protected static $instance = null;
+
+	/**
+	 * Initiator
+	 *
+	 * @since 1.0.0
+	 * @return object
+	 */
+	public static function instance() {
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
 
 	public static function getInstance() {
 		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof CPT_Portfolio ) ) {

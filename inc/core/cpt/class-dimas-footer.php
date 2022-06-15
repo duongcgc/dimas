@@ -17,7 +17,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Footer
  */
-class Footer extends CPT_Abstract {
+class Footer extends \Dimas\Core\CPT_Abstract {
+
+	/**
+	 * Instance
+	 *
+	 * @var $instance
+	 */
+	protected static $instance = null;
+
+	/**
+	 * Initiator
+	 *
+	 * @since 1.0.0
+	 * @return object
+	 */
+	public static function instance() {
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
 
 	/**
 	 * Create Post Type.
@@ -66,4 +87,4 @@ class Footer extends CPT_Abstract {
 
 }
 
-new CPT_Footer();
+\Dimas\CPT\Footer::instance();

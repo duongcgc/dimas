@@ -1,6 +1,7 @@
 <?php
 /**
  * Project functions and definitions.
+ * => Custom Post Type Template
  *
  * @package Dimas
  */

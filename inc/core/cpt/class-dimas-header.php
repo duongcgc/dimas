@@ -17,7 +17,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Header
  */
-class Header extends CPT_Abstract {
+class Header extends \Dimas\Core\CPT_Abstract {
+
+	/**
+	 * Instance
+	 *
+	 * @var $instance
+	 */
+	protected static $instance = null;
+
+	/**
+	 * Initiator
+	 *
+	 * @since 1.0.0
+	 * @return object
+	 */
+	public static function instance() {
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
 
 	/**
 	 * @return void
@@ -63,5 +84,4 @@ class Header extends CPT_Abstract {
 
 }
 
-new CPT_Header();
-
+\Dimas\CPT\Header::instance();

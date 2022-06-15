@@ -1,6 +1,6 @@
 <?php
 /**
- * Register post types
+ * Register post types brand
  *
  * @package Dimas
  */
