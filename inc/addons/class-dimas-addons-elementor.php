@@ -57,7 +57,7 @@ class Addons_Elementor {
 			$msg_html  .= $plugin_url;
 			$msg_html  .= '">Elementor</a> plugin.';
 
-			\Dimas\Framework\Notice::add_notice( 'warning', $msg_html );
+			\Dimas\Framework\Notice::add_notice( 'error', $msg_html );
 
 			return;
 		}
