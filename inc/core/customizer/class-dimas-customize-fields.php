@@ -71,6 +71,8 @@ class Fields {
 		'\Dimas\Core\Customizer\Colors_Fields'							=> DIMAS_CORE_DIR . '/customizer/fields/class-dimas-colors.php',
 		'\Dimas\Core\Customizer\General_Preloader_Fields'				=> DIMAS_CORE_DIR . '/customizer/fields/class-dimas-general-preloader.php',
 		'\Dimas\Core\Customizer\Newsletter_Popup_Fields'				=> DIMAS_CORE_DIR . '/customizer/fields/class-dimas-newsletter-popup.php',
+		'\Dimas\Core\Customizer\Header_Header_Top_Fields'				=> DIMAS_CORE_DIR . '/customizer/fields/class-dimas-header-header_top.php',
+		'\Dimas\Core\Customizer\Header_Header_Topbar_Bg_Fields'			=> DIMAS_CORE_DIR . '/customizer/fields/class-dimas-header-header_topbar_bg.php',
 	);
 
 	/**
