@@ -9,7 +9,7 @@
 namespace Dimas\Core\Customizer;
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
@@ -28,19 +28,19 @@ class Newsletter_Popup_Fields {
 	 * @return object
 	 */
 	public static function instance() {
-		if (is_null(self::$instance)) {
+		if ( is_null( self::$instance ) ) {
 			self::$instance = new self();
 		}
 
-		return self:: $instance;
-	}	
+		return self::$instance;
+	}
 
 	/**
 	 * Section name.
 	 *
 	 * @var string
 	 */
-	private static $section = 'colors';
+	private static $section = 'newsletter_popup';
 
 	/**
 	 * Section priority variable
@@ -56,153 +56,157 @@ class Newsletter_Popup_Fields {
 	 *
 	 * @return array
 	 */
-	public static function get_fields() {	
+	public static function get_fields() {
 
 		$priority = self::$section_priority;
 
-		$fields = array(			
+		$fields = array(
 
-			// Boxed Layout
-			'boxed_layout'                => array(
-				'type'     => 'toggle',
-				'label'    => esc_html__('Boxed Layout', 'dimas'),
-				'section'  => self::$section,
-				'default'  => 0,
-				'priority' => $priority++,
+			// Popup
+			'newsletter_popup_enable'        => array(
+				'type'        => 'toggle',
+				'label'       => esc_html__( 'Enable Popup', 'dimas' ),
+				'description' => esc_html__( 'Show a newsletter popup after website loaded.', 'dimas' ),
+				'section'     => self::$section,
+				'default'     => false,
+				'transport'   => 'postMessage',
 			),
-			'boxed_background_color'      => array(
-				'type'            => 'color',
-				'label'           => esc_html__('Background Color', 'dimas'),
-				'default'         => '',
-				'section'         => self::$section,
-				'priority' => $priority++,
+
+			'newsletter_popup_layout'        => array(
+				'type'            => 'radio-buttonset',
+				'label'           => esc_html__( 'Popup Layout', 'dimas' ),
+				'default'         => '2-columns',
+				'transport'       => 'postMessage',
+				'choices'         => array(
+					'1-column'  => esc_attr__( '1 Column', 'dimas' ),
+					'2-columns' => esc_attr__( '2 Columns', 'dimas' ),
+				),
 				'active_callback' => array(
 					array(
-						'setting'  => 'boxed_layout',
+						'setting'  => 'newsletter_popup_enable',
 						'operator' => '==',
-						'value'    => 1,
+						'value'    => true,
 					),
 				),
+				'section'         => self::$section,
 			),
-			'boxed_background_image'      => array(
+
+			'newsletter_popup_image'         => array(
 				'type'            => 'image',
-				'label'           => esc_html__('Background Image', 'dimas'),
-				'default'         => '',
+				'label'           => esc_html__( 'Image', 'dimas' ),
+				'description'     => esc_html__( 'This image will be used as background of the popup if the layout is 1 Column', 'dimas' ),
+				'transport'       => 'postMessage',
+				'active_callback' => array(
+					array(
+						'setting'  => 'newsletter_popup_enable',
+						'operator' => '==',
+						'value'    => true,
+					),
+				),
 				'section'         => self::$section,
-				'priority' => $priority++,
-				'active_callback' => array(
-					array(
-						'setting'  => 'boxed_layout',
-						'operator' => '==',
-						'value'    => 1,
-					),
-				),
 			),
-			'boxed_background_horizontal' => array(
-				'type'     => 'select',
-				'label'    => esc_html__('Background Horizontal', 'dimas'),
-				'section'  => self::$section,
-				'default'  => '',
-				'priority' => $priority++,
-				'choices'  => array(
-					''       => esc_html__('None', 'dimas'),
-					'left'   => esc_html__('Left', 'dimas'),
-					'center' => esc_html__('Center', 'dimas'),
-					'right'  => esc_html__('Right', 'dimas'),
-				),
+
+			'newsletter_popup_content'       => array(
+				'type'            => 'editor',
+				'label'           => esc_html__( 'Popup Content', 'dimas' ),
+				'description'     => esc_html__( 'Enter popup content. HTML and shortcodes are allowed.', 'dimas' ),
 				'active_callback' => array(
 					array(
-						'setting'  => 'boxed_layout',
+						'setting'  => 'newsletter_popup_enable',
 						'operator' => '==',
-						'value'    => 1,
+						'value'    => true,
 					),
 				),
+				'transport'       => 'postMessage',
+				'section'         => self::$section,
 			),
-			'boxed_background_vertical'   => array(
-				'type'     => 'select',
-				'label'    => esc_html__('Background Vertical', 'dimas'),
-				'section'  => self::$section,
-				'default'  => '',
-				'priority' => $priority++,
-				'choices'  => array(
-					''       => esc_html__('None', 'dimas'),
-					'top'    => esc_html__('Top', 'dimas'),
-					'center' => esc_html__('Center', 'dimas'),
-					'bottom' => esc_html__('Bottom', 'dimas'),
-				),
+
+			'newsletter_popup_form'          => array(
+				'type'            => 'textarea',
+				'label'           => esc_html__( 'NewsLetter Form', 'dimas' ),
+				'default'         => '',
+				'description'     => sprintf( wp_kses_post( 'Enter the shortcode of MailChimp form . You can edit your sign - up form in the <a href= "%s" > MailChimp for WordPress form settings </a>.', 'dimas' ), admin_url( 'admin.php?page=mailchimp-for-wp-forms' ) ),
+				'section'         => 'newsletter_popup',
 				'active_callback' => array(
 					array(
-						'setting'  => 'boxed_layout',
+						'setting'  => 'newsletter_popup_enable',
 						'operator' => '==',
-						'value'    => 1,
+						'value'    => true,
 					),
 				),
+				'transport'       => 'postMessage',
+
 			),
-			'boxed_background_repeat'     => array(
-				'type'     => 'select',
-				'label'    => esc_html__('Background Repeat', 'dimas'),
-				'section'  => self::$section,
-				'default'  => '',
-				'priority' => $priority++,
-				'choices'  => array(
-					''          => esc_html__('None', 'dimas'),
-					'no-repeat' => esc_html__('No Repeat', 'dimas'),
-					'repeat'    => esc_html__('Repeat', 'dimas'),
-					'repeat-y'  => esc_html__('Repeat Vertical', 'dimas'),
-					'repeat-x'  => esc_html__('Repeat Horizontal', 'dimas'),
+
+			'newsletter_popup_frequency'     => array(
+				'type'            => 'number',
+				'label'           => esc_html__( 'Frequency', 'dimas' ),
+				'description'     => esc_html__( 'Do NOT show the popup to the same visitor again until this much days has passed.', 'dimas' ),
+				'default'         => 1,
+				'choices'         => array(
+					'min'  => 0,
+					'step' => 1,
 				),
 				'active_callback' => array(
 					array(
-						'setting'  => 'boxed_layout',
+						'setting'  => 'newsletter_popup_enable',
 						'operator' => '==',
-						'value'    => 1,
+						'value'    => true,
 					),
 				),
+				'transport'       => 'postMessage',
+				'section'         => self::$section,
 			),
-			'boxed_background_attachment' => array(
-				'type'     => 'select',
-				'label'    => esc_html__('Background Attachment', 'dimas'),
-				'section'  => self::$section,
-				'default'  => '',
-				'priority' => $priority++,
-				'choices'  => array(
-					''       => esc_html__('None', 'dimas'),
-					'scroll' => esc_html__('Scroll', 'dimas'),
-					'fixed'  => esc_html__('Fixed', 'dimas'),
+
+			'newsletter_popup_visible'       => array(
+				'type'            => 'select',
+				'label'           => esc_html__( 'Popup Visible', 'dimas' ),
+				'description'     => esc_html__( 'Select when the popup appear', 'dimas' ),
+				'default'         => 'loaded',
+				'choices'         => array(
+					'loaded' => esc_html__( 'Right after page loads', 'dimas' ),
+					'delay'  => esc_html__( 'Wait for seconds', 'dimas' ),
 				),
 				'active_callback' => array(
 					array(
-						'setting'  => 'boxed_layout',
+						'setting'  => 'newsletter_popup_enable',
 						'operator' => '==',
-						'value'    => 1,
+						'value'    => true,
 					),
 				),
+				'transport'       => 'postMessage',
+				'section'         => self::$section,
 			),
-			'boxed_background_size'       => array(
-				'type'     => 'select',
-				'label'    => esc_html__('Background Size', 'dimas'),
-				'section'  => self::$section,
-				'default'  => '',
-				'priority' => $priority++,
-				'choices'  => array(
-					''        => esc_html__('None', 'dimas'),
-					'auto'    => esc_html__('Auto', 'dimas'),
-					'cover'   => esc_html__('Cover', 'dimas'),
-					'contain' => esc_html__('Contain', 'dimas'),
+
+			'newsletter_popup_visible_delay' => array(
+				'type'            => 'number',
+				'label'           => esc_html__( 'Delay Time', 'dimas' ),
+				'description'     => esc_html__( 'The time (in seconds) before the popup is displayed, after the page loaded.', 'dimas' ),
+				'default'         => 5,
+				'choices'         => array(
+					'min'  => 0,
+					'step' => 1,
 				),
 				'active_callback' => array(
 					array(
-						'setting'  => 'boxed_layout',
+						'setting'  => 'newsletter_popup_enable',
 						'operator' => '==',
-						'value'    => 1,
+						'value'    => true,
+					),
+					array(
+						'setting'  => 'newsletter_popup_visible',
+						'operator' => '==',
+						'value'    => 'delay',
 					),
 				),
+				'transport'       => 'postMessage',
+				'section'         => self::$section,
 			),
 		);
 
 		return $fields;
 	}
 
-	
+
 
 }

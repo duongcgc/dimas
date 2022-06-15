@@ -9,7 +9,7 @@
 namespace Dimas\Core\Customizer;
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
@@ -28,11 +28,11 @@ class Sections {
 	 * @return object
 	 */
 	public static function instance() {
-		if (is_null(self::$instance)) {
+		if ( is_null( self::$instance ) ) {
 			self::$instance = new self();
 		}
 
-		return self:: $instance;
+		return self::$instance;
 	}
 
 	/**
@@ -45,13 +45,11 @@ class Sections {
 	/**
 	 * The class constructor
 	 *
-	 *
 	 * @since 1.0.0
-	 *
 	 */
 	public function __construct() {
-		add_filter( 'dimas_customize_sections', array( $this, 'customize_sections' ) );				
-	}	
+		add_filter( 'dimas_customize_sections', array( $this, 'customize_sections' ) );
+	}
 
 	/**
 	 * Get customize sections
@@ -60,145 +58,145 @@ class Sections {
 	 *
 	 * @return array
 	 */
-	public static function customize_sections() {	
+	public static function customize_sections() {
 
 		$sections = array(
 			// Maintenance
 			// 'maintenance'  => array(
-			// 	'title'      => esc_html__('Maintenance', 'dimas'),
-			// 	'priority'   => 10,
-			// 	'capability' => 'edit_theme_options',
+			// 'title'      => esc_html__('Maintenance', 'dimas'),
+			// 'priority'   => 10,
+			// 'capability' => 'edit_theme_options',
 			// ),
-			
+
 			// Boxed
-			'boxed_layout' => array(
-				'title'       => esc_html__('Boxed Layout', 'dimas'),
+			'boxed_layout'            => array(
+				'title'       => esc_html__( 'Boxed Layout', 'dimas' ),
 				'description' => '',
 				'priority'    => 20,
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'general',
 			),
 
-			'general_backtotop' => array(
-				'title'       => esc_html__('Back To Top', 'dimas'),
+			'general_backtotop'       => array(
+				'title'       => esc_html__( 'Back To Top', 'dimas' ),
 				'description' => '',
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'general',
 				'priority'    => 20,
 			),
-			'colors'            => array(
+			'colors'                  => array(
 				'title'    => esc_html__( 'Colors', 'dimas' ),
 				'priority' => 20,
 			),
 
 			// Typography
-			'typo_main'         => array(
-				'title'    => esc_html__( 'Main', 'dimas' ),
-				'panel'    => 'typography',
+			'typo_main'               => array(
+				'title' => esc_html__( 'Main', 'dimas' ),
+				'panel' => 'typography',
 			),
-			'typo_headings'     => array(
-				'title'    => esc_html__( 'Headings', 'dimas' ),
-				'panel'    => 'typography',
+			'typo_headings'           => array(
+				'title' => esc_html__( 'Headings', 'dimas' ),
+				'panel' => 'typography',
 			),
-			'typo_header'       => array(
-				'title'    => esc_html__( 'Header', 'dimas' ),
-				'panel'    => 'typography',
+			'typo_header'             => array(
+				'title' => esc_html__( 'Header', 'dimas' ),
+				'panel' => 'typography',
 			),
-			'typo_page'         => array(
-				'title'    => esc_html__( 'Page', 'dimas' ),
-				'panel'    => 'typography',
+			'typo_page'               => array(
+				'title' => esc_html__( 'Page', 'dimas' ),
+				'panel' => 'typography',
 			),
-			'typo_posts'        => array(
-				'title'    => esc_html__( 'Blog', 'dimas' ),
-				'panel'    => 'typography',
+			'typo_posts'              => array(
+				'title' => esc_html__( 'Blog', 'dimas' ),
+				'panel' => 'typography',
 			),
-			'typo_widget'       => array(
-				'title'    => esc_html__( 'Widgets', 'dimas' ),
-				'panel'    => 'typography',
+			'typo_widget'             => array(
+				'title' => esc_html__( 'Widgets', 'dimas' ),
+				'panel' => 'typography',
 			),
-			'typo_footer'       => array(
-				'title'    => esc_html__( 'Footer', 'dimas' ),
-				'panel'    => 'typography',
+			'typo_footer'             => array(
+				'title' => esc_html__( 'Footer', 'dimas' ),
+				'panel' => 'typography',
 			),
 
 			// Newsletter
-			'newsletter_popup'  => array(
-				'title'      => esc_html__('Newsletter Popup', 'dimas'),
+			'newsletter_popup'        => array(
+				'title'      => esc_html__( 'Newsletter Popup', 'dimas' ),
 				'capability' => 'edit_theme_options',
 				'priority'   => 20,
 			),
 
-			'preloader'         => array(
+			'preloader'               => array(
 				'title'    => esc_html__( 'Preloader', 'dimas' ),
 				'priority' => 20,
 				'panel'    => 'general',
 			),
 
 			// Header
-			'header_top'        => array(
-				'title' => esc_html__('Topbar', 'dimas'),
+			'header_top'              => array(
+				'title' => esc_html__( 'Topbar', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_topbar_bg'  => array(
-				'title' => esc_html__('Topbar Background', 'dimas'),
+			'header_topbar_bg'        => array(
+				'title' => esc_html__( 'Topbar Background', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_layout'     => array(
-				'title' => esc_html__('Header Layout', 'dimas'),
+			'header_layout'           => array(
+				'title' => esc_html__( 'Header Layout', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_main'       => array(
-				'title' => esc_html__('Header Main', 'dimas'),
+			'header_main'             => array(
+				'title' => esc_html__( 'Header Main', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_bottom'     => array(
-				'title' => esc_html__('Header Bottom', 'dimas'),
+			'header_bottom'           => array(
+				'title' => esc_html__( 'Header Bottom', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_background' => array(
-				'title' => esc_html__('Header Background', 'dimas'),
+			'header_background'       => array(
+				'title' => esc_html__( 'Header Background', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_campaign'   => array(
-				'title' => esc_html__('Campaign Bar', 'dimas'),
+			'header_campaign'         => array(
+				'title' => esc_html__( 'Campaign Bar', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_logo'       => array(
-				'title' => esc_html__('Logo', 'dimas'),
+			'header_logo'             => array(
+				'title' => esc_html__( 'Logo', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_search'     => array(
-				'title' => esc_html__('Search', 'dimas'),
+			'header_search'           => array(
+				'title' => esc_html__( 'Search', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_account'    => array(
-				'title' => esc_html__('Account', 'dimas'),
+			'header_account'          => array(
+				'title' => esc_html__( 'Account', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_wishlist'   => array(
-				'title' => esc_html__('Wishlist', 'dimas'),
+			'header_wishlist'         => array(
+				'title' => esc_html__( 'Wishlist', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_cart'       => array(
-				'title' => esc_html__('Cart', 'dimas'),
+			'header_cart'             => array(
+				'title' => esc_html__( 'Cart', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_primary_menu'  => array(
-				'title' => esc_html__('Primary Menu', 'dimas'),
+			'header_primary_menu'     => array(
+				'title' => esc_html__( 'Primary Menu', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_hamburger'  => array(
-				'title' => esc_html__('Hamburger Menu', 'dimas'),
+			'header_hamburger'        => array(
+				'title' => esc_html__( 'Hamburger Menu', 'dimas' ),
 				'panel' => 'header',
 			),
-			'header_department' => array(
-				'title' => esc_html__('Department', 'dimas'),
+			'header_department'       => array(
+				'title' => esc_html__( 'Department', 'dimas' ),
 				'panel' => 'header',
 			),
 
 			// Page
-			'page_header'       => array(
-				'title'       => esc_html__('Page Header', 'dimas'),
+			'page_header'             => array(
+				'title'       => esc_html__( 'Page Header', 'dimas' ),
 				'description' => '',
 				'priority'    => 10,
 				'capability'  => 'edit_theme_options',
@@ -206,15 +204,15 @@ class Sections {
 			),
 
 			// Blog
-			'blog_page'         => array(
-				'title'       => esc_html__('Blog Page', 'dimas'),
+			'blog_page'               => array(
+				'title'       => esc_html__( 'Blog Page', 'dimas' ),
 				'description' => '',
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'blog',
 			),
 
-			'page_header_blog'  => array(
-				'title'       => esc_html__('Blog Page Header', 'dimas'),
+			'page_header_blog'        => array(
+				'title'       => esc_html__( 'Blog Page Header', 'dimas' ),
 				'description' => '',
 				'priority'    => 10,
 				'capability'  => 'edit_theme_options',
@@ -222,8 +220,8 @@ class Sections {
 			),
 
 			// Single Post
-			'single_post'       => array(
-				'title'       => esc_html__('Single Post', 'dimas'),
+			'single_post'             => array(
+				'title'       => esc_html__( 'Single Post', 'dimas' ),
 				'description' => '',
 				'priority'    => 10,
 				'capability'  => 'edit_theme_options',
@@ -231,75 +229,75 @@ class Sections {
 			),
 
 			// Footer
-			'footer_layout'     => array(
-				'title'       => esc_html__('Footer Layout', 'dimas'),
+			'footer_layout'           => array(
+				'title'       => esc_html__( 'Footer Layout', 'dimas' ),
 				'description' => '',
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'footer',
 			),
-			'footer_newsletter' => array(
-				'title'       => esc_html__('Footer Newsletter', 'dimas'),
+			'footer_newsletter'       => array(
+				'title'       => esc_html__( 'Footer Newsletter', 'dimas' ),
 				'description' => '',
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'footer',
 			),
-			'footer_widget'		=> array(
-				'title'       => esc_html__('Footer Widget', 'dimas'),
+			'footer_widget'           => array(
+				'title'       => esc_html__( 'Footer Widget', 'dimas' ),
 				'description' => '',
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'footer',
 			),
-			'footer_extra'      => array(
-				'title'       => esc_html__('Footer Extra', 'dimas'),
+			'footer_extra'            => array(
+				'title'       => esc_html__( 'Footer Extra', 'dimas' ),
 				'description' => '',
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'footer',
 			),
-			'footer_main'       => array(
-				'title'       => esc_html__('Footer Main', 'dimas'),
+			'footer_main'             => array(
+				'title'       => esc_html__( 'Footer Main', 'dimas' ),
 				'description' => '',
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'footer',
 			),
-			'footer_background' => array(
-				'title'       => esc_html__('Footer Background', 'dimas'),
+			'footer_background'       => array(
+				'title'       => esc_html__( 'Footer Background', 'dimas' ),
 				'description' => '',
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'footer',
 			),
-			'footer_copyright'  => array(
-				'title'       => esc_html__('Copyright', 'dimas'),
+			'footer_copyright'        => array(
+				'title'       => esc_html__( 'Copyright', 'dimas' ),
 				'description' => '',
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'footer',
 			),
-			'footer_menu'  => array(
-				'title'       => esc_html__('Menu', 'dimas'),
+			'footer_menu'             => array(
+				'title'       => esc_html__( 'Menu', 'dimas' ),
 				'description' => '',
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'footer',
 			),
-			'footer_text'       => array(
-				'title'       => esc_html__('Custom Text', 'dimas'),
+			'footer_text'             => array(
+				'title'       => esc_html__( 'Custom Text', 'dimas' ),
 				'description' => '',
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'footer',
 			),
-			'footer_payment'    => array(
-				'title'       => esc_html__('Payments', 'dimas'),
+			'footer_payment'          => array(
+				'title'       => esc_html__( 'Payments', 'dimas' ),
 				'description' => '',
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'footer',
 			),
-			'footer_logo'       => array(
-				'title'       => esc_html__('Logo', 'dimas'),
+			'footer_logo'             => array(
+				'title'       => esc_html__( 'Logo', 'dimas' ),
 				'description' => '',
 				'capability'  => 'edit_theme_options',
 				'panel'       => 'footer',
 			),
 
-			'recently_viewed'  => array(
-				'title'      => esc_html__('Recently Viewed', 'dimas'),
+			'recently_viewed'         => array(
+				'title'      => esc_html__( 'Recently Viewed', 'dimas' ),
 				'capability' => 'edit_theme_options',
 				'priority'   => 50,
 			),
@@ -324,7 +322,7 @@ class Sections {
 				'title' => esc_html__( 'Footer', 'dimas' ),
 				'panel' => 'mobile',
 			),
-			'mobile_panel'           => array(
+			'mobile_panel'            => array(
 				'title' => esc_html__( 'Panel', 'dimas' ),
 				'panel' => 'mobile',
 			),
@@ -336,7 +334,7 @@ class Sections {
 				'title' => esc_html__( 'Blog', 'dimas' ),
 				'panel' => 'mobile',
 			),
-			'mobile_single_blog'             => array(
+			'mobile_single_blog'      => array(
 				'title' => esc_html__( 'Single Blog', 'dimas' ),
 				'panel' => 'mobile',
 			),
@@ -344,7 +342,7 @@ class Sections {
 				'title' => esc_html__( 'Product Catalog', 'dimas' ),
 				'panel' => 'mobile',
 			),
-			'mobile_single_product'  => array(
+			'mobile_single_product'   => array(
 				'title' => esc_html__( 'Single Product', 'dimas' ),
 				'panel' => 'mobile',
 			),
@@ -352,7 +350,7 @@ class Sections {
 				'priority' => 50,
 				'title'    => esc_html__( 'Mobile Version', 'dimas' ),
 				'panel'    => 'mobile',
-			)
+			),
 
 		);
 
