@@ -14,7 +14,7 @@ class Opal_Woocommerce_Extra {
         add_action('save_post', array($this, 'save_product_data'));
         add_action('wp_head', array($this, 'initAjaxUrl'), 15);
 
-        include_once(DIMAS_CORE_PLUGIN_DIR . '/inc/vendors/woocommerce/class-wc-widget-layered-nav.php');
+        include_once(DIMAS_CORE_DIR . '/inc/vendors/woocommerce/class-wc-widget-layered-nav.php');
 
         add_action('widgets_init', array($this, 'register_widget'));
         add_action('cmb2_admin_init', array($this, 'taxonomy_metaboxes'));

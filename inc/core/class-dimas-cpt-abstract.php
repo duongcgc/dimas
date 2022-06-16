@@ -108,7 +108,7 @@ abstract class CPT_Abstract {
 	 */
 	public function get_icon( $name ) {
 		$name = wp_basename( $name, '.php' );
-		if ( file_exists( DIMAS_CORE_PLUGIN_DIR . '/assets/images/post-type/' . $name . '.png' ) ) {
+		if ( file_exists( DIMAS_CORE_DIR . '/assets/images/post-type/' . $name . '.png' ) ) {
 			return DIMAS_CORE_PLUGIN_URL . '/assets/images/post-type/' . $name . '.png';
 		} else {
 			return 'dashicons-admin-post';

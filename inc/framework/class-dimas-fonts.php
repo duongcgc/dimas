@@ -91,7 +91,7 @@ class Fonts {
 	 * @return array
 	 */
 	public static function dimas_get_google_fonts() {
-		$content = file_get_contents( DIMAS_CORE_PLUGIN_DIR . 'webfonts.json' );
+		$content = file_get_contents( DIMAS_CORE_DIR . 'webfonts.json' );
 
 		return json_decode( $content )->items;
 	}

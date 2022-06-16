@@ -361,9 +361,9 @@ class Portfolio extends \Dimas\Core\CPT_Abstract {
 
 	public function get_page_template_file( $template ) {
 		if ( is_singular( $this->post_type ) ) {
-			$template = locate_template( 'single-portfolio.php' ) ? locate_template( 'single-portfolio.php' ) : trailingslashit( DIMAS_CORE_PLUGIN_DIR ) . 'templates/portfolio/single-portfolio.php';
+			$template = locate_template( 'single-portfolio.php' ) ? locate_template( 'single-portfolio.php' ) : trailingslashit( DIMAS_CORE_DIR ) . 'templates/portfolio/single-portfolio.php';
 		} elseif ( is_post_type_archive( $this->post_type ) || is_tax( $this->taxonomy ) ) {
-			$template = locate_template( 'archive-portfolio.php' ) ? locate_template( 'archive-portfolio.php' ) : trailingslashit( DIMAS_CORE_PLUGIN_DIR ) . 'templates/portfolio/archive-portfolio.php';
+			$template = locate_template( 'archive-portfolio.php' ) ? locate_template( 'archive-portfolio.php' ) : trailingslashit( DIMAS_CORE_DIR ) . 'templates/portfolio/archive-portfolio.php';
 		}
 		return $template;
 	}
