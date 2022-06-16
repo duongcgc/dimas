@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Metaboxes initial
  */
-class Metaboxes_Register {
+class The_Metaboxes_Register {
 	/**
 	 * Instance
 	 *
