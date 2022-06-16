@@ -7,7 +7,7 @@
 
 namespace Dimas\Addons\Widgets;
 /**
- * Class Dimas_Social_Links_Widget
+ * Class Social_Links_Widget
  */
 class Social_Links extends \WP_Widget {
 	/**

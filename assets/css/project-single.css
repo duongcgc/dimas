@@ -1106,17 +1106,29 @@ svg {
 }
 
 /*  Responsive  */
+@media (max-width: 1699px) and (min-width: 1270px) {
+  .projects-pagination {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .projects-pagination__prev {
+    margin-bottom: 2.5rem;
+  }
+  .projects-pagination__next, .projects-pagination__prev {
+    width: 100%;
+  }
+}
 @media (max-width: 1399px) {
   .dimas-project #right-slider .swiper .swiper-slide {
     padding: 10.25rem 4rem 8.25rem;
   }
 }
-@media (max-width: 1399px) and (min-width: 1200px) {
+@media (max-width: 1399px) and (min-width: 1270px) {
   .quote {
     font-size: 1.5rem;
   }
 }
-@media (max-width: 1199px) {
+@media (max-width: 1269px) {
   .swiper-button-next svg,
 .swiper-button-prev svg {
     visibility: hidden;

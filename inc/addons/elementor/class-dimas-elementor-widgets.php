@@ -50,7 +50,7 @@ class Widgets {
 	 * @return void
 	 */
 	public function __construct() {
-		spl_autoload_register( [ $this, 'autoload' ] );
+		spl_autoload_register( array( $this, 'autoload' ) );
 		$this->add_actions();
 	}
 
@@ -80,10 +80,10 @@ class Widgets {
 		}
 
 		$filename = str_replace( '_', '-', $filename );
-		$filename = DIMAS_ADDONS_DIR . 'inc/elementor/widgets/' . $filename . '.php';
+		$filename = DIMAS_ADDONS_DIR . '/elementor/widgets/' . $filename . '.php';
 
 		if ( is_readable( $filename ) ) {
-			include( $filename );
+			include $filename;
 		}
 	}
 
@@ -95,11 +95,11 @@ class Widgets {
 	 * @return void
 	 */
 	protected function add_actions() {
-		add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
+		add_action( 'elementor/widgets/widgets_registered', array( $this, 'init_widgets' ) );
 	}
 
 	/**
-	 * Init Widgets
+	 * Init Widgets.
 	 *
 	 * @since 1.0.0
 	 *
@@ -151,6 +151,7 @@ class Widgets {
 		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Product_Banner() );
 		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Slides() );
 		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Sale_Box() );
+		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Skills_Info() );
 		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Testimonials_Carousel() );
 		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Testimonials_Carousel_2() );
 		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Testimonials_Grid() );
@@ -167,7 +168,7 @@ class Widgets {
 			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Products_Masonry() );
 			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Products_Deal() );
 			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Products_Deal_2() );
-			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Dimas_Product() );
+			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Product() );
 			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Products_Recently_Viewed_Carousel() );
 			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Products_Recently_Viewed_Grid() );
 			$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Products_Carousel_With_Thumbnails() );

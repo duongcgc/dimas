@@ -232,6 +232,15 @@ class Scripts {
 			true
 		);
 
+		// GSAP script.
+		wp_enqueue_script(
+			'gsap-script',
+			get_template_directory_uri() . '/assets/addons/js/GSAP/gsap.min.js',
+			array( 'jquery' ),
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+
 		// Animsition script.
 		wp_enqueue_script(
 			'animsition-script',
@@ -265,21 +274,21 @@ class Scripts {
 				true
 			);
 		}
-
-		// pagepiling script.
-		wp_enqueue_script(
-			'pagepiling-script',
-			get_template_directory_uri() . '/assets/addons/js/pagepiling/pagepiling.min.js',
-			array( 'jquery' ),
-			wp_get_theme()->get( 'Version' ),
-			true
-		);
+		if ( is_singular( 'project' ) || is_front_page() ) {
+			// pagepiling script.
+			wp_enqueue_script(
+				'pagepiling-script',
+				get_template_directory_uri() . '/assets/addons/js/pagepiling/pagepiling.min.js',
+				array( 'jquery' ),
+				wp_get_theme()->get( 'Version' ),
+				true
+			);}
 
 		// Main script.
 		wp_enqueue_script(
 			'main-script',
 			get_template_directory_uri() . '/assets/js/dimas-main.js',
-			array( 'jquery', 'animsition-script' ),
+			array( 'jquery', 'animsition-script', 'gsap-script' ),
 			wp_get_theme()->get( 'Version' ),
 			true
 		);

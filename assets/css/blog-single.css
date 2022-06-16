@@ -1027,6 +1027,8 @@ svg {
   width: calc(100% - 7rem);
 }
 .view-comment .comment-list .comment-main .comment-body .comment-content .comment-info {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1038,7 +1040,7 @@ svg {
 .view-comment .comment-list .comment-main .comment-body .comment-content .comment-info .comment-date {
   font-weight: 400;
 }
-.view-comment .comment-list .comment-main .comment-body .comment-content .comment-info h4:not(:last-child)::after {
+.view-comment .comment-list .comment-main .comment-body .comment-content .comment-info h4:last-child:before {
   content: "•";
   color: var(--dimas-color-border);
   display: -webkit-inline-box;
@@ -1084,14 +1086,10 @@ svg {
   list-style: none;
   padding-left: 7rem;
 }
-.view-comment .comment-list__reply-list .comment-main .author-avtar,
-.view-comment .comment-list .children .comment-main .author-avtar {
+.view-comment .comment-list__reply-list .comment-main .comment-body .author-avtar,
+.view-comment .comment-list .children .comment-main .comment-body .author-avtar {
   width: 3.5rem;
   height: 3.5rem;
-}
-.view-comment .comment-list__reply-list .comment-main .comment-btn,
-.view-comment .comment-list .children .comment-main .comment-btn {
-  margin-left: 5.5rem;
 }
 
 /* contact form */
@@ -1226,26 +1224,28 @@ svg {
     display: block;
   }
 
-  .view-comment .comment-list .comment-main .author-avtar {
+  .view-comment .comment-list .comment-main .comment-body .author-avtar {
     width: 3rem;
     height: 3rem;
     margin-right: 1rem;
   }
-  .view-comment .comment-list .comment-main .comment-btn {
-    margin-left: 4rem;
-  }
-  .view-comment .comment-list .comment-main .comment-content {
+  .view-comment .comment-list .comment-main .comment-body .comment-content {
     width: calc(100% - 4rem);
   }
-  .view-comment .comment-list__reply-list {
+  .view-comment .comment-list__reply-list,
+.view-comment .comment-list .children {
     padding-left: 4rem;
   }
-  .view-comment .comment-list__reply-list .comment-main .author-avtar {
+  .view-comment .comment-list__reply-list .comment-main .comment-body .author-avtar,
+.view-comment .comment-list .children .comment-main .comment-body .author-avtar {
     width: 2rem;
     height: 2rem;
   }
-  .view-comment .comment-list__reply-list .comment-main .comment-btn {
-    margin-left: 3rem;
+  .view-comment .comment-list .comment-btn:not(#cancel-comment-reply-link),
+.view-comment .comment-list #cancel-comment-reply-link:not(#cancel-comment-reply-link),
+.view-comment .comment-list .comment-reply-login:not(#cancel-comment-reply-link),
+.view-comment .comment-list .comment-reply-link:not(#cancel-comment-reply-link) {
+    margin-left: 4rem;
   }
 }
 @media (max-width: 575px) {

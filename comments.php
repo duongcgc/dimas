@@ -158,7 +158,7 @@ $current_post_id = get_the_id();
 					'label_submit'         => 'post comment',
 					'class_submit'         => 'dimas-btn label-content has-color-white has-bg-main',
 					'submit_field'         => '%1$s %2$s',
-					'submit_button'        => '<button style="width:fit-content" name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s<svg width="17" height="10" viewBox="0 0 17 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16.4243 5.42426C16.6586 5.18995 16.6586 4.81005 16.4243 4.57574L12.6059 0.757359C12.3716 0.523045 11.9917 0.523045 11.7574 0.757359C11.523 0.991674 11.523 1.37157 11.7574 1.60589L15.1515 5L11.7574 8.39411C11.523 8.62843 11.523 9.00833 11.7574 9.24264C11.9917 9.47696 12.3716 9.47696 12.6059 9.24264L16.4243 5.42426ZM0 5.6H16V4.4H0V5.6Z" /></svg></button>',
+					'submit_button'        => '<button style="width:fit-content" name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s<svg width="17" height="10" viewBox="0 0 17 10" fill="currentColor"><path d="M16.4243 5.42426C16.6586 5.18995 16.6586 4.81005 16.4243 4.57574L12.6059 0.757359C12.3716 0.523045 11.9917 0.523045 11.7574 0.757359C11.523 0.991674 11.523 1.37157 11.7574 1.60589L15.1515 5L11.7574 8.39411C11.523 8.62843 11.523 9.00833 11.7574 9.24264C11.9917 9.47696 12.3716 9.47696 12.6059 9.24264L16.4243 5.42426ZM0 5.6H16V4.4H0V5.6Z" /></svg></button>',
 					'class_container'      => 'form-comment',
 					'class_form'           => 'dimas-comment-form d-grid',
 					'logged_in_as'         => sprintf(
@@ -182,3 +182,5 @@ $current_post_id = get_the_id();
 				?>
 			</div>
 		</div><!-- #comments -->
+	</div>
+</div>

@@ -47,6 +47,8 @@ class Dynamic_CSS {
 	 */
 	public function __construct() {
 		// add_action( 'dimas_after_enqueue_style', array( $this, 'add_static_css' ) );
+		add_filter( 'dimas_theme_custom_inline_css', 'dimas_theme_custom_css_no_cache' );
+
 	}
 
 	/**
@@ -948,4 +950,108 @@ class Dynamic_CSS {
 
 		return $css;
 	}
+
+
+	/**
+	 * Custom CCS.
+	 *
+	 * @return string
+	 **/
+
+	public function dimas_theme_custom_css() {
+		$a1root      = include trailingslashit( DIMAS_CORE_DIR ) . '/customize/a1root.php';
+		$grid        = include trailingslashit( DIMAS_CORE_DIR ) . '/customize/grid.php';
+		$button      = include trailingslashit( DIMAS_CORE_DIR ) . '/customize/button.php';
+		$error_404   = include trailingslashit( DIMAS_CORE_DIR ) . '/customize/error-404.php';
+		$heading     = include trailingslashit( DIMAS_CORE_DIR ) . '/customize/heading.php';
+		$main_layout = include trailingslashit( DIMAS_CORE_DIR ) . '/customize/main-layout.php';
+		$page_bg     = include trailingslashit( DIMAS_CORE_DIR ) . '/customize/page-bg.php';
+		$page_title  = include trailingslashit( DIMAS_CORE_DIR ) . '/customize/page-title.php';
+		$css         = <<<CSS
+{$a1root}
+{$grid}
+{$error_404}
+{$heading}
+{$main_layout}
+{$page_bg}
+{$page_title}
+{$button}
+CSS;
+
+		$css = apply_filters( 'dimas_theme_customizer_css', $css );
+		$css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
+		$css = str_replace( ': ', ':', $css );
+		$css = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '    ' ), '', $css );
+
+		return $css;
+	}
+
+
+	/**
+	 * Custom CSS No Cache.
+	 *
+	 * @param string $css       The string css.
+	 * @return void
+	 */
+	public function dimas_theme_custom_css_no_cache( $css ) {
+		global $dimas_header;
+		if ( $dimas_header ) {
+			$bg_header = dimas_get_metabox( $dimas_header->ID, 'dimas_header_bg_color_mobile', '' );
+			if ( ! empty( $bg_header ) ) {
+				$css .= '@media(max-width: 991px){.dimas-header-absolute .site-header{background:' . $bg_header . ';}}';
+			}
+		}
+
+		// Footer Css.
+		$footer_id = get_theme_mod( 'dimas_footer_layout' );
+		$page_id   = get_the_ID();
+
+		if ( is_page() && dimas_get_metabox( get_the_ID(), 'dimas_enable_custom_footer', false ) ) {
+			$footer_id          = dimas_get_metabox( $page_id, 'dimas_footer_layout', false );
+			$footer_padding_top = dimas_get_metabox( get_the_ID(), 'dimas_footer_padding_top', 15 );
+			$css               .= '.site-footer {padding-top:' . $footer_padding_top . 'px!important;}';
+		}
+		if ( $footer_id ) {
+			$footer_css = get_post_meta( $footer_id, '_wpb_shortcodes_custom_css', true );
+			$css       .= $footer_css;
+		}
+
+		// Padding Page.
+		if ( is_page() ) {
+			$page_title_bar      = $page_title_css_color = $breadcrumb_css = '';
+			$page_title_bg_color = get_post_meta( get_the_ID(), 'dimas_breadcrumb_bg_color', 1 );
+			$page_title_bg_image = get_post_meta( get_the_ID(), 'dimas_breadcrumb_bg_image', 1 );
+			$breadcrumb_color    = get_post_meta( get_the_ID(), 'dimas_breadcrumb_text_color', 1 );
+			$page_title_color    = get_post_meta( get_the_ID(), 'dimas_heading_color', 1 );
+
+			// page background color.
+			$page_background_color = get_post_meta( get_the_ID(), 'dimas_page_background_color', 1 );
+
+			if ( ! empty( $page_title_bg_color ) && $page_title_bg_color != '#fafafa' ) {
+				$css .= '.page-title-bar {background-color: ' . $page_title_bg_color . ';}';
+			}
+			if ( ! empty( $page_title_bg_image ) ) {
+				$page_title_bar .= "background-image: url({$page_title_bg_image});";
+				$css            .= '.page-title-bar {' . $page_title_bar . '}';
+			}
+			if ( $page_title_color && $page_title_color != '#666' ) {
+				$page_title_css_color .= "color: {$page_title_color};";
+				$css                  .= '.page-title{' . $page_title_css_color . '}';
+			}
+			if ( ! empty( $breadcrumb_color ) ) {
+				$breadcrumb_color = ariColor::new_color( $breadcrumb_color );
+				$breadcrumb_css  .= "color: {$breadcrumb_color->toCSS()};";
+				$css             .= '.breadcrumb, .breadcrumb span, .breadcrumb * {' . $breadcrumb_css . '}';
+			}
+
+			$id_page = get_the_ID();
+
+			if ( ! empty( $page_background_color ) ) {
+				$css .= 'body.page.page-id-' . $id_page . '{ background-color:' . $page_background_color . '}';
+			}
+		}
+
+		return $css;
+	}
+
 }

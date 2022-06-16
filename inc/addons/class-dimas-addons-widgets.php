@@ -7,7 +7,7 @@
  * @package Dimas
  */
 
-namespace Dimas;
+namespace Dimas\Addons;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas after setup theme
  */
-class Widgets {
+class Addons_Widgets {
 	/**
 	 * Instance
 	 *

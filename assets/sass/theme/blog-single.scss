@@ -275,6 +275,7 @@
                     width: calc(100% - (112rem/16));
 
                     .comment-info {
+                        flex-wrap: wrap;
                         display: flex;
 
                         .author-name {
@@ -287,8 +288,8 @@
                         }
 
                         h4 {
-                            &:not(:last-child) {
-                                &::after {
+                            &:last-child {
+                                &:before {
                                     content: "•";
                                     color: var(--dimas-color-border);
                                     display: inline-flex;
@@ -335,13 +336,11 @@
             padding-left: (112rem/16);
 
             .comment-main {
-                .author-avtar {
-                    width: (56rem/16);
-                    height: (56rem/16);
-                }
-
-                .comment-btn {
-                    margin-left: (88rem/16);
+                .comment-body {
+                    .author-avtar {
+                        width: (56rem/16);
+                        height: (56rem/16);
+                    }
                 }
             }
         }
@@ -513,33 +512,39 @@
     .view-comment {
         .comment-list {
             .comment-main {
-                .author-avtar {
-                    width: 3rem;
-                    height: 3rem;
-                    margin-right: 1rem;
-                }
+                .comment-body {
+                    .author-avtar {
+                        width: 3rem;
+                        height: 3rem;
+                        margin-right: 1rem;
+                    }
 
-                .comment-btn {
-                    margin-left: 4rem;
-                }
-
-                .comment-content {
-                    width: calc(100% - 4rem);
+                    .comment-content {
+                        width: calc(100% - 4rem);
+                    }
                 }
             }
 
-            &__reply-list {
+            &__reply-list,
+            .children {
                 padding-left: 4rem;
 
                 .comment-main {
-                    .author-avtar {
-                        width: 2rem;
-                        height: 2rem;
+                    .comment-body {
+                        .author-avtar {
+                            width: 2rem;
+                            height: 2rem;
+                        }
                     }
+                }
+            }
 
-                    .comment-btn {
-                        margin-left: 3rem;
-                    }
+            .comment-btn,
+            #cancel-comment-reply-link,
+            .comment-reply-login,
+            .comment-reply-link {
+                &:not(#cancel-comment-reply-link) {
+                    margin-left: 4rem;
                 }
             }
         }

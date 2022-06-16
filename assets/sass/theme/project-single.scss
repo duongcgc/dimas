@@ -9,18 +9,22 @@
 @import "header/header";
 // FOOTER
 @import "footer/footer";
+
 .dimas-project {
     .swiper-wrapper {
         height: 100vh;
     }
+
     &__vertical-align {
         height: 100vh;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
     }
+
     #left-slider {
         .swiper {
+
             .slider-img,
             .slider-video {
                 width: 100%;
@@ -29,6 +33,7 @@
                 object-position: center;
             }
         }
+
         .swiper-container-horizontal {
             >.swiper-pagination-bullets {
                 position: absolute;
@@ -39,6 +44,7 @@
                 list-style-type: none;
                 text-align: center;
                 color: var(--dimas-color-white);
+
                 .swiper-pagination-bullet {
                     transition: border-color var(--dimas-transition-duration) var(--dimas-transition-easing);
                     display: inline-flex;
@@ -53,6 +59,7 @@
                     opacity: 1;
                     margin: 0 (10rem/16);
                     background-color: var(--dimas-color-transparent);
+
                     &::after {
                         transition: background-color var(--dimas-transition-duration) var(--dimas-transition-easing);
                         content: "";
@@ -63,9 +70,11 @@
                         border-radius: 50%;
                         background-color: var(--dimas-color-white);
                     }
+
                     &:hover,
                     &-active {
                         border-color: var(--dimas-color-main);
+
                         &::after {
                             background-color: var(--dimas-color-main);
                         }
@@ -74,14 +83,17 @@
             }
         }
     }
+
     #right-slider {
         span.swiper-notification {
             display: none;
         }
+
         .scroll-wrap {
             height: 100%;
             overflow-y: scroll;
         }
+
         .swiper {
             &:before {
                 content: "";
@@ -94,6 +106,7 @@
                 top: 0;
                 left: 0;
             }
+
             &:after {
                 content: "";
                 display: block;
@@ -105,6 +118,7 @@
                 bottom: 0;
                 left: 0;
             }
+
             .swiper-slide {
                 min-height: 100%;
                 height: fit-content;
@@ -112,12 +126,14 @@
                 position: relative;
             }
         }
+
         .dimas-section {
             &__list-item {
                 position: relative;
                 list-style: none;
                 padding-left: 0;
             }
+
             &__item {
                 &:not(:last-child) {
                     .dimas-section__item--text {
@@ -125,6 +141,7 @@
                     }
                 }
             }
+
             &__img {
                 max-width: 7.5rem;
             }
@@ -137,12 +154,15 @@
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
     position: absolute;
+
     &:after {
         content: unset;
     }
+
     svg {
         color: var(--dimas-color-white);
         font-size: 2rem;
+
         &:hover {
             color: var(--dimas-color-main);
         }
@@ -164,11 +184,14 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
         svg {
             margin-left: 0.5rem;
         }
+
         &:hover {
             border-color: var(--dimas-color-main);
+
             svg {
                 color: var(--dimas-color-main);
             }
@@ -186,6 +209,7 @@
     height: 0.75rem;
     border-radius: 50%;
     background-color: var(--dimas-color-white);
+
     @for $i from 1 through 7 {
         &:nth-child(#{$i}) {
             &:after {
@@ -193,6 +217,7 @@
             }
         }
     }
+
     &::after {
         animation: pulse 1.5s linear infinite;
         background: radial-gradient(50% 50% at 50% 50%, #ffffff00 0%, #ffffff33 100%);
@@ -204,6 +229,7 @@
         position: absolute;
         border-radius: 50%;
     }
+
     &__description {
         background-color: var(--dimas-color-black);
         padding: (24rem/16);
@@ -216,6 +242,7 @@
         transform: translateY(-50%);
         max-width: 20rem;
         width: 20vw;
+
         &:before {
             content: "";
             width: 0;
@@ -228,13 +255,16 @@
             top: calc(50% - 7px);
         }
     }
+
     &.active,
     &:hover {
         .dimas-project-pointer__description {
             visibility: visible;
             opacity: 1;
         }
+
         background-color: var(--dimas-color-main);
+
         &::after {
             background: radial-gradient(50% 50% at 50% 50%, #F2196713 0%, #F2196739 100%);
         }
@@ -257,6 +287,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     &__next,
     &__prev {
         position: relative;
@@ -267,9 +298,11 @@
         line-height: (29rem/16);
         color: var(--dimas-color-white);
     }
+
     &__next {
         margin-left: (15rem/16);
         text-align: right;
+
         &:before {
             font-weight: 400;
             content: "⇀";
@@ -281,8 +314,10 @@
             transform: translateY(-100%);
         }
     }
+
     &__prev {
         margin-right: (15rem/16);
+
         &:after {
             font-weight: 400;
             content: "↽";
@@ -298,6 +333,20 @@
 
 
 /*  Responsive  */
+@media (max-width: 1699px) and (min-width: 1270px) {
+    .projects-pagination {
+        flex-wrap: wrap;
+
+        &__prev {
+            margin-bottom: (40rem/16);
+        }
+
+        &__next,
+        &__prev {
+            width: 100%;
+        }
+    }
+}
 
 @media (max-width: 1399px) {
     .dimas-project {
@@ -311,44 +360,53 @@
     }
 }
 
-@media (max-width: 1399px) and (min-width:1200px) {
+@media (max-width: 1399px) and (min-width:1270px) {
     .quote {
         font-size: 1.5rem;
     }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1269px) {
+
     .swiper-button-next,
     .swiper-button-prev {
         svg {
             visibility: hidden;
         }
     }
+
     .dimas-project {
         .pp-wrap {
             padding: (164rem/16) (93rem/16) (132rem/16);
         }
+
         .swiper-slide {
             background-color: var(--dimas-color-accent);
+
             &.dimas-section {
                 position: absolute;
             }
         }
+
         #right-slider {
             width: 100vw;
             height: 100vh;
+
             .swiper {
                 height: auto;
+
                 .swiper-slide {
                     height: auto;
                     overflow-y: auto;
                 }
+
                 &::before,
                 &::after {
                     content: unset;
                 }
             }
         }
+
         &-pointer {
             &__description {
                 width: 30vw;
@@ -367,6 +425,7 @@
     .dimas-project-pointer {
         display: none;
     }
+
     .dimas-project {
         .pp-wrap {
             padding: (64rem/16) 1rem (114rem/16);
@@ -380,17 +439,21 @@
             font-size: 2rem;
             line-height: (43rem/16);
         }
+
         &__icon {
             &.heart-img {
                 width: (24rem/16);
             }
         }
     }
+
     .projects-pagination {
         flex-wrap: wrap;
+
         &__prev {
             margin-bottom: (40rem/16);
         }
+
         &__next,
         &__prev {
             width: 100%;

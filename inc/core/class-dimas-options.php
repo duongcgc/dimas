@@ -7,7 +7,7 @@
  * @package Dimas
  */
 
-namespace Dimas;
+namespace Dimas\Core; 
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) {
@@ -52,7 +52,7 @@ class Options {
 	 */
 	public function __construct() {
 		add_filter('dimas_customize_config', array($this, 'customize_settings'));
-		self::$dimas_customize = Dimas_Theme::instance()->get('customizer');
+		// self::$dimas_customize = \Dimas\Theme::instance()->get('customizer');
 	}
 
 

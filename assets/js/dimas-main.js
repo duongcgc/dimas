@@ -565,7 +565,7 @@
             }
             /*slider project single*/
             if ($("#left-slider .swiper").length > 0) {
-                if ($(window).width() > 1199) {
+                if ($(window).width() > 1269) {
                     const slider_projects_left = new Swiper("#left-slider .swiper", {
                         slidesPerView: 1,
                         spaceBetween: 0,

@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas after setup theme
  */
-class Theme_Setup {
+class Setup {
 	/**
 	 * Instance
 	 *
@@ -70,7 +70,6 @@ class Theme_Setup {
 	 * @return void
 	 */
 	public function setup_theme() {
-
 		/*
 		 *
 		 * Make theme available for translation.
@@ -159,7 +158,7 @@ class Theme_Setup {
 		// Add support for editor styles. Load regular editor styles into the new block-based editor.
 		add_theme_support( 'editor-styles' );
 		$background_color = get_theme_mod( 'background_color', 'D1E4DD' );
-		if ( 127 > \Dimas\Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
+		if ( 127 > \Dimas\framework\Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
 			add_theme_support( 'dark-editor-style' );
 		}
 
@@ -352,7 +351,7 @@ class Theme_Setup {
 		* page load, as it is a one-off operation only needed once in the customizer.
 		*/
 		if ( is_customize_preview() ) {
-			require get_template_directory() . '/inc/starter-content.php';
+			require get_template_directory() . '/inc/framework/starter-content.php';
 			add_theme_support( 'starter-content', dimas_get_starter_content() );
 		}
 
@@ -451,7 +450,6 @@ class Theme_Setup {
 	 * @return void
 	 */
 	public function dimas_thumbnail_init() {
-
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
@@ -460,7 +458,7 @@ class Theme_Setup {
 
 		// // Set post thumbnails.
 		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 1568, 9999 );
+		set_post_thumbnail_size( 1920, 940 );
 
 		// // Add Image Sizes.
 		// add_image_size( 'dimas-blog-grid', 600, 398, false );

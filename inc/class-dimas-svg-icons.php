@@ -1,13 +1,14 @@
 <?php
 /**
  * SVG Icons class
+ * => functions and data svg icons in this theme.
  *
  * @package WordPress
  * @subpackage Dimas
  * @since Dimas 1.0
  */
 
- namespace Dimas;
+namespace Dimas;
 
 /**
  * This class is in charge of displaying SVG icons across the site.
@@ -22,6 +23,27 @@
  * @since Dimas 1.0
  */
 class SVG_Icons {
+		/**
+		 * Instance
+		 *
+		 * @var $instance
+		 */
+	protected static $instance = null;
+
+	/**
+	 * Initiator
+	 *
+	 * @since 1.0.0
+	 * @return object
+	 */
+	public static function instance() {
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
+
 
 	/**
 	 * User Interface icons – svg sources.
@@ -238,6 +260,613 @@ class SVG_Icons {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * Sanitize SVG code.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $svg SVG code.
+	 *
+	 * @return string
+	 */
+	public static function sanitize_svg( $svg ) {
+		$allowed   = array();
+		$whitelist = array(
+			'a'              => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'filter',
+				'id',
+				'mask',
+				'opacity',
+				'stroke',
+				'stroke-dasharray',
+				'stroke-dashoffset',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'stroke-miterlimit',
+				'stroke-opacity',
+				'stroke-width',
+				'style',
+				'systemLanguage',
+				'transform',
+				'href',
+				'xlink:href',
+				'xlink:title',
+			),
+			'circle'         => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'cx',
+				'cy',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'filter',
+				'id',
+				'mask',
+				'opacity',
+				'r',
+				'requiredFeatures',
+				'stroke',
+				'stroke-dasharray',
+				'stroke-dashoffset',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'stroke-miterlimit',
+				'stroke-opacity',
+				'stroke-width',
+				'style',
+				'systemLanguage',
+				'transform',
+			),
+			'clipPath'       => array( 'class', 'clipPathUnits', 'id' ),
+			'defs'           => array(),
+			'style'          => array( 'type' ),
+			'desc'           => array(),
+			'ellipse'        => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'cx',
+				'cy',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'filter',
+				'id',
+				'mask',
+				'opacity',
+				'requiredFeatures',
+				'rx',
+				'ry',
+				'stroke',
+				'stroke-dasharray',
+				'stroke-dashoffset',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'stroke-miterlimit',
+				'stroke-opacity',
+				'stroke-width',
+				'style',
+				'systemLanguage',
+				'transform',
+			),
+			'feGaussianBlur' => array(
+				'class',
+				'color-interpolation-filters',
+				'id',
+				'requiredFeatures',
+				'stdDeviation',
+			),
+			'filter'         => array(
+				'class',
+				'color-interpolation-filters',
+				'filterRes',
+				'filterUnits',
+				'height',
+				'id',
+				'primitiveUnits',
+				'requiredFeatures',
+				'width',
+				'x',
+				'xlink:href',
+				'y',
+			),
+			'foreignObject'  => array(
+				'class',
+				'font-size',
+				'height',
+				'id',
+				'opacity',
+				'requiredFeatures',
+				'style',
+				'transform',
+				'width',
+				'x',
+				'y',
+			),
+			'g'              => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'id',
+				'display',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'filter',
+				'mask',
+				'opacity',
+				'requiredFeatures',
+				'stroke',
+				'stroke-dasharray',
+				'stroke-dashoffset',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'stroke-miterlimit',
+				'stroke-opacity',
+				'stroke-width',
+				'style',
+				'systemLanguage',
+				'transform',
+				'font-family',
+				'font-size',
+				'font-style',
+				'font-weight',
+				'text-anchor',
+			),
+			'image'          => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'filter',
+				'height',
+				'id',
+				'mask',
+				'opacity',
+				'requiredFeatures',
+				'style',
+				'systemLanguage',
+				'transform',
+				'width',
+				'x',
+				'xlink:href',
+				'xlink:title',
+				'y',
+			),
+			'line'           => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'filter',
+				'id',
+				'marker-end',
+				'marker-mid',
+				'marker-start',
+				'mask',
+				'opacity',
+				'requiredFeatures',
+				'stroke',
+				'stroke-dasharray',
+				'stroke-dashoffset',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'stroke-miterlimit',
+				'stroke-opacity',
+				'stroke-width',
+				'style',
+				'systemLanguage',
+				'transform',
+				'x1',
+				'x2',
+				'y1',
+				'y2',
+			),
+			'linearGradient' => array(
+				'class',
+				'id',
+				'gradientTransform',
+				'gradientUnits',
+				'requiredFeatures',
+				'spreadMethod',
+				'systemLanguage',
+				'x1',
+				'x2',
+				'xlink:href',
+				'y1',
+				'y2',
+			),
+			'marker'         => array(
+				'id',
+				'class',
+				'markerHeight',
+				'markerUnits',
+				'markerWidth',
+				'orient',
+				'preserveAspectRatio',
+				'refX',
+				'refY',
+				'systemLanguage',
+				'viewBox',
+			),
+			'mask'           => array(
+				'class',
+				'height',
+				'id',
+				'maskContentUnits',
+				'maskUnits',
+				'width',
+				'x',
+				'y',
+			),
+			'metadata'       => array( 'class', 'id' ),
+			'path'           => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'd',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'filter',
+				'id',
+				'marker-end',
+				'marker-mid',
+				'marker-start',
+				'mask',
+				'opacity',
+				'requiredFeatures',
+				'stroke',
+				'stroke-dasharray',
+				'stroke-dashoffset',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'stroke-miterlimit',
+				'stroke-opacity',
+				'stroke-width',
+				'style',
+				'systemLanguage',
+				'transform',
+			),
+			'pattern'        => array(
+				'class',
+				'height',
+				'id',
+				'patternContentUnits',
+				'patternTransform',
+				'patternUnits',
+				'requiredFeatures',
+				'style',
+				'systemLanguage',
+				'viewBox',
+				'width',
+				'x',
+				'xlink:href',
+				'y',
+			),
+			'polygon'        => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'id',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'filter',
+				'id',
+				'class',
+				'marker-end',
+				'marker-mid',
+				'marker-start',
+				'mask',
+				'opacity',
+				'points',
+				'requiredFeatures',
+				'stroke',
+				'stroke-dasharray',
+				'stroke-dashoffset',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'stroke-miterlimit',
+				'stroke-opacity',
+				'stroke-width',
+				'style',
+				'systemLanguage',
+				'transform',
+			),
+			'polyline'       => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'id',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'filter',
+				'marker-end',
+				'marker-mid',
+				'marker-start',
+				'mask',
+				'opacity',
+				'points',
+				'requiredFeatures',
+				'stroke',
+				'stroke-dasharray',
+				'stroke-dashoffset',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'stroke-miterlimit',
+				'stroke-opacity',
+				'stroke-width',
+				'style',
+				'systemLanguage',
+				'transform',
+			),
+			'radialGradient' => array(
+				'class',
+				'cx',
+				'cy',
+				'fx',
+				'fy',
+				'gradientTransform',
+				'gradientUnits',
+				'id',
+				'r',
+				'requiredFeatures',
+				'spreadMethod',
+				'systemLanguage',
+				'xlink:href',
+			),
+			'rect'           => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'filter',
+				'height',
+				'id',
+				'mask',
+				'opacity',
+				'requiredFeatures',
+				'rx',
+				'ry',
+				'stroke',
+				'stroke-dasharray',
+				'stroke-dashoffset',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'stroke-miterlimit',
+				'stroke-opacity',
+				'stroke-width',
+				'style',
+				'systemLanguage',
+				'transform',
+				'width',
+				'x',
+				'y',
+			),
+			'stop'           => array(
+				'class',
+				'id',
+				'offset',
+				'requiredFeatures',
+				'stop-color',
+				'stop-opacity',
+				'style',
+				'systemLanguage',
+			),
+			'svg'            => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'filter',
+				'id',
+				'mask',
+				'fill',
+				'stroke',
+				'preserveaspectRatio',
+				'requiredfeatures',
+				'style',
+				'systemlanguage',
+				'viewbox',
+				'width',
+				'height',
+				'xmlns',
+				'xmlns:se',
+				'xmlns:xlink',
+				'x',
+				'y',
+				'enable-background',
+			),
+			'switch'         => array( 'class', 'id', 'requiredFeatures', 'systemLanguage' ),
+			'symbol'         => array(
+				'class',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'filter',
+				'font-family',
+				'font-size',
+				'font-style',
+				'font-weight',
+				'id',
+				'opacity',
+				'preserveAspectRatio',
+				'requiredFeatures',
+				'stroke',
+				'stroke-dasharray',
+				'stroke-dashoffset',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'stroke-miterlimit',
+				'stroke-opacity',
+				'stroke-width',
+				'style',
+				'systemLanguage',
+				'transform',
+				'viewBox',
+			),
+			'text'           => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'filter',
+				'font-family',
+				'font-size',
+				'font-style',
+				'font-weight',
+				'id',
+				'mask',
+				'opacity',
+				'requiredFeatures',
+				'stroke',
+				'stroke-dasharray',
+				'stroke-dashoffset',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'stroke-miterlimit',
+				'stroke-opacity',
+				'stroke-width',
+				'style',
+				'systemLanguage',
+				'text-anchor',
+				'transform',
+				'x',
+				'xml:space',
+				'y',
+			),
+			'textPath'       => array(
+				'class',
+				'id',
+				'method',
+				'requiredFeatures',
+				'spacing',
+				'startOffset',
+				'style',
+				'systemLanguage',
+				'transform',
+				'xlink:href',
+			),
+			'title'          => array(),
+			'tspan'          => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'dx',
+				'dy',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'filter',
+				'font-family',
+				'font-size',
+				'font-style',
+				'font-weight',
+				'id',
+				'mask',
+				'opacity',
+				'requiredFeatures',
+				'rotate',
+				'stroke',
+				'stroke-dasharray',
+				'stroke-dashoffset',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'stroke-miterlimit',
+				'stroke-opacity',
+				'stroke-width',
+				'style',
+				'systemLanguage',
+				'text-anchor',
+				'textLength',
+				'transform',
+				'x',
+				'xml:space',
+				'y',
+			),
+			'use'            => array(
+				'class',
+				'clip-path',
+				'clip-rule',
+				'fill',
+				'fill-opacity',
+				'fill-rule',
+				'filter',
+				'height',
+				'id',
+				'mask',
+				'stroke',
+				'stroke-dasharray',
+				'stroke-dashoffset',
+				'stroke-linecap',
+				'stroke-linejoin',
+				'stroke-miterlimit',
+				'stroke-opacity',
+				'stroke-width',
+				'style',
+				'transform',
+				'width',
+				'x',
+				'xlink:href',
+				'y',
+			),
+		);
+
+		foreach ( $whitelist as $tag => $attributes ) {
+			$allowed[ $tag ] = array();
+
+			foreach ( $attributes as $attribute ) {
+				$allowed[ $tag ][ $attribute ] = true;
+			}
+		}
+
+		return wp_kses( $svg, $allowed );
+	}
+
+	/**
+	 * Get icon SVG.
+	 *
+	 * @param string $path Path of svg file.
+	 * @param string $color Color of svg file.
+	 * @param string $width Width of svg file.
+	 * @return string
+	 */
+	public static function dimas_get_icon_svg( $path, $color = '', $width = '' ) {
+		$content = dimas_get_file_contents( $path );
+		if ( $content ) {
+			$re = '/<svg(([^\n]*\n)+)<\/svg>/';
+			preg_match_all( $re, $content, $matches, PREG_SET_ORDER, 0 );
+			if ( count( $matches ) > 0 ) {
+				$content = $matches[0][0];
+				$css     = '';
+				if ( $color ) {
+					$content = preg_replace( '/stroke="[^"]*"/', 'stroke="' . $color . '"', $content );
+					$css    .= 'fill:' . $color . ';';
+				}
+				if ( $width ) {
+					$css .= 'width:' . $width . '; height: auto;';
+				}
+				$content = preg_replace( "/(<svg[^>]*)(style=(\"|')([^(\"|')]*)('|\"))/m", '$1 style="' . $css . '$4"', $content );
+			}
+		}
+
+		return $content;
 	}
 
 }

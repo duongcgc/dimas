@@ -1,11 +1,17 @@
 <?php
-namespace Dimas;
-
 /**
  * Dimas HTML markup rendering class.
  * => All methods create html tag for template.
+ *
+ * @package Dimas;
+ * @version 1.0.0
  */
 
+namespace Dimas;
+
+/**
+ * Dimas HTML.
+ */
 class HTML {
 	/**
 	 * The context data
@@ -104,7 +110,6 @@ class HTML {
 
 		if ( true === $args['actions'] || 'before' === $args['actions'] ) {
 			$html = $this->do_action( $context, 'before_close' ) . $html;
-			echo $context;
 		}
 
 		if ( $args['echo'] ) {

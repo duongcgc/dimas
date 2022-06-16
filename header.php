@@ -13,14 +13,14 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?> <?php \Dimas\Temp_Funs::dimas_the_html_classes(); ?>>
+<html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<?php wp_head(); ?>
 </head>
 
-<body data-plugin-page-transition <?php body_class( 'pp-viewing-Home' ); ?>>
+<body <?php body_class( 'animsition' ); ?> >
 	<?php wp_body_open(); ?>
 	<div class="preloader">
 		<div class="spinner">

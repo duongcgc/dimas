@@ -2765,7 +2765,7 @@ final class Compiler
             case Type::T_CHARSET:
                 break;
 
-            case Type::T_CUSTOM_PROPERTY:
+            case Type::T_CUSTDIMAS_PROPERTY:
                 list(, $name, $value) = $child;
                 $compiledName = $this->compileValue($name);
 

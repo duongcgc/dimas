@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Helper
  */
-class Helper {
+class Addons_Helper {
 
 	/**
 	 * Instance
@@ -42,11 +42,12 @@ class Helper {
 
 
 	/**
-	 * Get the sharing URL of a social
+	 * Get the sharing URL of a social.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $social
+	 * @param string $social       The social.
+	 * @param array  $args          The args.
 	 *
 	 * @return string
 	 */
@@ -70,7 +71,7 @@ class Helper {
 				);
 				break;
 
-			case 'pinterest';
+			case 'pinterest':
 				$params = array(
 					'description' => get_the_title(),
 					'media'       => get_the_post_thumbnail_url( null, 'full' ),
@@ -165,7 +166,7 @@ class Helper {
 			'<a href="%s" target="_blank" class="social-share-link %s">%s<span class="after-text">%s</span></a>',
 			esc_url( $url ),
 			esc_attr( $social ),
-			\Dimas\Icon::get_svg( $icon, '', 'social' ),
+			SVG_Icon::get_svg( $icon, '', 'social' ),
 			$text
 		);
 	}
@@ -187,6 +188,35 @@ class Helper {
 				'seconds' => esc_html__( 'Seconds', 'dimas' ),
 			)
 		);
+	}
+
+	/**
+	 * Check is product deals
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return bool
+	 */
+	public static function is_product_deal( $product ) {
+		$product = is_numeric( $product ) ? wc_get_product( $product ) : $product;
+
+		// It must be a sale product first
+		if ( ! $product->is_on_sale() ) {
+			return false;
+		}
+
+		// Only support product type "simple" and "external"
+		if ( ! $product->is_type( 'simple' ) && ! $product->is_type( 'external' ) ) {
+			return false;
+		}
+
+		$deal_quantity = get_post_meta( $product->get_id(), '_deal_quantity', true );
+
+		if ( $deal_quantity > 0 ) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**

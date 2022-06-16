@@ -1,6 +1,7 @@
 <?php
 /**
- * Dimas init
+ * Dimas Them initial.
+ * => Include and Instance main group classes base Platform, Core, Module and Addons classes.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -17,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dimas theme init
  */
-final class Dimas_Theme {
+final class Theme {
 	/**
 	 * Instance
 	 *
@@ -47,11 +48,14 @@ final class Dimas_Theme {
 	 * @return void
 	 */
 	public function __construct() {
-		require_once get_template_directory() . '/inc/class-dimas-autoload.php';
-		require_once get_template_directory() . '/inc/libs/class-mobile_detect.php';
-		if ( is_admin() ) {
-			require_once get_template_directory() . '/inc/libs/class-tgm-plugin-activation.php';
-		}
+
+		// auto include classes.
+		require_once DIMAS_INC_DIR . '/class-dimas-auto-loader.php';
+
+		// create classes.
+		$this->init();
+
+		// if( is_admin() ){require_once DIMAS_INC_DIR . '/libs/class-tgm-plugin-activation.php';}.
 	}
 
 	/**
@@ -65,48 +69,36 @@ final class Dimas_Theme {
 		// Before init action.
 		do_action( 'before_dimas_init' );
 
-		// Setup
-		$this->get( 'autoload' );
+		/**
+		 * Setup popular components ===============.
+		 */
+		$this->get( 'auto-loader' );
+
+		$this->get( 'styles' );
+		$this->get( 'scripts' );
+
 		$this->get( 'setup' );
-		$this->get( 'widgets' );
 
-		$this->get( 'woocommerce' );
+		$this->get( 'svg-icons' );
 
-		$this->get( 'mobile' );
+		$this->get( 'html' );
 
-		$this->get( 'maintenance' );
+		/**
+		 * Framework init components ==============.
+		 */
+		$this->get( 'framework/template-function' );
+		$this->get( 'framework/template-tag' );
+		$this->get( 'framework/notice' );
 
-		// Header
-		$this->get( 'preloader' );
-		$this->get( 'topbar' );
-		$this->get( 'header' );
-		$this->get( 'campaigns' );
+		/**
+		 * Core init components =====.
+		 */
+		$this->get( 'core/core-init' );
 
-		// Page Header
-		$this->get( 'page_header' );
-		$this->get( 'breadcrumbs' );
-
-		// Layout & Style
-		$this->get( 'layout' );
-		$this->get( 'dynamic_css' );
-
-		// Comments
-		$this->get( 'comments' );
-
-		//Footer
-		$this->get( 'footer' );
-
-		// Modules
-		$this->get( 'search_ajax' );
-		$this->get( 'newsletter' );
-
-		// Templates
-		$this->get( 'page' );
-
-		$this->get( 'blog' );
-
-		// Admin
-		$this->get( 'admin' );
+		/**
+		 * Addons init components ====.
+		 */
+		$this->get( 'addons/addons-init' );
 
 		// Init action.
 		do_action( 'after_dimas_init' );
@@ -114,52 +106,87 @@ final class Dimas_Theme {
 	}
 
 	/**
+	 * Convert file name into Class name.
+	 *
+	 * @param string $file    The file name with format - sperate.
+	 * @return string
+	 */
+	public function file_to_class( $file ) {
+
+		$file_parts = explode( '-', $file );
+		$num_parts  = count( $file_parts );
+
+		for ( $i = 0; $i < $num_parts; $i++ ) {
+			$file_parts[ $i ] = ucwords( $file_parts[ $i ] );
+		}
+
+		$class_name = implode( '_', $file_parts );
+
+		return $class_name;
+	}
+
+	/**
+	 * Call class with namespace.
+	 *
+	 * @param string $class       The class name need init.
+	 * @param string $namespace   The namespace of class.
+	 * @return void|string
+	 */
+	public function create_object( $class, $namespace ) {
+
+		$class = $this->file_to_class( $class );
+		$class = $namespace . $class;
+
+		if ( class_exists( $class ) ) {
+			return $class::instance();
+		} else {
+			echo '<br/>' . esc_html__( '[Dimas] Not found the class: ', 'dimas' ) . esc_html( $class );
+		}
+	}
+
+	/**
 	 * Get Dimas Class.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return object
+	 * @param string $slug_class   The slug class of class.
+	 * @return void
 	 */
-	public function get( $class ) {
-		switch ( $class ) {
-			case 'woocommerce':
-				if ( class_exists( 'Initial' ) ) {
-					return Initial::instance();
-				}
-				break;
+	public function get( $slug_class ) {
 
-			case 'options':
-				return Options::instance();
-				break;
+		// get space in class.
+		$space_parts  = explode( '/', $slug_class );
+		$number_parts = count( $space_parts );
 
-			case 'search_ajax':
-				return \Dimas\Modules\Search_Ajax::instance();
-				break;
-
-			case 'newsletter':
-				return \Dimas\Modules\Newsletter_Popup::instance();
-				break;
-
-			case 'mobile':
-				if ( Helper::is_mobile() ) {
-					return \Dimas\Mobile::instance();
-				}
-				break;
-
-			default :
-				$class = ucwords( $class );
-				$class = "\Dimas\\" . $class;
-				if ( class_exists( $class ) ) {
-					return $class::instance();
-				}
-				break;
+		if ( 1 === $number_parts ) {
+			$space = 'dimas';
+			$class = $slug_class;
+		} else {
+			$space = $space_parts[0];
+			$class = $space_parts[ $number_parts - 1 ];
 		}
 
+		// namespace by space when get class.
+		$namespace_array = array(
+			'dimas'     => '\Dimas\\',
+			'addons'    => '\Dimas\Addons\\',
+			'core'      => '\Dimas\Core\\',
+			'framework' => '\Dimas\Framework\\',
+		);
+
+		$namespace = $space;
+		if ( array_key_exists( $space, $namespace_array ) ) {
+			$namespace = $namespace_array[ $space ];
+		}
+
+		$this->create_object( $class, $namespace );
 	}
 
 
 	/**
 	 * Setup the theme global variable.
+	 *
+	 * @param array $args  The array of arguments.
 	 *
 	 * @since 1.0.0
 	 *
