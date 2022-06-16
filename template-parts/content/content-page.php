@@ -16,11 +16,11 @@
 	<?php if ( ! is_front_page() ) : ?>
 		<header class="entry-header alignwide">
 			<?php get_template_part( 'template-parts/header/entry-header' ); ?>
-			<?php \Template_Tag::instance()->dimas_post_thumbnail(); ?>
+			<?php \Dimas\Framework\Template_Tag::instance()->dimas_post_thumbnail(); ?>
 		</header><!-- .entry-header -->
 	<?php elseif ( has_post_thumbnail() ) : ?>
 		<header class="entry-header alignwide">
-			<?php \Template_Tag::instance()->dimas_post_thumbnail(); ?>
+			<?php \Dimas\Framework\Template_Tag::instance()->dimas_post_thumbnail(); ?>
 		</header><!-- .entry-header -->
 	<?php endif; ?>
 

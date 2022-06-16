@@ -151,6 +151,7 @@ class Widgets {
 		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Product_Banner() );
 		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Slides() );
 		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Sale_Box() );
+		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Skills_Info() );
 		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Testimonials_Carousel() );
 		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Testimonials_Carousel_2() );
 		$widgets_manager->register_widget_type( new \Dimas\Addons\Elementor\Widgets\Testimonials_Grid() );
