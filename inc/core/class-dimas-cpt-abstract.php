@@ -41,7 +41,7 @@ abstract class CPT_Abstract {
 		add_filter( 'opal_theme_sidebar', array( $this, 'set_sidebar' ) );
 		add_filter( 'template_include', array( $this, 'get_page_template_file' ), 99 );
 
-		$this->link_image = trailingslashit( DIMAS_CORE_PLUGIN_URL ) . 'assets/images/customize/';
+		$this->link_image = trailingslashit( DIMAS_CORE_URI ) . 'assets/images/customize/';
 		$this->options    = array(
 			'2cl' => esc_url( $this->link_image . '2cl.png' ),
 			'1c'  => esc_url( $this->link_image . '1col.png' ),
@@ -109,7 +109,7 @@ abstract class CPT_Abstract {
 	public function get_icon( $name ) {
 		$name = wp_basename( $name, '.php' );
 		if ( file_exists( DIMAS_CORE_DIR . '/assets/images/post-type/' . $name . '.png' ) ) {
-			return DIMAS_CORE_PLUGIN_URL . '/assets/images/post-type/' . $name . '.png';
+			return DIMAS_CORE_URI . '/assets/images/post-type/' . $name . '.png';
 		} else {
 			return 'dashicons-admin-post';
 		}

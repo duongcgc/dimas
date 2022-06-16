@@ -23,7 +23,7 @@ class CMB2_Field_Switch_Layout {
 	 * Render field
 	 */
 	public function render( $field, $field_escaped_value, $field_object_id, $field_object_type, $field_type_object ) {
-		$path_imgae = DIMAS_CORE_PLUGIN_URL . 'assets/images/customize/';
+		$path_imgae = DIMAS_CORE_URI . 'assets/images/customize/';
 		echo $field_type_object->input( array( 'type' => 'hidden' ) );
 		echo <<<HTML
 <ul class="select-list-image" otf-page-layout>

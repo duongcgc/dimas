@@ -30,7 +30,7 @@ class Opal_Woocommerce_Extra {
      */
     public function enqueue_scripts($hook) {
         if ($hook === 'post.php' && get_post_type() === 'product') {
-            wp_enqueue_script('otf-woocommerce-admin', DIMAS_CORE_PLUGIN_URL . 'assets/js/woocommerce/admin.js', array('jquery'), DIMAS_CORE_VERSION, true);
+            wp_enqueue_script('otf-woocommerce-admin', DIMAS_CORE_URI . 'assets/js/woocommerce/admin.js', array('jquery'), DIMAS_CORE_VERSION, true);
         }
     }
 
