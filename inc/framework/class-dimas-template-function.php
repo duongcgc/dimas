@@ -9,6 +9,7 @@
  namespace Dimas\Framework;
 
 use \Dimas\SVG_Icons;
+use \Dimas\Dynamic_CSS;
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }

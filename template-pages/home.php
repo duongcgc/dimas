@@ -14,6 +14,9 @@
 
 ?>
 <?php
+
+get_header();
+
 // Args for blog.
 $args_blog = array(
 	'post_type'           => 'post',
@@ -434,3 +437,6 @@ $project_featured = get_posts( $args_project );
 
 			</div>
 		</main>
+		
+<?php
+get_footer();

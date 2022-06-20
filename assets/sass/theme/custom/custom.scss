@@ -42,8 +42,11 @@
 }
 
 body {
-    background-color: var(--dimas-color-accent);
     font-family: 'Poppins';
+}
+
+main.dimas-main {
+    background-color: var(--dimas-color-accent);
 }
 
 .label-header {

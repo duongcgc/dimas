@@ -21,13 +21,10 @@ if ( comments_open() && get_option( 'thread_comments' ) ) {
 	wp_enqueue_script( 'comment-reply' );
 }
 
-
 /**
  * Dimas_Walker_Comment class
  */
 class Dimas_Walker_Comment extends Walker_Comment {
-
-
 
 	/**
 	 * Outputs a comment in the HTML5 format.
@@ -108,8 +105,10 @@ class Dimas_Walker_Comment extends Walker_Comment {
 		<?php
 	}
 }
+
 $current_post_id = get_the_id();
-?>
+if ( comments_open() ) :
+	?>
 <div class="dimas-post__comment pt-8 pt-md-96">
 	<div class="container">
 		<div class="dimas-post-comment-wrap row">
@@ -134,9 +133,14 @@ $current_post_id = get_the_id();
 						</ul><!-- .comment-list -->
 					</div>
 					<?php the_comments_navigation(); ?>
-				<?php endif; ?>
+				<?php else : ?>
+					
+				<h3 class="label-form-comment mb-5 mb-md-8 has-color-white">
+					No comments yet
+				</h3>
 
-				<?php
+					<?php
+				endif;
 
 				$args_comment_form = array(
 					'fields'               => apply_filters(
@@ -184,3 +188,5 @@ $current_post_id = get_the_id();
 		</div><!-- #comments -->
 	</div>
 </div>
+
+<?php endif; ?>

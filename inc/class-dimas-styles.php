@@ -73,15 +73,6 @@ class Styles {
 		// Print styles.
 		wp_enqueue_style( 'dimas-print-style', get_template_directory_uri() . '/assets/css/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 
-		// custom styles.
-		wp_enqueue_style( 'custom', get_template_directory_uri() . '/assets/css/custom.css', array(), wp_get_theme()->get( 'Version' ) );
-
-		// header styles.
-		wp_enqueue_style( 'header', get_template_directory_uri() . '/assets/css/header.css', array(), wp_get_theme()->get( 'Version' ) );
-
-		// footer styles.
-		wp_enqueue_style( 'footer', get_template_directory_uri() . '/assets/css/footer.css', array(), wp_get_theme()->get( 'Version' ) );
-
 		// Bootstrap styles.
 		wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/assets/addons/css/bootstrap/bootstrap.min.css', array(), wp_get_theme()->get( 'Version' ) );
 
@@ -91,6 +82,15 @@ class Styles {
 		// Animsition styles.
 		wp_enqueue_style( 'animsition-style', get_template_directory_uri() . '/assets/addons/css/animsition/animsition.min.css', array(), wp_get_theme()->get( 'Version' ) );
 		wp_enqueue_style( 'animsition-style', get_template_directory_uri() . '/assets/addons/css/animsition/preload.min.css', array(), wp_get_theme()->get( 'Version' ) );
+
+		// custom styles.
+		wp_enqueue_style( 'custom', get_template_directory_uri() . '/assets/css/custom.css', array(), wp_get_theme()->get( 'Version' ) );
+
+		// header styles.
+		wp_enqueue_style( 'header', get_template_directory_uri() . '/assets/css/header.css', array(), wp_get_theme()->get( 'Version' ) );
+
+		// footer styles.
+		wp_enqueue_style( 'footer', get_template_directory_uri() . '/assets/css/footer.css', array(), wp_get_theme()->get( 'Version' ) );
 
 		( isset( $_GET['action'] ) && 'elementor' == $_GET['action'] ) ? $is_elementor_edit = true : $is_elementor_edit = false;
 

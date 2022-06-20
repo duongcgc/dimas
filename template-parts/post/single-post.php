@@ -138,10 +138,10 @@ while ( have_posts() ) :
 							</div>
 						</div>
 					</div>
-					<?php endif; ?>
-					<?php if ( comments_open() ) : ?>
-						<?php comments_template(); ?>
-					<?php endif; ?>
+						<?php
+					endif;
+					comments_template();
+					?>
 				</div>
 			</div>
 	</main>

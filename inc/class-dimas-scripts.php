@@ -35,6 +35,7 @@ class Scripts {
 		}
 
 		return self::$instance;
+
 	}
 
 	/**

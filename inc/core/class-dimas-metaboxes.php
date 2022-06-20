@@ -57,7 +57,7 @@ class Metaboxes_Register {
 	 */
 	public function meta_box_scripts( $hook ) {
 		if ( in_array( $hook, array( 'post.php', 'post-new.php' ) ) ) {
-			wp_enqueue_script( 'dimas-meta-boxes', get_template_directory_uri() . '/assets/js/backend/meta-boxes.js', array( 'jquery' ), '20201012', true );
+			// wp_enqueue_script( 'dimas-meta-boxes', get_template_directory_uri() . '/assets/js/backend/meta-boxes.js', array( 'jquery' ), '20201012', true );
 		}
 	}
 
