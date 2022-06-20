@@ -4,8 +4,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WordPress
- * @subpackage Dimas
+ * @package Dimas
+ *
  * @since Dimas 1.0
  */
 
@@ -59,7 +59,15 @@ if ( ! defined( 'DIMAS_JS_URI' ) ) {
 }
 
 if ( ! defined( 'DIMAS_CSS_URI' ) ) {
-	define( 'DIMAS_CSS_URI', DIMAS_ASSETS_URI . '/js' );
+	define( 'DIMAS_CSS_URI', DIMAS_ASSETS_URI . '/css' );
+}
+
+if ( ! defined( 'DIMAS_ADDONS_JS_URI' ) ) {
+	define( 'DIMAS_ADDONS_JS_URI', DIMAS_ASSETS_URI . '/addons/js' );
+}
+
+if ( ! defined( 'DIMAS_ADDONS_CSS_URI' ) ) {
+	define( 'DIMAS_ADDONS_CSS_URI', DIMAS_ASSETS_URI . '/addons/css' );
 }
 
 // Init Dimas Theme.

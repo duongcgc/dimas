@@ -37,14 +37,17 @@ class HTML {
 	);
 
 	/**
-	 * The single instance of the class
+	 * Instance null
+	 *
+	 * @var void
 	 */
 	protected static $instance = null;
+
 
 	/**
 	 * Initialize
 	 */
-	static function instance() {
+	public static function instance() {
 		if ( null == self::$instance ) {
 			self::$instance = new self();
 		}
@@ -57,8 +60,8 @@ class HTML {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $context
-	 * @param array  $args
+	 * @param string $context The context to output.
+	 * @param array  $args  The args off atribute.
 	 *
 	 * @return string
 	 */
@@ -77,7 +80,7 @@ class HTML {
 		}
 
 		if ( $args['echo'] ) {
-			echo apply_filters( strtolower( __NAMESPACE__ ) . '\markup_open_html', $html, $context, $args );
+			echo wp_kses_post( apply_filters( strtolower( __NAMESPACE__ ) . '\markup_open_html', $html, $context, $args ) );
 		}
 
 		if ( true === $args['actions'] || 'after' === $args['actions'] ) {
@@ -94,8 +97,7 @@ class HTML {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $context
-	 * @param array  $args
+	 * @param string $context    The context of the function.
 	 *
 	 * @return string
 	 */
@@ -113,7 +115,7 @@ class HTML {
 		}
 
 		if ( $args['echo'] ) {
-			echo apply_filters( strtolower( __NAMESPACE__ ) . '\markup_close_html', $html, $context, $args );
+			echo wp_kses_post( apply_filters( strtolower( __NAMESPACE__ ) . '\markup_close_html', $html, $context, $args ) );
 		}
 
 		if ( true === $args['actions'] || 'after' === $args['actions'] ) {
@@ -132,7 +134,7 @@ class HTML {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $context
+	 * @param string $context The context attribute.
 	 *
 	 * @return string
 	 */
@@ -162,8 +164,8 @@ class HTML {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $context
-	 * @param string $action
+	 * @param string $context The context of the action.
+	 * @param string $action The name of the action.
 	 *
 	 * @return string
 	 */
@@ -195,8 +197,8 @@ class HTML {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $context
-	 * @param array  $args
+	 * @param string $context the context of parse_context_args.
+	 * @param array  $args the args parse_context_args.
 	 *
 	 * @return array
 	 */
@@ -222,9 +224,9 @@ class HTML {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $context
+	 * @param string $context the context.
 	 *
-	 * @param array  $args
+	 * @param array  $args the args.
 	 */
 	public function set_context( $context, $args = array() ) {
 		$args                   = $this->parse_context_args( $context, $args );
@@ -236,7 +238,7 @@ class HTML {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $context
+	 * @param string $context the context.
 	 *
 	 * @return array
 	 */
@@ -249,7 +251,7 @@ class HTML {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $context
+	 * @param string $context the context.
 	 *
 	 * @return void
 	 */
@@ -264,11 +266,12 @@ class HTML {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $context
+	 * @param string $context the context.
 	 *
 	 * @return boolean
 	 */
 	public function has_context( $context ) {
 		return array_key_exists( $context, $this->data );
 	}
+
 }

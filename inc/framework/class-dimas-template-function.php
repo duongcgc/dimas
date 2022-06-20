@@ -8,6 +8,7 @@
 
  namespace Dimas\Framework;
 
+use \Dimas\SVG_Icons;
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -169,11 +170,12 @@ class Template_Function {
 	 *
 	 * @param string $group The icon group.
 	 * @param string $icon  The icon.
-	 * @param int    $size  The icon size in pixels.
+	 * @param int    $width The icon-width in pixels.
+	 * @param int    $height The icon-height in pixels.
 	 * @return string
 	 */
-	public function dimas_get_icon_svg( $group, $icon, $size = 24 ) {
-		return \Dimas\SVG_Icons::get_svg( $group, $icon, $size );
+	public function dimas_get_icon_svg( $group, $icon, $width = 24, $height = 24 ) {
+		return SVG_Icons::get_svg( $group, $icon, $width, $height );
 	}
 
 	/**

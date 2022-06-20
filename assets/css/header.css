@@ -1,0 +1,248 @@
+/*HEADER*/
+/* main header */
+.dimas-header {
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: var(--dimas-color-white);
+}
+
+.dimas-social-icon {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: inherit;
+}
+.dimas-social-icon svg {
+  color: var(--dimas-color-white);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.dimas-social-icon:hover svg {
+  color: var(--dimas-color-main);
+}
+.dimas-social-icon:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.dimas-navbar {
+  z-index: 50;
+}
+.dimas-navbar--solid .dimas-navbar-background {
+  height: 100%;
+}
+.dimas-navbar-background {
+  position: absolute;
+  z-index: -1;
+  top: -1px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  -webkit-transition: all var(--dimas-transition-duration) var(--dimas-transition-easing);
+  transition: all var(--dimas-transition-duration) var(--dimas-transition-easing);
+  background-color: var(--dimas-color-accent);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.dimas-navbar--fixed {
+  background-color: var(--dimas-color-bg-header);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+  border-bottom: 1px solid var(--dimas-color-border);
+}
+.dimas-navbar-socials {
+  position: absolute;
+  right: 3rem;
+}
+.dimas-navbar-inner {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: padding var(--dimas-transition-duration) var(--dimas-transition-easing);
+  transition: padding var(--dimas-transition-duration) var(--dimas-transition-easing);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.dimas-navbar-inner-left {
+  position: absolute;
+  left: 4rem;
+}
+.dimas-navbar-inner-center {
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.dimas-navbar-inner-center a {
+  padding-top: 2.1875rem;
+  padding-bottom: 2.1875rem;
+}
+.dimas-navbar-logo {
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  color: inherit;
+}
+.dimas-navbar-logo img {
+  display: block;
+  max-width: none;
+  max-height: 1.5rem;
+}
+
+.dimas-default-menu__navigation .dimas-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  pointer-events: auto;
+}
+.dimas-default-menu__navigation .dimas-menu > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: none;
+  min-height: 100%;
+  padding: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.dimas-default-menu__navigation .dimas-menu > li > a {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Outfit";
+  line-height: 1.125rem;
+  position: relative;
+}
+.dimas-default-menu__navigation .dimas-menu > li > a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  content: "";
+  -webkit-transition: inherit;
+  transition: inherit;
+  opacity: 0;
+  background-color: var(--dimas-color-main);
+}
+.dimas-default-menu__navigation .dimas-menu > li + li {
+  margin-left: 3rem;
+}
+.dimas-default-menu__navigation .dimas-menu > li.active > a, .dimas-default-menu__navigation .dimas-menu > li.current-menu-item > a, .dimas-default-menu__navigation .dimas-menu > li.sfHover > a, .dimas-default-menu__navigation .dimas-menu > li:hover > a {
+  color: var(--dimas-color-main);
+}
+.dimas-default-menu__navigation .dimas-menu > li.active > a::after, .dimas-default-menu__navigation .dimas-menu > li.current-menu-item > a::after, .dimas-default-menu__navigation .dimas-menu > li.sfHover > a::after, .dimas-default-menu__navigation .dimas-menu > li:hover > a::after {
+  opacity: 1;
+}
+
+.dimas-menu-burger {
+  float: right;
+}
+.dimas-menu-burger svg {
+  width: 2rem;
+  height: 2rem;
+}
+.dimas-menu-burger.js-offcanvas-menu-open {
+  padding: 1.875rem 3rem;
+}
+
+/* offcanvas */
+.dimas-offcanvas-menu {
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 26.875rem;
+  padding: 1.25rem 1.25rem 2.5rem;
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+  background-color: var(--dimas-color-accent);
+}
+.dimas-offcanvas-menu__navigation {
+  overflow-y: auto;
+  height: 100%;
+}
+.dimas-offcanvas-menu__navigation .dimas-menu {
+  overflow: hidden;
+}
+.dimas-offcanvas-menu__navigation .dimas-menu a {
+  display: inline-block;
+}
+.dimas-offcanvas-menu__navigation .dimas-menu li {
+  display: block;
+  float: none;
+}
+.dimas-offcanvas-menu__navigation .dimas-menu li::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  content: "";
+  -webkit-transition: inherit;
+  transition: inherit;
+  opacity: 0;
+  background-color: var(--dimas-color-main);
+}
+.dimas-offcanvas-menu__navigation .dimas-menu > li {
+  position: relative;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+.dimas-offcanvas-menu__navigation .dimas-menu > li:first-child {
+  padding-top: 2rem;
+}
+.dimas-offcanvas-menu__navigation .dimas-menu > li > a {
+  font-weight: 600;
+  font-family: "Outfit";
+  width: 100%;
+  font-size: 1.125rem;
+  line-height: 1.4375rem;
+}
+.dimas-offcanvas-menu__navigation .dimas-menu > li.active > a, .dimas-offcanvas-menu__navigation .dimas-menu > li.current-menu-item > a, .dimas-offcanvas-menu__navigation .dimas-menu > li.sfHover > a, .dimas-offcanvas-menu__navigation .dimas-menu > li:hover > a {
+  color: var(--dimas-color-main);
+}
+.dimas-offcanvas-menu__navigation .dimas-menu > li.active::after, .dimas-offcanvas-menu__navigation .dimas-menu > li.current-menu-item::after, .dimas-offcanvas-menu__navigation .dimas-menu > li.sfHover::after, .dimas-offcanvas-menu__navigation .dimas-menu > li:hover::after {
+  color: var(--dimas-color-main);
+  opacity: 1;
+}
+
+/** Responsive Header **/
+@media (max-width: 575px) {
+  .dimas-menu-burger.js-offcanvas-menu-open {
+    padding: 1rem 1rem;
+  }
+
+  .dimas-navbar-inner-left {
+    left: 1rem;
+  }
+
+  .dimas-offcanvas-menu {
+    width: 95.5555555556vw;
+    padding: 1rem 1rem 2rem;
+  }
+}
+/** End Responsive Header **/

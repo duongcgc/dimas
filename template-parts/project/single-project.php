@@ -6,8 +6,8 @@
  *
  * @link https://www.gcosoftware.vn/
  *
- * @package GCO
- * @subpackage Dimas
+ * @package Dimas
+ *
  * @since Dimas 1.0
  */
 

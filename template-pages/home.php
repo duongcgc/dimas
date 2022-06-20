@@ -1,13 +1,14 @@
 <?php
 /**
  *
- *
- * Loads content of home page.
+ * Display home page.
  *
  * @link https://www.gcosoftware.vn/
  *
- * @package GCO
- * @subpackage Dimas
+ * Template Name: Home Page
+ *
+ * @package Dimas
+ *
  * @since Dimas 1.0
  */
 

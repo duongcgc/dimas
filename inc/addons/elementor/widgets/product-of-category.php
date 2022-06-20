@@ -65,7 +65,7 @@ class Product_Of_Category extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->section_content();
 		$this->section_style();
 	}
@@ -289,7 +289,7 @@ class Product_Of_Category extends Widget_Base {
 			[
 				'label'       => esc_html__( 'Products', 'dimas' ),
 				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
-				'type'        => 'rzautocomplete',
+				'type'        => 'dm_autocomplete',
 				'default'     => '',
 				'label_block' => true,
 				'multiple'    => true,
@@ -306,7 +306,7 @@ class Product_Of_Category extends Widget_Base {
 			[
 				'label'       => esc_html__( 'Product Categories', 'dimas' ),
 				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
-				'type'        => 'rzautocomplete',
+				'type'        => 'dm_autocomplete',
 				'default'     => '',
 				'label_block' => true,
 				'multiple'    => true,
@@ -324,7 +324,7 @@ class Product_Of_Category extends Widget_Base {
 			[
 				'label'       => esc_html__( 'Products Tags', 'dimas' ),
 				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
-				'type'        => 'rzautocomplete',
+				'type'        => 'dm_autocomplete',
 				'default'     => '',
 				'label_block' => true,
 				'multiple'    => true,
@@ -341,7 +341,7 @@ class Product_Of_Category extends Widget_Base {
 			[
 				'label'       => esc_html__( 'Products Brands', 'dimas' ),
 				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
-				'type'        => 'rzautocomplete',
+				'type'        => 'dm_autocomplete',
 				'default'     => '',
 				'label_block' => true,
 				'multiple'    => true,
@@ -359,7 +359,7 @@ class Product_Of_Category extends Widget_Base {
 				[
 					'label'       => esc_html__( 'Products Authors', 'dimas' ),
 					'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
-					'type'        => 'rzautocomplete',
+					'type'        => 'dm_autocomplete',
 					'default'     => '',
 					'label_block' => true,
 					'multiple'    => true,

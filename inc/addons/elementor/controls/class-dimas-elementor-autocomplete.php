@@ -40,7 +40,7 @@ class Autocomplete extends \Elementor\Base_Data_Control {
 	 * @return string Control type.
 	 */
 	public function get_type() {
-		return 'rzautocomplete';
+		return 'dm_autocomplete';
 	}
 
 	/**
@@ -52,16 +52,22 @@ class Autocomplete extends \Elementor\Base_Data_Control {
 	 */
 	public function enqueue() {
 		// Styles
-		wp_register_style( 'rzautocomplete', DIMAS_ADDONS_URL . 'assets/css/admin/autocomplete.css', [], '20191807' );
-		wp_enqueue_style( 'rzautocomplete' );
+		wp_register_style( 'dm_autocomplete', DIMAS_ADDONS_CSS_URI . '/elementor/autocomplete.css', array(), '20191807' );
+		wp_enqueue_style( 'dm_autocomplete' );
 
 		// Scripts
-		wp_register_script( 'rzautocomplete', DIMAS_ADDONS_URL . 'assets/js/admin/autocomplete.js', [
-			'jquery',
-			'jquery-ui-autocomplete',
-			'jquery-ui-sortable'
-		], '20191807', true );
-		wp_enqueue_script( 'rzautocomplete' );
+		wp_register_script(
+			'dm_autocomplete',
+			DIMAS_ADDONS_JS_URI . '/elementor/autocomplete.js',
+			array(
+				'jquery',
+				'jquery-ui-autocomplete',
+				'jquery-ui-sortable',
+			),
+			'20191807',
+			true
+		);
+		wp_enqueue_script( 'dm_autocomplete' );
 	}
 
 	/**
@@ -76,11 +82,11 @@ class Autocomplete extends \Elementor\Base_Data_Control {
 	 * @return array Control default settings.
 	 */
 	protected function get_default_settings() {
-		return [
+		return array(
 			'multiple' => false,
 			'sortable' => false,
-			'source'   => 'category' // post type or taxonomy
-		];
+			'source'   => 'category', // post type or taxonomy
+		);
 	}
 
 	/**
@@ -96,32 +102,30 @@ class Autocomplete extends \Elementor\Base_Data_Control {
 	public function content_template() {
 		$control_uid = $this->get_control_uid();
 		?>
-        <div class="elementor-control-field">
-            <# if ( data.label ) {#>
-            <label for="<?php echo $control_uid; ?>" class="elementor-control-title">{{{ data.label }}}</label>
-            <# } #>
-            <div class="elementor-control-input-wrapper">
-                <ul class="ra_autocomplete">
-                    <li class="ra_autocomplete-input">
-                        <input class="ra_autocomplete_param" type="text" placeholder="{{ data.placeholder }}"/>
-                        <input class="ra_autocomplete_value" type="hidden" data-source="{{data.source}}"
-                               data-multiple="{{data.multiple}}"
-                               data-sortable="{{data.sortable}}" value="{{data.controlValue}}"/>
-                        <span class="loading"></span>
-                    </li>
+		<div class="elementor-control-field">
+			<# if ( data.label ) {#>
+			<label for="<?php echo $control_uid; ?>" class="elementor-control-title">{{{ data.label }}}</label>
+			<# } #>
+			<div class="elementor-control-input-wrapper">
+				<ul class="ra_autocomplete">
+					<li class="ra_autocomplete-input">
+						<input class="ra_autocomplete_param" type="text" placeholder="{{ data.placeholder }}"/>
+						<input class="ra_autocomplete_value" type="hidden" data-source="{{data.source}}"
+							   data-multiple="{{data.multiple}}"
+							   data-sortable="{{data.sortable}}" value="{{data.controlValue}}"/>
+						<span class="loading"></span>
+					</li>
 
-                    <li class="ra_autocomplete-loading">
-                        <span class="loading"></span>
-                    </li>
-					<?php
-					?>
-                </ul>
+					<li class="ra_autocomplete-loading">
+						<span class="loading"></span>
+					</li>
+									</ul>
 
-            </div>
-        </div>
-        <# if ( data.description ) { #>
-        <div class="elementor-control-field-description">{{{ data.description }}}</div>
-        <# } #>
+			</div>
+		</div>
+		<# if ( data.description ) { #>
+		<div class="elementor-control-field-description">{{{ data.description }}}</div>
+		<# } #>
 		<?php
 	}
 }

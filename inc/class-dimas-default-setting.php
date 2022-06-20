@@ -2,8 +2,8 @@
 /**
  * Default Setting for this Theme
  * => default settings values for customizer and options
- * @package WordPress
- * @subpackage Dimas
+ * @package Dimas
+ *
  * @since Dimas 1.0
  */
 

@@ -59,8 +59,6 @@ class Setup {
 
 		add_action( 'elementor/elements/categories_registered', array( $this, 'add_category' ) );
 
-		add_action( 'post_class', array( $this, 'get_product_classes' ), 20, 3 );
-
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 
 		if ( ! empty( $_REQUEST['action'] ) && 'elementor' === $_REQUEST['action'] && is_admin() ) {
@@ -97,31 +95,14 @@ class Setup {
 		// \Elementor\Plugin::$instance->frontend->enqueue_styles();
 	}
 
-
-	/**
-	 * Add post type class
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return array
-	 */
-	public function get_product_classes( $classes, $class, $post_id ) {
-		// if ( is_admin() && \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
-		// 	$post      = get_post( $post_id );
-		// 	$classes[] = $post->post_type;
-		// }
-
-		return $classes;
-	}
-
 	/**
 	 * Register WC hooks for Elementor editor
 	 */
-	public function register_wc_hooks() {
-		if ( function_exists( 'wc' ) ) {
-			wc()->frontend_includes();
-		}
-	}
+	// public function register_wc_hooks() {
+	// if ( function_exists( 'wc' ) ) {
+	// wc()->frontend_includes();
+	// }
+	// }
 
 	/**
 	 * Register styles
@@ -131,11 +112,12 @@ class Setup {
 	 * @return void
 	 */
 	public function styles() {
-		wp_register_style( 'mapbox', DIMAS_ADDONS_URI . 'assets/css/mapbox.css', array(), '1.0' );
-		wp_register_style( 'mapboxgl', DIMAS_ADDONS_URI . 'assets/css/mapbox-gl.css', array(), '1.0' );
-		wp_register_style( 'magnific', DIMAS_ADDONS_URI . 'assets/css/magnific-popup.css', array(), '1.0' );
 
-		wp_register_style( 'image-slide-css', DIMAS_ADDONS_URI . 'assets/css/image-slide.css', array(), '1.0' );
+		wp_register_style( 'mapbox', DIMAS_ADDONS_CSS_URI . '/elementor/mapbox.css', array(), '1.0' );
+		wp_register_style( 'mapboxgl', DIMAS_ADDONS_CSS_URI . '/elementor/mapbox-gl.css', array(), '1.0' );
+		wp_register_style( 'magnific', DIMAS_ADDONS_CSS_URI . '/elementor/magnific-popup.css', array(), '1.0' );
+
+		wp_register_style( 'image-slide-css', DIMAS_ADDONS_CSS_URI . '/elementor/image-slide.css', array(), '1.0' );
 
 	}
 
@@ -148,23 +130,23 @@ class Setup {
 	 */
 	public function scripts() {
 
-		wp_register_script( 'dimas-coundown', DIMAS_ADDONS_URI . '/assets/js/plugins/jquery.coundown.js', array(), '1.0', true );
-		wp_register_script( 'mapbox', DIMAS_ADDONS_URI . '/assets/js/plugins/mapbox.min.js', array(), '1.0', true );
-		wp_register_script( 'mapboxgl', DIMAS_ADDONS_URI . '/assets/js/plugins/mapbox-gl.min.js', array(), '1.0', true );
-		wp_register_script( 'mapbox-sdk', DIMAS_ADDONS_URI . '/assets/js/plugins/mapbox-sdk.min.js', array(), '1.0', true );
+		wp_register_script( 'dimas-coundown', DIMAS_ADDONS_JS_URI . '/elementor/jquery.coundown.js', array(), '1.0', true );
+		wp_register_script( 'mapbox', DIMAS_ADDONS_JS_URI . '/elementor/mapbox.min.js', array(), '1.0', true );
+		wp_register_script( 'mapboxgl', DIMAS_ADDONS_JS_URI . '/elementor/mapbox-gl.min.js', array(), '1.0', true );
+		wp_register_script( 'mapbox-sdk', DIMAS_ADDONS_JS_URI . '/elementor/mapbox-sdk.min.js', array(), '1.0', true );
 
-		wp_register_script( 'magnific', DIMAS_ADDONS_URI . '/assets/js/plugins/jquery.magnific-popup.js', array(), '1.0', true );
+		wp_register_script( 'magnific', DIMAS_ADDONS_JS_URI . '/elementor/jquery.magnific-popup.js', array(), '1.0', true );
 
-		wp_register_script( 'image-slide', DIMAS_ADDONS_URI . 'assets/js/plugins/image-slide.js', array(), '1.0', true );
-		wp_register_script( 'dimas-masonry', DIMAS_ADDONS_URI . '/assets/js/plugins/jquery.masonryGrid.js', array( 'jquery' ), '1.0', true );
+		wp_register_script( 'image-slide', DIMAS_ADDONS_JS_URI . '/elementor/image-slide.js', array(), '1.0', true );
+		wp_register_script( 'dimas-masonry', DIMAS_ADDONS_JS_URI . '/elementor/jquery.masonryGrid.js', array( 'jquery' ), '1.0', true );
 
-		wp_register_script( 'jarallax', DIMAS_ADDONS_URI . 'assets/js/plugins/jarallax.min.js', array(), '1.12.8', true );
-		wp_register_script( 'dimas-elementor-parallax', DIMAS_ADDONS_URI . 'assets/js/elementor-parallax-widgets.js', array(), '1.0', true );
+		wp_register_script( 'jarallax', DIMAS_ADDONS_JS_URI . '/elementor/jarallax.min.js', array(), '1.12.8', true );
+		wp_register_script( 'dimas-elementor-parallax', DIMAS_ADDONS_JS_URI . '/elementor/elementor-parallax-widgets.js', array(), '1.0', true );
 
-		wp_register_script( 'eventmove', DIMAS_ADDONS_URI . 'assets/js/plugins/jquery.event.move.js', array(), '1.0', true );
+		wp_register_script( 'eventmove', DIMAS_ADDONS_JS_URI . '/elementor/jquery.event.move.js', array(), '1.0', true );
 
-		wp_register_script( 'dimas-frontend', DIMAS_ADDONS_URI . '/assets/js/frontend.js', array( 'jquery', 'elementor-frontend' ), '20220310', true );
-		wp_register_script( 'dimas-product-shortcode', DIMAS_ADDONS_URI . '/assets/js/product-shortcode.js', array( 'jquery', 'elementor-frontend' ), '20220310', true );
+		wp_register_script( 'dimas-frontend', DIMAS_ADDONS_JS_URI . '/elementor/frontend.js', array( 'jquery', 'elementor-frontend' ), '20220310', true );
+		wp_register_script( 'dimas-product-shortcode', DIMAS_ADDONS_JS_URI . '/elementor/product-shortcode.js', array( 'jquery', 'elementor-frontend' ), '20220310', true );
 
 	}
 }

@@ -8,8 +8,8 @@
  *
  * @link https://www.gcosoftware.vn/
  *
- * @package GCO
- * @subpackage Dimas
+ * @package Dimas
+ *
  * @since Dimas 1.0
  */
 
@@ -19,12 +19,12 @@ if ( get_the_content() !== '' ) {
 	the_content();
 } else {
 	$type_current = get_post_type();
-	if ( is_front_page() ) {
-		get_template_part( 'template-parts/page/home' );
-	} elseif ( is_single() ) {
+	if ( is_singular() ) {
 		get_template_part( 'template-parts/' . $type_current . '/single-' . $type_current );
-	} elseif ( is_category() ) {
+	} elseif ( is_archive() ) {
 		get_template_part( 'template-parts/' . $type_current . '/archive-' . $type_current );
+	} elseif ( is_search() ) {
+		get_template_part( 'template-parts/search/search' );
 	} else {
 		get_template_part( '404' );
 	}

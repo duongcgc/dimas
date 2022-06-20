@@ -1,0 +1,51 @@
+/*FOOTER*/
+.dimas-footer {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 2.25rem 3rem 2.25rem 3.75rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.dimas-footer a {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.dimas-footer--fixed {
+  background-color: var(--dimas-color-bg-header);
+  position: fixed;
+  z-index: 20;
+}
+
+/** Responsive Footer **/
+@media (max-width: 991px) {
+  .dimas-footer {
+    padding: 2.375rem 3rem 2.375rem 4rem;
+  }
+}
+@media (max-width: 575px) {
+  .dimas-footer {
+    display: block;
+    padding: 1rem;
+  }
+  .dimas-footer-hotline {
+    margin-top: 0.3125rem;
+    width: 100%;
+    position: relative;
+    right: unset;
+  }
+}
+/** End Responsive Footer **/

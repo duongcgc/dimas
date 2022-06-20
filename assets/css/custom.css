@@ -1,0 +1,470 @@
+/*FONT*/
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Marcellus&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Outfit:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@font-face {
+  src: url("../fonts/heist/Heist_Italic.otf");
+  font-family: "Heist";
+  font-style: italic;
+}
+@font-face {
+  src: url("../fonts/heist/Heist_Regular.otf");
+  font-family: "Heist";
+  font-style: normal;
+}
+.heist {
+  font-family: "Heist";
+}
+
+.lato {
+  font-family: "Lato";
+}
+
+.marcellus {
+  font-family: "Marcellus";
+}
+
+.montserrat {
+  font-family: "Montserrat";
+}
+
+.outfit {
+  font-family: "Outfit";
+}
+
+.poppins {
+  font-family: "Poppins";
+}
+
+.raleway {
+  font-family: "Raleway";
+}
+
+/*ANIMATION*/
+@-webkit-keyframes pulse {
+  0%, 100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(2, 2, 2);
+            transform: scale3d(2, 2, 2);
+  }
+}
+@keyframes pulse {
+  0%, 100% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(2, 2, 2);
+            transform: scale3d(2, 2, 2);
+  }
+}
+@-webkit-keyframes dimas_blink_in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes dimas_blink_in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes dimas_bounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes dimas_bounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes dimas_spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(380deg);
+            transform: rotate(380deg);
+  }
+}
+@keyframes dimas_spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(380deg);
+            transform: rotate(380deg);
+  }
+}
+@-webkit-keyframes dimas_heartbeat {
+  0% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  5% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  10% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  15% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+@keyframes dimas_heartbeat {
+  0% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  5% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  10% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  15% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+@-webkit-keyframes dimas_marquee {
+  0% {
+    -webkit-transform: translateX(0) translateZ(0);
+    transform: translateX(0) translateZ(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%) translateZ(0);
+    transform: translateX(-100%) translateZ(0);
+  }
+}
+@keyframes dimas_marquee {
+  0% {
+    -webkit-transform: translateX(0) translateZ(0);
+    transform: translateX(0) translateZ(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%) translateZ(0);
+    transform: translateX(-100%) translateZ(0);
+  }
+}
+/*CUSTOM CSS*/
+:root {
+  --dimas-color-main: #F21967;
+  --dimas-color-white: #FFFFFF;
+  --dimas-color-black: #000000;
+  --dimas-color-accent: #011A2C;
+  --dimas-color-bg-header: #011A2C66;
+  --dimas-color-subtitle: #FFFFFFB3;
+  --dimas-color-thk-text: #FFFFFF66;
+  --dimas-color-border: #FFFFFF33;
+  --dimas-color-overlay: #FFFFFF26;
+  --dimas-color-bg-tag: #1A3141;
+  --dimas-color-transparent: transparent;
+  --dimas-transition-duration: 300ms;
+  --dimas-transition-duration-2: 400ms;
+  --dimas-transition-duration-3: 500ms;
+  --dimas-transition-easing: ease;
+  --dimas-transition-linear: linear;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-moz-selection {
+  background: var(--dimas-color-main);
+  color: var(--dimas-color-white);
+}
+
+::selection {
+  background: var(--dimas-color-main);
+  color: var(--dimas-color-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--dimas-color-main);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--dimas-color-accent);
+}
+
+body {
+  background-color: var(--dimas-color-accent);
+  font-family: "Poppins";
+}
+
+.label-header {
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+.label-header.label-content {
+  font-family: "Outfit";
+}
+
+.label-content:not(.label-header) {
+  font-family: "Outfit";
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  text-transform: uppercase;
+}
+
+.name-author {
+  font-family: "Outfit";
+  font-size: 1rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+}
+
+h1 {
+  font-family: "Heist";
+  font-style: normal;
+  font-weight: 400;
+}
+h1.label-banner {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Heist";
+  font-style: normal;
+  font-size: 5rem;
+}
+
+h2 {
+  font-family: "Outfit";
+  font-weight: 700;
+  text-transform: capitalize;
+}
+h2.label-banner {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Heist";
+  font-weight: 400;
+  font-size: 3.5rem;
+}
+h2.label-banner.hg60 {
+  line-height: 3.75rem;
+}
+h2.label-banner.has-after::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  display: block;
+  width: 8.5rem;
+  height: 3px;
+  background-color: var(--dimas-color-main);
+}
+
+h3 {
+  font-family: "Outfit";
+  font-style: normal;
+  line-height: 2rem;
+}
+
+h4 {
+  font-family: "Outfit";
+  font-style: normal;
+}
+
+.quote {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+.quote__author {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+.quote__text {
+  position: relative;
+}
+.quote__text.has-after::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  width: 5rem;
+  background-color: var(--dimas-color-border);
+}
+
+a {
+  cursor: pointer;
+  color: var(--dimas-color-white);
+  text-decoration: none;
+  -webkit-transition: all var(--dimas-transition-duration) var(--dimas-transition-easing);
+  transition: all var(--dimas-transition-duration) var(--dimas-transition-easing);
+}
+a:hover {
+  color: var(--dimas-color-main);
+}
+a:after {
+  -webkit-transition: all var(--dimas-transition-duration) var(--dimas-transition-easing);
+  transition: all var(--dimas-transition-duration) var(--dimas-transition-easing);
+}
+
+svg {
+  -webkit-transition: color var(--dimas-transition-duration) var(--dimas-transition-easing);
+  transition: color var(--dimas-transition-duration) var(--dimas-transition-easing);
+}
+
+.has-color-white {
+  color: var(--dimas-color-white);
+}
+
+.has-color-subtitle {
+  color: var(--dimas-color-subtitle);
+}
+
+.has-color-main {
+  color: var(--dimas-color-main);
+}
+
+.has-bg-main {
+  background-color: var(--dimas-color-main);
+}
+
+.has-bg-black {
+  background-color: var(--dimas-color-black);
+}
+
+.dimas-site-overlay {
+  position: fixed;
+  z-index: 35;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  background-color: var(--dimas-color-overlay);
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+  color: var(--dimas-color-subtitle);
+}
+
+.dimas-custom-cursor {
+  position: absolute;
+  z-index: 100;
+  pointer-events: none;
+  color: var(--dimas-color-accent);
+}
+.dimas-custom-cursor span {
+  font-size: 0.9375rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  visibility: hidden;
+  width: 5rem;
+  height: 5rem;
+  -webkit-transition: -webkit-transform calc(var(--dimas-transition-duration) / 2);
+  transition: -webkit-transform calc(var(--dimas-transition-duration) / 2);
+  transition: transform calc(var(--dimas-transition-duration) / 2);
+  transition: transform calc(var(--dimas-transition-duration) / 2), -webkit-transform calc(var(--dimas-transition-duration) / 2);
+  -webkit-transform: translate3d(calc(var(--dimas-custom-cursor__x) - 2.5rem), calc(var(--dimas-custom-cursor__y) - 2.5rem), 0);
+          transform: translate3d(calc(var(--dimas-custom-cursor__x) - 2.5rem), calc(var(--dimas-custom-cursor__y) - 2.5rem), 0);
+  opacity: 0;
+  color: currentColor;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.dimas-custom-cursor span svg {
+  height: 1em;
+}
+.dimas-custom-cursor.is-visible span {
+  visibility: visible;
+  -webkit-animation: dimas_blink_in var(--dimas-transition-duration) var(--dimas-transition-easing) forwards;
+          animation: dimas_blink_in var(--dimas-transition-duration) var(--dimas-transition-easing) forwards;
+}
+
+.dimas-main {
+  position: relative;
+  overflow: hidden;
+}
+
+/** Responsive Custom CSS **/
+@media (max-width: 767px) {
+  h2 {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+  h2.label-banner {
+    font-size: 3rem;
+    line-height: 3.75rem;
+  }
+}
+@media (max-width: 575px) {
+  .quote {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .quote__img {
+    margin-bottom: 1.5rem;
+  }
+}
+/** End Responsive Custom CSS **/

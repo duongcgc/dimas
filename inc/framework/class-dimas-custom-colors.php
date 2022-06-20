@@ -2,8 +2,8 @@
 /**
  * Custom Colors Class
  *
- * @package WordPress
- * @subpackage Dimas
+ * @package Dimas
+ *
  * @since Dimas 1.0
  */
 

@@ -63,7 +63,7 @@ class Products_Recently_Viewed_Grid extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->section_content();
 	}
 

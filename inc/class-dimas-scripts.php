@@ -223,66 +223,71 @@ class Scripts {
 			)
 		);
 
-		// Responsive embeds script.
-		wp_enqueue_script(
-			'dimas-responsive-embeds-script',
-			get_template_directory_uri() . '/assets/js/responsive-embeds.js',
-			array( 'dimas-ie11-polyfills' ),
-			wp_get_theme()->get( 'Version' ),
-			true
-		);
-
-		// GSAP script.
-		wp_enqueue_script(
-			'gsap-script',
-			get_template_directory_uri() . '/assets/addons/js/GSAP/gsap.min.js',
-			array( 'jquery' ),
-			wp_get_theme()->get( 'Version' ),
-			true
-		);
-
-		// Animsition script.
-		wp_enqueue_script(
-			'animsition-script',
-			get_template_directory_uri() . '/assets/addons/js/animsition/animsition.min.js',
-			array( 'jquery' ),
-			wp_get_theme()->get( 'Version' ),
-			true
-		);
-
-		// Blog Archive script.
-		if ( is_category() ) {
-
-			// masonry script.
+			// Responsive embeds script.
 			wp_enqueue_script(
-				'masonry-script',
-				get_template_directory_uri() . '/assets/addons/js/masonry/masonry.min.js',
+				'dimas-responsive-embeds-script',
+				get_template_directory_uri() . '/assets/js/responsive-embeds.js',
+				array( 'dimas-ie11-polyfills' ),
+				wp_get_theme()->get( 'Version' ),
+				true
+			);
+
+			// GSAP script.
+			wp_enqueue_script(
+				'gsap-script',
+				get_template_directory_uri() . '/assets/addons/js/GSAP/gsap.min.js',
 				array( 'jquery' ),
 				wp_get_theme()->get( 'Version' ),
 				true
 			);
-		}
-		// Blog Post script.
-		if ( is_singular( 'post' ) ) {
 
-			// fancybox script.
+			// Animsition script.
 			wp_enqueue_script(
-				'fancybox-script',
-				get_template_directory_uri() . '/assets/addons/js/fancybox/fancybox.umd.js',
+				'animsition-script',
+				get_template_directory_uri() . '/assets/addons/js/animsition/animsition.min.js',
 				array( 'jquery' ),
 				wp_get_theme()->get( 'Version' ),
 				true
 			);
+
+		( isset( $_GET['action'] ) && 'elementor' == $_GET['action'] ) ? $is_elementor_edit = true : $is_elementor_edit = false;
+
+		if ( false == $is_elementor_edit ) {
+
+			// Blog Archive script.
+			if ( is_category() ) {
+
+				// masonry script.
+				wp_enqueue_script(
+					'masonry-script',
+					get_template_directory_uri() . '/assets/addons/js/masonry/masonry.min.js',
+					array( 'jquery' ),
+					wp_get_theme()->get( 'Version' ),
+					true
+				);
+			}
+			// Blog Post script.
+			if ( is_singular( 'post' ) ) {
+
+				// fancybox script.
+				wp_enqueue_script(
+					'fancybox-script',
+					get_template_directory_uri() . '/assets/addons/js/fancybox/fancybox.umd.js',
+					array( 'jquery' ),
+					wp_get_theme()->get( 'Version' ),
+					true
+				);
+			}
+			if ( is_singular( 'project' ) || is_front_page() ) {
+				// pagepiling script.
+				wp_enqueue_script(
+					'pagepiling-script',
+					get_template_directory_uri() . '/assets/addons/js/pagepiling/pagepiling.min.js',
+					array( 'jquery' ),
+					wp_get_theme()->get( 'Version' ),
+					true
+				);}
 		}
-		if ( is_singular( 'project' ) || is_front_page() ) {
-			// pagepiling script.
-			wp_enqueue_script(
-				'pagepiling-script',
-				get_template_directory_uri() . '/assets/addons/js/pagepiling/pagepiling.min.js',
-				array( 'jquery' ),
-				wp_get_theme()->get( 'Version' ),
-				true
-			);}
 
 		// Main script.
 		wp_enqueue_script(

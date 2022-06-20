@@ -64,7 +64,7 @@ class Products_Slider extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->section_content();
 		$this->section_style();
 	}
@@ -195,7 +195,7 @@ class Products_Slider extends Widget_Base {
 			[
 				'label'       => esc_html__( 'Products', 'dimas' ),
 				'placeholder' => esc_html__( 'Click here and start typing...', 'dimas' ),
-				'type'        => 'rzautocomplete',
+				'type'        => 'dm_autocomplete',
 				'default'     => '',
 				'label_block' => true,
 				'multiple'    => false,
