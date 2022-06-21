@@ -59,7 +59,7 @@ class Template_Function {
 		add_filter( 'the_title', array( $this, 'dimas_post_title' ) );
 		add_filter( 'get_calendar', array( $this, 'dimas_change_calendar_nav_arrows' ) );
 		add_filter( 'the_password_form', array( $this, 'dimas_password_form' ), 10, 2 );
-		add_filter( 'wp_get_attachment_image_attributes', array( $this, 'dimas_get_attachment_image_attributes' ), 10, 3 );
+		// add_filter( 'wp_get_attachment_image_attributes', array( $this, 'dimas_get_attachment_image_attributes' ), 10, 3 );.
 
 		add_action( 'wp_footer', array( $this, 'dimas_add_ie_class' ) );
 

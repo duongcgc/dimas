@@ -61,7 +61,7 @@ class Styles {
 		global $is_IE;
 		if ( $is_IE ) {
 			// If IE 11 or below, use a flattened stylesheet with static values replacing CSS Variables.
-			wp_enqueue_style( 'dimas-style', get_template_directory_uri() . '/assets/css/ie.css', array(), wp_get_theme()->get( 'Version' ) );
+			wp_enqueue_style( 'dimas-style', DIMAS_CSS_URI . '/ie.css', array(), wp_get_theme()->get( 'Version' ) );
 		} else {
 			// If not IE, use the standard stylesheet.
 			wp_enqueue_style( 'dimas-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
@@ -71,26 +71,26 @@ class Styles {
 		wp_style_add_data( 'dimas-style', 'rtl', 'replace' );
 
 		// Print styles.
-		wp_enqueue_style( 'dimas-print-style', get_template_directory_uri() . '/assets/css/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
+		wp_enqueue_style( 'dimas-print-style', DIMAS_CSS_URI . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 
 		// Bootstrap styles.
-		wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/assets/addons/css/bootstrap/bootstrap.min.css', array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'bootstrap-style', DIMAS_ADDONS_CSS_URI . '/bootstrap/bootstrap.min.css', array(), wp_get_theme()->get( 'Version' ) );
 
 		// Animate styles.
-		wp_enqueue_style( 'animate-style', get_template_directory_uri() . '/assets/addons/css/animate/animate.min.css', array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'animate-style', DIMAS_ADDONS_CSS_URI . '/animate/animate.min.css', array(), wp_get_theme()->get( 'Version' ) );
 
 		// Animsition styles.
-		wp_enqueue_style( 'animsition-style', get_template_directory_uri() . '/assets/addons/css/animsition/animsition.min.css', array(), wp_get_theme()->get( 'Version' ) );
-		wp_enqueue_style( 'animsition-style', get_template_directory_uri() . '/assets/addons/css/animsition/preload.min.css', array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'animsition-style', DIMAS_ADDONS_CSS_URI . '/animsition/animsition.min.css', array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'animsition-style', DIMAS_ADDONS_CSS_URI . '/animsition/preload.min.css', array(), wp_get_theme()->get( 'Version' ) );
 
 		// custom styles.
-		wp_enqueue_style( 'custom', get_template_directory_uri() . '/assets/css/custom.css', array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'custom', DIMAS_CSS_URI . '/custom.css', array(), wp_get_theme()->get( 'Version' ) );
 
 		// header styles.
-		wp_enqueue_style( 'header', get_template_directory_uri() . '/assets/css/header.css', array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'header', DIMAS_CSS_URI . '/header.css', array(), wp_get_theme()->get( 'Version' ) );
 
 		// footer styles.
-		wp_enqueue_style( 'footer', get_template_directory_uri() . '/assets/css/footer.css', array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'footer', DIMAS_CSS_URI . '/footer.css', array(), wp_get_theme()->get( 'Version' ) );
 
 		( isset( $_GET['action'] ) && 'elementor' == $_GET['action'] ) ? $is_elementor_edit = true : $is_elementor_edit = false;
 
@@ -100,30 +100,30 @@ class Styles {
 			if ( is_front_page() ) {
 
 				// pagepiling style.
-				wp_enqueue_style( 'pagepiling-style', get_template_directory_uri() . '/assets/addons/css/pagepiling/pagepiling.min.css', array(), wp_get_theme()->get( 'Version' ) );
+				wp_enqueue_style( 'pagepiling-style', DIMAS_ADDONS_CSS_URI . '/pagepiling/pagepiling.min.css', array(), wp_get_theme()->get( 'Version' ) );
 
 				// main style.
-				wp_enqueue_style( 'home-style', get_template_directory_uri() . '/assets/css/home.css', array(), wp_get_theme()->get( 'Version' ) );
+				wp_enqueue_style( 'home-style', DIMAS_CSS_URI . '/home.css', array(), wp_get_theme()->get( 'Version' ) );
 			}
 
 			// Project styles.
 			if ( is_singular( 'project' ) ) {
 
 				// pagepiling style.
-				wp_enqueue_style( 'pagepiling-style', get_template_directory_uri() . '/assets/addons/css/pagepiling/pagepiling.min.css', array(), wp_get_theme()->get( 'Version' ) );
+				wp_enqueue_style( 'pagepiling-style', DIMAS_ADDONS_CSS_URI . '/pagepiling/pagepiling.min.css', array(), wp_get_theme()->get( 'Version' ) );
 
 				// main style.
-				wp_enqueue_style( 'project-style', get_template_directory_uri() . '/assets/css/project-single.css', array(), wp_get_theme()->get( 'Version' ) );
+				wp_enqueue_style( 'project-style', DIMAS_CSS_URI . '/project-single.css', array(), wp_get_theme()->get( 'Version' ) );
 			}
 
 			// Blog Post styles.
 			if ( is_singular( 'post' ) ) {
 
 				// fancybox style.
-				wp_enqueue_style( 'fancybox-style', get_template_directory_uri() . '/assets/addons/css/fancybox/fancybox.css', array(), wp_get_theme()->get( 'Version' ) );
+				wp_enqueue_style( 'fancybox-style', DIMAS_ADDONS_CSS_URI . '/fancybox/fancybox.css', array(), wp_get_theme()->get( 'Version' ) );
 
 				// main style.
-				wp_enqueue_style( 'blog-post-style', get_template_directory_uri() . '/assets/css/blog-single.css', array(), wp_get_theme()->get( 'Version' ) );
+				wp_enqueue_style( 'blog-post-style', DIMAS_CSS_URI . '/blog-single.css', array(), wp_get_theme()->get( 'Version' ) );
 
 			}
 
@@ -131,7 +131,7 @@ class Styles {
 			if ( is_category() ) {
 
 				// main style.
-				wp_enqueue_style( 'blog-archive-style', get_template_directory_uri() . '/assets/css/blog-archive.css', array(), wp_get_theme()->get( 'Version' ) );
+				wp_enqueue_style( 'blog-archive-style', DIMAS_CSS_URI . '/blog-archive.css', array(), wp_get_theme()->get( 'Version' ) );
 			}
 		}
 

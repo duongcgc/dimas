@@ -105,7 +105,6 @@
   left: 0;
 }
 .dimas-project #right-slider .swiper .swiper-slide {
-  min-height: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -122,6 +121,7 @@
 }
 .dimas-project #right-slider .dimas-section__img {
   max-width: 7.5rem;
+  height: auto;
 }
 
 .swiper-button-next,

@@ -198,7 +198,7 @@ class Scripts {
 		// Register the IE11 polyfill file.
 		wp_register_script(
 			'dimas-ie11-polyfills-asset',
-			get_template_directory_uri() . '/assets/js/polyfills.js',
+			DIMAS_JS_URI . '/polyfills.js',
 			array(),
 			wp_get_theme()->get( 'Version' ),
 			true
@@ -227,7 +227,7 @@ class Scripts {
 			// Responsive embeds script.
 			wp_enqueue_script(
 				'dimas-responsive-embeds-script',
-				get_template_directory_uri() . '/assets/js/responsive-embeds.js',
+				DIMAS_JS_URI . '/responsive-embeds.js',
 				array( 'dimas-ie11-polyfills' ),
 				wp_get_theme()->get( 'Version' ),
 				true
@@ -236,7 +236,7 @@ class Scripts {
 			// GSAP script.
 			wp_enqueue_script(
 				'gsap-script',
-				get_template_directory_uri() . '/assets/addons/js/GSAP/gsap.min.js',
+				DIMAS_ADDONS_JS_URI . '/GSAP/gsap.min.js',
 				array( 'jquery' ),
 				wp_get_theme()->get( 'Version' ),
 				true
@@ -245,7 +245,7 @@ class Scripts {
 			// Animsition script.
 			wp_enqueue_script(
 				'animsition-script',
-				get_template_directory_uri() . '/assets/addons/js/animsition/animsition.min.js',
+				DIMAS_ADDONS_JS_URI . '/animsition/animsition.min.js',
 				array( 'jquery' ),
 				wp_get_theme()->get( 'Version' ),
 				true
@@ -261,7 +261,7 @@ class Scripts {
 				// masonry script.
 				wp_enqueue_script(
 					'masonry-script',
-					get_template_directory_uri() . '/assets/addons/js/masonry/masonry.min.js',
+					DIMAS_ADDONS_JS_URI . '/masonry/masonry.min.js',
 					array( 'jquery' ),
 					wp_get_theme()->get( 'Version' ),
 					true
@@ -273,7 +273,7 @@ class Scripts {
 				// fancybox script.
 				wp_enqueue_script(
 					'fancybox-script',
-					get_template_directory_uri() . '/assets/addons/js/fancybox/fancybox.umd.js',
+					DIMAS_ADDONS_JS_URI . '/fancybox/fancybox.umd.js',
 					array( 'jquery' ),
 					wp_get_theme()->get( 'Version' ),
 					true
@@ -283,7 +283,7 @@ class Scripts {
 				// pagepiling script.
 				wp_enqueue_script(
 					'pagepiling-script',
-					get_template_directory_uri() . '/assets/addons/js/pagepiling/pagepiling.min.js',
+					DIMAS_ADDONS_JS_URI . '/pagepiling/pagepiling.min.js',
 					array( 'jquery' ),
 					wp_get_theme()->get( 'Version' ),
 					true
@@ -293,7 +293,7 @@ class Scripts {
 		// Main script.
 		wp_enqueue_script(
 			'main-script',
-			get_template_directory_uri() . '/assets/js/dimas-main.js',
+			DIMAS_JS_URI . '/dimas-main.js',
 			array( 'jquery', 'animsition-script', 'gsap-script' ),
 			wp_get_theme()->get( 'Version' ),
 			true
@@ -315,7 +315,7 @@ class Scripts {
 		// If SCRIPT_DEBUG is defined and true, print the unminified file.
 		if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 			echo '<script>';
-			include get_template_directory() . '/assets/js/skip-link-focus-fix.js';
+			include DIMAS_JS_URI . '/skip-link-focus-fix.js';
 			echo '</script>';
 		} else {
 			// The following is minified via `npx terser --compress --mangle -- assets/js/skip-link-focus-fix.js`.

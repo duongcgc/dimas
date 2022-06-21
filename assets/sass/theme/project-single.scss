@@ -113,7 +113,6 @@
             }
 
             .swiper-slide {
-                min-height: 100%;
                 height: fit-content;
                 padding: (164rem/16) (93rem/16) (132rem/16);
                 position: relative;
@@ -137,6 +136,7 @@
 
             &__img {
                 max-width: 7.5rem;
+                height: auto;
             }
         }
     }

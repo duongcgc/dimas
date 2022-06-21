@@ -13,6 +13,7 @@
 $icon_name = array( 'dimas_fb', 'dimas_tw', 'dimas_dr' );
 
 foreach ( $icon_name as $key => $value ) {
+
 	\Dimas\Framework\Template_Tag::instance()->dimas_icon(
 		array(
 			'class' => 'dimas-social-icon',
@@ -20,4 +21,5 @@ foreach ( $icon_name as $key => $value ) {
 		'social',
 		$value,
 	);
+
 }

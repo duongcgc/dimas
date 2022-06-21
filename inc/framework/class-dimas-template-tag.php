@@ -61,7 +61,7 @@ class Template_Tag {
 	 *
 	 * @return void
 	 */
-	public function dimas_posted_on() {
+	public static function dimas_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
 		$time_string = sprintf(
@@ -88,7 +88,7 @@ class Template_Tag {
 	 *
 	 * @return void
 	 */
-	public function dimas_post_thumbnail() {
+	public static function dimas_post_thumbnail() {
 		if ( ! Template_Function::instance()->dimas_can_show_post_thumbnail() ) {
 			return;
 		}
@@ -118,7 +118,7 @@ class Template_Tag {
 			</figure>
 
 		<?php endif; ?>
-			<?php
+				<?php
 	}
 
 	/**
@@ -128,7 +128,7 @@ class Template_Tag {
 	 *
 	 * @return void
 	 */
-	public function dimas_the_posts_navigation() {
+	public static function dimas_the_posts_navigation() {
 		the_posts_pagination(
 			array(
 				'before_page_number' => esc_html__( 'Page', 'dimas' ) . ' ',
@@ -168,7 +168,7 @@ class Template_Tag {
 	 *
 	 * @return void
 	 */
-	public function dimas_pingback_header() {
+	public static function dimas_pingback_header() {
 		if ( is_singular() && pings_open() ) {
 			echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 		}
@@ -181,7 +181,7 @@ class Template_Tag {
 		 *
 		 * @return void
 		 */
-	public function dimas_supports_js() {
+	public static function dimas_supports_js() {
 		echo '<script>document.body.classList.remove("no-js");</script>';
 	}
 
@@ -192,7 +192,7 @@ class Template_Tag {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function dimas_vertical_navigation() {
+	public static function dimas_vertical_navigation() {
 
 		if ( isset( get_nav_menu_locations()['vertical'] ) ) {
 
@@ -241,26 +241,13 @@ class Template_Tag {
 	}
 
 	/**
-	 * Display image
-	 *
-	 * @param int    $id The image id.
-	 * @param string $size The size of image.
-	 * @param array  $attrs The attributes of image.
-	 * @since  1.0.0
-	 * @return void
-	 */
-	public function dimas_image( $id, $size, $attrs ) {
-		echo wp_get_attachment_image( $id, 'full', false, $attrs );
-	}
-
-	/**
 	 * Display menu
 	 *
 	 * @param array $args The args of menu.
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function dimas_menu( $args ) {
+	public static function dimas_menu( $args ) {
 
 		$args = Template_Function::instance()->dimas_menu_args( $args );
 
@@ -276,7 +263,7 @@ class Template_Tag {
 	 * @return void
 	 * @since  1.0.0
 	 */
-	public function dimas_logo( $attrs, $size ) {
+	public static function dimas_logo( $attrs, $size = 'full' ) {
 		$id_logo = get_theme_mod( 'custom_logo' );
 
 		if ( ! isset( $attrs['class'] ) ) {
@@ -289,11 +276,10 @@ class Template_Tag {
 			array(
 				'tag'     => 'a',
 				'attr'    => $attrs,
-				'actions' => false,
 			)
 		);
 
-		self::instance()->dimas_image( $id_logo, $size, array( 'alt' => 'Dimas Logo' ) );
+		echo wp_get_attachment_image( $id_logo, $size, false, array( 'alt' => 'Dimas Logo' ) );
 
 		HTML::instance()->close( 'dimas_logo' );
 	}
@@ -309,7 +295,7 @@ class Template_Tag {
 	 * @param int         $instances  How many instances of the block will be printed (max). Default  1.
 	 * @return bool Returns true if a block was located & printed, otherwise false.
 	 */
-	public function dimas_print_first_instance_of_block( $block_name, $content = null, $instances = 1 ) {
+	public static function dimas_print_first_instance_of_block( $block_name, $content = null, $instances = 1 ) {
 		$instances_count = 0;
 		$blocks_content  = '';
 
@@ -949,7 +935,7 @@ class Template_Tag {
 	 *
 	 * @return void
 	 */
-	public function dimas_bootstrap_container_open() {
+	public static function dimas_bootstrap_container_open() {
 
 		HTML::instance()->open(
 			'container',
@@ -970,7 +956,7 @@ class Template_Tag {
 	 *
 	 * @return void
 	 */
-	public function dimas_bootstrap_container_close() {
+	public static function dimas_bootstrap_container_close() {
 
 		HTML::instance()->close( 'container' );
 
@@ -986,7 +972,7 @@ class Template_Tag {
 	 * @param int    $heigth In the size of the svg.
 	 * @return void
 	 */
-	public function dimas_icon( $attrs = null, $group, $name, $width = 24, $heigth = 24 ) {
+	public static function dimas_icon( $attrs = null, $group, $name, $width = 24, $heigth = 24 ) {
 
 		if ( isset( $attrs ) ) {
 			if ( ! isset( $attrs['class'] ) ) {
@@ -1009,6 +995,135 @@ class Template_Tag {
 
 		if ( isset( $attrs ) ) {
 			HTML::instance()->close( 'dimas_icon' );
+		}
+
+	}
+
+
+	/**
+	 * Html loop open function.
+	 *
+	 * @param array $args The arg of tag html.
+	 * @return void
+	 */
+	public static function html_loop_open( $args ) {
+
+		foreach ( $args as $key => $val ) {
+
+			if ( isset( $val['tag'] ) ) {
+				$arr_out[ $key ]['tag'] = $val['tag'];
+			}
+
+			if ( isset( $val['attr'] ) ) {
+				$arr_out[ $key ]['attr'] = $val['attr'];
+			}
+
+			if ( isset( $val['actions'] ) ) {
+				$arr_out[ $key ]['actions'] = $val['actions'];
+			}
+
+			HTML::instance()->open(
+				$key,
+				$arr_out[ $key ],
+			);
+
+		}
+	}
+
+	/**
+	 * Html loop close function.
+	 *
+	 * @param array $args The arg of tag html.
+	 * @return void
+	 */
+	public static function html_loop_close( $args ) {
+
+		foreach ( $args as $key => $val ) {
+
+			HTML::instance()->close(
+				$key,
+			);
+
+		}
+	}
+
+	/**
+	 * Swiper slide function.
+	 *
+	 * @param array $args The array name of swiper slide.
+	 * @param int   $swiper_slide_count The count of swiper slide.
+	 * @return void
+	 */
+	public static function swiper_loop( $args, $swiper_slide_count ) {
+
+		$swiper_tag = array(
+			0 => 'swiper',
+			1 => 'swiper-wrapper',
+			2 => 'swiper-slide',
+		);
+
+		foreach ( $swiper_tag as $key => $value ) {
+
+			if ( isset( $args[ $value ] ) ) {
+
+				$swiper[ $value ] = $args[ $value ];
+
+				if ( isset( $args[ $value ]['name'] ) ) {
+					$swiper[ $value ]['name'] = $args[ $value ]['name'];
+				} else {
+					$swiper[ $value ]['name'] = $value;
+				}
+
+				if ( isset( $args[ $value ]['class'] ) ) {
+					$swiper[ $value ]['class'] = $args[ $value ]['class'];
+				} else {
+					$swiper[ $value ]['class'] = $value;
+				}
+
+				if ( isset( $args[ $value ]['actions'] ) ) {
+					$swiper[ $value ]['actions'] = $args[ $value ]['actions'];
+				} else {
+					$swiper[ $value ]['actions'] = false;
+				}
+			} else {
+				$swiper[ $value ]['name']    = $value;
+				$swiper[ $value ]['class']   = $value;
+				$swiper[ $value ]['actions'] = false;
+			}
+
+			if ( 'swiper-slide' != $value ) {
+				HTML::instance()->open(
+					$swiper[ $value ]['name'],
+					array(
+						'attr'    => array(
+							'class' => $swiper[ $value ]['class'],
+						),
+						'actions' => $swiper[ $value ]['actions'],
+					)
+				);
+			}
+		}
+
+		for ( $i = 1; $i <= $swiper_slide_count; $i++ ) {
+
+			HTML::instance()->open(
+				$swiper[ $value ]['name'] . '_' . $i,
+				array(
+					'attr'    => array(
+						'class' => $swiper[ $value ]['class'],
+					),
+					'actions' => $swiper[ $value ]['actions'],
+				)
+			);
+
+			HTML::instance()->close( $swiper[ $value ]['name'] . '_' . $i );
+		}
+
+		foreach ( $swiper_tag as $key => $value ) {
+
+			if ( 'swiper-slide' != $value ) {
+				HTML::instance()->close( $swiper[ $value ]['name'] );
+			}
 		}
 	}
 
