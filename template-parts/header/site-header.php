@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays the site header.
+ * Loads header.
  *
  * @package Dimas
  *
@@ -12,12 +12,12 @@
 
 use \Dimas\HTML;
 
-get_template_part( 'template-parts/header/site-header-dimas-header' );
+get_template_part( 'template-parts/header/site-header', 'dimas-header' );
 
-get_template_part( 'template-parts/header/site-header-offcanvas-menu' );
+get_template_part( 'template-parts/header/site-header', 'offcanvas-menu' );
 
 HTML::instance()->open(
-	'dimas-site-overlay',
+	'dimas_site_overlay',
 	array(
 		'attr' => array(
 			'class' => 'dimas-site-overlay',
@@ -25,4 +25,4 @@ HTML::instance()->open(
 	)
 );
 
-HTML::instance()->close( 'dimas-site-overlay' );
+HTML::instance()->close( 'dimas_site_overlay' );

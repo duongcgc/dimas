@@ -39,6 +39,7 @@ $project_featured = get_posts( $args_project );
 ?>
 		<main class="dimas-main">
 			<div class="dimas-fullpage-slider" data-loop-top="" data-loop-bottom="" data-speed="800">
+				
 				<section class="dimas-section pp-scrollable" data-anchor="Home" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/home/bg-home.png');">
 					<div class="dimas-section__vertical-align">
 						<div class="dimas-section__content dimas-section__content--home">

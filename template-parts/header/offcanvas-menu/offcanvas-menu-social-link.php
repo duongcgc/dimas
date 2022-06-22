@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays the offcanvas social link.
+ * Loads offcanvas menu social link.
  *
  * @package Dimas
  *
@@ -13,7 +13,7 @@
 use \Dimas\HTML;
 
 HTML::instance()->open(
-	'dimas-offcanvas-menu__footer',
+	'dimas_offcanvas_menu__footer',
 	array(
 		'attr' => array(
 			'class' => 'dimas-offcanvas-menu__footer d-flex justify-content-center',
@@ -21,6 +21,6 @@ HTML::instance()->open(
 	)
 );
 
-get_template_part( 'template-parts/social-link/social-link' );
+get_template_part( 'template-parts/social/social', 'link' );
 
-HTML::instance()->close( 'dimas-offcanvas-menu__footer' );
+HTML::instance()->close( 'dimas_offcanvas_menu__footer' );

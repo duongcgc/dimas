@@ -36,7 +36,7 @@ $arr_info_project = array(
 );
 
 HTML::instance()->open(
-	'swiper-slide-1',
+	'swiper_slide_1',
 	array(
 		'attr' => array(
 			'class' => 'swiper-slide',
@@ -44,24 +44,12 @@ HTML::instance()->open(
 	)
 );
 
-HTML::instance()->open(
-	'dimas-section__name',
-	array(
-		'tag'  => 'h2',
-		'attr' => array(
-			'class' => 'dimas-section__name label-banner mb-5 has-color-white',
-		),
-	)
-);
-
-the_title();
-
-HTML::instance()->close( 'dimas-section__name' );
+get_template_part( 'template-parts/title' );
 
 if ( get_the_excerpt() ) {
 
 	HTML::instance()->open(
-		'dimas-section__text',
+		'dimas_section__text',
 		array(
 			'tag'  => 'p',
 			'attr' => array(
@@ -70,9 +58,9 @@ if ( get_the_excerpt() ) {
 		)
 	);
 
-	the_excerpt();
+	echo esc_html( get_the_excerpt() );
 
-	HTML::instance()->close( 'dimas-section__text' );
+	HTML::instance()->close( 'dimas_section__text' );
 
 }
 
@@ -132,4 +120,4 @@ foreach ( $arr_info_project as $key => $value ) {
 
 HTML::instance()->close( 'section__list' );
 
-HTML::instance()->close( 'swiper-slide-1' );
+HTML::instance()->close( 'swiper_slide_1' );

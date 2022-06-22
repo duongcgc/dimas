@@ -2,7 +2,7 @@
 /**
  *
  *
- * Loads content of single project.
+ * Loads page single project.
  *
  * @link https://www.gcosoftware.vn/
  *
@@ -21,35 +21,33 @@ while ( have_posts() ) :
 	the_post();
 
 	$array_wrapper_tag = array(
-		'dimas-main'                    => array(
+		'dimas_main'                    => array(
 			'tag'  => 'main',
 			'attr' => array(
 				'class' => 'dimas-main',
 			),
 		),
-		'dimas-projects'                => array(
+		'dimas_projects'                => array(
 			'attr' => array(
 				'class' => 'dimas-projects',
 			),
 		),
-		'dimas-project'                 => array(
+		'dimas_project'                 => array(
 			'attr' => array(
 				'class' => 'dimas-project',
 			),
 		),
-		'dimas-project__vertical-align' => array(
+		'dimas+project__vertical_align' => array(
 			'attr' => array(
 				'class' => 'dimas-project__vertical-align',
 			),
 		),
 	);
 
-	Template_Tag::html_loop_open( $array_wrapper_tag );
+	Template_Tag::dimas_html_loop_open( $array_wrapper_tag );
 
-	get_template_part( 'template-parts/project/single-project-swiper-left' );
+	get_template_part( 'template-parts/content/content', 'single-project' );
 
-	get_template_part( 'template-parts/project/single-project-swiper-right' );
-
-	Template_Tag::html_loop_close( $array_wrapper_tag );
+	Template_Tag::dimas_html_loop_close( $array_wrapper_tag );
 
 endwhile;

@@ -30,13 +30,15 @@ $arr_solution  = array(
 				'alt'   => 'Project arrow,',
 			),
 		),
-		'text' => 'Donec a iaculis odio. Mauris tincidunt, ligula ut congue tempor, augue nibh condimentum ipsum, ullamcorper congue felis nibh egestas risus. Aliquam sed pretium dui, in malesuada velit. Pellentesque at enim placerat risus.',
+		'text' => 'Cras vel hendrerit nisl. In magna quam, sodales eget vestibulum accumsan, gravida ac velit. Quisque accumsan pretium orci, quis facilisis ex elementum sed. Curabitur porta scelerisque tincidunt. Nunc velit magna, condimentum in metus sed, rutrum ultricies
+		nunc. Nulla pretium imperdiet dolor sit amet imperdiet. Maecenas accumsan fringilla lectus id tempor. Phasellus a convallis sapien. Suspendisse scelerisque, urna vitae aliquam tristique, mauris tortor
+		blandit ex, eu efficitur ex sapien a sem. Praesent ut vehicula mauris. Proin fringilla ornare sagittis.',
 	),
 );
 
 
 HTML::instance()->open(
-	'swiper-slide-2',
+	'swiper_slide_2',
 	array(
 		'attr' => array(
 			'class' => 'swiper-slide',
@@ -45,7 +47,7 @@ HTML::instance()->open(
 );
 
 HTML::instance()->open(
-	'dimas-section__name',
+	'dimas_section__name',
 	array(
 		'tag'  => 'h2',
 		'attr' => array(
@@ -56,13 +58,13 @@ HTML::instance()->open(
 
 echo esc_html( $section_title );
 
-HTML::instance()->close( 'dimas-section__name' );
+HTML::instance()->close( 'dimas_section__name' );
 
 foreach ( $arr_solution as $key => $value ) {
 
 	if ( ! isset( $value['img'] ) ) {
 		HTML::instance()->open(
-			'dimas-section__text',
+			'dimas_section__text',
 			array(
 				'tag'  => 'p',
 				'attr' => array(
@@ -73,7 +75,7 @@ foreach ( $arr_solution as $key => $value ) {
 
 		echo esc_html( $value['text'] );
 
-		HTML::instance()->close( 'dimas-section__text' );
+		HTML::instance()->close( 'dimas_section__text' );
 	} else {
 
 		HTML::instance()->open(
@@ -88,7 +90,7 @@ foreach ( $arr_solution as $key => $value ) {
 		echo wp_get_attachment_image( $value['img']['id'], $value['img']['size'], false, $value['img']['attr'] );
 
 		HTML::instance()->open(
-			'dimas-section__text',
+			'dimas_section__text',
 			array(
 				'tag'  => 'p',
 				'attr' => array(
@@ -99,10 +101,10 @@ foreach ( $arr_solution as $key => $value ) {
 
 		echo esc_html( $value['text'] );
 
-		HTML::instance()->close( 'dimas-section__text' );
+		HTML::instance()->close( 'dimas_section__text' );
 
 		HTML::instance()->close( 'section__wrap' );
 	}
 }
 
-HTML::instance()->close( 'swiper-slide-2' );
+HTML::instance()->close( 'swiper_slide_2' );

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying footer.
+ * Loads footer.
  *
  * @package Dimas
  *
@@ -13,7 +13,7 @@
 use \Dimas\HTML;
 
 HTML::instance()->open(
-	'dimas-footer',
+	'dimas_footer',
 	array(
 		'tag'  => 'footer',
 		'attr' => array(
@@ -22,6 +22,6 @@ HTML::instance()->open(
 	)
 );
 
-get_template_part( 'template-parts/footer/site-footer-item' );
+get_template_part( 'template-parts/footer/site-footer', 'item' );
 
-HTML::instance()->close( 'dimas-footer' );
+HTML::instance()->close( 'dimas_footer' );

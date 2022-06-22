@@ -16,6 +16,7 @@
     --dimas-color-border: #FFFFFF33;
     --dimas-color-overlay: #FFFFFF26;
     --dimas-color-bg-tag: #1A3141;
+    --dimas--color-bg-page: #d1e4dd;
     --dimas-color-transparent: transparent;
     --dimas-transition-duration: 300ms;
     --dimas-transition-duration-2: 400ms;
@@ -43,6 +44,13 @@
 
 body {
     font-family: 'Poppins';
+}
+
+main#content
+{
+    padding-top: 7.5rem;
+    background-color: var(--dimas--color-bg-page);
+    min-height: calc( 100vh - 7.5rem );
 }
 
 main.dimas-main {
@@ -86,6 +94,11 @@ h1 {
         font-family: 'Heist';
         font-style: normal;
         font-size: 5rem;
+    }
+    &.post-title {
+        font-family: 'Heist';
+        font-weight: 400;
+        font-size: 3.5rem;
     }
 }
 

@@ -73,3 +73,6 @@ if ( ! defined( 'DIMAS_ADDONS_CSS_URI' ) ) {
 // Init Dimas Theme.
 require DIMAS_INC_DIR . '/class-dimas-theme.php';
 \Dimas\Theme::instance();
+
+// Include Walker Class.
+require DIMAS_INC_DIR . '/class-dimas-walker.php';

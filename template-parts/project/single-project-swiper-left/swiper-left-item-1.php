@@ -24,7 +24,7 @@ $attr_img = array(
 );
 
 HTML::instance()->open(
-	'swiper-slide-1',
+	'swiper_slide_1',
 	array(
 		'attr' => array(
 			'class' => 'swiper-slide',
@@ -34,4 +34,4 @@ HTML::instance()->open(
 
 echo wp_get_attachment_image( $att_id, $att_size, false, $attr_img );
 
-HTML::instance()->close( 'swiper-slide-1' );
+HTML::instance()->close( 'swiper_slide_1' );

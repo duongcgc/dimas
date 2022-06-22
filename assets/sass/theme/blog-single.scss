@@ -66,6 +66,27 @@
     }
 }
 
+.dimas-post-content__wrap {
+
+    >p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    blockquote {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    p {
+        margin-bottom: 2rem;
+    }
+}
+
 .dimas-post-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -446,6 +467,20 @@
 @media (max-width: 767px) {
     .container {
         max-width: unset !important;
+    }
+
+    .dimas-post-content__wrap {
+
+        >p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        blockquote {
+            width: 100%;
+        }
     }
 
     .dimas-grid-wrap {

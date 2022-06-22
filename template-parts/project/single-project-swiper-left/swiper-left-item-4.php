@@ -24,7 +24,7 @@ $id_video         = 168;
 $url_video        = wp_get_attachment_url( $id_video );
 
 HTML::instance()->open(
-	'swiper-slide-4',
+	'swiper_slide_4',
 	array(
 		'attr' => array(
 			'class' => 'swiper-slide',
@@ -33,7 +33,7 @@ HTML::instance()->open(
 );
 
 HTML::instance()->open(
-	'slider-video',
+	'slider_video',
 	array(
 		'tag'  => 'video',
 		'attr' => array(
@@ -45,10 +45,10 @@ HTML::instance()->open(
 	)
 );
 
-HTML::instance()->close( 'slider-video' );
+HTML::instance()->close( 'slider_video' );
 
 HTML::instance()->open(
-	'dimas-btn-play-video',
+	'dimas_btn_play_video',
 	array(
 		'attr' => array(
 			'class' => 'dimas-btn play-video',
@@ -56,12 +56,12 @@ HTML::instance()->open(
 	)
 );
 
-Template_Tag::instance()->dimas_icon(
+Template_Tag::dimas_icon(
 	null,
 	'ui',
 	'dimas_play',
 );
 
-HTML::instance()->close( 'dimas-btn-play-video' );
+HTML::instance()->close( 'dimas_btn_play_video' );
 
-HTML::instance()->close( 'swiper-slide-4' );
+HTML::instance()->close( 'swiper_slide_4' );

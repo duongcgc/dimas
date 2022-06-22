@@ -282,8 +282,8 @@ class Addons_Helper {
 	 * @return string
 	 */
 	public static function sanitize_svg( $svg_name ) {
-		if ( class_exists( '\Dimas\Icon' ) && method_exists( '\Dimas\Icon', 'sanitize_svg' ) ) {
-			return \Dimas\Icon::sanitize_svg( $svg_name );
+		if ( class_exists( '\Dimas\SVG_Icons' ) && method_exists( '\Dimas\SVG_Icons', 'sanitize_svg' ) ) {
+			return \Dimas\SVG_Icons::sanitize_svg( $svg_name );
 		}
 
 		return '';

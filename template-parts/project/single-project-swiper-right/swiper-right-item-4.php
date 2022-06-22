@@ -15,16 +15,22 @@
 <?php
 
 use \Dimas\HTML;
-use \Dimas\Framework\Template_Tag;
 
-$id_poster_image  = 167;
-$poster_size      = 'full';
-$url_poster_image = wp_get_attachment_image_url( $id_poster_image, $poster_size );
-$id_video         = 168;
-$url_video        = wp_get_attachment_url( $id_video );
+$section_title       = 'Final result';
+$section_description = 'Cras vel hendrerit nisl. In magna quam, sodales eget vestibulum accumsan, gravida ac velit. Quisque accumsan pretium orci, quis facilisis ex elementum sed. Curabitur porta scelerisque tincidunt. Nunc velit magna, condimentum in metus sed, rutrum ultricies
+nunc. Nulla pretium imperdiet dolor sit amet imperdiet. Maecenas accumsan fringilla lectus id tempor. Phasellus a convallis sapien. Suspendisse scelerisque, urna vitae aliquam tristique, mauris tortor blandit
+ex, eu efficitur ex sapien a sem. Praesent ut vehicula mauris. Proin fringilla ornare sagittis.';
+$img_heart           = array(
+	'id'   => 173,
+	'size' => 'full',
+	'attr' => array(
+		'class' => 'thanks__icon heart-img me-3',
+		'alt'   => 'Icon heart',
+	),
+);
 
 HTML::instance()->open(
-	'swiper-slide-4',
+	'swiper_slide_4',
 	array(
 		'attr' => array(
 			'class' => 'swiper-slide',
@@ -33,35 +39,60 @@ HTML::instance()->open(
 );
 
 HTML::instance()->open(
-	'slider-video',
+	'dimas_section__name',
 	array(
-		'tag'  => 'video',
+		'tag'  => 'h2',
 		'attr' => array(
-			'class'  => 'slider-video',
-			'poster' => $url_poster_image,
-			'loop'   => true,
-			'src'    => $url_video,
+			'class' => 'dimas-section__name label-banner mb-5 has-color-white',
 		),
 	)
 );
 
-HTML::instance()->close( 'slider-video' );
+echo esc_html( $section_title );
+
+HTML::instance()->close( 'dimas_section__name' );
 
 HTML::instance()->open(
-	'dimas-btn-play-video',
+	'dimas_section__text',
 	array(
+		'tag'  => 'p',
 		'attr' => array(
-			'class' => 'dimas-btn play-video',
+			'class' => 'dimas-section__text has-color-subtitle mb-32',
 		),
 	)
 );
 
-Template_Tag::instance()->dimas_icon(
-	null,
-	'ui',
-	'dimas_play',
+echo esc_html( $section_description );
+
+HTML::instance()->close( 'dimas_section__text' );
+
+HTML::instance()->open(
+	'thanks_wrap',
+	array(
+		'attr' => array(
+			'class' => 'thanks thanks-wrap mb-6 mb-xxl-96 d-flex align-items-center',
+		),
+	)
 );
 
-HTML::instance()->close( 'dimas-btn-play-video' );
+echo wp_get_attachment_image( $img_heart['id'], $img_heart['size'], false, $img_heart['attr'] );
 
-HTML::instance()->close( 'swiper-slide-4' );
+HTML::instance()->open(
+	'thanks__text',
+	array(
+		'tag'  => 'p',
+		'attr' => array(
+			'class' => 'thanks__text',
+		),
+	)
+);
+
+echo 'Thank for watching !';
+
+HTML::instance()->close( 'thanks__text' );
+
+HTML::instance()->close( 'thanks_wrap' );
+
+get_template_part( 'template-parts/pagination/project', 'navigation' );
+
+HTML::instance()->close( 'swiper_slide_4' );

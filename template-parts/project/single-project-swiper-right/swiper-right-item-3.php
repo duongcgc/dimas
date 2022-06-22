@@ -29,7 +29,7 @@ $img_quote           = array(
 $text_quote          = 'In ullamcorper ac erat ac egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.';
 
 HTML::instance()->open(
-	'swiper-slide-3',
+	'swiper_slide_3',
 	array(
 		'attr' => array(
 			'class' => 'swiper-slide',
@@ -38,7 +38,7 @@ HTML::instance()->open(
 );
 
 HTML::instance()->open(
-	'dimas-section__name',
+	'dimas_section__name',
 	array(
 		'tag'  => 'h2',
 		'attr' => array(
@@ -49,10 +49,10 @@ HTML::instance()->open(
 
 echo esc_html( $section_title );
 
-HTML::instance()->close( 'dimas-section__name' );
+HTML::instance()->close( 'dimas_section__name' );
 
 HTML::instance()->open(
-	'dimas-section__text',
+	'dimas_section__text',
 	array(
 		'tag'  => 'p',
 		'attr' => array(
@@ -63,7 +63,7 @@ HTML::instance()->open(
 
 echo esc_html( $section_description );
 
-HTML::instance()->close( 'dimas-section__text' );
+HTML::instance()->close( 'dimas_section__text' );
 
 HTML::instance()->open(
 	'quote',
@@ -103,4 +103,4 @@ HTML::instance()->close( 'quote__content' );
 
 HTML::instance()->close( 'quote' );
 
-HTML::instance()->close( 'swiper-slide-3' );
+HTML::instance()->close( 'swiper_slide_3' );

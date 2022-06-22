@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays the main menu button offcanvas open.
+ * Loads main menu - offcanvas open.
  *
  * @package Dimas
  *
@@ -14,7 +14,7 @@ use \Dimas\HTML;
 use \Dimas\Framework\Template_Tag;
 
 HTML::instance()->open(
-	'dimas-navbar-inner-right',
+	'dimas_navbar_inner_right',
 	array(
 		'attr' => array(
 			'class' => 'dimas-navbar-inner-right d-xxxl-none',
@@ -23,7 +23,7 @@ HTML::instance()->open(
 );
 
 HTML::instance()->open(
-	'dimas-navbar-inner-right__child',
+	'dimas_navbar_inner_right__child',
 	array(
 		'attr' => array(
 			'class' => 'd-flex align-items-center',
@@ -31,7 +31,7 @@ HTML::instance()->open(
 	)
 );
 
-Template_Tag::instance()->dimas_icon(
+Template_Tag::dimas_icon(
 	array(
 		'class' => 'dimas-menu-burger js-offcanvas-menu-open has-color-white',
 	),
@@ -39,6 +39,6 @@ Template_Tag::instance()->dimas_icon(
 	'dimas_burger_open',
 );
 
-HTML::instance()->close( 'dimas-navbar-inner-right__child' );
+HTML::instance()->close( 'dimas_navbar_inner_right__child' );
 
-HTML::instance()->close( 'dimas-navbar-inner-right' );
+HTML::instance()->close( 'dimas_navbar_inner_right' );

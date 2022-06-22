@@ -62,7 +62,7 @@ $arr_pointer = array(
 );
 
 HTML::instance()->open(
-	'swiper-slide-3',
+	'swiper_slide_3',
 	array(
 		'attr' => array(
 			'class' => 'swiper-slide',
@@ -75,7 +75,7 @@ echo wp_get_attachment_image( $att_id, $att_size, $attr_img );
 foreach ( $arr_pointer as $key => $val ) {
 
 	HTML::instance()->open(
-		'dimas-project-pointer',
+		'dimas_project_pointer',
 		array(
 			'attr' => array(
 				'class'      => ( array_key_first( $arr_pointer ) === $key ) ? 'dimas-project-pointer active' : 'dimas-project-pointer',
@@ -88,7 +88,7 @@ foreach ( $arr_pointer as $key => $val ) {
 	);
 
 	HTML::instance()->open(
-		'dimas-project-pointer__description',
+		'dimas_project_pointer__description',
 		array(
 			'attr' => array(
 				'class' => 'dimas-project-pointer__description',
@@ -97,7 +97,7 @@ foreach ( $arr_pointer as $key => $val ) {
 	);
 
 	HTML::instance()->open(
-		'dimas-project-pointer__description--title',
+		'dimas_project_pointer__description--title',
 		array(
 			'tag'  => 'h3',
 			'attr' => array(
@@ -106,10 +106,10 @@ foreach ( $arr_pointer as $key => $val ) {
 		)
 	);
 
-	HTML::instance()->close( 'dimas-project-pointer__description--title' );
+	HTML::instance()->close( 'dimas_project_pointer__description--title' );
 
 	HTML::instance()->open(
-		'dimas-project-pointer__description--text',
+		'dimas_project_pointer__description--text',
 		array(
 			'tag'  => 'p',
 			'attr' => array(
@@ -118,12 +118,12 @@ foreach ( $arr_pointer as $key => $val ) {
 		)
 	);
 
-	HTML::instance()->close( 'dimas-project-pointer__description--text' );
+	HTML::instance()->close( 'dimas_project_pointer__description--text' );
 
-	HTML::instance()->close( 'dimas-project-pointer__description' );
+	HTML::instance()->close( 'dimas_project_pointer__description' );
 
-	HTML::instance()->close( 'dimas-project-pointer' );
+	HTML::instance()->close( 'dimas_project_pointer' );
 
 }
 
-HTML::instance()->close( 'swiper-slide-3' );
+HTML::instance()->close( 'swiper_slide_3' );

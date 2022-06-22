@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying footer item.
+ * Loads footer item.
  *
  * @package Dimas
  *
@@ -30,7 +30,7 @@ $footer_array = array(
 foreach ( $footer_array as $key => $value ) {
 
 	HTML::instance()->open(
-		'dimas-footer',
+		'dimas_footer',
 		array(
 			'attr' => array(
 				'class' => 'dimas-footer' . $value['class'],
@@ -39,7 +39,7 @@ foreach ( $footer_array as $key => $value ) {
 	);
 
 	HTML::instance()->open(
-		'dimas-footer__a',
+		'dimas_footer__a',
 		array(
 			'tag'  => 'a',
 			'attr' => array(
@@ -51,8 +51,8 @@ foreach ( $footer_array as $key => $value ) {
 
 	echo esc_html( $value['text'] );
 
-	HTML::instance()->close( 'dimas-footer__a' );
+	HTML::instance()->close( 'dimas_footer__a' );
 
-	HTML::instance()->close( 'dimas-footer' );
+	HTML::instance()->close( 'dimas_footer' );
 
 }

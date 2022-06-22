@@ -1370,7 +1370,7 @@ class Options {
 				'label'             => esc_html__('Custom Text SVG', 'dimas'),
 				'description'       => esc_html__('The SVG before your text', 'dimas'),
 				'default'           => '',
-				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
+				'sanitize_callback' => '\Dimas\SVG_Icons::sanitize_svg',
 				'output'            => array(
 					array(
 						'element' => '.dimas-topbar__text .dimas-svg-icon',
@@ -2152,7 +2152,7 @@ class Options {
 				'label'             => esc_html__('Logo SVG', 'dimas'),
 				'section'           => 'header_logo',
 				'description'       => esc_html__('Paste SVG code of your logo here', 'dimas'),
-				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
+				'sanitize_callback' => '\Dimas\SVG_Icons::sanitize_svg',
 				'output'            => array(
 					array(
 						'element' => '.site-branding .logo',
@@ -2184,7 +2184,7 @@ class Options {
 				'label'             => esc_html__('Logo Light SVG', 'dimas'),
 				'section'           => 'header_logo',
 				'description'       => esc_html__('Paste SVG code of your logo here', 'dimas'),
-				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
+				'sanitize_callback' => '\Dimas\SVG_Icons::sanitize_svg',
 				'output'            => array(
 					array(
 						'element' => '.site-branding .logo',
@@ -3589,7 +3589,7 @@ class Options {
 				'label'             => esc_html__('Logo SVG', 'dimas'),
 				'section'           => 'footer_logo',
 				'description'       => esc_html__('Paste SVG code of your logo here', 'dimas'),
-				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
+				'sanitize_callback' => '\Dimas\SVG_Icons::sanitize_svg',
 				'output'            => array(
 					array(
 						'element' => '.footer-branding .logo',
@@ -5274,7 +5274,7 @@ class Options {
 				'section'           => 'mobile_topbar',
 				'description'       => esc_html__( 'The SVG before your text', 'dimas' ),
 				'default'           => '',
-				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
+				'sanitize_callback' => '\Dimas\SVG_Icons::sanitize_svg',
 				'output'            => array(
 					array(
 						'element' => '.dimas-topbar__text .dimas-svg-icon',

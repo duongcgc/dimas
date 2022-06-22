@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays the offcanvas menu.
+ * Loads offcanvas menu.
  *
  * @package Dimas
  *
@@ -13,7 +13,7 @@
 use \Dimas\HTML;
 
 HTML::instance()->open(
-	'dimas-offcanvas-menu',
+	'dimas_offcanvas_menu',
 	array(
 		'attr' => array(
 			'class' => 'dimas-offcanvas-menu',
@@ -21,10 +21,10 @@ HTML::instance()->open(
 	)
 );
 
-get_template_part( 'template-parts/header/offcanvas-menu/offcanvas-menu-button-close' );
+get_template_part( 'template-parts/header/offcanvas-menu/offcanvas-menu', 'button-close' );
 
-get_template_part( 'template-parts/header/offcanvas-menu/offcanvas-menu-nav-menu' );
+get_template_part( 'template-parts/header/offcanvas-menu/offcanvas-menu', 'nav-menu' );
 
-get_template_part( 'template-parts/header/offcanvas-menu/offcanvas-menu-social-link' );
+get_template_part( 'template-parts/header/offcanvas-menu/offcanvas-menu', 'social-link' );
 
-HTML::instance()->close( 'dimas-offcanvas-menu' );
+HTML::instance()->close( 'dimas_offcanvas_menu' );

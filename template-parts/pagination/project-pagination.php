@@ -2,7 +2,7 @@
 /**
  *
  *
- * Loads content of single project swiper left pagination.
+ * Loads single project swiper left pagination.
  *
  * @link https://www.gcosoftware.vn/
  *
@@ -18,7 +18,7 @@ use \Dimas\HTML;
 use \Dimas\Framework\Template_Tag;
 
 HTML::instance()->open(
-	'swiper-pagination',
+	'swiper_pagination',
 	array(
 		'attr' => array(
 			'class' => 'swiper-pagination',
@@ -26,10 +26,10 @@ HTML::instance()->open(
 	)
 );
 
-HTML::instance()->close( 'swiper-pagination' );
+HTML::instance()->close( 'swiper_pagination' );
 
 HTML::instance()->open(
-	'swiper-button-prev',
+	'swiper_button_prev',
 	array(
 		'attr' => array(
 			'class' => 'swiper-button-prev',
@@ -37,16 +37,16 @@ HTML::instance()->open(
 	)
 );
 
-Template_Tag::instance()->dimas_icon(
+Template_Tag::dimas_icon(
 	null,
 	'ui',
 	'dimas_chevron_left',
 );
 
-HTML::instance()->close( 'swiper-button-prev' );
+HTML::instance()->close( 'swiper_button_prev' );
 
 HTML::instance()->open(
-	'swiper-button-next',
+	'swiper_button_next',
 	array(
 		'attr' => array(
 			'class' => 'swiper-button-next',
@@ -54,10 +54,10 @@ HTML::instance()->open(
 	)
 );
 
-Template_Tag::instance()->dimas_icon(
+Template_Tag::dimas_icon(
 	null,
 	'ui',
 	'dimas_chevron_right',
 );
 
-HTML::instance()->close( 'swiper-button-next' );
+HTML::instance()->close( 'swiper_button_next' );

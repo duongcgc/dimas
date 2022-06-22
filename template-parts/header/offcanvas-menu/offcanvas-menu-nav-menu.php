@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays the offcanvas nav menu.
+ * Loads offcanvas menu - nav menu.
  *
  * @package Dimas
  *
@@ -19,7 +19,7 @@ $args_nav_offcanvas_menu = array(
 );
 
 HTML::instance()->open(
-	'dimas-offcanvas-menu__navigation',
+	'dimas_offcanvas_menu__navigation',
 	array(
 		'attr' => array(
 			'class' => 'dimas-offcanvas-menu__navigation',
@@ -29,4 +29,4 @@ HTML::instance()->open(
 
 Template_Tag::instance()->dimas_menu( $args_nav_offcanvas_menu );
 
-HTML::instance()->close( 'dimas-offcanvas-menu__navigation' );
+HTML::instance()->close( 'dimas_offcanvas_menu__navigation' );

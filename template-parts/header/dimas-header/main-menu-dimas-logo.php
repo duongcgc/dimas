@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays the main menu dimas logo.
+ * Loads main menu - dimas logo.
  *
  * @package Dimas
  *
@@ -14,7 +14,7 @@ use \Dimas\HTML;
 use \Dimas\Framework\Template_Tag;
 
 HTML::instance()->open(
-	'dimas-navbar-inner-left',
+	'dimas_navbar_inner_left',
 	array(
 		'attr' => array(
 			'class' => 'dimas-navbar-inner-left',
@@ -22,6 +22,6 @@ HTML::instance()->open(
 	)
 );
 
-Template_Tag::instance()->dimas_logo( array( 'class' => 'dimas-navbar-logo' ), 'full' );
+Template_Tag::dimas_logo( array( 'class' => 'dimas-navbar-logo' ), 'full' );
 
-HTML::instance()->close( 'dimas-navbar-inner-left' );
+HTML::instance()->close( 'dimas_navbar_inner_left' );

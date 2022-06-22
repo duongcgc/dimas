@@ -547,4 +547,47 @@ class Template_Function {
 		return $defaults_args;
 	}
 
+	/**
+	 * Get post pagination function.
+	 *
+	 * @return string
+	 */
+	public static function dimas_get_post_pagination() {
+		global $wp_query;
+		$max_page = $wp_query->max_num_pages;
+		$big      = 9999999;
+		$arr_pag  = paginate_links(
+			array(
+				'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format'    => '?paged=%#%',
+				'next_text' => __( '<svg width="20" height="36" viewBox="0 0 20 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.66699 34L17.667 18L1.66699 2" stroke="currentColor" stroke-width="2" stroke-linecap="square"></path></svg>' ),
+				'prev_text' => __( '<svg width="20" height="36" viewBox="0 0 20 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.333 34L2.33301 18L18.333 2" stroke="currentColor" stroke-width="2" stroke-linecap="square"></path></svg>' ),
+				'current'   => max( 1, get_query_var( 'paged' ) ),
+				'total'     => $max_page,
+				'end_size'  => 1,
+				'mid_size'  => 1,
+				'type'      => 'array',
+			)
+		);
+		$out      = '<ul class="dimas-pagination__wrap">';
+		foreach ( $arr_pag as $key => $value ) :
+			if ( str_contains( $value, 'prev' ) ) :
+				$out .= '<li class="dimas-pagination__wrap--item prev-page">' . $value;
+				$out .= '</li>';
+			elseif ( str_contains( $value, 'next' ) ) :
+				$out .= '<li class="dimas-pagination__wrap--item next-page">' . $value;
+				$out .= '</li>';
+			elseif ( str_contains( $value, 'current' ) ) :
+				$out .= '<li class="dimas-pagination__wrap--item current-page">' . $value;
+				$out .= '</li>';
+			elseif ( str_contains( $value, 'dots' ) ) :
+				$out .= '<li class="dimas-pagination__wrap--item dot-page">' . $value;
+				$out .= '</li>'; else :
+					$out .= '<li class="dimas-pagination__wrap--item">' . $value;
+					$out .= '</li>';
+			endif;
+		endforeach;
+		$out .= '</ul>';
+		return $out;
+	}
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays the main menu nav menu.
+ * Loads main menu - nav menu.
  *
  * @package Dimas
  *
@@ -18,10 +18,10 @@ $args_nav_menu = array(
 	'container_class' => 'dimas-default-menu__navigation',
 );
 
-Template_Tag::instance()->dimas_bootstrap_container_open();
+Template_Tag::dimas_bootstrap_container_open();
 
 HTML::instance()->open(
-	'dimas-navbar-inner-center',
+	'dimas_navbar_inner_center',
 	array(
 		'attr' => array(
 			'class' => 'dimas-navbar-inner-center d-none d-xxxl-flex row',
@@ -31,6 +31,6 @@ HTML::instance()->open(
 
 Template_Tag::instance()->dimas_menu( $args_nav_menu );
 
-HTML::instance()->close( 'dimas-navbar-inner-center' );
+HTML::instance()->close( 'dimas_navbar_inner_center' );
 
-Template_Tag::instance()->dimas_bootstrap_container_close();
+Template_Tag::dimas_bootstrap_container_close();

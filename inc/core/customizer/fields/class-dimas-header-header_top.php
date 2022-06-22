@@ -167,7 +167,7 @@ class Header_Header_Top_Fields {
 				'label'             => esc_html__( 'Custom Text SVG', 'dimas' ),
 				'description'       => esc_html__( 'The SVG before your text', 'dimas' ),
 				'default'           => '',
-				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
+				'sanitize_callback' => '\Dimas\SVG_Icons::sanitize_svg',
 				'output'            => array(
 					array(
 						'element' => '.dimas-topbar__text .dimas-svg-icon',

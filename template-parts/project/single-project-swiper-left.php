@@ -17,7 +17,7 @@
 use \Dimas\HTML;
 
 HTML::instance()->open(
-	'left-slider',
+	'left_slider',
 	array(
 		'attr' => array(
 			'id'    => 'left-slider',
@@ -36,7 +36,7 @@ HTML::instance()->open(
 );
 
 HTML::instance()->open(
-	'swiper-wrapper',
+	'swiper_wrapper',
 	array(
 		'attr' => array(
 			'class' => 'swiper-wrapper',
@@ -44,18 +44,18 @@ HTML::instance()->open(
 	)
 );
 
-get_template_part( 'template-parts/project/single-project-swiper-left/swiper-left-item-1' );
+get_template_part( 'template-parts/project/single-project-swiper-left/swiper-left', 'item-1' );
 
-get_template_part( 'template-parts/project/single-project-swiper-left/swiper-left-item-2' );
+get_template_part( 'template-parts/project/single-project-swiper-left/swiper-left', 'item-2' );
 
-get_template_part( 'template-parts/project/single-project-swiper-left/swiper-left-item-3' );
+get_template_part( 'template-parts/project/single-project-swiper-left/swiper-left', 'item-3' );
 
-get_template_part( 'template-parts/project/single-project-swiper-left/swiper-left-item-4' );
+get_template_part( 'template-parts/project/single-project-swiper-left/swiper-left', 'item-4' );
 
-HTML::instance()->close( 'swiper-wrapper' );
+HTML::instance()->close( 'swiper_wrapper' );
 
-get_template_part( 'template-parts/swiper-slider/pagination/project-pagination' );
+get_template_part( 'template-parts/pagination/project', 'pagination' );
 
 HTML::instance()->close( 'swiper' );
 
-HTML::instance()->close( 'left-slider' );
+HTML::instance()->close( 'left_slider' );

@@ -110,7 +110,7 @@ class Social_Links extends \WP_Widget {
 				esc_url( $instance[ $social . '_url' ] ),
 				esc_attr( $social ),
 				esc_attr( $instance[ $social . '_title' ] ),
-				\Dimas\Icon::get_svg( $icon, '', 'social' )
+				\Dimas\SVG_Icons::get_svg( $icon, '', 'social' )
 			);
 		}
 
