@@ -2,7 +2,7 @@
 /**
  *
  *
- * Loads content of single page.
+ * Loads Single page.
  *
  * @link https://www.gcosoftware.vn/
  *
@@ -14,7 +14,6 @@
 ?>
 <?php
 
-use \Dimas\Framework\Template_Tag;
 use \Dimas\HTML;
 
 while ( have_posts() ) :

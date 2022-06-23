@@ -24,7 +24,7 @@ HTML::instance()->open(
 	'dimas_navbar_inner_center',
 	array(
 		'attr' => array(
-			'class' => 'dimas-navbar-inner-center d-none d-xxxl-flex row',
+			'class' => 'dimas-default-menu dimas-navbar-inner-center d-none d-xxxl-flex row',
 		),
 	)
 );

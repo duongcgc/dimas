@@ -285,7 +285,7 @@ h1.label-banner {
   font-style: normal;
   font-size: 5rem;
 }
-h1.post-title {
+h1.post-title, h1.archive-title {
   font-family: "Heist";
   font-weight: 400;
   font-size: 3.5rem;

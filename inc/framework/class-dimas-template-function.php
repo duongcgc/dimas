@@ -572,18 +572,18 @@ class Template_Function {
 		$out      = '<ul class="dimas-pagination__wrap">';
 		foreach ( $arr_pag as $key => $value ) :
 			if ( str_contains( $value, 'prev' ) ) :
-				$out .= '<li class="dimas-pagination__wrap--item prev-page">' . $value;
+				$out .= '<li class="dimas-pagination__item prev-page">' . $value;
 				$out .= '</li>';
 			elseif ( str_contains( $value, 'next' ) ) :
-				$out .= '<li class="dimas-pagination__wrap--item next-page">' . $value;
+				$out .= '<li class="dimas-pagination__item next-page">' . $value;
 				$out .= '</li>';
 			elseif ( str_contains( $value, 'current' ) ) :
-				$out .= '<li class="dimas-pagination__wrap--item current-page">' . $value;
+				$out .= '<li class="dimas-pagination__item current-page">' . $value;
 				$out .= '</li>';
 			elseif ( str_contains( $value, 'dots' ) ) :
-				$out .= '<li class="dimas-pagination__wrap--item dot-page">' . $value;
+				$out .= '<li class="dimas-pagination__item dot-page">' . $value;
 				$out .= '</li>'; else :
-					$out .= '<li class="dimas-pagination__wrap--item">' . $value;
+					$out .= '<li class="dimas-pagination__item">' . $value;
 					$out .= '</li>';
 			endif;
 		endforeach;

@@ -191,7 +191,7 @@
   background-color: var(--dimas-color-main);
 }
 
-.dimas-about__experience {
+.dimas-about__image-counter {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -215,7 +215,7 @@
 .dimas-projects__category > * {
   display: inline;
 }
-.dimas-projects__category--number {
+.dimas-projects__number {
   font-family: "Outfit";
   font-size: 1rem;
   line-height: 1.25rem;
@@ -224,7 +224,13 @@
 }
 
 /* section services*/
-.dimas-tab__header--icon-wrap {
+.dimas-tab__header .dimas-title {
+  padding-left: 10rem;
+}
+.dimas-tab__header .nav-link {
+  padding: 0;
+}
+.dimas-tab__icon-wrap {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -238,19 +244,13 @@
   width: 7.5rem;
   height: 7.5rem;
 }
-.dimas-tab__header--icon-wrap svg {
+.dimas-tab__icon-wrap svg {
   width: 5.625rem;
   height: 5.625rem;
   color: var(--dimas-color-white);
 }
-.dimas-tab__header .dimas-title {
-  padding-left: 10rem;
-}
-.dimas-tab__header .nav-link {
-  padding: 0;
-}
 
-.dimas-services__img {
+.dimas-services-img {
   width: 100%;
 }
 
@@ -271,6 +271,7 @@
 .dimas-testimonial-slider .swiper-pagination img {
   -webkit-transition: all var(--dimas-transition-duration) linear;
   transition: all var(--dimas-transition-duration) linear;
+  border-radius: 2.25rem;
 }
 .dimas-testimonial-slider .swiper-pagination .swiper-pagination-bullet {
   overflow: hidden;
@@ -300,7 +301,6 @@
 .dimas-testimonial-slider .swiper-pagination .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) img {
   width: 3rem;
   height: 4rem;
-  border-radius: 2.25rem;
   outline: 2px solid var(--dimas-color-transparent);
 }
 .dimas-testimonial-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -326,7 +326,7 @@
   padding: 2rem 1.5rem;
   border: 1px solid var(--dimas-color-border);
 }
-.dimas-grid-wrap .dimas-post:hover .dimas-post__thumbnail--wrap {
+.dimas-grid-wrap .dimas-post:hover .dimas-post__thumbnail-wrap {
   opacity: 1;
 }
 .dimas-grid-wrap .dimas-post__description, .dimas-grid-wrap .dimas-post__title {
@@ -343,7 +343,7 @@
   -webkit-line-clamp: 3;
   max-height: 4.875rem;
 }
-.dimas-grid-wrap .dimas-post__thumbnail--wrap {
+.dimas-grid-wrap .dimas-post__thumbnail-wrap {
   width: 100%;
   height: 100%;
   -webkit-transition: all var(--dimas-transition-duration) var(--dimas-transition-linear);
@@ -354,13 +354,13 @@
   left: 0;
   opacity: 0;
 }
-.dimas-grid-wrap .dimas-post__thumbnail--img {
+.dimas-grid-wrap .dimas-post__thumbnail-img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.dimas-grid-wrap .dimas-post__thumbnail--arrow-wrap {
+.dimas-grid-wrap .dimas-post__thumbnail-arrow-wrap {
   border: 1px solid var(--dimas-color-white);
   border-radius: 50%;
   position: absolute;
@@ -376,13 +376,13 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.dimas-grid-wrap .dimas-post__thumbnail--arrow-wrap:hover {
+.dimas-grid-wrap .dimas-post__thumbnail-arrow-wrap:hover {
   border: 1px solid var(--dimas-color-main);
 }
-.dimas-grid-wrap .dimas-post__thumbnail--arrow-wrap:hover svg {
+.dimas-grid-wrap .dimas-post__thumbnail-arrow-wrap:hover svg {
   color: var(--dimas-color-main);
 }
-.dimas-grid-wrap .dimas-post__content--wrap {
+.dimas-grid-wrap .dimas-post__content-wrap {
   z-index: 1;
 }
 .dimas-grid-wrap .dimas-post__link {
@@ -447,13 +447,13 @@
 .dimas-contact-info__item:hover h3 {
   color: var(--dimas-color-main);
 }
-.dimas-contact-info__item--text {
-  margin-left: 1.5rem;
-  font-weight: 400;
-}
 .dimas-contact-info__item svg {
   width: 2rem;
   height: 2rem;
+}
+.dimas-contact-info__text {
+  margin-left: 1.5rem;
+  font-weight: 400;
 }
 
 .dimas-contact-form input {
@@ -565,7 +565,7 @@
   .dimas-projects__category > * {
     display: block;
   }
-  .dimas-projects__category--number {
+  .dimas-projects__number {
     margin-bottom: 1rem;
     margin-right: 0px;
   }

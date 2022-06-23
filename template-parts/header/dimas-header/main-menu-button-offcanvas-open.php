@@ -13,23 +13,20 @@
 use \Dimas\HTML;
 use \Dimas\Framework\Template_Tag;
 
-HTML::instance()->open(
-	'dimas_navbar_inner_right',
-	array(
+$arr_wrapper_tag = array(
+	'dimas_navbar_inner_right' => array(
 		'attr' => array(
 			'class' => 'dimas-navbar-inner-right d-xxxl-none',
 		),
-	)
-);
-
-HTML::instance()->open(
-	'dimas_navbar_inner_right__child',
-	array(
+	),
+	'dimas_navbar_inner_right__child' => array(
 		'attr' => array(
 			'class' => 'd-flex align-items-center',
 		),
-	)
+	),
 );
+
+Template_Tag::dimas_html_loop_open( $arr_wrapper_tag );
 
 Template_Tag::dimas_icon(
 	array(
@@ -39,6 +36,4 @@ Template_Tag::dimas_icon(
 	'dimas_burger_open',
 );
 
-HTML::instance()->close( 'dimas_navbar_inner_right__child' );
-
-HTML::instance()->close( 'dimas_navbar_inner_right' );
+Template_Tag::dimas_html_loop_close( $arr_wrapper_tag );

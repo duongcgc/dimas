@@ -31,20 +31,20 @@ HTML::instance()->open(
 	'post__thumbnail',
 	array(
 		'attr' => array(
-			'class' => 'dimas-post__thumbnail dimas-post__thumbnail--wrap',
+			'class' => 'dimas-post__thumbnail-wrap',
 		),
 	)
 );
 
 Template_Tag::dimas_post_link_open();
 
-the_post_thumbnail( 'post-thumbnail', array( 'class' => 'dimas-post__thumbnail dimas-post__thumbnail--img' ) );
+the_post_thumbnail( 'post-thumbnail', array( 'class' => 'dimas-post__thumbnail-img' ) );
 
 HTML::instance()->open(
 	'arrow_wrap',
 	array(
 		'attr' => array(
-			'class' => 'dimas-post__thumbnail dimas-post__thumbnail--arrow-wrap',
+			'class' => 'dimas-post__thumbnail-arrow-wrap',
 		),
 	)
 );
@@ -65,7 +65,7 @@ HTML::instance()->open(
 	'post__content',
 	array(
 		'attr' => array(
-			'class' => 'dimas-post__content dimas-post__content--wrap',
+			'class' => 'dimas-post__content-wrap',
 		),
 	)
 );

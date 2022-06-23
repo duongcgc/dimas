@@ -32,18 +32,17 @@ HTML::instance()->open(
 	)
 );
 
-HTML::instance()->open(
+HTML::instance()->self_close_tag(
 	'dimas_navbar_background',
 	array(
 		'attr' => array(
 			'class' => 'dimas-navbar-background',
 		),
-	)
+	),
+	'',
 );
 
-HTML::instance()->close( 'dimas_navbar_background' );
-
-get_template_part( 'template-parts/header/dimas-header/dimas-header', 'main-menu' );
+get_template_part( 'template-parts/header/dimas-header/dimas-header', 'main-menu', $args );
 
 HTML::instance()->close( 'dimas_navbar' );
 

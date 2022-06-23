@@ -22,6 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Template_Tag {
 
 
+
 	/**
 	 * Instance
 	 *
@@ -592,7 +593,6 @@ class Template_Tag {
 	 * @return void
 	 */
 	public static function dimas_post_tags() {
-
 		$arr_tags = get_the_tags();
 		if ( $arr_tags ) :
 
@@ -652,5 +652,42 @@ class Template_Tag {
 			HTML::instance()->close( 'post__tag' );
 
 		endif;
+	}
+
+	/**
+	 * Home page navigation function.
+	 *
+	 * @param string $menu_name The name of the menu.
+	 * @return void|boolean
+	 */
+	public static function dimas_home_page_navigation( $menu_name ) {
+		$locations = get_nav_menu_locations();
+
+		if ( isset( $locations[ $menu_name ] ) ) {
+
+			$menu_main = wp_get_nav_menu_object( $locations[ $menu_name ] );
+
+			$menu_items = wp_get_nav_menu_items( $menu_main->term_id );
+
+			$menu_list_prev = '<li><a class="prev" href="##"><svg width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 14L14 2L26 14" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></a></li>';
+
+			$menu_list = '';
+
+			foreach ( $menu_items as $key => $menu_item ) {
+				$title_item = $menu_item->title;
+				$url        = $menu_item->url;
+				$menu_list .= '<li><a href="' . $url . '" data-menuanchor="' . ucfirst( $title_item ) . '"></a></li>';
+			}
+
+			$menu_list_next = '<li><a class="next" href="#"><svg width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L14 14L26 2" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg></a></li>';
+
+			SVG_Icons::sanitize_svg( $menu_list_prev );
+
+			echo wp_kses_post( $menu_list );
+
+			SVG_Icons::sanitize_svg( $menu_list_next );
+		} else {
+			return false;
+		}
 	}
 }

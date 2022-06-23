@@ -16,13 +16,12 @@ get_template_part( 'template-parts/header/site-header', 'dimas-header' );
 
 get_template_part( 'template-parts/header/site-header', 'offcanvas-menu' );
 
-HTML::instance()->open(
+HTML::instance()->self_close_tag(
 	'dimas_site_overlay',
 	array(
 		'attr' => array(
 			'class' => 'dimas-site-overlay',
 		),
-	)
+	),
+	'',
 );
-
-HTML::instance()->close( 'dimas_site_overlay' );

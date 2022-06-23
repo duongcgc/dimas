@@ -18,15 +18,4 @@ $args_nav_offcanvas_menu = array(
 	'container_class' => 'dimas-offcanvas-menu__navigation',
 );
 
-HTML::instance()->open(
-	'dimas_offcanvas_menu__navigation',
-	array(
-		'attr' => array(
-			'class' => 'dimas-offcanvas-menu__navigation',
-		),
-	)
-);
-
 Template_Tag::instance()->dimas_menu( $args_nav_offcanvas_menu );
-
-HTML::instance()->close( 'dimas_offcanvas_menu__navigation' );

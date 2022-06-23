@@ -55,7 +55,7 @@ $array_title_tag   = array(
 	),
 );
 
-if ( $related_post->have_posts() ) :
+if ( $related_post->have_posts() ) {
 
 	Template_Tag::dimas_html_loop_open( $array_wrapper_tag );
 
@@ -74,18 +74,19 @@ if ( $related_post->have_posts() ) :
 		)
 	);
 
-	while ( $related_post->have_posts() ) :
+	while ( $related_post->have_posts() ) {
 
 		$related_post->the_post();
 
 		get_template_part( 'template-parts/content/content' );
 
-	endwhile;
-
-	wp_reset_postdata();
+	}
 
 	HTML::instance()->close( 'dimas_grid_wrap' );
 
 	Template_Tag::dimas_html_loop_close( $array_wrapper_tag );
 
-endif;
+}
+
+wp_reset_postdata();
+wp_reset_query();

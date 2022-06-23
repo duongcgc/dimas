@@ -38,7 +38,7 @@ foreach ( $footer_array as $key => $value ) {
 		)
 	);
 
-	HTML::instance()->open(
+	HTML::instance()->self_close_tag(
 		'dimas_footer__a',
 		array(
 			'tag'  => 'a',
@@ -46,12 +46,9 @@ foreach ( $footer_array as $key => $value ) {
 				'class' => 'd-block',
 				'href'  => $value['href'],
 			),
-		)
+		),
+		$value['text'],
 	);
-
-	echo esc_html( $value['text'] );
-
-	HTML::instance()->close( 'dimas_footer__a' );
 
 	HTML::instance()->close( 'dimas_footer' );
 

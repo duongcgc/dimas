@@ -39,7 +39,7 @@ if ( is_singular( 'project' ) ) {
 		array(
 			'tag'  => 'h1',
 			'attr' => array(
-				'class' => 'dimas-post-info__post-title pb-5 post-title has-color-white mb-0',
+				'class' => 'post-title pb-5 has-color-white mb-0',
 			),
 		)
 	);
@@ -57,7 +57,7 @@ if ( is_singular( 'project' ) ) {
 		array(
 			'tag'  => 'h1',
 			'attr' => array(
-				'class' => 'dimas-post-info__post-title post-title has-color-white mb-0 pb-5 pb-lg-96 text-center',
+				'class' => 'archive-title has-color-white mb-0 pb-5 pb-lg-96 text-center',
 			),
 		)
 	);

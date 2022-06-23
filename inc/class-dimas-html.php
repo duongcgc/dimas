@@ -56,6 +56,63 @@ class HTML {
 	}
 
 	/**
+	 * Self colose tag function
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $context The context to output.
+	 * @param array  $args  The args off atribute.
+	 * @param string $text The text in tag.
+	 * @return string
+	 */
+	public function self_close_tag( $context, $args = array(), $text ) {
+
+		$this->set_context( $context, $args );
+		$args = $this->get_context( $context );
+
+		if ( empty( $args['tag'] ) ) {
+			return '';
+		}
+
+		$html = '<' . esc_attr( $args['tag'] ) . ' ' . $this->parse_attributes( $context ) . '>';
+
+		$html .= $text;
+
+		$html .= '</' . esc_attr( $args['tag'] ) . '>';
+
+		if ( true === $args['actions'] || 'before' === $args['actions'] ) {
+			$html = $this->do_action( $context, 'before_open' ) . $html;
+		}
+
+		if ( $args['echo'] ) {
+			echo wp_kses_post( apply_filters( strtolower( __NAMESPACE__ ) . '\markup_open_html', $html, $context, $args ) );
+		}
+
+		if ( true === $args['actions'] || 'after' === $args['actions'] ) {
+			$html = $html . $this->do_action( $context, 'after_open' );
+		}
+
+		if ( ! $args['echo'] ) {
+			return $html;
+		}
+
+	}
+
+	/**
+	 * Undocumented function
+	 *
+	 * @param string $tag The tag name.
+	 * @return void
+	 */
+	public static function empty_tag( $tag = 'div' ) {
+
+		$html = '<' . esc_attr( $tag ) . '></' . esc_attr( $tag ) . '>';
+
+		echo wp_kses_post( $html );
+
+	}
+
+	/**
 	 * Output the open tag
 	 *
 	 * @since 1.0.0

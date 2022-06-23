@@ -2,7 +2,7 @@
 /**
  *
  *
- * Loads content page.
+ * Loads Content single page.
  *
  * @link https://www.gcosoftware.vn/
  *

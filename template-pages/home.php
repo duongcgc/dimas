@@ -16,7 +16,6 @@
 <?php
 
 use \Dimas\Framework\Template_Tag;
-use \Dimas\HTML;
 
 get_header();
 
@@ -37,7 +36,7 @@ $array_wrapper_tag = array(
 $arr_args = array(
 	array(
 		'data_anchor'    => 'Home',
-		'url_background' => get_template_directory_uri() . '/assets/images/home/bg-home.png',
+		'url_background' => wp_get_attachment_image_url( 175, 'full' ),
 		'section_name'   => 'home',
 	),
 	array(
@@ -47,7 +46,7 @@ $arr_args = array(
 	),
 	array(
 		'data_anchor'    => 'Projects',
-		'url_background' => get_template_directory_uri() . '/assets/images/projects/bg-projects.png',
+		'url_background' => wp_get_attachment_image_url( 189, 'full' ),
 		'section_name'   => 'projects',
 	),
 	array(
@@ -57,7 +56,7 @@ $arr_args = array(
 	),
 	array(
 		'data_anchor'    => 'Testimonials',
-		'url_background' => get_template_directory_uri() . '/assets/images/testimonials/bg-testimonials.png',
+		'url_background' => wp_get_attachment_image_url( 187, 'full' ),
 		'section_name'   => 'testimonials',
 	),
 	array(
@@ -67,7 +66,7 @@ $arr_args = array(
 	),
 	array(
 		'data_anchor'    => 'Contact',
-		'url_background' => get_template_directory_uri() . '/assets/images/contact/bg-contact.png',
+		'url_background' => wp_get_attachment_image_url( 178, 'full' ),
 		'section_name'   => 'contact',
 	),
 );
