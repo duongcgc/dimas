@@ -9,7 +9,7 @@
 namespace Dimas\Core\Customizer;
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
@@ -28,12 +28,12 @@ class Colors_Fields {
 	 * @return object
 	 */
 	public static function instance() {
-		if (is_null(self::$instance)) {
+		if ( is_null( self::$instance ) ) {
 			self::$instance = new self();
 		}
 
-		return self:: $instance;
-	}	
+		return self::$instance;
+	}
 
 	/**
 	 * Section name.
@@ -56,24 +56,24 @@ class Colors_Fields {
 	 *
 	 * @return array
 	 */
-	public static function get_fields() {	
+	public static function get_fields() {
 
 		$priority = self::$section_priority;
 
-		$fields = array(			
+		$fields = array(
 
 			// Colors
 			'color_scheme_title'  => array(
-				'type'  => 'custom',
-				'section'     => self::$section,
-				'label' => esc_html__( 'Color Scheme', 'dimas' ),
+				'type'    => 'custom',
+				'section' => self::$section,
+				'label'   => esc_html__( 'Color Scheme', 'dimas' ),
 			),
 			'color_scheme'        => array(
 				'type'            => 'color-palette',
 				'default'         => '#ff6F61',
 				'choices'         => array(
 					'colors' => array(
-						'#ff6F61',
+						'#ff6F610',
 						'#053399',
 						'#3f51b5',
 						'#7b1fa2',
@@ -84,7 +84,7 @@ class Colors_Fields {
 					),
 					'style'  => 'round',
 				),
-				'section'     => self::$section,
+				'section'         => self::$section,
 				'active_callback' => array(
 					array(
 						'setting'  => 'color_scheme_custom',
@@ -94,16 +94,16 @@ class Colors_Fields {
 				),
 			),
 			'color_scheme_custom' => array(
-				'type'      => 'checkbox',
-				'label'     => esc_html__( 'Pick my favorite color', 'dimas' ),
-				'default'   => false,
-				'section'     => self::$section,
+				'type'    => 'checkbox',
+				'label'   => esc_html__( 'Pick my favorite color', 'dimas' ),
+				'default' => false,
+				'section' => self::$section,
 			),
 			'color_scheme_color'  => array(
 				'type'            => 'color',
 				'label'           => esc_html__( 'Custom Color', 'dimas' ),
 				'default'         => '#161619',
-				'section'     => 'colors',
+				'section'         => 'colors',
 				'active_callback' => array(
 					array(
 						'setting'  => 'color_scheme_custom',
@@ -117,6 +117,6 @@ class Colors_Fields {
 		return $fields;
 	}
 
-	
+
 
 }
