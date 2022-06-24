@@ -95,7 +95,7 @@ class Widgets {
 	 * @return void
 	 */
 	protected function add_actions() {
-		add_action( 'elementor/widgets/widgets_registered', array( $this, 'init_widgets' ) );
+		// add_action( 'elementor/widgets/widgets_registered', array( $this, 'init_widgets' ) );
 	}
 
 	/**
