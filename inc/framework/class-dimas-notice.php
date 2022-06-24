@@ -77,7 +77,7 @@ class Notice {
 				$html[] = $params['mess'];
 				$html[] = '</p></div>';
 
-				echo implode( '', $html );
+				echo wp_kses_post( implode( '', $html ) );
 
 			}
 		);

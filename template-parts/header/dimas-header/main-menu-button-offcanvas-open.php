@@ -10,11 +10,10 @@
 ?>
 <?php
 
-use \Dimas\HTML;
 use \Dimas\Framework\Template_Tag;
 
 $arr_wrapper_tag = array(
-	'dimas_navbar_inner_right' => array(
+	'dimas_navbar_inner_right'        => array(
 		'attr' => array(
 			'class' => 'dimas-navbar-inner-right d-xxxl-none',
 		),

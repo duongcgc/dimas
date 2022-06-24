@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads content of single project swiper left item 3.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *
@@ -96,29 +93,28 @@ foreach ( $arr_pointer as $key => $val ) {
 		)
 	);
 
-	HTML::instance()->open(
-		'dimas_project_pointer__description--title',
+	HTML::instance()->self_close_tag(
+		'dimas_project_pointer__description_title',
 		array(
 			'tag'  => 'h3',
 			'attr' => array(
-				'class' => 'dimas-project-pointer__description--title has-color-white',
+				'class' => 'dimas-project-pointer__description-title has-color-white',
 			),
-		)
+		),
+		'',
 	);
 
-	HTML::instance()->close( 'dimas_project_pointer__description--title' );
 
-	HTML::instance()->open(
-		'dimas_project_pointer__description--text',
+	HTML::instance()->self_close_tag(
+		'dimas_project_pointer__description_text',
 		array(
 			'tag'  => 'p',
 			'attr' => array(
-				'class' => 'dimas-project-pointer__description--text has-color-subtitle mb-0',
+				'class' => 'dimas-project-pointer__description-text has-color-subtitle mb-0',
 			),
-		)
+		),
+		'',
 	);
-
-	HTML::instance()->close( 'dimas_project_pointer__description--text' );
 
 	HTML::instance()->close( 'dimas_project_pointer__description' );
 

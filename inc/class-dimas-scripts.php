@@ -233,6 +233,7 @@ class Scripts {
 				true
 			);
 
+			// Dimas script.
 			// GSAP script.
 			wp_enqueue_script(
 				'gsap-script',

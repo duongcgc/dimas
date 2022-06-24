@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads section home page.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *

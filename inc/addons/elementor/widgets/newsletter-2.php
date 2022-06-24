@@ -311,10 +311,10 @@ class Newsletter_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'field_display',
 			[
-				'label'     => __( 'Display', 'farmart' ),
+				'label'     => __( 'Display', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Default', 'farmart' ),
-				'label_on'  => __( 'Colmns', 'farmart' ),
+				'label_off' => __( 'Default', 'dimas' ),
+				'label_on'  => __( 'Colmns', 'dimas' ),
 				'default'   => '',
 				'selectors_dictionary' => [
 					'yes' => 'flex-direction: column;',

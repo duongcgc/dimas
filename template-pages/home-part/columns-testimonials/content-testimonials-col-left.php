@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
- * Loads section home col left.
- *
- * @link https://www.gcosoftware.vn/
+ * Loads section testimonials col left.
  *
  * @package Dimas
  *

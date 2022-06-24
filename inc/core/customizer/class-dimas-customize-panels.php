@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Customize Panels
  *
@@ -8,11 +7,15 @@
 
 namespace Dimas\Core\Customizer;
 
-// Exit if accessed directly
-if (!defined('ABSPATH')) {
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+
+/**
+ * Panels class
+ */
 class Panels {
 	/**
 	 * Instance
@@ -28,11 +31,11 @@ class Panels {
 	 * @return object
 	 */
 	public static function instance() {
-		if (is_null(self::$instance)) {
+		if ( is_null( self::$instance ) ) {
 			self::$instance = new self();
 		}
 
-		return self:: $instance;
+		return self::$instance;
 	}
 
 	/**
@@ -45,13 +48,11 @@ class Panels {
 	/**
 	 * The class constructor
 	 *
-	 *
 	 * @since 1.0.0
-	 *
 	 */
-	public function __construct( ) {
-		add_filter( 'dimas_customize_panels', array( $this, 'customize_panels' ) );		
-	}	
+	public function __construct() {
+		add_filter( 'dimas_customize_panels', array( $this, 'customize_panels' ) );
+	}
 
 	/**
 	 * Get customize panels
@@ -60,51 +61,62 @@ class Panels {
 	 *
 	 * @return array
 	 */
-	public static function customize_panels() {	
+	public static function customize_panels() {
 
 		$panels = array(
-			'general' => array(
+
+			// General.
+			'general'    => array(
 				'priority' => 10,
-				'title'    => esc_html__('General', 'dimas'),
+				'title'    => esc_html__( 'General', 'dimas' ),
 			),
 
-			// Typography
+			// Colors.
+			'colors'     => array(
+				'priority' => 20,
+				'title'    => esc_html__( 'Colors', 'dimas' ),
+			),
+
+			// Typography.
 			'typography' => array(
 				'priority' => 30,
 				'title'    => esc_html__( 'Typography', 'dimas' ),
 			),
 
-			// Header
-			'header'  => array(
-				'title'      => esc_html__('Header', 'dimas'),
-				'capability' => 'edit_theme_options',
-				'priority'   => 30,
+			// Animations.
+			'animations' => array(
+				'priority' => 40,
+				'title'    => esc_html__( 'Animations', 'dimas' ),
 			),
 
-			'page'   => array(
-				'title'      => esc_html__('Page', 'dimas'),
-				'capability' => 'edit_theme_options',
-				'priority'   => 40,
+			// Custom Header.
+			'header'     => array(
+				'priority' => 50,
+				'title'    => esc_html__( 'Header', 'dimas' ),
 			),
 
-			// Blog
-			'blog'   => array(
-				'title'      => esc_html__('Blog', 'dimas'),
-				'capability' => 'edit_theme_options',
-				'priority'   => 50,
+			// Custom Page.
+			'pages'      => array(
+				'priority' => 60,
+				'title'    => esc_html__( 'Pages', 'dimas' ),
 			),
 
-			// Footer
-			'footer' => array(
-				'title'      => esc_html__('Footer', 'dimas'),
-				'capability' => 'edit_theme_options',
-				'priority'   => 60,
+			// Custom Posts.
+			'posts'      => array(
+				'priority' => 70,
+				'title'    => esc_html__( 'Blog', 'dimas' ),
 			),
-			// Footer
-			'mobile' => array(
-				'title'      => esc_html__('Mobile', 'dimas'),
-				'capability' => 'edit_theme_options',
-				'priority'   => 60,
+
+			// Custom Projects.
+			'projects'   => array(
+				'priority' => 80,
+				'title'    => esc_html__( 'Projects', 'dimas' ),
+			),
+
+			// Custom Footer.
+			'footer'     => array(
+				'priority' => 90,
+				'title'    => esc_html__( 'Footer', 'dimas' ),
 			),
 
 		);
@@ -112,6 +124,6 @@ class Panels {
 		return $panels;
 	}
 
-	
+
 
 }

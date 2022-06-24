@@ -3,10 +3,7 @@
  *
  * The site's entry point.
  *
- * Loads the relevant template part,
- * the loop is executed (when needed) by the relevant template part.
- *
- * @link https://www.gcosoftware.vn/
+ * Loads the relevant template part.
  *
  * @package Dimas
  *

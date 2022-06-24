@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads content archive post.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *
@@ -47,7 +44,7 @@ if ( have_posts() ) {
 				'class' => 'empty_post',
 			),
 		),
-		'Chuyên mục chưa có bài viết, vui lòng quay lại sau.'
+		esc_html__( 'Chuyên mục chưa có bài viết, vui lòng quay lại sau.', 'dimas' ),
 	);
 
 }

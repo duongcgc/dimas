@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads single projects navigation.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *

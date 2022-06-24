@@ -490,7 +490,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
 					$wp_customize,
 					$variable_slug, //give it an ID
 					array(
-						'label' => __( $variable_pretty_format_name, 'picostrap' ), //set the label to appear in the Customizer
+						'label' => __( $variable_pretty_format_name, 'dimas' ), //set the label to appear in the Customizer
 						'description' =>  "(".$variable_name.")",
 						'section' => $section_slug, //select the section for it to appear under  
 						)
@@ -507,7 +507,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
 					$wp_customize,
 					$variable_slug,
 					array(
-						'label' => __( $variable_pretty_format_name, 'picostrap' ), //set the label to appear in the Customizer
+						'label' => __( $variable_pretty_format_name, 'dimas' ), //set the label to appear in the Customizer
 						'description' =>  "(".$variable_name.")",
 						'section' => $section_slug, //select the section for it to appear under
 						'type' => 'checkbox'
@@ -530,7 +530,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
 					$wp_customize,
 					$variable_slug,
 					array(
-						'label' => __( $variable_pretty_format_name, 'picostrap' ), //set the label to appear in the Customizer
+						'label' => __( $variable_pretty_format_name, 'dimas' ), //set the label to appear in the Customizer
 						'description' => $optional_grouptitle. " <!-- (".$variable_name.") -->".$placeholder_html, //ADD COMMENT HERE IF NECESSARY
 						'section' => $section_slug, //select the section for it to appear under
 						'type' => 'text', 
@@ -554,7 +554,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
 		$wp_customize,
 		'picostrap_header_chrome_color', //give it an ID
 		array(
-		'label' => __( 'Header Color in Android Chrome', 'picostrap' ), //set the label to appear in the Customizer
+		'label' => __( 'Header Color in Android Chrome', 'dimas' ), //set the label to appear in the Customizer
 		'section' => 'colors', //select the section for it to appear under 
 		'description' =>" <span hidden class='cs-option-group-title'>Extra</span>" //to implement a divisor
 		)
@@ -569,7 +569,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         'header_disable_tagline',
         array(
-            'label' => __('Hide Tagline', 'picostrap'),
+            'label' => __('Hide Tagline', 'dimas'),
             'section' => 'title_tagline',  
             'type'     => 'checkbox',
 			)
@@ -590,10 +590,10 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "picostrap_header_navbar_expand",
         array(
-            'label' => __('Navbar Expansion', 'picostrap'),
+            'label' => __('Navbar Expansion', 'dimas'),
             'section' => 'nav',
             'type'     => 'radio',
-			'description' => __('Navbar is Collapsed on mobile, and expands to a full blown menubar on chosen breakpoint', 'picostrap'),
+			'description' => __('Navbar is Collapsed on mobile, and expands to a full blown menubar on chosen breakpoint', 'dimas'),
 			'choices'  => array(
 				'navbar-expand-none'  => 'Never expand, keep always collapsed', 
 				'navbar-expand-sm'  => 'Expand on SM and upper',
@@ -614,7 +614,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "picostrap_header_navbar_position",
         array(
-            'label' => __('Navbar Position', 'picostrap'),
+            'label' => __('Navbar Position', 'dimas'),
             'section' => 'nav',
             'type'     => 'radio',
 			'choices'  => array(
@@ -653,7 +653,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "picostrap_header_navbar_color_choice",
         array(
-            'label' => __('Navbar Background Color', 'picostrap'),
+            'label' => __('Navbar Background Color', 'dimas'),
             'section' => 'nav',
             'type'     => 'radio',
 			'choices'  => array(
@@ -681,7 +681,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "picostrap_header_navbar_color_scheme",
         array(
-            'label' => __('Color Scheme (Menubar links)', 'picostrap'),
+            'label' => __('Color Scheme (Menubar links)', 'dimas'),
             'section' => 'nav',
 			'type'     => 'radio',
 			'choices'  => array(
@@ -763,7 +763,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "topbar_bg_color_choice",
         array(
-            'label' => __('Topbar Background Color', 'picostrap'),
+            'label' => __('Topbar Background Color', 'dimas'),
             'section' => 'topbar',
             'type'     => 'radio',
 			'choices'  => array(
@@ -789,7 +789,7 @@ function picostrap_theme_customize_register_extras($wp_customize) {
         $wp_customize,
         "topbar_text_color_choice",
         array(
-            'label' => __('Topbar Text Color', 'picostrap'),
+            'label' => __('Topbar Text Color', 'dimas'),
             'section' => 'topbar',
             'type'     => 'radio',
 			'choices'  => array(

@@ -3,8 +3,6 @@
  *
  * Display home page.
  *
- * @link https://www.gcosoftware.vn/
- *
  * Template Name: Home Page
  *
  * @package Dimas

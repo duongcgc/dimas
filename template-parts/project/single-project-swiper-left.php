@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads content of single project swiper left.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *
@@ -14,43 +11,39 @@
 ?>
 <?php
 
+use \Dimas\Framework\Template_Tag;
 use \Dimas\HTML;
 
-HTML::instance()->open(
-	'left_slider',
+$array_wrapper_tag = array(
+	'left_slider' =>
 	array(
 		'attr' => array(
 			'id'    => 'left-slider',
-			'class' => 'col-xl-8 overflow-hidden position-relative',
+			'class' => 'col-xl-8 overflow-hidden position-relative dimas-section',
 		),
-	)
-);
-
-HTML::instance()->open(
-	'swiper',
+	),
+	'swiper' =>
 	array(
 		'attr' => array(
 			'class' => 'swiper',
 		),
-	)
-);
-
-HTML::instance()->open(
-	'swiper_wrapper',
+	),
+	'swiper_wrapper' =>
 	array(
 		'attr' => array(
 			'class' => 'swiper-wrapper',
 		),
-	)
+	),
 );
+$item_swiper_right = array( 'item-1', 'item-2', 'item-3', 'item-4' );
 
-get_template_part( 'template-parts/project/single-project-swiper-left/swiper-left', 'item-1' );
+Template_Tag::dimas_html_loop_open( $array_wrapper_tag );
 
-get_template_part( 'template-parts/project/single-project-swiper-left/swiper-left', 'item-2' );
+foreach ( $item_swiper_right as $key => $item_name ) {
 
-get_template_part( 'template-parts/project/single-project-swiper-left/swiper-left', 'item-3' );
+	get_template_part( 'template-parts/project/single-project-swiper-left/swiper-left', $item_name );
 
-get_template_part( 'template-parts/project/single-project-swiper-left/swiper-left', 'item-4' );
+}
 
 HTML::instance()->close( 'swiper_wrapper' );
 

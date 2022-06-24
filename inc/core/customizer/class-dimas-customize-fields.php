@@ -162,7 +162,7 @@ class Fields {
 				'label'             => esc_html__('Logo SVG', 'dimas'),
 				'section'           => 'header_logo',
 				'description'       => esc_html__('Paste SVG code of your logo here', 'dimas'),
-				'sanitize_callback' => '\Dimas\SVG_Icons::sanitize_svg',
+				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
 				'output'            => array(
 					array(
 						'element' => '.site-branding .logo',
@@ -194,7 +194,7 @@ class Fields {
 				'label'             => esc_html__('Logo Light SVG', 'dimas'),
 				'section'           => 'header_logo',
 				'description'       => esc_html__('Paste SVG code of your logo here', 'dimas'),
-				'sanitize_callback' => '\Dimas\SVG_Icons::sanitize_svg',
+				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
 				'output'            => array(
 					array(
 						'element' => '.site-branding .logo',
@@ -753,7 +753,7 @@ class Fields {
 			'cart_icon_svg'         => array(
 				'type'              => 'textarea',
 				'description'       => esc_html__( 'Icon SVG code', 'dimas' ),
-				'sanitize_callback' => '\Dimas\SVG_Icons::sanitize_svg',
+				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
 				'section'           => 'header_cart',
 				'active_callback'   => array(
 					array(
@@ -1651,7 +1651,7 @@ class Fields {
 				'label'             => esc_html__('Logo SVG', 'dimas'),
 				'section'           => 'footer_logo',
 				'description'       => esc_html__('Paste SVG code of your logo here', 'dimas'),
-				'sanitize_callback' => '\Dimas\SVG_Icons::sanitize_svg',
+				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
 				'output'            => array(
 					array(
 						'element' => '.footer-branding .logo',
@@ -3336,7 +3336,7 @@ class Fields {
 				'section'           => 'mobile_topbar',
 				'description'       => esc_html__( 'The SVG before your text', 'dimas' ),
 				'default'           => '',
-				'sanitize_callback' => '\Dimas\SVG_Icons::sanitize_svg',
+				'sanitize_callback' => '\Dimas\Icon::sanitize_svg',
 				'output'            => array(
 					array(
 						'element' => '.dimas-topbar__text .dimas-svg-icon',

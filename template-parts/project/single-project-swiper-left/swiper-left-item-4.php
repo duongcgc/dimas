@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads content of single project swiper left item 4.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *
@@ -32,7 +29,7 @@ HTML::instance()->open(
 	)
 );
 
-HTML::instance()->open(
+HTML::instance()->self_close_tag(
 	'slider_video',
 	array(
 		'tag'  => 'video',
@@ -42,10 +39,9 @@ HTML::instance()->open(
 			'loop'   => true,
 			'src'    => $url_video,
 		),
-	)
+	),
+	'',
 );
-
-HTML::instance()->close( 'slider_video' );
 
 HTML::instance()->open(
 	'dimas_btn_play_video',

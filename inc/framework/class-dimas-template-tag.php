@@ -183,49 +183,6 @@ class Template_Tag {
 	}
 
 	/**
-	 * Displays an optional post thumbnail.
-	 *
-	 * Wraps the post thumbnail in an anchor element on index views, or a div
-	 * element when on single views.
-	 *
-	 * @since Dimas 1.0
-	 *
-	 * @return void
-	 */
-	public static function dimas_post_thumbnail() {
-		if ( ! Template_Function::instance()->dimas_can_show_post_thumbnail() ) {
-			return;
-		}
-		?>
-
-		<?php if ( is_singular() ) : ?>
-
-			<figure class="post-thumbnail">
-				<?php
-				// Lazy-loading attributes should be skipped for thumbnails since they are immediately in the viewport.
-				the_post_thumbnail( 'post-thumbnail', array( 'loading' => false ) );
-				?>
-				<?php if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
-					<figcaption class="wp-caption-text"><?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() ) ); ?></figcaption>
-				<?php endif; ?>
-			</figure><!-- .post-thumbnail -->
-
-		<?php else : ?>
-
-			<figure class="post-thumbnail">
-				<a class="post-thumbnail-inner alignwide" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php the_post_thumbnail( 'post-thumbnail' ); ?>
-				</a>
-				<?php if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
-					<figcaption class="wp-caption-text"><?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() ) ); ?></figcaption>
-				<?php endif; ?>
-			</figure>
-
-		<?php endif; ?>
-		<?php
-	}
-
-	/**
 	 * Display menu
 	 *
 	 * @param array $args The args of menu.
@@ -254,17 +211,14 @@ class Template_Tag {
 		}
 		$attrs['href'] = home_url();
 
-		HTML::instance()->open(
+		HTML::instance()->self_close_tag(
 			'dimas_logo',
 			array(
 				'tag'  => 'a',
 				'attr' => $attrs,
-			)
+			),
+			wp_get_attachment_image( $id_logo, $size, false, array( 'alt' => 'Dimas Logo' ) ),
 		);
-
-		echo wp_get_attachment_image( $id_logo, $size, false, array( 'alt' => 'Dimas Logo' ) );
-
-		HTML::instance()->close( 'dimas_logo' );
 	}
 
 	/**
@@ -276,7 +230,7 @@ class Template_Tag {
 	 */
 	public static function dimas_bootstrap_container_open() {
 		HTML::instance()->open(
-			'container',
+			'bootstrap_container',
 			array(
 				'attr'    => array(
 					'class' => 'container',
@@ -294,7 +248,7 @@ class Template_Tag {
 	 * @return void
 	 */
 	public static function dimas_bootstrap_container_close() {
-		HTML::instance()->close( 'container' );
+		HTML::instance()->close( 'bootstrap_container' );
 	}
 
 	/**
@@ -350,9 +304,7 @@ class Template_Tag {
 				$arr_out[ $key ]['attr'] = $val['attr'];
 			}
 
-			if ( isset( $val['actions'] ) ) {
-				$arr_out[ $key ]['actions'] = $val['actions'];
-			}
+			$arr_out[ $key ]['actions'] = false;
 
 			HTML::instance()->open(
 				$key,
@@ -488,19 +440,16 @@ class Template_Tag {
 	 * @return void
 	 */
 	public static function dimas_post_date() {
-		HTML::instance()->open(
+		HTML::instance()->self_close_tag(
 			'post__date',
 			array(
 				'tag'  => 'h6',
 				'attr' => array(
 					'class' => 'dimas-post__date has-color-main label-content mb-3',
 				),
-			)
+			),
+			get_the_date(),
 		);
-
-		echo get_the_date();
-
-		HTML::instance()->close( 'post__date' );
 	}
 
 	/**
@@ -509,19 +458,16 @@ class Template_Tag {
 	 * @return void
 	 */
 	public static function dimas_post_title() {
-		HTML::instance()->open(
+		HTML::instance()->self_close_tag(
 			'post__title',
 			array(
 				'tag'  => 'h3',
 				'attr' => array(
 					'class' => 'dimas-post__title has-color-white mb-3',
 				),
-			)
+			),
+			get_the_title(),
 		);
-
-		the_title();
-
-		HTML::instance()->close( 'post__title' );
 	}
 
 	/**
@@ -530,19 +476,16 @@ class Template_Tag {
 	 * @return void
 	 */
 	public static function dimas_post_excerpt() {
-		HTML::instance()->open(
+		HTML::instance()->self_close_tag(
 			'post__excerpt',
 			array(
 				'tag'  => 'p',
 				'attr' => array(
 					'class' => 'dimas-post__description mb-0 has-color-subtitle',
 				),
-			)
+			),
+			get_the_excerpt(),
 		);
-
-		echo esc_html( get_the_excerpt() );
-
-		HTML::instance()->close( 'post__excerpt' );
 	}
 
 	/**
@@ -551,6 +494,7 @@ class Template_Tag {
 	 * @return void
 	 */
 	public static function dimas_post_pagination() {
+
 		$pagination = Template_Function::dimas_get_post_pagination();
 
 		echo wp_kses(
@@ -605,19 +549,16 @@ class Template_Tag {
 				)
 			);
 
-			HTML::instance()->open(
+			HTML::instance()->self_close_tag(
 				'post__tag_title',
 				array(
 					'tag'  => 'h3',
 					'attr' => array(
 						'class' => 'me-3 mb-3 has-color-white',
 					),
-				)
+				),
+				__( 'Tags:', 'dimas' ),
 			);
-
-			echo 'Tags:';
-
-			HTML::instance()->close( 'post__tag_title' );
 
 			foreach ( $arr_tags as  $value ) :
 
@@ -631,19 +572,16 @@ class Template_Tag {
 					)
 				);
 
-				HTML::instance()->open(
+				HTML::instance()->self_close_tag(
 					'tag',
 					array(
 						'tag'  => 'p',
 						'attr' => array(
 							'class' => 'post-tag',
 						),
-					)
+					),
+					$value->name,
 				);
-
-				echo esc_html( $value->name );
-
-				HTML::instance()->close( 'tag' );
 
 				HTML::instance()->close( 'post__tag_link' );
 

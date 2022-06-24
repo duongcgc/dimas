@@ -32,7 +32,7 @@ class HTML {
 	protected $default_args = array(
 		'tag'     => 'div',
 		'attr'    => array(),
-		'actions' => true,
+		'actions' => false,
 		'echo'    => true,
 	);
 

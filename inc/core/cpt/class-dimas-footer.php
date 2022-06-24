@@ -41,7 +41,7 @@ class Footer extends \Dimas\Core\CPT_Abstract {
 	}
 
 	/**
-	 * Create Post Type.
+	 * Functions create footer post type.
 	 *
 	 * @return void
 	 */

@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads content section blog of home page.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *

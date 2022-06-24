@@ -4,8 +4,6 @@
  *
  * This is the template that displays all of the <head> section and everything up until main.
  *
- * @link https://www.gcosoftware.vn/
- *
  * @package Dimas
  *
  * @since Dimas 1.0

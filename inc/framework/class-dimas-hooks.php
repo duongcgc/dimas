@@ -6,7 +6,7 @@
  * @package Dimas
  */
 
-namespace Dimas;
+namespace Dimas\Framework;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -47,6 +47,5 @@ class Hooks {
 	public function __construct() {
 
 	}
-
 
 }

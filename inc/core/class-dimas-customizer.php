@@ -7,17 +7,16 @@
 
 namespace Dimas\Core;
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
- * Customize
+ * Customize.
  *
  * @var array
  */
-
 class Customizer {
 	/**
 	 * Instance
@@ -51,7 +50,7 @@ class Customizer {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $config
+	 * @param array $config The array config.
 	 *
 	 * @return void
 	 */
@@ -152,7 +151,7 @@ class Customizer {
 				\Kirki::add_field( $this->config['theme'], $settings );
 			}
 		}
-		
+
 	}
 
 	/**
@@ -171,7 +170,7 @@ class Customizer {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $name
+	 * @param string $name The option name.
 	 *
 	 * @return bool|string
 	 */
@@ -186,7 +185,7 @@ class Customizer {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param $name
+	 * @param string $name The option name default.
 	 *
 	 * @return mixed
 	 */
@@ -203,7 +202,7 @@ class Customizer {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param object $wp_customize
+	 * @param object $wp_customize The name of section customize.
 	 *
 	 * @return void
 	 */

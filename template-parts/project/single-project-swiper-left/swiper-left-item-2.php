@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads content of single project swiper left item 2.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *
@@ -23,15 +20,12 @@ $attr_img = array(
 	'alt'   => 'Slider project image',
 );
 
-HTML::instance()->open(
+HTML::instance()->self_close_tag(
 	'swiper_slide_2',
 	array(
 		'attr' => array(
 			'class' => 'swiper-slide',
 		),
-	)
+	),
+	wp_get_attachment_image( $att_id, $att_size, false, $attr_img ),
 );
-
-echo wp_get_attachment_image( $att_id, $att_size, false, $attr_img );
-
-HTML::instance()->close( 'swiper_slide_2' );

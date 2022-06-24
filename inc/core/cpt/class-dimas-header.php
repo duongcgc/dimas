@@ -8,8 +8,6 @@
 
 namespace Dimas\CPT;
 
-use Dimas\CPT_Abstract;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -41,6 +39,9 @@ class Header extends \Dimas\Core\CPT_Abstract {
 	}
 
 	/**
+	 *
+	 * Functions create header post type.
+	 *
 	 * @return void
 	 */
 	public function create_post_type() {

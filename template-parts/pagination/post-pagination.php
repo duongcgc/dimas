@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads single post pagination.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *

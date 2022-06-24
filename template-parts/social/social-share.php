@@ -1,6 +1,6 @@
 <?php
 /**
- * Loads the social link.
+ * Loads the social share.
  *
  * @package Dimas
  *

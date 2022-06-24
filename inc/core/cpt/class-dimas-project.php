@@ -41,7 +41,7 @@ class Project extends \Dimas\Core\CPT_Abstract {
 	}
 
 	/**
-	 * The function create post type.
+	 * Functions create project post type.
 	 *
 	 * @return void
 	 */

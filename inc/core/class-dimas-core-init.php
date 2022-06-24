@@ -78,16 +78,14 @@ class Core_Init {
 	 */
 	private $core_classes_files = array(
 		'Dimas\Core\Helper'              => DIMAS_CORE_DIR . '/class-dimas-helper.php',
-		'Dimas\Core\Blog'                => DIMAS_CORE_DIR . '/class-dimas-blog.php',
 		'Dimas\Core\CPT_Register'        => DIMAS_CORE_DIR . '/class-dimas-cpt-register.php',
 		'Dimas\Core\Customizer\Settings' => DIMAS_CORE_DIR . '/customizer/class-dimas-customize-settings.php',
 		'Dimas\Core\Customizer\Panels'   => DIMAS_CORE_DIR . '/customizer/class-dimas-customize-panels.php',
 		'Dimas\Core\Customizer\Sections' => DIMAS_CORE_DIR . '/customizer/class-dimas-customize-sections.php',
 		'Dimas\Core\Customizer\Fields'   => DIMAS_CORE_DIR . '/customizer/class-dimas-customize-fields.php',
 		'Dimas\Core\Customizer'          => DIMAS_CORE_DIR . '/class-dimas-customizer.php',
-		'Dimas\Core\Metaboxes_Register'  => DIMAS_CORE_DIR . '/class-dimas-metaboxes.php',
-		'Dimas\Core\Options'             => DIMAS_CORE_DIR . '/class-dimas-options.php',
-		'Dimas\Core\Mobile'              => DIMAS_CORE_DIR . '/class-dimas-mobile.php',
+		// 'Dimas\Core\Metaboxes_Register'  => DIMAS_CORE_DIR . '/class-dimas-metaboxes.php',.
+		// 'Dimas\Core\Options'             => DIMAS_CORE_DIR . '/class-dimas-options.php',.
 	);
 
 	/**
@@ -103,8 +101,8 @@ class Core_Init {
 		'customizer/sections' => 'Dimas\Core\Customizer\Sections',
 		'customizer/fields'   => 'Dimas\Core\Customizer\Fields',
 		'customizer'          => 'Dimas\Core\Customizer',
-		'metaboxes'           => 'Dimas\Core\Metaboxes_Register',
-		'options'             => 'Dimas\Core\Options',
+		// 'metaboxes'           => 'Dimas\Core\Metaboxes_Register',.
+		// 'options'             => 'Dimas\Core\Options',.
 	);
 
 	/**

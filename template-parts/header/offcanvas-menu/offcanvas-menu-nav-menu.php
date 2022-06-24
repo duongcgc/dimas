@@ -10,7 +10,6 @@
 ?>
 <?php
 
-use \Dimas\HTML;
 use \Dimas\Framework\Template_Tag;
 
 $args_nav_offcanvas_menu = array(

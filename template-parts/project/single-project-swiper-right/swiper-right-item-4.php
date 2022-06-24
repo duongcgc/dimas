@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads content of single project swiper left item 4.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *
@@ -38,33 +35,27 @@ HTML::instance()->open(
 	)
 );
 
-HTML::instance()->open(
+HTML::instance()->self_close_tag(
 	'dimas_section__name',
 	array(
 		'tag'  => 'h2',
 		'attr' => array(
 			'class' => 'dimas-section__name label-banner mb-5 has-color-white',
 		),
-	)
+	),
+	$section_title,
 );
 
-echo esc_html( $section_title );
-
-HTML::instance()->close( 'dimas_section__name' );
-
-HTML::instance()->open(
+HTML::instance()->self_close_tag(
 	'dimas_section__text',
 	array(
 		'tag'  => 'p',
 		'attr' => array(
 			'class' => 'dimas-section__text has-color-subtitle mb-32',
 		),
-	)
+	),
+	$section_description,
 );
-
-echo esc_html( $section_description );
-
-HTML::instance()->close( 'dimas_section__text' );
 
 HTML::instance()->open(
 	'thanks_wrap',
@@ -77,19 +68,16 @@ HTML::instance()->open(
 
 echo wp_get_attachment_image( $img_heart['id'], $img_heart['size'], false, $img_heart['attr'] );
 
-HTML::instance()->open(
+HTML::instance()->self_close_tag(
 	'thanks__text',
 	array(
 		'tag'  => 'p',
 		'attr' => array(
 			'class' => 'thanks__text',
 		),
-	)
+	),
+	'Thank for watching !',
 );
-
-echo 'Thank for watching !';
-
-HTML::instance()->close( 'thanks__text' );
 
 HTML::instance()->close( 'thanks_wrap' );
 

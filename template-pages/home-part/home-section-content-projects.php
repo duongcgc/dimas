@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads content section projects of home page.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *
@@ -14,6 +11,7 @@
 ?>
 <?php
 
+use \Dimas\Framework\Template_Tag;
 use \Dimas\HTML;
 
 // Args for project.
@@ -25,6 +23,29 @@ $args_project = array(
 );
 // Project Featured.
 $project_featured = get_posts( $args_project );
+
+$array_wrapper_tag = array(
+	'dimas_projects'          =>
+	array(
+		'attr' => array(
+			'class' => 'dimas-projects',
+		),
+	),
+	'dimas_projects_link'     =>
+	array(
+		'tag'  => 'a',
+		'attr' => array(
+			'class' => 'dimas-projects__url',
+			'href'  => '',
+		),
+	),
+	'dimas_projects_category' =>
+	array(
+		'attr' => array(
+			'class' => 'dimas-projects__category has-color-white',
+		),
+	),
+);
 
 HTML::instance()->open(
 	'section_project_col_wrap',
@@ -44,6 +65,7 @@ foreach ( $project_featured as $project ) {
 	$project_title  = get_the_title( $featured_id );
 	$project_branch = wp_get_post_terms( $featured_id, 'branch-project', array( 'fields' => 'names' ) )[0];
 
+	$array_wrapper_tag['dimas_projects_link']['attr']['href'] = $project_link;
 
 	if ( 4 == $i ) {
 		HTML::instance()->close( 'section_project_col_wrap' );
@@ -57,34 +79,7 @@ foreach ( $project_featured as $project ) {
 		);
 	}
 
-	HTML::instance()->open(
-		'dimas_projects',
-		array(
-			'attr' => array(
-				'class' => 'dimas-projects',
-			),
-		)
-	);
-
-	HTML::instance()->open(
-		'dimas_projects_link',
-		array(
-			'tag'  => 'a',
-			'attr' => array(
-				'class' => 'dimas-projects__url',
-				'href'  => $project_link,
-			),
-		)
-	);
-
-	HTML::instance()->open(
-		'dimas_projects_category',
-		array(
-			'attr' => array(
-				'class' => 'dimas-projects__category has-color-white',
-			),
-		)
-	);
+	Template_Tag::dimas_html_loop_open( $array_wrapper_tag );
 
 	HTML::instance()->self_close_tag(
 		'dimas_projects_category_number',

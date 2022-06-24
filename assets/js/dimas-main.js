@@ -688,13 +688,13 @@
                     if ($(this).attr("data-title")) {
                         var data_title = $(this).attr("data-title");
                         $(this)
-                            .find(".dimas-project-pointer__description--title")
+                            .find(".dimas-project-pointer__description-title")
                             .text(data_title);
                     }
                     if ($(this).attr("data-text")) {
                         var data_text = $(this).attr("data-text");
                         $(this)
-                            .find(".dimas-project-pointer__description--text")
+                            .find(".dimas-project-pointer__description-text")
                             .text(data_text);
                     }
                 });
@@ -778,6 +778,26 @@
                     add_remove_class_header(64);
                 }
             });
+            /* text circle */
+            if($(".circTxt").length)
+            {
+                function circularText(text, radius, starting_deg)
+                {
+                    starting_deg=starting_deg/1;
+                    text = text.split(""),
+                    classIndex = $(".circTxt");
+                    var deg = 360 / text.length;
+                    text.forEach((ea) => {
+                        ea = '<p style="height:'+radius+';position:absolute;transform:rotate('+starting_deg+'deg);transform-origin:0 100%">'+ea+'</p>';
+                        classIndex.append(ea);
+                        starting_deg  += deg;
+                      });
+                }
+                var text_circular = $(".circTxt").attr('data-text-circular');
+                var radius_circle = $(".circTxt").attr('data-radius-circle');
+                var starting_deg = $(".circTxt").attr('data-starting-deg');
+                circularText(text_circular,radius_circle,starting_deg);
+            }
         });
     });
 })(jQuery);

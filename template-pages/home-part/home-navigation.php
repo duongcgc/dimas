@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads home page navigation.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *

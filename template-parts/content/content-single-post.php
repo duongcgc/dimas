@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads content single post.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *
@@ -25,7 +22,7 @@ $array_wrapper_tag = array(
 	),
 	'dimas_post_content_wrap'              => array(
 		'attr' => array(
-			'class' => 'dimas-post-content-wrap row',
+			'class' => 'dimas-post-content row',
 		),
 	),
 );

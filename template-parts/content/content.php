@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads content loop post.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *

@@ -395,10 +395,10 @@ class Posts_Carousel_2 extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_display',
 			[
-				'label'     => __( 'Display', 'farmart' ),
+				'label'     => __( 'Display', 'dimas' ),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_off' => __( 'Hide', 'farmart' ),
-				'label_on'  => __( 'Show', 'farmart' ),
+				'label_off' => __( 'Hide', 'dimas' ),
+				'label_on'  => __( 'Show', 'dimas' ),
 				'default'   => 'yes',
 				'selectors_dictionary' => [
 					'' => 'display: none',

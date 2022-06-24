@@ -128,7 +128,7 @@
 
             &__item {
                 &:not(:last-child) {
-                    .dimas-section__item--text {
+                    .dimas-section__item-text {
                         border-bottom: 1px solid var(--dimas-color-border);
                     }
                 }

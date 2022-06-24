@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads related post.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *

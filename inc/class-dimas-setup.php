@@ -1,8 +1,6 @@
 <?php
 /**
- * Dimas functions and definitions.
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * Setup functions and definitions.
  *
  * @package Dimas
  */
@@ -456,7 +454,7 @@ class Setup {
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 
-		// // Set post thumbnails.
+		// Set post thumbnails.
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 1920, 940 );
 

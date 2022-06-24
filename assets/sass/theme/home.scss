@@ -5,10 +5,12 @@
 
 .dimas-fullpage-slider {
     height: 100vh;
+
     .dimas-section {
         background-color: var(--dimas-color-accent);
         background-size: auto 100vh;
         background-position: center;
+
         &__vertical-align {
             display: flex;
             overflow: hidden;
@@ -19,6 +21,7 @@
             justify-content: center;
             flex: 0 0 auto;
         }
+
         &__content {
             position: relative;
             z-index: 2;
@@ -28,30 +31,39 @@
             padding-bottom: (120rem/16);
             align-items: start;
             flex: 1 1 auto;
+
             &--home {
                 padding-top: (345vh/9.4);
             }
+
             &--about {
                 padding-top: (328vh/9.4);
             }
+
             &--projects {
                 padding-top: (242vh/9.4);
             }
+
             &--services {
                 padding-top: (198vh/9.4);
             }
+
             &--testimonials {
                 padding-top: (244vh/9.4);
             }
+
             &--blog {
                 padding-top: (194vh/9.4);
             }
+
             &--contact {
                 padding-top: (283vh/9.4);
+
                 .dimas-navbar-socials {
                     position: relative;
                     right: auto;
                     left: 0;
+
                     .dimas-social-icon {
                         svg {
                             width: 2rem;
@@ -75,8 +87,10 @@
     transform: translate(0, -50%);
     text-align: center;
     color: var(--dimas-color-white);
+
     li {
         line-height: 0;
+
         &:not(:first-child) {
             &:not(:last-child) {
                 &:not(:nth-child(2)) {
@@ -84,13 +98,16 @@
                 }
             }
         }
+
         &:nth-child(2) {
             margin-top: (44rem/16);
         }
+
         &:last-child {
             margin-top: (44rem/16);
         }
     }
+
     a {
         &:not(.prev) {
             &:not(.next) {
@@ -103,6 +120,7 @@
                 border-radius: 50%;
                 border: 4px solid var(--dimas-color-transparent);
                 position: relative;
+
                 &::after {
                     content: "";
                     width: 4px;
@@ -112,15 +130,18 @@
                     background-color: var(--dimas-color-white);
                     border-radius: 50%;
                 }
+
                 &.active,
                 &:hover {
                     border-color: var(--dimas-color-main);
+
                     &::after {
                         background-color: var(--dimas-color-main);
                     }
                 }
             }
         }
+
         &.next,
         &.prev {
             font-size: 0;
@@ -137,9 +158,22 @@
     top: (25rem/16);
     right: (123rem/16);
     position: absolute;
-    &__img {
-        &--circle {
-            animation: dimas_spin 10s var(--dimas-transition-linear) forwards infinite;
+    color: var(--dimas-color-white);
+
+    &__main-text {
+        font-family: 'Hepta Slab';
+        font-weight: 600;
+        font-size: 96px;
+        line-height: 120px;
+        margin-bottom: 0;
+    }
+
+    .circTxt {
+        height: 100%;
+        position: absolute;
+        animation: dimas_spin 10s var(--dimas-transition-linear) forwards infinite;
+        * {
+            margin: 0;
         }
     }
 }
@@ -156,6 +190,7 @@
 .dimas-about {
     &__item {
         position: relative;
+
         &:not(:first-child) {
             margin-top: (64rem/16);
         }
@@ -164,12 +199,15 @@
 
 .dimas-progress-bar {
     margin-left: (52rem/16);
+
     &__title {
         margin: 0 0 (11rem/16);
+
         &>span {
             float: right;
         }
     }
+
     &__bar {
         position: relative;
         overflow: hidden;
@@ -177,6 +215,7 @@
         height: (21rem/16);
         border: 1px solid var(--dimas-color-border);
         background: var(--dimas-color-transparent);
+
         span {
             position: absolute;
             top: 5px;
@@ -204,15 +243,19 @@
     transition: opacity var(--dimas-transition-duration-2) var(--dimas-transition-easing);
     padding-bottom: (70rem/16);
     opacity: 0.4;
+
     &:hover {
         opacity: 1;
     }
+
     &__category {
         margin-bottom: 1rem;
+
         >* {
             display: inline;
         }
     }
+
     &__number {
         font-family: 'Outfit';
         font-size: 1rem;
@@ -230,10 +273,12 @@
         .dimas-title {
             padding-left: 10rem;
         }
+
         .nav-link {
             padding: 0;
         }
     }
+
     &__icon-wrap {
         position: absolute;
         display: flex;
@@ -241,6 +286,7 @@
         align-items: center;
         width: (120rem/16);
         height: (120rem/16);
+
         svg {
             width: (90rem/16);
             height: (90rem/16);
@@ -263,10 +309,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         img {
             transition: all var(--dimas-transition-duration) linear;
             border-radius: (36rem/16);
         }
+
         .swiper-pagination-bullet {
             overflow: hidden;
             display: inline-flex;
@@ -278,23 +326,28 @@
             width: (72rem/16);
             height: (96rem/16);
             padding: 4px;
+
             &:not(.swiper-pagination-bullet-active) {
                 &:hover {
                     img {
                         outline: 2px solid var(--dimas-color-main);
                     }
                 }
+
                 opacity: 1;
                 border: none;
+
                 img {
                     width: (48rem/16);
                     height: (64rem/16);
                     outline: 2px solid var(--dimas-color-transparent);
                 }
             }
+
             &.swiper-pagination-bullet-active {
                 object-fit: cover;
                 border: 2px solid var(--dimas-color-main);
+
                 img {
                     width: 100%;
                     height: 100%;
@@ -311,11 +364,13 @@
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
+
     .dimas-post {
         height: (260rem/16);
         position: relative;
         padding: 2rem (24rem/16);
         border: 1px solid var(--dimas-color-border);
+
         &:hover {
             .dimas-post__thumbnail {
                 &-wrap {
@@ -323,6 +378,7 @@
                 }
             }
         }
+
         &__description,
         &__title {
             text-overflow: ellipsis;
@@ -330,14 +386,17 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+
         &__title {
             -webkit-line-clamp: 2;
             height: 4rem;
         }
+
         &__description {
             -webkit-line-clamp: 3;
             max-height: (78rem/16);
         }
+
         &__thumbnail {
             &-wrap {
                 width: 100%;
@@ -349,11 +408,13 @@
                 left: 0;
                 opacity: 0;
             }
+
             &-img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
+
             &-arrow-wrap {
                 border: 1px solid var(--dimas-color-white);
                 border-radius: 50%;
@@ -363,19 +424,23 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
                 &:hover {
                     border: 1px solid var(--dimas-color-main);
+
                     svg {
                         color: var(--dimas-color-main);
                     }
                 }
             }
         }
+
         &__content {
             &-wrap {
                 z-index: 1;
             }
         }
+
         &__link {
             color: var(--dimas-color-white);
             display: flex;
@@ -392,13 +457,16 @@
     width: fit-content;
     transition: all var(--dimas-transition-duration) var(--dimas-transition-linear);
     padding: (15rem/16) (47rem/16);
+
     svg {
         margin-left: (24rem/16);
         margin-bottom: 2px;
         transition: all var(--dimas-transition-duration) var(--dimas-transition-linear);
     }
+
     &:hover {
         background-color: var(--dimas-color-white);
+
         svg {
             color: var(--dimas-color-main);
             transform: translateX(5px);
@@ -413,23 +481,30 @@
     >li {
         margin-bottom: 2rem;
     }
+
     list-style: none;
     padding-left: 0;
+
     &__item {
         color: var(--dimas-color-white);
+
         &:hover {
             color: var(--dimas-color-main);
+
             h3 {
                 color: var(--dimas-color-main);
             }
         }
+
         display: flex;
         align-items: center;
+
         svg {
             width: 2rem;
             height: 2rem;
         }
     }
+
     &__text {
         margin-left: (24rem/16);
         font-weight: 400;
@@ -440,6 +515,7 @@
     input {
         margin-bottom: 2rem;
     }
+
     input,
     textarea {
         -webkit-appearance: none;
@@ -452,25 +528,31 @@
         border-bottom: 1px solid var(--dimas-color-white);
         outline: none;
         padding-bottom: (17rem/16);
+
         &::placeholder {
             color: var(--dimas-color-white);
         }
     }
+
     .dimas-form-row {
         display: flex;
         justify-content: space-between;
+
         &.two-col {
             .dimas-form-group {
                 width: calc(50% - 1rem);
             }
         }
+
         .dimas-form-group {
             width: 100%;
         }
     }
+
     button {
         border: none;
         outline: none;
+
         &:hover {
             background-color: var(--dimas-color-white);
             color: var(--dimas-color-main);
@@ -482,6 +564,7 @@
 /** Responsive Home Page **/
 
 @media (max-width: 1199px) {
+
     /* grid blog */
     .dimas-grid-wrap {
         grid-template-columns: repeat(2, 1fr);
@@ -489,12 +572,14 @@
 }
 
 @media (max-width: 991px) {
+
     /* section padding */
     .dimas-fullpage-slider {
         .dimas-section {
             &__content {
                 padding-bottom: (114rem/16);
                 align-items: center;
+
                 &--home,
                 &--about,
                 &--projects,
@@ -507,15 +592,18 @@
             }
         }
     }
+
     .dimas-experience {
         right: 0px;
     }
+
     .dimas-grid-wrap {
         .dimas-post {
             &__thumbnail {
                 &--arrow-wrap {
                     width: 3rem;
                     height: 3rem;
+
                     svg {
                         width: (19rem/16);
                         height: (19rem/16);
@@ -532,44 +620,54 @@
         left: 0;
         bottom: (24rem/16);
     }
+
     /* section projects */
     .dimas-projects {
         opacity: 1;
         padding-bottom: 2rem;
+
         &:hover {
             .dimas-projects__category {
                 opacity: 1;
             }
         }
+
         &__category {
             opacity: 0.6;
+
             >* {
                 display: block;
             }
-            
+
         }
+
         &__number {
             margin-bottom: 1rem;
             margin-right: 0px;
         }
     }
+
     /* section services */
     .dimas-tab {
         &__header {
             &--icon-wrap {
                 position: relative;
             }
+
             .dimas-title {
                 padding-left: 0px;
             }
         }
     }
+
     .dimas-grid-wrap {
         grid-template-columns: auto;
         grid-column-gap: 0px;
         grid-row-gap: 1rem;
+
         .dimas-post {
             height: (282rem/16);
+
             &__description {
                 -webkit-line-clamp: 4;
                 max-height: (104rem/16);
@@ -579,6 +677,7 @@
 }
 
 @media (max-width: 575px) {
+
     /* form contact */
     .dimas-section {
         &__item {
@@ -590,19 +689,24 @@
             }
         }
     }
+
     .dimas-contact-form {
+
         input,
         textarea {
             margin-bottom: (40rem/16);
         }
+
         .dimas-form-row {
             flex-wrap: wrap;
+
             &.two-col {
                 .dimas-form-group {
                     width: 100%
                 }
             }
         }
+
         button {
             width: 100%;
         }

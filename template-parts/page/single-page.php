@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads Single page.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *

@@ -2,8 +2,6 @@
 /**
  * Functions and definitions
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
  * @package Dimas
  *
  * @since Dimas 1.0

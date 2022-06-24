@@ -4,8 +4,6 @@
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link https://www.gcosoftware.vn/
- *
  * @package Dimas
  *
  * @since Dimas 1.0

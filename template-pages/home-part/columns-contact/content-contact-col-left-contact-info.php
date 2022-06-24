@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
- * Loads section contact col left contact info.
- *
- * @link https://www.gcosoftware.vn/
+ * Loads section contact col left - contact info.
  *
  * @package Dimas
  *

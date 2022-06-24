@@ -3,8 +3,6 @@
  * Dimas Them initial.
  * => Include and Instance main group classes base Platform, Core, Module and Addons classes.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
  * @package Dimas
  */
 
@@ -55,7 +53,6 @@ final class Theme {
 		// create classes.
 		$this->init();
 
-		// if( is_admin() ){require_once DIMAS_INC_DIR . '/libs/class-tgm-plugin-activation.php';}.
 	}
 
 	/**
@@ -88,6 +85,7 @@ final class Theme {
 		 */
 		$this->get( 'framework/template-function' );
 		$this->get( 'framework/template-tag' );
+		$this->get( 'framework/hooks' );
 		$this->get( 'framework/notice' );
 
 		/**

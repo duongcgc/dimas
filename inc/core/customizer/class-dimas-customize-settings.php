@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Theme Settings Settings
  *
@@ -8,12 +7,16 @@
 
 namespace Dimas\Core\Customizer;
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Settings class
+ */
 class Settings {
+
 	/**
 	 * Instance
 	 *
@@ -48,7 +51,7 @@ class Settings {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		add_filter( 'dimas_customize_config', array( $this, 'customize_settings' ) );
+		 add_filter( 'dimas_customize_config', array( $this, 'customize_settings' ) );
 		self::$dimas_customize = \Dimas\Core\Core_Init::instance()->get( 'customizer' );
 	}
 
@@ -58,7 +61,7 @@ class Settings {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $name
+	 * @param string $name The name of the setting.
 	 *
 	 * @return bool|string
 	 */
@@ -79,7 +82,7 @@ class Settings {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param $name
+	 * @param string $name The name of default setting.
 	 *
 	 * @return mixed
 	 */
@@ -96,8 +99,8 @@ class Settings {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param $taxonomies
-	 * @param $default
+	 * @param string $taxonomies The taxonomy name.
+	 * @param string $default    The default taxonomy name.
 	 *
 	 * @return array
 	 */
@@ -117,10 +120,10 @@ class Settings {
 		}
 
 		global $wpdb;
+
 		$post_meta_infos = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT a.term_id AS id, b.name as name, b.slug AS slug
-						FROM {$wpdb->term_taxonomy} AS a
+				"SELECT a.term_id AS id, b.name as name, b.slug AS slug FROM {$wpdb->term_taxonomy} AS a
 						INNER JOIN {$wpdb->terms} AS b ON b.term_id = a.term_id
 						WHERE a.taxonomy                            = '%s'",
 				$taxonomies
@@ -207,13 +210,13 @@ class Settings {
 		);
 	}
 
-		/**
-		 * Settings of navigation bar items
-		 *
-		 * @since 1.0.0
-		 *
-		 * @return array
-		 */
+	/**
+	 * Settings of navigation bar items
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
 	public function navigation_bar_items_setting() {
 		return apply_filters(
 			'dimas_navigation_bar_items_setting',
@@ -304,7 +307,7 @@ class Settings {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return void
+	 * @return boolean
 	 */
 	public function display_header_sticky() {
 		if ( empty( get_theme_mod( 'header_sticky' ) ) ) {
@@ -327,7 +330,7 @@ class Settings {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return void
+	 * @return boolean
 	 */
 	public function display_header_search_panel() {
 		if ( 'custom' == get_theme_mod( 'header_type' ) ) {

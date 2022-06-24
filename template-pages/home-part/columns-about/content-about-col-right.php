@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads section about col right.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *

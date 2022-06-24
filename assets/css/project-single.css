@@ -116,7 +116,7 @@
   list-style: none;
   padding-left: 0;
 }
-.dimas-project #right-slider .dimas-section__item:not(:last-child) .dimas-section__item--text {
+.dimas-project #right-slider .dimas-section__item:not(:last-child) .dimas-section__item-text {
   border-bottom: 1px solid var(--dimas-color-border);
 }
 .dimas-project #right-slider .dimas-section__img {

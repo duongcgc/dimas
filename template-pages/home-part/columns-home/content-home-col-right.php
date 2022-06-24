@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads section home col right.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *
@@ -14,46 +11,54 @@
 ?>
 <?php
 
+use \Dimas\Framework\Template_Tag;
 use \Dimas\HTML;
 
-HTML::instance()->open(
-	'section_home_col_2',
+$array_wapper_tag = array(
+	'section_home_col_2'      =>
 	array(
 		'attr' => array(
 			'class' => 'd-none col-sm-6 col-md-3 col-lg-4 d-sm-flex position-relative',
 		),
-	)
-);
-
-HTML::instance()->open(
-	'section_home_col_2_wrap',
+	),
+	'section_home_col_2_wrap' =>
 	array(
 		'attr' => array(
 			'class' => 'dimas-experience d-flex justify-content-center align-items-center',
 		),
-	)
+	),
 );
 
-echo wp_get_attachment_image(
-	177,
-	'medium',
-	false,
+$array_circle_text = array(
+	'data-text-circular' => 'Y E A R S  ★ ★ ★  E X P E R I E N C E  ★ ★ ★  ',
+	'data-radius-circle' => '100px',
+	'data-starting-deg'  => '0',
+);
+
+Template_Tag::dimas_html_loop_open( $array_wapper_tag );
+
+HTML::instance()->self_close_tag(
+	'circTxt',
 	array(
-		'class' => 'dimas-experience__img dimas-experience__img--circle position-absolute',
-		'alt'   => 'Circle',
-	)
+		'attr' => array(
+			'class'              => 'circTxt',
+			'data-text-circular' => $array_circle_text['data-text-circular'],
+			'data-radius-circle' => $array_circle_text['data-radius-circle'],
+			'data-starting-deg'  => $array_circle_text['data-starting-deg'],
+		),
+	),
+	'',
 );
 
-echo wp_get_attachment_image(
-	176,
-	'medium',
-	false,
+HTML::instance()->self_close_tag(
+	'dimas_experience__main_text',
 	array(
-		'class' => 'dimas-experience__img dimas-experience__img--text position-absolute',
-		'alt'   => 'Experience text',
-	)
+		'tags' => 'h2',
+		'attr' => array(
+			'class' => 'dimas-experience__main-text',
+		),
+	),
+	'12',
 );
 
-HTML::instance()->close( 'section_home_col_2_wrap' );
-
-HTML::instance()->close( 'section_home_col_2' );
+Template_Tag::dimas_html_loop_close( $array_wapper_tag );

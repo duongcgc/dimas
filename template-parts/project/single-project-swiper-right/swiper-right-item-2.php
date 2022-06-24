@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads content of single project swiper left item 2.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *
@@ -46,36 +43,30 @@ HTML::instance()->open(
 	)
 );
 
-HTML::instance()->open(
+HTML::instance()->self_close_tag(
 	'dimas_section__name',
 	array(
 		'tag'  => 'h2',
 		'attr' => array(
 			'class' => 'dimas-section__name label-banner mb-5 has-color-white',
 		),
-	)
+	),
+	$section_title,
 );
-
-echo esc_html( $section_title );
-
-HTML::instance()->close( 'dimas_section__name' );
 
 foreach ( $arr_solution as $key => $value ) {
 
 	if ( ! isset( $value['img'] ) ) {
-		HTML::instance()->open(
+		HTML::instance()->self_close_tag(
 			'dimas_section__text',
 			array(
 				'tag'  => 'p',
 				'attr' => array(
 					'class' => 'dimas-section__text has-color-subtitle mb-0 mb-md-2 col-9',
 				),
-			)
+			),
+			$value['text'],
 		);
-
-		echo esc_html( $value['text'] );
-
-		HTML::instance()->close( 'dimas_section__text' );
 	} else {
 
 		HTML::instance()->open(
@@ -89,19 +80,16 @@ foreach ( $arr_solution as $key => $value ) {
 
 		echo wp_get_attachment_image( $value['img']['id'], $value['img']['size'], false, $value['img']['attr'] );
 
-		HTML::instance()->open(
+		HTML::instance()->self_close_tag(
 			'dimas_section__text',
 			array(
 				'tag'  => 'p',
 				'attr' => array(
 					'class' => 'dimas-section__text has-color-subtitle mt-5 mt-md-7 mb-0 col-9',
 				),
-			)
+			),
+			$value['text']
 		);
-
-		echo esc_html( $value['text'] );
-
-		HTML::instance()->close( 'dimas_section__text' );
 
 		HTML::instance()->close( 'section__wrap' );
 	}

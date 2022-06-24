@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads content of single project swiper left item 3.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *
@@ -37,33 +34,27 @@ HTML::instance()->open(
 	)
 );
 
-HTML::instance()->open(
+HTML::instance()->self_close_tag(
 	'dimas_section__name',
 	array(
 		'tag'  => 'h2',
 		'attr' => array(
 			'class' => 'dimas-section__name label-banner mb-5 has-color-white',
 		),
-	)
+	),
+	$section_title,
 );
 
-echo esc_html( $section_title );
-
-HTML::instance()->close( 'dimas_section__name' );
-
-HTML::instance()->open(
+HTML::instance()->self_close_tag(
 	'dimas_section__text',
 	array(
 		'tag'  => 'p',
 		'attr' => array(
 			'class' => 'dimas-section__text has-color-subtitle mb-5 mb-md-8',
 		),
-	)
+	),
+	$section_description,
 );
-
-echo esc_html( $section_description );
-
-HTML::instance()->close( 'dimas_section__text' );
 
 HTML::instance()->open(
 	'quote',
@@ -85,19 +76,16 @@ HTML::instance()->open(
 	)
 );
 
-HTML::instance()->open(
+HTML::instance()->self_close_tag(
 	'quote__text',
 	array(
 		'tag'  => 'p',
 		'attr' => array(
 			'class' => 'quote__text has-color-white mb-0',
 		),
-	)
+	),
+	$text_quote,
 );
-
-echo esc_html( $text_quote );
-
-HTML::instance()->close( 'quote__text' );
 
 HTML::instance()->close( 'quote__content' );
 

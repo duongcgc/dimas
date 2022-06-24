@@ -1,10 +1,7 @@
 <?php
 /**
  *
- *
  * Loads single project swiper left pagination.
- *
- * @link https://www.gcosoftware.vn/
  *
  * @package Dimas
  *
