@@ -75,6 +75,7 @@ class Customizer {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'customize_register', array( $this, 'customize_modify' ) );
 
+		add_filter( 'customize_loaded_components', 'dimas_remove_custom_panel' );
 	}
 
 	/**
@@ -207,7 +208,41 @@ class Customizer {
 	 * @return void
 	 */
 	public function customize_modify( $wp_customize ) {
-		$wp_customize->get_section( 'title_tagline' )->panel     = 'general';
-		$wp_customize->get_section( 'static_front_page' )->panel = 'general';
+
+		$wp_customize->get_section( 'title_tagline' )->panel = 'general';
+		// remove_action( 'customize_register', array( $wp_customize->nav_menus, 'customize_register' ), 11 );
+		// $wp_customize->remove_panel( 'widgets' );
+		// $wp_customize->remove_section( 'background_image' );
+		// $wp_customize->remove_section( 'static_front_page' );
+		// $wp_customize->remove_section( 'colors' );.
+
+		// $wp_customize->get_section( 'static_front_page' )->panel = 'general';
+	}
+
+	/**
+	 * Dimas remove custom panel function
+	 *
+	 * @param array $components Core Customizer components list.
+	 *
+	 * @return array
+	 */
+	public function dimas_remove_custom_panel( $components ) {
+
+		$array_panel_name = array(
+			'nav_menus',
+			'widgets',
+			'background_image',
+			'static_front_page',
+			'colors',
+		);
+
+		foreach ( $array_panel_name as $key => $name ) {
+			$i = array_search( $name, $components );
+			if ( false !== $i ) {
+				unset( $components[ $i ] );
+			}
+		}
+
+		return $components;
 	}
 }

@@ -141,11 +141,11 @@ class Core_Init {
 		$this->get( 'customizer/sections' );
 		$this->get( 'customizer/fields' );
 
-		// Metabos.
-		$this->get( 'metaboxes' );
+		// // Metabos.
+		// $this->get( 'metaboxes' );.
 
-		// Options.
-		$this->get( 'options' );
+		// // Options.
+		// $this->get( 'options-default' );.
 
 		add_action( 'after_setup_theme', array( $this, 'core_init' ), 20 );
 

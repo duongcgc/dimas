@@ -66,57 +66,63 @@ class Panels {
 		$panels = array(
 
 			// General.
-			'general'    => array(
+			'general'      => array(
 				'priority' => 10,
 				'title'    => esc_html__( 'General', 'dimas' ),
 			),
 
 			// Colors.
-			'colors'     => array(
+			'colors'       => array(
 				'priority' => 20,
 				'title'    => esc_html__( 'Colors', 'dimas' ),
 			),
 
 			// Typography.
-			'typography' => array(
+			'typography'   => array(
 				'priority' => 30,
 				'title'    => esc_html__( 'Typography', 'dimas' ),
 			),
 
 			// Animations.
-			'animations' => array(
+			'animations'   => array(
 				'priority' => 40,
 				'title'    => esc_html__( 'Animations', 'dimas' ),
 			),
 
 			// Custom Header.
-			'header'     => array(
+			'header'       => array(
 				'priority' => 50,
 				'title'    => esc_html__( 'Header', 'dimas' ),
 			),
 
 			// Custom Page.
-			'pages'      => array(
+			'pages'        => array(
 				'priority' => 60,
 				'title'    => esc_html__( 'Pages', 'dimas' ),
 			),
 
-			// Custom Posts.
-			'posts'      => array(
+			// Custom Posts Single.
+			'post_single'  => array(
 				'priority' => 70,
-				'title'    => esc_html__( 'Blog', 'dimas' ),
+				'title'    => esc_html__( 'Posts Single', 'dimas' ),
 			),
 
-			// Custom Projects.
-			'projects'   => array(
+			// Custom Posts Archive.
+			'post_archive' => array(
 				'priority' => 80,
-				'title'    => esc_html__( 'Projects', 'dimas' ),
+				'title'    => esc_html__( 'Posts Archive', 'dimas' ),
 			),
 
 			// Custom Footer.
-			'footer'     => array(
+			'footer'       => array(
 				'priority' => 90,
 				'title'    => esc_html__( 'Footer', 'dimas' ),
+			),
+
+			// Socials.
+			'socials'      => array(
+				'priority' => 100,
+				'title'    => esc_html__( 'Socials', 'dimas' ),
 			),
 
 		);
