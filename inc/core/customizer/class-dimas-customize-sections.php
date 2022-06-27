@@ -72,41 +72,35 @@ class Sections {
 			),
 
 			// Colors.
-			'color_main'                    => array(
+			'main_color'                    => array(
 				'title'    => esc_html__( 'Main Color', 'dimas' ),
 				'panel'    => 'colors',
 				'priority' => 10,
 			),
 
-			'color_heading'                 => array(
+			'heading_color'                 => array(
 				'title'    => esc_html__( 'Heading Colors', 'dimas' ),
 				'panel'    => 'colors',
 				'priority' => 20,
 			),
 
-			'color_body'                    => array(
+			'body_color'                    => array(
 				'title'    => esc_html__( 'Body Color', 'dimas' ),
 				'panel'    => 'colors',
 				'priority' => 30,
 			),
 
 			// Typography.
-			'typography_main'               => array(
-				'title'    => esc_html__( 'Typography Color', 'dimas' ),
-				'panel'    => 'colors',
+			'heading_typography'            => array(
+				'title'    => esc_html__( 'Typography Heading', 'dimas' ),
+				'panel'    => 'typography',
 				'priority' => 10,
 			),
 
-			'typography_heading'            => array(
-				'title'    => esc_html__( 'Typography Colors', 'dimas' ),
-				'panel'    => 'colors',
+			'body_typography'               => array(
+				'title'    => esc_html__( 'Typography Body', 'dimas' ),
+				'panel'    => 'typography',
 				'priority' => 20,
-			),
-
-			'typography_body'               => array(
-				'title'    => esc_html__( 'Typography Color', 'dimas' ),
-				'panel'    => 'colors',
-				'priority' => 30,
 			),
 
 			// Animations.
@@ -129,7 +123,7 @@ class Sections {
 				'priority' => 20,
 			),
 
-			'header_menu'                   => array(
+			'header_menus'                   => array(
 				'title'    => esc_html__( 'Header Menu', 'dimas' ),
 				'panel'    => 'header',
 				'priority' => 30,
@@ -162,7 +156,7 @@ class Sections {
 			),
 
 			'post_single_date'              => array(
-				'title'    => esc_html__( 'Posts Single Posted On', 'dimas' ),
+				'title'    => esc_html__( 'Posts Single Posted Date', 'dimas' ),
 				'panel'    => 'post_single',
 				'priority' => 20,
 			),
@@ -210,16 +204,10 @@ class Sections {
 				'priority' => 10,
 			),
 
-			'footer_left'                   => array(
-				'title'    => esc_html__( 'Footer Item Left', 'dimas' ),
+			'footer_item'                   => array(
+				'title'    => esc_html__( 'Footer Item', 'dimas' ),
 				'panel'    => 'footer',
 				'priority' => 20,
-			),
-
-			'footer_right'                  => array(
-				'title'    => esc_html__( 'Footer Item Right', 'dimas' ),
-				'panel'    => 'footer',
-				'priority' => 30,
 			),
 
 			// Socials.

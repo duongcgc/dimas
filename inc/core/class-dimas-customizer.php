@@ -7,6 +7,8 @@
 
 namespace Dimas\Core;
 
+use \Dimas\Core\Customizer\Register_Controls;
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -75,7 +77,6 @@ class Customizer {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'customize_register', array( $this, 'customize_modify' ) );
 
-		add_filter( 'customize_loaded_components', 'dimas_remove_custom_panel' );
 	}
 
 	/**
@@ -203,46 +204,44 @@ class Customizer {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param object $wp_customize The name of section customize.
+	 * @param object $wp_customize The custom customize.
 	 *
 	 * @return void
 	 */
 	public function customize_modify( $wp_customize ) {
 
-		$wp_customize->get_section( 'title_tagline' )->panel = 'general';
-		// remove_action( 'customize_register', array( $wp_customize->nav_menus, 'customize_register' ), 11 );
-		// $wp_customize->remove_panel( 'widgets' );
-		// $wp_customize->remove_section( 'background_image' );
-		// $wp_customize->remove_section( 'static_front_page' );
-		// $wp_customize->remove_section( 'colors' );.
+		$wp_customize->get_section( 'title_tagline' )->panel     = 'general';
+		$wp_customize->get_section( 'static_front_page' )->panel = 'general';
 
-		// $wp_customize->get_section( 'static_front_page' )->panel = 'general';
+		// Remove custom nav menus panel.
+		remove_action( 'customize_controls_enqueue_scripts', array( $wp_customize->nav_menus, 'enqueue_scripts' ) );
+		remove_action( 'customize_register', array( $wp_customize->nav_menus, 'customize_register' ), 11 );
+		remove_filter( 'customize_dynamic_setting_args', array( $wp_customize->nav_menus, 'filter_dynamic_setting_args' ) );
+		remove_filter( 'customize_dynamic_setting_class', array( $wp_customize->nav_menus, 'filter_dynamic_setting_class' ) );
+		remove_action( 'customize_controls_print_footer_scripts', array( $wp_customize->nav_menus, 'print_templates' ) );
+		remove_action( 'customize_controls_print_footer_scripts', array( $wp_customize->nav_menus, 'available_items_template' ) );
+		remove_action( 'customize_preview_init', array( $wp_customize->nav_menus, 'customize_preview_init' ) );
+
+		// Remove custom widgets panel.
+		remove_action( 'customize_controls_enqueue_scripts', array( $wp_customize->widgets, 'enqueue_scripts' ) );
+		remove_action( 'customize_register', array( $wp_customize->widgets, 'customize_register' ), 11 );
+		remove_filter( 'customize_dynamic_setting_args', array( $wp_customize->widgets, 'filter_dynamic_setting_args' ) );
+		remove_filter( 'customize_dynamic_setting_class', array( $wp_customize->widgets, 'filter_dynamic_setting_class' ) );
+		remove_action( 'customize_controls_print_footer_scripts', array( $wp_customize->widgets, 'print_templates' ) );
+		remove_action( 'customize_controls_print_footer_scripts', array( $wp_customize->widgets, 'available_items_template' ) );
+		remove_action( 'customize_preview_init', array( $wp_customize->widgets, 'customize_preview_init' ) );
+
+		// Remove custom sections.
+		$wp_customize->remove_section( 'background_image' );
+		$wp_customize->remove_section( 'colors' );
+
+		// add_action(
+		// 	'kirki_control_types',
+		// 	function( $controls ) {
+		// 		$controls['notice'] = new Register_Controls();
+		// 		return $controls;
+		// 	}
+		// );
 	}
 
-	/**
-	 * Dimas remove custom panel function
-	 *
-	 * @param array $components Core Customizer components list.
-	 *
-	 * @return array
-	 */
-	public function dimas_remove_custom_panel( $components ) {
-
-		$array_panel_name = array(
-			'nav_menus',
-			'widgets',
-			'background_image',
-			'static_front_page',
-			'colors',
-		);
-
-		foreach ( $array_panel_name as $key => $name ) {
-			$i = array_search( $name, $components );
-			if ( false !== $i ) {
-				unset( $components[ $i ] );
-			}
-		}
-
-		return $components;
-	}
 }

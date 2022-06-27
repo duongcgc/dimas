@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Customize Fields
  *
@@ -8,12 +7,15 @@
 
 namespace Dimas\Core\Customizer;
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Typography_Typo_Page_Fields {
+/**
+ * Body Typography class
+ */
+class Typography_Body_Fields {
 	/**
 	 * Instance
 	 *
@@ -40,14 +42,7 @@ class Typography_Typo_Page_Fields {
 	 *
 	 * @var string
 	 */
-	private static $section = 'typo_page';
-
-	/**
-	 * Section priority variable
-	 *
-	 * @var integer
-	 */
-	private static $section_priority = 10;
+	private static $section = 'body_typography';
 
 	/**
 	 * Get section fields
@@ -58,38 +53,33 @@ class Typography_Typo_Page_Fields {
 	 */
 	public static function get_fields() {
 
-		$priority = self::$section_priority;
-
 		$fields = array(
 
-			// Typography
-			'typo_page_title' => array(
+			// Typography body.
+			'typo_main' => array(
 				'type'        => 'typography',
-				'label'       => esc_html__( 'Page Title', 'dimas' ),
-				'description' => esc_html__( 'Customize the page title font', 'dimas' ),
+				'label'       => esc_html__( 'Typography Body', 'dimas' ),
+				'description' => esc_html__( 'Customize the main font', 'dimas' ),
 				'section'     => self::$section,
 				'default'     => array(
-					'font-family'    => '',
-					'variant'        => '500',
-					'font-size'      => '32px',
-					'line-height'    => '1.33',
+					'font-family'    => 'Poppins',
+					'variant'        => 'regular',
+					'font-size'      => '0.875rem',
+					'line-height'    => '1.8571428571',
+					'color'          => '#B3BBC0',
 					'text-transform' => 'none',
-					'color'          => '#111',
 					'subsets'        => array( 'latin-ext' ),
 				),
 				'transport'   => 'postMessage',
 				'js_vars'     => array(
 					array(
-						'element' => '.page-header__title',
+						'element' => 'p, body',
 					),
 				),
 			),
-
 		);
 
 		return $fields;
 	}
-
-
 
 }

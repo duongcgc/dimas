@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Customize Fields
  *
@@ -8,11 +7,14 @@
 
 namespace Dimas\Core\Customizer;
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * General Preloader class
+ */
 class General_Preloader_Fields {
 	/**
 	 * Instance
@@ -43,13 +45,6 @@ class General_Preloader_Fields {
 	private static $section = 'preloader';
 
 	/**
-	 * Section priority variable
-	 *
-	 * @var integer
-	 */
-	private static $section_priority = 10;
-
-	/**
 	 * Get customize fields
 	 *
 	 * @since 1.0.0
@@ -58,28 +53,26 @@ class General_Preloader_Fields {
 	 */
 	public static function get_fields() {
 
-		$priority = self::$section_priority;
-
 		$fields = array(
-			'preloader_enable'           => array(
+			'preloader_show'             => array(
 				'type'        => 'toggle',
 				'label'       => esc_html__( 'Enable Preloader', 'dimas' ),
 				'description' => esc_html__( 'Show a waiting screen when page is loading', 'dimas' ),
-				'default'     => false,
+				'default'     => true,
 				'section'     => 'preloader',
 				'transport'   => 'postMessage',
 			),
 			'preloader_background_color' => array(
 				'type'            => 'color',
 				'label'           => esc_html__( 'Background Color', 'dimas' ),
-				'default'         => 'rgba(255,255,255,1)',
+				'default'         => 'rgb(1, 26, 44, 1)',
 				'section'         => self::$section,
 				'choices'         => array(
 					'alpha' => true,
 				),
 				'active_callback' => array(
 					array(
-						'setting'  => 'preloader_enable',
+						'setting'  => 'preloader_show',
 						'operator' => '==',
 						'value'    => true,
 					),
@@ -104,7 +97,7 @@ class General_Preloader_Fields {
 				),
 				'active_callback' => array(
 					array(
-						'setting'  => 'preloader_enable',
+						'setting'  => 'preloader_show',
 						'operator' => '==',
 						'value'    => true,
 					),
@@ -117,7 +110,7 @@ class General_Preloader_Fields {
 				'section'         => self::$section,
 				'active_callback' => array(
 					array(
-						'setting'  => 'preloader_enable',
+						'setting'  => 'preloader_show',
 						'operator' => '==',
 						'value'    => true,
 					),
@@ -140,7 +133,7 @@ class General_Preloader_Fields {
 				'section'         => self::$section,
 				'active_callback' => array(
 					array(
-						'setting'  => 'preloader_enable',
+						'setting'  => 'preloader_show',
 						'operator' => '==',
 						'value'    => true,
 					),
@@ -156,7 +149,5 @@ class General_Preloader_Fields {
 
 		return $fields;
 	}
-
-
 
 }

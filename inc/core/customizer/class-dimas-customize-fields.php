@@ -68,13 +68,41 @@ class Fields {
 	 * @var $dimas_fields
 	 */
 	public static $dimas_fields_classes = array(
-		// '\Dimas\Core\Customizer\General_Boxed_Layout_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-general-boxed_layout.php',
-		// '\Dimas\Core\Customizer\General_Backtotop_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-general-general_backtotop.php',
-		// '\Dimas\Core\Customizer\Colors_Fields'            => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-colors.php',
-		// '\Dimas\Core\Customizer\General_Preloader_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-general-preloader.php',
-		// '\Dimas\Core\Customizer\Newsletter_Popup_Fields'  => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-newsletter-popup.php',
-		// '\Dimas\Core\Customizer\Header_Header_Top_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-header-header_top.php',
-		// '\Dimas\Core\Customizer\Header_Header_Topbar_Bg_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-header-header_topbar_bg.php',
+
+		'\Dimas\Core\Customizer\General_Preloader_Fields'  => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-general-preloader.php',
+
+		'\Dimas\Core\Customizer\Colors_Main_Color_Fields'  => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-colors-main-color.php',
+		// '\Dimas\Core\Customizer\Colors_Heading_Color_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-colors-heading-color.php',
+		// '\Dimas\Core\Customizer\Colors_Body_Color_Fields'  => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-colors-body-color.php',
+
+		'\Dimas\Core\Customizer\Typography_Heading_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-typography-heading.php',
+		'\Dimas\Core\Customizer\Typography_Body_Fields'    => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-typography-body.php',
+
+		'\Dimas\Core\Customizer\Animations_Transition_Duration_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-animations-transition-duration.php',
+
+		'\Dimas\Core\Customizer\Header_Background_Color_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-header-bg-color.php',
+		'\Dimas\Core\Customizer\Header_Logo_Fields'        => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-header-logo.php',
+		'\Dimas\Core\Customizer\Header_Menus_Fields'       => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-header-menus.php',
+		'\Dimas\Core\Customizer\Header_Socials_Fields'      => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-header-socials.php',
+
+		'\Dimas\Core\Customizer\Pages_Title_Fields'        => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-pages-title.php',
+		'\Dimas\Core\Customizer\Pages_Comments_Fields'        => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-pages-comments.php',
+
+		'\Dimas\Core\Customizer\Post_Single_Fetured_Img_Fields'        => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-post-single-featured-img.php',
+		'\Dimas\Core\Customizer\Post_Single_Date_Fields'        => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-post-single-date.php',
+		'\Dimas\Core\Customizer\Post_Single_Title_Fields'        => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-post-single-title.php',
+		'\Dimas\Core\Customizer\Post_Single_Social_Share_Fields'        => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-post-single-social-share.php',
+		'\Dimas\Core\Customizer\Post_Single_Related_Post_Fields'        => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-post-single-related-post.php',
+		'\Dimas\Core\Customizer\Post_Single_Comments_Fields'        => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-post-single-comments.php',
+
+		'\Dimas\Core\Customizer\Post_Archive_Title_Fields'        => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-post-archive-title.php',
+		'\Dimas\Core\Customizer\Post_Archive_Style_Fields'        => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-post-archive-style.php',
+
+		'\Dimas\Core\Customizer\Footer_Background_Color_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-footer-bg-color.php',
+		'\Dimas\Core\Customizer\Footer_Item_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-footer-item.php',
+
+		'\Dimas\Core\Customizer\Social_Link_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-socials-link.php',
+		'\Dimas\Core\Customizer\Social_Share_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-socials-share.php',
 	);
 
 	/**

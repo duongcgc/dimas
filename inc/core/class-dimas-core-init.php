@@ -77,13 +77,14 @@ class Core_Init {
 	 * @var array
 	 */
 	private $core_classes_files = array(
-		'Dimas\Core\Helper'              => DIMAS_CORE_DIR . '/class-dimas-helper.php',
-		'Dimas\Core\CPT_Register'        => DIMAS_CORE_DIR . '/class-dimas-cpt-register.php',
-		'Dimas\Core\Customizer\Settings' => DIMAS_CORE_DIR . '/customizer/class-dimas-customize-settings.php',
-		'Dimas\Core\Customizer\Panels'   => DIMAS_CORE_DIR . '/customizer/class-dimas-customize-panels.php',
-		'Dimas\Core\Customizer\Sections' => DIMAS_CORE_DIR . '/customizer/class-dimas-customize-sections.php',
-		'Dimas\Core\Customizer\Fields'   => DIMAS_CORE_DIR . '/customizer/class-dimas-customize-fields.php',
-		'Dimas\Core\Customizer'          => DIMAS_CORE_DIR . '/class-dimas-customizer.php',
+		'Dimas\Core\Helper'                       => DIMAS_CORE_DIR . '/class-dimas-helper.php',
+		'Dimas\Core\CPT_Register'                 => DIMAS_CORE_DIR . '/class-dimas-cpt-register.php',
+		'Dimas\Core\Customizer\Settings'          => DIMAS_CORE_DIR . '/customizer/class-dimas-customize-settings.php',
+		'Dimas\Core\Customizer\Panels'            => DIMAS_CORE_DIR . '/customizer/class-dimas-customize-panels.php',
+		'Dimas\Core\Customizer\Sections'          => DIMAS_CORE_DIR . '/customizer/class-dimas-customize-sections.php',
+		'Dimas\Core\Customizer\Fields'            => DIMAS_CORE_DIR . '/customizer/class-dimas-customize-fields.php',
+		// 'Dimas\Core\Customizer\Register_Controls' => DIMAS_CORE_DIR . '/customizer/register-controls.php',
+		'Dimas\Core\Customizer'                   => DIMAS_CORE_DIR . '/class-dimas-customizer.php',
 		// 'Dimas\Core\Metaboxes_Register'  => DIMAS_CORE_DIR . '/class-dimas-metaboxes.php',.
 		// 'Dimas\Core\Options'             => DIMAS_CORE_DIR . '/class-dimas-options.php',.
 	);
@@ -94,13 +95,14 @@ class Core_Init {
 	 * @var array
 	 */
 	private $core_classes_names = array(
-		'helper'              => 'Dimas\Core\Helper',
-		'cpt-register'        => 'Dimas\Core\CPT_Register',
-		'customizer/settings' => 'Dimas\Core\Customizer\Settings',
-		'customizer/panels'   => 'Dimas\Core\Customizer\Panels',
-		'customizer/sections' => 'Dimas\Core\Customizer\Sections',
-		'customizer/fields'   => 'Dimas\Core\Customizer\Fields',
-		'customizer'          => 'Dimas\Core\Customizer',
+		'helper'                       => 'Dimas\Core\Helper',
+		'cpt-register'                 => 'Dimas\Core\CPT_Register',
+		'customizer/settings'          => 'Dimas\Core\Customizer\Settings',
+		'customizer/panels'            => 'Dimas\Core\Customizer\Panels',
+		'customizer/sections'          => 'Dimas\Core\Customizer\Sections',
+		'customizer/fields'            => 'Dimas\Core\Customizer\Fields',
+		// 'customizer/register-controls' => 'Dimas\Core\Customizer\Register_Controls',
+		'customizer'                   => 'Dimas\Core\Customizer',
 		// 'metaboxes'           => 'Dimas\Core\Metaboxes_Register',.
 		// 'options'             => 'Dimas\Core\Options',.
 	);
@@ -140,6 +142,7 @@ class Core_Init {
 		$this->get( 'customizer/panels' );
 		$this->get( 'customizer/sections' );
 		$this->get( 'customizer/fields' );
+		// $this->get( 'customizer/register-controls' );
 
 		// // Metabos.
 		// $this->get( 'metaboxes' );.

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Customize Fields
  *
@@ -8,12 +7,15 @@
 
 namespace Dimas\Core\Customizer;
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Colors_Fields {
+/**
+ * Main color class
+ */
+class Colors_Main_Color_Fields {
 	/**
 	 * Instance
 	 *
@@ -40,14 +42,7 @@ class Colors_Fields {
 	 *
 	 * @var string
 	 */
-	private static $section = 'colors';
-
-	/**
-	 * Section priority variable
-	 *
-	 * @var integer
-	 */
-	private static $section_priority = 10;
+	private static $section = 'main_color';
 
 	/**
 	 * Get section fields
@@ -58,17 +53,15 @@ class Colors_Fields {
 	 */
 	public static function get_fields() {
 
-		$priority = self::$section_priority;
-
 		$fields = array(
 
-			// Colors
-			'color_scheme_title'  => array(
+			// Colors.
+			'color_main_title'  => array(
 				'type'    => 'custom',
 				'section' => self::$section,
-				'label'   => esc_html__( 'Color Scheme', 'dimas' ),
+				'label'   => esc_html__( 'Main Color', 'dimas' ),
 			),
-			'color_scheme'        => array(
+			'color_main_default'        => array(
 				'type'            => 'color-palette',
 				'default'         => '#ff6F61',
 				'choices'         => array(
@@ -87,26 +80,28 @@ class Colors_Fields {
 				'section'         => self::$section,
 				'active_callback' => array(
 					array(
-						'setting'  => 'color_scheme_custom',
-						'operator' => '!=',
-						'value'    => true,
+						'setting'  => 'color_main_custom',
+						'operator' => '==',
+						'value'    => false,
 					),
 				),
 			),
-			'color_scheme_custom' => array(
+			'color_main_custom' => array(
 				'type'    => 'checkbox',
 				'label'   => esc_html__( 'Pick my favorite color', 'dimas' ),
-				'default' => false,
+				'default' => true,
 				'section' => self::$section,
 			),
-			'color_scheme_color'  => array(
+			'color_main'  => array(
+				'settings'        => 'color_setting_rgba_main',
 				'type'            => 'color',
-				'label'           => esc_html__( 'Custom Color', 'dimas' ),
-				'default'         => '#161619',
-				'section'         => 'colors',
+				'label'           => esc_html__( 'Custom Main Color', 'dimas' ),
+				'default'         => 'rgb(242, 25, 103, 1)',
+				'section'         => self::$section,
+				'choices'         => array( 'alpha' => true ),
 				'active_callback' => array(
 					array(
-						'setting'  => 'color_scheme_custom',
+						'setting'  => 'color_main_custom',
 						'operator' => '==',
 						'value'    => true,
 					),
@@ -116,7 +111,5 @@ class Colors_Fields {
 
 		return $fields;
 	}
-
-
 
 }
