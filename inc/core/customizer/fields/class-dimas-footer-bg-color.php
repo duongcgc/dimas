@@ -63,7 +63,7 @@ class Footer_Background_Color_Fields {
 			),
 			'footer_bg_color_default'        => array(
 				'type'            => 'color-palette',
-				'default'         => '#ff6F61',
+				'default'         => dimas_defaults( 'footer_bg_color_default' ),
 				'choices'         => array(
 					'colors' => array(
 						'#ff6F610',
@@ -89,14 +89,14 @@ class Footer_Background_Color_Fields {
 			'footer_bg_custom' => array(
 				'type'    => 'checkbox',
 				'label'   => esc_html__( 'Pick my favorite color', 'dimas' ),
-				'default' => true,
+				'default' => dimas_defaults( 'footer_bg_custom' ),
 				'section' => self::$section,
 			),
 			'footer_bg_color'  => array(
 				'settings'        => 'footer_bg_color',
 				'type'            => 'color',
 				'label'           => esc_html__( 'Color Background Footer', 'dimas' ),
-				'default'         => '#011A2C66',
+				'default'         => dimas_defaults( 'footer_bg_color' ),
 				'section'         => self::$section,
 				'choices'         => array( 'alpha' => true ),
 				'active_callback' => array(

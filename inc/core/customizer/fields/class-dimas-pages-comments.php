@@ -60,7 +60,7 @@ class Pages_Comments_Fields {
 				'type'    => 'toggle',
 				'label'   => esc_html__( 'Enable/Disable Page Comments', 'dimas' ),
 				'section' => self::$section,
-				'default' => 1,
+				'default' => dimas_defaults( 'page_comments_show' ),
 			),
 
 		);

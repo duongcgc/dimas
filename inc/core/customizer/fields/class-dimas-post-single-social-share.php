@@ -60,7 +60,7 @@ class Post_Single_Social_Share_Fields {
 				'type'    => 'toggle',
 				'label'   => esc_html__( 'Enable/Disable Single Social Share', 'dimas' ),
 				'section' => self::$section,
-				'default' => 1,
+				'default' => dimas_defaults( 'post_single_social_share_show' ),
 			),
 
 		);

@@ -60,7 +60,7 @@ class Animations_Transition_Duration_Fields {
 				'type'    => 'slider',
 				'label'   => esc_html__( 'Time Transition Duration (ms)', 'dimas' ),
 				'section' => self::$section,
-				'default' => 300,
+				'default' => dimas_defaults( 'transition_duration_numer' ),
 				'choices' => array(
 					'step' => 100,
 					'min' => 200,

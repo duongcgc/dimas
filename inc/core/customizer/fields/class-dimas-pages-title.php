@@ -60,7 +60,7 @@ class Pages_Title_Fields {
 				'type'    => 'toggle',
 				'label'   => esc_html__( 'Enable/Disable Page Title', 'dimas' ),
 				'section' => self::$section,
-				'default' => 1,
+				'default' => dimas_defaults( 'page_title_show' ),
 			),
 
 		);

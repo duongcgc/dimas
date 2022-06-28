@@ -60,7 +60,7 @@ class Post_Single_Comments_Fields {
 				'type'    => 'toggle',
 				'label'   => esc_html__( 'Enable/Disable Single Comments', 'dimas' ),
 				'section' => self::$section,
-				'default' => 1,
+				'default' => dimas_defaults( 'post_single_comments_show' ),
 			),
 
 		);

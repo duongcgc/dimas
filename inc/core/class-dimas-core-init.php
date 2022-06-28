@@ -118,6 +118,7 @@ class Core_Init {
 		// Auto Loader core.
 		require_once DIMAS_CORE_DIR . '/class-dimas-core-loader.php';
 		require_once DIMAS_CORE_DIR . '/class-dimas-cpt-abstract.php';
+		require_once DIMAS_CORE_DIR . '/customizer/class-dimas-customize-default.php';
 
 		Core_Loader::register( $this->core_classes_files );
 	}

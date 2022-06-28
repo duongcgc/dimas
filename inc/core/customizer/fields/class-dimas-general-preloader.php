@@ -58,14 +58,14 @@ class General_Preloader_Fields {
 				'type'        => 'toggle',
 				'label'       => esc_html__( 'Enable Preloader', 'dimas' ),
 				'description' => esc_html__( 'Show a waiting screen when page is loading', 'dimas' ),
-				'default'     => true,
+				'default'     => dimas_defaults( 'preloader_show' ),
 				'section'     => 'preloader',
 				'transport'   => 'postMessage',
 			),
 			'preloader_background_color' => array(
 				'type'            => 'color',
 				'label'           => esc_html__( 'Background Color', 'dimas' ),
-				'default'         => 'rgb(1, 26, 44, 1)',
+				'default'         => dimas_defaults( 'preloader_background_color' ),
 				'section'         => self::$section,
 				'choices'         => array(
 					'alpha' => true,
@@ -88,7 +88,7 @@ class General_Preloader_Fields {
 			'preloader'                  => array(
 				'type'            => 'radio',
 				'label'           => esc_html__( 'Preloader', 'dimas' ),
-				'default'         => 'default',
+				'default'         => dimas_defaults( 'preloader' ),
 				'section'         => self::$section,
 				'choices'         => array(
 					'default'  => esc_attr__( 'Default Icon', 'dimas' ),
@@ -125,11 +125,6 @@ class General_Preloader_Fields {
 			'preloader_url'              => array(
 				'type'            => 'text',
 				'description'     => esc_html__( 'Preloader URL', 'dimas' ),
-				'choices'         => array(
-					'default'  => esc_attr__( 'Default Icon', 'dimas' ),
-					'image'    => esc_attr__( 'Upload custom image', 'dimas' ),
-					'external' => esc_attr__( 'External image URL', 'dimas' ),
-				),
 				'section'         => self::$section,
 				'active_callback' => array(
 					array(

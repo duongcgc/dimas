@@ -63,7 +63,7 @@ class Colors_Main_Color_Fields {
 			),
 			'color_main_default'        => array(
 				'type'            => 'color-palette',
-				'default'         => '#ff6F61',
+				'default'         => dimas_defaults( 'color_main_default' ),
 				'choices'         => array(
 					'colors' => array(
 						'#ff6F610',
@@ -89,14 +89,14 @@ class Colors_Main_Color_Fields {
 			'color_main_custom' => array(
 				'type'    => 'checkbox',
 				'label'   => esc_html__( 'Pick my favorite color', 'dimas' ),
-				'default' => true,
+				'default' => dimas_defaults( 'color_main_custom' ),
 				'section' => self::$section,
 			),
 			'color_main'  => array(
 				'settings'        => 'color_setting_rgba_main',
 				'type'            => 'color',
 				'label'           => esc_html__( 'Custom Main Color', 'dimas' ),
-				'default'         => 'rgb(242, 25, 103, 1)',
+				'default'         => dimas_defaults( 'color_main' ),
 				'section'         => self::$section,
 				'choices'         => array( 'alpha' => true ),
 				'active_callback' => array(

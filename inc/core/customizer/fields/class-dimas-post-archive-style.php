@@ -56,15 +56,15 @@ class Post_Archive_Style_Fields {
 		$fields = array(
 
 			// Post Archive Style Chose.
-			'post_archive_style_chose'   => array(
-				'type'            => 'select',
-				'label'           => esc_html__( 'Chose Style', 'dimas' ),
-				'section'         => self::$section,
-				'default'         => 'masonry',
-				'choices'         => array(
-					'flex' => esc_html__( 'Flex', 'dimas' ),
-					'grid' => esc_html__( 'Grid', 'dimas' ),
-					'masonry'      => esc_html__( 'Masonry', 'dimas' ),
+			'post_archive_style_chose' => array(
+				'type'    => 'select',
+				'label'   => esc_html__( 'Chose Style', 'dimas' ),
+				'section' => self::$section,
+				'default' => dimas_defaults( 'post_archive_style_chose' ),
+				'choices' => array(
+					// 'flex' => esc_html__( 'Flex', 'dimas' ),
+					// 'grid' => esc_html__( 'Grid', 'dimas' ),
+					'masonry' => esc_html__( 'Masonry', 'dimas' ),
 				),
 			),
 

@@ -60,7 +60,7 @@ class Post_Single_Date_Fields {
 				'type'    => 'toggle',
 				'label'   => esc_html__( 'Enable/Disable Single Posted Date', 'dimas' ),
 				'section' => self::$section,
-				'default' => 1,
+				'default' => dimas_defaults( 'post_single_date_show' ),
 			),
 
 		);

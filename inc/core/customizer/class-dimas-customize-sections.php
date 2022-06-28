@@ -218,7 +218,7 @@ class Sections {
 			),
 
 			'socials_share'                 => array(
-				'title'    => esc_html__( 'Socials Share', 'dimas' ),
+				'title'    => esc_html__( 'Dimas Contact Info', 'dimas' ),
 				'panel'    => 'socials',
 				'priority' => 20,
 			),

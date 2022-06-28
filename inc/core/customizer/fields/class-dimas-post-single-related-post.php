@@ -60,7 +60,7 @@ class Post_Single_Related_Post_Fields {
 				'type'    => 'toggle',
 				'label'   => esc_html__( 'Enable/Disable Single Related Post', 'dimas' ),
 				'section' => self::$section,
-				'default' => 1,
+				'default' => dimas_defaults( 'post_single_related_show' ),
 			),
 
 		);

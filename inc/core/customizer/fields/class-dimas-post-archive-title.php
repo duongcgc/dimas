@@ -60,7 +60,7 @@ class Post_Archive_Title_Fields {
 				'type'    => 'toggle',
 				'label'   => esc_html__( 'Enable/Disable Archive Title', 'dimas' ),
 				'section' => self::$section,
-				'default' => 1,
+				'default' => dimas_defaults( 'post_archive_title_show' ),
 			),
 
 			// Post Archive Title Type.
@@ -68,7 +68,7 @@ class Post_Archive_Title_Fields {
 				'type'            => 'select',
 				'label'           => esc_html__( 'Chose Type Of Archive Name', 'dimas' ),
 				'section'         => self::$section,
-				'default'         => 'enter_input',
+				'default'         => dimas_defaults( 'post_archive_title_type' ),
 				'choices'         => array(
 					'custom'      => esc_html__( 'Name Of Archive', 'dimas' ),
 					'enter_input' => esc_html__( 'Name Form Input Fields', 'dimas' ),
@@ -88,7 +88,7 @@ class Post_Archive_Title_Fields {
 				'settings' => 'post_archive_title_input',
 				'label'    => esc_html__( 'Enter Archive Title Show', 'dimas' ),
 				'section'         => self::$section,
-				'default'  => esc_html__( 'Latest Posts', 'dimas' ),
+				'default'  => dimas_defaults( 'post_archive_title_input' ),
 				'active_callback' => array(
 					array(
 						'setting'  => 'post_archive_title_type',

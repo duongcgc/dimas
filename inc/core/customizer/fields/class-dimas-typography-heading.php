@@ -79,15 +79,7 @@ class Typography_Heading_Fields {
 						),
 					),
 				),
-				'default'     => array(
-					'font-family'    => 'Heist',
-					'variant'        => 'regular',
-					'font-size'      => '5rem',
-					'line-height'    => '1.25',
-					'color'          => '#fff',
-					'text-transform' => 'none',
-					'subsets'        => array( 'latin-ext' ),
-				),
+				'default'     => dimas_defaults( 'typo_h1' ),
 				'transport'   => 'postMessage',
 				'js_vars'     => array(
 					array(
@@ -120,15 +112,7 @@ class Typography_Heading_Fields {
 						),
 					),
 				),
-				'default'     => array(
-					'font-family'    => 'Heist',
-					'variant'        => 'regular',
-					'font-size'      => '3.5rem',
-					'line-height'    => '1.25',
-					'color'          => '#fff',
-					'text-transform' => 'none',
-					'subsets'        => array( 'latin-ext' ),
-				),
+				'default'     => dimas_defaults( 'typo_h2' ),
 				'transport'   => 'postMessage',
 				'js_vars'     => array(
 					array(
@@ -161,15 +145,7 @@ class Typography_Heading_Fields {
 						),
 					),
 				),
-				'default'     => array(
-					'font-family'    => 'Heist',
-					'variant'        => 'regular',
-					'font-size'      => '1.25rem',
-					'line-height'    => '1.3',
-					'color'          => '#fff',
-					'text-transform' => 'none',
-					'subsets'        => array( 'latin-ext' ),
-				),
+				'default'     => dimas_defaults( 'typo_h3' ),
 				'transport'   => 'postMessage',
 				'js_vars'     => array(
 					array(
@@ -202,15 +178,7 @@ class Typography_Heading_Fields {
 						),
 					),
 				),
-				'default'     => array(
-					'font-family'    => 'Outfit',
-					'variant'        => '700',
-					'font-size'      => '1.25rem',
-					'line-height'    => '1.1875',
-					'color'          => '#fff',
-					'text-transform' => 'none',
-					'subsets'        => array( 'latin-ext' ),
-				),
+				'default'     => dimas_defaults( 'typo_h4' ),
 				'transport'   => 'postMessage',
 				'js_vars'     => array(
 					array(
@@ -243,15 +211,7 @@ class Typography_Heading_Fields {
 						),
 					),
 				),
-				'default'     => array(
-					'font-family'    => 'Poppins',
-					'variant'        => 'regular',
-					'font-size'      => '1rem',
-					'line-height'    => '1.25',
-					'color'          => '#F21967',
-					'text-transform' => 'none',
-					'subsets'        => array( 'latin-ext' ),
-				),
+				'default'     => dimas_defaults( 'typo_h5' ),
 				'transport'   => 'postMessage',
 				'js_vars'     => array(
 					array(
@@ -284,15 +244,7 @@ class Typography_Heading_Fields {
 						),
 					),
 				),
-				'default'     => array(
-					'font-family'    => 'Poppins',
-					'variant'        => 'regular',
-					'font-size'      => '0.875rem',
-					'line-height'    => '1.8571428571',
-					'color'          => '#B3BBC0',
-					'text-transform' => 'none',
-					'subsets'        => array( 'latin-ext' ),
-				),
+				'default'     => dimas_defaults( 'typo_h6' ),
 				'transport'   => 'postMessage',
 				'js_vars'     => array(
 					array(

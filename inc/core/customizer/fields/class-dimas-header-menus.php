@@ -60,7 +60,7 @@ class Header_Menus_Fields {
 				'type'    => 'select',
 				'label'   => esc_html__( 'Chose Menu', 'dimas' ),
 				'section' => self::$section,
-				'default' => '',
+				'default' => dimas_defaults( 'header_menus_item' ),
 				'choices' => self::get_navigation_bar_get_menus(),
 			),
 		);
@@ -75,7 +75,7 @@ class Header_Menus_Fields {
 	 *
 	 * @return array
 	 */
-	public function get_navigation_bar_get_menus() {
+	public static function get_navigation_bar_get_menus() {
 		if ( ! is_admin() ) {
 			return array();
 		}

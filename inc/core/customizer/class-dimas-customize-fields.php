@@ -102,7 +102,7 @@ class Fields {
 		'\Dimas\Core\Customizer\Footer_Item_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-footer-item.php',
 
 		'\Dimas\Core\Customizer\Social_Link_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-socials-link.php',
-		'\Dimas\Core\Customizer\Social_Share_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-socials-share.php',
+		'\Dimas\Core\Customizer\Info_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-info.php',
 	);
 
 	/**

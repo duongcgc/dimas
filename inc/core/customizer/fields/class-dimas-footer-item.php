@@ -60,7 +60,7 @@ class Footer_Item_Fields {
 				'type'    => 'toggle',
 				'label'   => esc_html__( 'Enable/Disable Footer Item Left', 'dimas' ),
 				'section' => self::$section,
-				'default' => 1,
+				'default' => dimas_defaults( 'footer_item_left_show' ),
 			),
 			// Footer Item Left Input Text.
 			'footer_item_left_text'  => array(
@@ -68,7 +68,7 @@ class Footer_Item_Fields {
 				'settings' => 'footer_item_left_text',
 				'label'    => esc_html__( 'Enter Footer Left Item Text', 'dimas' ),
 				'section'         => self::$section,
-				'default'  => esc_html__( 'DIMAS@DOMAIN.COM', 'dimas' ),
+				'default'  => dimas_defaults( 'footer_item_left_text' ),
 				'active_callback' => array(
 					array(
 						'setting'  => 'footer_item_left_show',
@@ -83,7 +83,7 @@ class Footer_Item_Fields {
 				'settings' => 'footer_item_left_link',
 				'label'    => esc_html__( 'Enter Footer Left Item Link', 'dimas' ),
 				'section'         => self::$section,
-				'default'  => esc_html__( 'mailto:dimas@domain.com', 'dimas' ),
+				'default'  => dimas_defaults( 'footer_item_left_link' ),
 				'active_callback' => array(
 					array(
 						'setting'  => 'footer_item_left_show',
@@ -98,7 +98,7 @@ class Footer_Item_Fields {
 				'type'    => 'toggle',
 				'label'   => esc_html__( 'Enable/Disable Footer Item Right', 'dimas' ),
 				'section' => self::$section,
-				'default' => 1,
+				'default' => dimas_defaults( 'footer_item_right_show' ),
 			),
 			// Footer Item Right Input Text.
 			'footer_item_right_text'  => array(
@@ -106,7 +106,7 @@ class Footer_Item_Fields {
 				'settings' => 'footer_item_right_text',
 				'label'    => esc_html__( 'Enter Footer Right Item Text', 'dimas' ),
 				'section'         => self::$section,
-				'default'  => esc_html__( 'TELL: (+34) 765 87 34 54', 'dimas' ),
+				'default'  => dimas_defaults( 'footer_item_right_text' ),
 				'active_callback' => array(
 					array(
 						'setting'  => 'footer_item_right_show',
@@ -121,7 +121,7 @@ class Footer_Item_Fields {
 				'settings' => 'footer_item_right_link',
 				'label'    => esc_html__( 'Enter Footer Right Item Link', 'dimas' ),
 				'section'         => self::$section,
-				'default'  => esc_html__( 'tel:(+34)765873454', 'dimas' ),
+				'default'  => dimas_defaults( 'footer_item_right_link' ),
 				'active_callback' => array(
 					array(
 						'setting'  => 'footer_item_right_show',

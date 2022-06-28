@@ -60,7 +60,7 @@ class Post_Single_Title_Fields {
 				'type'    => 'toggle',
 				'label'   => esc_html__( 'Enable/Disable Single Title', 'dimas' ),
 				'section' => self::$section,
-				'default' => 1,
+				'default' => dimas_defaults( 'post_single_title_show' ),
 			),
 
 		);

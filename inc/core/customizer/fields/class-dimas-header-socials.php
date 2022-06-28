@@ -60,7 +60,7 @@ class Header_Socials_Fields {
 				'type'    => 'toggle',
 				'label'   => esc_html__( 'Enable/Disable Social', 'dimas' ),
 				'section' => self::$section,
-				'default' => 1,
+				'default' => dimas_defaults( 'header_social_show' ),
 			),
 		);
 

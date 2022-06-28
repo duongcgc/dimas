@@ -61,15 +61,7 @@ class Typography_Body_Fields {
 				'label'       => esc_html__( 'Typography Body', 'dimas' ),
 				'description' => esc_html__( 'Customize the main font', 'dimas' ),
 				'section'     => self::$section,
-				'default'     => array(
-					'font-family'    => 'Poppins',
-					'variant'        => 'regular',
-					'font-size'      => '0.875rem',
-					'line-height'    => '1.8571428571',
-					'color'          => '#B3BBC0',
-					'text-transform' => 'none',
-					'subsets'        => array( 'latin-ext' ),
-				),
+				'default'     => dimas_defaults( 'typo_main' ),
 				'transport'   => 'postMessage',
 				'js_vars'     => array(
 					array(

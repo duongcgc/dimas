@@ -60,7 +60,7 @@ class Post_Single_Fetured_Img_Fields {
 				'type'    => 'toggle',
 				'label'   => esc_html__( 'Enable/Disable Single Featured Images', 'dimas' ),
 				'section' => self::$section,
-				'default' => 1,
+				'default' => dimas_defaults( 'post_single_fetured_img_show' ),
 			),
 
 		);
