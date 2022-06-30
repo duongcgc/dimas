@@ -63,7 +63,27 @@ class Header_Logo_Fields {
 				'section' => self::$section,
 				'choices' => array(
 					'image' => esc_html__( 'Image', 'dimas' ),
+					'svg'  => esc_html__( 'Svg', 'dimas' ),
 					'text'  => esc_html__( 'Text', 'dimas' ),
+				),
+			),
+			'logo_svg'       => array(
+				'type'              => 'textarea',
+				'label'             => esc_html__( 'Logo SVG', 'dimas' ),
+				'section'           => 'header_logo',
+				'description'       => esc_html__( 'Paste SVG code of your logo here', 'dimas' ),
+				'sanitize_callback' => '\Dimas\SVG_Icons::get_sanitize_svg',
+				'output'            => array(
+					array(
+						'element' => 'a.dimas-navbar-logo',
+					),
+				),
+				'active_callback'   => array(
+					array(
+						'setting'  => 'logo_type',
+						'operator' => '==',
+						'value'    => 'svg',
+					),
 				),
 			),
 			'logo'           => array(
@@ -76,6 +96,20 @@ class Header_Logo_Fields {
 						'setting'  => 'logo_type',
 						'operator' => '==',
 						'value'    => 'image',
+					),
+				),
+			),
+			'logo_svg_light' => array(
+				'type'              => 'textarea',
+				'label'             => esc_html__( 'Logo Light SVG', 'dimas' ),
+				'section'           => 'header_logo',
+				'description'       => esc_html__( 'Paste SVG code of your logo here', 'dimas' ),
+				'sanitize_callback' => '\Dimas\SVG_Icons::get_sanitize_svg',
+				'active_callback'   => array(
+					array(
+						'setting'  => 'logo_type',
+						'operator' => '==',
+						'value'    => 'svg',
 					),
 				),
 			),
@@ -97,11 +131,6 @@ class Header_Logo_Fields {
 				'label'           => esc_html__( 'Logo Text', 'dimas' ),
 				'default'         => dimas_defaults( 'logo_text' ),
 				'section'         => self::$section,
-				'output'          => array(
-					array(
-						'element' => '.dimas-navbar-logo img',
-					),
-				),
 				'active_callback' => array(
 					array(
 						'setting'  => 'logo_type',

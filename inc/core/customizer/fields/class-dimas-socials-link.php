@@ -149,7 +149,7 @@ class Social_Link_Fields {
 				),
 			);
 			$fields[ 'social_link_item_' . $i . '_link' ]        = array(
-				'type'            => 'text',
+				'type'            => 'link',
 				'settings'        => 'social_link_item_' . $i . '_link',
 				/* translators: %s: the number of items*/
 				'label'           => esc_html( sprintf( __( 'Enter Link Of Social Link Item %d' ), $i ) ),

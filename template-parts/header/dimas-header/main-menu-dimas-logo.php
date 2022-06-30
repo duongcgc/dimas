@@ -12,6 +12,7 @@
 
 use \Dimas\HTML;
 use \Dimas\Framework\Template_Tag;
+use \Dimas\SVG_Icons;
 
 HTML::instance()->open(
 	'dimas_navbar_inner_left',
@@ -22,6 +23,13 @@ HTML::instance()->open(
 	)
 );
 
-Template_Tag::dimas_logo( array( 'class' => 'dimas-navbar-logo' ), 'full' );
+if ( 'text' == get_theme_mod( 'logo_type' ) ) {
+	echo esc_html( get_theme_mod( 'logo_text' ) );
+}
+if ( 'svg' == get_theme_mod( 'logo_type' ) ) {
+	SVG_Icons::sanitize_svg( get_theme_mod( 'logo_svg' ) );
+} else {
+	Template_Tag::dimas_logo( array( 'class' => 'dimas-navbar-logo' ), 'full' );
+}
 
 HTML::instance()->close( 'dimas_navbar_inner_left' );

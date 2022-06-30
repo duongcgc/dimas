@@ -98,7 +98,6 @@ class Header_Background_Color_Fields {
 				'label'           => esc_html__( 'Color Background Header', 'dimas' ),
 				'default'         => dimas_defaults( 'header_bg_color' ),
 				'section'         => self::$section,
-				'choices'         => array( 'alpha' => true ),
 				'active_callback' => array(
 					array(
 						'setting'  => 'header_bg_custom',

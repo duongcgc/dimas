@@ -148,8 +148,8 @@ class Info_Fields {
 					),
 				),
 			);
-			$fields[ 'info_item_' . $i . '_link' ]       = array(
-				'type'            => 'text',
+			$fields[ 'info_item_' . $i . '_link' ]        = array(
+				'type'            => 'link',
 				'settings'        => 'info_item_' . $i . '_link',
 				/* translators: %s: the number of items*/
 				'label'           => esc_html( sprintf( __( 'Enter Link Of Info Item %d' ), $i ) ),

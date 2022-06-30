@@ -80,12 +80,6 @@ class Typography_Heading_Fields {
 					),
 				),
 				'default'     => dimas_defaults( 'typo_h1' ),
-				'transport'   => 'postMessage',
-				'js_vars'     => array(
-					array(
-						'element' => 'h1, .h1',
-					),
-				),
 			),
 
 			// Typography H2.
@@ -113,12 +107,6 @@ class Typography_Heading_Fields {
 					),
 				),
 				'default'     => dimas_defaults( 'typo_h2' ),
-				'transport'   => 'postMessage',
-				'js_vars'     => array(
-					array(
-						'element' => 'h2, .h2',
-					),
-				),
 			),
 
 			// Typography H3.
@@ -146,12 +134,6 @@ class Typography_Heading_Fields {
 					),
 				),
 				'default'     => dimas_defaults( 'typo_h3' ),
-				'transport'   => 'postMessage',
-				'js_vars'     => array(
-					array(
-						'element' => 'h3, .h3',
-					),
-				),
 			),
 
 			// Typography H4.
@@ -179,12 +161,6 @@ class Typography_Heading_Fields {
 					),
 				),
 				'default'     => dimas_defaults( 'typo_h4' ),
-				'transport'   => 'postMessage',
-				'js_vars'     => array(
-					array(
-						'element' => 'h4, .h4',
-					),
-				),
 			),
 
 			// Typography H5.
@@ -212,12 +188,6 @@ class Typography_Heading_Fields {
 					),
 				),
 				'default'     => dimas_defaults( 'typo_h5' ),
-				'transport'   => 'postMessage',
-				'js_vars'     => array(
-					array(
-						'element' => 'h5, .h5',
-					),
-				),
 			),
 
 			// Typography H6.
@@ -245,12 +215,6 @@ class Typography_Heading_Fields {
 					),
 				),
 				'default'     => dimas_defaults( 'typo_h6' ),
-				'transport'   => 'postMessage',
-				'js_vars'     => array(
-					array(
-						'element' => 'h6, .h6',
-					),
-				),
 			),
 		);
 

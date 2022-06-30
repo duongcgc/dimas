@@ -12,20 +12,17 @@
 
 use \Dimas\HTML;
 
-$footer_array = array(
-	'coppyright' =>
-	array(
-		'class' => 'coppyright',
-		'href'  => 'mailto:dimas@domain.com',
-		'text'  => 'dimas@domain.com',
-	),
-	'hotline'    =>
-	array(
-		'class' => 'hotline',
-		'href'  => 'tel:(+34)765873454',
-		'text'  => 'Tell: (+34) 765 87 34 54',
-	),
-);
+$footer_item = array( 'left', 'right' );
+
+foreach ( $footer_item as $key => $value ) {
+	if ( get_theme_mod( 'footer_item_' . $value . '_show' ) ) {
+		$footer_array[ $value ] = array(
+			'class' => esc_html( $value ),
+			'href'  => get_theme_mod( 'footer_item_' . $value . '_link' ),
+			'text'  => get_theme_mod( 'footer_item_' . $value . '_text' ),
+		);
+	}
+}
 
 foreach ( $footer_array as $key => $value ) {
 
@@ -33,7 +30,7 @@ foreach ( $footer_array as $key => $value ) {
 		'dimas_footer',
 		array(
 			'attr' => array(
-				'class' => 'dimas-footer' . $value['class'],
+				'class' => 'dimas-footer-' . $value['class'],
 			),
 		)
 	);

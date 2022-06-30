@@ -40,7 +40,6 @@ if ( ! function_exists( 'theme_mod_defaults_args' ) ) {
 						'line-height'    => '1.8571428571',
 						'color'          => '#B3BBC0',
 						'text-transform' => 'none',
-						'subsets'        => array( 'latin-ext' ),
 					),
 					'typo_h1'                        => array(
 						'font-family'    => 'Heist',
@@ -49,7 +48,6 @@ if ( ! function_exists( 'theme_mod_defaults_args' ) ) {
 						'line-height'    => '1.25',
 						'color'          => '#fff',
 						'text-transform' => 'none',
-						'subsets'        => array( 'latin-ext' ),
 					),
 					'typo_h2'                        => array(
 						'font-family'    => 'Heist',
@@ -58,16 +56,14 @@ if ( ! function_exists( 'theme_mod_defaults_args' ) ) {
 						'line-height'    => '1.25',
 						'color'          => '#fff',
 						'text-transform' => 'none',
-						'subsets'        => array( 'latin-ext' ),
 					),
 					'typo_h3'                        => array(
-						'font-family'    => 'Heist',
+						'font-family'    => 'Outfit',
 						'variant'        => 'regular',
-						'font-size'      => '1.25rem',
-						'line-height'    => '1.3',
+						'font-size'      => '1.5rem',
+						'line-height'    => '1.3333',
 						'color'          => '#fff',
 						'text-transform' => 'none',
-						'subsets'        => array( 'latin-ext' ),
 					),
 					'typo_h4'                        => array(
 						'font-family'    => 'Outfit',
@@ -76,7 +72,6 @@ if ( ! function_exists( 'theme_mod_defaults_args' ) ) {
 						'line-height'    => '1.1875',
 						'color'          => '#fff',
 						'text-transform' => 'none',
-						'subsets'        => array( 'latin-ext' ),
 					),
 					'typo_h5'                        => array(
 						'font-family'    => 'Poppins',
@@ -85,7 +80,6 @@ if ( ! function_exists( 'theme_mod_defaults_args' ) ) {
 						'line-height'    => '1.25',
 						'color'          => '#F21967',
 						'text-transform' => 'none',
-						'subsets'        => array( 'latin-ext' ),
 					),
 					'typo_h6'                        => array(
 						'font-family'    => 'Poppins',
@@ -94,20 +88,19 @@ if ( ! function_exists( 'theme_mod_defaults_args' ) ) {
 						'line-height'    => '1.8571428571',
 						'color'          => '#B3BBC0',
 						'text-transform' => 'none',
-						'subsets'        => array( 'latin-ext' ),
 					),
 
 					// Header.
 					'header_bg_color_default'        => '#ff6F61',
 					'header_bg_custom'               => true,
-					'header_bg_color'                => '#011A2C66',
+					'header_bg_color'                => '#011A2C',
 					'logo_type'                      => 'image',
 					'logo'                           => '',
 					'logo_light'                     => '',
 					'logo_text'                      => 'Dimas.',
 					'logo_dimension'                 => array(
-						'width'  => '',
-						'height' => '',
+						'max-width'  => '',
+						'max-height' => '',
 					),
 					'header_menus_item'              => '',
 					'header_social_show'             => true,
@@ -118,10 +111,10 @@ if ( ! function_exists( 'theme_mod_defaults_args' ) ) {
 					'footer_bg_color'                => '#011A2C66',
 					'footer_item_left_show'          => 1,
 					'footer_item_left_text'          => esc_html__( 'DIMAS@DOMAIN.COM', 'dimas' ),
-					'footer_item_left_link '         => esc_html__( 'mailto:dimas@domain.com', 'dimas' ),
+					'footer_item_left_link'          => esc_html__( 'mailto:dimas@domain.com', 'dimas' ),
 					'footer_item_right_show'         => 1,
 					'footer_item_right_text'         => esc_html__( 'TELL: (+34) 765 87 34 54', 'dimas' ),
-					'footer_item_right_link '        => esc_html__( 'tel:(+34)765873454', 'dimas' ),
+					'footer_item_right_link'         => esc_html__( 'tel:(+34)765873454', 'dimas' ),
 
 					// pages.
 					'page_title_show'                => true,
@@ -233,7 +226,9 @@ if ( ! function_exists( 'set_theme_mod_defaults' ) ) {
 		$defaults = theme_mod_defaults_args();
 
 		foreach ( $defaults as $key => $val ) {
-			set_theme_mod( $key, $val );
+			if ( null == ( get_theme_mod( $key ) ) ) {
+				set_theme_mod( $key, $val );
+			}
 		}
 
 	}

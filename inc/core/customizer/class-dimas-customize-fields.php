@@ -72,8 +72,6 @@ class Fields {
 		'\Dimas\Core\Customizer\General_Preloader_Fields'  => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-general-preloader.php',
 
 		'\Dimas\Core\Customizer\Colors_Main_Color_Fields'  => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-colors-main-color.php',
-		// '\Dimas\Core\Customizer\Colors_Heading_Color_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-colors-heading-color.php',
-		// '\Dimas\Core\Customizer\Colors_Body_Color_Fields'  => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-colors-body-color.php',
 
 		'\Dimas\Core\Customizer\Typography_Heading_Fields' => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-typography-heading.php',
 		'\Dimas\Core\Customizer\Typography_Body_Fields'    => DIMAS_CORE_DIR . '/customizer/fields/class-dimas-typography-body.php',

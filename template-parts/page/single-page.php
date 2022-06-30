@@ -30,7 +30,10 @@ while ( have_posts() ) :
 
 	get_template_part( 'template-parts/content/content', 'page' );
 
-	comments_template();
+	if ( get_theme_mod( 'page_comments_show' ) ) {
+
+		comments_template();
+	}
 
 	HTML::instance()->close( 'content_main' );
 

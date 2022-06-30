@@ -56,7 +56,7 @@ class Footer_Item_Fields {
 		$fields = array(
 
 			// Footer Item Left Enable/Disable.
-			'footer_item_left_show' => array(
+			'footer_item_left_show'  => array(
 				'type'    => 'toggle',
 				'label'   => esc_html__( 'Enable/Disable Footer Item Left', 'dimas' ),
 				'section' => self::$section,
@@ -64,11 +64,11 @@ class Footer_Item_Fields {
 			),
 			// Footer Item Left Input Text.
 			'footer_item_left_text'  => array(
-				'type' => 'text',
-				'settings' => 'footer_item_left_text',
-				'label'    => esc_html__( 'Enter Footer Left Item Text', 'dimas' ),
+				'type'            => 'text',
+				'settings'        => 'footer_item_left_text',
+				'label'           => esc_html__( 'Enter Footer Left Item Text', 'dimas' ),
 				'section'         => self::$section,
-				'default'  => dimas_defaults( 'footer_item_left_text' ),
+				'default'         => dimas_defaults( 'footer_item_left_text' ),
 				'active_callback' => array(
 					array(
 						'setting'  => 'footer_item_left_show',
@@ -79,11 +79,11 @@ class Footer_Item_Fields {
 			),
 			// Footer Item Left Input Link.
 			'footer_item_left_link'  => array(
-				'type' => 'text',
-				'settings' => 'footer_item_left_link',
-				'label'    => esc_html__( 'Enter Footer Left Item Link', 'dimas' ),
+				'type'            => 'link',
+				'settings'        => 'footer_item_left_link',
+				'label'           => esc_html__( 'Enter Footer Left Item Link', 'dimas' ),
 				'section'         => self::$section,
-				'default'  => dimas_defaults( 'footer_item_left_link' ),
+				'default'         => dimas_defaults( 'footer_item_left_link' ),
 				'active_callback' => array(
 					array(
 						'setting'  => 'footer_item_left_show',
@@ -101,12 +101,12 @@ class Footer_Item_Fields {
 				'default' => dimas_defaults( 'footer_item_right_show' ),
 			),
 			// Footer Item Right Input Text.
-			'footer_item_right_text'  => array(
-				'type' => 'text',
-				'settings' => 'footer_item_right_text',
-				'label'    => esc_html__( 'Enter Footer Right Item Text', 'dimas' ),
+			'footer_item_right_text' => array(
+				'type'            => 'text',
+				'settings'        => 'footer_item_right_text',
+				'label'           => esc_html__( 'Enter Footer Right Item Text', 'dimas' ),
 				'section'         => self::$section,
-				'default'  => dimas_defaults( 'footer_item_right_text' ),
+				'default'         => dimas_defaults( 'footer_item_right_text' ),
 				'active_callback' => array(
 					array(
 						'setting'  => 'footer_item_right_show',
@@ -116,12 +116,12 @@ class Footer_Item_Fields {
 				),
 			),
 			// Footer Item Right Input Link.
-			'footer_item_right_link'  => array(
-				'type' => 'text',
-				'settings' => 'footer_item_right_link',
-				'label'    => esc_html__( 'Enter Footer Right Item Link', 'dimas' ),
+			'footer_item_right_link' => array(
+				'type'            => 'link',
+				'settings'        => 'footer_item_right_link',
+				'label'           => esc_html__( 'Enter Footer Right Item Link', 'dimas' ),
 				'section'         => self::$section,
-				'default'  => dimas_defaults( 'footer_item_right_link' ),
+				'default'         => dimas_defaults( 'footer_item_right_link' ),
 				'active_callback' => array(
 					array(
 						'setting'  => 'footer_item_right_show',

@@ -62,12 +62,6 @@ class Typography_Body_Fields {
 				'description' => esc_html__( 'Customize the main font', 'dimas' ),
 				'section'     => self::$section,
 				'default'     => dimas_defaults( 'typo_main' ),
-				'transport'   => 'postMessage',
-				'js_vars'     => array(
-					array(
-						'element' => 'p, body',
-					),
-				),
 			),
 		);
 

@@ -21,6 +21,8 @@ HTML::instance()->open(
 	)
 );
 
-get_template_part( 'template-parts/social/social', 'link' );
+if ( true == get_theme_mod( 'header_social_show' ) ) {
+	get_template_part( 'template-parts/social/social', 'link' );
+}
 
 HTML::instance()->close( 'dimas_offcanvas_menu__footer' );

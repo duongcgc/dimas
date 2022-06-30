@@ -135,6 +135,8 @@ class Styles {
 			}
 		}
 
+		do_action( 'dimas_after_enqueue_style' );
+
 	}
 
 }

@@ -86,7 +86,7 @@ class Core_Init {
 		// 'Dimas\Core\Customizer\Register_Controls' => DIMAS_CORE_DIR . '/customizer/register-controls.php',
 		'Dimas\Core\Customizer'                   => DIMAS_CORE_DIR . '/class-dimas-customizer.php',
 		// 'Dimas\Core\Metaboxes_Register'  => DIMAS_CORE_DIR . '/class-dimas-metaboxes.php',.
-		// 'Dimas\Core\Options'             => DIMAS_CORE_DIR . '/class-dimas-options.php',.
+		'Dimas\Core\Customizer\Dynamic_CSS'             => DIMAS_CORE_DIR . '/customizer/class-dimas-dynamic-css.php',
 	);
 
 	/**
@@ -104,7 +104,7 @@ class Core_Init {
 		// 'customizer/register-controls' => 'Dimas\Core\Customizer\Register_Controls',
 		'customizer'                   => 'Dimas\Core\Customizer',
 		// 'metaboxes'           => 'Dimas\Core\Metaboxes_Register',.
-		// 'options'             => 'Dimas\Core\Options',.
+		'customizer/dynamic-css'             => 'Dimas\Core\Customizer\Dynamic_CSS',
 	);
 
 	/**
@@ -148,8 +148,8 @@ class Core_Init {
 		// // Metabos.
 		// $this->get( 'metaboxes' );.
 
-		// // Options.
-		// $this->get( 'options-default' );.
+		// Dinamic CSS.
+		$this->get( 'customizer/dynamic-css' );
 
 		add_action( 'after_setup_theme', array( $this, 'core_init' ), 20 );
 

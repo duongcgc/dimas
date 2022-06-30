@@ -29,7 +29,11 @@ $array_wrapper_tag = array(
 
 Template_Tag::dimas_html_loop_open( $array_wrapper_tag );
 
-get_template_part( 'template-parts/social/social', 'share' );
+if ( get_theme_mod( 'post_single_social_share_show' ) ) {
+
+	get_template_part( 'template-parts/social/social', 'share' );
+
+}
 
 HTML::instance()->open(
 	'dimas_post_info',
@@ -40,9 +44,17 @@ HTML::instance()->open(
 	)
 );
 
-Template_Tag::dimas_posted_on();
+if ( get_theme_mod( 'post_single_date_show' ) ) {
 
-get_template_part( 'template-parts/title' );
+	Template_Tag::dimas_posted_on();
+
+}
+
+if ( get_theme_mod( 'post_single_title_show' ) ) {
+
+	get_template_part( 'template-parts/title' );
+
+}
 
 HTML::instance()->close( 'dimas_post_info' );
 

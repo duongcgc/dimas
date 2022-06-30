@@ -405,7 +405,8 @@ class Template_Function {
 	 */
 	public static function dimas_menu_args( $args ) {
 		$defaults_args = array(
-			'theme_location'  => 'primary-menu',
+			'menu' => '',
+			'theme_location'  => '',
 			'menu_class'      => 'dimas-menu',
 			'container'       => 'nav',
 			'fallback_cb'     => false,

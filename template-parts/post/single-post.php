@@ -43,19 +43,31 @@ while ( have_posts() ) :
 
 	Template_Tag::dimas_html_loop_open( $array_wrapper_tag );
 
-	the_post_thumbnail(
-		'full',
-		array(
-			'class' => 'dimas-post__thumbnail',
-			'attr'  => 'Post thumbnail',
-		)
-	);
+	if ( get_theme_mod( 'post_single_fetured_img_show' ) ) {
+
+		the_post_thumbnail(
+			'full',
+			array(
+				'class' => 'dimas-post__thumbnail',
+				'attr'  => 'Post thumbnail',
+			)
+		);
+
+	}
 
 	get_template_part( 'template-parts/content/content', 'single-post' );
 
-	get_template_part( 'template-parts/content/content', 'related-post' );
+	if ( get_theme_mod( 'post_single_related_show' ) ) {
 
-	comments_template();
+		get_template_part( 'template-parts/content/content', 'related-post' );
+
+	}
+
+	if ( get_theme_mod( 'post_single_comments_show' ) ) {
+
+		comments_template();
+
+	}
 
 	Template_Tag::dimas_html_loop_close( $array_wrapper_tag );
 

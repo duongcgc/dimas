@@ -12,9 +12,12 @@
 
 use \Dimas\Framework\Template_Tag;
 
-$args_nav_offcanvas_menu = array(
-	'theme_location'  => 'primary-menu',
-	'container_class' => 'dimas-offcanvas-menu__navigation',
-);
+$show_menu = get_theme_mod( 'header_menus_item' );
+if ( '0' != $show_menu ) {
+	$args_nav_offcanvas_menu = array(
+		'menu'            => $show_menu,
+		'container_class' => 'dimas-offcanvas-menu__navigation',
+	);
 
-Template_Tag::instance()->dimas_menu( $args_nav_offcanvas_menu );
+	Template_Tag::instance()->dimas_menu( $args_nav_offcanvas_menu );
+}

@@ -13,10 +13,13 @@
 use \Dimas\HTML;
 use \Dimas\Framework\Template_Tag;
 
-$args_nav_menu = array(
-	'theme_location'  => 'primary-menu',
-	'container_class' => 'dimas-default-menu__navigation',
-);
+$show_menu = get_theme_mod( 'header_menus_item' );
+if ( '0' != $show_menu ) {
+	$args_nav_menu = array(
+		'menu'            => $show_menu,
+		'container_class' => 'dimas-default-menu__navigation',
+	);
+}
 
 Template_Tag::dimas_bootstrap_container_open();
 
@@ -29,7 +32,11 @@ HTML::instance()->open(
 	)
 );
 
-Template_Tag::instance()->dimas_menu( $args_nav_menu );
+if ( '0' != $show_menu ) {
+
+	Template_Tag::dimas_menu( $args_nav_menu );
+
+}
 
 HTML::instance()->close( 'dimas_navbar_inner_center' );
 
