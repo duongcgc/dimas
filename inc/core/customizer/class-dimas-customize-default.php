@@ -232,10 +232,12 @@ if ( ! function_exists( 'set_theme_mod_defaults' ) ) {
 
 		$defaults = theme_mod_defaults_args();
 
-		set_theme_mod( 'info_item_2_text', 'abc' );
+		foreach ( $defaults as $key => $val ) {
+			set_theme_mod( $key, $val );
+		}
 
 	}
-	add_action( 'after_setup_theme', 'set_theme_mod_defaults' );
+	add_action( 'admin_head', 'set_theme_mod_defaults' );
 }
 
 if ( ! function_exists( 'dimas_defaults' ) ) {
