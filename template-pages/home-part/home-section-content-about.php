@@ -11,6 +11,12 @@
 ?>
 <?php
 
-get_template_part( 'template-pages/home-part/columns-about/content-about', 'col-left' );
+if ( isset( $args ) ) {
+	$data = $args;
+} else {
+	$data = null;
+}
 
-get_template_part( 'template-pages/home-part/columns-about/content-about', 'col-right' );
+get_template_part( 'template-pages/home-part/columns-about/content-about', 'col-left', $data );
+
+get_template_part( 'template-pages/home-part/columns-about/content-about', 'col-right', $data );

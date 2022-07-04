@@ -235,13 +235,6 @@ class Customizer {
 		$wp_customize->remove_section( 'background_image' );
 		$wp_customize->remove_section( 'colors' );
 
-		// add_action(
-		// 	'kirki_control_types',
-		// 	function( $controls ) {
-		// 		$controls['notice'] = new Register_Controls();
-		// 		return $controls;
-		// 	}
-		// );
 	}
 
 }

@@ -20,6 +20,7 @@ if ( ! isset( $args ) ) {
 	$data_anchor    = $args['data_anchor'];
 	$url_background = $args['url_background'];
 	$section_name   = $args['section_name'];
+	$data           = $args['data'];
 }
 
 $array_wrapper_tag = array(
@@ -60,7 +61,7 @@ HTML::instance()->open(
 
 Template_Tag::dimas_html_loop_open( $array_wrapper_tag );
 
-get_template_part( 'template-pages/home-part/home-section', 'content-' . $section_name );
+get_template_part( 'template-pages/home-part/home-section', 'content-' . $section_name, $data );
 
 Template_Tag::dimas_html_loop_close( $array_wrapper_tag );
 

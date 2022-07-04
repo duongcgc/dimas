@@ -29,7 +29,6 @@ HTML::instance()->self_close_tag(
 		false,
 		array(
 			'class' => 'dimas-services-img',
-			'alt'   => 'Services image',
 		)
 	),
 );

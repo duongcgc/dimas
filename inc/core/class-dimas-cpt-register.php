@@ -48,6 +48,9 @@ class CPT_Register {
 		require_once DIMAS_CORE_DIR . '/cpt/class-dimas-header.php';
 		require_once DIMAS_CORE_DIR . '/cpt/class-dimas-footer.php';
 		require_once DIMAS_CORE_DIR . '/cpt/class-dimas-project.php';
+		require_once DIMAS_CORE_DIR . '/cpt/class-dimas-skill.php';
+		require_once DIMAS_CORE_DIR . '/cpt/class-dimas-service.php';
+		require_once DIMAS_CORE_DIR . '/cpt/class-dimas-testimonial.php';
 
 	}
 

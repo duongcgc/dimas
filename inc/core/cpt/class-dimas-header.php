@@ -6,7 +6,9 @@
  * @version 1.0.0
  */
 
-namespace Dimas\CPT;
+namespace Dimas\Core\CPT;
+
+use Dimas\Core\CPT_Abstract;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -15,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Header
  */
-class Header extends \Dimas\Core\CPT_Abstract {
+class Header extends CPT_Abstract {
 
 	/**
 	 * Instance
@@ -85,4 +87,4 @@ class Header extends \Dimas\Core\CPT_Abstract {
 
 }
 
-\Dimas\CPT\Header::instance();
+\Dimas\Core\CPT\Header::instance();

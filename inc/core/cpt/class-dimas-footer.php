@@ -6,9 +6,9 @@
  * @version 1.0.0
  */
 
-namespace Dimas\CPT;
+namespace Dimas\Core\CPT;
 
-use Dimas\CPT_Abstract;
+use Dimas\Core\CPT_Abstract;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Footer
  */
-class Footer extends \Dimas\Core\CPT_Abstract {
+class Footer extends CPT_Abstract {
 
 	/**
 	 * Instance
@@ -87,4 +87,4 @@ class Footer extends \Dimas\Core\CPT_Abstract {
 
 }
 
-\Dimas\CPT\Footer::instance();
+\Dimas\Core\CPT\Footer::instance();

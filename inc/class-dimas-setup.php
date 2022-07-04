@@ -153,13 +153,6 @@ class Setup {
 
 		add_theme_support( 'align-full' );
 
-		// Add support for editor styles. Load regular editor styles into the new block-based editor.
-		add_theme_support( 'editor-styles' );
-		$background_color = get_theme_mod( 'background_color', 'D1E4DD' );
-		if ( 127 > \Dimas\framework\Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
-			add_theme_support( 'dark-editor-style' );
-		}
-
 		$editor_stylesheet_path = './assets/css/style-editor.css';
 
 		// Note, the is_IE global variable is defined by WordPress and is used

@@ -13,53 +13,90 @@
 
 use \Dimas\HTML;
 
-$arr_about_item = array(
+$data = array();
+if ( null != $args ) {
+	$data = $args;
+}
+
+$skills = get_posts(
 	array(
-		'img'     => array(
-			'id_img' => 181,
-			'attr'   => array(
-				'class' => 'dimas-about__image-counter',
-				'alt' => 'Icon Photoshop',
-			),
-		),
-		'counter' => array(
-			'final-value'     => 95,
-			'animation-speed' => 1000,
-			'title'           => 'Photoshop',
-			'counter-text'    => '95',
-		),
-	),
-	array(
-		'img'     => array(
-			'id_img' => 179,
-			'attr'   => array(
-				'class' => 'dimas-about__image-counter',
-				'alt' => 'Icon Figma',
-			),
-		),
-		'counter' => array(
-			'final-value'     => 80,
-			'animation-speed' => 1000,
-			'title'           => 'Figma',
-			'counter-text'    => '80',
-		),
-	),
-	array(
-		'img'     => array(
-			'id_img' => 182,
-			'attr'   => array(
-				'class' => 'dimas-about__image-counter',
-				'alt' => 'Icon Sketch',
-			),
-		),
-		'counter' => array(
-			'final-value'     => 90,
-			'animation-speed' => 1000,
-			'title'           => 'Sketch',
-			'counter-text'    => '90',
-		),
+		'post_type' => 'skill',
+		'nopaging'  => true,
 	),
 );
+
+if ( count( $skills ) > 0 ) {
+	foreach ( $skills as $key => $skill ) {
+		$skill_id         = $skill->ID;
+		$featured_img_id  = get_post_thumbnail_id( $skill_id );
+		$featured_img_url = wp_get_attachment_url( $featured_img_id );
+		$featured_img_alt = get_post_meta( $featured_img_id, '_wp_attachment_image_alt', true );
+		$skill_progress   = get_post_meta( $skill_id, 'skill_progress', true );
+		$arr_about_item[] = array(
+			'img'     => array(
+				'attr' => array(
+					'class' => 'dimas-about__image-counter',
+					'alt'   => $featured_img_alt,
+					'src'   => $featured_img_url,
+				),
+			),
+			'counter' => array(
+				'final-value'     => $skill_progress,
+				'animation-speed' => ( $data['col_right']['animation_speed'] ) ? $data['col_right']['animation_speed'] : 1000,
+				'title'           => $skill->post_title,
+				'counter-text'    => $skill_progress,
+			),
+		);
+	}
+} else {
+	$arr_about_item = array(
+		array(
+			'img'     => array(
+				'attr' => array(
+					'class' => 'dimas-about__image-counter',
+					'alt'   => 'Icon Photoshop',
+					'src'   => DIMAS_ASSETS_URI . '/images/about/icon-photoshop.png',
+				),
+			),
+			'counter' => array(
+				'final-value'     => 95,
+				'animation-speed' => ( $data['col_right']['animation_speed'] ) ? $data['col_right']['animation_speed'] : 1000,
+				'title'           => 'Photoshop',
+				'counter-text'    => '95',
+			),
+		),
+		array(
+			'img'     => array(
+				'attr' => array(
+					'class' => 'dimas-about__image-counter',
+					'alt'   => 'Icon Figma',
+					'src'   => DIMAS_ASSETS_URI . '/images/about/icon-figma.png',
+				),
+			),
+			'counter' => array(
+				'final-value'     => 80,
+				'animation-speed' => ( $data['col_right']['animation_speed'] ) ? $data['col_right']['animation_speed'] : 1000,
+				'title'           => 'Figma',
+				'counter-text'    => '80',
+			),
+		),
+		array(
+			'img'     => array(
+				'attr' => array(
+					'class' => 'dimas-about__image-counter',
+					'alt'   => 'Icon Sketch',
+					'src'   => DIMAS_ASSETS_URI . '/images/about/icon-sketch.png',
+				),
+			),
+			'counter' => array(
+				'final-value'     => 90,
+				'animation-speed' => ( $data['col_right']['animation_speed'] ) ? $data['col_right']['animation_speed'] : 1000,
+				'title'           => 'Sketch',
+				'counter-text'    => '90',
+			),
+		),
+	);
+}
 
 HTML::instance()->open(
 	'section_home_col_2',
@@ -82,14 +119,20 @@ foreach ( $arr_about_item as $key => $item ) {
 		)
 	);
 
-	echo wp_get_attachment_image( $item['img']['id_img'], 'full', false, $item['img']['attr'] );
+	HTML::instance()->open(
+		'skill_icon' . $key,
+		array(
+			'tag'  => 'img',
+			'attr' => $item['img']['attr'],
+		),
+	);
 
 	HTML::instance()->open(
 		'dimas_progress_bar',
 		array(
 			'attr' => array(
-				'class' => 'dimas-progress-bar',
-				'data-final-value' => $item['counter']['final-value'],
+				'class'                => 'dimas-progress-bar',
+				'data-final-value'     => $item['counter']['final-value'],
 				'data-animation-speed' => $item['counter']['animation-speed'],
 			),
 		)

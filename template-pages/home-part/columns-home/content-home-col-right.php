@@ -29,11 +29,22 @@ $array_wapper_tag = array(
 	),
 );
 
-$array_circle_text = array(
-	'data-text-circular' => 'Y E A R S  ★ ★ ★  E X P E R I E N C E  ★ ★ ★  ',
-	'data-radius-circle' => '100px',
-	'data-starting-deg'  => '0',
-);
+if ( null != $args ) {
+	$data              = $args;
+	$text_center       = $data['col_right']['text_center']['text_show'];
+	$array_circle_text = array(
+		'data-text-circular' => $data['col_right']['text_circle']['text_circular'],
+		'data-radius-circle' => $data['col_right']['text_circle']['radius_circle'],
+		'data-starting-deg'  => $data['col_right']['text_circle']['starting_deg'],
+	);
+} else {
+	$text_center       = 12;
+	$array_circle_text = array(
+		'data-text-circular' => 'Y E A R S  ★ ★ ★  E X P E R I E N C E  ★ ★ ★  ',
+		'data-radius-circle' => '100px',
+		'data-starting-deg'  => '0',
+	);
+}
 
 Template_Tag::dimas_html_loop_open( $array_wapper_tag );
 
@@ -58,7 +69,7 @@ HTML::instance()->self_close_tag(
 			'class' => 'dimas-experience__main-text',
 		),
 	),
-	'12',
+	$text_center,
 );
 
 Template_Tag::dimas_html_loop_close( $array_wapper_tag );

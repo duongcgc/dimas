@@ -85,8 +85,8 @@ class Core_Init {
 		'Dimas\Core\Customizer\Fields'            => DIMAS_CORE_DIR . '/customizer/class-dimas-customize-fields.php',
 		// 'Dimas\Core\Customizer\Register_Controls' => DIMAS_CORE_DIR . '/customizer/register-controls.php',
 		'Dimas\Core\Customizer'                   => DIMAS_CORE_DIR . '/class-dimas-customizer.php',
-		// 'Dimas\Core\Metaboxes_Register'  => DIMAS_CORE_DIR . '/class-dimas-metaboxes.php',.
 		'Dimas\Core\Customizer\Dynamic_CSS'             => DIMAS_CORE_DIR . '/customizer/class-dimas-dynamic-css.php',
+		'Dimas\Core\Metaboxes_Register'  => DIMAS_CORE_DIR . '/class-dimas-metaboxes.php',
 	);
 
 	/**
@@ -103,8 +103,8 @@ class Core_Init {
 		'customizer/fields'            => 'Dimas\Core\Customizer\Fields',
 		// 'customizer/register-controls' => 'Dimas\Core\Customizer\Register_Controls',
 		'customizer'                   => 'Dimas\Core\Customizer',
-		// 'metaboxes'           => 'Dimas\Core\Metaboxes_Register',.
 		'customizer/dynamic-css'             => 'Dimas\Core\Customizer\Dynamic_CSS',
+		'metaboxes'           => 'Dimas\Core\Metaboxes_Register',
 	);
 
 	/**
@@ -145,8 +145,8 @@ class Core_Init {
 		$this->get( 'customizer/fields' );
 		// $this->get( 'customizer/register-controls' );
 
-		// // Metabos.
-		// $this->get( 'metaboxes' );.
+		// Metabos.
+		$this->get( 'metaboxes' );
 
 		// Dinamic CSS.
 		$this->get( 'customizer/dynamic-css' );

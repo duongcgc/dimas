@@ -6,9 +6,9 @@
  * @package Dimas
  */
 
-namespace Dimas\CPT;
+namespace Dimas\Core\CPT;
 
-use Dimas\CPT_Abstract;
+use Dimas\Core\CPT_Abstract;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Project
  */
-class Project extends \Dimas\Core\CPT_Abstract {
+class Project extends CPT_Abstract {
 
 	/**
 	 * Instance
@@ -48,19 +48,19 @@ class Project extends \Dimas\Core\CPT_Abstract {
 	public function create_post_type() {
 
 		$labels = array(
-			'all_items'          => __( 'All Projects', 'dimas' ),
-			'name'               => __( 'Projects', 'dimas' ),
-			'singular_name'      => __( 'Projects', 'dimas' ),
-			'add_new'            => __( 'Add New Projects', 'dimas' ),
-			'add_new_item'       => __( 'Add New Projects', 'dimas' ),
-			'edit_item'          => __( 'Edit Projects', 'dimas' ),
-			'new_item'           => __( 'New Projects', 'dimas' ),
-			'view_item'          => __( 'View Projects', 'dimas' ),
-			'search_items'       => __( 'Search Projectss', 'dimas' ),
-			'not_found'          => __( 'No Projectss found', 'dimas' ),
-			'not_found_in_trash' => __( 'No Projectss found in Trash', 'dimas' ),
-			'parent_item_colon'  => __( 'Parent Projects:', 'dimas' ),
-			'menu_name'          => __( 'Projects Builder', 'dimas' ),
+			'all_items'          => __( 'All Project', 'dimas' ),
+			'name'               => __( 'Project', 'dimas' ),
+			'singular_name'      => __( 'Project', 'dimas' ),
+			'add_new'            => __( 'Add New Project', 'dimas' ),
+			'add_new_item'       => __( 'Add New Project', 'dimas' ),
+			'edit_item'          => __( 'Edit Project', 'dimas' ),
+			'new_item'           => __( 'New Project', 'dimas' ),
+			'view_item'          => __( 'View Project', 'dimas' ),
+			'search_items'       => __( 'Search Project', 'dimas' ),
+			'not_found'          => __( 'No Project found', 'dimas' ),
+			'not_found_in_trash' => __( 'No Project found in Trash', 'dimas' ),
+			'parent_item_colon'  => __( 'Parent Project:', 'dimas' ),
+			'menu_name'          => __( 'Projects', 'dimas' ),
 		);
 
 		$args = array(
@@ -107,8 +107,9 @@ class Project extends \Dimas\Core\CPT_Abstract {
 			'hierarchical'      => true,
 			'public'            => true,
 			'show_ui'           => true,
-			'show_admin_column' => false,
+			'show_admin_column' => true,
 			'show_in_nav_menus' => true,
+			'show_in_rest'      => true,
 			'show_tagcloud'     => false,
 		);
 		register_taxonomy( 'branch-project', 'project', $args );
@@ -116,4 +117,4 @@ class Project extends \Dimas\Core\CPT_Abstract {
 
 }
 
-\Dimas\CPT\Project::instance();
+\Dimas\Core\CPT\Project::instance();

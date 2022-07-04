@@ -18,7 +18,7 @@ use \Dimas\HTML;
 $args_project = array(
 	'post_type'           => 'project',
 	'post_status'         => 'publish',
-	'posts_per_page'      => 6,
+	'nopaging'            => true,
 	'ignore_sticky_posts' => 1,
 );
 // Project Featured.
@@ -56,18 +56,19 @@ HTML::instance()->open(
 	)
 );
 
-$i = 1;
+$i         = 1;
+$break_col = ceil( count( $project_featured ) / 2 );
 
 foreach ( $project_featured as $project ) {
 
 	$featured_id    = $project->ID;
 	$project_link   = get_post_permalink( $featured_id );
 	$project_title  = get_the_title( $featured_id );
-	$project_branch = wp_get_post_terms( $featured_id, 'branch-project', array( 'fields' => 'names' ) )[0];
+	$project_branch = ( wp_get_post_terms( $featured_id, 'branch-project', array( 'fields' => 'names' ) ) ) ? wp_get_post_terms( $featured_id, 'branch-project', array( 'fields' => 'names' ) )[0] : 'No Branch';
 
 	$array_wrapper_tag['dimas_projects_link']['attr']['href'] = $project_link;
 
-	if ( 4 == $i ) {
+	if ( $break_col + 1 == $i ) {
 		HTML::instance()->close( 'section_project_col_wrap' );
 		HTML::instance()->open(
 			'section_project_col_wrap',

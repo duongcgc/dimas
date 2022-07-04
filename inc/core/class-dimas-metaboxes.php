@@ -45,6 +45,29 @@ class Metaboxes_Register {
 	 */
 	public function __construct() {
 
+		if ( ! class_exists( 'ACF' ) ) {
+
+			$plugin_url = \Dimas\Core\Helper::get_install_plugin_url( 'advanced-custom-fields' );
+			$msg_html   = 'Dimas requires Advanced Custom Fields. Please install <a href="';
+			$msg_html  .= $plugin_url;
+			$msg_html  .= '">ACF</a> plugin.';
+
+			\Dimas\Framework\Notice::add_notice( 'error', $msg_html );
+
+			return;
+		}
+
+		$this->register();
 	}
 
+	/**
+	 * Register metabox ACF.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function register() {
+
+	}
 }

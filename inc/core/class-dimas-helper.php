@@ -109,17 +109,6 @@ class Helper {
 	}
 
 	/**
-	 * Get theme option
-	 *
-	 * @since 1.0.0
-	 * @param string $name The Name of option.
-	 * @return string
-	 */
-	public static function get_option( $name ) {
-		return \Dimas\Theme::instance()->get( 'options' )->get_option( $name );
-	}
-
-	/**
 	 * Content limit
 	 *
 	 * @since 1.0.0
@@ -180,53 +169,12 @@ class Helper {
 	}
 
 	/**
-	 * Get placeholder image.
+	 * Check ACF actived.
 	 *
-	 * @return string
+	 * @return boolean
 	 */
-	public static function dimas_get_placeholder_image() {
-		return get_parent_theme_file_uri( '/assets/images/placeholder.jpg' );
-	}
-
-
-	/**
-	 * Get metabox.
-	 *
-	 * @param int    $id The id of the metabox.
-	 * @param string $key The key of the metabox.
-	 * @param bool   $default Set default value of metabox.
-	 *
-	 * @return bool|mixed
-	 */
-	public static function dimas_get_metabox( $id, $key, $default = false ) {
-		$value = get_post_meta( $id, $key, true );
-		if ( false === $value ) {
-			return $default;
-		} else {
-			return $value;
-		}
-	}
-
-	/**
-	 * Get Theme Supports.
-	 *
-	 * @return bool|array
-	 * @see custom theme support: https://developer.wordpress.org/reference/functions/add_theme_support/
-	 */
-	public static function dimas_get_theme_supports() {
-		$theme_supports = get_theme_support( 'dimas-service-framework' );
-		if ( $theme_supports ) {
-			return wp_parse_args(
-				$theme_supports,
-				array(
-					'typography_callback' => '',
-					'colors_callback'     => '',
-					'post_types'          => array(),
-				)
-			);
-		} else {
-			return false;
-		}
+	public static function dimas_is_acf_activated() {
+		return class_exists( 'ACF' );
 	}
 
 }
